@@ -1,0 +1,71 @@
+.internet-search{
+	background-color: #eaeaea;
+}
+.is-header{
+	padding: 8px 10px;
+}
+.is-input-search{
+	width: 100%;
+	border: 1px solid #ccc;
+	height:32px;
+	line-height:32px;
+	text-align: center;
+	background-color: white;
+	border-radius: 4px;
+	letter-spacing: 2px;
+	/*
+	padding-left: 30px;
+	background-image: url(../images/public-search.png);
+	background-size:20px 20px;
+	background-repeat: no-repeat;
+	background-position: 5px 5px;
+	*/
+}
+.is-address{
+	padding: 10px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+.is-address img{
+	float: left;
+	width: 90px;
+	height: 70px;
+	border-radius: 6px;
+}
+.is-font{
+	float: left;
+	margin-left: 10px;
+}
+.is-font h1{
+	font-size: 1.25rem;
+	line-height: 30px;
+	letter-spacing: 2px;
+	color: black;
+}
+.is-font p{
+	color: #333;
+	font-size: 1rem;
+	line-height: 20px;
+	letter-spacing: 2px;
+}
+.is-font .is-diable{
+	color: #999;	
+}
+.is-address-right{
+	float: right;
+	line-height: 70px;
+	color: red;
+	font-size: 1rem;
+	letter-spacing: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+

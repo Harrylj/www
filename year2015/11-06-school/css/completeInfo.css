@@ -1,0 +1,79 @@
+.complete-info{
+	padding: 8px;
+	min-height: 480px;
+}
+.ci-list{
+	height: 50px;
+	position: relative;
+	border-bottom: 1px solid #ccc;
+}
+.ci-list h1{
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 50px;
+	line-height: 50px;
+	width: 36%;
+	font-size: 1.25rem;
+}
+.ci-right{
+	width: 60%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1rem;
+	padding-right: 12px;
+	background-image: url(../images/public-right.png);
+	background-repeat: no-repeat;
+	background-position: right center;
+	background-size: 8px 14px; 
+}
+.ci-ts
+,.la-ts{
+	height: 80px;
+	line-height: 80px;
+	text-align: center;
+	color: red;
+	font-size: 1rem;
+	
+}
+.ci-btn-tjzl
+,.la-btn-kscp{
+	width: 70%;
+	height: 40px;
+	line-height: 36px;
+	color: white;
+	background-color: #dc0232;
+	border-radius: 6px;
+	border: none;
+	letter-spacing: 3px;
+	font-size: 1.125rem;
+}
+.ci-sex
+,.ci-love
+,.ci-age{
+	border: none;
+	height: 95%;
+	float: right;
+	padding-left: 150px;
+	text-align: right;
+	background-color: transparent;
+	font-size: 1.125rem;
+}
+.ci-right-none{
+	background-image: none;
+	padding-right: 0;
+}
+.ci-input{
+	width: 100%;
+	height: 50px;
+	padding: 0 5px;
+	line-height: 48px;
+	border: none;
+	background-color: transparent;
+	letter-spacing: 2px;
+	text-align: right;
+	font-size: 1.125rem;
+}

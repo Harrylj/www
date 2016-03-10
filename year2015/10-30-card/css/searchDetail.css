@@ -1,0 +1,132 @@
+.sd-body{
+	padding: 8px;
+}
+.sd-b-nav{
+	width: 100%;
+}
+.sd-b-nav li{
+	float: left;
+	width: 25%;
+	height: 36px;
+	border-top: 1px solid #888;
+	border-bottom: 1px solid #888;
+	border-left: 1px solid #888;
+	color: #888;
+	line-height: 32px;
+	text-align: center;
+	font-size: 1.125rem;
+	cursor: pointer;
+}
+.sd-b-nav li:first-child{
+	border-radius: 8px 0 0 8px;
+}
+.sd-b-nav li:last-child{
+	border-right: 1px solid #888;
+	border-radius: 0 8px 8px 0;
+}
+.sd-b-nav .sdb-nav-click{
+	background-color: #888;
+	color: white;
+	
+}
+.sdb-goods{
+	position: relative;
+	padding: 8px 2px;
+	border-bottom: 1px solid #ccc;
+}
+.sdb-goods h1{
+	font-size: 1.25rem;
+	line-height: 36px;
+	color: black;
+}
+.sdb-goods p{
+	font-size: .875rem;
+	line-height: 24px;
+	color: black;
+}
+.sdb-g-val{
+	position: absolute;
+	right: 5px;
+	top: 8px;
+	line-height: 60px;
+	height: 60px;
+	font-size: 1.5rem;
+}
+.sdbg-val-small{
+	color: #333;
+}
+.sdbg-val-big{
+	color: red;
+}
+.sd-date{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 48px;
+	line-height: 48px;
+	width: 100px;
+	text-align: center;
+}
+.sd-date-father{
+	position: relative;
+	height: 100%;
+}
+.sd-date-select{
+	position: relative;
+	color: white;
+	line-height: 48px;
+	font-size: 1rem;
+	text-align: center;
+	cursor: pointer;
+}
+.sd-date-select:after{
+	position: absolute;
+	right: 5px;
+	top: 22px;
+	display: block;
+	content: '.';
+	font-size: 1px;
+	color: transparent;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid white;
+}
+.sd-date-nav{
+	position: absolute;
+	left: -5px;
+	top: 48px;
+	display: none;
+	
+}
+.sd-date-nav li{
+	position: relative;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+	width: 100px;
+	line-height: 36px;
+	color: #666;
+	text-align: center;
+	font-size: 1.125rem;
+	background-color: #f5f5f5;
+	cursor: pointer;
+}
+.sd-date-nav li:hover{
+	color: #31BFC9;
+}
+.sd-date-nav li:first-child{
+	border-top: 1px solid #ccc;
+}
+.sd-date-nav li:first-child:before{
+	position: absolute;
+	left: 50%;
+	top: -9px;
+	content: '.';
+	font-size: 1px;
+	line-height: 1px;
+	border-left: 8px solid transparent;
+	border-right: 8px solid transparent;
+	border-bottom: 8px solid #F5F5F5;
+}
+.sd-date-nav li:last-child{
+	border-bottom: 1px solid #ccc;
+}

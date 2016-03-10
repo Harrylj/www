@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/masonry.css"/>
+    <title>masonry</title>
+</head>
+<body>
+<div class="index">
+    <div class="header"></div>
+    <div class="content">
+        <div id="masonry" class="container-fluid">
+            <div class="box"><img src="images/1.jpg" alt=""/></div>
+            <div class="box"><img src="images/2.jpg" alt=""/></div>
+            <div class="box"><img src="images/3.jpg" alt=""/></div>
+            <div class="box"><img src="images/4.jpg" alt=""/></div>
+            <div class="box"><img src="images/5.jpg" alt=""/></div>
+            <div class="box"><img src="images/6.jpg" alt=""/></div>
+            <div class="box"><img src="images/7.jpg" alt=""/></div>
+            <div class="box"><img src="images/8.jpg" alt=""/></div>
+            <div class="box"><img src="images/9.jpg" alt=""/></div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
+<script src="js/jquery-2.1.3.min.js"></script>
+<script src="js/masonry.pkgd.min.js"></script>
+<script src="js/imagesloaded.pkgd.min.js"></script>
+<script>
+    //先确定图片加载完全，再运行瀑布流插件
+    $(function(){
+        var $container = $('#masonry');
+        $container.imagesLoaded(function(){
+            $container.masonry({
+                itemSelector:'.box',
+                gutterWidth:   20,
+                isAnimated: true
+            })  ;
+        }).always( function( instance ) {
+            console.log('all images loaded');
+        })
+                .done( function( instance ) {
+                    console.log('all images successfully loaded');
+                })
+                .fail( function() {
+                    console.log('all images loaded, at least one is broken');
+                })
+                .progress( function( instance, image ) {
+                    var result = image.isLoaded ? 'loaded' : 'broken';
+                    console.log( 'image is ' + result + ' for ' + image.img.src );
+                });
+    });
+
+
+</script>
+</body>
+</html>

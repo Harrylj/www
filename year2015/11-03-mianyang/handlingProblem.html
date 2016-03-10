@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/handlingProblem.css" type="text/css" rel="stylesheet">
+    <title>用户咨询</title>
+
+</head>
+<body>
+	<div class="handling-problem">
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-12-02
+        	描述：.hpc-btn-zk:展开
+        		.hpc-btn-sq：收起
+        		.hp-btn-yjcl:已经处理
+        		.hp-btn-ddcl:等待处理
+        -->
+		<div class="hp-list">
+			<img src="images/user-img.jpg" />
+			<h1>张三李四家的崽子</h1>
+			<p class="hp-date">2015年09月08日 20:30:08</p>
+			<div class="hp-content">
+				<p>
+					这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题
+				这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题
+				这里是问题，这里是查看的问题
+				</p>
+				<button class="hpc-btn hpc-btn-zk" type="button"></button>
+			</div>
+			<div class="text-center">
+				<button class="hp-btn hp-btn-yjcl">已经处理</button>
+				<a class="hp-btn-msqd" href="tel:1008611">马上去电</a>
+			</div>
+		</div>
+		<div class="hp-list">
+			<img src="images/user-img.jpg" />
+			<h1>张三李四家的崽子</h1>
+			<p class="hp-date">2015年09月08日 20:30:08</p>
+			<div class="hp-content">
+				<p>
+					这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题
+				这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题这里是问题，这里是查看的问题
+				这里是问题，这里是查看的问题
+				</p>
+				<button class="hpc-btn hpc-btn-zk" type="button"></button>
+			</div>
+			<div class="text-center">
+				<button class="hp-btn hp-btn-ddcl">等待处理</button>
+				<a class="hp-btn-msqd" href="tel:1008611">马上去电</a>
+			</div>
+		</div>
+	</div>
+	
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		//点击“展开，收起”按钮
+		$('.hpc-btn').on('click',function(){
+			var zk = 'hpc-btn-zk',
+				sq = 'hpc-btn-sq';
+				
+			//“展开”
+			if(!$(this).hasClass(sq))
+			{
+				$(this).addClass(sq);
+				$(this).siblings('p').css('height','auto');
+			}
+			//“收起”
+			else
+			{
+				$(this).removeClass(sq);
+				$(this).siblings('p').css('height','48px');
+			}
+		})
+		//点击“已经处理，等待处理”按钮
+		$('.hp-btn').on('click',function(){
+			var yjcl = 'hp-btn-yjcl',
+				ddcl = 'hp-btn-ddcl';
+			
+			//已经处理
+			if($(this).hasClass(yjcl))
+			{
+				$(this).addClass(ddcl).removeClass(yjcl).html("等待处理");
+			
+			}
+			//等待处理
+			else if($(this).hasClass(ddcl))
+			{
+				$(this).addClass(yjcl).removeClass(ddcl).html("已经处理");
+			}
+			//出错
+			else
+			{
+				alert('数据异常，请重新加载')
+			}
+				
+		})
+	})
+</script>
+</body>
+</html>

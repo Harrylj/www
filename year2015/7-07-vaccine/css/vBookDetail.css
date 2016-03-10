@@ -1,0 +1,35 @@
+.v-book-detail{
+    padding-bottom: 20px;
+}
+.vbd-content{
+    padding: 8px;
+}
+.vbd-c-title{
+    color: #000000;
+    font-size: 1.375rem;
+    line-height: 40px;
+    letter-spacing: 2px;
+}
+.vbd-c-number{
+    color: #333;
+    font-size: .875rem;
+    line-height: 24px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.vbd-c-img{
+    width: 100%;
+}
+.vbd-c-h1{
+    color: #000000;
+    font-size: 1.25rem;
+    line-height: 36px;
+    letter-spacing: 2px;
+}
+.vbd-c-content{
+    font-size: 1rem;
+    line-height: 28px;
+    letter-spacing: 2px;
+}

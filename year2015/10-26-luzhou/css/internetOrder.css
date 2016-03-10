@@ -1,0 +1,55 @@
+body{
+	background-color: white;
+}
+.internet-order{
+	padding: 0 8px;
+	letter-spacing: 2px;
+}
+.io-table{
+	width: 100%;
+}
+.io-table td{
+	height: 50px;
+	font-size: 1.125rem;
+	text-align: right;
+	border-bottom: 1px solid #ccc;
+}
+.io-table td:first-child{
+	text-align: left;
+		width: 80px;
+}
+.io-order-input{
+	border: none;
+	background-color: transparent;
+	height: 50px;
+	line-height: 50px;
+	text-align: right;
+	font-size: 1rem;
+	width: 200px;
+	letter-spacing: 2px;
+}
+.io-tpyzm{
+	float: left;
+	width: 70px;
+	margin-top: 16px;
+}
+.io-input-tpyzm{
+	width: 150px;
+}
+.io-table .io-ts{
+	color: red;
+	height: 70px;
+	line-height: 70px;
+	border: none;
+	text-align: center !important;
+}
+.io-btn-kscp{
+	height: 40px;
+	padding: 0 50px;
+	font-size: 1.25rem;
+	color: white;
+	border: none;
+	background-color: #ff0038;
+	line-height: 34px;
+	border-radius: 20px;
+}

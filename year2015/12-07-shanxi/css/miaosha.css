@@ -1,0 +1,85 @@
+.ms-list{
+	
+}
+.ms-goods{
+	float: left;
+	position: relative;
+	width: 150px;
+	background-image: url(../images/miaosha_02.png);
+	background-repeat: no-repeat;
+	background-size: 130px 130px;
+	background-position: center center; 
+}
+.ms-img{
+	width: 110px;
+}
+.ms-time{
+	color: #f33132;
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+	margin-top: -10px;
+}
+.green{
+	color: green;
+}
+.ms-content{
+	position: absolute;
+	left: 50%;
+	top: 45px;
+	width: 120px;
+	margin-left: -60px;
+	line-height: 20px;
+	color: white;
+	padding:8px 4px;
+	font-size: 12px;
+	background-image: url(../images/home-bottom-01.png);
+	border-radius: 6px;
+	text-align: center;
+	opacity: .7;
+	
+}
+.ms-btn{
+	cursor: pointer;
+	background-image: url(../images/miaosha_06.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	height: 40px;
+	width: 100px;
+	line-height: 32px;
+	text-align: center;
+	color: #666;
+	padding: 0;
+	border: none;
+	background-color: transparent;
+	
+}
+.ms-btn-phone{
+	color: #f33132;
+}
+.ms-btn-phone
+,.ms-btn-flow{
+	background-image: url(../images/miaosha_05.png);
+	padding-right: 20px;
+}
+.h-zs{
+	float: left;
+	padding-left: 15px;
+	line-height: 50px;
+	font-size: 1.125rem;
+	color: black;
+}
+.h-zs span{
+	color: #F33132;
+	font-size: 1.25rem;
+}
+.hh-btn-game{
+	float: right;
+	display: inline-block;
+	margin: 0;
+	height: 30px;
+	padding:  10px 20px;
+	font-size: 1.25rem;
+	color: #F33132;
+	line-height: 30px;
+}

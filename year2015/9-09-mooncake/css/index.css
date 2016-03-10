@@ -1,0 +1,71 @@
+.index
+,.search{
+	background-image: url(../images/index-bg-02.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center center;
+	background-size: cover;
+	padding-bottom: 30px;
+}
+
+.index-img{
+	width: 150px;
+	margin-right: 10px;
+	margin-bottom: -15px;
+}
+.index-gz{
+	padding: 0; 
+	line-height: 24px;
+	font-size: 1rem;
+	letter-spacing: 1px;
+	color: #3333;
+	
+}
+.index-gz p{
+	padding: 20px;
+	background-image: url(../images/index-bg-02.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.index-order{
+	color: #ff8400;
+}
+
+.list-ss{
+	padding: 0 20px 0px 20px;
+}
+
+.list-list{
+	padding: 5px 5px 30px 5px;
+	text-align: center;
+}
+.list-game{
+	width: 90px;
+	margin: 0px;
+	display: inline-block;
+	margin: 1px;
+	
+}
+
+.list-game img{
+	height: 90px;
+	width: 90px;
+	border-radius: 6px;
+}
+.list-game p:nth-child(2){
+	color: black;
+	text-align: center;
+	height: 24px;
+	line-height: 24px;
+	font-size: 1.125rem;
+	letter-spacing: 1px;
+	overflow: hidden;
+
+}
+.list-game p:nth-child(3){
+	color: #ef446d;;
+	text-align: center;
+	line-height: 24px;
+	height: 24px;
+	font-size: 1.5rem;
+}

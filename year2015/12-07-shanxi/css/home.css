@@ -1,0 +1,242 @@
+body{
+	background-image: url(../images/home-bg.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding-bottom: 100px;
+}
+.home{
+	position: relative;
+}
+.hh-btn-return{
+	display: inline-block;
+	margin: 20px 10px;
+	background-image: url(../images/home-02.png);
+	width: 80px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.hh-btn-zy{
+	display: inline-block;
+	float: right;
+	margin-right: 5px;
+	background-image: url(../images/home-01.png);
+	width: 35px;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.hb-top{
+	background-image: url(../images/home-03.png);
+	height: 90px;
+	width: 320px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: auto;
+	padding: 12px 10px;
+}
+.hb-top li{
+	float: left;
+	width: 33.33%;
+	line-height: 40px;
+	text-align: center;
+	font-size: 1rem;
+}
+.hh-img-jd{
+	width: 20px;
+	position: relative;
+	top: 5px;
+}
+.hb-nav{
+	padding: 20px 0px;
+}
+.hb-nav a{
+	display: block;
+	height: 50px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 10px;
+}
+.hb-nav-qd-01{
+	background-image: url(../images/home-10.png);
+}
+.hb-nav-qd-02{
+	background-image: url(../images/home-09.png);
+}
+.hb-nav-hyk{
+	background-image: url(../images/home-11.png);
+}
+.hb-nav-address{
+	background-image: url(../images/home-12.png);
+}
+
+.h-footer{
+	position: fixed;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+	z-index: 10;
+	padding: 10px;
+	
+}
+.hf-nav{
+	width: 100%;
+	background-image: url(../images/home-bottom-01.png);
+	border-radius: 6px;
+	padding: 10px 0;
+}
+.hf-nav a{
+	display: inline-block;
+	float: left;
+	width: 33.33%;
+	height: 60px;
+	background-repeat: no-repeat;
+	background-position: center 0;
+	background-size: 60px 60px;
+}
+.hf-nav a:nth-child(1){
+	background-image: url(../images/home-13-hover.png);
+}
+.hf-nav a:nth-child(2){
+	background-image: url(../images/home-14-hover.png);
+}
+.hf-nav a:nth-child(3){
+	background-image: url(../images/home-15-hover.png);
+}
+.hf-nav a:nth-child(1):hover{
+	background-image: url(../images/home-13.png);
+}
+.hf-nav a:nth-child(2):hover{
+	background-image: url(../images/home-14.png);
+}
+.hf-nav a:nth-child(3):hover{
+	background-image: url(../images/home-15.png);
+}
+.hf-nav a:nth-child(1).hf-nav-click{
+	background-image: url(../images/home-13.png);
+}
+.hf-nav a:nth-child(2).hf-nav-click{
+	background-image: url(../images/home-14.png);
+}
+.hf-nav a:nth-child(3).hf-nav-click{
+	background-image: url(../images/home-15.png);
+}
+
+.hb-footer-qd{
+	position: relative;
+	z-index: 1;
+	margin-bottom: -100px;
+}
+.hb-footer-qd img{
+	display: block;
+}
+.h-dh{
+	display: none;
+}
+.h-dh-top{
+	opacity: .9;
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	background-color: white;
+	border: 3px solid #7a9f58;
+	padding-top: 20px;
+	margin: auto;
+}
+.h-dh-top h1{
+	height: 40px;
+	line-height: 40px;
+	font-size: 22px;
+	text-align: center;
+	color: red;
+}
+.h-dh-top p{
+	line-height: 24px;
+	font-size: 14px;
+	text-align: center;
+	color: red;
+}
+.h-dh-ts{
+	
+}
+.h-dh-ts p{
+	text-align: center;
+	font-size: 1rem;
+	color: black;
+	line-height: 28px;
+}
+.h-qh-list{
+	padding: 20px 10px;
+}
+.hqh-goods{
+	float: left;
+	opacity: .9;
+	background-image: url(../images/home-30.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 10px 30px;
+	margin: 5px 0;
+	width: 100%;
+}
+.hqh-img-01{
+	height: 60px;
+	width: 60px;
+}
+.hqh-goods p{
+	font-size: 1.125rem;
+	line-height: 28px;
+	color: black;
+}
+.hqh-btn-dh{
+	background-image: url(../images/home-32.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 80px;
+	height: 40px;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
+	margin: 10px 0;
+}
+.h-qdsm{
+	display: none;
+	position: fixed;
+	top: 40px;
+	left: 50%;
+	width: 80%;
+	margin-left: -40%;
+	
+}
+.h-qdsm-father{
+	position: relative;
+	background-color: #f9f9f9;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #666;
+	overflow: hidden;
+}
+.h-qdsm-father h1{
+	line-height: 50px;
+	background-color: #585858;
+	color: white;
+	text-align: center;
+	font-size: 1.25rem;
+}
+.qdsm-body p{
+	line-height: 30px;
+	color: #666;
+	font-size: 1rem;
+}
+.qdsm-body{
+	padding: 20px 10px;
+}
+.qdsm-btn-close{
+	margin-top: 10px;
+	border: 1px solid #ccc;
+	background-color: #ededed;
+	height: 40px;
+	line-height: 36px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.125rem;
+	border-radius: 8px;
+}

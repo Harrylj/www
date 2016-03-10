@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+	<link rel="stylesheet" type="text/css" href="css/choujiang.css"/>
+<title>抽奖</title>
+</head>
+<body>
+<!--
+    	作者：648267773@qq.com
+    	时间：2015-12-17
+    	描述：.input-zj:中奖编码值,0:没中奖，1:一等奖，2:二等奖,3:三等奖
+    		.input-cs:抽奖次数，每天只能抽1次
+-->
+<input class="input-zj" type="hidden" value="2" />
+<input class="input-cs" type="hidden" value="1" />
+<a class="hdgz" href="hdgz.html">活动规则</a>
+<a class="zjjl" href="search.html">中奖记录</a>
+<div class="main2">
+	<div class="container">
+		<div class="num num1">
+			<div class="num-con num-con1">
+				<div class="num-img num-img-01"></div>
+				<div class="num-img num-img-01"></div>
+			</div>
+		</div>
+		<div class="num num2">
+			<div class="num-con num-con2">
+				<div class="num-img num-img-02"></div>
+				<div class="num-img num-img-02"></div>
+			</div>
+		</div>
+		<div class="num num3">
+			<div class="num-con num-con3">
+				<div class="num-img num-img-03"></div>
+				<div class="num-img num-img-03"></div>
+			</div>
+		</div>
+	</div>
+	
+	<marquee class="marquee-gd" direction="down" >
+		<p>18200166593中奖手机一部</p>
+		<p>18200166593中奖手机一部</p>
+		<p>18200166593中奖手机一部</p>
+	</marquee> 
+</div>
+<div class="main3">
+	<div class="container">
+		<div class="main3-btn"></div>
+		
+	</div>
+</div>
+<!--
+	作者：648267773@qq.com
+	时间：2015-12-18
+	描述：.zzc：遮罩层
+	.tc-ts:中奖提示
+	.tc-over:提示抽奖次数用完
+-->
+<div class="zzc"></div>
+<div class="tc tc-ts">
+	<p>恭喜你中奖啦</p>
+	<div style="text-align: center;"><button class="tc-btn-close">确定</button></div>
+</div>
+<div class="tc tc-over">
+	<p>今日抽奖次数已用完</p>
+	<div style="text-align: center;"><button class="tc-btn-close">确定</button></div>
+</div>
+</body>
+</html>
+<script type="text/javascript"  src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(".main3-btn").click(function () {
+		
+		var inputCS = $('.input-cs');
+		//可以抽奖
+		if(inputCS.val()=='1')
+		{
+			if(!flag){
+				flag=true;
+				reset();
+				letGo();
+				setTimeout(function () {
+					flag=false;
+					if(index==2){
+						//$(".fix,.pop-form").show();
+					}else{
+						//$(".fix,.pop").show();
+						//$(".pop-text span").text(""+String(4-TextNum1)+(8-TextNum2))
+					}
+				},2000);
+				index++;
+			}
+			//改变抽奖次数
+			inputCS.val('0');
+		}
+		//不可以抽奖
+		else
+		{
+			$('.zzc').show();
+			$('.tc-over').show();
+		}
+		
+	});
+	
+	var flag=false;
+	var index=0;
+	var TextNum1;
+	var TextNum2;
+	var TextNum3;
+	
+	//弹窗
+	function tc(){
+	
+		
+	}
+	
+	function letGo(){
+		var zh = parseInt($('.input-zj').val());
+		var zzc = $('.zzc'),
+			tc = $('.tc-ts'),
+			ts = tc.children('p'),
+			ts_00 = '很遗憾你没有中奖',
+			ts_01 = '恭喜您获得了一等奖',
+			ts_02 = '恭喜您获得了二等奖',
+			ts_03 = '恭喜您获得了三等奖';
+		TextNum1=parseInt(Math.random()*11);//随机数
+		TextNum2=parseInt(Math.random()*11);
+		TextNum3=parseInt(Math.random()*11);
+		//alert(TextNum1+','+TextNum2+','+TextNum3)
+		var num1=[-1258,-1377,-192,-311,-430,-549,-668,-786,-904,-1023,-1142][TextNum1];//在这里随机
+		var num2=[-311,-430,-549,-311,-430,-549,-668,-786,-904,-1023,-1142][TextNum2];
+		var num3=[-1258,-1377,-192,-311,-430,-549,-668,-786,-904,-1023,-1142][TextNum3];
+		//0:没中奖，1:一等奖，2:二等奖,3:三等奖
+		switch (zh)
+		{
+			case 1:
+			num1='-1258';
+			num2='-1258';
+			num3='-1258';
+			ts.html(ts_01);
+			break;
+			
+			case 2:
+			num1='-1377';
+			num2='-1377';
+			num3='-1377';
+			ts.html(ts_02);
+			break;
+			
+			case 3:
+			num1='-192';
+			num2='-192';
+			num3='-192';
+			ts.html(ts_03);
+			break;
+			
+			default:
+			ts.html(ts_00);
+			break;
+		}
+		setTimeout(function(){
+			tc.show();
+			zzc.show();
+		},3500)
+		$(".num-con1").animate({"top":-1140},1000,"linear", function () {
+			$(this).css("top",0).animate({"top":num1},1000,"linear");
+		});
+		$(".num-con2").animate({"top":-1140},1000,"linear", function () {
+			$(this).css("top",0).animate({"top":num2},1800,"linear");
+		});
+		$(".num-con3").animate({"top":-1140},1000,"linear", function () {
+			$(this).css("top",0).animate({"top":num3},2000,"linear");
+		});
+		
+
+	}
+	
+
+	function reset(){
+		$(".num-con1,.num-con2,.num-con3").css({"top":-1023});
+	}
+	
+	//点击关闭弹窗
+	$('.tc-btn-close').on('click',function(){
+		$(this).parents('.tc').hide();
+		$('.zzc').hide();
+	})
+
+</script>
+
+</body>
+</html>

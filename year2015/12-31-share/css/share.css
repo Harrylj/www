@@ -1,0 +1,23 @@
+.share{
+	padding: 15px 10px;
+	letter-spacing: 2px;
+}
+.share-p1{
+	font-size: 16px;
+	line-height: 24px;
+	color: black;
+}
+.share-img-div{
+	padding-top:25px ;
+}
+.share-img{
+	width: 200px;
+}
+.share-img-01{
+	width: 50px;
+}
+.share-p2{
+	color: red;
+	line-height: 28px;
+	font-size: 14px;
+}

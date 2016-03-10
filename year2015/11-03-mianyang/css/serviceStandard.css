@@ -1,0 +1,22 @@
+body{
+	background-color: #e2e2e2;
+}
+.ss-body{
+	padding: 20px 10px;
+}
+.ss-list{
+	padding: 0 8px 8px 8px;
+	background-color: white;
+	margin-bottom: 15px;	
+}
+.ss-list h1{
+	color: black;
+	font-size: 1.25rem;
+	line-height: 30px;
+}
+.ss-list p {
+	color: #666;
+	font-size: 1rem;
+	line-height: 22px;
+}
+

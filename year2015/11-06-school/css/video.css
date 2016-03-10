@@ -1,0 +1,38 @@
+.video{
+	padding: 10px;
+}
+.v-list{
+	position: relative;
+	display: block;
+	margin-left: 130px;
+	border-bottom: 1px solid #ccc;
+	margin-bottom: 10px;
+}
+.v-list-img-01
+,.v-list-img-bg{
+	position: absolute;
+	left:-130px;
+	top:0px;
+	width:120px;
+	height:80px;
+	border:1px solid #ccc;
+}
+.v-list-img-01{
+	z-index: 1;
+}
+.v-list-img-bg{
+	z-index: 2;
+}
+.v-list h1{
+	color: black;
+	line-height: 32px;
+	font-size: 1.25rem;
+}
+.v-list p{
+	color: #666;
+	line-height: 24px;
+	font-size: 1rem;
+	height: 48px;
+	overflow: hidden;
+}
+

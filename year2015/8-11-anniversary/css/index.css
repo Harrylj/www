@@ -1,0 +1,104 @@
+.index{
+	position: relative;
+	background-color: #ff2c4c;
+	padding-bottom: 10px;
+}
+.index-header img
+,.if-img{
+	width: 100%;
+	height: auto;
+}
+.index-content{
+
+}
+.ic-h1{
+	color: white;
+	line-height: 24px;
+	font-size: 1.25rem;
+	letter-spacing: 2px;
+}
+.ic-list{
+	width: 100%;
+	padding: 2%;
+}
+.ic-goods{
+	float: left;
+	padding: 6px;
+	margin: 2%;
+	background-color: white;
+}
+.ic-goods img{
+	width: 100%;
+	height: auto;
+	
+}
+.ic-goods h1{
+	padding: 6px 0;
+	color: #666666;
+	font-size: 1.25rem;
+	line-height: 20px;
+	letter-spacing: 1px;
+	text-align: center;
+}
+.ic-goods p{
+	line-height: 30px;
+	text-align: center;
+	
+}
+.icg-span-01{
+	color: #ff2c4c;
+	font-size: 1.5rem;	
+}
+.icg-span-02{
+	color: #ccc;
+	font-size: 1rem;	
+}
+.i-nav-01{
+	position: relative;
+	padding: 2%;
+	width: 100%;
+}
+.i-nav-01-swiper{
+	position: relative;
+	height: 100%;
+	z-index: 20;
+}
+.i-ts{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	padding: 0 6px;
+	height: 30px;
+	width: 100%;
+	line-height: 30px;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	background-image: url(../images/index-bg-01.png);
+	color: white;
+	overflow: hidden;
+}
+
+.slide-img{
+   width: 100%;
+   height: 100%;
+}
+.i-nav-01-swiper .swiper-pagination-bullet{
+	opacity: 1;
+	background-color: white;
+}   
+.i-nav-01-swiper .swiper-pagination-bullet-active{
+	background-color: #ff2c4c;
+	
+}
+.swiper-container-horizontal > .swiper-pagination{
+	left: -10px;
+	text-align: right;	
+}
+
+.index-footer-img{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+}

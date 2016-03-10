@@ -1,0 +1,63 @@
+body,html{
+    height: 100%;
+    width: 100%;
+    min-height: 320px;
+    min-width: 320px;
+}
+.index{
+    height: 100%;
+    width: 100%;
+    padding-top: 40%;
+    background-image: url("../images/index-bg.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.swiper-wrapper{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.swiper-slide{
+}
+.index-p-01{
+    letter-spacing: 2px;
+    font-size: 14px;
+    text-align: center;
+    color: red;
+    line-height: 30px;
+}
+.index-game{
+    background-image: url("../images/index-game-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+.index-game img{
+    width: 80px;
+    height: 80px;
+}
+.index-game h1{
+    font-size: 18px;
+    color: black;
+    line-height: 38px;
+    letter-spacing: 4px;
+    padding-bottom: 10px;
+}
+.index-btn-wft{
+    width: 70%;
+    border-radius: 8px;
+    margin-top: 40px;
+    border: 1px solid #ccc;
+    background-color: #ffff71;
+    box-shadow: 0 1px 1px #ccc;
+    font-size: 16px;
+    line-height: 38px;
+    letter-spacing: 4px;
+    text-align: center;
+}
+
+.index-game-checked{
+    background-image: url("../images/index-05.png");
+    background-size: 20px 20px;
+    background-position: 94% 20px;
+    background-repeat: no-repeat;
+}

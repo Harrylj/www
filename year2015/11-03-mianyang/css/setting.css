@@ -1,0 +1,86 @@
+.setting{
+	padding-bottom: 50px;
+}
+body{
+	background-color: #efeff4;
+}
+.s-height-25{
+	height: 25px;
+	
+}
+.s-list{
+	border-top: 1px solid #ccc;
+	padding-left: 10px;
+	background-color: white;
+}
+.sl-line{
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	border-bottom: 1px solid #ccc;
+	color: black;
+	font-size: 1.125rem;
+}
+.sl-l-right{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	height: 50px;
+	color: #999;
+	font-size: 1rem;
+}
+.sl-l-next{
+	padding-right: 20px;
+	background-image: url(../images/public-right.png);
+	background-size: 9px 15px;
+	background-repeat: no-repeat;
+	background-position: right center; 
+}
+.sl-ewm{
+	position: relative;
+	top: 5px;
+	width: 20px;
+	height: 20px;
+}
+.sl-user-img{
+	position: relative;
+	top: 10px;
+	width: 60px;
+	height: 60px;
+	border-radius: 10px;
+}
+.sl-user{
+	height: 80px;
+	line-height: 80px;
+}
+.sl-input{
+	width: 75%;
+	border: none;
+	letter-spacing: 2px;
+	text-align: right;
+	background-color: transparent;
+	color: black;
+}
+.sl-ts{
+	color: red;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1rem;
+}
+.sl-btn-bc{
+	display: none;
+	margin: 10px;
+	border: none;
+	height: 36px;
+	padding: 0 40px;
+	letter-spacing: 5px;
+	font-size: 1.25rem;
+	color: #666;
+	line-height: 32px;
+	background-color: white;
+	box-shadow: 0 0 5px #ccc;
+	border-radius:  18px;
+}
+
+

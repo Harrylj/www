@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/map.css"/>
+    <title>地图</title>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-08-13
+    	描述：参数设置
+    	.input-user:值为1表示用户本人（默认），值为2表示好友
+    	.input-click-number:值为1表示可以点亮1次地点，值为0表示不能点亮地点
+    -->
+    <input class="input-user" type="hidden" value="1"/>
+    <input class="input-click-number" type="hidden" value="1" />
+	<div class="map">
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-12
+        	描述：公用头部
+        -->
+        <div class="public-header s-f-header">
+            <div class="public-header-box">
+                <h1>疯狂之旅</h1>
+                <a href="javascript:history.go(-1);"><span class="public-header-return">返回</span></a>
+            	<a href="#"><span class="public-header-right">分享</span></a>
+            </div>
+        </div>
+        <div class="a-header">
+        	<img class="img-100 a-header-img" src="images/map-12.png">
+        </div>
+        <div class="a-content">
+        	<img class="map-bg" src="images/map-bg-03.png">
+        	<!--
+            	作者：648267773@qq.com
+            	时间：2015-08-13
+            	描述：.map-click:含有.map-img表示未点亮，未含有表示未点亮
+            -->
+        	<div class="map-click map-01"></div>
+        	<div class="map-click map-02"></div>
+        	<div class=" map-click map-03"></div>
+        	<div class=" map-click map-04"></div>
+        	<div class="map-img map-click map-05"></div>
+        	<div class="map-img map-click map-06"></div>
+        	<div class="map-img map-click map-07"></div>
+        	<div class="map-img map-click map-08"></div>
+        	<div class="map-img map-click map-09"></div>
+        	<div class="map-img map-click map-10"></div>
+        	<!--
+            	作者：648267773@qq.com
+            	时间：2015-08-13
+            	描述：.map-img-ts-01：提示好友如何点亮
+            		  .map-img-ts-02：提示用户已点亮完成
+            -->
+        	<img class="map-img-ts-01" src="images/map-17.png">
+        	<img class="map-img-ts-02" src="images/map-13.png" />
+        
+        </div>
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-08-13
+        	描述：遮罩层
+        -->
+        <div class="zzc"></div>
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-08-13
+        	描述：弹框提示01,用户本人点亮图标
+        -->
+        <div class="public-tc-01 map-ts-01">
+        	<div>
+        		<h1>周年庆疯狂地图</h1>
+        		<p>
+        			亲爱的。恭喜已点亮<span>1</span>个线路<br/>
+        			邀请好友点亮<span>9</span>个就可以享受免单
+        		</p>
+        		<div class="text-center">
+        			<button class="map-btn map-btn-yqhy">邀请好友</button>
+        		</div>
+        		
+        	</div>
+        </div>
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-08-13
+        	描述：弹窗提示02，提示全部点亮完成
+        -->
+        <div class="public-tc-01 map-ts-02">
+        	<div>
+        		<h1>周年庆疯狂地图</h1>
+        		<p>
+        			亲爱的。恭喜已点亮整个路线<br/>
+        			点击领取即可获得就餐机会
+        		</p>
+        		<div class="text-center">
+        			<button class="map-btn map-btn-ljlq">立即领取</button>
+        		</div>
+        		
+        	</div>
+        </div>
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-08-13
+        	描述：弹窗提示03，好友帮助点亮完成
+        -->
+        <div class="public-tc-01 map-ts-03">
+        	<div>
+        		<h1>周年庆疯狂地图</h1>
+        		<p>
+        			感谢你对朋友吃喝行径的支持<br/>
+        			你也可以邀请您的好友帮你点亮哦
+        		</p>
+        		<div class="text-center">
+        			<a href="activity.html"><button class="map-btn map-btn-hqdt">获取地图</button></a>
+        		</div>
+        		
+        	</div>
+        </div>
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-08-13
+        	描述：弹窗提示04，提示可操作的内容
+        -->
+        <div class="public-tc-01 map-ts">
+        	<div>
+        		<h1>周年庆疯狂地图</h1>
+        		<p class="map-ts-p">
+        			提示内容
+        		</p>
+        		<div class="text-center">
+        			<button class="map-btn map-btn-gb">关闭</button>
+        		</div>
+        		
+        	</div>
+        </div>
+        
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/map.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

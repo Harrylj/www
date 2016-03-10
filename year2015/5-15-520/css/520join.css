@@ -1,0 +1,104 @@
+.join{
+    padding: 12px;
+}
+.join-header{
+
+}
+.join-header p{
+    color: #c73450;
+    font-size: 16px;
+    line-height: 32px;
+}
+.j-write{
+    font-size: 14px;
+    color: #000000;
+    line-height: 24px;
+    width: 100%;
+    height: 100px;
+}
+.join-content{
+    margin-top: 10px;
+    position: relative;
+}
+.j-btn-sc{
+    display: none;
+    width: 70px;
+    height: 70px;
+    border: none;
+    background-image: url("../images/join-btn-01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.j-c-ul{
+    position: absolute;
+    display: none;
+    left: 80px;
+    bottom: 60px;
+}
+.j-c-ul li{
+    font-size: 16px;
+    font-family: "微软雅黑", "黑体", "宋体";
+    line-height: 32px;
+    letter-spacing: 2px;
+    color: #000000;
+}
+.j-btn-fbxxyhl{
+    display: none;
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: 4px;
+    padding: 0 15px;
+    background-color: #c73450;
+    border: none;
+    color: white;
+    margin-top: 15px;
+    border-radius: 8px;
+}
+.j-img-gz img{
+    margin: 20px 0 10px 0;
+    width: 140px;
+}
+
+.j-p-01{
+    margin-top: 10px;
+    color: #c73450;
+    font-size: 14px;
+    line-height: 24px;
+}
+.j-p-02{
+    color: #6f1426;
+    font-size: 14px;
+    line-height: 24px;
+}
+.j-div-border{
+    border: 1px dashed #aaa817;
+    border-radius: 8px;
+    padding: 8px;
+}
+.j-div-border{
+    color: #aaa817;
+}
+.j-div-border p:first-child{
+    font-size: 18px;
+    line-height: 32px;
+}
+.j-div-border p:last-child{
+    font-size: 14px;
+    line-height: 24px;
+}
+.j-btn-01{
+    margin: 5px 20px;
+    padding: 0 15px;
+}
+
+
+
+
+
+
+
+#preview{width:260px;height:190px;overflow:hidden; display: none;}
+.j-file{ display: none;}
+
+

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" id="viewport" name="viewport">
+    <title>苹果战士</title>
+    <style>
+        *
+        {
+            margin: 0px;
+        }
+        html, body
+        {
+            background: #FFF;
+            height: 100%;
+            letter-spacing: 2px;
+        }
+        img{
+            width:100px;
+            height:100px;
+            index-z:2;
+        }
+        #vid
+        {
+            position: absolute;
+            display: none;
+        }
+        .vidborder
+        {
+            border:5px solid #bca25d;
+            background-color:#000000;
+        }
+        #gameCanvas
+        {
+            display: block;
+            background: #FFF;
+            margin: auto;
+            height: 100%;
+        }
+        #gameBg
+        {
+            display: none;
+            width: 640px;
+            height: 1008px;
+        }
+		#cnzz{
+			display:none;	
+		}
+		
+		.home-ts-father{
+			position: fixed;
+			left: 50%;
+			top: 20%;
+			margin-left: -145px;
+			background-color: #ccc;
+			box-shadow: 0 0 10px white;
+			width: 280px;
+			padding: 5px;
+			border-radius: 8px;
+		}
+		.home-ts{
+			position: relative;
+			background-color: white;
+			border-radius: 8px;
+			padding: 10px;
+		}
+		.home-ts h1{
+			line-height: 40px;
+			text-align: center;
+			font-size: 16px;
+			color: black;
+		}
+		.home-ts p{
+			padding: 0 10px 10px 20px;
+			font-size: 14px;
+			line-height: 30px;
+		}
+		.text-center{
+			text-align: center;
+		}
+		.ht-btn{
+			background-color: #a4cc37;
+			width: 100px;
+			text-align: center;
+			height: 40px;
+			border: none;
+			border-radius: 8px;
+			margin: 10px;
+			font-size: 16px;
+			color: white;
+		}
+		.home{
+			width: 100%;
+		}
+    </style>
+</head>
+<body onload="init()">
+	<div class="home">
+		<canvas id="gameCanvas" width="640" height="1008">请使用支持html5的浏览器。比如google chrome，360极速模式...</canvas>
+		<div class="home-ts-father">
+			<div class="home-ts">
+				<h1>兑换奖品</h1>
+				<p>您是否用苹果兑换流量呢</p>
+				<div class="text-center">
+					<button class="ht-btn">兑换</button>
+					<button class="ht-btn ht-btn-close">取消</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!--
+<div id="cnzz"><?php require_once 'cs.php';echo '<img src="'._cnzzTrackPageView(1255867689).'" width="0" height="0"/>';?></div>
+-->
+</body>
+<script>
+    function showGameBg(e) {
+        $("#gameCanvas").css("display", "none");
+    }
+    var scaleX;
+    var scaleY;
+
+	if (navigator.platform.indexOf("Win") > -1) {
+		window.onresize = resize; //调整尺寸
+	}
+    function resize() {
+    	
+        canotEdit = (platform == "IOS") ? "readonly" : "disabled";
+        var pingTai = navigator.platform;
+        console.log(pingTai);
+		
+        //调试自动布局的时候把"Win"随便改改
+        if (navigator.platform.indexOf("Win") > -1) {			
+            //电脑平台,自动适应
+            $("#gameCanvas").css("height", window.innerHeight);
+            var _w = window.innerHeight * 640 / 1008;
+            $("#gameCanvas").css("width", _w);
+            $("#gameCanvas").css("left", (window.innerWidth - _w) / 2);
+            scaleX = window.innerWidth / 640;
+            scaleY = window.innerHeight / 1008; //挤压显示
+        } else {
+            //手机平台
+            if (window.innerHeight > window.innerWidth) {
+                scaleX = window.innerWidth / 640;
+                scaleY = window.innerHeight / 1008; //挤压显示
+                //scaleY=scaleX;//等比显示,注释后是不等比显示
+            } else {
+                scaleX = window.innerWidth / 1008;
+                scaleY = window.innerHeight / 640;
+            }
+            //横屏提示
+            var windowW = window.innerWidth;
+            var windowH = window.innerHeight;
+            if (windowW > windowH) {
+                stage.addChild(screenTip_mc);
+            } else {
+                if (screenTip_mc) {
+                    stage.removeChild(screenTip_mc);
+                }
+            }
+            $("#gameCanvas").css("width", window.innerWidth);
+            $("#gameCanvas").css("height", Math.ceil(1008 * scaleY)); //高度压缩或拉伸
+            $("#gameCanvas").css("top", 0);
+            
+        }
+        
+    }
+</script>
+<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+<script src=" http://res.wx.qq.com/open/js/jweixin-1.0.0.js" type="text/javascript"></script>
+<script src="js/createjs_mc_tween.js"></script>
+<script src="UI.js"></script>
+<script src="game.js"></script>
+<script>
+ $(function(){
+ 	$('.ht-btn-close').on('click',function(){
+ 		$(this).parents('.home-ts-father').hide();
+ 	})
+ 	
+ })
+ // wx.config({
+ //   debug: false,
+ //   appId: '<?php echo $signPackage["appId"];?>',
+ //   timestamp: <?php echo $signPackage["timestamp"];?>,
+ //   nonceStr: '<?php echo $signPackage["nonceStr"];?>',
+ //   signature: '<?php echo $signPackage["signature"];?>',
+ //   jsApiList: [
+ //     'onMenuShareTimeline','onMenuShareAppMessage','onMenuShareQQ','onMenuShareWeibo'
+ //   ]
+ // });
+  
+  wx.ready(function () {
+	  wxData.ready=true;
+      setMenuShare();
+  }); 
+	
+  function setMenuShare(){
+	  
+	wx.onMenuShareTimeline({
+          title: wxData.title,
+          link: wxData.link,
+          imgUrl: wxData.imgUrl, // 分享图标
+          success: function () { 
+          },
+          cancel: function () { 
+              // 用户取消分享后执行的回调函数              
+          }
+      });
+
+
+      wx.onMenuShareAppMessage({
+          title: wxData.title, 
+          desc: wxData.desc, // 分享描述
+          link: wxData.link,
+          imgUrl: wxData.imgUrl, // 分享图标
+          type: '', // 分享类型,music、video或link，不填默认为link
+          dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+          success: function () { 
+              // 用户确认分享后执行的回调函数
+          },
+          cancel: function () { 
+              // 用户取消分享后执行的回调函数              
+          }
+      });
+
+
+
+      wx.onMenuShareQQ({
+          title: wxData.title, 
+          desc: wxData.desc, // 分享描述
+          link: wxData.link, // 分享链接
+          imgUrl: wxData.imgUrl, // 分享图标
+          success: function () { 
+          },
+          cancel: function () { 
+             // 用户取消分享后执行的回调函数
+          }
+      });
+
+
+      wx.onMenuShareWeibo({
+          title: wxData.title, 
+          desc: wxData.desc, // 分享描述
+          link: wxData.link, // 分享链接
+          imgUrl: wxData.imgUrl, // 分享图标
+          success: function () { 
+             
+          },
+          cancel: function () { 
+              // 用户取消分享后执行的回调函数
+          }
+      });  
+  }
+</script>
+</html>

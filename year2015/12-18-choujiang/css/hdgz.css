@@ -1,0 +1,44 @@
+body{
+	min-width: 320px;
+	max-width: 768px;
+	padding: 0;
+	padding-bottom: 20px;
+	min-height: 480px;
+	margin: auto;
+	letter-spacing: 2px;
+	background-color: white;
+	letter-spacing: 2px;
+}
+@media only screen and (min-width:0px){
+  html{font-size:75%!important}.viewport{max-width:0px}
+}
+@media only screen and (min-width:360px){
+  html{font-size:81.3%!important}.viewport{max-width:360px}
+}
+@media only screen and (min-width:480px){
+  html{font-size:100%!important}.viewport{max-width:480px}
+}
+.red{
+	color: red;
+}
+.hdgz{
+	padding: 10px;
+	background-image:  url(../images/hdgz-bg_02.jpg);
+}
+.hdgz h1{
+	font-size: 1.125rem;
+	color: black;
+	background-color: #fed46b;
+	line-height: 40px;
+	padding: 0 8px;
+}
+.hdgz p{
+	padding: 0 8px;
+	line-height: 24px;
+	font-size: 1rem;
+	color: #666;
+}
+
+.hdgz-a{
+	
+}

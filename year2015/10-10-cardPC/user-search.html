@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/user-pay.css"/>
+    <title>查询</title>
+
+</head>
+<body>
+	<div class="user-pay vr">
+		<div class="public-header-father">
+			<div class="public-header">
+				<p class="fl"><a class="uc-name" href="user-card.html">Hi,13876579866</a>&nbsp;&nbsp;<a href="login.html">退出</a></p>
+				<div class="fr">
+					<a class="index-phone" href="#">手机一卡通</a><span>|</span><a class="index-serve" href="serve.html">客户服务</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="index-header-father">
+			<div class="index-header">
+				<img src="images/index-01.png" />
+				<div class="index-nav userCenter-nav">
+					
+					<a href="user-delete.html">挂失</a>
+					<a class="index-nav-click" href="#">查询</a>
+					<a href="user-pay.html">充值</a>
+					<a href="user-buy.html">购卡</a>
+					<a href="user-card.html">一卡通</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="uc-content-father">
+			<div class="uc-content">
+				<div class="up-btn-div">
+					<input class="up-btn this-click us-btn-jyjl up-btn-click" type="button" value="交易记录" />
+					<input class="up-btn this-click us-btn-zsjl" type="button" value="赠送记录" />
+					<input class="up-btn this-click us-btn-czjl" type="button" value="充值记录" />
+				</div>
+				<div class="up-czcx-search">
+	   				<img class="up-img-search" src="images/public-06.png" />日期：<input class="public-input up-input-time" id="date_01" type="text"  onclick="J.calendar.get({to:'date_02,min'});" placeholder="开始日期" value=""/>至<input class="public-input up-input-time" id="date_02" onclick="J.calendar.get({to:'date_01,max'});" type="text" placeholder="结束日期" value=""/> <a href="#" style="text-decoration:underline;">开始搜索</a>
+	   			</div>
+	                	
+				<div class="this-change">
+					<!--
+	                	作者：648267773@qq.com
+	                	时间：2015-10-13
+	                	描述：交易记录
+	                -->
+	                <div class="us-jyjl">
+	                	<div class="us-bill">
+							<h1>交易记录
+								<ul class="us-list">
+									<li style="border: none;">交易成功</li>
+									<li>交易失败</li>
+								</ul>
+							</h1>
+						</div>
+						<table class="up-czcx-table" cellpadding="0" cellspacing="0">
+	                		<tr>
+	                			<th>序号</th>
+	                			<th>订单号</th>
+	                			<th>时间</th>
+	                			<th>交易卡号</th>
+	                			<th>交易类型</th>
+	                			<th>交易内容</th>
+	                			<th>交易金额</th>
+	                			<th>交易状态</th>
+	                		</tr>
+	                		<tr>
+	                			<td>0001</td>
+	                			<td>a454525554</td>
+	                			<td>2015 10.15</td>
+	                			<td>N878754544</td>
+	                			<td>消费</td>
+	                			<td>买东西</td>
+	                			<td>&yen;324</td>
+	                			<td>已完成</td>
+	                		</tr>
+	                	</table>
+	                </div>
+	                <!--
+	                	作者：648267773@qq.com
+	                	时间：2015-10-13
+	                	描述：赠送记录
+	                -->
+	                <div class="us-zsjl">
+	   					<div class="us-jyjl">
+		                	<div class="us-bill">
+								<h1>赠送记录
+									<ul class="us-list">
+										<li style="border: none;">可用的</li>
+										<li>已用完</li>
+										<li>已过期</li>
+									</ul>
+								</h1>
+							</div>
+							<table class="up-czcx-table" cellpadding="0" cellspacing="0">
+		                		<tr>
+		                			<th>序号</th>
+		                			<th>订单号</th>
+		                			<th>时间</th>
+		                			<th>交易卡号</th>
+		                			<th>交易类型</th>
+		                			<th>交易内容</th>
+		                			<th>交易金额</th>
+		                			<th>交易状态</th>
+		                		</tr>
+		                		<tr>
+		                			<td>0001</td>
+		                			<td>a454525554</td>
+		                			<td>2015 10.15</td>
+		                			<td>N878754544</td>
+		                			<td>消费</td>
+		                			<td>买东西</td>
+		                			<td>&yen;324</td>
+		                			<td>已完成</td>
+		                		</tr>
+		                	</table>
+		                </div>
+	                	
+	                </div>
+	                <!--
+	                	作者：648267773@qq.com
+	                	时间：2015-10-13
+	                	描述：充值查询
+	                -->
+	                <div class="us-czcx">
+         	
+	                	<table class="up-czcx-table" cellpadding="0" cellspacing="0">
+	                		<tr>
+	                			<th>充值时间</th>
+	                			<th>充值金额</th>
+	                			<th>充值来源</th>
+	                			<th>备注</th>
+	                		</tr>
+	                		<tr>
+	                			<td><span>2015 09.08 09:09:00</span></td>
+	                			<td>&yen;<span>300</span></td>
+	                			<td>好友<span class="up-gay-number">123456789</span>帮充值</td>
+	                			<td></td>
+	                		</tr>
+	                	</table>
+	                </div>
+				</div>
+				
+				
+                
+			</div>
+		</div>
+		
+		
+
+		
+	</div>
+
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/date/lhgcore.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/date/lhgcalendar.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

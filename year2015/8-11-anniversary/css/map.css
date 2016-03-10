@@ -1,0 +1,106 @@
+.map{
+	background-image: url(../images/map-bg-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.a-content{
+	position: relative;
+	width: 320px;
+	margin: auto;
+}
+.map-bg{
+	width: 320px;
+	height: auto;
+}
+.a-content .map-img{
+	background-image: url(../images/map-00.png);
+}
+.map-click{
+	position: absolute;
+	height: 55px;
+	width: 55px;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+
+.map-01{
+	left: 70px;
+	top: 22px;
+	background-image: url(../images/map-01.png);
+}
+
+.map-02{
+	left: 66px;
+	top: 105px;
+	background-image: url(../images/map-02.png);
+}
+
+.map-03{
+	left: 130px;
+	top: 75px;
+	background-image: url(../images/map-03.png);
+}
+
+.map-04{
+	left: 33px;
+	top: 165px;
+	background-image: url(../images/map-04.png);
+}
+
+.map-05{
+	left: 120px;
+	top: 155px;
+	background-image: url(../images/map-05.png);
+}
+
+.map-06{
+	left: 180px;
+	top: 158px;
+	background-image: url(../images/map-06.png);
+}
+
+.map-07{
+	left: 44px;
+	top: 240px;
+	background-image: url(../images/map-07.png);
+}
+
+.map-08{
+	left: 104px;
+	top: 228px;
+	background-image: url(../images/map-08.png);
+}
+.map-09{
+	left: 200px;
+	top: 220px;
+	background-image: url(../images/map-09.png);
+}
+.map-10{
+	left: 140px;
+	top: 295px;
+	background-image: url(../images/map-10.png);
+}
+.map-img-ts-01{
+	position: absolute;
+	left: 56%;
+	top: 5%;
+	width: 150px;
+	height: 130px;
+}
+.map-img-ts-02{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -100px;
+	width: 200px;
+	height: 100px;
+}
+.map-img-ts-01
+,.map-img-ts-02
+,.map-ts
+,.map-ts-01
+,.map-ts-02
+,.map-ts-03{
+	display: none;
+}

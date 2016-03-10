@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN"
+        "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="initial-scale=0.60, minimum-scale=0.60, maximum-scale=0.60">
+    <script type="text/javascript">
+        const POSTERS_PER_ROW = 12;
+        const RING_RADIUS = 200;
+
+        function setup_posters (row)
+        {
+            var posterAngle = 360 / POSTERS_PER_ROW;
+            for (var i = 0; i < POSTERS_PER_ROW; i ++) {
+                var poster = document.createElement('div');
+                poster.className = 'poster';
+                // compute and assign the transform for this poster
+                var transform = 'rotateY(' + (posterAngle * i) + 'deg) translateZ(' + RING_RADIUS + 'px)';
+                poster.style.webkitTransform = transform;
+                // setup the number to show inside the poster
+                var content = poster.appendChild(document.createElement('p'));
+                content.textContent = i;
+                // add the poster to the row
+                row.appendChild(poster);
+            }
+
+        }
+        function init ()
+        {
+            setup_posters(document.getElementById('ring-1'));
+            setup_posters(document.getElementById('ring-2'));
+            setup_posters(document.getElementById('ring-3'));
+        }
+
+        // call init once the document is fully loaded
+        window.addEventListener('load', init, false);
+
+
+    </script>
+</head>
+
+<body>
+
+
+<div id="stage">
+    <div id="rotate">
+        <div id="ring-1" class="ring"></div>
+        <div id="ring-2" class="ring"></div>
+        <div id="ring-3" class="ring"></div>
+    </div>
+</div>
+
+</body>
+
+</html> 

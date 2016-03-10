@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">	
+    <link rel="stylesheet" type="text/css" href="css/serve.css"/>
+    <link rel="stylesheet" type="text/css" href="css/user-center.css"/>
+    <link rel="stylesheet" type="text/css" href="css/financialResourcesTransfer.css"/>
+
+    <title>资金转移</title>
+
+</head>
+<body>
+	<div class="user-pay frt vr">
+		
+		<div class="uc-content-father">
+			<div class="uc-content">
+				<div class="uc-left fl">
+					<p class="this-click up-btn-click " style="margin-top: 30px;">绑定卡号</p>
+					<p class="this-click ">密码设置</p>
+				</div>
+				<div class="uc-right fl this-change">
+					<!--
+                    	作者：648267773@qq.com
+                    	时间：2015-10-16
+                    	描述：绑定卡号
+                    -->
+                    <div class="uc-bdkh">
+                    	
+                    	<div class="uc-bdkh-02" >
+                    		<div class="uc-ljbd-div">
+	                    		已绑定卡号&nbsp;&nbsp;>&nbsp;&nbsp;<a class="frt-gray" href="#">挂失卡资金转移</a>
+	                    	</div>
+	                    	<div class="frt-body">
+	                    		<h1>绑定号码：<span>GHJSDSDADO666666</span>&nbsp;&nbsp;&nbsp;&nbsp;<a class="frt-red" href="#">更换绑定</a></h1>
+	                 
+	                    		<table class="frt-table" cellspacing="0" cellpadding="0">
+	                    			<tr>
+	                    				<th>最后交易时间</th>
+	                    				<th>交易卡号</th>
+	                    				<th>交易内容</th>
+	                    				<th>余额</th>
+	                    				<th>卡片操作</th>
+	                    			</tr>
+	                    			<tr>
+	                    				<td>2015-09-09</td>
+	                    				<td>HKF2212102</td>
+	                    				<td>超市</td>
+	                    				<td>&yen;89</td>
+	                    				<td><input class="frt-btn frt-btn-mszy" type="button" value="马上转移" /></td>
+	                    			</tr>
+	                    			<tr>
+	                    				<td>2015-09-09</td>
+	                    				<td>HKF2212102</td>
+	                    				<td>吃饭</td>
+	                    				<td>&yen;89</td>
+	                    				<td><input class="frt-btn frt-btn-zyz" type="button" value="转移中..." /></td>
+	                    			</tr>
+	                    			<tr>
+	                    				<td>2015-09-09</td>
+	                    				<td>HKF2212102</td>
+	                    				<td>公交</td>
+	                    				<td>&yen;89</td>
+	                    				<td><input class="frt-btn frt-btn-yjzy" type="button" value="已经转移" /></td>
+	                    			</tr>
+	                    		</table>
+	                    	</div>
+	                    	
+                    	</div>
+                    </div>
+                    
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-11-25
+    	描述：.zzc:遮罩层
+    		.zjzy:资金转移弹窗
+    		.zjzyqd:资金转移确定弹窗
+    -->
+    <div class="zzc"></div>
+    <div class="public-tc-01-father zjzy">
+    	<div class="public-tc-01">
+    		<input class="public-tc-btn-close" type="button" />
+    		<h1>资金转移</h1>
+    		<p class="tc-p-01">您可以把已遗失的一卡通金额转移到新卡上</p>
+    		<p class="tc-p-02">温馨提示：该操作不收取任何手续费</p>
+    		<div class="text-center tc-btn-div">
+    			<input class="frt-btn frt-btn-zbzy" type="button" value="暂不转移" />
+    			<input class="frt-btn frt-btn-ok" type="button" value="马上转移" />
+    		</div>
+    	</div>
+    </div>
+    <div class="public-tc-01-father zjzyqd">
+    	<div class="public-tc-01">
+    		<input class="public-tc-btn-close" type="button" />
+    		<h1>资金转移</h1>
+    		<p class="tc-p-01">尊敬的用户：您的资金已经转移成功</p>
+    		<p class="tc-p-02">温馨提示：如雪查看请前往“查看”页面</p>
+    		<div class="text-center tc-btn-div">
+    			<a href="#"><input class="frt-btn frt-btn-msck" type="button" value="马上查看" /></a>
+    			<input class="frt-btn frt-btn-qd" type="button" value="确定" />
+    		</div>
+    	</div>
+    </div>
+
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		//点击“马上转移”，弹出弹窗
+		$('.frt-btn-mszy').on('click',function(){
+			$('.zzc').show();
+			$('.zjzy').show();
+		});
+		//关闭弹窗
+		$('.public-tc-btn-close,.frt-btn-zbzy,.frt-btn-qd').on('click',function(){
+			$(this).parents('.public-tc-01-father')
+				.hide();
+			$('.zzc').hide();
+		})
+		//点击弹窗的“马上转移按钮”
+		$('.frt-btn-ok').on('click',function(){
+			$('.zjzy').hide();
+			$('.zjzyqd').show();
+		})
+		
+	});
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,24 @@
+.h-img-01{
+    width: 86%;
+    margin: -15px auto 15px auto;
+}
+.h-btn{
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0 15px;
+    font-size: 16px;
+    line-height: 40px;
+    color: white;
+    letter-spacing: 3px;
+    border: none;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+}
+.b-btn-bhyc{
+    background-image: url("../images/index-btn-bg.png");
+}
+.b-btn-wyycj{
+    background-image: url("../images/myself-btn.png");
+}

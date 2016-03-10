@@ -1,0 +1,67 @@
+body{
+	background-color: white;
+}
+.contact{
+	position: relative;
+}
+.uc-header{
+	padding: 30px 0 10px 0;
+}
+.uch-user-img{
+	margin: auto;
+}
+.con-body{
+	padding: 50px 0;
+}
+.con-address{
+	width: 75%;
+	overflow: hidden;
+	text-align: right;
+}
+.height-30{
+	height: 30px;
+}
+.con-btn{
+	background-color: #e0182f;
+	border: none;
+	height: 40px;
+	line-height: 36px;
+	width: 80%;
+	border-radius: 20px;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 1.25rem;
+	box-shadow: 0 0 5px #ccc;
+	cursor: pointer;
+}
+.con-btn:hover{
+	opacity: .8;
+}
+.con-ts{
+	color: red;
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+}
+.bddh .con-btn{
+	margin: 5px 0;
+}
+.con-input{
+	float: right;
+	padding: 0 10px;
+	width: 74%;
+	height: 40px;
+	line-height: 36px;
+	border:1px solid #ccc;
+	letter-spacing: 2px;
+	border-radius: 8px;
+	font-size: 1rem;
+}
+.con-input-div span{
+	line-height: 40px;
+	font-size: 1rem;
+	text-align: center;
+	width: 25%;
+	float: left;
+}
+

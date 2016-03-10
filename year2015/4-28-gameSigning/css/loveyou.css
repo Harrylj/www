@@ -1,0 +1,129 @@
+.loveyou{
+    min-height: 480px;
+    min-width: 320px;
+    position: relative;
+    background-color: #f7d6ab;
+    padding-bottom: 20px;
+}
+.ly-header{
+    position: relative;
+}
+.ly-img-01{
+    width: 100%;
+}
+.ly-p-01{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    color: #000000;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+    width: 200px;
+    margin-left: -100px;
+
+
+}
+.ly-wxts{
+    padding: 10%;
+    background-image: url("../images/loveyou-02.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-size: 100% 100%;
+}
+.ly-wxts p{
+    color: #b2a28e;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 2px;
+}
+.ly-h1{
+    margin-top: 10px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    line-height: 40px;
+    color: #f53e69;
+}
+.ly-ul-01{
+    width: 300px;
+    margin: auto;
+
+}
+.ly-ul-01>li{
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    border: 1px dashed #f53e69;
+
+}
+.ly-ul-01>li:first-child{
+    margin-left: 15px;
+    margin-right: 5px;
+}
+.ly-ul-01>li:last-child{
+    margin-left: 5px;
+}
+.ly-ul-02{
+
+}
+.ly-ul-02 li{
+    margin: auto;
+    width: 80%;
+    text-align: center;
+}
+.ly-ul-02>li:first-child{
+    margin-top: 10px;
+    color: #f53e69;
+    font-size: 18px;
+    line-height: 32px;
+}
+.ly-ul-02>li:nth-child(2){
+    color: #f53e69;
+    font-size: 14px;
+    line-height: 28px;
+}
+.ly-ul-02>li:last-child{
+    margin-top: 10px;
+    border-top: 1px dashed #797979;
+    color: #797979;
+    font-size: 14px;
+    line-height: 40px;
+}
+
+.ly-ul-checked{
+    background-image: url("../images/loveyou-03.png");
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: 50% 92%;
+}
+.ly-btn-01{
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    margin: 10px 0;
+}
+.ly-p-p2{
+    color: #797979;
+    font-size: 16px;
+    line-height: 32px;
+}
+.ly-btn-zsghy{
+    background-color: #f53e69;
+}
+.ly-btn-lqkzll{
+    background-color: transparent;
+    border: 1px solid #f53e69;
+}
+.ly-btn-lqkzll-01{
+    background-color: #f53e69;
+}
+.ly-ts-01{
+    display: none;
+    font-size: 14px;
+    line-height: 28px;
+}

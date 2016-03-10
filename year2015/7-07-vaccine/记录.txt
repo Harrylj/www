@@ -1,0 +1,313 @@
+
+
+
+
+
+
+
+2015/08/11
+1.接种详情页.vd-information
+第二个li添加:
+<div class="clear"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1.疫苗状态 选择年龄
+2.预约疫苗 选择日期
+3.宝宝信息修改  选择日期
+4.个人信息修改  电话验证
+5.宝宝信息修改  修改编码
+6.宝宝信息修改	上传头像
+
+7/23
+登录JS和HTML，
+css注册添加 
+.l-register-ts{
+	text-indent: 24px;
+}
+
+8/04
+所有css更新
+
+personalCenter.html
+1: .s-f-header 内置添加style="border: none;"
+2：.public-header-box 内置添加 style="background-color: #27ae60;"
+3: 删除原有的基本信息，添加以下代码
+<a href="personalDetail.html">
+        	<div class="pc-phone text-center">
+        		<img src="images/login-left.png" />
+        		<p>13890802987</p>
+        	</div>
+</a>
+
+vOrder.html
+1： .vd-detail标签的孩子元素li里面添加代码：（4项）
+<div class="clear"></div>
+2:引用vOrder.js，并添加vOrder.js
+3：接种疫苗里添加.list-ym-click
+   疫苗名字添加: ym-name
+   添加遮罩层
+   添加列表代码:
+<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：遮罩层
+        -->
+        <div class="zzc"></div>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：选择疫苗
+        	必打：.vo-list-box-01
+                      免费：.vo-list-box-02
+                      必打且免费：.vo-list-box-03
+        -->
+        <div class="list-ym">
+        	<h1>请选择疫苗</h1>
+        	<div class="vo-list-box-01"><span class="pc-list-name">疫苗1</span></div>
+        	<div class="vo-list-box-02"><span class="pc-list-name">疫苗2</span></div>
+        	<div class="vo-list-box-03"><span class="pc-list-name">疫苗3</span></div>
+        	<div class="vo-list-box-01"><span class="pc-list-name">疫苗1</span></div>
+        	<div class="vo-list-box-02"><span class="pc-list-name">疫苗2</span></div>
+        	<div class="vo-list-box-03"><span class="pc-list-name">疫苗3</span></div>
+        	<div class="vo-list-box-01"><span class="pc-list-name">疫苗1</span></div>
+        	<div class="vo-list-box-02"><span class="pc-list-name">疫苗2</span></div>
+        	<div class="vo-list-box-03"><span class="pc-list-name">疫苗3</span></div>
+        </div>
+
+4:宝宝名字和点击处添加.change-children，且body添加以下代码
+	<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：选择宝宝姓名
+        -->
+        <div class="children-name">
+        	<h1>请选择宝宝</h1>
+        	<div><span class="pc-list-name">小丫丫</span><span>2015.03.03</span></div>
+        	<div><span class="pc-list-name">小小小</span><span>2015.01.01</span></div>
+        </div>
+
+
+
+
+vDetail.html
+1： .vd-detail标签的孩子元素li里面添加代码：（4项）
+<div class="clear"></div>
+2:  .v-detail标签添加.v-order
+
+
+
+
+
+
+index.html
+index.js替换
+
+1：第二个滑块（.swiper-wrapper的同级）添加代码
+<!-- 如果需要分页器 -->
+<div class="swiper-pagination1" style="display: none;"></div>
+2.宝宝名字添加.change-children，且body添加以下代码
+<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：遮罩层
+        -->
+        <div class="zzc"></div>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：选择宝宝姓名
+        -->
+        <div class="children-name">
+        	<h1>请选择宝宝</h1>
+        	<div><span class="pc-list-name">小丫丫</span><span>2015.03.03</span></div>
+        	<div><span class="pc-list-name">小小小</span><span>2015.01.01</span></div>
+        </div>
+
+
+3：.ic-list里的内容全部替换以下代码
+
+<!--
+            	作者：648267773@qq.com
+            	时间：2015-07-22
+            	描述：清单列表
+            	未接种:.ic-list-box-fail
+            	已接种:默认
+            	必打：.ic-list-box-01
+            	免费：.ic-list-box-02
+            	必打且免费：.ic-list-box-03
+            	不必打且无免费:默认
+            -->
+            <div class="ic-list">
+            	<div class="ic-list-goods ic-list-click">
+	            	<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-03">
+		            		<li>2015-12-12</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>已接种</li>
+		            	</ul>
+	            	</a>
+            	</div>
+            	<div class="ic-list-goods">
+            		<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-fail ic-list-box-01">
+		            		<li>2015-12-12</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>未接种</li>
+		            	</ul>
+	            	</a>
+	            	<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-02">
+		            		<li>2015-12-12</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>已接种</li>
+		            	</ul>
+	            	</a>
+	            	<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-03">
+		            		<li>2015-12-12</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>已接种</li>
+		            	</ul>
+	            	</a>
+            	</div>
+            	<div class="ic-list-goods">
+            		<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-fail ic-list-box-01">
+		            		<li>2015-12-2</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>未接种</li>
+		            	</ul>
+	            	</a>
+            	</div>
+            	<div class="ic-list-goods">
+            		<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-fail ic-list-box-01">
+		            		<li>2015-12-3</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>未接种</li>
+		            	</ul>
+	            	</a>
+            	</div>
+            	<div class="ic-list-goods">
+            		<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-fail ic-list-box-01">
+		            		<li>2015-12-4</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>未接种</li>
+		            	</ul>
+	            	</a>
+            	</div>
+            	<div class="ic-list-goods">
+            		<a href="vDetail.html">
+	            		<ul class="ic-list-box ic-list-box-fail ic-list-box-01">
+		            		<li>2015-12-5</li>
+		            		<li>
+		            			<h1>卡卡卡苗（第一剂）</h1>
+		            		</li>
+		            		<li>未接种</li>
+		            	</ul>
+	            	</a>
+            	</div>
+            	
+            	
+            	
+            	<div class="clear"></div>
+            </div>
+
+
+
+4.index.js更新
+	
+//选项滑动02
+    var swiper = new Swiper('.ic-nav-02-swiper', {
+        pagination: '.swiper-pagination1',
+        slidesPerView: 4.5,
+        centeredSlides: true,
+        paginationClickable: true,
+        spaceBetween: 0,
+        freeMode: true
+    });
+//点击选项切换选中状态
+    $('.ic-nav-02-father').children().on('click',function(){
+    	var thisIndex = $(this).index();
+    	$(this).addClass('ic-nav-click')
+    		.siblings()
+    		.removeClass('ic-nav-click');
+    	$('.swiper-pagination1').children()
+    		.eq(thisIndex)
+    		.click();
+    	$('.ic-list').children()
+    		.eq(thisIndex)
+    		.addClass('ic-list-click')
+    		.siblings()
+    		.removeClass('ic-list-click')
+    });
+    
+    //点击名字弹出选择宝宝名字界面
+    $('.change-children').on('click',function(){
+    	$('.zzc').show();
+    	$('.children-name').show();
+    });
+    //点击宝宝名字替换信息
+    $('.children-name').children('div').on('click',function(){
+    	var thisName = $(this).children('.pc-list-name').html();
+    	$('.change-children').html(thisName);
+    	$('.zzc').hide();
+    	$('.children-name').hide();
+    });
+
+
+
+
+
+
+
+//未做
+1.宝宝切换
+2.疫苗种类切换

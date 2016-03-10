@@ -1,0 +1,127 @@
+*{
+    box-sizing: border-box;
+}
+.game-center{
+    min-height: 480px;
+    min-width: 320px;
+    position: relative;
+}
+
+.gc-header{
+    position: relative;
+    height: 150px;
+    padding: 10px;
+    background-image: url("../images/pk-center-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.gc-user-img{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+}
+.gc-user-name{
+    color: white;
+    font-size: 20px;
+    line-height: 32px;
+    letter-spacing: 3px;
+}
+
+.gc-header-footer{
+    position: absolute;
+    left: 3%;
+    bottom: 0;
+    color: white;
+    letter-spacing: 2px;
+    font-size: 14px;
+    line-height: 26px;
+}
+.gc-jd-number{
+    position: relative;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+}
+.gc-content{
+    padding: 3%;
+    background-color: white;
+}
+.gc-nav{
+    width: 100%;
+}
+.gc-nav li{
+    float: left;
+    width: 20%;
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    line-height: 32px;
+    border:1px solid red;
+    border-right: none;
+}
+.gc-nav li:first-child{
+    border-radius: 5px 0 0 5px;
+}
+.gc-nav li:last-child{
+    border-right: 1px solid red;
+    border-radius: 0 5px 5px 0;
+}
+.gc-nav .gc-nav-xz{
+    color: white;
+    background-color: red;
+}
+
+.gc-table{
+    width: 100%;
+    margin-top: 5px;
+}
+.gc-table td{
+    font-size: 16px;
+    color: black;
+    width: 25%;
+    text-align: center;
+    background-color: #f3f2e3;
+
+}
+.gc-table tr{
+    border: 5px solid white;
+    border-right: none;
+    border-left: none;
+}
+
+.gc-jg-img{
+    position: relative;
+    top: 10px;
+    width: 60px;
+    height: 65px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/*胜利：gc-td-01 ;失败：gc-td-02; 平手：gc-td-03;等待：gc-td-04;*/
+.gc-td-01 .gc-jg-img{
+    background-image: url("../images/pk-success.png");
+}
+.gc-td-02 .gc-jg-img{
+    background-image: url("../images/pk-failure.png");
+}
+.gc-td-03 .gc-jg-img{
+    background-image: url("../images/pk-equal.png");
+}
+.gc-td-04 .gc-jg-img{
+    background-image: url("../images/pk-wait.png");
+}
+
+.gc-hd-number{
+    display: inline-block;
+    padding-left: 20px;
+    background-image: url("../images/pk-06.png");
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+}
+.gc-span-big{
+    font-size: 22px;
+}
+.gc-span-small{
+    font-size: 14px;
+}

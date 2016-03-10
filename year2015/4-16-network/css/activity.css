@@ -1,0 +1,55 @@
+.activity{
+    position: relative;
+}
+.activity-header-img{
+    width: 100%;
+}
+.s-c-activity{
+    border: 2px solid #ff7f7f;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 6px;
+}
+.act-h1{
+    color: #ff7f7f;
+    font-size: 18px;
+    line-height: 28px;
+}
+.act-p1{
+    color: #666;
+    font-size: 14px;
+    line-height: 20px;
+}
+.act-p2{
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 1.6px;
+    color: #333;
+    margin: 8px 0;
+    text-indent: 2em;
+}
+
+.act-blfs{
+    position: relative;
+    border-radius: 6px;
+    border: 1px dashed #ccc;
+    padding: 8px;
+    padding-left: 0;
+    min-height: 90px;
+}
+.act-blfs-l{
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    margin-top: -40px;
+    height: 80px;
+    vertical-align: middle;
+    text-align: center;
+    color: #ff7f7f;
+}
+.act-blfs-r{
+    width: 84%;
+    line-height: 28px;
+    font-size: 14px;
+    color: #666;
+}

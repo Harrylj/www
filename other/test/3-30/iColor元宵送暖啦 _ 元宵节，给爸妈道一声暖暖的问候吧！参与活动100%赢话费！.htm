@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <link type="image/x-icon" rel="shortcut icon" href="../favicon.ico"/>
+    <title>iColor元宵送暖啦 | 元宵节，给爸妈道一声暖暖的问候吧！参与活动100%赢话费！</title>
+    <meta name="description" content="iColor元宵送暖啦 | 元宵节，给爸妈道一声暖暖的问候吧！参与活动100%赢话费！">
+    <link rel="stylesheet" href="/css/sweet/idangerous.swiper.css">
+    <link rel="stylesheet" href="/css/sweet/style.css">
+    <audio id="audio" src="/images/sweet/bgm.mp3" loop="" preload="auto" autoplay="true"></audio>
+    <!--<link rel="stylesheet" href="css/animate.css">-->
+</head>
+<body>
+
+<div style="display:none;"><img src="/images/sweet/share.jpg" alt=""></div>
+<div id="waiting">
+    <div class="mainLogo"></div>
+    <p>正在努力加载...</p>
+</div>
+<div class="swiper-container" style="display: none;">
+    <ul class="swiper-wrapper">
+
+        <li class="swiper-slide red-slide welcome">
+            <div class="bg"></div>
+            <canvas width="100%" height="100%" class="snow" id="snow"></canvas>
+            <div class="mainLogo"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide p1">
+            <div class="text"></div>
+
+            <div class="mh-con">
+                <div class="pop1"></div>
+            </div>
+            <div class="txt"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide p2">
+            <div class="text"></div>
+
+            <div class="mh-con"></div>
+            <div class="txt"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide p3">
+            <div class="text"></div>
+
+            <div class="mh-con"></div>
+            <div class="txt"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide pink-slide p4">
+            <div class="text"></div>
+
+            <div class="mh-con">
+                <div class="pop1"></div>
+                <div class="pop2"></div>
+            </div>
+            <div class="txt"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide red-slide p5">
+            <div class="text"></div>
+
+            <div class="mh-con"></div>
+            <div class="txt"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide blue-slide p6">
+            <div class="text"></div>
+
+            <div class="mh-con">
+                <div class="pop1"></div>
+            </div>
+            <div class="txt"></div>
+            <div class="swipeMove arrows_down"></div>
+        </li>
+
+        <li class="swiper-slide p7">
+            <div class="sentno ">
+                <div class="logo_s"></div>
+                <p class="">
+                    <span>在这个元宵节</span><br>
+                    <span>给家里人打个电话吧，让你的家充满爱</span><br>
+                    <span class="h3">摇一摇iColor就送话费，100%中奖</span>
+                </p>
+                <p>请填写手机号，我们会为您充话费哦</p>
+                <div class="input-group">
+                    <input type="tel" maxlength="11" class="form-control phone" id="phone" placeholder="请输入手机号码（每个号码仅限1次）">
+                </div>
+                <div class="input-group">
+                    <input type="text" class="form-control yzcode" id="code" placeholder="请输入手机短信中的验证码">
+                    <a class="getcode">获取短信验证码</a>
+                </div>
+                <a class="button linghf">下一步</a>
+                <p class="yellow">名额有限 先到先得</p>
+            </div>
+            <div class="nothing">
+                <div class="logo_s"></div>
+                <div class="sj"></div>
+                <p class="">
+					<span class="h1">来晚一步 话费都被抢光咯</span><br>
+					<span class="h1">iColor恭祝全国人民元宵节阖家欢乐</span><br>
+                </p>
+                <div class="line"></div>
+                <p class="">
+                iColor—家居设计服务平台<br>
+                <span class="small">关注微信号，更多精彩活动等着你！</span><br>
+                <img class="rqcode" src="/images/sweet/2code.jpg" alt="" title=""/><br>
+                <span class="smaller">长按二维码或搜索"iColorHome"，关注官方微信！</br>活动太火爆，5万名额已被抢光，下次再来吧！</span>
+                </p>
+            </div>
+        </li>
+
+        <li id="p8" class="swiper-slide p8">
+            <div class="logo_s"></div>
+            <div class="sj"></div>
+            <p class="">
+                <span>摇晃手机，试试你的手气吧</span>
+            </p>
+
+        </li>
+
+        <li class="swiper-slide p9">
+            <div class="logo_s"></div>
+            <div class="sj"><img src="/images/sweet/huafei.png" alt="" title=""/></div>
+            <p class="">
+                <span class="h1">恭喜您！获得10元话费</span><br>
+                <span class="small">我们会于7个工作日内完成充值</span><br>
+                <span class="smaller">关注微信“iColor灵感家”，回复“充值”，就能查询充值进度哦！</span>
+            </p>
+            <div class="line"></div>
+            <p class="">
+            iColor—家居设计服务平台<br>
+            <img class="rqcode" src="/images/sweet/2code.jpg" alt="" title=""/><br>
+            <span class="smaller">长按二维码或搜索”iColorHome“，关注官方微信！</span>
+            </p>
+            <a class="button">马上分享</a>
+
+            <div class="sharewarp hidden">
+               <div class="shareimg"></div>
+            </div>
+
+        </li>
+
+
+    </ul>
+
+    <!--<div class="pagination"></div>-->
+    <div class="mh-head"></div>
+
+    <div class="music animated rotate pause infinite">
+        <button onClick="document.getElementById('audio').pause()"></button>
+    </div>
+
+    <div class="music animated play hidden">
+        <button onClick="document.getElementById('audio').play()"></button>
+    </div>
+
+</div>
+
+
+<script src="/js/sweet/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="/js/sweet/snow.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $(".pause").click(function () {
+            $(".pause").toggleClass("hidden");
+            $(".play").toggleClass("hidden");
+        });
+        $(".play").click(function () {
+            $(".pause").toggleClass("hidden");
+            $(".play").toggleClass("hidden");
+        });
+        $(".p9 .button").click(function () {
+            $(".sharewarp").toggleClass("hidden");
+        });
+        $(".sharewarp").click(function () {
+            $(".sharewarp").toggleClass("hidden");
+        });
+
+    });
+</script>
+
+
+<script src="/js/sweet/idangerous.swiper.min.js"></script>
+
+<script>
+    var mySwiper = false;
+    $(window).load(function () {//load是等待所以的加载完成后
+        $("#waiting").hide();
+        $(".swiper-container").show();
+
+        mySwiper = new Swiper('.swiper-container', {
+            //pagination: '.pagination',
+            //paginationClickable: true,
+            releaseFormElements : false,
+            mode: 'vertical',
+            resistance: '100%',
+            followFinger: false,
+
+            onSlideChangeStart: function (swiper) {
+                if (swiper.activeIndex == 1) {
+                    $(".p1 .text").addClass("animated fadeInUp slow");
+                    $(".p1 .pop1").addClass("animated bounceIn");
+                    $(".p1 .mh-con").addClass("animated fadeInUp slow");
+
+                }
+                if (swiper.activeIndex == 2) {
+                    $(".p2 .text").addClass("animated fadeInUp slow");
+                    $(".p2 .mh-con").addClass("animated fadeInUp slow");
+                }
+                if (swiper.activeIndex == 3) {
+                    $(".p3 .text").addClass("animated fadeInUp slow");
+                    $(".p3 .mh-con").addClass("animated fadeInUp slow");
+                }
+                if (swiper.activeIndex == 4) {
+                    $(".p4 .text").addClass("animated fadeInUp slow");
+                    $(".p4 .pop1").addClass("animated bounceIn");
+                    $(".p4 .pop2").addClass("animated bounceIn");
+                    $(".p4 .mh-con").addClass("animated fadeInUp slow");
+                }
+                if (swiper.activeIndex == 5) {
+                    $(".p5 .text").addClass("animated fadeInUp slow");
+                    $(".p5 .mh-con").addClass("animated fadeInUp slow");
+                }
+                if (swiper.activeIndex == 6) {
+                    $(".p6 .text").addClass("animated fadeInUp slow");
+                    $(".p6 .pop1").addClass("animated bounceIn");
+                    $(".p6 .mh-con").addClass("animated fadeInUp slow");
+                }
+                //红包封口
+                if (swiper.activeIndex == 0) {
+                    $(".mh-head").removeClass("animated fadeInDown");
+                }
+                if (swiper.activeIndex == 1) {
+                    $(".mh-head").addClass("animated fadeInDown");
+                }
+                if (swiper.activeIndex == 6) {
+                    $(".mh-head").addClass("animated fadeInDown");
+                    $(".swiper-wrapper").removeClass("noanimated");
+                }
+                if (swiper.activeIndex == 7) {
+                    $(".mh-head").removeClass("animated fadeInDown");
+                }
+                if (swiper.activeIndex == 8) {
+                    $(".swiper-wrapper").removeClass("noanimated");
+                }
+            },
+
+            onSlideChangeEnd: function (swiper) {
+                if (swiper.activeIndex == 7) {
+                    $(".swiper-wrapper").addClass("noanimated");
+                }
+                //摇一摇
+                if (swiper.activeIndex == 8) {
+                    if (window.DeviceMotionEvent) {
+                        var speed = 10;
+                        var x = y = z = lastX = lastY = lastZ = 0;
+
+                        window.addEventListener('devicemotion', function () {
+                            var acceleration = event.accelerationIncludingGravity;
+                            x = acceleration.x;
+                            y = acceleration.y;
+                            if (Math.abs(x - lastX) > speed || Math.abs(y - lastY) > speed) {
+                                $.ajax({
+                                    url: '/sweet/lottery',
+                                    type: 'post',
+                                    dataType: 'json',
+                                    success: function(data) {
+                                        if (data['status'] != 200) {
+                                            alert(data['intro']);
+                                            return false;
+                                        }
+                                        $(".p8 .sj").addClass("animated wobble infinite");
+                                        setTimeout("mySwiper.swipeNext();",1500);//延时两秒
+                                    }
+                                });
+                            }
+                            lastX = x;
+                            lastY = y;
+                        }, false);
+                    }
+                }
+                //在第7页和第8页　关闭向下滑动
+                if (swiper.activeIndex == 7 || swiper.activeIndex == 8) {
+                    mySwiper.params.swipeToNext = false;
+                    mySwiper.params.swipeToPrev = true;
+                } else {
+                    mySwiper.params.swipeToNext = true;
+                    mySwiper.params.swipeToPrev = true;
+                }
+            }
+        });
+        $('.linghf').click(function () {
+            var phone = $('#phone').val();
+            var isMobile = (/^(?:13\d|15\d|18\d)\d{5}(\d{3}|\*{3})$/).test(phone);
+            if(phone == '' || !isMobile){
+                alert('请输入正确的手机号码');
+                return false;
+            }
+            $.ajax({
+                url: '/sweet/check',
+                type: 'post',
+                data: 'mobile='+phone+'&code='+$('#code').val(),
+                dataType:  'json',
+                success: function(data) {
+                    if (data['status'] != 200) {
+                        alert(data['intro']);
+                        return false;
+                    }
+                    mySwiper.swipeNext();
+                },
+            });
+            return false;
+        });
+        $('.p9 .logo_s').click(function () {
+            mySwiper.swipeTo(0, 2000);
+        });
+        $('.p9 .sj').click(function () {
+            mySwiper.swipeTo(0, 2000);
+        })
+    })
+
+    var sms = false;
+    $(function(){
+        $(".getcode").click(function() {
+            var mobile = $("#phone").val();
+            if (mobile == '' || !mobile.match(/^\d{11}$/)) {
+                alert('请输入正确的手机号码！');
+                return false;
+            }
+
+            if (sms == true) {
+                return false;
+            }
+
+            $.ajax({
+                url: 'http://www.icolor.com.cn/sweet/captcha',
+                type: 'get',
+                dataType: 'json',
+                data: 'mobile=' + mobile,
+                success: function(data) {
+                    if (data['status'] == '200') {
+                        sms = true;
+                        toggleButton($('.getcode'));
+                    } else {
+                        alert(data['intro']);
+                    }
+                }
+            });
+        });
+
+        var wait = 60;
+        function toggleButton(obj) {
+            if (wait == 0) {
+                obj.html('<span style="white-space:nowrap;">获取短信验证码</span>');
+                wait = 60;
+                sms = false;
+            } else {
+                obj.html('<span style="white-space:nowrap;">' + wait + '秒后重新获取</span>');
+                wait--;
+                setTimeout(function() {
+                    toggleButton(obj);
+                }, 1000);
+            }
+        }
+    })
+</script>
+
+<div style="display:none;">
+<!-- GA监测 -->
+<script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-27414296-4']);
+    _gaq.push(['_trackPageview']);
+
+    _gaq.push(['_setAccount', 'UA-32012607-1']);
+    _gaq.push(['_setDomainName', 'icolor.com.cn']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+<!-- SEM监测 -->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F0725f99b41799413ca0ae992fb397e34' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!--百度统计-->
+<script type="text/javascript">
+    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F60925cbfbdc097b3cfc9493e515f0d24' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!--CNZZ统计-->
+<script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan id='cnzz_stat_icon_1253530925'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s4.cnzz.com/z_stat.php%3Fid%3D1253530925%26show%3Dpic' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- Google Tag Manager -->
+<noscript>
+    <iframe src="//www.googletagmanager.com/ns.html?id=GTM-PSMWLM" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PSMWLM');
+</script>
+</div>
+</body>
+</html>

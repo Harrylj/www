@@ -1,0 +1,173 @@
+
+.uc-c-left{
+	width: 240px;
+}
+.uc-c-right{
+	width: 735px;
+	padding:10px 0 0 10px;
+	border-left: 1px solid #ccc;
+	min-height: 400px;
+}
+.uc-user-info{
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+}
+.uc-user-title{
+	width: 120px;
+	color: white;
+	font-size: 16px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	text-align: center;
+	background-color: black;
+}
+.uc-user-img{
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	border:1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	margin:  20px 0;
+}
+.uc-user-info p{
+	color: #666;
+	font-size: 16px;
+	line-height: 30px;
+	letter-spacing: 2px;
+}
+.uc-user-info .user-info-month{
+	color: #0EB3D4;
+}
+.uc-notice{
+	border-top: 2px dashed #666;
+	padding: 15px 8px 8px 8px;
+}
+.uc-notice h1{
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	background-image: url(../images/public-05.png);
+	padding-left: 20px;
+	color: black;
+	font-size: 16px;
+	letter-spacing: 3px;
+	
+}
+.uc-notice li{
+	text-indent: 2em;
+	font-size: 12px;
+	line-height: 24px;
+	letter-spacing: 2px;
+}
+.uc-notice a{
+	color: #0EB3D4;
+}
+.uc-bill{
+	border: 1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	padding: 8px;
+}
+.uc-bill h1{
+	position: relative;
+	font-size: 20px;
+	line-height: 50px;
+	height: 50px;
+	letter-spacing: 4px;
+	border-bottom: 1px solid #ccc;
+}
+.uc-list{
+	position: absolute;
+	left: 100px;
+	top: 20px;
+	
+}
+.uc-list li{
+	float: left;
+	font-size: 14px;
+	height: 16px;
+	line-height: 16px;
+	color: #0EB3D4;
+	border-left: 1px solid #0EB3D4;
+	letter-spacing: 2px;
+	padding: 0 8px;
+	cursor: pointer;
+}
+.uc-table-father{
+	padding: 0 10px 10px 10px;
+}
+.uc-table{
+	width: 100%;
+}
+
+.uc-table th
+,.uc-table td{
+	border-bottom: 1px solid #ccc;
+	vertical-align: middle;
+	letter-spacing: 2px;
+}
+.uc-table th{
+	color: #f2be32;
+	height: 40px;
+	font-size: 14px;
+		
+}
+.uc-table td{
+	height: 90px;
+	line-height: 26px;
+	font-size: 14px;
+}
+.uc-table .uc-td-01{
+	color: #999;
+	font-size: 12px;
+}
+.uc-p-01{
+	color: black;
+}
+.uc-p-02{
+	color: #999;
+}
+.uc-deal-number{
+	color: black;
+	font-size: 20px;;
+}
+.uc-deal-ok{
+	color: #999;
+}
+.uc-deal-delete{
+	color: black;
+}
+.uc-deal-ing{
+	color: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/loveyou.css" type="text/css" rel="stylesheet">
+    <title>借四哥的名义宠你</title>
+</head>
+<body>
+    <div class="loveyou">
+        <!--在页面载入的时候存在2种状态对应值1,0: 1：表示有好友向你赠送流量，0：表示没有好友向你赠送流量--->
+        <!--这里JS里我默认值为1：表示有好友向你赠送流量-->
+        <input class="ly-status" type="hidden">
+        <!--这里表示手机的验证码：我默认添加为“1234”--->
+        <input class="ly-yz-number" type="hidden">
+
+        <div class="ly-header">
+            <img class="ly-img-01" src="images/loveyou-01.png">
+            <p class="ly-p-01">活动时间: 4月28日---4月28日</p>
+        </div>
+        <div class="ly-content">
+            <div class="ly-wxts">
+                <p>温馨提示：</p>
+                <p>活动期间，消耗50/100金豆，即可赠送好友30M/100M流量。（仅限遂宁移动用户参与，不可为自己赠送，所得流量次月初到账。）</p>
+            </div>
+
+            <h1 class="ly-h1 text-center vr">当前可使用金豆数:<span class="ly-my-number">88</span></h1>
+            <ul class="ly-ul-01">
+                <li class="fl">
+                    <ul class="ly-ul-02 ly-ul-checked">
+                        <li class="vr">30M流量</li>
+                        <li><span class="ly-tc-number">50</span>金豆</li>
+                        <li>剩余900份</li>
+                    </ul>
+                </li>
+                <li class="fr">
+                    <ul class="ly-ul-02">
+                        <li class="vr">100M流量</li>
+                        <li><span class="ly-tc-number">100</span>金豆</li>
+                        <li>剩余900份</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="clear"></div>
+            <p class="ly-ts-01 text-center red">您金豆的余额不足!</p>
+            <div class="text-center"><button class="ly-btn-01 ly-btn-zsghy">赠送给好友</button></div>
+            <p class="ly-p-p2 text-center"><span>大猫</span>向你馈赠了<span>30</span>M的流量，马上领取吧</p>
+            <div class="text-center"><button class="ly-btn-01 ly-btn-lqkzll ly-btn-lqkzll-01">领取馈赠流量</button></div>
+        </div>
+        <!--遮罩层-->
+        <div class="zzc"></div>
+        <!--领取馈赠流量-->
+        <div class="ly-tc-father">
+            <div class="ly-tc">
+                <h1 class="ly-tc-h1 vr text-center">领取馈赠流量</h1>
+                <input class="ly-tc-input public-input ly-input-phone " type="text" value="请输入手机号码">
+                <div>
+                    <input class="ly-tc-input public-input ly-input-yz fl" type="text" value="请输入验证码">
+                    <button class="ly-btn-02 ly-btn-lqyzm vr fr">领取验证码</button>
+                    <div class="clear"></div>
+                </div>
+                <p class="ly-ts"></p>
+                <div class="text-center">
+                    <button class="ly-btn-02 ly-btn-mshq vr">马上获取</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="js/public.js" type="text/javascript"></script>
+<script src="js/loveyou.js" type="text/javascript"></script>
+</body>
+</html>

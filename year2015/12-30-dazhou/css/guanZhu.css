@@ -1,0 +1,151 @@
+.guan-zhu{
+	background-image: url(../images/dz-01.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+.gz-h-p span{
+	display: inline-block;
+	/*
+	background-image: url(../images/guanzhu-01.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	*/
+	background-color: #5e200f;
+	border-radius: 12px;
+	padding: 0 20px;
+	color: wheat;
+	font-size: 16px;
+	line-height: 30px;
+	color: white;
+	letter-spacing: 2px;
+	opacity: .9;
+	
+	
+}
+.gz-table-div{
+	background-image:url(../images/guanzhu-02.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding-top: 30px;
+	padding-bottom: 20px;
+}
+.gz-table{
+	width: 90%;
+	margin: auto;
+}
+.gz-table td
+,.gz-table th{
+	color: white;
+	font-size: 1rem;
+	text-align: center;
+}
+.gz-table td{
+	line-height: 24px;
+}
+.gz-table th{
+	line-height: 32px;
+	border-bottom: 1px solid #fe5632;
+}
+.gz-table .gz-wdh{
+	color: #fffc00;
+}
+.gz-btn-jxyq{
+	width: 240px;
+	height: 50px;
+	background-image: url(../images/guanzhu-03.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 10px 0 5px 0;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+	
+}
+.gz-monkey{
+	float: right;
+	margin-top: -50px;
+	width: 100px;
+	
+}
+.marquee-gd{
+	margin-top: 5px;
+	margin-bottom: 30px;
+	width: 100%;
+	height: 30px;
+	display: block;
+	text-align: center;
+	background-image: url(../images/guanzhu-bg.png);
+}
+.marquee-gd p{
+	float: left;
+	font-size: 1rem;
+	line-height: 30px;
+	margin:  0 40px;
+	color: black;
+}
+
+.gz-input
+,.gz-btn{
+    border-radius: 5px;
+    line-height: 36px;
+    height: 40px;
+}
+.div-yz{
+    margin: 15px 0 0 0;
+}
+.gz-input{
+    padding:0 8px;
+    border: 1px solid #fe5632;
+    font-size: 1.125rem;
+    letter-spacing: 2px;
+    color: black;
+}
+.gz-phone{
+    width: 100%;
+}
+.gz-yz{
+    width: 60%;
+}
+.btn-yz{
+    width: 35%;
+    background-color: #fe5632;
+    color: white;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    
+}
+.btn-time{
+    width: 35%;
+    background-color: #e0e0e0;
+    color: #949494;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+}
+.btn-time span{
+    color: #000000;
+}
+.gz-ts
+,.gz-ts-yz{
+    line-height: 26px;
+    color: red;
+    font-size: 12px;
+    height: 26px;
+}
+.btn-sub{
+    width: 100%;
+    background-color: #fe5632;
+    text-align: center;
+    color: white;
+    border: none;
+    font-size: 18px;
+    letter-spacing: 3px;
+}
+.tjbd .public-tc{
+	padding-top: 70px;
+	padding-bottom: 50px;
+	
+}

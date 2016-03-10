@@ -1,0 +1,72 @@
+.index{
+	background-image: url(../images/dz-01.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding-bottom: 20px;
+}
+.index-header p{
+	font-size: 1.25rem;
+	line-height: 40px;
+	color: white;
+	text-align: center;
+}
+.index-gz{
+	padding-top: 12%;
+	background-image: url(../images/dz-03.png);
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	
+}
+.index-p1
+,.index-p2
+,.index-p3
+,.index-p4{
+	text-align: center;
+	
+}
+.index-p1 span
+,.index-p2 span
+,.index-p3 span
+,.index-p4 span{
+	color: white;
+	font-size: 1rem;
+	line-height: 28px;
+	border-radius: 12px;	
+	text-align: center;
+	padding: 0 20px;
+}
+.index-p1 span{
+	display: inline-block;
+	background-color: #dff114;
+	color: black;
+}
+.index-p2 span{
+	display: inline-block;
+	background-color: #14d3b1;
+}
+.index-p3 span{
+	display: inline-block;
+	background-color: #ff556d;
+}
+.index-p4 span{
+	display: inline-block;
+	background-color: #39d431;
+}
+.index-mscj img{
+	width: 80%;
+	margin:20px 0 ;
+}
+.index-footer h1{
+	color: white;
+	text-align: center;
+	font-size: 1.25rem;
+	line-height: 30px;
+	margin-top: -5px;
+}
+.index-footer p{
+	padding: 0 30px;
+	text-align: center;
+	line-height: 24px;
+	font-size: 1rem;
+	color: white;
+}

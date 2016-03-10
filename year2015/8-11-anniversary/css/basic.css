@@ -1,0 +1,180 @@
+@charset "utf-8";
+/* 重置 */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0 }
+table { border-collapse: collapse; border-spacing: 0 }
+fieldset, img { border: 0 }
+address, caption, cite, code, dfn, em, strong, th, var { font-style: normal; font-weight: normal }
+ol, ul { list-style: none }
+caption, th { text-align: left }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
+q:before, q:after { content: '' }
+abbr, acronym { border: 0; font-variant: normal }
+sup { vertical-align: text-top }
+sub { vertical-align: text-bottom }
+input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit }
+input, textarea, select { *font-size: 100% }
+legend { color: #000 }
+/* 通用 */
+html,body{ min-height: 100%; height: 100%; background: #F2F2F2}
+body, input, button, textarea { -webkit-text-size-adjust: none; font: normal 16px/20px 'Microsoft Yahei', helvetica, arial; color: #555; outline: none; box-sizing:border-box; -webkit-box-sizing:border-box; }
+p { padding: 0; margin: 0 }
+a { text-decoration: none; color: #1F4E73 }
+*{ box-sizing: border-box;}
+.fl { float: left }
+.fr { float: right; }
+.clear { clear: both; }
+.text-left { text-align: left!important }
+.text-right { text-align: right }
+.text-center { text-align: center }
+.blue { color: #1D4D73 !important }
+.bold { font-weight: 700 }
+.dark { color: #656565 !important }
+.black { color: #000}
+.gray { color: #aaa !important }
+.red { color: #FE0000 !important}
+.green { color: #05ac00}
+.bg-gray { background: #F0EFF4}
+.vr{ font-family: "微软雅黑", "黑体", "宋体";}
+.height-10{ height: 10px;}
+.hide{ display: none;}
+.show{ display: block;}
+.img-100{ width: 100%; height: auto;}
+
+@media only screen and (min-width:0px){
+  html{font-size:68.8%!important}.viewport{max-width:0px}
+  .ic-goods{width: 46%;}
+  .i-nav-01{ height: 200px;}
+}
+@media only screen and (min-width:360px){
+  html{font-size:81.3%!important}.viewport{max-width:360px}
+	.ic-goods{width: 46%;}
+	.i-nav-01{ height: 260px;}
+}
+@media only screen and (min-width:480px){
+  html{font-size:100%!important}.viewport{max-width:480px}
+	.ic-goods{width: 29%;}
+	.i-nav-01{ height: 360px;}
+}
+.index
+,.activity
+,.map{
+	position: relative;
+	padding-top: 48px;
+	min-height: 480px;
+}
+
+/*公用头 01*/
+.public-header{
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 98;
+    background-color: black;
+    height: 48px;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+.public-header-box{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.public-header-box h1{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 48px;
+    font-size: 1.5rem;
+    color: white;
+    letter-spacing: 3px;
+    text-align: center;
+}
+.public-header-return{
+    position: relative;
+    float: left;
+    color: white;
+    margin-left: 30px;
+    display: block;
+    font-size: 1.25rem;
+    height: 48px;
+    line-height: 48px;
+    letter-spacing: 3px;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+.public-header-return:before{
+    position: absolute;
+    display: block;
+    left: -24px;
+    top: 12px;
+    width: 16px;
+    height: 24px;
+    content: "##";
+    color: transparent;
+    background-image: url("../images/public-header-return.png");
+    background-size: 100% 100%;
+
+}
+.public-header-right{
+    position: relative;
+    float: right;
+    color: white;
+    margin-right: 10px;
+    display: block;
+    font-size: 1.25rem;
+    height: 48px;
+    line-height: 48px;
+    letter-spacing: 3px;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+/*公用头01*/
+
+.zzc{
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .5;
+	z-index: 99;
+}
+
+/*弹框1*/
+.public-tc-01{
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	margin-left: -45%;
+	width: 90%;
+	background-color: #F4F4F4;
+	border-radius: 8px;
+	padding: 15px;
+	z-index: 100;
+}
+.public-tc-01 h1{
+	text-align: center;
+	line-height: 36px;
+	font-size: 1.5rem;
+	letter-spacing: 3px;
+	font-weight: bold;
+}
+.public-tc-01 p{
+	letter-spacing: 2px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 1.25rem;
+}
+.map-btn{
+	margin: 10px;
+	border: none;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.5rem;
+	padding: 0 20px;
+	letter-spacing: 4px;
+	background-color: #e62e4a;
+	color: white;
+	border-radius: 8px;
+}
+/*弹框1*/

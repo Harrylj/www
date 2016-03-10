@@ -1,0 +1,39 @@
+body,html{
+    background-color: #F2F2F2;
+}
+
+.index{
+    position: relative;
+    padding: 10px 5px;
+    margin: auto;
+    max-width: 768px;
+    min-width: 320px;
+}
+.index-h{
+    font-size: 18px;
+    line-height: 48px;
+    color: #000000;
+    text-align: center;
+    letter-spacing: 3px;
+}
+
+.index-img{
+    width: 140px;
+    float: left;
+    margin: 5px;
+}
+.index-img img{
+    width: 140px;
+    height: 100px;
+}
+.index-img p{
+    color: #666;
+    font-size: 14px;
+    line-height: 24px;
+}
+.index-footer{
+    color: #ccc;
+    font-size: 12px;
+    line-height: 40px;
+    text-align: center;
+}

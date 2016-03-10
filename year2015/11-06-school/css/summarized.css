@@ -1,0 +1,40 @@
+.summarized{
+	padding: 10px;
+}
+.sum-nav li{
+	width: 33.33%;
+	float: left;
+	border: 1px solid #929292;
+	border-right: none;
+	color: #929292;
+	height: 36px;
+	line-height: 34px;
+	font-size: 1.125rem;
+	text-align: center;
+	cursor: pointer;
+}
+.sum-nav li:first-child{
+	border-radius: 6px 0 0 6px;
+}
+.sum-nav li:last-child{
+	border-radius: 0 6px 6px 0;
+	border-right: 1px solid #929292;
+}
+.sum-nav .sum-nav-click{
+	color: white;
+	background-color: #929292;
+}
+.sum-list{
+	display: none;
+	padding: 20px 0;
+}
+.sum-list p{
+	padding-top: 20px;
+	line-height: 24px;
+	color: #666;
+	line-height: 24px;
+	font-size: 1rem;
+}
+.sum-list-click{
+	display: block;
+}

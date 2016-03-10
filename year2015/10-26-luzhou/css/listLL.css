@@ -1,0 +1,87 @@
+
+.ltc-main h1{
+	padding: 0 8px;
+	font-size: 1.25rem;
+	line-height: 40px;
+}
+.lll-list li{
+	position: relative;
+	float: left;
+	width: 33%;
+	padding-top: 12px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+.lll-list li:after{
+	position: absolute;
+	right: 0;
+	top: 20px;
+	display: block;
+	content: '.';
+	color: transparent;
+	width: 1px;
+	height: 80px;
+	background-color: #999;	
+}
+.lll-list li:nth-child(3n):after{
+	display: none;
+}
+.lll-list p{
+	text-align: center;
+	font-size: 1rem;
+	line-height: 24px;
+	padding: 0 8px;
+}
+.lll-list-img{
+	height: 70px;
+	background-image: url(../images/tc-04.png);
+	background-size: 70px 70px;
+	text-align: center;
+	background-position: center 0;
+	background-repeat: no-repeat;
+}
+.lll-list-img p{
+	font-size: 14px;
+	text-align: center;
+	line-height: 30px;
+	padding: 0;
+	padding-top: 30px;
+}
+.lll-list-img span{
+	font-size: 18px;
+}
+.lll-dx{
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background-color: black;
+	opacity: .8;
+	padding-top:10px ;
+	padding-bottom: 20px;
+	
+}
+.lll-dx h1{
+	text-align: center;
+	font-size: 1.25rem;
+	line-height: 36px;
+	color: #5ac994;
+}
+.lll-dx p{
+	text-align: center;
+	color: white;	
+	font-size: 1.25rem;
+	line-height: 36px;
+}
+.lll-btn-msfs{
+	border: 1px solid #5ac994;
+	border-radius: 16px;
+	height: 32px;
+	line-height: 30px;
+	color: #5ac994;
+	font-size: 1.25rem;
+	background-color: transparent;
+	padding: 0 15px;
+}
+

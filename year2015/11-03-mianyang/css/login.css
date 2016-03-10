@@ -1,0 +1,75 @@
+body{
+	background-color: white;
+}
+.l-header{
+	padding:  40px 0;
+}
+.lh-img{
+	display: block;
+	width: 90px;
+	height: 90px;
+	margin: auto;
+	border-radius: 50%;
+}
+.l-body{
+	
+}
+.l-input-div{
+	position: relative;
+}
+.l-input{
+	padding: 0 10px 0 40px ;
+	height: 40px;
+	line-height: 36px;
+	font-size: 1rem;
+	border: none;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-position: 10px center;
+	background-repeat: no-repeat;
+	background-size:16px 16px;
+	color: black;
+	letter-spacing: 2px;
+	margin-bottom: 15px;
+	width: 100%;
+}
+.l-input-user{
+	background-image: url(../images/public-user.png);
+}
+.l-input-yzm{
+	background-image: url(../images/public-password.png);
+}
+.l-btn-hqyzm{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	padding: 0 10px;
+	color: #999;
+	border: none;
+	background-color: transparent;
+	border-left: 1px solid #666;
+	height: 20px;
+	line-height: 20px;
+	font-size: 1rem;
+	
+}
+.l-btn{
+	background-color: red;
+	font-size: 1.25rem;
+	letter-spacing: 4px;
+	color: white;
+	border: none;
+	height: 40px;
+	line-break: 40px;
+	border-radius: 20px;
+	margin-bottom: 20px;
+	width: 80%;
+}
+.l-ts{
+	text-align: center;
+	color: red;
+	font-size: 1rem;
+	height: 30px;
+	line-height: 20px;
+	text-align: center;
+}

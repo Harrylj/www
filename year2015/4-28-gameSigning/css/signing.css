@@ -1,0 +1,125 @@
+
+
+
+
+.signing{
+    background: -moz-linear-gradient(top, #f4eab4, #fbfaf1);
+    background: -webkit-linear-gradient(top, #f4eab4, #fbfaf1);
+    background: -o-linear-gradient(top, #f4eab4, #fbfaf1);
+    position: relative;
+    padding-top: 20px;
+    min-width:320px;
+    min-height: 480px;
+
+}
+
+.s-h-img{
+    width: 100%;
+
+}
+.s-h-p{
+    text-align: center;
+    font-size: 14px;
+    color: #000000;
+    letter-spacing: 2px;
+    line-height: 38px;
+}
+.s-btn{
+    color: white;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    letter-spacing: 3px;
+    padding: 0 12px;
+    border-radius: 8px;
+    background-color: #7cd83c;
+    box-shadow: 0 1px 1px #ccc;
+    border: 1px solid #ccc;
+    margin: 0 8px;
+}
+
+.s-game-ul{
+    width: 100%;
+    padding: 20px;
+}
+.s-game-ul li{
+    position: relative;
+    width: 20%;
+    height: 40px;
+    background-color: #ac8041;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    line-height: 50px;
+}
+.s-g-after:after{
+    content: "#";
+    color: transparent;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom:-40px;
+    right: 0;
+    background-color: #ac8041;
+}
+.s-a-before:after{
+    content: "#";
+    color: transparent;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    background-color: #ac8041;
+}
+.s-game-ul li:first-child
+,.s-game-ul li:last-child{
+    border-radius: 8px 0 0 8px ;
+}
+.s-game-ul li:nth-child(5)
+,.s-game-ul li:nth-child(15)
+,.s-game-ul li:nth-child(25)
+,.s-game-ul li:nth-child(35)
+,.s-game-ul li:nth-child(45){
+    border-radius: 0 8px 0 0;
+}
+.s-game-ul li:nth-child(6)
+,.s-game-ul li:nth-child(16)
+,.s-game-ul li:nth-child(26)
+,.s-game-ul li:nth-child(36)
+,.s-game-ul li:nth-child(46){
+    border-radius: 0 0 8px 0;
+}
+.s-game-ul li:nth-child(10)
+,.s-game-ul li:nth-child(20)
+,.s-game-ul li:nth-child(30)
+,.s-game-ul li:nth-child(40){
+    border-radius: 8px 0 0 0;
+}
+.s-game-ul li:nth-child(11)
+,.s-game-ul li:nth-child(21)
+,.s-game-ul li:nth-child(31)
+,.s-game-ul li:nth-child(41){
+    border-radius: 0 0 0 8px;
+}
+.s-game-ul li span{
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    margin-left: -15px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.s-g-valid span{
+    opacity: 1;
+    background-image: url("../images/signing-01.png");
+
+}
+.s-g-invalid span{
+    opacity: .3;
+    background-image: url("../images/signing-01.png");
+
+}

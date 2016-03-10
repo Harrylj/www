@@ -1,0 +1,144 @@
+body,html{
+    background-color: white;
+}
+*{ box-sizing: border-box;}
+.create-game{
+    position: relative;
+    padding: 3%;
+    min-height: 480px;
+    min-width: 320px;
+}
+.cg-header{
+    padding: 5% 10%;
+    background-image: url("../images/pk-border-bg-01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.cg-table{
+    width: 100%;
+}
+.cg-table td{
+    position: relative;
+    padding: 5px;
+    width: 33.33%;
+    text-align: center;
+}
+.cg-tr-01 img{
+    width: 80%;
+}
+.cg-tr-02 td{
+    font-size: 16px;
+    line-height: 20px;
+    color: black;
+}
+
+.cg-p1 {
+    font-size: 16px;
+    line-height: 24px;
+}
+.cg-p2{
+    margin: 10px 0 15px 0;
+    font-size: 14px;
+    color: red;
+}
+.cg-input-number{
+    border: 1px solid #cdccc9;
+    background-color: #f9f8ed;
+    color: #969696;
+    width: 90%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.cg-p3{
+    margin: 10px 0;
+    color: #000000;
+}
+.cg-choice{
+    margin: auto;
+    width: 90%;
+}
+.cg-choice li{
+    float: left;
+    width: 31%;
+    padding: 2%;
+    text-align: center;
+    margin: 1%;
+    border: 1px solid #cdccc9;
+    border-radius: 5px;
+}
+.cg-choice img{
+    width: 70%;
+}
+.cg-btn{
+    width: 200px;
+    height: 48px;
+    background-color: transparent;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    border: none;
+    margin: 10px;
+}
+.cg-btn-qd
+,.ig-btn-qd{
+    background-image: url("../images/pk-btn-qd.png");
+}
+.cg-p4{
+    display: none;
+    color: red;
+    font-size: 16px;
+    line-height: 20px;
+}
+.cg-choice-true{
+    background-image: url("../images/pk-07.png");
+    background-size: 20px 20px;
+    background-position: right bottom;
+    background-repeat: no-repeat;
+}
+.bb-btn-xykl{
+    background-image: url("../images/pk-btn-xykl.png");
+}
+.bb-btn-qdcz{
+    background-image: url("../images/pk-btn-qdcz.png")
+;
+}
+/*游戏公用*/
+.g-h1{
+    color: red;
+    font-size: 18px;
+    letter-spacing: 4px;
+    line-height: 40px;
+}
+.g-p{
+    text-align: center;
+    font-size: 16px;
+    color: black;
+    line-height: 22px;
+    margin-bottom: 10px;
+}
+.g-gz-equal
+,.g-gz-success
+,.g-gz-failure{
+    position: absolute;
+    width: 80%;
+    left: 50%;
+    top: 0;
+    margin: 0 -40%;
+}
+/*平局*/
+.ge-btn-wyyhl{
+    background-image: url("../images/pk-btn-wyyhl.png");
+}
+.ge-btn-tzqtrss{
+    background-image: url("../images/pk-btn-tzqtrss.png");
+}
+
+/*胜利*/
+.ge-btn-cszj{
+    background-image: url("../images/pk-btn-cszj.png");
+}
+
+/*失败*/
+.ge-btn-wyyhl{
+    background-image: url("../images/pk-btn-wyyhl.png");
+}

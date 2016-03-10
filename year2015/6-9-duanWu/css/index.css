@@ -1,0 +1,41 @@
+html,body{
+}
+.index{
+    padding-bottom: 20px;
+    background-image: url("../images/index-bg-01.png");
+    background-repeat: no-repeat;
+    background-color: #447b37;
+    background-size: 100% auto;
+}
+
+.i-font{
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    line-height: 36px;
+    color: white;
+    background-image: url("../images/index-bg-02.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.index-content{
+    position: relative;
+    padding-top: 66%;
+}
+.index-content img{
+    width: 100%;
+    margin: 3% 0;
+}
+.index-btn{
+    font-size: 16px;
+    line-height: 40px;
+    letter-spacing: 4px;
+    padding: 0 15px;
+    border: none;
+    color: white;
+    background-color: transparent;
+    text-align: center;
+    background-image: url("../images/index-btn-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}

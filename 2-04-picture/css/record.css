@@ -1,0 +1,36 @@
+.record{
+	padding-top: 10px;
+}
+.r-header h1{
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	line-height: 28px;
+}
+.r-header p{
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	line-height: 30px;
+}
+.r-header span{
+	font-size: 24px;
+}
+
+.r-body{
+	padding: 20px;
+}
+.rb-list{
+	background-image: url(../images/jl-bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.rb-list p{
+	font-size: 16px;
+	line-height: 28px;
+	text-align: center;
+	color: black;
+	margin: 0;
+}

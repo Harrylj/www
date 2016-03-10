@@ -1,0 +1,244 @@
+/* === CSS Reset ========== */
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, blockquote, th, td, p { margin:0; padding:0 }
+input, button, select, textarea, a:fouse {outline:none}
+li {list-style:none;}
+img {border:none;}
+textarea {resize:none;}
+body {margin:0;font: 12px "微软雅黑"; background: #feecd4;}
+/* === End CSS Reset ========== */
+
+body{
+    min-width: 1000px;
+    letter-spacing: 2px;
+    _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<950?"950px":"");
+    
+}
+a{
+    text-decoration: none;
+}
+.hdgz
+,.zjjl{
+	display: inline-block;
+	height: 50px;
+	line-height: 50px;
+	padding: 0 20px;
+	font-size: 36px;
+	color: white;
+	background-color: #ccc;
+	border-radius: 8px;
+	box-shadow: 0 0 10px white;
+	margin: 20px;
+}
+.hdgz{
+	float: left;
+}
+.zjjl{
+	float: right;
+}
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+.clearfix{*zoom:1;}
+
+.container{
+    width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    /*height: 198px;*/
+}
+
+/* 头部 */
+/*.main{
+    background: url("images/main.jpg") no-repeat center;
+    background: #feecd4;
+    height: 351px;
+    _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":"");
+}*/
+.main2{
+    background: url("../images/main2.png") no-repeat center;
+
+    height: 689px;
+    _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":"");
+    /*最小宽度*/
+}
+.main3{
+    /*background: url("images/main3.jpg") no-repeat center;
+    height: 381px;*/
+    _width:expression((document.documentElement.clientWidth||document.body.clientWidth)<1000?"1000px":"");
+}
+.main3-text{
+    color:#744b00;
+    font-size: 23px;
+    font-weight: bold;
+    position: absolute;
+    left: 74px;
+    top: 210px;
+}
+.main3-text2{
+    color:#744b00;
+    font-size: 14px;
+    position: absolute;
+    left: 74px;
+    top: 254px;
+    line-height: 22px;
+    width: 867px;
+}
+.main-text{
+    position: absolute;
+    left: 360px;
+    top: 325px;
+    color:#b03b01;
+    font-size: 16px;
+}
+.main2-text1{
+    position: absolute;
+    left: 79px;
+    top: 45px;
+    color:#ffffff;
+    font-size: 16px;
+}
+.main2-text2{
+    position: absolute;
+    left: 69px;
+    top: 67px;
+    color:#ffffff;
+    font-size: 23px;
+    font-weight: bold;
+}
+.main2-text2 span{
+    color:#ffff00;
+}
+.main2-text3{
+    position: absolute;
+    left: 69px;
+    top: 97px;
+    color:#ffffff;
+    font-size: 18px;
+}
+.main2-text4{
+    position: absolute;
+    left: 382px;
+    top: 34px;
+    color:#ffffff;
+    font-size: 18px;
+}
+.main2-text4 span{
+    color:#ffe700;
+    font-weight: bold;
+}
+.main2-text5{
+    position: absolute;
+    left: 665px;
+    top: 34px;
+    color:#ffffff;
+    font-size: 18px;
+}
+.main2-text5 span{
+    color:#ffe700;
+    font-weight: bold;
+}
+.num{
+    position: absolute;
+    left: 248px;
+    top: 171px;
+    width: 124px;
+    height: 198px;
+    overflow: hidden;
+}
+.num-con{
+    position: relative;
+    top:-430px;
+}
+.num-img{
+    background: url("../images/num.png") no-repeat;
+    width: 124px;
+    height: 1298px;
+    margin-bottom: 4px;
+}
+.num-img-01{
+	background-image: url("../images/num1.png");
+}
+.num-img-02{
+	background-image: url("../images/num2.png");
+}
+.num-img-03{
+	background-image: url("../images/num3.png");
+}
+
+.num2{
+    left: 399px;
+}
+.num3{
+    left: 551px;
+}
+
+.main3-btn{
+    width: 307px;
+    height: 95px;
+    position: absolute;
+    left: 313px;
+    top: -290px;
+    cursor: pointer;
+}
+.zzc{
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .6;
+	z-index: 98;
+}
+.tc{
+	display: none;
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	margin-left: -300px;
+	width: 600px;
+	padding: 40px ;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 0 0 10px white;
+	z-index: 100;
+}
+.tc p{
+	text-align: center;
+	font-size: 36px;
+	line-height: 50px;
+	color: black;
+}
+.tc-btn-close{
+	background-color: #666;
+	border: none;
+	height: 60px;
+	padding: 0 40px;
+	font-size: 46px;
+	line-height: 36px;
+	text-align: center;
+	color: white;
+	border-radius: 8px;
+	margin-top: 20px;
+	cursor: pointer;
+}
+.marquee-gd{
+	position: absolute;
+	top: 600px;
+	left: 50%;
+	margin-left: -500px;
+	width: 1000px;
+	height: 200px;
+	display: block;
+	text-align: center;
+}
+.marquee-gd p{
+	font-size: 30px;
+	line-height: 50px;
+}

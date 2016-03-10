@@ -1,0 +1,71 @@
+.uc-header{
+	position: relative;
+	background-color: #e0182f;
+	padding: 0 10px 20px 10px;
+}
+.uch-top{
+	width:70%;
+	font-size: 1rem;
+	color: black;
+	line-height: 28px;
+}
+.uch-top a{
+	color: black;
+}
+.uch-date{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	color: black;
+	font-size: 1rem;
+	line-height: 28px;
+}
+.uch-user{
+	position: relative;
+}
+.uch-msg{
+	display: inline-block;
+	position: absolute;
+	top: -5px;
+	left: 50%;
+	margin-left: 30px;
+	background-image: url(../images/hp-03.png);
+	background-size: 100% 100%;
+	line-height: 24px;
+	color: white;
+	padding: 3px 10px;
+	font-size: 1.25rem;
+	background-repeat: no-repeat;
+	
+}
+.uch-user-img{
+	display: block;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	margin: 15px auto 5px auto;
+}
+.uch-user h1{
+	color: black;
+	font-size: 1.25rem;
+	line-height: 24px;
+}
+.uch-user p{
+	color: white;
+	line-height: 20px;
+	font-size: 1rem;
+}
+.ucb-nav{
+}
+.ucb-nav li{
+	float: left;
+	width: 48px;
+	color: #666;
+	font-size: 1rem;
+	line-height: 50px;
+	text-align: center;
+	cursor: pointer;
+}
+.ucb-nav .ucb-nav-click{
+	color: red;
+}

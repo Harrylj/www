@@ -1,0 +1,50 @@
+.tbd-list{
+	background-color: white;
+}
+.tbd-goods li{
+	float: left;
+	border-bottom: 1px solid #ccc;
+	padding: 15px 0;
+	letter-spacing: 2px;
+	text-align: center;
+}
+.tbd-goods p {
+	color: #666;
+	font-size: 0.875rem;
+	line-height: 20px;
+	letter-spacing: 1px;
+}
+.tbd-goods li:first-child{
+	width: 25%;	
+}
+.tbd-goods li:nth-child(2){
+	width: 42%;	
+}
+.tbd-goods li:last-child{
+	width: 33%;	
+}
+
+.tbd-goods li:first-child h1{
+	font-size: 1.25rem;
+	line-height: 32px;
+	color: red;
+}
+.tbd-goods li:nth-child(2) h1{
+	font-size: 1rem;
+	display: inline-block;
+	background-color: #7c7c7c;
+	color: white;
+	line-height: 32px;
+	border-radius: 6px;
+	padding: 0 8px;
+}
+
+.tbd-btn-ljbl{
+	color: white;
+	background-color: red;
+	padding: 0 8px;
+	border-radius: 15px;
+	border: none;
+	line-height: 30px;
+	font-size: 1.25rem;
+}

@@ -1,0 +1,36 @@
+.teacher{
+	padding: 10px;
+}
+.tea-list{
+	position: relative;
+	margin: 2%;
+	width: 46%;
+	float: left;
+	border-radius: 8px;
+	box-shadow: 0 0 15px #ccc;
+}
+.tea-list img{
+	display: block;
+	border-radius: 8px;
+	border: 1px solid #ccc;
+}
+.tea-list h1{
+	position: absolute;
+	bottom: 24px;
+	left: 0;
+	padding: 0 8px;
+	color: #dc0232;
+	line-height: 32px;
+	font-size: 1.25rem;
+}
+.tea-list p{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: #dc0232;
+	padding: 0 8px;
+	font-size: 1rem;
+	line-height: 24px;
+	height: 28px;
+	overflow: hidden;
+}

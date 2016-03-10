@@ -1,0 +1,207 @@
+.login-form-fahter{
+	position: absolute;
+	top: 18%;
+	left: 64%;
+	background-color: white;
+	border-radius: 4px;
+	padding: 10px;
+	z-index: 99;
+}
+.login-form{
+	border:1px solid #ccc;
+	border-radius: 4px;
+	padding: 10px;
+	width: 300px;
+}
+.login-form h1{
+	color: #191a1a;
+	line-height: 36px;
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 3px;
+}
+.login-ul{
+	
+}
+.login-ul li{
+	position: relative;
+	height: 36px;
+	margin-bottom: 10px;
+
+	
+}
+.login-ul input{
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	line-height: 32px;
+	height: 32px;
+	letter-spacing: 2px;
+	color: #191a1a;
+}
+.login-input-phone
+,.login-input-yzm
+,.register-input-phone
+,.register-input-yzm{
+	width: 264px;
+	padding-left: 34px;
+	background-repeat: no-repeat;
+	background-position: 8px 5px;
+	font-size: 16px;
+	
+}
+.login-input-phone
+,.register-input-phone{
+	background-image: url(../images/public-03.png);
+}
+.login-input-yzm
+,.register-input-yzm{
+	background-image: url(../images/public-04.png);
+}
+.login-input-tpyzm
+,.register-input-tpyzm{
+	font-size: 14px;
+	text-align: center;
+	width: 48%;
+	
+}
+.login-tpyzm
+,.register-tpyzm{
+	position: absolute;
+	right: 8px;
+	width: 48%;
+	height: 36px;
+	cursor: pointer;
+	top: 0;
+}
+.login-ul .login-btn-hqyzm
+,.login-ul .login-btn-next
+,.login-ul .register-btn-hqyzm
+,.login-ul .register-btn-next{
+	position: absolute;
+	top: 5px;
+	right: 0px;
+	border: none;
+	border-left: 1px solid #969696;
+	background-color: transparent;
+	border-radius: 0;
+	line-height: 24px;
+	padding: 0 15px 0 12px;
+	color: red;
+	height: 24px;
+	cursor: pointer;
+}
+.login-ts
+,.register-ts
+,.register-next-ts{
+	color: red;
+	font-size: 14px;
+}
+
+.login-ul .login-btn-login
+,.login-ul .register-btn-next{
+	background-color: #0EB3D4;
+	color: white;
+	width: 100%;
+	letter-spacing: 10px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	padding: 0;
+}
+.login-btn-login:hover{
+	opacity: .8;
+}
+.login-ul .login-ul-footer{
+	line-height: 20px;
+	margin: 0;
+}
+.login-ul-footer a{
+	position: relative;
+	top: 0px;
+	display: block;
+	border-top: 1px dashed #ccc;
+	width: 100px;
+	margin: auto;
+	font-size: 14px;
+	color: red;
+}
+
+.login-p-01{
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+
+.login-ul .login-ts-father{
+	height: 26px;
+	line-height: 26px;
+	margin: 0;
+}
+.login-ul .line-height-60{
+	height: 60px;
+	line-height: 60px;
+}
+.login-footer-father{
+	background-color: #0EB3D4;
+}
+
+
+
+.register-content-father{
+	background-color: white;
+	height: 600px;
+}
+.register .register-form-fahter{
+
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+}
+.register-form{
+	border:none;
+	width: 300px;
+}
+.register-form li{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+.register-form input{
+	line-height: 40px;
+	height: 40px;
+}
+.register-ul span{
+	position: absolute;
+	left: -130px;
+	width: 120px;
+	display: block;
+	text-align: right;
+	color: #333;
+	letter-spacing: 2px;
+}
+
+
+.register .register-input-phone
+,.register .register-input-yzm{
+	background-position: 8px 10px;
+}
+
+
+.register-ul .register-btn-hqyzm{
+	top: 10px;
+}
+
+
+.register-next-ul input{
+	width: 290px;
+	padding-left: 10px;
+}
+
+.card-number{
+	font-size: 22px;
+	letter-spacing: 2px;
+	color: #0EB3D4;
+}
+
+
+

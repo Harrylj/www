@@ -1,0 +1,23 @@
+.video-show{
+	padding: 10px;
+}
+.vs-video{
+	display: block;
+	width: 300px;
+	margin: auto;
+	
+}
+.vs-h1{
+	font-size: 1.125rem;
+	line-height: 40px;
+}
+.vs-p1{
+	font-size: 1.125rem;
+	line-height: 30px;
+}
+.vs-p2{
+	font-size: 1.125rem;
+	line-height: 24px;
+	min-height: 48px;
+	text-indent: 4em;
+}

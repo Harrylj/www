@@ -1,0 +1,31 @@
+body,html{
+
+}
+.award{
+    position: relative;
+}
+.award-header{
+    height: 120px;
+    background-color: #39b2d5;
+}
+
+.marquee{
+    height: 100px;
+    background-color: #f04182;
+    margin: 10px;
+    border-radius: 5px;
+}
+.marquee p{
+    color: white;
+    letter-spacing: 1.2px;
+    font-size: 14px;
+    line-height: 24px;
+    padding-right:10px;
+    padding-left: 20px;
+    font-family:"微软雅黑", "黑体", "宋体";
+    background-image: url("../images/award-03.png");
+    background-size: 16px 12px;
+    background-repeat: no-repeat;
+    background-position: 2px 3px;
+
+}

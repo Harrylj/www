@@ -1,0 +1,128 @@
+body{
+	background-image: url(../images/game-bg-01.png);
+}
+.game{
+	padding-bottom: 50px;
+}
+header{
+	padding: 10px;
+}
+.game-yb{
+	display: inline-block;
+	height: 80px;
+	width: 80px;
+	background-image: url(../images/game-06.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin-right: 5px;
+}
+.game-yb-ok{
+	background-image: url(../images/game-07.png);
+}
+.game-text{
+	display: none;
+	position: relative;
+	margin-top: -10px;
+	font-size: 1rem;
+	line-height: 26px;
+	float: right;
+	letter-spacing: 1px;
+	width: 70%;
+	color: black;
+	text-align: center;
+}
+.game-text:nth-child(1){
+	
+	display: block;
+	
+}
+.game-text:after{
+	position: absolute;
+	right: 20px;
+	bottom: -35px;
+	display: block;
+	width: 80px;
+	height: 40px;
+	content: "#";
+	color: transparent;
+	background-image: url(../images/game-10.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	
+}
+.game-zz{
+	position: relative;
+	width: 240px;
+	height: 240px;
+	margin: auto;
+	background-image: url(../images/game-bg-02.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+}
+.game-zz:nth-child(2){
+	display: none;
+}
+.game-zz>div{
+	position: absolute;
+	text-align: center;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	width: 74px;
+	height: 60px;
+	background-size: 74px 60px;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+.game-zz>div:nth-child(1){
+	left: 40px;
+	top: 40px;
+	
+}
+.game-zz>div:nth-child(2){
+	width: 74px;
+	height: 80px;
+	left: 116px;
+	top: 20px;	
+	background-position: 0 20px;
+}
+.game-zz>div:nth-child(3){
+	left: 30px;
+	top: 110px;	
+}
+.game-zz>div:nth-child(4){
+	left: 145px;
+	top: 112px;	
+}
+.game-zz>div:nth-child(5){
+	left: 80px;
+	top: 160px;	
+}
+.game-bx:nth-child(1){
+	background-image: url(../images/game-01.png);	
+}
+.game-bx:nth-child(2){
+	background-image: url(../images/game-02.png);	
+}
+.game-bx:nth-child(3){
+	background-image: url(../images/game-03.png);	
+}
+.game-bx:nth-child(4){
+	background-image: url(../images/game-04.png);	
+}
+.game-bx:nth-child(5){
+	background-image: url(../images/game-05.png);	
+}
+.game-zz p{
+	height: 10px;
+	background-image: url(../images/game-11.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.game-footer{
+	padding-top: 30px;
+}
+.game-btn-wyycj{
+	color: #333;
+	background-color: #1cdba3;
+}

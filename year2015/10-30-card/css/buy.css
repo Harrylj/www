@@ -1,0 +1,35 @@
+.bsh-return{
+	position: absolute;
+	right: 0;
+	top: 0;
+	text-align: center;
+	display: block;
+	height: 48px;
+	width: 20%;
+	line-height: 48px;
+	color: white;
+}
+.bsh-input{
+	width: 75%;
+	border: 1px solid white;
+	height: 36px;
+	line-height: 32px;
+	border-radius: 6px;
+	padding-left: 28px;
+	color: white;
+	background-image: url(../images/search-buy.png);
+	background-size: 18px 18px;
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	font-size: 1.125rem;
+	margin-left: 8px;
+	margin-top: 6px;
+	background-color: #31BFC9;
+	letter-spacing: 2px;
+}
+.bs-body{
+	padding: 10px 15px;
+}
+.bs-body img{
+	border: 1px solid #ccc;
+}

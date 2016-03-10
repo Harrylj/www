@@ -1,0 +1,43 @@
+.s-header{
+	padding: 10px;
+	
+}
+.sh-nav{
+	
+}
+.sh-nav li{
+	text-align: center;
+	width: 20%;
+	float: left;
+	line-height: 40px;
+	font-size: 1rem;
+	cursor: pointer;
+}
+.sh-nav .sh-nav-click span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: red;
+	color: white;
+}
+.s-body{
+	padding: 8px;
+}
+.sb-list{
+	display: none;
+}
+.sb-list h1{
+	font-size: 1.25rem;
+	color: black;
+	line-height: 36px;
+}
+.sb-list p{
+	padding: 0 10px;
+	color: #666;
+	font-size: 1.125rem;
+	line-height: 24px;
+}
+.sb-list-click{
+	display: block;
+}

@@ -1,0 +1,36 @@
+.rule{
+    background-color: #e6ddcb;
+}
+.rule-header{
+    position: relative;
+}
+.rule-header img{
+    width: 100%;
+}
+.rule-hdgz{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: 5px;
+}
+.rule-content{
+    padding: 12px;
+    background-image: url("../images/index-bg-01.png");
+    background-repeat: no-repeat;
+    background-size:  100% 200px;
+}
+.r-c-rule{
+    border: 2px dashed black;
+    border-radius: 8px;
+    padding: 8px;
+}
+.r-c-rule p{
+    font-size: 14px;
+    line-height: 28px;
+    color: black;
+    letter-spacing: 2px;
+    margin: 20px 0;
+}

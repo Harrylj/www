@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/pay.css"/>
+    <title>账户充值</title>
+</head>
+<body>
+	<div class="pay vr">
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-10-30
+        	描述：公用头01
+        -->
+		<div class="public-header-01-father">
+			<div class="public-header-01">
+				<a class="public-h-return" href="#">返回</a>
+				<h1>账户充值</h1>
+				<button class="public-btn-ts"></button>
+			</div>
+		</div>
+		<div class="p-body">
+			<h1>343.00</h1>
+			<p>账户余额</p>
+			<p class="pb-wxts">*为他人充值不能使用赠送金额</p>
+			<div class="p-input-div">
+				<select class="p-input">
+					<option value="">1234567</option>
+					<option value="">1237</option>
+					<option value="">123567</option>
+					<option value="">123567</option>
+					<option value="">14567</option>
+				</select>
+			</div>
+			<div class="p-input-div">
+				<input type="text" class="p-input p-input-number" placeholder="请输入充值金额" />
+				<div class="p-ts-img-02"></div>
+			</div>
+			<div class="p-input-div">
+				<input type="text" class="p-input p-input-tpyzm" placeholder="请输入右侧验证码" />
+				<img class="p-img-tpyzm" src="images/tpyzm.jpg"/>
+			</div>
+			<p class="p-ts"></p>
+			<div class="text-center">
+				<button class="p-btn-mscz" type="button">马上充值</button>
+			</div>
+		</div>
+		
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-11-01
+        	描述：.zzc：遮罩层
+        -->
+		<div class="zzc"></div>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-11-01
+        	描述：.czts:账户充值提示
+        -->
+        <div class="czts">
+			<div class="czts-father">
+				<h1>账户充值</h1>
+				<p>
+					您正在使用移动荷包充值，
+					<br />是否充值成功？
+				</p>
+				<div class="czts-btn-div">
+					<a href="payFalse.html"><button class="czts-btn czts-btn-zfydwt">支付遇到问题</button></a>
+					<a href="payTrue.html"><button class="czts-btn czts-btn-czcg">充值成功</button></a>
+				</div>
+			</div>        	
+        </div>
+        
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-11-02
+        	描述：.zzc：遮罩层
+        -->
+        <div class="zzc"></div>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-11-02
+        	描述：.public-tc-ts:弹窗提示
+        -->
+        <div class="public-tc-ts">
+        	<div class="public-tc-ts-father">
+        		<div class="text-center">
+        			<button class="public-tc-ts-close"></button>
+        		</div>
+        		<h1>这里是标题</h1>
+        		<p>
+        			这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容
+        			这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容这里是注意的内容
+        		</p>
+        	</div>
+        </div>
+        
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+
+			//关闭账户充值提示
+			$('.czts-btn').on('click',function(){
+				$('.czts').hide();
+				$('.zzc').hide();
+			})
+			
+			//点击"马上充值"按钮
+			$('.p-btn-mscz').on('click',function(){
+				var _number = $('.p-input-number'),
+					_tpyzm = $('.p-input-tpyzm'),
+					ts = $('.p-ts'),
+					ts_02 = '充值金额不能为空',
+					ts_04 = '图片验证码错误';
+					
+				//充值金额不能为空
+				if(_number.val() == '')
+				{
+					ts.html(ts_02);
+				}
+				//图片验证码错误
+				else if(_tpyzm.val().toLowerCase() !="4wa62z")
+				{
+					ts.html(ts_04)
+				}
+				//成功,弹出账户充值提示
+				else
+				{
+					ts.html('');
+					$('.zzc').show();
+					$('.czts').show();
+				}
+			});
+		})
+	</script>
+</body>
+</html>

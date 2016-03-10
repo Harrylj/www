@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>接水果</title>
+<script src="js/quark.base-1.0.0.alpha.min.js"></script>
+<script type="text/javascript" src="src/Button.js"></script>
+<script type="text/javascript" src="src/main.js"></script>
+<script type="text/javascript" src="src/Fruit.js"></script>
+<script type="text/javascript" src="src/Boy.js"></script>
+<script type="text/javascript" src="src/Num.js"></script>
+
+<style type="text/css">
+        body, div, canvas
+        {
+            -webkit-image-rendering: optimizeSpeed;
+            -webkit-interpolation-mode: nearest-neighbor;
+        }
+
+        body{padding:0; margin:0;font-size:12px;background-color:#000;}
+        body, html{height: 100%;}
+        #outer{height:100%; overflow:hidden; position:relative; width:100%;}
+        #outer[id]{display:table; position:static;}
+        #middle{position:absolute; top:50%;} /* for ie only*/
+        #middle[id]{display:table-cell; vertical-align:middle; position:static;}
+    </style>
+</head>
+<div id="outer">
+	    <div id="middle">
+		    <div id="container" style="position:relative;top:-50%;width:320px;height:480px;margin:0 auto;">
+		    </div>
+	    </div>
+    </div>
+
+    <div id="fps" style="position:absolute;top:0;left:0;color:#fff;"></div>
+<body>
+</body>
+</html>

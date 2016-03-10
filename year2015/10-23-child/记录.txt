@@ -1,0 +1,23 @@
+2015/08/31
+1.替换全部CSS
+2.添加搜索页面
+3.修改pulic.js的投票 .love-number改为this
+
+
+4.瀑布流，还要调用相应插件
+<script type="text/javascript">
+		$(function(){
+			//瀑布流显示
+			var $container = $('#masonry');
+			$container.imagesLoaded( function(){
+				$container.masonry({
+					itemSelector : '.box',
+					//gutterWidth : 10,
+					isAnimated: true,
+				});
+			});
+		});
+	</script>
+
+
+5.回到顶部

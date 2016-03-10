@@ -1,0 +1,21 @@
+/**
+ * Created by Administrator on 2015/4/10.
+ */
+$(function(){
+   $('.gr-btn-hdgz').on('click',function(){
+        $('.border-box').show();
+        $('.index-zzc').show();
+   });
+    $('.gr-btn-post').on('click',function(){
+        $(this).hide();
+        $('.gr-table-now').hide();
+        $('.gr-btn-now').show();
+        $('.gr-table-post').show();
+    });
+    $('.gr-btn-now').on('click',function(){
+        $(this).hide();
+        $('.gr-table-post').hide();
+        $('.gr-btn-post').show();
+        $('.gr-table-now').show();
+    });
+});

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <title>好友连连看</title>
+
+</head>
+<body>
+	<div class="index">
+		<header class="index-header">已有<span>XX</span>名用户获5元话费，剩余话费<span>XXX</span>份！</header>
+		<main>
+			<div class="i-img">
+				<img class="i-user-img" src="images/self.jpg" alt="" />
+				<div class="i-img-list i-img-list-01">
+					<img src="images/self.jpg" />
+					<p>村口组李三娃</p>
+				</div>
+				<div class="i-img-list i-img-list-02">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-03">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-04">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-05">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-06">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-07">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-08">
+					<img/>
+					<p>待召唤</p>
+				</div>
+				<div class="i-img-list i-img-list-09">
+					<img/>
+					<p>待召唤</p>
+				</div>
+			</div>
+			
+			<p class="i-p-01">已成功召唤<span>4名好友</span>,可获取<span>20元</span>话费</p>
+			<div class="input-div text-center">
+				<input class="i-input-phone" type="tel" placeholder="请输入好友的手机号码" />
+			</div>
+			<p class="i-ts"></p>
+			<div class="text-center">
+				<button class="i-btn-mszh" type="button">马上召唤</button>
+			</div>
+		</main>
+		<button class="i-btn-hdgz">活动规则</button>
+		
+		
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-10-27
+        	描述：.zzc：遮罩层
+        -->
+        <div class="zzc"  ></div>
+        <div class="public-tc hdgz" >
+        	<div class="public-tc-father">
+        		<h1>活动规则</h1>
+        		<p>
+        			1.	活动期间，和生活注册用户在活动页面输入好友手机号，邀请好友下载并注册和生活APP，在活动页面输入推荐人手机号，验证成功后即可和好友同时获得5元话费奖励；
+					<br>2.	本活动仅限达州移动用户参与
+					<br>3.	被邀请用户必须为首次注册登录和生活手机客户端，才能获得话费奖励。
+					<br>4.	本活动最终解释权归达州移动所有。
+        		</p>
+        		<div class="text-center"><button class="public-btn-gb">关闭</button></div>
+        	</div>
+        </div>
+	</div>
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		//点击“马上召唤”,验证输入手机号码
+		$('.i-btn-mszh').on('click',function(){
+			var iPhone= $('.i-input-phone'),
+				gs = /^1\d{10}$/,
+				ts = $('.i-ts'),
+				ts_01 = '手机号码不能为空',
+				ts_02 = '手机号码格式错误',
+				ts_03 = '召唤发送成功';
+				
+				
+			var defaultValue= $('.i-input-phone')[0].defaultValue;
+			//为空
+			if(iPhone.val()=='' || iPhone.val()==defaultValue)
+			{
+				ts.html(ts_01);
+			}
+			//格式不对
+			else if(!gs.test(iPhone.val()))
+			{
+				ts.html(ts_02);
+			}
+			//成功
+			else
+			{
+				ts.html('');
+				alert(ts_03);
+			}
+		})
+		
+		//显示提示规则
+		$('.i-btn-hdgz').on('click',function(){
+			$('.zzc').show();
+			$('.hdgz').show();
+		})
+		
+		//关闭提示规则
+		$('.public-btn-gb').on('click',function(){
+			$(this).parents('.public-tc').hide();
+			$('.zzc').hide();
+		})
+	})
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+.o-header{
+    padding: 8px;
+}
+.vo-list{
+    border-bottom:1px solid #e0e0e0;
+    line-height: 40px;
+    margin: 0 10px;
+    font-size: 1.125rem;
+    color: black;
+    letter-spacing: 3px;
+}
+.vo-list p{
+    letter-spacing: 1px;
+    font-size: 1rem;
+    color: #666;
+}
+.vo-p-right{
+    padding-right: 15px;
+    background-image: url("../images/line-right.png");
+    background-size: 12px 18px;
+    background-position: right 12px;
+    background-repeat: no-repeat;
+}
+
+.vo-time-list{
+    margin-top: 15px;
+}
+.vo-time{
+    width: 106px;
+}
+.vo-time>p{
+    font-size: 1rem;
+    line-height: 36px;
+    text-align: center;
+    color: #000000;
+}
+.vo-time-box{
+    position: relative;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    color: white;
+    font-size: 0.75rem;
+    border-radius: 50%;
+    background-color: #27ae60;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+.vo-time-box span{
+    font-size: 1.25rem;
+}
+.vo-time-box div{
+    display: none;
+}
+.vo-time .vo-time-min{
+	background-color: #ee5d68;
+}
+.vo-time .vo-time-check{
+    color: #ccc;
+    background-color: #158974;
+}
+.vo-time .vo-time-check div{
+    display: block;
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    color: white;
+    font-size: 1.25rem;
+    font-family: "微软雅黑", "黑体", "宋体";
+    background-color: transparent;
+    text-align: center;
+}
+.btn-msyy{
+    background-color: #36ca1e;
+    margin-top: 20px;
+}
+.vt-date{
+	 line-height: 60px;
+}
+.vt-date .vo-p-right{
+	background-position: right 20px; 
+}
+
+
+
+
+
+
+
+.ui-btn-text{
+	display: none;
+}
+.ui-loader-default{
+	display: none;
+}
+
+
+

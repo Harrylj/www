@@ -1,0 +1,15 @@
+body{ 
+	letter-spacing: 2px;
+	min-width: 320px;
+	max-width: 768px;
+	min-height: 480px;
+	margin: auto;
+	position: relative;
+}
+.clear{
+	clear: both;
+}
+.img-100{
+	display: block;
+	width: 100%;
+}

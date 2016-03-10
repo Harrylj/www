@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/swiper.min.css" rel="stylesheet" type="text/css">
+    <link href="css/test1.css" rel="stylesheet" type="text/css">
+
+    <title>测试</title>
+</head>
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide slide1">Slide 1</div>
+            <div class="swiper-slide slide2">Slide 2
+                <div>
+                    <p class="p p1">11111111111111111111111111111111</p>
+                    <p class="p p2">2222222222222222222</p>
+                    <img class="p p3 " src="images/click_hy.png">
+                    <p class="p p4">3333333333333333333</p>
+                    <img class="p p5" src="images/flame.gif">
+                    <img class="p p6" src="images/mj_1937.png">
+                </div>
+                <div class="s-jiantou">
+                    <img src="images/jiantou.png">
+                </div>
+            </div>
+            <div class="swiper-slide slide3">Slide 3</div>
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要滚动条 -->
+        <div class="swiper-scrollbar"></div>
+    </div>
+
+
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/swiper3.06.jquery.min.js" type="text/javascript"></script>
+<script src="js/test1.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            var oAudio=document.getElementById('myAudio');
+            oAudio.play();
+            $('.player-button').click(function(){
+                if(oAudio.paused)       //paused 属性返回音频/视频是否已暂停。true 指示音频/视频已暂停。否则为 false。
+                {
+                    oAudio.play();
+                    $('.player-button').removeClass("player-button-stop");
+                }
+                else{
+                    oAudio.pause();
+                    $('.player-button').addClass("player-button-stop");
+                }
+            })
+        })
+    </script>
+    <div class="player-button">
+        <audio id="myAudio" tn-page-editable="aud0" autoplay loop tn-page-editable-type="aud-link" ng-src="bg.mp3" src="bg.mp3"  preload="auto"></audio>
+    </div>
+
+</body>
+</html>

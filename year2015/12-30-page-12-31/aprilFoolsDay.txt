@@ -1,0 +1,19 @@
+
+    <div class="share-img">
+    	<img class="img-100" src="images/share.png" />
+    	<p>分享后您和好友都将获得5元话费哦</p>
+    </div>
+
+
+
+		//关闭弹出层
+		$('.s5-btn-fx').on('click',function(){
+			$('.swiper-pagination').show();
+		    $('.s5-zz').hide();
+		    $('.s5-fx').hide();
+		})
+		
+		$('.s5-btn-fx').on('click',function(){
+			$('.s5-zz').show();
+			$('.share-img').show();
+		})

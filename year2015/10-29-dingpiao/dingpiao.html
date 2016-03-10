@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/dingpiao.css" type="text/css" rel="stylesheet">
+    	
+    <title>客车订票</title>
+</head>
+<body>
+	<div class="dingpiao vr">
+		<img class="img-100" src="images/banner.jpg" />
+		<div class="dp-table-div">
+			<table class="dp-table" cellspacing="" cellpadding="">
+				<tr>
+					<td>查询订单</td>
+					<td><input class="dp-input" type="text" placeholder="请输入乘车人手机号"></td>
+				</tr>
+				<tr>
+					<td>起点站</td>
+					<td><input class="dp-input" type="text" placeholder="起点站"></td>
+				</tr>
+				<tr>
+					<td>终点站</td>
+					<td><input class="dp-input" type="text" placeholder="终点站"></td>
+				</tr>
+				<tr>
+					<td>出发时间</td>
+					<td><input class="dp-input" id="datetime" type="text" placeholder="出发时间"></td>
+				</tr>
+			</table>
+			<div class="text-center">
+				<input class="dp-btn-cpcx" type="button" value="车票查询">
+			</div>
+		</div>
+		
+		
+	</div>
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js" ></script>
+<script type="text/javascript" src="js/mobiscroll.js" ></script>
+<script type="text/javascript">
+$(function () {
+	var newjavascript={
+		plugdatetime:function ($dateTxt,type) {
+				//var curr = new Date().getFullYear();
+				var opt = {}
+				opt.time = {preset : type};
+				opt.date = {
+                    preset : type,
+                    minDate: new Date(2015,6,13),
+                    maxDate: new Date(2020,12,31),
+                    stepMinute: 1
+                };
+				opt.datetime = {
+					preset : type,
+					minDate: new Date(2010,1,01,01,01),
+					maxDate: new Date(2020,12,3,01,01),
+					stepMinute: 1
+				};
+
+
+				$dateTxt.val('').scroller('destroy').scroller($.extend(opt[type], { 
+					theme: "sense-ui", 
+					mode: "scroller", 
+					display: "modal", 
+					lang: "english",
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					hourText: "时",
+					minuteText: "分",
+					ampmText:"上午/下午",
+					setText: '确定',
+					cancelText: '取消',
+					//dateFormat: 'yy-mm-dd'
+                    dateFormat: 'yy'+'年'+'mm'+'月'+'dd'+'日'
+				})
+			);
+		}
+	}
+	newjavascript.plugdatetime($("#datetime"), "date")
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+.help{
+	letter-spacing: 2px;
+	padding: 0 10px 10px 10px;
+}
+.help-body{
+	border:2px solid #ccc;
+	padding: 10px 10px 10px 10px;
+}
+.help-body p{
+	padding: 0 10px;
+	font-size: 1rem;
+	line-height: 24px;
+}
+.help-body a{
+	color: #f601d1;
+}
+.help-body h1{
+	color: black;
+	font-size: 1.5rem;
+	line-height: 40px;
+}
+.height-20{
+	height: 20px;
+}
+.hb-jb{
+	height: 10px;
+	background: -webkit-gradient(linear,0 0,100% 0,from(#0200fe), to(#f601d1));
+	background: -moz-linear-gradient(left,#0200fe,#f601d1);
+}
+.help-body h1 span{
+	letter-spacing: 0;
+}

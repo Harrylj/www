@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="css/new.css"/>
+    <title>好友连连看</title>
+</head>
+<body>
+	<div class="new vr">
+		<main>
+			<img class="new-img-01" src="images/index-03.png" />
+			<div class="text-center">
+				<input class="new-input-phone" type="tel"  placeholder="输入推荐人手机号码"/>
+			</div>
+			<p class="new-ts"></p>
+			<div class="text-center">
+				<button class="new-btn-lqhf">领取5元话费</button>
+			</div>
+			<img class="img-100" src="images/index-04.png" style="margin: 15px 0;" />
+			<p class="new-p">每邀请一位好友即获得5元话费</p>
+			<div class="text-center">
+				<a href="#"><button class="new-btn-cjhd">参加活动</button></a>
+			</div>
+		</main>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击“马上召唤”,验证输入手机号码
+		$('.new-btn-lqhf').on('click',function(){
+			var iPhone= $('.new-input-phone'),
+				gs = /^1\d{10}$/,
+				ts = $('.new-ts'),
+				ts_01 = '手机号码不能为空',
+				ts_02 = '手机号码格式错误',
+				ts_03 = '召唤发送成功';
+				
+				
+			var defaultValue= $('.new-input-phone')[0].defaultValue;
+			//为空
+			if(iPhone.val()=='' || iPhone.val()==defaultValue)
+			{
+				ts.html(ts_01);
+			}
+			//格式不对
+			else if(!gs.test(iPhone.val()))
+			{
+				ts.html(ts_02);
+			}
+			//成功
+			else
+			{
+				ts.html('');
+				alert(ts_03);
+			}
+		})
+		})
+	</script>
+</body>
+</html>

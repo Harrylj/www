@@ -1,0 +1,51 @@
+main{
+	padding: 8px;
+	background-color: white;
+}
+
+main h1{
+	height: 40px;
+	font-size: 1.5rem;
+	line-height: 40px;
+	letter-spacing: 2px;
+}
+.tb-ul{
+	
+}
+.tb-ul li
+,.tb-ul a{
+	display: block;
+	float: left;
+	width: 90px;
+	text-align: center;
+	margin-right: 10px;
+	padding-bottom: 15px;
+}
+.tb-ul img{
+	width: 70px;
+	height: 70px;
+}
+.tb-ul p{
+	position: relative;
+	font-size: 1rem;
+	line-height: 36px;
+	letter-spacing: 2px;
+}
+.tb-hot:after{
+	content: '.';
+	position: absolute;
+	right: 10px;
+	top: -6px;
+	display: block;
+	color: transparent;
+	width: 30px;
+	height: 18px;
+	background-image: url(../images/transcatBusiness-01.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.tb-border-bottom{
+	border-bottom: 1px solid #ccc;
+}
+
+

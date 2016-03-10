@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/quickGame.css" type="text/css" rel="stylesheet">
+    <title>快速挑战</title>
+</head>
+<body>
+    <div class="quick-game">
+        <!--这里表示个人的金豆数-->
+        <!--这里我JS初始值为100-->
+        <input class="qg-my-number" type="hidden">
+        <div class="qg-header">
+            <button class="qg-btn-sjxz"></button>
+            <div class="qg-h-game">
+                <h1 class="qg-h1 center vr">不同金豆场</h1>
+                <table class="qg-table" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td max="10" min="0"><span>01~10</span></td>
+                        <td max="30" min="11"><span>11~30</span></td>
+                        <td max="50" min="31"><span>31~50</span></td>
+                    </tr>
+                    <tr>
+                        <td max="100" min="51"><span>51~100</span></td>
+                        <td max="200" min="101"><span>101~200</span></td>
+                        <td max="999999" min="201"><span>200加</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="qg-content">
+
+            <div class="qg-c-game">
+                <p>擂主：<span>王小二</span></p>
+                <p>筹码：<span class="qg-game-number">5</span>金豆</p>
+            </div>
+            <div class="qg-c-game">
+                <p>擂主：<span>王小二</span></p>
+                <p>筹码：<span class="qg-game-number">25</span>金豆</p>
+            </div>
+            <div class="qg-c-game">
+                <p>擂主：<span>王小二</span></p>
+                <p>筹码：<span class="qg-game-number">35</span>金豆</p>
+            </div>
+            <div class="qg-c-game">
+                <p>擂主：<span>王小二</span></p>
+                <p>筹码：<span class="qg-game-number">55</span>金豆</p>
+            </div>
+            <div class="qg-c-game">
+                <p>擂主：<span>王小二</span></p>
+                <p>筹码：<span class="qg-game-number">115</span>金豆</p>
+            </div>
+            <div class="qg-c-game">
+                <p>擂主：<span>王小二</span></p>
+                <p>筹码：<span class="qg-game-number">225</span>金豆</p>
+            </div>
+
+
+
+            <div class="clear"></div>
+        </div>
+        <div></div>
+
+        <!--随机选择-->
+        <div class="border-box qg-sjxz" >
+            <div class="border-box-bg">
+                <button class="bb-btn-close border-btn-close" type="button"></button>
+                <p class="public-bb-p">
+                    我们我们帮你发现一个土豪，快去把他干掉成为下一个土豪吧。
+                </p>
+                <p class="qg-p center">土豪：<span>小鱼小虾</span></p>
+                <p class="qg-p center">金豆：<span>45545445</span></p>
+                <div class="qg-btn-father center">
+                    <button class="qg-btn qg-btn-xyg bb-btn-close fl"></button>
+                    <button class="qg-btn qg-btn-qtz fr"></button>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+
+        <!--提示金豆不足-->
+        <div class="border-box qg-ts">
+            <div class="border-box-bg">
+                <button class="bb-btn-close border-btn-close" type="button"></button>
+                <p class="public-bb-p text-center">
+                   金豆余额不足，无法进行挑战/(ㄒoㄒ)/~~
+                </p>
+
+            </div>
+        </div>
+        <!--遮罩层-->
+        <div class="index-zzc"></div>
+    </div>
+    <div class="public-footer center">
+        <a class="p-f-btn pf-btn-01" href="gameCenter.html"></a>
+        <a class="p-f-btn pf-btn-02" href="createGame.html"></a>
+        <a class="p-f-btn pf-btn-03" href="quickGame.html"></a>
+    </div>
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="js/public.js" type="text/javascript"></script>
+<script src="js/quickGame.js" type="text/javascript"></script>
+</body>
+</html>

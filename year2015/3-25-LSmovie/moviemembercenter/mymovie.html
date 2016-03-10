@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width" name="viewport">
+	<link rel="stylesheet" type="text/css" href="../default/green/css/style.css">
+    <title>我的影票</title>
+</head>
+<body>
+<div class="web-main p-b-60">
+	<div class="web-header"></div>
+	<div class="web-content">
+		<div class="coupon-nav">
+			<ul class="clearfix">
+				<li class="current"><a href="#">我的影票</a></li>
+				<li><a href="#">已付款</a></li>
+				<li><a href="#">未付款</a></li>
+			</ul>
+		</div>
+
+		<div class="height_10"></div>
+
+		<ul class="order-list ordernav">
+            <!-- movie-expired:失效(未付款)  movie-valid:有效的（已付款）-->
+			<li class="movie-valid">
+                <div class="movie-status">已付款</div>
+				<div class="order-info fl">
+					<p class="t"><a href="#">阿凡达</a></p>
+                    <p class="y">放映时间：<span>2014/11/15 - 2014/11/30</span></p>
+                    <p class="d">请您在<span class="red">13分33秒</span>内完成支付，超时系统将自动取消订单</p>
+				</div>
+			</li>
+			<li class="movie-expired">
+                <div class="movie-status">未付款</div>
+				<div class="order-info fl">
+					<p class="t">秦时明月</p>
+                    <p class="y">放映时间：<span>2014/11/15 - 2014/11/30</span></p>
+                    <p class="d">请您在<span class="red">13分33秒</span>内完成支付，超时系统将自动取消订单</p>
+                </div>
+			</li>
+			<li class="movie-expired">
+                <div class="movie-status">未付款</div>
+				<div class="order-info fl">
+					<p class="t">进击的巨人</p>
+                    <p class="y">放映时间：<span>2014/11/15 - 2014/11/30</span></p>
+                    <p class="d">请您在<span class="red">13分33秒</span>内完成支付，超时系统将自动取消订单</p>
+				</div>
+			</li>
+			<li class="movie-expired">
+                <div class="movie-status">未付款</div>
+				<div class="order-info fl">
+					<p class="t">死神</p>
+                    <p class="y">放映时间：<span>2014/11/15 - 2014/11/30</span></p>
+                    <p class="d">请您在<span class="red">13分33秒</span>内完成支付，超时系统将自动取消订单</p>
+				</div>
+			</li>
+		</ul>
+	</div>
+	<div class="web-footer">
+		<div class="footer-wrap">
+			<div class="nav-back"><a href="#"></a></div>
+			<div class="nav-title">我的影票</div>
+			<div class="nav-user"><a href="#"></a></div>
+		</div>
+	</div>
+</div>
+<script src="../default/js/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        //头部点击切换影视状态
+        $('.clearfix').children('li')
+                        .on('click',function(){
+                            var thisIndex = $(this).index(),
+                                orderList = $('.order-list');
+                            $(this).addClass('current')
+                                    .siblings()
+                                    .removeClass('current');
+                            if(thisIndex=='0')
+                            {
+                                $('.order-list').children()
+                                                   .show();
+                            }
+                            else if(thisIndex=='1')
+                            {
+                                orderList.children().hide();
+                                orderList.children('.movie-valid').show();
+                            }
+                            else
+                            {
+                                orderList.children().hide();
+                                orderList.children('.movie-expired').show();
+                            }
+
+        });
+    });
+</script>
+</body>
+</html>

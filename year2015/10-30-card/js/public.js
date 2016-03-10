@@ -1,0 +1,14 @@
+$(function(){
+	//弹出弹出框
+	$('.public-btn-ts').on('click',function(){
+		$('.public-tc-ts').show();
+		$('.zzc').show();
+		$('body').css('padding-top','0')
+	})
+	//关闭弹出框
+	$('.public-tc-ts-close').on('click',function(){
+		$(this).parents('.public-tc-ts').hide();
+		$('.zzc').hide();
+		$('body').css('padding-top','48px')
+	})
+})

@@ -1,0 +1,59 @@
+ *{
+     box-sizing: border-box;
+ }
+.graden{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    min-width: 320px;
+    overflow: hidden;
+}
+.graden-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+.graden-bg img{
+    width: 100%;
+    height: 100%;
+}
+.graden-date{
+    padding-left: 10%;
+    padding-top: 5%;
+}
+.graden-date li{
+    position: relative;
+    z-index: 1;
+    line-height: 20px;
+    height: 60px;
+    padding-left: 25px;
+    background-image: url("../images/graden-01.png");
+    background-position: left 2px;
+    background-size: 22px 88px;
+    background-repeat: no-repeat;
+    color: red;
+    font-size: 16px;
+}
+.graden-date li:last-child{
+    background-image: url("../images/graden-02.png");
+    background-size: 22px 22px;
+}
+.g-d-01{
+    font-size: 20px;
+    color: black;
+}
+.g-d-02{
+    font-size: 14px;
+    color: black;
+}
+.g-a{
+
+    color: #000000;
+    line-height: 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+}

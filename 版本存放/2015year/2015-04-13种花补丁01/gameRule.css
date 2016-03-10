@@ -1,0 +1,81 @@
+body,html{
+    width: 100%;
+    height: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+div.gameRule{
+    display: block;
+    position: relative;
+    left: 0;
+    top: 0;
+    margin: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    min-width: 320px;
+    overflow: scroll;
+}
+.gameRule .border-box-bg{
+    padding: 3%;
+}
+.gameRule h1{
+    text-align: center;
+    font-size: 18px;
+    line-height: 30px;
+}
+.gameRule p{
+    color: #000000;
+    font-size: 14px;
+    line-height: 22px;
+    text-indent: 1em;
+    letter-spacing: 2px;
+}
+.gr-bold{
+    font-weight: bold;
+}
+.gr-table{
+    width: 100%;
+    border: 1px  solid #ccc;
+}
+.gr-table th{
+    text-align: center;
+    color: #000000;
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+.gr-table td{
+    text-align: center;
+    font-size: 14px;
+    line-height: 22px;
+    border: 1px solid #ccc;
+    border-left: none;
+}
+.gr-btn{
+    width: 40%;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    letter-spacing: 3px;
+    color: white;
+
+}
+.gr-footer-bg{
+    margin-top: 10px;
+    padding: 5%;
+    background-color: #f7db9c;
+    border-radius: 5px;
+}
+.gr-btn-lqzz{
+    background-color: #e73d01;
+}
+.gr-btn-fyhy{
+    background-color: #31b600;
+}

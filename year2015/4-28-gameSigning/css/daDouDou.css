@@ -1,0 +1,85 @@
+.ddd{
+    padding-top: 10px;
+    padding-bottom: 20px;
+    min-width: 320px;
+    min-height: 480px;
+}
+.ddd-header{
+    text-align: center;
+}
+.ddd-img-01{
+    width: 300px;
+}
+.ddd-p-01{
+    text-align: center;
+    color: #000000;
+    line-height: 30px;
+    font-size: 14px;
+    margin-top: -20px;
+
+}
+.ddd-content{
+    padding:10px;
+}
+.ddd-p-02{
+    background-image: url("../images/ddd-02.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-size: 16px;
+    height: 40px;
+    line-height: 40px;
+    color: #000000;
+    position: relative;
+    z-index: 1;
+    padding-left: 10px;
+}
+.ddd-p-03{
+    font-size: 14px;
+    color: #000000;
+    line-height: 28px;
+    padding:20px 0;
+    margin-top: -10px;
+    background-color: #ffeee1;
+    border: 1px solid #f3ddcc;
+    border-radius: 50%;
+}
+
+.ddd-table-01{
+    width: 100%;
+}
+.ddd-table-01 td,
+.ddd-table-01 th{
+    text-align: center;
+}
+.ddd-table-father{
+    background-color: #ffff18;
+    padding: 0 5px 10px  5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.ddd-table-01 th{
+    font-size: 18px;
+    color: black;
+    letter-spacing: 4px;
+    line-height: 46px;
+}
+.ddd-table-01 td{
+    width: 33.33%;
+    line-height: 30px;
+    font-size: 14px;
+    color: #000000;
+    border: 1px solid #000000;
+}
+.ddd-btn-wyyddd{
+    border: 1px solid #ccc;
+    border-radius: 16px;
+    font-size: 16px;
+    line-height: 40px;
+    color: white;
+    letter-spacing: 3px;
+    padding: 0 20px;
+    background-color: #f94e4e;
+    box-shadow: 0 1px 1px #ccc;
+}
+

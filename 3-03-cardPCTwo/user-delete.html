@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/user-pay.css"/>
+	<link rel="stylesheet" type="text/css" href="css/user-delete.css"/>
+    <title>挂失</title>
+
+</head>
+<body>
+	<div class="user-pay vr">
+		<div class="public-header-father">
+			<div class="public-header">
+				<p class="fl"><a class="uc-name" href="user-card.html">Hi,13876579866</a>&nbsp;&nbsp;<a href="login.html">退出</a></p>
+				<div class="fr">
+					<a class="index-phone" href="#">手机移卡通</a><span>|</span><a class="index-serve" href="serve.html">客户服务</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="index-header-father">
+			<div class="index-header">
+				<img src="images/index-01.png" />
+				<div class="index-nav userCenter-nav">
+					
+					<a class="index-nav-click" href="#">挂失</a>
+					<a href="user-search.html">查询</a>
+					<a href="user-pay.html">充值</a>
+					<a href="user-buy.html">购卡</a>
+					<a href="user-card.html">移卡通</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="uc-content-father">
+			<div class="uc-content ud-content">
+				
+				
+				<!--
+                	作者：648267773@qq.com
+                	时间：2015-10-15
+                	描述：.ud-card-wait:等待中。。
+                		.ud-card-success:挂失成功
+                		.ud-card-delete:申请挂失
+                -->
+                <div class="ud-card">
+                	<div class="ud-card-status ud-card-wait ud-card-status-hover">
+                		<img src="images/user-pic.jpg" />
+	                	<p>姓名：<span>张三的卡</span></p>
+	                	<p>卡号：<span>V9858985555</span></p>
+	                	<p>状态：<span class="uc-status">使用中...</span></p>
+	                	<input class="ud-btn" type="button" value="申请中" />
+	                </div>
+	                <div class="ud-card-status ud-card-success">
+                		<img src="images/user-pic.jpg" />
+	                	<p>姓名：<span>张三的卡</span></p>
+	                	<p>卡号：<span>V9858985555</span></p>
+	                	<p>状态：<span class="uc-status">已挂失</span></p>
+	                	<input class="ud-btn" type="button" value="已挂失" />
+	                </div>
+	                <div class="ud-card-status ud-card-delete">
+                		<img src="images/user-pic.jpg" />
+	                	<p>姓名：<span>张三的卡</span></p>
+	                	<p>卡号：<span>V9858985555</span></p>
+	                	<p>状态：<span class="uc-status">使用中...</span></p>
+	                	<input class="ud-btn" type="button" value="申请挂失" />
+	                </div>
+                	<div class="clear"></div>
+                </div>
+                <img class="img-100" src="images/two/two-img-12.png"/>
+                <div class="ud-yzm-get">
+                	<input class="public-input ud-input ud-input-yzm" type="input" placeholder="请输入验证码" value="请输入验证码" /> &nbsp;&nbsp;<input class="ud-btn ud-btn-hqyzm" type="button" value="获取验证码" />
+                </div>
+                <p class="ud-ts-p"></p>
+                <input class="ud-btn ud-btn-ljgs" type="button" value="立即挂失" />
+                
+                <div class="ud-ts-div">
+                	<h1>注意：</h1>
+                	<p> 
+                		1.卡片遗失后，为保证资金安全，用户应尽快办理挂失手续。
+                	</p>
+	 				<p>
+	 					2.根据规定，卡片办理挂失在次日8：00生效前的时间内，若发生交易费用，则由用户自行承担，
+	 次日8：00后费用不由用户承担
+	 				</p>
+                </div>
+			</div>
+		</div>
+		
+		
+
+		
+	</div>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-03-04
+    	描述：.cxkh:查询卡号
+    -->
+    <div class="cxkh public-pay-father">
+    	<div class="public-pay">
+    		<h1 class="public-delete-title">请输入手机号码查询相对应绑定的卡号</h1>
+    		<div class="ud-phone-search">
+					<input class="public-input ud-input ud-input-phone" type="text"  placeholder="例：16787654567" /> &nbsp;&nbsp;<input class="ud-btn ud-btn-cz"  type="button" value="查找"/>
+			</div>
+    	</div>
+    </div>
+
+<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+<script src="js/user-pay.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		//点击选框切换选中状态
+		$('.ud-card-status').on('click',function(){
+			var thisClass = 'ud-card-status-hover';
+			$(this).addClass(thisClass).siblings().removeClass(thisClass);
+		})
+		
+		//获取浏览器高度
+		var bodyHeight = document.body.clientHeight,
+			bodyWidth = window.screen.availWidth;
+		//阴影背景
+		var zzcbg = $('<div class="zzc"><div>');
+		zzcbg.css({
+			'width':bodyWidth,
+			'height':bodyHeight
+		})
+		zzcbg.appendTo($('body'));
+		
+		//点击“立即挂失”，弹出输入电话号码弹窗
+		$('.ud-btn-ljgs').on('click',function(){
+			$('.zzc').show();
+			$('.cxkh').show();
+		})
+		
+		//点击"查询"后关闭弹窗
+		$('.ud-btn-cz').on('click',function(){
+			$('.zzc').hide();
+			$('.cxkh').hide();
+		})
+	})
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

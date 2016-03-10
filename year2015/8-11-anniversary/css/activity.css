@@ -1,0 +1,32 @@
+.activity{
+	position: relative;
+	background-image: url(../images/map-bg-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.a-content>img{
+	width: 100%;
+	height: auto;
+	margin-bottom: 20px;
+}
+.btn-map{
+	position: absolute;
+	left: 50%;
+	bottom: 20px;
+	margin-left: -50px;
+	height: 112px;
+	width: 100px;
+	z-index: 2;
+	opacity: .9;
+}
+.a-footer-bg{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: auto;
+	z-index: 1;
+}
+.btn-map:hover{
+	opacity: 1;
+}

@@ -1,0 +1,27 @@
+
+.index-img-gz{
+	width: 90%;
+	margin: 0 5%;
+}
+.index-btn-wybm
+,.index-btn-wytp{
+	width: 120px;
+	height: 52px;
+	border: none;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	margin: 10px;	
+	background-color: transparent;
+}
+.index-btn-wybm{
+	background-image: url(../images/btn-wybm.png);
+}
+.index-btn-wytp{
+	background-image: url(../images/btn-wytp.png);
+}
+.index-btn-wybm:hover{
+	background-image: url(../images/btn-wybm-hover.png);
+}
+.index-btn-wytp:hover{
+	background-image: url(../images/btn-wytp-hover.png);
+}

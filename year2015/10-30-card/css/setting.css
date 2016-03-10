@@ -1,0 +1,58 @@
+.setting{
+	background-color: #EFEFF4;
+	padding-bottom: 50px;
+}
+.s-height-30{
+	height: 30px;
+}
+.s-list{
+	background-color: white;
+	padding-left: 10px;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+}
+.sl-line{
+	position: relative;
+	height: 50px;
+	line-height: 50px;
+	/*
+	padding-left: 28px;
+	background-image: url(../images/setting-01.png);
+	*/
+	padding-left: 8px;
+	border-bottom: 1px solid #ccc;
+	font-size: 1.125rem;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: left center;
+	color: black; 
+}
+.sl-line:last-child{
+	border-bottom: none;
+}
+.sl-img-user{
+	position: relative;
+	top: 5px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+.sl-line a{
+	position: absolute;
+	right: 5px;
+	top: 0;
+	display: block;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1rem;
+	color: #666;
+	padding-right: 16px;
+	background-image: url(../images/public-right.png);
+	background-size: 9px 15px;
+	background-repeat: no-repeat;
+	background-position: right center; 
+}
+.sl-line .sl-line-none{
+	padding: 0;
+	background-image: none;
+}

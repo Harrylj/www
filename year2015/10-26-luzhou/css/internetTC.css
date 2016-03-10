@@ -1,0 +1,85 @@
+header{
+	position: relative;
+}
+
+.i-header-div{
+	position: absolute;
+	left: 25%;
+	top: 15%;
+}
+.i-aj .i-header-div{
+	color: red;
+}
+.i-yj .i-header-div{
+	color: #22d5be;
+}
+.i-aj .i-header-ul span{
+	color: #0084ff;
+}
+.i-yj .i-header-ul span{
+	color: #31dd4a;
+}
+.i-header-div h1{
+	letter-spacing: 3px;
+	line-height: 30px;
+	font-size: 1.25rem;
+	font-weight: bold;
+}
+.i-header-div p{
+	letter-spacing: 2px;
+	font-size: 1rem;
+	line-height: 24px;
+}
+.i-header-ul{
+	position: absolute;	
+	left: 0;
+	top: 68%;
+	width: 100%;
+}
+.i-header-ul span{
+	font-size: 1.5rem;
+	line-height: 28px;
+}
+.i-header-ul li{
+	float: left;
+	width: 33%;
+	font-size: 1rem;
+	line-height: 20px;
+	color: white;
+	text-align: center;
+	letter-spacing: 2px;
+	position: relative;
+}
+.i-header-ul li:after{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	content: '.';
+	color: transparent;
+	display: block;
+	height: 30px;
+	border-right: 1px solid #4f4130;
+}
+.i-header-ul li:last-child:after{
+	display: none;
+}
+main{
+	background-color: white;
+}
+
+
+.i-main{
+	padding: 8px;
+}
+.i-main h1{
+	color: red;
+	font-size: 1.5rem;
+	letter-spacing: 2px;
+	line-height: 40px;
+}
+.i-main p{
+	font-size: 1rem;
+	letter-spacing: 2px;
+	line-height: 28px;
+	color: black;
+}

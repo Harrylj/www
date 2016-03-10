@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <title>手机流量兑换金币</title>
+
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-08-04
+    	描述：需求参数
+    	.number-yzm:获取的验证码：默认为1234
+    	.number-yzm-phone:获取验证码的手机:默认为18200166591
+    -->
+    <input class="number-yzm" type="hidden" value="1234" />
+	<input class="number-yzm-phone" type="hidden" value="18200166591" />
+		<div class="index vr">
+		<img src="images/index-01.png" width="100%" />	
+		<h1 class="index-time text-center" class="text-center"> 活动时间：每月5号-15号</h1>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-12-23
+        	描述：若要修改规则就调用这个
+        	<div class="index-hdgz">
+			1.	金币兑换仅限当月之前绑定微信的
+			<br>	遂宁移动用户，每名用户每月1次参与
+			<br>	兑换机会；
+			<br>2.	根据用户上月流量使用情况进行兑换，
+			<br>	1M流量=1金币；
+			<br>3.	当月新绑定微信的遂宁移动用户可
+			<br>	在次月参与本活动。
+		</div>
+        -->
+		
+		<img src="images/index-02.png" width="100%" />
+		<input class="i-input-phone" type="text" placeholder="请输入正确的手机号码" />
+		<div class="yzm-father">
+			<input class="i-input-yzm fl" type="text" placeholder="请输入验证码" />
+			<button class="index-btn-hqyzm fr">获取验证码</button>
+			<div class="clear"></div>
+		</div>
+		<p class="index-ts"></p>
+		<div class="text-center">
+			<button class="index-btn-msdh" type="button">马上兑换</button>	
+		</div>
+		<p class="index-bq">*本活动最终解释权归遂宁移动所有</p>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：遮罩层
+        -->
+        <div class="zzc"></div>
+        <!--
+        	作者：648267773@qq.com
+        	时间：2015-08-04
+        	描述：弹出层
+        -->
+        <div class="index-dhjd">
+        	<h1 class="text-center">兑换金豆</h1>
+        	<p class="text-center">您本月共使用<span class="index-green">123M</span>流量</p>
+        	<p class="text-center">可兑换<span class="red">12908</span>个金豆</p>
+        	<div class="text-center">
+        		<button class="index-btn-qddh" type="button">确定兑换</button>
+        	</div>
+        </div>
+	</div>
+	
+
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

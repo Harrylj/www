@@ -1,0 +1,63 @@
+html,body{
+    width: 100%;
+    position: relative;
+    background-color: white;
+    min-width: 320px;
+    min-height: 480px;
+}
+.network{
+    position: relative;
+    width: 100%;
+
+    text-align: center;
+}
+.n-header-img{
+    width: 300px;
+    height: 138px;
+    min-height: 20%;
+}
+.n-header-nav{
+    margin: 5px 5px 0 5px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+.n-header-nav a{
+    display: inline-block;
+    font-size: 14px;
+    padding-left: 20px;
+    line-height: 20px;
+    background-image: url("../images/network-02.png");
+    background-size: 20px 20px;
+    background-repeat: no-repeat;
+    color: #000000;
+}
+.n-ul-nav{
+    width: 80%;
+    margin: auto;
+}
+.n-ul-nav>li{
+    width: 50%;
+    float: left;
+    text-align: center;
+}
+.n-ul-nav img{
+    height: 100px;
+    width: 100px;
+}
+.n-ul-nav>li li{
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+    font-family: "微软雅黑", "黑体", "宋体";
+    letter-spacing: 2px;
+    color: black;
+}
+.n-phone{
+    position: absolute;
+    right: 5px;
+    bottom: 8px;
+    font-size: 14px;
+    color: #666;
+    ;
+
+}

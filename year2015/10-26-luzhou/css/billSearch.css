@@ -1,0 +1,50 @@
+.bill-search{
+	letter-spacing: 2px;
+}
+.swiper-slide{
+	line-height: 32px;
+	text-align: center;
+}
+.swiper-slide span{
+	font-size: 1rem;
+}
+.bs-nav-click span{
+	display: inline-block;
+	background-color: #ff0038;
+	border-radius: 16px;
+	color: white;
+	padding: 0 4px;
+	cursor: pointer;
+}
+.bs-nav-02{
+	position: relative;
+	padding-top: 280px;
+
+}
+.bs-img{
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	margin-left: -80px;
+	width: 160px;
+	height: 230px;
+	background-image: url(../images/bill-search-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.bs-img h1{
+	color: white;
+	font-size: .875rem;
+	line-height: 40px;
+	padding-top: 30px;
+	text-align: center;
+}
+.bs-img h1 span{
+	font-size: 1.625rem;
+}
+.bs-img p{
+	line-height: 28px;
+	font-size: 1rem;
+	color: white;
+	text-align: center;
+}

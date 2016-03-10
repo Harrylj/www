@@ -1,0 +1,64 @@
+body{
+	background-color: white;
+}
+.s-header{
+	position: relative;
+	background-color: #363636;
+	height: 48px;
+	padding: 0 8px;
+	line-height: 48px;
+}
+.sh-input{
+	position: absolute;
+	left: 8px;
+	top: 6px;
+	width: 75%;
+	border: 1px solid white;
+	background-color: transparent;
+	padding-left: 25px;
+	background-image: url(../images/search-02.png);
+	background-position: 4px center;
+	border-radius: 6px;
+	background-size: 16px 16px;
+	height: 36px;
+	line-height: 32px;
+	font-size: 1rem;
+	color: white;
+	background-repeat: no-repeat;
+	letter-spacing: 2px;
+}
+.sh-btn-qx{
+	position: absolute;
+	right: 0;
+	top: 0;
+	height: 48px;
+	width: 25%;
+	text-align: center;
+	font-size: 1.125rem;
+	line-height: 48px;
+	color: white;
+	background-color: transparent;
+	border: none;
+}
+.s-body{
+	padding: 10px 20px;
+}
+.sbl-goods{
+	border:1px solid #ccc;
+	border-bottom: none;
+	padding: 8px;
+}
+
+.s-body a:last-child .sbl-goods{
+	border-bottom: 1px solid #ccc;
+}
+.sbl-goods h1{
+	font-size: 1.125rem;
+	line-height: 32px;
+	color: black;
+}
+.sbl-goods p{
+	font-size: 1rem;
+	color: #666;
+	line-height: 24px;
+}

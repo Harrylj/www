@@ -1,0 +1,48 @@
+.dingpiao{
+	max-width: 800ox;
+	min-width: 320px;
+	margin: auto;
+	letter-spacing: 2px;
+}
+.dp-table-div{
+	padding: 8px;
+}
+.dp-table{
+	
+	width: 100%;
+}
+.dp-table td{
+	font-size: 1rem;
+	line-height: 40px;
+	padding-bottom: 5px;
+}
+.dp-input{
+	width: 100%;
+	padding: 0 8px;
+	border: 1px solid #ccc;
+	line-height: 32px;
+	font-size: 1rem;
+	border-radius: 6px;
+}
+.dp-btn-cpcx{
+	margin-top: 20px;
+	height: 32px;
+	line-height: 28px;
+	color: white;
+	background-color: #4595DF;
+	border-radius: 6px;
+	width: 100%;
+	border: none;
+}
+.ui-btn-inner
+,.ui-loader{
+	display: none;
+}
+.dp-table td:first-child{
+	
+	width: 80px;
+	/*
+	text-align: right;
+	padding-right: 20px;
+	*/
+}

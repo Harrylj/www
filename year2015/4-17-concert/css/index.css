@@ -1,0 +1,171 @@
+body,html{
+    height: 100%;
+    width: 100%;
+    min-height: 480px;
+    min-width: 320px;
+
+}
+.index{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background-color: #14191c;
+}
+.index-header-img{
+    width: 100%;
+    height: 50%;
+}
+.index-content{
+
+    background-color: #14191c;
+    background-image: url("../images/index-02.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment:fixed;
+}
+
+.index-input{
+    padding-left: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #16ab94;
+    background-color: transparent;
+    height: 40px;
+    line-height: 40px;
+    color: #969696;
+}
+.index-btn{
+    height: 40px;
+    line-height: 32px;
+    text-align: center;
+    color: white;
+    font-family: "微软雅黑", "黑体", "宋体" ;
+    border-radius: 5px;
+    border: none;
+}
+.index-login{
+    width: 90%;
+    margin: auto;
+}
+.input-my-phone
+,.input-you-phone{
+    width: 100%;
+}
+.input-yz{
+    width: 50%;
+}
+.btn-hqyzm{
+    font-size: 16px;
+    background-color: #16ab94;
+    letter-spacing: 2px;
+}
+.btn-spgtjr{
+    width: 100%;
+    background-color: #ff4747;
+    letter-spacing: 4px;
+    font-size: 18px;
+}
+.index-ts{
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+.index-box
+,.index-activity{
+    position: relative;
+    width: 90%;
+    margin: auto;
+    border: 1px solid white;
+}
+.index-box{
+  margin-top: 25px;
+  padding: 5% 0;
+}
+
+.index-activity{
+    padding: 5%;
+}
+.index-box-title{
+    position: absolute;
+    width: 90%;
+    top: -12px;
+    left: 50%;
+    margin-left: -45%;
+    background-color: #14191c;
+    padding: 0 8px;
+
+}
+.index-activity-title{
+    position: absolute;
+    top: -10px;
+    color: white;
+    width: 50%;
+    background-color:  #14191c;
+    text-align: center;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: 3px;
+    left: 50%;
+    margin-left: -25%;
+}
+.index-box-title div{
+    color: #167a6a;
+}
+
+.index-box-title div{
+    line-height: 20px;
+    font-size: 12px;
+}
+.i-b-t-r{
+    background-image: url("../images/index-03.png");
+    background-repeat: no-repeat;
+    background-size: 23px 16px;
+    background-position: left 2px;
+    padding-left: 20px;
+
+}
+.index-activity ul{
+    margin-bottom: 10px;
+}
+.index-activity li{
+    position: relative;
+    padding: 0 5%;
+    font-size: 14px;
+    line-height: 26px;
+    color: #167a6a;
+}
+.index-activity  li:first-child{
+    font-weight: bold;
+    font-size: 16px;
+}
+.index-activity  li:first-child:before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 5px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-left: 8px solid #167a6a;
+}
+.index-fx{
+    position: fixed;
+    z-index: 99;
+    right: 10px;
+    bottom: 10px;
+    height: 40px;
+    width: 40px;
+    border: none;
+    background-color: #14191C;
+    background-image: url("../images/index-04.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-radius: 50%;
+}
+.border-false{
+    border-color: red !important;
+}
+.i-red{
+    color: #FF4747;
+}

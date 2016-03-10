@@ -1,0 +1,85 @@
+main{
+	padding: 8px;
+	background-color: white;
+}
+.i-list{
+	border-bottom: 1px solid #ccc;	
+}
+.i-list-h1{
+	color: black;
+	font-size: 1.25rem;
+	letter-spacing: 2px;
+	border-bottom: 1px solid #ccc;
+	line-height: 40px;
+	
+}
+.i-list-right{
+	float: right;
+	display: inline-block;
+	letter-spacing: 2px;
+	font-size: 1rem;
+	line-height: 40px;
+	color: #999;
+	background-image: url(../images/public-right.png);
+	background-position: right 12px;
+	background-repeat: no-repeat;
+	background-size: 12px 15px;
+	padding-right: 15px;
+}
+.i-list-ul{
+	width: 100%;
+}
+.i-list-ul li{
+	position: relative;
+	float: left;
+	width: 33%;
+	text-align: center;
+	padding: 10px 0;
+}
+.i-list-ul li:after{
+	position: absolute;
+	right: 0;
+	top: 15px;
+	display: block;
+	height: 115px;
+	content: ".";
+	color: transparent;
+	border-right:1px solid #bababa;
+}
+.i-list-ul li:nth-child(3n):after{
+	border: none;
+}
+.i-list-ul h1{
+	font-size: 1.375rem;
+	line-height: 32px;
+	color: #32c63c;
+	letter-spacing: 3px;
+}
+.i-list-ul p{
+	color: black;
+	font-size: 0.875rem;
+	line-height: 24px;
+	letter-spacing: 1px;
+}
+.i-list-ul .i-list-number{
+	display: inline-block;
+	border-top: 2px solid #666;
+	color: red;
+	line-height: 30px;
+} 
+.i-btn-yybl{
+	border: 2px solid #57b3a5;
+	border-radius: 15px;
+	background-color: white;
+	left: 2px;
+	padding: 0 8px;
+	height: 32px;
+	line-height: 28px;
+	color: black;
+	font-size: 1rem;
+	letter-spacing: 2px;
+}
+.i-list{
+	border: none;
+	padding-bottom: 20px;
+}

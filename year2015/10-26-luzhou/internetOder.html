@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/internetOrder.css"/>
+    <title>宽带预约</title>
+    <style type="text/css">
+    	.io-a{
+    		font-size: 1rem;
+    	}
+    </style>
+</head>
+<body>
+	<div class="internet-order">
+		<table class="io-table" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>姓名</td>
+				<td><input class="io-order-input io-input-name" type="text" placeholder="请输入姓名"></td>
+			</tr>
+			<tr>
+				<td>联系方式</td>
+				<td><input class="io-order-input io-input-phone" type="text" placeholder="请输入手机号码"></td>
+			</tr>
+			<tr>
+				<td>安装地址</td>
+				<td><input class="io-order-input io-input-address" type="hidden" placeholder="请输入地址"><a class="io-a" href="internetOderSearch.html" >选择安装地址</a></td>
+			</tr>
+			<tr>
+				<td>验证码</td>
+				<td><img class="io-tpyzm" src="images/tpyzm.jpg"><input class="io-order-input io-input-tpyzm" type="text" placeholder="请输入图片验证码"></td>
+			</tr>
+			<tr>
+				<td class="io-ts" colspan="2">
+
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="border: none; text-align: center;">
+					<button class="io-btn-kscp" type="button">开始测评</button>
+				</td>
+			</tr>
+			
+		</table>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//输入验证
+			$('.io-btn-kscp').on('click',function(){
+				
+				
+				var _name = $('.io-input-name'),
+					_phone = $('.io-input-phone'),
+					_address = $('.io-input-address'),
+					_tpyzm = $('.io-input-tpyzm'),
+					gs = /^1\d{10}$/,
+					ts = $('.io-ts'),
+					ts_01 = '姓名不能为空',
+					ts_02 = '手机号码不能为空',
+					ts_03 = '地址不能为空',
+					ts_04 = '验证码不正确',
+					ts_05 = '手机号格式不正确';
+					
+				//姓名不能为空
+				if(_name.val() == '')
+				{
+					ts.html(ts_01);
+				}
+				
+				//手机号码不能为空
+				else if(_phone.val() == '')
+				{
+					ts.html(ts_02);
+				}
+				//地址不能为空
+				else if(_address.val()== '')
+				{
+					ts.html(ts_03)
+				}
+
+				//验证码不正确
+				else if(_tpyzm.val().toLowerCase() !="4wz62z")
+				{
+					ts.html(ts_04)
+				}
+				//手机号格式不正确
+				else if(!gs.test(_phone.val()))
+				{
+					ts.html(ts_05);
+				}
+				//成功
+				else
+				{
+					ts.html('');
+					alert('填写成功!');
+				}
+
+			});
+		})
+	</script>
+</body>
+</html>

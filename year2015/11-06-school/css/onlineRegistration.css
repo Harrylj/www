@@ -1,0 +1,105 @@
+.or-header{
+	position: relative;
+	background-color: #0c89c3;
+	background-image: url(../images/index-06.png);
+	background-size: 80px 80px;
+	background-position: center 25px;
+	padding-top: 100px;
+	padding-bottom: 25px; 
+	background-repeat: no-repeat;
+}
+.or-header h1{
+	color: white;
+	text-align: center;
+	font-size: 1.5rem;
+	line-height: 60px;
+}
+.or-header p{
+	color: white;
+	text-align: center;
+	font-size: 1rem;
+}
+.or-body{
+	background-color: #eeeeee;
+	padding: 20px 0;
+}
+.or-body h1{
+	color: #0c89c3;
+	line-height: 40px;
+	font-size: 1.25rem;
+	text-align: center;
+}
+.or-table{
+	width: 100%;
+}
+.or-table td{
+	color: #333;
+	font-size: 1.125rem;
+	height: 50px;
+}
+.or-table td:first-child{
+	text-align: right;
+	padding-right: 8px;
+	padding-left: 8px;
+}
+.or-input{
+	border: 1px solid #ccc;
+	height: 40px;
+	line-height: 36px;
+	background-color: white;
+	width: 80%;
+	letter-spacing: 2px;
+	padding: 0 8px;
+	font-size: 1rem;
+}
+.or-table .or-ts{
+	text-align: center;
+	font-size: 1rem;
+	height: 30px;
+	color: red;
+}
+.or-table .or-ts:first-child{
+	text-align: center;
+}
+.or-btn-tjsq{
+	height: 40px;
+	line-height: 36px;
+	font-size: 1.25rem;
+	color: white;
+	background-color: #dc0232;
+	text-align: center;
+	width: 60%;
+	border-radius: 6px;
+	border: none;
+}
+.or-wxts{
+	padding: 30px 15px;
+}
+.or-wxts h1{
+	color: red;
+	line-height: 30px;
+	font-size: 1rem;
+	text-align: left;
+}
+.or-wxts p{
+	color: #333;
+	line-height: 30px;
+	font-size: 1rem;
+}
+.or-tc-btn{
+	border: none;
+	line-height: 36px;
+	height: 40px;
+	color: white;
+	border-radius: 6px;
+	margin: 10px 0;
+	font-size: 1.125rem;
+	padding: 0 10px;
+}
+.or-btn-wsgrxx{
+	background-color: #f5a924;
+}
+.or-btn-xyww{
+	background-color: #76cd50;
+}
+

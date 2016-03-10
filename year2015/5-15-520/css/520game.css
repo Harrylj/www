@@ -1,0 +1,122 @@
+.game{
+    background-color: #e6ddcb;
+    position: relative;
+}
+.game-header{
+    background-color: #eabe65;
+}
+.game-marquee{
+    width: 100%;
+    color: #000000;
+    height: 70px;
+    text-align: center;
+}
+.game-marquee p{
+    font-size: 14px;
+    line-height: 30px;
+}
+.game-header-bg{
+    height: 20px;
+    background-image: url("../images/game-bg-01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.game-header h1{
+    color: white;
+    font-size: 18px;
+    line-height: 36px;
+}
+.game-content{
+    margin: 15px 0;
+    padding: 10px;
+}
+.g-btn-ks{
+    letter-spacing: 4px;
+    font-size: 18px;
+    line-height: 40px;
+    border: none;
+    border-radius: 8px;
+    background-color: #c73450;
+    color: white;
+    padding: 0 20px;
+    margin-top: 20px;
+}
+.game-footer{
+    margin: 12px;
+    border:1px dashed #c73450;
+    padding:  5px 16px;
+}
+.game-footer h1
+,.game-footer p{
+    color: #c73450;
+}
+.game-footer h1{
+    font-size: 18px;
+    line-height: 36px;
+}
+.game-footer p{
+    font-size: 14px;
+    line-height: 24px;
+}
+.g-game{
+    position: relative;
+}
+.g-game-bg{
+    width: 100%;
+}
+.g-game-center{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100px;
+    height: 110px;
+    margin-left: -50px;
+    margin-top: -55px;
+}
+.g-input-01{
+    width: 100%;
+}
+.g-input-02{
+    width: 60%;
+}
+
+.g-btn{
+    border-radius: 6px;
+    font-size: 16px;
+    line-height: 40px;
+    border: none;
+    background-color: white;
+    color: #c73450;
+    text-align: center;
+    letter-spacing: 3px;
+}
+.g-btn-yzm{
+    width: 34%;
+    text-align: center;
+
+}
+.g-btn-lqjp{
+    width: 100%;
+}
+.g-p-ts{
+    font-size: 14px;
+    line-height: 30px;
+    margin-bottom: 8px;
+    color: white;
+    letter-spacing: 2px;
+}
+.g-p-01{
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    line-height: 38px;
+    letter-spacing: 2px;
+}
+
+.g-btn-01{
+    margin: 10px 0;
+    width: 100%;
+}
+.g-btn-login{
+    width: 100%;
+}

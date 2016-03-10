@@ -1,0 +1,172 @@
+.index-header{
+	line-height: 40px;
+	text-align: center;
+	color: white;
+	font-size: 1rem;
+	letter-spacing: 2px;
+}
+.i-img{
+	margin: auto;
+	position: relative;
+	width: 300px;
+	height: 300px;
+	background-image: url(../images/index-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.i-user-img{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin: -50px 0 0 -50px;
+	height: 100px;
+	width: 100px;
+	border: 2px solid #ffe586;
+	border-radius: 50%;
+	text-align: center;
+}
+.i-img-list img{
+	display: block;
+	margin: auto;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: black;
+}
+.i-img-list{
+	position: absolute;
+}
+.i-img-list p{
+	position: absolute;
+	color: #ffe586;
+	font-size: 0.875rem;
+	left: 2px;
+	line-height: 20px;
+	text-align: center;
+	width:200px;
+	margin-left: -80px;
+}
+.i-img-list-01{
+	left: 20%;
+	top: 0;
+}
+.i-img-list-02{
+	left:60%;
+	top: 0;
+}
+.i-img-list-03{
+	left: 5%;
+	top: 20%;
+}
+.i-img-list-04{
+	left: 80%;
+	top: 20%;
+}
+.i-img-list-05{
+	left: 1%;
+	top: 45%;
+}
+.i-img-list-06{
+	left: 84%;
+	top: 45%;
+}
+.i-img-list-07{
+	top: 70%;
+	left: 10%;
+}
+.i-img-list-08{
+	top: 67%;
+	left: 77%;
+}
+.i-img-list-09{
+	left: 46%;
+	top: 85%;
+}
+.i-p-01{
+	color: #FFE586;
+	font-size: 1.125rem;
+	line-height: 40px;
+	letter-spacing: 2px;
+	text-align: center;
+	padding-top: 10px;
+}
+.i-p-01 span{
+	
+	color: #ffc800;
+	padding: 0 5px;
+}
+.input-div {
+	padding-top: 15px;
+}
+.i-input-phone
+,.new-input-phone{
+	width: 300px;
+	text-align: center;
+	font-size: 1rem;
+	letter-spacing: 2px;
+	line-height: 40px;
+	padding-bottom: 20px;
+	background-image: url(../images/index-02.png); 
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-color: transparent;
+	border: none;
+	color: #bda85a;
+}
+.i-ts{
+	color: red;	
+	line-height: 24px;
+	height: 24px;
+	letter-spacing: 2px;
+	text-align: center;
+	font-size: 1rem;
+}
+.i-btn-mszh{
+	margin-top: 10px;
+	color: black;
+	background-color: #ab9b5c;
+	opacity: .8;
+	height: 36px;
+	line-height: 30px;
+	letter-spacing: 2px;
+	padding: 0 15px;
+	border-radius: 15px;
+	border: none;
+}
+.i-btn-hdgz{
+	position: absolute;
+	color: white;
+	right: 15px;
+	bottom: 10px;
+	border: none;
+	background-color: transparent;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

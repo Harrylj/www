@@ -1,0 +1,128 @@
+.internet-list{
+	position: relative;
+	min-height: 480px;
+}
+.il-list-ul li{
+	border-bottom:1px solid #ccc ;
+}
+.il-header{
+	display: block;
+	padding: 0 8px;
+	line-height: 40px;
+	font-size: 1.125rem;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+	color: black;
+	letter-spacing: 2px;
+	background-color: white;
+}
+.il-btn-01{
+	border: none;
+	background-color: transparent;
+	color: #969696;
+	line-height: 40px;
+	font-size: 1.125rem;
+}
+.il-btn-ajtc{
+	margin: 0;
+}
+.il-btn-yjtc{
+	margin: 0;
+}
+.il-btn-sx{
+	float: right;
+	padding-right: 10px;
+	background-image: url(../images/public-02.png);
+	background-repeat: no-repeat;
+	background-size: 12px 15px;
+	background-position: right 15px; 
+}
+.il-sx{
+	display: none;
+	position:absolute;
+	left: 20%;
+	top: 0;
+	width: 80%;
+	height: 100%;
+	background-color: white;
+	color: black;
+	letter-spacing: 2px;
+	z-index: 100;
+}
+.il-sx-header{
+	text-align: center;
+	font-size: 1.25rem;
+	line-height: 40px;
+	border-bottom: 1px solid #ccc;
+	position: relative;
+	
+}
+.il-sx-list{
+	padding-top: 20px;
+}
+.il-sx-left{
+	float: left;
+	width: 18%;
+	text-align: center;
+	line-height: 30px;
+	color: black;
+	font-size: 1rem;
+}
+.il-sx-right{
+	width: 80%;
+	float: left;
+	
+}
+.il-kd-father li{
+	width: 25%;
+	line-height: 30px;
+	font-size: 1rem;
+	text-align: center;
+	border-radius: 15px;
+	float: left;
+	border: 1px solid transparent;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.il-kd-father .il-kd-click
+,.il-jg-father .il-jg-click{
+	border: 1px solid red;
+}
+.il-jg-father li{
+	width: 50%;
+	float: left;
+	border: 1px solid transparent;
+	line-height: 30px;
+	font-size: 1rem;
+	border-radius: 15px;
+	text-align: center;
+	margin-bottom: 5px;
+	cursor: pointer;
+}
+.il-btn-qd{
+	padding: 0 20px;
+	height: 36px;
+	line-height: 30px;
+	background-color: #ff0038;
+	color: white;
+	margin-top: 10px;
+	border-radius: 15px;
+	border: none;
+	box-shadow:0 0 5px #ccc;
+}
+.il-btn-return{
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: transparent;
+	border: none;
+	background-image: url(../images/public-left.png);
+	background-repeat: no-repeat;
+	background-size: 12px 15px;
+	background-position: 50% 50%;
+	height: 40px;
+	padding: 0 15px;
+}
+.il-btn-qx{
+	color: black;
+}

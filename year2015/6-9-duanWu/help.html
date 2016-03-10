@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/myself.css" type="text/css" rel="stylesheet">
+    <link href="css/help.css" type="text/css" rel="stylesheet">
+    <title>帮助好友</title>
+</head>
+<body>
+    <!--.h-user-number: 0表示没有帮好友拆过  1表示帮好友拆过-->
+    <!--这里我赋值0：没有帮好友拆过-->
+    <input class="h-user-number" type="hidden">
+    <div class="help">
+        <div class="help-header">
+            <p class="h-h-01 m-header">
+                朋友圈领粽子，任意送 先到先得<br>
+                邀请朋友拆掉8个可免费获得
+            </p>
+            <div class="text-center">
+                <img class="h-img-01" src="images/myself-01.png" alt="小提示"/>
+            </div>
+        </div>
+        <div class="m-box">
+            <div class="m-box-father-bg">
+                <div class="m-box-bg"></div>
+            </div>
+            <!--
+                .game-zz-invalid 未拆开的粽子
+            -->
+            <div class="game-zz game-zz-01"></div>
+            <div class="game-zz game-zz-invalid game-zz-02"></div>
+            <div class="game-zz game-zz-03"></div>
+            <div class="game-zz game-zz-invalid game-zz-04"></div>
+            <div class="game-zz game-zz-invalid game-zz-05"></div>
+            <div class="game-zz game-zz-06"></div>
+            <div class="game-zz game-zz-invalid game-zz-07"></div>
+            <div class="game-zz game-zz-invalid game-zz-08"></div>
+
+        </div>
+        <div class="text-center">
+            <a class="i-block" href="#">
+                <button class="h-btn vr b-btn-bhyc">帮好友拆</button>
+            </a>
+            <a class="i-block" href="index.html">
+                <button class="h-btn vr b-btn-wyycj">我也要参加</button>
+            </a>
+        </div>
+
+        <!--遮罩层-->
+        <div class="zzc" ></div>
+        <!---弹窗提示2-->
+        <div class="public-tc-02-father h-ts-box" >
+            <div class="public-tc-02 ">
+                <p class="public-game-ts"></p>
+                <div class="text-center">
+                    <button class="public-btn-close public-btn-gb">关闭</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/public.js"></script>
+    <script src="js/publicGame.js"></script>
+    <script src="js/help.js"></script>
+</body>
+</html>

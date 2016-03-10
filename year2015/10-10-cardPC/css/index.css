@@ -1,0 +1,69 @@
+
+
+.index-header{
+	position: relative;
+	height: 80px;
+	line-height: 80px;
+}
+.index-nav img{
+	
+}
+.index-nav{
+	position: absolute;
+	top: 0;
+	right: 100px;
+}
+.index-nav a{
+	display: block;
+	padding: 0 30px;
+	float: right;
+	font-size: 18px;
+	color: black;
+	letter-spacing: 3px;
+	
+}
+.index-nav a:hover{
+	color: #0eb3d4;
+}
+.index-nav .index-nav-click{
+	color: #0eb3d4;
+}
+.public-header .uc-name{
+	color: #0EB3D4;
+}
+
+
+.index-content{
+	position: relative;
+}
+.index-btn-div{
+	position: absolute;
+	top: 60%;
+	left: 50%;
+	margin-left: -200px;
+	width: 400px;
+}
+.index-btn{
+	width: 180px;
+	border: 1px solid white;
+	background-color: transparent;
+	color: white;
+	margin-left: 10px;
+	border-radius: 5px;
+	height: 30px;
+	line-height: 24px;
+}
+.index-btn-click{
+	border: 1px solid black;
+	background-color: black;
+}
+.index-btn:hover{
+	border: 1px solid black;
+	background-color: black;
+}
+.index-btn-login{
+	
+}
+
+
+

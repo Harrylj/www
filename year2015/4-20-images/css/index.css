@@ -1,0 +1,43 @@
+.get-images
+,.get-images img{
+    width: 100px;
+    height: 100px;
+}
+.get-images{
+    position: relative;
+}
+.get-images img{
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.get-images img:nth-child(1){
+    z-index: 10;
+}
+.get-images img:nth-child(2){
+    z-index: 9;
+}
+.get-images img:nth-child(3){
+    z-index: 8;
+}
+.get-images img:nth-child(4){
+    z-index: 7;
+}
+.get-images img:nth-child(5){
+    z-index: 6;
+}
+.get-images img:nth-child(6){
+    z-index: 5;
+}
+.get-images img:nth-child(7){
+    z-index: 4;
+}
+.get-images img:nth-child(8){
+    z-index: 3;
+}
+.get-images img:nth-child(9){
+    z-index: 2;
+}
+.get-images img:nth-child(10){
+    z-index: 1;
+}

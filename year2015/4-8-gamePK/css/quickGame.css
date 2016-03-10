@@ -1,0 +1,109 @@
+*{
+    box-sizing: border-box;
+}
+.quick-game{
+    min-height: 480px;
+    min-width: 320px;
+    background-image: url("../images/index-bg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+}
+.qg-header{
+    padding: 10px;
+    padding-top: 40px;
+    position: relative;
+
+}
+.qg-btn-sjxz{
+    position: absolute;
+    right: 5px;
+    top: 0;
+    z-index: 1;
+    border: none;
+    width: 100px;
+    height: 50px;
+    background-size: 100% 100%;
+    background-image: url("../images/pk-10.png");
+    background-repeat: no-repeat;
+    background-color: transparent;
+}
+.qg-h-game{
+    padding: 30px 10px;
+    background-image: url("../images/pk-border-bg-01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+.qg-h1{
+    color: white;
+    font-size: 20px;
+    line-height: 40px;
+    letter-spacing: 4px;
+}
+.qg-table{
+    width: 240px;
+    margin: auto;
+}
+.qg-table td{
+    width: 33.33%;
+    height: 80px;
+    background-size: 100% 100%;
+    background-image: url("../images/pk-08.png");
+    background-repeat: no-repeat;
+    text-align: center;
+    font-size: 14px;
+}
+.qg-table span{
+    position: relative;
+    top: 10px;
+    color: #000000;
+}
+.qg-content{
+    position: relative;
+    padding: 5%;
+
+}
+.qg-c-game{
+    float: left;
+    height: 70px;
+    width: 144px;
+    background-image: url("../images/pk-border-bg-02.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    padding: 10px 0;
+}
+.qg-c-game{
+    font-size: 14px;
+    color: white;
+    line-height: 23px;
+    text-align: center;
+}
+.qg-p{
+    /*
+    color: #ffc000;
+    */
+    color: black;
+    font-size: 16px;
+    line-height: 30px;
+}
+.qg-btn{
+
+    width: 110px;
+    height: 40px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+        
+}
+.qg-btn-father{
+    margin: 2% -7%;
+}
+
+.qg-btn-xyg{
+    background-image: url("../images/pk-btn-xyg.png");
+}
+.qg-btn-qtz{
+    background-image: url("../images/pk-btn-qtz.png");
+}

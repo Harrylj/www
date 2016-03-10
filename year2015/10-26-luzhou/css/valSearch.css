@@ -1,0 +1,164 @@
+body{
+	background-color: #eeeeee;
+}
+.val-search{
+	letter-spacing: 2px;
+}
+.vs-header{
+	position: relative;
+	height: 160px;
+	background-color: white;
+	margin-bottom: 10px;
+}
+.vs-list{
+	position: absolute;
+}
+.vs-list-01{
+	top: 15%;
+	left: 4%;
+}
+.vs-list-02{
+	top: 25%;
+	left: 50%;
+	margin-left: -45px;
+}
+.vs-list-03{
+	top: 15%;
+	right: 4%;
+}
+.vs-list-01 h1{
+	color: #51ca3d;
+}
+.vs-list-02 h1{
+	color: #ff0038;
+}
+.vs-list-03 h1{
+	color: #646464;
+}
+.vs-list-circle{
+	position: relative;
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	border: 1px solid #ccc;
+}
+
+.vs-list-circle:after{
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	color: transparent;
+	margin-left: -20px;
+	display: block;
+	width: 40px;
+	height: 13px;
+	content: '.';
+	background-image: url(../images/search-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.vs-list-circle h1{
+	text-align: center;
+	font-size: 1.625rem;
+	line-height: 30px;
+	padding-top: 20px;
+	letter-spacing: 1px;
+}
+.vs-list-circle p{
+	text-align: center;
+	font-size: .875rem;
+	color: #999;
+	line-height: 20px;
+}
+.vs-goods{
+	width: 300px;
+	height: 100px;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	display: inline-block;
+}
+.vs-g-left{
+	float: left;
+	width: 65%;
+	height: 100%;
+	border: 1px solid #ccc;
+	border-right: none;
+	border-radius: 4px 0 0 4px;
+	background-color: white;
+}
+.vs-g-right{
+	position: relative;
+	float: right;
+	width: 35%;
+	height: 100%;
+	background-color: #5ac994;
+	border-radius: 0 4px 4px 0;
+	text-align: center;
+}
+.vs-g-right:before{
+	position: absolute;
+	left: 0;
+	top: 1px;
+	display: block;
+	height: 98px;
+	width: 4px;
+	content: '.';
+	color: transparent;
+	background-image: url(../images/search-04.jpg);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.vs-g-img{
+	height: 70px;
+	width: 100%;
+	background-size: 60px 60px;
+	background-repeat: no-repeat;
+	background-position: 50% 8px;
+}
+.vs-g-img-01{
+	background-image: url(../images/search-02.png);
+}
+.vs-g-img-02{
+	background-image: url(../images/search-03.png);
+}
+.vs-g-left p{
+	line-height: 24px;
+	height: 24px;
+	text-align: center;
+	font-size: 1rem;
+	color: black;
+	
+}
+
+.vs-g-right h1{
+	font-size: 1.5rem;
+	line-height: 44px;
+	color: white;
+	padding-top: 15px;
+}
+.vs-g-right p{
+	display: inline-block;
+	font-size: .875rem;
+	color: white;
+	line-height: 24px;
+	border-top: 1px solid white;
+}
+.vs-main{
+	padding: 10px;
+	background-color: white;
+}
+.vs-h1{
+	font-size: 1.25rem;
+	line-height: 36px;
+	color: black;
+}
+.vs-a{
+	font-size: 1rem;
+	line-height: 40px;
+	color: red;
+}
+.vs-div{
+	text-align: center;
+	padding-top: 10px;
+}

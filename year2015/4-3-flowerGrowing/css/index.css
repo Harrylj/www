@@ -1,0 +1,201 @@
+.index{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    min-height: 480px;
+    min-width: 320px;
+    overflow: hidden;
+}
+.index-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 0;
+}
+.index-bg img{
+    width: 100%;
+    height: 100%;
+}
+
+.index-centent{
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+.index-img-01{
+    margin-top: 5%;
+    width: 80%;
+}
+.index-img-02{
+    margin: 5%;
+    width: 70%;
+    -webkit-transition: -webkit-transform 2s ease-out;
+    -moz-transition: -moz-transform 2s ease-out;
+    -o-transition: -o-transform 2s ease-out;
+    -ms-transition: -ms-transform 2s ease-out;
+}
+.index-img-02:hover{
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+
+}
+.index-btn-lqzz{
+    border: none;
+    width: 120px;
+    height: 60px;
+    background-image: url("../images/flower-btn-lqzz.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+}
+.index-btn-hdgz{
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+    width: 100px;
+    height: 40px;
+    border: none;
+    background-image: url("../images/index-04.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+}
+
+
+.index-hdgz
+,.index-yhdl{
+    display: none;
+    position:absolute;
+    top: 12%;
+    left: 50%;
+    padding: 3%;
+    width: 80%;
+    margin-left: -45%;
+    min-height: 50%;
+    border-radius: 10px;
+    /*
+    background-image: url("../images/hdgz-bg.png");
+    */
+    background-repeat: no-repeat;
+    background: -moz-linear-gradient(top, #6ed75c, #f7db9c);
+    background: -webkit-linear-gradient(top, #6ed75c, #f7db9c);
+    background: -o-linear-gradient(top, #6ed75c, #f7db9c);
+    z-index: 100;
+}
+.index-yhdl-bg{
+    background-color: #fff1c6;
+    padding: 5% 10%;
+    border-radius:10px;
+}
+.index-hdgz .index-yhdl-bg{
+    padding: 5%;
+}
+.hdgz-btn-close
+,.yhdl-btn-close{
+    margin-right: 0;
+    position: absolute;
+    right: -4px;
+    top: -4px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-image: url("../images/hdgz-close.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+}
+
+/*用户登录*/
+.index-yhdl h1
+,.index-hdgz h1{
+    text-align: center;
+    color: black;
+    text-indent: 5px;
+    font-size: 18px;
+    line-height: 32px;
+    margin: 10px 0;
+    letter-spacing: 5px;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+.yhdl-input{
+    color: #ffffff;;
+    border: 2px solid transparent;
+    border-radius:5px;
+    text-indent: 2px;
+    line-height: 40px;
+    margin: 6px 0;
+}
+.index .yhdl-input-border{
+    border-color: #6c9ac4;
+}
+.index-yhdl .yhdl-input-false{
+    border-color: red;
+}
+.yhdl-input-user
+,.yhdl-input-phone
+,.yhdl-input-yz{
+    font-size: 16px;
+    padding:0 8px;
+    background-color: #c8a079;
+}
+.yhdl-input-user
+,.yhdl-input-phone{
+    width: 100%;
+}
+.yhdl-input-yz{
+    width: 60%;
+}
+.yhdl-btn-yz{
+    background-color: #fe5555;
+    width: 36%;
+    text-align: center;
+    font-size: 14px;
+    padding: 0;
+}
+.yhdl-btn-bg{
+    position: relative;
+    background-color: #f7db9c;
+    margin: 6px -7% 0 -7%;
+}
+.yhdl-btn-yhbd{
+    margin: 10px  0;
+    width: 140px;
+    height: 60px;
+    background-image: url("../images/index-btn-yhdl.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.yhdl-ts{
+    color: red;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

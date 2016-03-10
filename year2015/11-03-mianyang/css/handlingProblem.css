@@ -1,0 +1,81 @@
+.handling-problem{
+	padding: 10px 0;
+}
+.hp-list{
+	padding: 10px 0 10px 70px;
+	border-bottom: 10px solid #e0e0e0;
+	position: relative;
+}
+.hp-list img{
+	position: absolute;
+	left: 10px;
+	top: 15px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	
+}
+.hp-list h1{
+	height: 36px;
+	line-height: 36px;
+	font-size: 1.25rem;
+	color: black;
+}
+.hp-date{
+	height: 24px;
+	line-height: 24px;
+	font-size: 1rem;
+	color: #999;
+}
+.hp-content{
+	position: relative;
+	padding-bottom: 5px;
+	border-bottom: 1px solid #ccc;
+}
+.hp-content p{
+	height: 48px;
+	line-height: 24px;
+	overflow: hidden;
+	color: #666;
+	font-size: 1rem;
+}
+.hpc-btn{
+	position: absolute;
+	bottom: 5px;
+	right: 0;
+	height: 30px;
+	width: 100px;
+	background-repeat: no-repeat;
+	background-size: 50% 50%;
+	background-position: center center; 
+	background-color: white;
+	border: none;
+}
+.hpc-btn-zk{
+	background-image: url(../images/hp-01.png);
+}
+.hpc-btn-sq{
+	background-image: url(../images/hp-02.png);
+}
+.hp-btn
+,.hp-btn-msqd{
+	color: white;
+	height: 40px;
+	margin: 10px 5px;
+	padding: 0 20px;
+	display: inline-block;
+	font-size: 1.25rem;
+	letter-spacing: 2px;
+	border-radius: 20px;
+	line-height: 36px;
+	border: none;
+}
+.hp-btn-yjcl{
+	background-color: #CCCCCC;
+}
+.hp-btn-ddcl{
+	background-color: #27d42f;
+}
+.hp-btn-msqd{
+	background-color: #e0182f;
+}

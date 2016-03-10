@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <title>监控图片</title>
+
+</head>
+<body>
+    <div class="get-images">
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+        <img/>
+
+    </div>
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function(){
+        var myImg = new Array();
+        //储存图片
+        function imgArray() {
+
+            var imgLength = $('.get-images').children('img').length;
+            for(var i=1; i<=imgLength; i++)
+            {
+               var img = document.createElement('img');
+                img.src = 'images/'+ i + '.jpg';
+                myImg.push(img);
+            }
+            //打印数组
+            console.log(myImg);
+            getImgSRC();
+
+        }
+        //给img添加SRC
+        function getImgSRC(){
+            //调用数组函数
+            //imgArray();
+            $('.get-images').children('img').each(function(){
+
+                var thisIndex = $(this).index()+1,
+                    thisSRC = myImg[thisIndex-1].src;
+                //隐藏图片
+                function hideImg(){
+                    $('.get-images').children().eq(thisIndex-1).hide();
+                }
+                $(this).attr('src',thisSRC);
+                //调整图片的隐藏时间
+                setTimeout(hideImg,thisIndex * '100');
+                $(this).show();
+            });
+            //清空数组函数
+            myImg.length = 0;
+        }
+
+        //getImgSRC();
+        imgArray();
+        //时间间隔 = （图片张数*隐藏时间）+隐藏时间
+        //setInterval(getImgSRC,1050);
+        setInterval(imgArray,1050);
+
+
+    });
+</script>
+</body>
+</html>

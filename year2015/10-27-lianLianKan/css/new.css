@@ -1,0 +1,48 @@
+.new{
+	padding-top: 15px;
+}
+.new-img-01{
+	display: block;
+	margin: auto;
+	width: 150px;
+	height: 150px;
+
+}
+.new-btn-lqhf{
+	border: none;
+	background-color: #a69a67;
+	letter-spacing: 2px;
+	color: black;
+	height: 36px;
+	line-height: 30px;
+	padding: 0 15px;
+	border-radius: 15px;
+	opacity: .8;
+	font-size: 1.25rem;
+}
+.new-ts{
+	text-align: center;
+	color: red;
+	line-height: 24px;
+	font-size: 1rem;
+	height: 24px;
+}
+.new-p{
+	color: #ffe586;
+	line-height: 24px;
+	letter-spacing: 2px;
+	text-align: center;
+}
+.new-btn-cjhd{
+	color: #333;
+	height: 36px;
+	line-height: 30px;
+	border: none;
+	padding: 0 15px;
+	opacity: .8;
+	font-size: 1.25rem;
+	letter-spacing: 2px;
+	margin: 20px 0;
+	border-radius: 15px;
+}
+

@@ -1,0 +1,70 @@
+body,html{
+	background-color: white;
+	height: 100%;
+}
+.cn-footer{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+}
+.cn-footer-father{
+	position: relative;
+	width: 100%;
+	margin: auto;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 10px;
+	border-top: 1px solid #ccc;
+}
+@media only screen  and (min-width:768px) {
+  .cn-footer-father{ width: 768px;}
+}
+.contact-next{
+	margin: 10px;
+}
+.cn-select{
+	float: right;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	padding: 0 10px;
+	margin-right: -10px;
+	border: none;
+}
+.cn-select option{
+	text-align: center;
+}
+.cn-text{
+	height: 240px;
+	width: 100%;
+	resize:none;
+	line-height: 30px;
+	font-size: 1rem;
+	padding: 10px;
+	letter-spacing: 2px;
+	border: 1px solid #e0e0e0;
+}
+.cn-btn{
+	background-color: #e0182f;
+	border: none;
+	height: 40px;
+	line-height: 36px;
+	width: 80%;
+	border-radius: 20px;
+	color: white;
+	letter-spacing: 2px;
+	font-size: 1.25rem;
+	box-shadow: 0 0 5px #ccc;
+	cursor: pointer;
+}
+.cn-btn:hover{
+	opacity: .8;
+}
+.cn-ts{
+	text-align: center;
+	line-height: 40px;
+	height: 40px;
+	color: red;
+	font-size: 1rem;
+}

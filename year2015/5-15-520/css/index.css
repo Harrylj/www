@@ -1,0 +1,159 @@
+.index{
+    position: relative;
+    background-color: #e6ddcd;
+}
+.index-header{
+    position: relative;
+
+}
+.index-header img{ width: 100%;}
+.index-hdgz{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: white;
+    font-size: 18px;
+    line-height: 40px;
+    letter-spacing: 5px;
+}
+.index-content{
+    width: 94%;
+    margin: auto;
+}
+
+.i-c-header{
+    border: 2px dashed #000;
+    border-radius: 10px;
+    background-image: url("../images/index-bg-01.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+
+}
+.i-img-01{
+    width: 20%;
+    margin: 2% 5% 0 15%;
+}
+.i-img-02{
+    margin-top: 5%;
+    width: 60%;
+}
+.i-img-03{
+    width: 20%;
+    margin: 0 3%;
+}
+.i-img-04{
+    width: 20%;
+}
+.i-ul-01{
+    width: 46%;
+    margin:0 3%;
+}
+.i-ul-01 li{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 2px;
+    color: #000000;
+    text-align: center;
+}
+.i-btn-msqk{
+    width: 80%;
+}
+.i-c-marquee{
+    margin: 5px 0;
+}
+.i-p-01{
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 2px;
+    line-height: 40px;
+}
+.i-img-05{
+    width: 30px;
+}
+.index-marquee{
+    display: block;
+    width: 90%;
+    margin: auto;
+    height: 90px;
+    background-color: #dacaad;
+}
+.index-marquee p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+.i-option{
+    background-image: url("../images/index-bg-02.png");
+    background-size: 100% 24%;
+    background-repeat: no-repeat;
+}
+.i-o-h1{
+    font-size: 16px;
+    line-height: 40px;
+    color: black;
+}
+.i-o-left
+,.i-o-right{
+    width: 50%;
+}
+.i-o-left{
+    padding: 5% 5% 0 5%;
+    background-color: white;
+    min-height: 140px;
+}
+.i-o-img{
+    width: 100%;
+    min-height: 100px;
+
+}
+.i-o-name
+,.i-o-number-father{
+    font-size: 14px;
+    line-height: 40px;
+    color: #c73450;
+}
+.i-o-right{
+    padding: 5%;
+}
+.i-o-p{
+    font-size: 14px;
+    color: black;
+    line-height: 24px;
+    height: 120px;
+    letter-spacing: 1px;
+    overflow: hidden;
+}
+.index-btn-wttp{
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 32px;
+    color: white;
+    letter-spacing: 4px;
+    text-align: center;
+    width: 100%;
+    border-radius: 8px;
+    border: none;
+    background-color: #c73450;
+}
+.i-btn-01{
+    margin: 5px 20px;
+    padding: 0 15px;
+}
+
+/* 5/19-14:27 */
+.i-input-select{
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    line-height: 40px;
+    padding-left: 30px;
+    background-image: url("../images/index-07.png");
+    background-size: 20px 20px;
+    background-position: 5px 10px;
+    background-repeat: no-repeat;
+    background-color: #c73450;
+    color: white;
+    margin: 20px 0;
+}

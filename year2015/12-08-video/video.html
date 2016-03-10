@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <title>视频播放</title>
+	<style type="text/css">
+		body{
+			padding: 0;
+		}
+		.video{
+			padding: 10px;
+			background-image: url(images/video-03.jpg);
+			background-size: 100% 100%;
+		}
+		.v-list h1{
+			line-height: 30px;
+			font-size: 1.25rem;
+			color: black;
+		}
+		.img-100{
+			width: 100%;
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<img class="img-100" src="images/video-01.jpg" />
+	<div class="video">
+		<div class="v-list">
+			<h1>1.视频</h1>
+			<video width="300" height="200" controls="controls" autoplay="autoplay">
+			    <source src="video/movie.mp4" type="video/mp4" />
+			    <source src="video/movie.webm" type="video/webm" />
+			</video>
+		</div>
+		<div class="v-list">
+			<h1>2.视频</h1>
+			<video width="300" height="200" controls="controls" >
+			    <source src="video/movie.mp4" type="video/mp4" />
+			    <source src="video/movie.webm" type="video/webm" />
+			</video>
+		</div>
+		<div class="v-list">
+			<h1>3.视频</h1>
+			<video width="300" height="200" controls="controls" >
+			    <source src="video/movie.mp4" type="video/mp4" />
+			    <source src="video/movie.webm" type="video/webm" />
+			</video>
+		</div>
+	</div>
+	<img class="img-100" src="images/video-02.jpg"/>
+</body>
+</html>
