@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detail.css"/>
+    <title>颜值大考验</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-03-16
+    	描述：.d-user-type:用户类型,1为本人，0为非本人,默认为非本人
+    		.d-user-number:用户点赞次数
+    		.d-btn-ok:点赞成功
+    		.d-btn-no:点赞失败
+    -->
+    <input class="d-user-type" type="hidden"  value="0" />
+    <input class="d-user-number" type="hidden" value="0" />
+    <button class="d-btn-ok" data-toggle="modal" data-target="#myModalOk"></button>
+	<button class="d-btn-no" data-toggle="modal" data-target="#myModalNo"></button>
+	<div class="detail">
+		<button class="public-btn-hdgz" type="button" data-toggle="modal" data-target="#myModalOrder">活动规则</button>
+		<!--活动规则 -->
+		<div class="modal fade" id="myModalOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">活动规则</h4>
+		      </div>     
+		      <div class="modal-body">
+		        	<p>
+		        		1、活动仅限泸州移动微服务微信关注用户参与。
+						<br>2、活动期间，同一手机号仅限参与活动一次。						
+						<br>3、活动期间，活动中奖次数仅限一次，奖品仅限泸州移动用户使用。						
+						<br>4、若用户参与“颜值大考验”活动和“高清语音知识问答”活动均中奖，奖品可累计，即20元话费。						
+						<br>5、活动结束后，话费奖品将于次月统一发放。						
+						<br>6、本活动的最终解释权归泸州移动所有。
+		        	</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="detail-body">
+			<div class="text-center">
+				<img class="detail-user-img" src="images/yzdz-03.jpg" />
+			</div>
+			<h1 class="d-h-01">10</h1>
+			<p class="d-p-01">当前颜值</p>
+			<p class="d-p-02">当前还差<span class="d-span-01">20</span>分就可获得<span>10</span>元话费奖励</p>
+			<p class="d-p-03">
+				点击右上角分享到朋友圈或者微信群
+				<br>当好友为您颜值加分达到30分就可获得10元话费
+			</p>
+			<div class="text-center">
+				<button class="d-btn-fxpyz" type="button">分享拼颜值</button>
+			</div>
+			<div class="text-center">
+				<button class="d-btn-wtjyf" type="button">为TA+1分</button>
+			</div>
+			<div class="text-center">
+				<button class="d-btn-sswdyz" type="button">试试我的颜值</button>
+			</div>
+		</div>
+		<div class="detail-footer">
+			<img class="img-100" src="images/yzdz-01.png" />
+			<div class="df-list-div">
+				<div class="df-list">
+					<img src="images/yzdz-03.jpg" />
+					<p>鲜汤菇凉</p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-03.jpg" />
+					<p>鲜汤菇凉</p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-03.jpg" />
+					<p>鲜汤菇凉</p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				<div class="df-list">
+					<img src="images/yzdz-02.png" />
+					<p></p>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+		</div>
+		
+	</div>
+	
+	
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-01-22
+    	描述：.modal弹窗----点赞成功
+    -->
+    <div class="modal fade" id="myModalOk" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">点赞成功！</h4>
+                </div>
+                <div class="modal-body">
+                    <p>恭喜您为好友成功点赞一枚！</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-qx btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2016-01-22
+    	描述：.modal弹窗----点赞失败
+    -->
+    <div class="modal fade" id="myModalNo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">点赞失败！</h4>
+                </div>
+                <div class="modal-body">
+                    <p>对不起，您为好友点赞次数超过一次！</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-qx btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			var userType = $('.d-user-type').val();
+			//非本人
+			if(userType=='0')
+			{
+				$('.d-btn-fxpyz').hide();
+				$('.d-btn-wtjyf').show();
+				$('.d-btn-sswdyz').show();
+			}
+			//本人
+			else if(userType=='1')
+			{
+				$('.d-btn-fxpyz').show();
+				$('.d-btn-wtjyf').hide();
+				$('.d-btn-sswdyz').hide();
+			}
+			//数据出错
+			else
+			{
+				alert('数据加载出错！请重新加载页面')
+			}
+			
+			
+			
+			//分享拼颜值
+			$('.d-btn-fxpyz').on('click',function(){
+				alert('分享拼颜值')
+			})
+			
+			//为TA点赞
+			$('.d-btn-wtjyf').on('click',function(){
+				
+				var userNumber = $('.d-user-number'),	//用户点赞次数
+					userNumberVal = userNumber.val(),
+					allNumber = $('.d-h-01');	//总点赞次数
+				var btnOk = $('.d-btn-ok'),	//成功弹窗
+					btnNo = $('.d-btn-no'); //失败弹窗
+				//判断用户是否拥有点赞资格：点赞次数小于1
+				//点赞成功
+				if(userNumberVal<1)
+				{
+					btnOk.click();
+					userNumber.val(1);
+					allNumber.html(parseInt(allNumber.html())+1);
+				}
+				//点赞失败
+				else
+				{
+					btnNo.click();
+				}
+			})
+			
+			//试试我的颜值
+			$('.d-btn-sswdyz').on('click',function(){
+				alert('试试我的颜值');
+			})
+			
+		})
+
+	</script>
+</body>
+</html>
+
+
+
+

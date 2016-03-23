@@ -1,0 +1,38 @@
+html,body{margin:0; background-color:#d7f1ff; font-family:"微软雅黑", "黑体"}
+a:link,a:visited,a:active {color: #333;text-decoration: none;}
+a:hover {text-decoration: none;color: #666;}
+li,p{ margin:0; padding:0;}
+.wp{ /*width:1000px;*/ margin:25px auto 0 auto; max-width: 1000px;}
+.msgbox{ padding:15px 25px; background-color:#FFF; border:1px solid #afd9f0; border-radius:6px; text-align:center; font-size:24px; color:#ff5400;box-shadow:inset 5px 5px 5px rgba(100,100,100,0.1); -webkit-box-shadow:inset 5px 5px 5px rgba(100,100,100,0.1)}
+.msglist{ margin-top:20px;}
+.tops{ overflow:hidden; border-bottom:2px solid #8eb5ca; margin-bottom:15px;}
+	.tops p{ float:left; width:27%; font-size:16px; font-size:20px; margin:0; line-height:30px;height:40px;}
+	.tops p:nth-child(3n +3){width:46%}
+.listtitle{ font-size:18px; color:#5a7381; height:40px;}
+.baka{ display:block; float:right; width:100px; height:35px; line-height:35px; text-align:center; font-size:16px;background:#0592db; background:-webkit-linear-gradient(#60bae7,#0592db);background:linear-gradient(#60bae7,#0592db);border-radius:5px; color:#FFF !important}
+.items{ overflow:hidden; margin-bottom:15px;}
+	.items p{ float:left; width:70%; margin:0; height:45px; line-height:45px; font-size:18px; padding-right:50px; border-bottom:1px solid #b8d7e8; cursor:pointer; background:url(select.gif) no-repeat 0 15px; padding-left:25px;}
+	.items p span{ display:block; float:right}
+	.items p span font{ color:#ff3600}
+	.items .v{ background-position:0 -45px !important;}
+.listtitley{ text-align:right; height:55px; line-height:55px; font-size:22px; padding-right:5em;}
+.bts{ text-align:center; padding-top:30px;}
+.bts button{ width:240px; height:50px; border:0; background-color:#0090da; color:#FFF; font-size:24px}
+.aor{ text-align:right;}
+
+.logbox dt{ font-size:24px; margin:0; margin-bottom:15px; color:#2B93B0}
+.logbox table{ border:1px solid #a8cfe4; background-color:#FFF}
+.logbox table td{padding:12px 5px; text-align:center; color:#666}
+.logbox .h td{ background-color:#a8cfe4; color:#15428b}
+
+.setmsgbox{padding:5px 15px; background-color:#FFF; border:1px solid #afd9f0; border-radius:6px; font-size:18px; color:#ff5400;box-shadow:inset 5px 5px 5px rgba(100,100,100,0.1); -webkit-box-shadow:inset 5px 5px 5px rgba(100,100,100,0.1); margin-top:15px;}
+.paytype{margin:20px auto; width:900px; overflow:hidden}
+.paytype li{ float:left; list-style:none; margin-bottom:15px; overflow:hidden; width:275px; padding:10px;}
+.paytype li label{ float:left;  width:400px;display:block; font-size:16px}
+.paytype li input{ float:left; margin-top:15px;}
+.paytype li img{ float:left; width:40px; margin:0 8px;}
+.paytype li span{ display:block; font-size:12px;color:#999;}
+.paytype .ck{background:-webkit-linear-gradient(#FFF,#EEE);background:linear-gradient(#FFF,#EEE);box-shadow:3px 3px 3px rgba(100,100,100,0.3); -webkit-box-shadow:3px 3px 3px rgba(100,100,100,0.3)}
+@media only screen and (max-width:700px){
+  .tops p{ width: 100%;}
+}

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/phone.css"/>
+    <title>反应大比拼</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-03-18
+    	描述：.phone-val:出价类型：0失败，1成功,默认为0失败
+    -->
+    <input class="phone-val" type="hidden" value="0" />
+	<div class="phone">
+		<button class="public-btn-hdgz" type="button" data-toggle="modal" data-target="#myModalOrder">活动规则</button>
+		<!--活动规则 -->
+		<div class="modal fade" id="myModalOrder" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title" id="myModalLabel">活动规则</h4>
+		      </div>     
+		      <div class="modal-body">
+		        	<p>
+		        		1、进入活动完成手机号绑定后，方可参与手机竞价。
+						<br>2、 参与用户加价有效时间为：活动结束前均可。
+						<br>3、参与用户加价范围为10元—100元，且加价为10的倍数。
+						<br>4、参与用户加价次数不限。
+						<br>5、到达活动结束时间后，出价最高者为竞拍成功者，系统将在3日内以短信通知中奖用户。
+						<br>6、中奖用户需在接受到中奖通知后的3天内，前往龙马潭蜀泸营业厅（广电对门），以活动竞拍成交价，购买对应手机。 
+						<br>7、活动仅限泸州移动用户参加，奖品仅限泸州移动用户领取。
+						<br>8、本活动的最终解释权归泸州移动所有。
+		        	</p>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		
+		<div class="phone-header">
+			<div class="text-center"><img class="phone-img-02" src="images/fydbp-04.png"</div>
+			<p class="phone-p-01">当前出价</p>
+			<p class="phone-p-02">&yen;67.00</p>
+			<p class="phone-p-03">目前已有<span>200</span>人参与出价</p>
+		</div>
+		<div class="phone-body">
+			<img class="phone-img-01" src="images/fydbp-02.jpg" />
+			<div class="text-center">
+				<button class="phone-btn-wycj" data-toggle="modal" data-target="#myModal">我要出价</button>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal 出价界面-->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">请选择出价金额</h4>
+	      </div>
+	      <div class="modal-body">
+				<select class="phone-select" name="">
+					<option value="" selected="selected">10</option>
+					<option value="">20</option>
+					<option value="">30</option>
+					<option value="">50</option>
+					<option value="">100</option>
+				</select>
+	      </div>
+	      
+	      <div class="modal-footer">
+	      	<button type="button" class="phone-btn-qd btn btn-default" >确定</button>
+	        <button type="button" class="phone-btn-qx btn btn-default" data-dismiss="modal">取消</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Modal 出价成功界面-->
+	<div class="modal fade" id="myModalTrue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	      	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">出价成功</h4>
+	      </div>
+	      <div class="modal-body">
+				恭喜您出价成功！
+	      </div>
+	      <div class="height-30"></div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Modal 出价失败界面-->
+	<div class="modal fade" id="myModalFalse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	      	  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">出价失败</h4>
+	      </div>
+	      <div class="modal-body">
+				很遗憾！您的出价失败了！
+	      </div>
+	      <div class="height-30"></div>
+	    </div>
+	  </div>
+	</div>
+	<button class="phone-btn-true" data-toggle="modal" data-target="#myModalTrue">按钮</button>
+	<button class="phone-btn-false" data-toggle="modal" data-target="#myModalFalse">按钮</button>
+	
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.phone-btn-qd').on('click',function(){
+				//$('.phone-btn-false').click();
+				
+				$('.phone-btn-qx').click();
+				//.phone-val:出价类型：0失败，1成功,默认为0失败
+				var phoneVal = $('.phone-val').val();
+				//失败
+				if(phoneVal=='0')
+				{
+					$('.phone-btn-false').click();
+				}
+				//成功
+				else if(phoneVal=='1')
+				{
+					$('.phone-btn-true').click();
+				}
+				//数据错误
+				else
+				{
+					alert('数据出错')
+				}
+				
+				
+			})
+		})
+	</script>
+</body>
+</html>
