@@ -1,0 +1,142 @@
+.d-header{
+	padding:25px 0;
+	text-align: center;
+}
+.d-card{
+	display: inline-block;
+	width: 30%;
+	margin-bottom: 15px;
+	
+}
+.d-card img{
+	display: block;
+	margin: auto;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	margin-bottom: 5px;
+}
+.d-card h1{
+	color: #333;
+	font-size: 1.125rem;
+	line-height: 24px;
+	text-align: center;
+	word-wrap:break-word;
+	overflow:hidden;
+}
+.d-card p{
+	color: #333;
+	font-size: 1rem;
+	line-height: 24px;
+	text-align: center;
+}
+.d-btn-gs{
+	border-radius: 18px;
+	border: 1px solid transparent;
+	width: 100%;
+	height: 36px;
+	line-height: 32px;
+	color: black;
+	background-color: white;
+	cursor: pointer;
+	
+	
+}
+.d-clz .d-btn-gs{
+	background-color: #FFC923;
+	color: white;
+	border: 1px solid #FFC923;
+}
+.d-ygs .d-btn-gs{
+	border: 1px solid transparent;
+	color: #ccc;
+	background-color: white;
+}
+.d-sq .d-btn-gs{
+	background-color: white;
+	color: #31BFC9;
+	border: 1px solid #31BFC9;
+}
+.d-xz .d-btn-gs{
+	color: white;
+	background-color: #ff5d5d;
+	border: 1px solid #ff5d5d;
+}
+.d-body{
+	background-color: #f3f3f3;
+	position: relative;
+	padding:8px 15px;
+	border-top: 1px solid #E0E0E0;
+}
+.d-body:before{
+	position: absolute;
+	left: 50%;
+	top: -10px;
+	margin-left: -10px;
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/d-body-before.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	content: '.';
+	color: transparent;
+}
+.d-body h1{
+	text-align: center;
+	font-size: 1.25rem;
+	color: #333;
+	line-height: 40px;
+}
+.d-input-father{
+	position: relative;
+}
+.d-input{
+	border: 1px solid #999;
+	height: 40px;
+	line-break: 36px;
+	background-color: transparent;
+	padding-left: 8px;
+	width: 100%;
+	color: black;
+	font-size: 1.125rem;
+	border-radius: 6px;
+	letter-spacing: 2px;
+}
+.d-btn-hqyzm{
+	position: absolute;
+	right: 0;
+	top: 8px;
+	width: 35%;
+	height: 24px;
+	line-height: 20px;
+	color: #31BFC9;
+	border: none;
+	border-left: 1px solid #666;
+	text-align: center;
+	background-color: transparent;
+	font-size: 1rem;
+}
+.d-ts{
+	height: 30px;
+	color: red;
+	line-height: 30px;
+	text-align: center;
+	font-size: 1rem;
+}
+.d-btn-mssq{
+	
+	height: 40px;
+	line-height: 36px;
+	border: none;
+	background-color: #FF5C5C;
+	width: 100%;
+	text-align: center;
+	color: white;
+	border-radius: 6px;
+	margin: 20px 0;
+}
+
+/*2016-04-01*/
+.d-input-dxyzm{
+	text-align: center;
+}

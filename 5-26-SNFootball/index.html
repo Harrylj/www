@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>欧洲杯</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="index">
+		<div class="index-header">
+			<a class="ih-hdgz" href="hdgz.html">活动规则>></a>
+			<img class="img-100" src="images/index-01.jpg" />
+			<div class="index-fg">
+				<img src="images/index-05.png"/>
+				<p>竞猜人数: <span class="index-span-01">7767</span>&nbsp;送出礼品: <span class="index-span-02">1211</span></p>
+
+				<MARQUEE class="none" behavior="scroll" contenteditable="true" onstart="this.firstChild.innerHTML+=this.firstChild.innerHTML;" scrollamount="3" width="100">
+					<SPAN unselectable="on"></SPAN>
+				</MARQUEE>
+				<div id="scrollobj" style="white-space:nowrap;color:white;font-size:12px;line-height:24px;overflow:hidden;" onmouseover="marqueeStop()" onmouseout="marqueeStar()">
+					 <p style="display: inline-block;">[CROSSSELLING3]</p>
+				</div>
+				<script language="javascript" type="text/javascript">
+					
+					function scroll(obj) {
+						var tmp = (obj.scrollLeft) ++;
+						//当滚动条到达右边顶端时
+						if (obj.scrollLeft == tmp) obj.innerHTML += obj.innerHTML;
+						//当滚动条滚动了初始内容的宽度时滚动条回到最左端
+						if (obj.scrollLeft >= obj.firstChild.offsetWidth) obj.scrollLeft = 0;
+					}
+					var abcd = setInterval("scroll(document.getElementById('scrollobj'))", 30);
+				
+					function marqueeStop() {
+						clearInterval(abcd);
+					}
+				
+					function marqueeStar() {
+						abcd = setInterval("scroll(document.getElementById('scrollobj'))", 30);
+					}
+					
+				</script>
+			</div>
+			<div class="index-img-div">
+				<img class="index-img-01" src="images/index-02.png" />
+				<a href="#"><img class="index-img-02" src="images/index-03.png"></a>
+				<a href="look.html"><img class="index-img-02" src="images/index-04.png"></a>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="index-body">
+			<div class="ib-list-div">
+				<div class="ib-div-01">
+					<img src="images/index-10.png" />
+					<p>共有<span>2000</span>人竞猜&nbsp;&nbsp;投入<span>300</span>吉祥物</p>
+				</div>
+				
+				<div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">
+			            	<div class="ib-img-slide fl">
+			            		<h1>爱尔兰</h1>
+			            		<div class="country">
+			            			<div class="country-top"></div>
+			            			<img src="images/country/aierlan.png"/>
+			            		</div>
+			            		<a href="gameBF.html"><button class="ib-btn-cbf">猜比分</button></a>
+			            	</div>
+			            	<div class="ib-swiper-center">
+			            		<img src="images/index-17.png" />
+			            		<p>
+			            			5月20日
+			            		   <br>13：35
+			            		</p>
+			            	</div>
+			            	<div class="ib-img-slide fr">
+			            		<h1>奥地利</h1>
+			            		<div class="country">
+			            			<div class="country-top"></div>
+			            			<img src="images/country/aodili.png"/>
+			            		</div>
+			            		<a href="gameSF.html"><button class="ib-btn-csg">猜胜负</button></a>
+			            	</div>
+			            	<div class="clear"></div>
+			            </div>
+			            <div class="swiper-slide">
+			            	<div class="ib-img-slide fl">
+			            		<h1>法国</h1>
+			            		<div class="country">
+			            			<div class="country-top"></div>
+			            			<img src="images/country/faguo.png"/>
+			            		</div>
+			            		<a href="gameBF.html"><button class="ib-btn-cbf">猜比分</button></a>
+			            	</div>
+			            	<div class="ib-swiper-center">
+			            		<img src="images/index-17.png" />
+			            		<p>
+			            			5月21日
+			            		   <br>12：35
+			            		</p>
+			            	</div>
+			            	<div class="ib-img-slide fr">
+			            		<h1>土耳其</h1>
+			            		<div class="country">
+			            			<div class="country-top"></div>
+			            			<img src="images/country/tuerqi.png"/>
+			            		</div>
+			            		<a href="gameSF.html"><button class="ib-btn-csg">猜胜负</button></a>
+			            	</div>
+			            	<div class="clear"></div>
+			            </div>
+			           
+			        </div>
+
+			        <!-- 如果需要导航按钮 -->
+			        <div class="swiper-button-prev"></div>
+			        <div class="swiper-button-next"></div>
+			    </div>
+			    
+			    <a class="ib-btn-wcjdjc" href="gameDetail.html">我参加的竞猜<span class="ib-span-02">3</span></a>
+			    
+			</div>
+			<div class="height-10"></div>
+			<div class="index-fg index-fg-btn">
+				<img src="images/index-06.png"/>
+				<p>秒赚投注吉祥物</p>
+				<p>分享朋友圈 更多好礼相送</p>
+				<a href="share"><button class="index-btn-02">详情</button></a>
+			</div>
+			<div class="ib-list-01">
+				<img src="images/index-32.png"/>
+				<h1>今日之星排行奖励</h1>
+				<h2>奖励100元小酒馆啤酒券</h2>
+				<p>地址：育才西路公交站台旁巷子</p>	
+				<p>电话：18682535885</p>
+			</div>
+			<div class="ib-list-02"></div>
+			<div class="ib-list-div ">
+				<div class="ib-div-01">
+					<img src="images/index-09.png" />
+					<ul class="ib-ul-01">
+						<li>
+							<img src="images/index-21.png"/>
+							<h1>【一等奖】</h1>
+							<p>Apple watch sport</p>
+							<p>（此奖项仅限1人）</p>
+						</li>
+						<li>
+							<img src="images/index-22.png"/>
+							<h1>【二等奖】</h1>
+							<p>ipad mini4（2-3名）</p>
+							<p>（此奖项仅限 2 人）</p>
+						</li>
+						<li>
+							<img src="images/index-23.png"/>
+							<h1>【三等奖】</h1>
+							<p>罗技G300s（4-13名）</p>
+							<p>（此奖项限 10 人）</p>
+						</li>
+						<li>
+							<img src="images/index-24.png"/>
+							<h1>【四等奖】</h1>
+							<p>欧洲杯吉祥物（14-50名）</p>
+							<p>（此奖项限 37 人）</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="ib-list-03" style="margin-top: -8px; display: none;">
+				 	<h1>获奖通知及领取</h1>
+				 	<p>“四川移动新生活遂宁”微信公众号将在最短时间内通知获奖者，并在公众号推送文章告知，请各位参与活动的粉丝留意。</p>
+				 	<div class="ibl-03-content">
+				 		领奖地址：明月路408号四川移动遂宁分公司
+<br>联系电话：13882561878
+				 	</div>
+		    </div>
+		    
+		    <div class="height-10"></div>
+		    
+		    <div class="index-fg index-fg-btn">
+				<img src="images/index-19.png"/>
+				<p>超值流量套餐加油欧洲杯</p>
+				<p>半夜看直播无压力</p>
+				<a href="share.html"><button class="index-btn-02">详情</button></a>
+			</div>
+			
+			<div class="height-10"></div>
+			
+			<div class="ib-rank">
+				<div class="ibr-header"></div>
+				<div class="ibr-body">
+				<!--
+                	作者：648267773@qq.com
+                	时间：2016-05-27
+                	描述：.ibr-table-all:总排行
+                		.ibr-table-day:每天的排行
+                -->
+					<table class="ibr-table ibr-table-all" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th></th>
+							<th>实时排名</th>
+							<th><button class="ibr-btn"></button></th>
+						</tr>
+						<tr>
+							<td>排名</td>
+							<td>联系方式</td>
+							<td>吉祥物</td>
+						</tr>
+						<tr>
+							<td>01</td>
+							<td>18200166591</td>
+							<td>20000</td>
+						</tr>
+						<tr>
+							<td>02</td>
+							<td>18200166591</td>
+							<td>20000</td>
+						</tr>
+						<tr>
+							<td>03</td>
+							<td>18200166591</td>
+							<td>20000</td>
+						</tr>
+					</table>
+					<table class="ibr-table ibr-table-day" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th></th>
+							<th>实时排名</th>
+							<th><button class="ibr-btn"></button></th>
+						</tr>
+						<tr>
+							<td>排名</td>
+							<td>联系方式</td>
+							<td>吉祥物</td>
+						</tr>
+						<tr>
+							<td>01</td>
+							<td>18200166591</td>
+							<td>2000</td>
+						</tr>
+						<tr>
+							<td>02</td>
+							<td>18200166591</td>
+							<td>2000</td>
+						</tr>
+						<tr>
+							<td>03</td>
+							<td>18200166591</td>
+							<td>2000</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			
+			<img class="ib-footer-img" src="images/index-11.png"/>
+		</div>
+		
+	</div>
+	
+	<button class="index-btn-gz none" data-toggle="modal" data-target="#myModal">关注</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	      </div>
+	      
+	      <div class="modal-body">
+	        	<div class="text-center"><img class="index-gz-img" src="images/ewm.png"/></div>
+	      		<div class="height-30"></div>
+	      		<p class="index-p-01">长按识别二维码</p>
+	      		<p class="index-p-01">关注后回复“欧洲杯”参与活动</p>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper3.08.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+        var swiper = new Swiper('.swiper-container', {
+	        slidesPerView: 1,
+	        paginationClickable: true,
+	        spaceBetween: 30,
+	        loop: true,
+	        autoplay: 8000,//8秒自动滑动
+	        autoplayDisableOnInteraction: false,
+	        // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+	    });
+	    
+	    $(function(){
+	    	
+	    	//点击切换实时排名
+	    	$('.ibr-btn').on('click',function(){
+	    		$(this).parents('.ibr-table').hide().siblings().show();
+	    	})
+	    	
+	    	//关注
+	    	$('.index-btn-gz').click();
+	    })
+    </script>
+</body>
+</html>

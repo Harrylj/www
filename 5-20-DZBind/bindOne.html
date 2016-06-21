@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bindOne.css"/>
+    <title>店员绑定</title>
+</head>
+<body>
+	<div class="bind-one member-center-phone vr">
+		<div class="cb-body">
+			<p class="bo-p-01">姓名&nbsp;&nbsp;<span class="red">不能包含数字</span></p>
+			<div class=" mcp-phone-div text-center">
+				<input class="cb-input cb-input-name" type="text" placeholder="请输入您的姓名"/>
+			</div>	
+			<p class="bo-p-01">联系方式</p>
+			<div class="mcp-phone-div text-center">
+				<input class="cb-input cb-input-phone" type="tel" placeholder="请输入您的手机号码"/>
+			</div>
+			<p class="bo-p-01">获取验证信息</p>
+			<ul class="cd-ul-01">
+				<li><input class="cb-input cb-input-dxyzm" type="text" placeholder="请输入短信验证码"/></li>
+				<li><button class="cd-btn-hqyzm" type="button">获取验证码</button></li>
+			</ul>
+			<div class="cb-bg clear"></div>
+			<p class="cb-ts"></p>
+			<div class="text-center">
+				<button class="cb-btn-next">下一步</button>
+			</div>
+		</div>
+		
+
+        
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//倒计时函数
+			var timeZero =0;
+			var clickClass = 'btn-disable';
+			function getTime(){
+				timeZero++;
+				var timeVal = 90,	//间隔秒速
+				  thisVal = $('.cd-btn-hqyzm');
+				var changeVal = timeVal-timeZero + 's';
+				thisVal.html(changeVal);
+				if(timeZero== timeVal)
+				{
+					thisVal.html('获取验证码');
+					timeZero = 0;
+					clearTimeout(changeTime)
+					thisVal.removeClass(clickClass);
+				}
+				
+			}
+			//点击“获取验证码”按钮验证
+			$('.cd-btn-hqyzm').on('click',function(){
+				var _phone = $('.cb-input-phone'),
+					_name = $('.cb-input-name'),
+					gs = /^1\d{10}$/,
+					ts = $('.cb-ts'),
+					ts_02 = '手机号码不能为空',
+					ts_05 = '手机号码格式错误',
+					ts_06 = '姓名不能为空';
+				//姓名不能为空
+				if(_name.val() == '')
+				{
+					ts.html(ts_06);
+				}
+				//手机号码不能为空
+				else if(_phone.val() == '')
+				{
+					ts.html(ts_02);
+				}
+				//手机号码格式错误
+				else if(!gs.test(_phone.val()))
+				{
+					ts.html(ts_05);
+				}
+				else
+				{
+					ts.html('');
+					//判断是否间隔时间
+					//可点击
+					if(!$(this).hasClass(clickClass))
+					{
+						$(this).addClass(clickClass);
+						//倒计时函数
+						changeTime = setInterval(getTime,1000);
+						alert('获取短信验证码:1234');
+					}
+					//不可点击
+					else
+					{
+						
+					}
+				}
+				
+			});
+			
+			
+			//点击“下一步”按钮验证
+			$('.cb-btn-next').on('click',function(){
+
+				var _dxyzm = $('.cb-input-dxyzm'),
+					ts = $('.cb-ts'),
+					ts_07 = '短信验证码错误';
+				
+				//手机验证码错误
+				if(_dxyzm.val().toLowerCase() !="1234")
+				{
+					ts.html(ts_07)
+				}
+				//成功
+				else
+				{
+					ts.html('');
+					alert('成功，下一步操作')
+					//window.location.href="cardBindTwo.html";
+				}
+			});
+			
+		})
+	</script>
+</body>
+</html>

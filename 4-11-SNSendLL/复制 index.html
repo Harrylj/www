@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <title>赠送流量</title>
+
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-08-04
+    	描述：需求参数
+    	.number-yzm:获取的验证码：默认为1234
+    	.number-yzm-phone:获取验证码的手机:默认为18200166591
+    -->
+    <input class="number-yzm" type="hidden" value="1234" />
+	<input class="number-yzm-phone" type="hidden" value="18200166591" />
+		<div class="index vr">
+		<h1 class="index-time text-center" class="text-center"> 活动时间：整个二季度</h1>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2016-04-11
+        	描述：
+        <div class="index-hdgz">
+			1.	活动规则.......
+		</div>
+		-->
+		<input class="i-input-phone" type="text" placeholder="请输入正确的手机号码" />
+		<div class="yzm-father">
+			<input class="i-input-yzm fl" type="text" placeholder="请输入验证码" />
+			<button class="index-btn-hqyzm fr">获取验证码</button>
+			<div class="clear"></div>
+		</div>
+		<p class="index-ts"></p>
+		<div class="text-center">
+			<button class="index-btn-msdh" type="button">马上赠送</button>	
+		</div>
+		<div class="text-center">
+			<button class="s-hdgz" data-toggle="modal" data-target="#hdgz">如何赠送请点击这里</button>
+		</div>
+		<p class="index-bq">*本活动最终解释权归遂宁移动所有</p>
+	
+	
+	<!-- Modal活动规则 -->
+	<div class="modal fade" id="hdgz" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document" style="top: 5%;">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="hdgz-title" id="myModalLabel">活动规则</h4>
+	      </div>
+	      
+	      <div class="hdgz-body">
+	      	<p>用户可向经常通电话的好友（该好友须为上月流量使用不超过30M）赠送“100M当月流量+掌上冲浪会员业务”，通过发送“ABC+手机号码”（如： ABC13912345678）到10086。</p>
+	      	<p>每个用户每月最多可赠送200位好友，被赠送人每月仅可享受一次赠送，如赠送人成功次数达到一定数量，即可在次月获得相应的流量奖励，具体如下：</p>
+	      	<img  style="width: 100%" src="images/sendLL-04.png"/>
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+	
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	$(function(){
+		//点击获取验证码
+		$('.index-btn-hqyzm').on('click',function(){
+			var numberYzmPhone = $('.number-yzm-phone'),
+				yzmPhone = $('.i-input-phone'),
+				gs = /^1\d{10}$/,
+				ts = $('.index-ts'),
+				ts_01 = '手机号码不能为空',
+				ts_02 = '手机号码格式不正确';
+			//手机号码不能为空
+			if(yzmPhone.val()=='')
+			{
+				ts.html(ts_01);
+			}
+			//手机号码格式不正确
+			else if(!gs.test(yzmPhone.val()))
+			{
+				ts.html(ts_02);
+			}
+			//获取验证码
+			else{
+				ts.html('');
+				alert('获取验证码，默认为:1234')
+			}
+			
+		});
+		
+		//点击按钮“马上兑换”
+		$('.index-btn-msdh').on('click',function(){
+			var ts = $('.index-ts'),
+				ts_01 = '验证码不能为空',
+				ts_02 = '验证码不正确',
+				ts_03 = '手机号码和验证码不匹配',
+				numberYzmPhone = $('.number-yzm-phone'),
+				yzmPhone = $('.i-input-phone'),
+				numberYzm = $('.number-yzm'),
+				yzm = $('.i-input-yzm');
+			//验证码不能为空	
+			if(yzm.val()=='')
+			{
+				ts.html(ts_01);
+			}
+			//验证码不正确
+			else if(yzm.val()!=numberYzm.val())
+			{
+				ts.html(ts_02);
+			}
+			//手机号码和验证码不匹配
+			else if(yzm.val()!=numberYzm.val()||yzmPhone.val()!=numberYzmPhone.val())
+			{
+				ts.html(ts_03);	
+			}
+			//验证成功
+			else
+			{
+				ts.html('');
+				alert('成功')
+			}
+		})
+		
+	});
+
+</script>
+</body>
+</html>

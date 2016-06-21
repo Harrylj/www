@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>	
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/pay.css"/>
+    <title>账户充值</title>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-03-30
+    	描述：.my-phone:自己的手机号码
+    -->
+    <input class="my-phone" type="hidden"  value="18200166592" />
+	<div class="pay vr">
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-10-30
+        	描述：公用头01
+        -->
+		<div class="public-header-01-father">
+			<div class="public-header-01">
+				<a class="public-h-return" href="#">返回</a>
+				<h1>账户充值</h1>
+				<a href="payOrder.html"><button class="public-btn-ts"></button></a>
+			</div>
+		</div>
+		<div class="p-body">
+			<div class="pb-phone-div">
+				<input class="pb-input-phone" type="tel" placeholder="请输入充值的手机号码" />
+				<button class="pb-btn-phone pb-btn-myphone">为自己充值</button>
+				<div class="pb-phone-list">
+					<div class="pbpl-div">
+						<div class="pbpl-tel">18290809876</div>
+						<div class="pbpl-name">鲜汤姑娘</div>
+						<div class="clear"></div>
+					</div>
+					<div class="pbpl-div">
+						<div class="pbpl-tel">18290809874</div>
+						<div class="pbpl-name">鲜汤姑娘</div>
+						<div class="clear"></div>
+					</div>
+					<div class="pbpl-div">
+						<div class="pbpl-tel">18290809871</div>
+						<div class="pbpl-name">鲜汤姑娘</div>
+						<div class="clear"></div>
+					</div>
+					<button class="pbpl-btn-qkczjl">清空充值记录</button>
+				</div>
+			</div>
+			<!--
+            	作者：648267773@qq.com
+            	时间：2016-03-30
+            	描述：.pb-money-div：暂不可充值
+            		.pb-money-ok:表示可以充值
+            -->
+			<div class="pb-money-div">
+				<div class="pb-phone-img">
+					<p class="pbp-p">账户绑定号码(四川联通)</p>
+					<div class="pbp-img">
+						<img src="images/user.jpg" />
+						<p>鲜汤姑娘</p>
+					</div>
+					<div class="pbp-img">
+						<img src="images/user.jpg" />
+						<p>鲜汤姑娘</p>
+					</div>
+					<div class="pbp-img">
+						<img src="images/user.jpg" />
+						<p>鲜汤姑娘</p>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<ul class="pb-phone-ul">
+					<li class="pbm-click">10元</li>
+					<li>20元</li>
+					<li>50元</li>
+					<li class="pbm-activity">
+						100元
+						<span>活动充100送20</span>
+					</li>
+					<li>150元</li>
+					<li>200元</li>
+				</ul>
+				<div class="clear"></div>
+				<p class="p-ts"></p>
+				<div class="text-center">
+					<button class="p-btn-mscz" type="button">立即充值</button>
+				</div>
+			</div>
+			
+		</div>
+  
+	</div>
+	
+	<button class="hide false-tc" data-toggle="modal" data-target="#myModal">按钮</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+	      </div>
+	      
+	      <div class="modal-body">
+	        	content
+	      </div>
+	      
+	    </div>
+	  </div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//页面加载时运行手机号码函数
+			checkPhone();
+			//手机号码函数
+			function checkPhone(){
+				var phoneList = $('.pb-phone-list'),
+					reg = /^0?1[3|4|5|8][0-9]\d{8}$/,
+					thisPhone = $('.pb-input-phone').val(),
+					moneyDiv = $('.pb-money-div'),
+					moneyClassOK = 'pb-money-ok';
+				//输入是手机号码---隐藏充值历史手机号码，可以充值
+				if(reg.test(thisPhone))
+				{
+					phoneList.hide();
+					moneyDiv.addClass(moneyClassOK)
+				}
+				//输入非手机号码---显示充值历史手机号码，不可以充值
+				else
+				{
+					phoneList.show();
+					moneyDiv.removeClass(moneyClassOK)
+				}
+			}
+			//输入充值手机号输入时判断焦点
+			$('.pb-input-phone').on('keyup',function(){
+				//手机号码函数
+				checkPhone();
+			})
+			//点击历史手机号码后传递手机号码值
+			$('.pbpl-div').on('click',function(){
+				var thisFather = $(this).parents('.pb-phone-list');
+				var inputPhone = $('.pb-input-phone'),
+					thisPhone = $(this).children('.pbpl-tel').html();
+				thisFather.hide();
+				inputPhone.val(thisPhone);
+				//手机号码函数
+				checkPhone();
+			})
+			/*
+			//输入充值手机号失去焦点
+			$('.pb-input-phone').on('blur',function(){
+				
+				$('.pb-phone-list').hide();
+			})
+			*/
+			//点击清空充值记录
+			$('.pbpl-btn-qkczjl').on('click',function(){
+				$('.pb-phone-list').remove();
+				
+			})
+			
+			//点击为自己充值
+			$('.pb-btn-myphone').on('click',function(){
+				var myPhone = $('.my-phone');
+				$('.pb-input-phone').val(myPhone.val());
+				//手机号码函数
+				checkPhone();
+			})
+			
+			//点击切换充值金额
+			$('.pb-phone-ul').children().on('click',function(){
+				var toggleClass = 'pbm-click';
+				$(this).addClass(toggleClass).siblings().removeClass(toggleClass);
+					
+			})
+			
+			//点击立即充值
+			$('.p-btn-mscz').on('click',function(){
+				var thisMoney = $('.pb-money-div'),
+					hasClass = 'pb-money-ok';
+				var TC = $('.false-tc'),
+					tcTitle = $('.modal-title'),
+					tcContent = $('.modal-body'),
+					ts_01 = '充值错误',
+					ts_02 = '充值成功',
+					ts_03 = '充值号码错误!',
+					ts_04 = '恭喜您充值成功!';
+				//可以充值
+				if(thisMoney.hasClass(hasClass))
+				{
+					//alert('可以充值');
+					tcTitle.html(ts_02);
+					tcContent.html(ts_04);
+					TC.click();
+					
+				}
+				//不可以充值
+				else
+				{
+					//alert('不可以充值');
+					tcTitle.html(ts_01);
+					tcContent.html(ts_03);
+					TC.click();
+				}
+				
+			})
+		})
+	</script>
+</body>
+</html>

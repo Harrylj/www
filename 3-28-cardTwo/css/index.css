@@ -1,0 +1,253 @@
+.index{
+	padding-bottom: 30px;
+}
+.i-info
+,.i-tx{
+	position: absolute;
+	display: block;
+	top: 10px;
+	width: 30px;
+	height: 30px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.i-tx{
+	left: 10px;
+}
+.i-info{
+	right: 10px;
+}
+.i-tx-no{
+	background-image: url(../images/two/two-index-07.png);
+}
+.i-info-no{
+	background-image: url(../images/two/two-index-10.png);
+}
+.i-info-ok{
+	background-image: url(../images/two/two-index-09.png);
+}
+.index-body{
+	padding: 8px;
+}
+.i-b-nav{
+	
+}
+.i-b-nav a{
+	float: left;
+	display: block;
+	width: 20%;
+	text-align: center;
+	font-size: 1rem;
+	color: black;
+	line-height: 30px;
+	padding-top: 40px;
+	background-position: center 0;
+	background-size: 40px 40px; 
+	background-repeat: no-repeat;
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+.i-b-nav a:hover{
+	color: #666666;
+	opacity: .8;
+}
+.i-b-nav a:nth-child(1){
+	background-image: url(../images/two/two-index-01.png);
+}
+.i-b-nav a:nth-child(2){
+	background-image: url(../images/two/two-index-02.png);
+}
+.i-b-nav a:nth-child(3){
+	background-image: url(../images/two/two-index-03.png);
+}
+.i-b-nav a:nth-child(4){
+	background-image: url(../images/two/two-index-04.png);
+}
+.i-b-nav a:nth-child(5){
+	background-image: url(../images/two/two-index-05.png);
+}
+
+
+.index-footer{
+	position: relative;
+	margin: 0 10px;
+	background-image: url(../images/two/two-index-06.png);
+	background-repeat: no-repeat;
+	background-size: 100% 17px;
+	background-position: left top; 
+	padding: 10px;
+}
+.i-f-img-div{
+	position: absolute;
+	left: 50%;
+	top: 10px;
+	margin-left: -80px;
+	height: 120px;
+	width: 160px;
+	background-image: url(../images/home-08.png);
+	background-size: 90px 90px;
+	background-position: center 0;
+	background-repeat: no-repeat; 
+}
+.i-f-img-div img{
+	position: relative;
+	top: 3px;
+	left: -.5px;
+	display: block;
+	width: 77px;
+	height: 77px;
+	margin: auto;
+	border-radius: 50%;
+	margin-bottom: 10px;
+	box-shadow: 0 0 5px #ccc;
+	
+}
+.i-f-img-div p{
+	font-size: 1.125rem;
+	line-height: 24px;
+}
+.i-last-val-div
+,.i-send-val-div{
+	position: absolute;
+	width: 100px;
+	margin-left: -50px;
+}
+.i-last-val-div{
+	left: 19%;
+	top: 55px;
+}
+.i-send-val-div{
+	left: 80%;
+	top: 60px;
+}
+.i-last-val-div h1
+,.i-send-val-div h1{
+	color: black;
+	text-align: center;
+	font-size: 1rem;
+	line-height: 28px;
+}
+.i-last-val-div p
+,.i-send-val-div p{
+	font-size: 1rem;
+	line-height: 24px;
+	color: black;
+}
+.i-f-login .i-last-val-div h1
+,.i-f-login .i-send-val-div h1{
+	font-size: 1.5rem;
+}
+.i-f-login .i-last-val-div h1{
+	color: red;
+}
+.i-f-login .i-send-val-div h1{
+	color: #31bfc9;
+}
+
+/*我要挂失*/
+.wygs-input{
+	width: 80%;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	background-color: white;
+	border-radius: 6px;
+	text-align: center;
+	font-size: 1.125rem;
+	letter-spacing: 2px;
+}
+.wygs-ts
+,.zhcz-ts{
+	height: 40px;
+	line-height: 40px;
+	color: red;
+	font-size: 1rem;
+	text-align: center;
+}
+.i-btn-msgs
+,.i-btn-mscz{
+	background-color: #31BFC9;
+	height: 40px;
+	line-height: 36px;
+	text-align: center;
+	padding: 0 50px;
+	color: white;
+	border: none;
+	border-radius: 20px;
+	font-size: 1.25rem;
+}
+
+
+/*2016-03-28*/
+.swiper-text{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -20px;
+	margin-left: -35%;
+	background-color: #FF5454;
+	height: 40px;
+	line-height: 40px;
+	width: 70%;
+	color: white;
+	text-align: center;
+	font-size: 18px;
+	
+}
+.swiper-pagination-bullet{
+	background-color: white;
+	opacity: .5;
+}
+.swiper-pagination-bullet-active{
+	background-color: #FF5454;
+ 	opacity: 1;
+}
+.if-content{
+	background-repeat: no-repeat;
+	padding: 5px 10px 40px 10px;
+	background-position: left bottom;
+	background-image: url(../images/two/two-index-11.png);
+	background-repeat: no-repeat;
+	background-size: 100% 20px;
+	box-shadow: 0 -5px 5px #ccc;
+	background-color: white;
+}
+.ifch-left
+,.ifch-right{
+	color: #333333;
+	height: 28px;
+	line-height: 28px;
+	font-size: 1rem;
+}
+.ifc-date{
+	color: #31BFC9;
+	margin-top: 20px;
+	line-height: 20px;
+	text-align: center;
+	font-size: 1rem;
+}
+.ifc-p-01{
+	color: black;
+	text-align: center;
+	line-height: 50px;
+	font-size: 2.5rem;	
+}
+.ifc-p-02{
+	color: #333333;
+	font-size: 1.125rem;
+	line-height: 24px;
+	text-align: center;
+}
+.i-btn-ljcz{
+	padding: 0 30px;
+	font-size: 1.5rem;
+	height: 36px;
+	line-height: 32px;
+	text-align: center;
+	color: #FF5454;
+	border: 1px solid #FF5454;
+	background-color: transparent;
+	border-radius: 20px;
+	margin-top: 10px;
+	cursor: pointer;
+}

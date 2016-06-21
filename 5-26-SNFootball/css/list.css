@@ -1,0 +1,85 @@
+
+.inb-center{
+	display: none;
+	text-align: center;
+	border-bottom: 1px solid white;
+}
+.inb-a-cbf
+,.inb-a-csf{
+	display: inline-block;
+	line-height: 28px;
+	font-size: 14px;
+	width: 30%;
+	text-align: center;
+	margin: 5px 10px;
+	box-shadow: 0 0 3px #CCCCCC;
+	border: none;
+	font-size: 14px;
+}
+.inb-a-cbf{
+	color: white;
+	background-color: #f24b5e;
+}
+.inb-a-csf{
+	color: black;
+	background-color: #ffe400;
+}
+.inh-a{
+	float: left;
+	display: block;
+	width: 30%;
+	line-height: 24px;
+	font-size: 14px;
+	color: black;
+	margin: 1.5%;
+	text-align: center;
+}
+.inh-a img{
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+}
+.inb-h-01{
+	font-size: 18px;
+	color: black;
+	line-height: 40px;
+	padding: 0 5px;
+}
+.in-header{
+	padding-top: 10px;
+}
+.inb-list li{
+	background-color: #09b59f;
+}
+.inbl-header{
+	padding: 5px;
+}
+.inbl-header p{
+	color: white;
+	font-size: 10px;
+}
+.inb-p-01{
+	float: left;
+	width: 58%;
+}
+.inb-p-02{
+	text-align: center;
+	width: 40%;
+	float: right;
+	border-left: 1px dashed #CCCCCC;
+}
+.inb-p-02 span{
+	color: black;
+}
+.inb-list h2{
+	color: #038171;
+	line-height: 32px;
+	padding: 0 20px;
+	font-size: 16px;
+}
+.inb-list-show .inb-center{
+	display: block;
+}
+.inb-list{
+	margin-bottom: 10px;
+}

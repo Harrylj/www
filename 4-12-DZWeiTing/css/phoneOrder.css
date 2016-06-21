@@ -1,0 +1,195 @@
+.phone-order{
+	background-color: white;
+	padding-bottom: 80px;
+}
+.po-header{
+	border-top: 10px solid #EEEEEE;
+}
+.po-header
+,.pob-list{
+	border-bottom: 10px solid #EEEEEE;
+}
+.po-header h1{
+	color: black;
+	padding: 0 10px;
+	line-height: 34px;
+}
+.poh-list{
+	position: relative;
+	border-top: 1px solid #EEEEEE;
+	position: relative;
+	padding:5px 40px 5px 110px;
+	min-height: 110px;
+}
+.poh-list img{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 90px;
+	height: 90px;
+}
+.poh-list h1{
+	color: black;
+	font-size: 14px;
+	line-height: 24px;
+}
+.poh-list p{
+	color: #BABABA;
+	line-height: 20px;
+	font-size: 12px;
+}
+.poh-number{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	line-height: 24px;
+	font-size: 16px;
+	color: #BABABA;
+}
+.pob-list{
+	position: relative;
+	padding: 10px;
+}
+.pob-list h1{
+	line-height: 30px;
+	font-size: 16px;
+	color: black;
+}
+.pob-input-phone{
+	border: 1px solid #FF2222;
+	line-height: 36px;
+	width: 100%;
+	padding:0 10px;
+	font-size: 16px;
+	color: black;
+}
+.pob-input-yzm{
+	float: left;
+	width: 50%;
+	border: 1px solid #FF2222;
+	line-height: 36px;
+	padding: 0 10px;
+	font-size: 16px;
+	color: black;
+	
+}
+.pob-btn-hqyzm{
+	width: 50%;
+	float: right;
+	background-color: #FF2222;
+	color: white;
+	border: 1px solid #FF2222;
+	line-height: 36px;
+}
+.pob-wxts{
+	font-size: 12px;
+	line-height: 20px;
+	color: #666666;
+}
+.pob-btn-psfs{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	padding: 0 15px;
+	background-color: transparent;
+	border: none;
+	line-height: 30px;
+	font-size: 14px;
+}
+.pob-address{
+	border-bottom: 1px solid #EEEEEE;
+	padding: 5px 20px;
+}
+.pob-address p{
+	font-size: 14px;
+	color: #666666;
+	line-height: 24px;
+}
+.pob-yhq{
+	position: absolute;
+	width: 70%;
+	right: 10px;
+	top: 5px;
+	line-height: 30px;
+	font-size: 14px;
+	text-align: right;
+	
+}
+.po-footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	height: 40px;
+	width: 100%;
+	overflow: hidden;
+	background-color: #F2F2F2;
+}
+.pof-left{
+	float: left;
+	line-height: 40px;
+	color: red;
+	width: 60%;
+	color: #FF2222;
+	font-size: 16px;
+	text-align: center;
+}
+.pof-btn-tjdd{
+	float: right;
+	width: 40%;
+	border: none;
+	line-height: 40px;
+	color: white;
+	text-align: center;
+	background-color: #FF2222;
+	font-size: 16px;
+}
+.pob-yhq-a{
+	position: relative;
+	top: 5px;
+	display: inline-block;
+	width: 44px;
+	height: 28px;
+	background-image: url(../images/phone/po-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.po-tc-btn-qd{
+	width: 100%;
+	background-color: #FF2222;
+	text-align: center;
+	color: white;
+	height: 40px;
+	line-break: 40px;
+	border: none;
+}
+.mma-ul{
+	width: 100%;
+	color: #969696;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+}
+.modal-title-address{
+	color: black;
+	font-size: 18px;
+}
+.mma-click{
+	color: red;
+}
+.pob-addree-div-qh .pob-btn-ps
+,.pob-addree-div-qh .pob-address-ps{
+	display: none;
+}
+.pob-addree-div-qh .pob-btn-qh
+,.pob-addree-div-qh .pob-address-qh{
+	display: block;
+}
+.pob-addree-div-ps .pob-btn-ps
+,.pob-addree-div-ps .pob-address-ps{
+	display: block;
+}
+.pob-addree-div-ps .pob-btn-qh
+,.pob-addree-div-ps .pob-address-qh{
+	display: none;
+}

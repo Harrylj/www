@@ -1,0 +1,226 @@
+
+.cb-body{
+	padding-top: 15px;
+	width: 100%;
+	padding-bottom: 30px;
+}
+.cb-body td{
+	background-color: red;
+	height: 50px;
+	border-bottom: 10px solid transparent;
+}
+.cd-ul-01{
+	background-color: #ececec;
+	width: 100%;
+}
+.cd-ul-01 li{
+	padding-top: 15px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1rem;
+	margin-bottom: 20px;
+	background-color: white;
+}
+
+.cd-ul-01 li:nth-child(1){
+	width: 60%;
+	float: left;
+}
+.cd-ul-01 li:nth-child(2){
+	float: right;
+	width: 35%;
+	text-align: center;
+}
+.cb-input{
+	border: 1px solid #BABABA;
+	background-color: transparent;
+	font-size: 1.125rem;
+	height: 40px;
+	width: 100%;
+	padding: 0 15px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	font-size: 16px;
+}
+.cd-img-tpyzm{
+	width: 80px;
+	position: relative;
+	top: 5px;
+}
+.cd-btn-hqyzm{
+	border: 1px solid #01a2ff;
+	background-color: transparent;
+	font-size: .875rem;
+	width: 100%;
+	height: 40px;
+	line-height: 18px;
+	text-align: center;
+	color: #01A2FF;
+	padding: 0;
+	cursor: pointer;
+}
+.cb-btn-next
+,.cb-btn-ok{
+	width: 90%;
+	text-align: center;
+	font-size: 1.25rem;
+	color: white;
+	background-color: #FF5C5C;
+	height: 40px;
+	line-height: 36px;
+	border: none;
+	border-radius: 6px;
+	margin-top: 20px;
+}
+
+.cb-btn-msdl{
+	width: 80%;
+	text-align: center;
+	font-size: 1.25rem;
+	color: white;
+	background-color: #6abeeb;
+	height: 40px;
+	line-height: 36px;
+	border: none;
+	border-radius: 20px;
+	margin-top: 20px;
+}
+.cb-ts{
+	font-size: 1rem;
+	text-align: center;
+	line-height: 24px;
+	height: 24px;
+	text-align: center;
+	color: red;
+}
+
+/*绑卡02*/
+.cbt-body{
+	padding: 20px;
+}
+.cbt-input-name{
+	border: 1px solid #999;
+	background-color: #f0f0f0;
+	height: 40px;
+	line-height: 36px;
+	width: 100%;
+	text-align: center;
+	font-size: 1.125rem;
+	border-radius: 6px;
+}
+.cbt-border{
+	border-left: 1px dashed #999;
+	border-right: 1px dashed #999;
+	height: 40px;
+	width: 80%;
+	margin: auto;
+}
+.cbt-card{
+	border:1px dashed #999;
+	border-radius: 8px;
+	background-image: url(../images/bk-bg.jpg);
+	padding: 20px 0;
+}
+.cbt-card h1{
+	font-size: 1.625rem;
+	line-height: 36px;
+	color: black;
+	text-align: center;
+}
+.cbt-card{
+	text-align: center;
+	color: black;
+	font-size: 1rem;
+	line-height: 24px;
+}
+.cbt-wxts{
+	padding-left: 8px;
+	color: red;
+	line-height: 30px;
+	font-size: .875rem;
+}
+
+.login-p-02{
+	padding: 0 15px;
+	margin-top: -10px;
+}
+.login-p-02 a{
+	color: #999;
+	font-size: 1rem;
+	line-height: 20px;
+}
+.mcp-phone-div {
+	padding: 15px;
+}
+.cd-ul-01{
+	padding: 0 15px;
+}
+.mcp-header{
+	padding: 25px 0;
+	text-align: center;
+}
+.mcp-header p{
+	margin-top: 10px;
+	line-height: 28px;
+	font-size: 14px;
+	color: #666666;
+	text-align: center;
+}
+
+.btn-disable{
+	color: red !important;
+	border: 1px solid #BABABA !important;
+}
+.bo-p-01{
+	font-size: 14px;
+	color: #666666;
+	line-height: 20px;
+	padding-left: 15px;
+}
+.bo-h-01{
+	background-color: #fff6cc;
+	color: black;
+	line-height: 20px;
+	font-size: 12px;
+	padding-left: 10px;
+}
+.bo-p-01 span{
+	font-size: 12px;
+}
+.bt-select{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	padding: 0 15px;
+	color: black;
+}
+.bt-select option:first-child{
+	color: #555555;
+}
+
+.modal-title-11{
+	font-size: 18px;
+	color: black;
+}
+.modal-body-11{
+	text-align: center;
+}
+.bt-btn-fh{
+	background-color: #ff3a3a;
+	height: 40px;
+	width: 90%;
+	line-height: 40px;
+	border: none;
+	color: white;
+	font-size: 18px;
+}
+.bt-table{
+	width: 100%;
+}
+.bt-table td{
+	font-size: 14px;
+	line-height: 24px;
+}
+.bt-table td:nth-child(2){
+	text-align: right;
+}

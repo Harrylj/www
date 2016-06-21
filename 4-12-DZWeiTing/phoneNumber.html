@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/phoneNumber.css"/>
+    <title>手机靓号</title>
+	<style type="text/css">
+
+    </style>
+</head>
+<body>
+	<div class="phone-number">
+		<div class="pn-header">
+			<!--
+            	作者：648267773@qq.com
+            	时间：2016-04-15
+            	描述：.pnh-nav-up:向上排序
+            		.pnh-nav-down：向下排序
+            -->
+			<ul class="pnh-ul">
+				<li class="pnh-nav pnh-nav-up">号码</li>
+				<li class="pnh-nav">价格</li>
+				<li><input class="pnh-input-tel" type="text"  placeholder="尾号搜索"/></li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="pn-body">
+			<!--
+            	作者：648267773@qq.com
+            	时间：2016-04-15
+            	描述：.pn-click:选中的手机号码
+            -->
+            
+			<div class="pn-list-div pn-click">
+				<p class="pn-tel">13909091234</p>
+				<p class="pn-p-01"><span class="red">靓号</span>：&nbsp;&yen; <span class="pn-money">1850</span></p>
+				<p class="pn-p-01">&nbsp;&nbsp;预存话费300元</p>
+			</div>
+			
+			<div class="pn-list-div">
+				<p class="pn-tel">13909093456</p>
+				<p class="pn-p-01"><span class="red">靓号</span>：&nbsp;&yen; <span class="pn-money">1855</span></p>
+				<p class="pn-p-01">&nbsp;&nbsp;预存话费300元</p>
+			</div>
+			<div class="pn-list-div">
+				<p class="pn-tel">13909092345</p>
+				<p class="pn-p-01"><span class="red">靓号</span>：&nbsp;&yen; <span class="pn-money">1852</span></p>
+				<p class="pn-p-01">&nbsp;&nbsp;预存话费300元</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			//点击排序
+			$('.pnh-nav').on('click',function(){
+				var classUp = 'pnh-nav-up',
+					classDown = 'pnh-nav-down',
+					thisIndex = $(this).index();
+				//号码排序
+				if(thisIndex=='0')
+				{
+					var phoneArray = new Array();
+					var numberPhone = $('.pn-tel');
+					numberPhone.each(function(){
+						var thisVal = $(this).html();
+						phoneArray.push(thisVal);
+					})
+					phoneArray.sort();
+					console.log(phoneArray);
+					//向上排序
+					if($(this).hasClass(classDown))
+					{
+						
+						$(this).addClass(classUp).removeClass(classDown).siblings().removeClass(classDown).removeClass(classUp);
+						//alert('向上号码排序');
+						for(var i=0;i<phoneArray.length;i++)
+						{
+							
+							numberPhone.each(function(){
+								var thisVal = $(this).html();
+								if(thisVal==phoneArray[i])
+								{
+									$(this).parents('.pn-list-div').appendTo('.pn-body');
+								}
+									
+							})
+						}
+						
+					}
+					//向下排序
+					else
+					{
+						
+						$(this).addClass(classDown).removeClass(classUp).siblings().removeClass(classDown).removeClass(classUp);
+						//alert('向下号码排序');
+						for(var i=0;i<phoneArray.length;i++)
+						{
+							numberPhone.each(function(){
+								var thisVal = $(this).html();
+								if(thisVal==phoneArray[i])
+								{
+									$(this).parents('.pn-list-div').prependTo('.pn-body');
+								}
+									
+							})
+						}
+					}
+				}
+				//价值排序
+				else if(thisIndex=='1')
+				{
+					var moneyArray = new Array();
+					var numberMoney = $('.pn-money');
+					numberMoney.each(function(){
+						var thisVal = $(this).html();
+						moneyArray.push(thisVal);
+					})
+					moneyArray.sort();
+					console.log(moneyArray);
+					//向上排序
+					if($(this).hasClass(classDown))
+					{
+						
+						$(this).addClass(classUp).removeClass(classDown).siblings().removeClass(classDown).removeClass(classUp);
+						//alert('向上价值排序');
+						for(var i=0;i<moneyArray.length;i++)
+						{
+							
+							numberMoney.each(function(){
+								var thisVal = $(this).html();
+								if(thisVal==moneyArray[i])
+								{
+									$(this).parents('.pn-list-div').prependTo('.pn-body');
+								}
+									
+							})
+						}
+					}
+					//向下排序
+					else
+					{
+						
+						$(this).addClass(classDown).removeClass(classUp).siblings().removeClass(classDown).removeClass(classUp);
+						//alert('向下价值排序');
+						for(var i=0;i<moneyArray.length;i++)
+						{
+							
+							numberMoney.each(function(){
+								var thisVal = $(this).html();
+								if(thisVal==moneyArray[i])
+								{
+									$(this).parents('.pn-list-div').appendTo('.pn-body');
+								}
+									
+							})
+						}
+					}
+				}
+				//数据错误
+				else
+				{
+					alert('数据错误')
+				}
+				
+			})
+			
+			//点击选中手机号码
+			$('.pn-list-div').on('click',function(){
+				var clickClass = 'pn-click';
+				$(this).addClass(clickClass).siblings().removeClass(clickClass);
+			})
+			
+			//尾号搜索
+			$('.pnh-input-tel').bind('input propertychange', function() {
+			    var telVal = $(this).val();
+			    $('.pn-tel').each(function(){
+			    	var thisFather = $(this).parents('.pn-list-div'),
+			    		thisVal = $(this).html(),
+			    		lastFour = thisVal.substr(thisVal.length-4);
+			    	//含有筛选
+			    	if(lastFour.indexOf(telVal)>=0)
+			    	{
+			    		thisFather.show();
+			    	}
+			    	//不含有
+			    	else
+			    	{
+			    		thisFather.hide();
+			    	}
+			    	
+			    })
+			});
+			
+			//默认价格向下排序
+			$('.pnh-nav').click();
+		})
+		
+	</script>
+</body>
+</html>

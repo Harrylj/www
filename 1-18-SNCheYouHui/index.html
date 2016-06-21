@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/basic.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>车友会</title>
+</head>
+<body>
+	<div class="index">
+		<img class="img-100" src="images/img-01.jpg" />
+		<div class="i-bg-01">
+			编辑短信CYZL至10086即可订购
+			10元/月会员制
+			<br>（马上办理还可以享受次月返还
+			<br>10元话费）
+		</div>
+		<div class="i-bg-02">
+			<p>登陆“和地图”客户端：打开客户端选择“出行”—点击进入“10元洗车”—若是会员提醒用户“获取免费洗车券”—选择车型—进入洗车场，可选择就近的洗车商家（可导航至此），出示“洗车券”验证后，享受免费或优惠服务。
+(目前和地图客户端仅支持Android系统；ios系统客户端正在优化，可使用12585人工台进行操作。)</p>
+			 <div class="text-center">
+			 	<img class="i-img-01" src="images/img-04.jpg" />
+			 </div>
+			 <a class="i-href" >点击下载(Android)</a>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var u = navigator.userAgent;
+			var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+			var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+			
+			if(isAndroid)
+			{
+				$('.i-href').attr('href','http://ditu.10086.cn/downloadFtp.do?downloadbyurl&name=cmnavi_A43&url=181')
+			}
+			$('.i-href').on('click',function(){
+				if(isiOS)
+				{
+					alert('ios版本正在研发中，敬请期待！');
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

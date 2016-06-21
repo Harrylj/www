@@ -1,0 +1,24 @@
+@charset "utf-8";
+/* CSS Document */
+body,a,div,p,ul,li{margin:0;padding:0;}
+ul,li{list-style:none;}
+body{
+	background:url(../img/background.jpg) no-repeat;}
+.top{margin-top:30px;width:320px;}
+.arrow-left{background:url(../img/arrow.jpg) no-repeat;margin-left:20px;width:7px;height:16px;display:block;float:left;}
+.refresh{background:url(../img/fresh.jpg) no-repeat;display:block;margin-right:20px;width:19px;height:16px;float:right;}
+.top span{color:#fff;font-size:20px;font-family:黑体;margin-left:80px;}
+/*倒计时*/
+.countdown{background:#c54738;width:145px;height:26px;margin-left:88px;margin-top:22px;}
+.countdown span{font-size:15px;font-family:楷体;font-weight:bold;color:#fff;line-height:26px;float:left;}
+.countdown b{background:url(../img/dot.png) no-repeat;width:12px;height:26px;display:block;float:left;margin-left:2px;font-size:14px;color:#fff;line-height:26px;text-align:center;}
+
+.title{color:#fff;font-size:20px;font-family:黑体;margin-top:97px;margin-left:100px;}
+.code{height:32px;margin-top:2px;margin-left:64px;}
+.code b{background:url(../img/dot1.png) no-repeat;width:15px;height:32px;display:block;float:left;margin-left:2px;font-size:16px;color:#fff;line-height:32px;text-align:center;}
+
+.mycode{color:#fff;font-size:15px;font-family:黑体;margin-left:68px;margin-top:9px;}
+.banner1{background:url(../img/banner1.jpg) no-repeat;margin-top:62px;width:279px;height:20px;margin-left:20px;}
+.banner2{background:url(../img/banner2.jpg) no-repeat;margin-top:6px;width:281px;height:83px;margin-left:19px; overflow:hidden;}
+.banner2 li{font-size:11px; color:#fff; margin-left:56px; line-height:20px;}
+.banner2 span{ color:#c54738;}

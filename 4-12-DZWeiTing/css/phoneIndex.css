@@ -1,0 +1,121 @@
+@media only screen and (min-width:0px){
+	.swiper-container-01{height: 140px;}
+}
+@media only screen and (min-width:480px){
+	.swiper-container-01{height: 200px;}
+}
+
+.ih-ul{
+	padding: 10px;
+}
+.ih-ul li{
+	width: 48%;
+	margin: 1%;
+	float: left;
+}
+.index-iphone6{
+	border-top: 5px solid #EEEEEE;
+	border-bottom: 5px solid #EEEEEE;
+}
+.ib-list{
+	cursor: pointer;
+	position: relative;
+	padding-left: 110px;
+	border: 1px solid transparent;
+	border-bottom: 1px solid #EEEEEE;
+	min-height: 92px;
+}
+.ib-list img{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	height: 90px;
+	width: 90px;
+	margin-top: -45px;
+}
+.ib-list h1{
+	font-size: 16px;
+	color: black;
+	line-height: 28px;
+}
+.ibl-p-01{
+	font-size: 14px;
+	line-height: 24px;
+	color: #999999;
+}
+.ibl-span-01{
+	color: red;
+	font-size: 20px;
+}
+.ibl-p-02{
+	line-height: 28px;
+}
+.ibl-s-01{
+	font-size: 12px;
+	color: #333333;
+}
+.ibl-more{
+	display: block;
+	position: absolute;
+	bottom: 10px;
+	right: 0;
+	width: 20px;
+	height: 20px;
+	background-image: url(../images/phone/index-05.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.ib-list-father{
+	padding: 10px;
+	border-bottom: 5px solid #EEEEEE;
+}
+.if-p-01{
+	color: black;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: center;
+}
+.if-p-02{
+	text-align: center;
+}
+.if-p-02 span{
+	display: inline-block;
+	font-size: 14px;
+	line-height: 18px;
+	color: white;
+	background-color: red;
+}
+.slide-img-02{
+	display: block;
+	margin: auto;
+	width: 90px;
+	height: 90px;
+	border: 1px solid #CCCCCC;
+}
+.swiper-container-02 h1{
+	color: red;
+	font-size: 18px;
+	line-height: 24px;
+	text-align: center;
+}
+.index-footer{
+	padding: 10px;
+}
+.swiper-button-next
+,.swiper-button-prev{
+	width: 20px;
+	height: 20px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;	
+	top: 30%;
+}
+.swiper-button-next{
+	right: 0;
+	background-image: url(../images/index-right.png);
+}
+.swiper-button-prev{
+	left: 0;
+	background-image: url(../images/index-left.png);
+}
+.swiper-container-02{
+}

@@ -1,0 +1,88 @@
+body{
+	background-color: white;
+}
+.send{
+	background-color: white;
+	padding-bottom: 30px;
+}
+.send-list-father{
+	padding-left: 5%;
+}
+.sl-ul li{
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.25rem;
+	border-bottom: 1px solid #CCCCCC;
+	background-image: url(../images/sendLL-03.png);
+	background-position: 95% center;
+	background-repeat: no-repeat;
+	background-size: 40px 20px;
+	color: black;
+	cursor: pointer;
+}
+.sl-ul .send-click{
+	color: #FF2222;
+	background-image: url(../images/sendLL-02.png);
+}
+.sl-ul .send-no{
+	color: #BABABA;
+	background-image: url(../images/sendLL-01.png);
+}
+.sl-wxts{
+	color: black;
+	font-size: 1rem;
+	line-height: 30px;
+}
+.send-btn-qdzs
+,.send-btn-select
+,.send-btn-qd{
+	width: 90%;
+	border-radius: 8px;
+	height: 40px;
+	border: none;
+	background-color: #FF2222;
+	color: white;
+	font-size: 1.25rem;
+	letter-spacing: 2px;
+	margin-top: 20px;
+}
+.abc{
+	display: none;
+}
+.modal-title{
+	text-align: center;
+}
+.modal-body{
+	padding-bottom: 50px;
+}
+.modal-dialog{
+    top: 20%;
+ }
+.modal-title{
+	color: red;
+}
+.none{
+	display: none;
+}
+.tc-input-phone{
+	width: 76%;
+	height: 40px;
+	line-height: 40px;
+	font-size: 14px;
+	padding: 0 10px;
+}
+.tc-ts-false{
+	text-align: center;
+	color: red;
+	line-height: 28px;
+	font-size: 14px;
+	height: 28px;
+}
+.send-btn-qd{
+	margin: 0;
+	width: 20%;
+	border-radius: 0;
+}
+.send-input-div{
+	padding: 10px;
+}
