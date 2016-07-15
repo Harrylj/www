@@ -1,0 +1,1 @@
+QIAO_NS_BSL.handleEnter({"bid":"b8561e6018d64521147f5bc3", "wordid":0, "word":"", "from":"四川成都", "wordtype":0, "lv":2, "lvp":2, "ftime":1448960180, "ltime":1466566762, "service_type":0, "zhixin":"", "saved":1, "time":1466566762, "group":[{"groupid":0, "groupname":"售前咨询", "user":[{"subid":0, "islogin":1, "groupid":0, "subname":"木鱼网络在线客服07"}]}]});

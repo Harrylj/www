@@ -1,0 +1,41 @@
+body{
+	padding-top: 20px;
+}
+.ul-header{
+	
+	background-color: red;
+}
+.ulh-left{
+	padding: 0 10px;
+	color: white;
+	line-height: 40px;
+	font-size: 14px;
+}
+.ul-body{
+	padding: 10px;
+}
+.ulb-ul li{
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	padding: 10px 5px;
+}
+.ulb-ul p{
+	line-height: 28px;
+	color: #666666;
+	font-size: 14px;
+}
+.ulb-ul img{
+	height: 60px;
+	width: 60px;
+	border: 50%;
+}
+#countdown{
+	display: inline-block;
+}
+#countdown span{
+	background-color: white;
+	color: red;
+	padding: 2px;
+	border-radius: 4px;
+}

@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>凉山移动</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="transportation vr">
+		<div class="r-header">
+			<div class="swiper-container">
+			        <div class="swiper-wrapper">
+			            <div class="swiper-slide">
+			            	<img class="slide-img" src="images/index-06.jpg">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="slide-img" src="images/index-07.jpg">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="slide-img" src="images/index-08.jpg">
+			            </div>
+			            <div class="swiper-slide">
+			            	<img class="slide-img" src="images/index-09.jpg">
+
+			            </div>
+			        </div>
+			        <!-- 如果需要分页器 -->
+			        <div class="swiper-pagination"></div>
+			    </div>
+		</div>
+		<div class="r-body">
+			<div class="rb-nav-div">
+				<ul>
+					<a href="#">
+					<li>
+						<img src="images/index-01.png"/>
+						<br />景区
+					</li>
+					</a>
+					<a href="#">
+					<li>
+						<img src="images/index-02.png"/>
+						<br />路况
+					</li>
+					</a>
+					<a href="#">
+					<li>
+						<img src="images/index-03.png"/>
+						<br />区县
+					</li>
+					</a>
+				</ul>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="rb-list">
+				<div class="rb-box">
+					<img src="images/index-06.jpg"/>
+					<h1>绿野星河</h1>
+					<p>大理 洱海旁 洱海旁 洱海旁 洱海旁 洱海旁 洱海旁 洱海旁 洱海旁</p>
+				</div>
+				<div class="rb-box">
+					<img src="images/index-07.jpg"/>
+					<h1>绿野星河</h1>
+					<p>大理 洱海旁</p>
+				</div>
+				<div class="rb-box">
+					<img src="images/index-08.jpg"/>
+					<h1>绿野星河</h1>
+					<p>大理 洱海旁</p>
+				</div>
+				<div class="rb-box">
+					<img src="images/index-09.jpg"/>
+					<h1>绿野星河</h1>
+					<p>大理 洱海旁</p>
+				</div>
+				<div class="rb-box">
+					<img src="images/index-10.jpg"/>
+					<h1>绿野星河</h1>
+					<p>大理 洱海旁</p>
+				</div>
+				<div class="rb-box">
+					<img src="images/index-06.jpg"/>
+					<h1>绿野星河</h1>
+					<p>大理 洱海旁</p>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+		</div>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2016-07-08
+        	描述：.rb-nav-click:表示选中
+        -->
+		<div class="rb-footer">
+			<ul>
+				<a href="#"><li class="rb-nav-click rb-nav-li rb-nav-01">主页</li></a>
+				<li class="rbf-btn-jq rb-nav-li rb-nav-02">景区</li>
+				<li class="rbf-btn-qx rb-nav-li rb-nav-03">区县</li>
+				<li class="rbf-btn-search rb-nav-li rb-nav-04">搜索</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		
+		
+		
+		
+		<button class="index-btn-jq none" data-toggle="modal" data-target="#myModalJQ">景区</button>
+		<button class="index-btn-qx none" data-toggle="modal" data-target="#myModalQX">区县</button>
+		<button class="index-btn-search none" data-toggle="modal" data-target="#myModalSearch">搜索</button>
+	</div>
+	
+	
+	
+	<!-- Modal景区-->
+	<div class="modal fade" id="myModalJQ" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">请选择景区</h4>
+	      </div>
+	      
+	      <div class="modal-body">
+	      	  <div class="rb-select">
+				<select class="rb-select-01 rb-select-jq" name="">
+					<option value="#1" selected="selected">景区</option>
+					<option value="#2">景区2</option>
+					<option value="#3">景区3</option>
+					<option value="#4">景区4</option>
+					<option value="#5">景区5</option>
+				</select>
+			  </div>
+	      </div>
+	      <div class="modal-footer">
+	      	<button type="button" class="index-jq-qd" class="btn btn-default" data-dismiss="modal">确定</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Modal区县-->
+	<div class="modal fade" id="myModalQX" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">请选择区县</h4>
+	      </div>
+	      
+	      <div class="modal-body">
+	      	  <div class="rb-select">
+				<select class="rb-select-01 rb-select-qx" name="">
+					<option value="#1" selected="selected">区县</option>
+					<option value="#2">区县2</option>
+					<option value="#3">区县3</option>
+					<option value="#4">区县4</option>
+					<option value="#5">区县5</option>
+				</select>
+			  </div>
+	      </div>
+	      <div class="modal-footer">
+	      	<button type="button" class="index-qx-qd" class="btn btn-default" data-dismiss="modal">确定</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<!-- Modal搜索-->
+	<div class="modal fade" id="myModalSearch" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">请选择搜索地址</h4>
+	      </div>
+	      
+	      <div class="modal-body">
+				<input class="rb-input-search" type="text" placeholder="搜索景点"/>
+				
+	      </div>
+	      <p class="search-ts"></p>
+	      <div class="modal-footer">
+	      	<button type="button" class="index-search-qd">确定</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(function(){
+		var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        slidesPerView: 1,
+	        paginationClickable: true,
+	        spaceBetween: 0,
+	        loop: true,
+	        autoplay: 2000,//2秒自动滑动
+	        autoplayDisableOnInteraction: false
+	    });
+	    
+	    var clickClass = 'rb-nav-click';  //菜单选择class
+
+	    //点击首页
+	    $('.rb-nav-01').on('click',function(){
+	    	$('.rb-nav-li').removeClass(clickClass);
+	    	$(this).addClass(clickClass);
+	    })
+	    //景区弹窗
+	    $('.rbf-btn-jq').on('click',function(){
+	    	$('.index-btn-jq').click();
+	    	return false;
+	    })
+		//景区确定跳转
+	    $('.index-jq-qd').on('click',function(){
+	    	var a_href = $('.rb-select-jq').val();
+	    	window.location.href= a_href;
+	    	$('.rb-nav-li').removeClass(clickClass);
+	    	$('.rbf-btn-jq').addClass(clickClass);
+	    	
+	    })
+	    
+	    //区县弹窗
+	    $('.rbf-btn-qx').on('click',function(){
+	    	$('.index-btn-qx').click();
+	    	return false;
+	    })
+		//区县确定跳转
+	    $('.index-qx-qd').on('click',function(){
+	    	var a_href = $('.rb-select-qx').val();
+	    	window.location.href= a_href;
+	    	$('.rb-nav-li').removeClass(clickClass);
+	    	$('.rbf-btn-qx').addClass(clickClass);
+	    	
+	    })
+	    //搜索弹窗
+	    $('.rbf-btn-search').on('click',function(){
+	    	$('.index-btn-search').click();
+	    	return false;
+	    })
+		//搜索确定跳转
+	    $('.index-search-qd').on('click',function(){
+	    	var ts = $('.search-ts'),
+	    		searchVal = $('.rb-input-search');
+	    	//验证输入不能为空
+	    	if(searchVal.val()=='')
+	    	{
+	    		ts.html('地址不能为空');
+	    	}
+	    	//成功
+	    	else
+	    	{
+	    		///Home/Index?Search=***
+	    		ts.html('');
+	    		$('.close').click();
+	    		var a_href = 'Home/Index?Search='+ searchVal.val();
+		    	window.location.href= a_href;
+		    	$('.rb-nav-li').removeClass(clickClass);
+		    	$('.rbf-btn-search').addClass(clickClass);
+	    	}
+	    	
+	    	
+	    })
+	    
+	});
+	</script>
+</body>
+</html>

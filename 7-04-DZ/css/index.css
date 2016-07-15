@@ -1,0 +1,167 @@
+.index{
+	position: relative;
+	background-color: #048bd9;
+	padding-bottom: 40px;
+}
+.index-header{
+	position: relative;
+}
+.ih-btn-hdgz{
+	position: absolute;
+	right: 0;
+	top: 10px;
+	width: 100px;
+	height: 30px;
+	background-image: url(../images/index-06.png);
+	background-size: 100% 100%;
+	border: none;
+	background-color: transparent;
+}
+.index-footer{
+	text-align: center;
+}
+.if-btn
+,.mcf-btn{
+	width: 42%;
+	border: none;
+	line-height: 40px;
+	text-align: center;
+	margin: 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	box-shadow: 0 0 3px #CCCCCC;
+}
+.if-btn-yqtscs
+,.mcf-btn-yqtscs{
+	background-color: #fadb09;
+	color: black;
+}
+.if-btn-bmcs
+,.if-btn-grzx
+,.mcf-btn-ckqtjzz{
+	color: #048BD9;
+	background-color: white;
+}
+.if-btn-grzx{
+	display: none;
+}
+.ih-time{
+	position: absolute;
+	top: 43%;
+	left: 25%;
+	width: 75%;
+	padding: 0 4% 0 10px;
+	line-height: 24px;
+	font-size: 14px;
+	background-image: url(../images/index-07.png);
+	color: black;
+	background-size: 100% 100%;
+}
+.ih-end{
+	position: absolute;
+	left: 5px;
+	bottom: -20px;
+	color: white;
+	font-size: 12px;
+	text-align: center;
+}
+.ih-bottom{
+	position: absolute;
+	left: 45%;
+	width: 55%;
+	top: 86%;
+	line-height: 16px;
+	font-size: 14px;
+	color: black;
+}
+.ih-bottom span{
+	display: inline-block;
+	color: #ff5c5c;
+	padding: 0 5px;
+	font-size: 16px;
+}
+.ib-list{
+	margin-top: 30px;
+	background-image: url(../images/index-02.jpg);
+	padding: 30px 5% 20px 5%;
+	background-size: 100% 100%;
+}
+.ib-list li{
+	float: left;
+	width: 33%;
+	text-align: center;
+	padding: 10px;
+}
+.ib-list img{
+	width: 100%;
+}
+.ib-list h1{
+	padding-top: 10px;
+	font-size: 14px;
+	text-align: center;
+	line-height: 24px;
+	color: white;
+}
+.ib-list p{
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+	color: white;
+}
+.ib-btn-ckfdz{
+	display: block;
+	width: 100%;
+	text-align: right;
+	padding: 0 10px;
+	font-size: 14px;
+	color: #fadb09;
+}
+.ib-div-02{
+	width: 40%;
+	text-align: center;
+}
+.ib-div-02 h1{
+	line-height: 24px;
+	font-size: 14px;
+	color: white;
+}
+.ib-div-02 p{
+	color: white;
+	font-size: 12px;
+	text-align: center;
+	line-height: 20px;
+}
+.modal-title-01{
+	font-size: 18px;
+	color: black;
+}
+.modal-body-01{
+	color: black;
+	line-height: 24px;
+	font-size: 14px;
+}
+.modal{
+	top: 5%;
+}
+.modal-body-01{
+	padding-top: 0;
+}
+.countdown-hour
+,.countdown-minute
+,.countdown-second{
+	border:1px solid white;
+	font-size: 14px;
+	border-radius: 4px;
+}
+.index-img-share{
+	display: none;
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	width: 100%;
+	height: 100%;
+}
+.index-img-share{
+	
+}

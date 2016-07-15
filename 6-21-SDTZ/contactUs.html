@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>	
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/contactUs.css" type="text/css" rel="stylesheet">
+    <title>联系我们</title>
+
+
+</head>
+<body>
+	
+	<div class="contact-us vr">
+		<!--
+    	作者：648267773@qq.com
+    	时间：2016-06-28
+    	描述：公用头部
+    	-->
+		<div class="public-sdtz-header">
+				<div class="psd-div">
+					<img class="index-logo-img" src="images/index-logo.png"/>
+					<ul class="psh-nav">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="aboutUs.html">关于我们</a></li>
+						<li><a href="service.html">产品服务</a></li>
+						<li><a href="successfulCase.html">成功案例</a></li>
+						<li class="psg-nav-click"><a href="#">联系我们</a></li>
+					</ul>
+				</div>
+			</div>
+		<div class="cu-body">
+			<div class="cub-div">
+				<div class="cub-left fl">
+					<h1>Are you ready</h1>
+					<h2>
+						准备好了吗
+						<br />那就和我们取得联系吧
+					</h2>
+					<p>
+						如果你有一个项目想和我们谈谈，您可以填写右边的表格，让我们了解您的项目的雪球；
+<br />如果你是一个想要我一期行走在成功的路上，您也可以填写右边的表格；有能力的您也是我们的成功路上的伙伴
+					</p>
+					<h3>成都时代天择有限公司欢迎您的来电</h3>
+					<h4>
+						地址：高新区天府五街美年广场D座1287 <img src="images/cu-01.png"/>
+<br />电话：028-908987668888
+<br />E-mail：sdtz@sdtzcd.com
+					</h4>
+					<h5>成都时代各地分公司</h5>
+					<table class="cub-left-table" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<td>西昌办事处</td>
+							<td>厦门研究所</td>
+						</tr>
+						<tr>
+							<td>地址：西昌市的街道和办事处</td>
+							<td>地址：厦门市街道和办事处</td>
+						</tr>
+						<tr>
+							<td>电话：1255225112</td>
+							<td>电话：1211225522</td>
+						</tr>
+					</table>
+				</div>
+				<div class="cub-right fr">
+					<div class="cubr-ewm">
+						<img src="images/ewm-02.jpg"/>
+					</div>
+					<input class="cub-input-01 input-name" type="text" placeholder="您的姓名" />
+					<input class="cub-input-01 input-email" type="email" placeholder="您的邮箱" />
+					<textarea class="cub-textarea input-content" name="" rows="" cols="" placeholder="信件内容"></textarea>
+					<p class="cub-ts input-ts"></p>
+					<div class="text-center">
+						<input type="button" class="cub-btn-qdfs" value="确定发送"/>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="cub-map-father">
+				<h1>高新区美年广场D座1287</h1>
+				<p>乘坐地铁1号线A出口前行300米</p>
+				<div class="cub-map">
+					
+					<div id="allmap"></div>
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="public-sdtz-footer">
+			<p>成都时间天择科技有限公司版权所有&nbsp;&nbsp;&nbsp;&nbsp;备案号&nbsp;&nbsp;蜀ICP备&nbsp;0876738784394&nbsp;号</p>
+		</div>
+		
+	</div>
+
+
+
+	
+
+	<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/jquery.scrollUp.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eTd8KRo8WZoarvPMaIR1Mspx"></script>
+	<script type="text/javascript">
+		// 百度地图API功能
+		    var map = new BMap.Map('allmap');
+		    var poi = new BMap.Point(104.074557,30.539893);
+			var point = new BMap.Point(104.074557,30.539893);
+			map.centerAndZoom(point,19);
+			map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放	
+		    map.setZoom(18);  //将视图切换到指定的缩放等级，中心点坐标不变
+			var  mapStyle ={ 
+		        features: ["road", "building","water","land"]//隐藏地图上的poi
+		        //style : "dark"  //设置地图风格为高端黑
+		    }
+			map.setMapStyle(mapStyle);
+		    //创建检索信息窗口对象
+		    var pt = new BMap.Point(104.074557,30.539893);
+			var icon = new BMap.Icon("images/index-05.png", new BMap.Size(60,60), {'anchor':new BMap.Size(10,10)});
+			var marker = new BMap.Marker(pt,{icon:icon});
+			map.addOverlay(marker);
+			var searchInfoWindow = null;
+		
+		$(function(){
+			//点击确定发送
+			$('.cub-btn-qdfs').on('click',function(){
+				var inputName = $('.input-name'),
+					inputEmail = $('.input-email'),
+					inputContent = $('.input-content'),
+					ts = $('.input-ts'),
+					ts_01 = '姓名不能为空',
+					ts_02 = '邮箱不能为空',
+					ts_03 = '邮箱格式不正确',
+					ts_04 = '内容不能为空';
+				var gsEmail = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+				//姓名不能为空
+				if(inputName.val()=='')
+				{
+					ts.html(ts_01)
+				}
+				//邮箱不能为空
+				else if(inputEmail.val()=='')
+				{
+					ts.html(ts_02)
+				}
+				//内容不能为空
+				else if(inputContent.val()=='')
+				{
+					ts.html(ts_04)
+				}
+				//邮箱格式不正确
+				else if(!gsEmail.test(inputEmail.val()))
+				{
+					ts.html(ts_03)
+				}
+				//成功
+				else
+				{
+					ts.html('');
+					alert('提交成功,我们将尽快处理您提交的信息，谢谢！')
+				}
+			})
+		})
+	</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

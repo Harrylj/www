@@ -1,0 +1,163 @@
+.transportation{
+	padding-bottom: 60px;
+}
+.rb-nav-div{
+	border-top: 10px  solid #F2F2F2;
+	border-bottom: 10px  solid #F2F2F2;
+}
+.rb-nav-div li{
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	padding: 10px 0;
+	color: black;
+	font-size: 16px;
+}
+.rb-nav-div img{
+	width: 60px;
+	height: 60px;
+}
+.rb-select-div{
+	padding: 10px;
+}
+.rb-select{
+	width: 100%;
+}
+.rb-select select{
+	background-color: #F2F2F2;
+	line-height: 40px;
+	height: 40px;
+	margin: 10px 10px 10px 0;
+	font-size: 16px;
+	text-align: center;
+	color: black;
+	width: 100%;
+}
+.rb-input-search{
+	line-height: 40px;
+	text-align: left;
+	width: 100%;
+	font-size: 16px;
+	border: 1px solid #CCCCCC;
+	background-image: url(../images/index-04.png);
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	padding-left: 30px;
+	background-position: 5px center;
+	color: black;
+	letter-spacing: 2px;
+}
+.rb-box{
+	float: left;
+	width: 46%;
+	margin: 2%;
+	background-color: white;
+	border: 1px solid #CCCCCC;
+}
+.rb-box img{
+	width: 100%;
+}
+.rb-box h1{
+	height: 60px;
+	padding: 10px;
+	line-height: 20px;
+	font-size: 18px;
+	color: black;
+	overflow: hidden;
+}
+.rb-box p{
+	height: 34px;
+	overflow: hidden;
+	font-size: 14px;
+	padding: 0 10px 0 30px;
+	line-height: 34px;
+	background-repeat: no-repeat;
+	background-size: 16px 16px;
+	background-position: 10px 10px;
+	color: #666666;
+	background-image: url(../images/index-05.png);
+}
+.rb-list{
+	background-color: #F2F2F2;
+}
+.swiper-pagination-bullet{
+	background-color: white;
+	opacity: .5;
+}
+.swiper-pagination-bullet-active{
+	opacity: 1;
+	background-color: red;
+}
+.rb-footer{
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 60px;
+	border-top: 1px solid #CCCCCC;
+	background-color: #F8F8F8;
+		
+}
+.rb-footer li{
+	float: left;
+	width: 25%;
+	padding-top: 30px;
+	line-height: 30px;
+	color: #989898;
+	text-align: center;
+	font-size: 14px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-size: 30px 30px;
+	background-position: center 4px;
+}
+.rb-nav-01{
+	background-image: url(../images/nav-01.png);
+}
+.rb-nav-02{
+	background-image: url(../images/nav-02.png);
+}
+.rb-nav-03{
+	background-image: url(../images/nav-03.png);
+}
+.rb-nav-04{
+	background-image: url(../images/nav-04.png);
+}
+.rb-nav-01:hover
+,.rb-footer a:nth-child(1) .rb-nav-click{
+	background-image: url(../images/nav-01-hover.png);
+}
+.rb-nav-02:hover
+,.rb-footer a:nth-child(2) .rb-nav-click{
+	background-image: url(../images/nav-02-hover.png);
+}
+.rb-nav-03:hover
+,.rb-footer a:nth-child(3) .rb-nav-click{
+	background-image: url(../images/nav-03-hover.png);
+}
+.rb-nav-04:hover
+,.rb-footer a:nth-child(4) .rb-nav-click{
+	background-image: url(../images/nav-04-hover.png);
+}
+.rb-footer li:hover
+,.rb-footer .rb-nav-click{
+	color: #5bce4b;
+}
+.index-jq-qd
+,.index-qx-qd
+,.index-search-qd{
+	width: 100%;
+	height: 40px;
+	background-color: #5bce4b;
+	color: white;
+	font-size: 16px;
+	line-height: 40px;
+	border: none;
+}
+.search-ts{
+	color: red;
+	text-align: center;
+	line-height: 24px;
+	font-size: 14px;
+}

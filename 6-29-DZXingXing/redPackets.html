@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/redPackets.css"/>
+    <title>来自星星的红包</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="red-packets vr">
+		<div class="rp-header">
+			<div class="rph-open">
+				<p>恭喜您！获得一个红包</p>
+				<button class="rph-btn-djchb">点击拆红包</button>
+			</div>
+			<div class="rph-ok">
+				<div class="rph-ok-top">
+					幸运之神还在路上
+					<br>您需要欢哥姿势再来一次
+				</div>
+				<div class="rph-ok-bottom">
+					<button class="rph-btn-share">分享获得再来一次</button>
+				</div>
+			</div>
+		</div>
+		<div class="rp-body">
+			<div class="rpb-div">
+				<h1>本轮红包还剩<span>209</span>个</h1>
+				<p class="rpb-time">
+					领取时间：2016年6月30日——2016年7月30日
+					<br />除上午00：00-08：00的任意时间
+				</p>
+				<p class="rpb-p-01">凡关注“星星的约惠”微信公众号均可领取</p>
+			</div>
+			<div class="rpb-ts">
+				<p>拆红包后分享红包给好友，每当有好友新关注“星星的约惠”公众号，则可再获得1次拆红包机会，分享越多拆红包机会越多，不设上限。</p>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击拆开红包
+			$('.rph-btn-djchb').on('click',function(){
+				$('.rph-open').hide();
+				$('.rph-ok').show();
+			})
+		})
+	</script>
+</body>
+</html>

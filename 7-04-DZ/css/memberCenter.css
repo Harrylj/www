@@ -1,0 +1,98 @@
+body{
+	background-color: #12b7f5;
+}
+.member-center{
+	padding-bottom: 100px;
+}
+.mc-header{
+	position: relative;
+
+}
+.mc-a-hdgz{
+	position: absolute;
+	left: 5px;
+	top: 10px;
+	width: 90px;
+	height: 30px;
+	background-image: url(../images/mc-03.png);
+	background-size: 100% 100%;
+}
+.mc-end{
+	position: absolute;
+	left: 5%;
+	bottom: 7%;
+	width: 100px;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+}
+.mc-body{
+	position: relative;
+	z-index: 99;
+	margin-top: -15px;
+	padding: 0 10px 40px 10px;
+}
+.mcb-list{
+	position: relative;
+}
+.mcb-table{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+}
+.mcb-table td{
+	line-height: 20px;
+	font-size: 12px;
+}
+.mcb-table td:nth-child(1)
+,.mcb-table td:nth-child(3){
+	width: 46%;
+}
+.mcb-table td:nth-child(1){
+	text-align: right;
+	color: black;
+}
+.mcb-table td:nth-child(2){
+	color: black;
+	text-align: center;
+}
+.mcb-table td:nth-child(3){
+	text-align: left;
+	color: #666666;
+}
+.mcb-a-video{
+	position: absolute;
+	right: 2%;
+	bottom: -40px;
+	width: 55px;
+	height: 85px;
+	background-image: url(../images/mc-06.png);
+	background-size: 100% 100%;
+}
+#countdown{
+	color: white;
+}
+.modal-video{
+	top: 35%;
+}
+.modal-dialog-03{
+	margin: 0;
+}
+.mc-p-02{
+	line-height: 28px;
+	font-size: 14px;
+	color: black;
+}
+.mc-btn-close{
+	position: fixed;
+	z-index: 9999;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	line-height: 40px;
+	background-color: #12b7f5;
+	color: white;
+	border: none;
+	display: none;
+}

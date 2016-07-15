@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<style type="text/css">
+	body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;font-family:"微软雅黑";}
+	</style>
+	<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eTd8KRo8WZoarvPMaIR1Mspx"></script>
+	<title>地图展示</title>
+</head>
+<body>
+	<div id="allmap"></div>
+</body>
+</html>
+<script type="text/javascript">
+	
+	// 百度地图API功能
+	    var map = new BMap.Map('allmap');
+	    var poi = new BMap.Point(104.074557,30.539893);
+		var point = new BMap.Point(104.074557,30.539893);
+		map.centerAndZoom(point,19);
+		map.enableScrollWheelZoom(true);     //开启鼠标滚轮缩放	
+	    map.setZoom(18);  //将视图切换到指定的缩放等级，中心点坐标不变
+		var  mapStyle ={ 
+	        features: ["road", "building","water","land"]//隐藏地图上的poi
+	        //style : "dark"  //设置地图风格为高端黑
+	    }
+		map.setMapStyle(mapStyle);
+	    //创建检索信息窗口对象
+	    var pt = new BMap.Point(104.074557,30.539893);
+		var icon = new BMap.Icon("images/index-05.png", new BMap.Size(60,60), {'anchor':new BMap.Size(10,10)});
+		var marker = new BMap.Marker(pt,{icon:icon});
+		map.addOverlay(marker);
+		var searchInfoWindow = null;
+		
+</script>

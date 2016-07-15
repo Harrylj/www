@@ -1,0 +1,152 @@
+.public-sdtz-header{
+	position: absolute;
+	left: 50%;
+	top: 0;
+	margin-left: -500px;
+	z-index: 99;
+}
+.psh-nav a{
+	color: white;
+}
+.ib-list{
+	position: relative;
+	z-index: 0;
+	_height: 700px;
+	overflow: hidden;
+}
+
+.ib-list-bg{
+	position: relative;
+	width: 100%;
+	display: block;
+}
+
+
+.ib-01-div{
+	position:absolute;
+	top: 30%;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	z-index: 2;
+}
+.ib-01-div h1{
+	color: white;
+	text-align: center;
+	font-size: 24px;
+	line-height: 50px;
+	letter-spacing: 4px;
+}
+.index-btn-more{
+	cursor: pointer;
+	margin-top: 80px;
+	border: 5px solid #white;
+	color: white;
+	line-height: 36px;
+	padding: 0 80px;
+	font-size: 18px;
+	background-color: transparent;
+	border-radius: 18px;
+}
+.index-btn-more:hover{
+	color: #239FFF;
+	border-color: #239FFF;
+}
+.index-a-down{
+	position: absolute;
+	left: 50%;
+	bottom: 60px;
+	margin-left: -20px;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.index-a-down-white{
+	background-image: url(../images/index-btn-white.png);
+}
+.index-a-down-black{
+	background-image: url(../images/index-btn-black.png);
+}
+.ib-02{
+	padding: 40px 0 100px 0;
+}
+.ib-02 h1
+,.ib-03-div h1{
+	text-align: center;
+	font-size: 32px;
+	letter-spacing: 5px;
+	line-height: 60px;
+}
+.ib-02-heihgt{
+	margin: 20px auto;
+	width: 60px;
+	border: 1px solid #239FFF;
+}
+.ib-02 p
+,.ib-03-div p{
+	text-align: center;
+	line-height: 50px;
+	font-size: 16px;
+	color: #666666;
+}
+
+.ib-03-content{
+	position: absolute;
+	top: 80px;
+	left: 50%;
+	margin-left: -500px;
+	width: 1000px;
+}
+.ib-03-content .ib-03-div h1{
+	color: white;
+}
+.ib-03-content .ib-03-div p{
+	color: white;
+}
+.ibl-ul-01 li{
+	float: left;
+	width: 25%;
+	color: white;
+	text-align: center;
+	padding-top: 100px;
+}
+.ibl-ul-01 img{
+	width: 90px;
+	height: 90px;
+}
+.ibl-ul-01 h1{
+	font-size: 22px;
+	line-height: 60px;
+}
+.ibl-ul-01 p{
+	font-size: 14px;
+	line-height: 28px;
+}
+.ib-03-img{
+	display: block;
+	width: 100%;
+	margin-top: 80px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+.hdgz{
+	background-color: #11b0eb;
+	padding: 10px;
+}
+.hdgz h1{
+	padding-bottom: 10px;
+}
+.hdgz h1 button{
+	width: 50%;
+	border: 1px solid #41c5f7;
+	font-size: 18px;
+	line-height: 40px;
+	color: white;
+	text-align: center;
+	background-color: transparent;
+}
+.hdgz p{
+	position: relative;
+	line-height: 28px;
+	font-size: 14px;
+	color: white;
+	padding-left: 20px;
+}
+
+.hdgz p span{
+	position: absolute;
+	left: 0px;
+	color: red;
+}
+.hdgz-table{
+	width: 100%;
+}
+.hdgz-table td{
+	text-align: center;
+	color: white;
+	border: 1px solid white;
+	font-size: 14px;
+	line-height: 20px;
+}

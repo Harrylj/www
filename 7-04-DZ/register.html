@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/register.css"/>
+    <title>活动报名</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="register vr">
+		<textarea class="r-text" placeholder="我猜到您有话想要对我说..."></textarea>
+		<!--
+            	作者：648267773@qq.com
+            	时间：2016-07-05
+            	描述：.swiper-open:表示可选择，显示内容
+            		.swiper-click:表示选中的选项
+            -->
+		<div class="r-list swiper-open">
+			<div class="r-list-type">
+				<img src="images/bm-03.png" />
+				参赛类型
+			</div>
+			
+			<div class="r-swiper swiper-container">
+				<div class="swiper-wrapper">
+		            <div class="swiper-slide slide1 swiper-click" data-hash="slider1">
+		                <h1><技术创新></h1>
+		                <h2>奋斗在开拓创新勇跨越</h2>
+		                <p>勇于
+		                	<br>开拓创新
+		                	<br>攻坚克难
+		                	<br>在企业管理创新
+		                	<br>技术创新
+		                	<br>业务创新等方面</p>
+		                <button class="r-btn-index"></button>
+		            </div>
+		            <div class="swiper-slide slide2 " data-hash="slider2">
+		            	<h1><营销服务></h1>
+		                <h2>奋斗在满意服务为客户</h2>
+		                <p>贯彻落实
+		                	<br>客户为根
+		                	<br>服务为本理念
+		                	<br>受客户欢迎的
+		                	<br>服务标兵
+		                	<br>服务明星
+		                	<br>服务能手
+		                	<br>服务班组</p>
+		                <button class="r-btn-index"></button>
+		            </div>
+		            <div class="swiper-slide slide3 " data-hash="slider3">
+		                <h1><网络建维></h1>
+		                <h2>奋斗在呵护网络做栋梁</h2>
+		                <p>坚持
+		                	<br>网络是通信企业生命线
+		                	<br>的理念
+		                	<br>突出贡献
+		                	<br>网络规划
+		                	<br>建设
+		                	<br>维护人员及班组</p>
+		                	<button class="r-btn-index"></button>
+		            </div>
+		            <div class="swiper-slide slide3 " data-hash="slider3">
+		                <h1><综合支撑></h1>
+		                <h2>奋斗在平凡岗位长坚守</h2>
+		                <p> 坚持
+		                	<br>多年如一日
+		                	<br>努力做好本职工作
+		                	<br>在平凡岗位上
+		                	<br>做出不平凡业绩
+		                	<br>产生良好影响的
+		                	<br>干部员工和团队</p>
+		                <button class="r-btn-index"></button>
+		            </div>
+		            
+		      </div>
+		        <!-- 如果需要导航按钮
+		        <div class="swiper-button-prev"></div>
+		        <div class="swiper-button-next"></div>
+		         -->
+			</div>
+		</div>
+		<div class="text-center">
+			<button class="r-btn-qdfs">确定发送</button>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper3.08.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+	$(function(){
+		var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        slidesPerView: 1.5,
+	        paginationClickable: true,
+	        spaceBetween: 2,
+	        // 如果需要前进后退按钮
+	        nextButton: '.swiper-button-next',
+	        prevButton: '.swiper-button-prev'
+	    });
+	    
+	    //点击显示内容
+	    $('.r-list-type').on('click',function(){
+	    	var clickClass = 'swiper-open';
+	    	if($(this).parents().hasClass(clickClass))
+	    	{
+	    		$(this).parents().removeClass(clickClass)
+	    	}
+	    	else
+	    	{
+	    		$(this).parents().addClass(clickClass)
+	    	}
+	    })
+	    //点击选中内容
+	    $('.swiper-slide').on('click',function(){
+	    	var clickClass = 'swiper-click';
+	    	$(this).addClass(clickClass).siblings().removeClass(clickClass);
+	    })
+	    //点击确定发送
+	    $('.r-btn-qdfs').on('click',function(){
+	    	var clickSwiper = $('.swiper-click');
+	    	alert("选中了"+clickSwiper.index())
+	    })
+	    
+	})
+   
+
+    
+	</script>
+</body>
+</html>
