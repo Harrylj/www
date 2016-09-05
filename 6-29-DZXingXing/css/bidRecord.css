@@ -1,0 +1,39 @@
+.bid-record{
+	border-top: 15px solid #EEEEEE;
+	padding-left: 10px;
+}
+.br-img-01{
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.br-table-01{
+	width: 100%;
+}
+.br-table-01 td{
+	border-bottom: 1px solid #EEEEEE;
+	font-size: 16px;
+	line-height: 50px;
+	color: #666666;
+}
+.br-table-01 td:nth-child(1){
+	text-align: left;
+	width: 30%;
+}
+.br-table-01 td:nth-child(2){
+	text-align: center;
+	width: 40%;
+}
+.br-table-01 td:nth-child(3){
+	width: 30%;
+	text-align: right;
+	color: #ff4f4f;
+	padding-right: 15px;
+}
+.br-table-01 th{
+	line-height: 40px;
+	font-size: 16px;
+	text-align: left;
+	border-bottom: 1px solid #EEEEEE;
+}

@@ -1,0 +1,27 @@
+.exam-start{
+	padding: 10px;
+}
+.exam-start h1{
+	font-size: 16px;
+	line-height: 32px;
+	font-weight: bold;
+	border-bottom: 1px solid #CCCCCC;
+	padding: 5px 0;
+}
+.exam-start p{
+	font-size: 14px;
+	color: #666666;
+	line-height: 24px;
+	padding: 5px 0;
+}
+.es-btn-ljks{
+	display: block;
+	margin: 20px auto;
+	width: 90%;
+	line-height: 40px;
+	border-radius: 20px;
+	color: white;
+	font-size: 16px;
+	background-color: #47b27c;
+	text-align: center;
+}

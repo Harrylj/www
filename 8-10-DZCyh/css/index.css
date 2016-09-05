@@ -1,0 +1,60 @@
+.index{
+	padding-bottom: 100px;
+	background-color: #313743;
+}
+.index-input-phone{
+	position: absolute;
+	left: 50%;
+	bottom: 10%;
+	margin-left: -40%;
+	width: 80%;
+	text-align: center;
+	font-size: 16px;
+	padding: 0 10px;
+	line-height: 36px;
+	border: 1px solid #6f737c;
+	color: white;
+	background-color: transparent;
+	
+}
+.index-btn-yqhy
+,.index-href{
+	border: none;
+	background-color: #50eae5;
+	color: black;
+	line-height: 36px;
+	width: 50%;
+	font-size: 16px;
+	border-radius: 6px;
+	margin-top: 10px;
+	margin-bottom: 30px;
+}
+.text-center{
+	position: relative;
+}
+.index-href{
+	position: absolute;
+	bottom: -20px;
+	left: 50%;
+	display: block;
+	margin-left: -25%;
+	margin-bottom: 0;
+	background-color: #313743;
+	border:1px solid yellow;
+	color: white;
+}
+.index-table{
+	width: 90%;
+	margin: 50px auto;
+}
+.index-table td
+,.index-table th{
+	border: 1px solid #4dece3;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: center;
+	color: white;
+}
+.index-table th{
+	
+}

@@ -32,13 +32,15 @@
 	box-shadow: 0 0 3px #CCCCCC;
 }
 .if-btn-yqtscs
-,.mcf-btn-yqtscs{
+,.mcf-btn-yqtscs
+,.td-btn-left{
 	background-color: #fadb09;
 	color: black;
 }
 .if-btn-bmcs
 ,.if-btn-grzx
-,.mcf-btn-ckqtjzz{
+,.mcf-btn-ckqtjzz
+,.td-btn-right{
 	color: #048BD9;
 	background-color: white;
 }

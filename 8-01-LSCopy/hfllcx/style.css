@@ -1,0 +1,34 @@
+/* CSS Document */
+
+body {margin:0;padding:0;height: 100%;font-size: 12px;font-family:"microsoft yahei", arial, verdana;word-break: break-all;  color:#333; background:#f0f0f0;}
+ul,li,p,h1,h2,h3,h4,h5,h6,div,form,b,dd,dl,dt{margin:0;padding:0;}
+ul,li{list-style-type:none;} 
+a{ text-decoration:none; color:#000;}
+a:hover{ color:#d81710;}
+img{ border:none;}
+.clear{ clear:both; height:0; overflow:hidden;}
+.none{ display:none;}
+.block{ display:block;}
+.marbox{ width:1000px; margin:0 auto;}
+.cnt{ width:1014px; margin:0 auto;}
+.left{ float:left;}
+
+ input[type="button"], input[type="submit"], input[type="reset"] {
+
+-webkit-appearance: none;
+border-radius: 0;
+
+}
+
+textarea {  -webkit-appearance: none;}  
+.button{ border-radius: 0; } 
+.tu{ margin:10px auto 0; text-align:center;}
+.bdhm{ font-size:4em; text-align:center; color:#ff0000; margin:20px 0;}
+form{ width:90%; height:49px; margin:0 auto; }
+input[type="text"]{ background:#fff; width:67%; height:49px; border:none;border-radius: 0; float:left;}
+input[type="button"]{ background:#83d02c;  width:30%;height:51px; color:#fff; border:none; float:left;}
+.cx{ text-align:center; margin-top:10%;}
+.kfdh{ text-align:center; font-size:2em; color:#9b9696; margin-top:30px;}
+
+
+

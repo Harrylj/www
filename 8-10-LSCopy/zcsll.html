@@ -1,0 +1,301 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style title="2345AdBlockStyleSheet"></style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>
+        注册送流量
+    </title>
+    <script src="zcsll/jquery-1.js"></script>
+    <link href="zcsll/style.css" rel="stylesheet">
+    <link href="zcsll/default.css" rel="stylesheet">
+    <script src="zcsll/request.js"></script>
+     <script src="zcsll/jweixin-1.js" type="text/javascript"></script>
+    <style>
+        .main,.footerdiv{width:90%; margin:0 auto;}
+		.main{ height:150px; background-color:#FFFFFF;  border-radius:10px;}
+		.main li{ height:50px;  width:100%; margin:0 auto; padding:0;}
+		.li1{ border-radius:10px 10px 0px 0px;}
+		.li3{ border-radius:0px 0px 10px 10px;}
+		.user,.yzm,.recUser{ font-size:14px; }
+		.user{height:50px; width:100%;border-radius:10px 10px 0px 0px; border: none; border-bottom: 1px solid; border-bottom-color:#CCCCCC;}
+		.yzm,.recUser{height:50px; width:70%;float:left; }
+        .yzm {    border-radius: 0px;border: none;  border-bottom: 1px solid; border-bottom-color: #CCCCCC;}
+		.recUser { border: none; /*border-radius: 10px;*/border-radius: 0px 0px 0px 10px;}
+		.sendyzm,.sub{width:30%; height:49px; float:left; margin:0 auto; text-align:center;}
+		.sendyzm{ border-bottom: 1px solid;    border-bottom-color: #CCCCCC;}
+		.sendp,.subp{ background-color: #4E2223; color: white;width:90%; line-height: 35px; border-radius: 10px; margin: 0 auto; margin-top: 5px; font-size: 14px;}
+ 		.footerdiv{ color:#FFFFFF; margin-top:20px;}
+ 		.rule{ font-size:16px;    font-weight: bold;}
+		.footer{ text-align: center;  margin-top: 10px; color:#4e2223; font-size:14px;	 	}
+        /*弹出框*/
+        .tc {position: fixed; margin: auto; top: 0; right: 0; left: 0; bottom: 0; display: none; }
+        .shade {background-color: #000; width: 100%; height: 100%; position: fixed; top: 0; left: 0; opacity: 0.7; filter: alpha(opacity=70); display: none; }
+        
+.popup_weixin {width: 90%; height: 85%; padding-top: 20px; text-align: center; color: #cc0033; font-size: 16px; line-height: 30px; background-color: #fdfccc; border: 3px solid #7d0000; border-radius: 10px;}
+.popup_weixin img {border-radius: 10px; width: 85%; margin: 20px auto;}
+.popup_weixin .close img{margin: auto;}
+    </style>
+    <script>
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                var ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                var android = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+                if (ios) { document.writeln("<meta name=\"viewport\" content=\"width=device-width,user-scalable=no\" \/>") }
+            }(),
+        }
+        wx.config({
+            debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+            appId: 'wx38e15bd8ae236a88', // 必填，公众号的唯一标识
+            timestamp: '1470812358', // 必填，生成签名的时间戳
+            nonceStr: 'rY4TiemPaZCqNS36', // 必填，生成签名的随机串
+            signature: 'd03f31e059d3ef307eb6f45704eddf7c311050a6',// 必填，签名，见附录1
+            jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage'] // 必填，需要使用的JS接口列表，所有JS接口列表见附录2,按，隔开
+        });
+
+        wx.ready(function () {
+            wx.onMenuShareTimeline({
+                title: '注册有礼', // 分享标题
+                link: 'http://yd.lmego.net/ls/Bind_16/index.aspx', // 分享链接
+                imgUrl: 'http://yd.lmego.net/ls/Bind_16/images/bg.jpg', // 分享图标
+                success: function () {
+                },
+                cancel: function () {
+                }
+            });
+            wx.onMenuShareAppMessage({
+                title: '注册有礼', // 分享标题
+                desc: '注册得话费，推荐有惊喜', // 分享描述
+                link: 'http://yd.lmego.net/ls/Bind_16/index.aspx', // 分享链接
+                imgUrl: 'http://yd.lmego.net/ls/Bind_16/images/bg.jpg', // 分享图标
+                success: function () {
+                    // 用户确认分享后执行的回调函数
+                },
+                cancel: function () {
+                    // 用户取消分享后执行的回调函数
+                }
+            });
+        });
+    </script>
+	<script>
+	    var openid = GetQueryString("openid");
+	    var bak_url = GetQueryString("bak_url");
+	    //var openid = "oJZJCuAlJZZIo5HPMI3ZBcrzsWS0";
+	    //var severs = "http://localhost:10962/severs/Invition/";
+	    var severs = "http://ls.lmego.com:1366/Common/Invition/";
+
+
+var date = new Date(); 
+var sec = date.getSeconds();
+var seclast =sec.toString();
+var last = seclast.substring(seclast.length - 1);
+if (sec % 2 == 0) {
+       severs = "http://ls.lmego.com:1366/Common/Invition/";
+} else {
+    severs = "http://ls.lmego.com:1366/Common_new/Invition/";
+}
+
+
+
+
+
+	    var s = 90, timer = null;
+	    function forWaityzm(obj) {
+	        if (timer == null) {
+	            obj.addClass('active');
+	            obj.html(s + 's后获取');
+	            s--;
+	            timer = setInterval(function () {
+	                $("#btn_validate").css({ "background": "#cccccc" });
+	                if (s == 0) {
+	                    clearInterval(timer);
+	                    obj.html('验证码');
+	                    $("#btn_validate").css({ "background": "#4E2223" });
+	                    obj.removeClass('active');
+	                    timer = null;
+	                    s = 90
+	                } else {
+	                    obj.html(s-- + 's后获取')
+	                }
+	            }, 1000)
+	        }
+	    }
+	    $(function () {
+	    	
+	        if (openid == null) {
+	            $(".tc,.shade").show();
+	        }
+	        if (openid.length < 12) {
+	            $(".tc,.shade").show();
+	        }
+
+	        init();
+
+
+	        document.getElementById("btn_validate").onclick = function () {
+	            var phone = $("#userphone").val();
+	            if (!RegPhone(phone)) {
+	                if (phone == "") {
+	                    alert("请先填写手机号");
+	                    return;
+	                }
+	                alert("请输入正确的手机号");
+	                return;
+	            }
+	            //waitFor(this);
+	            forWaityzm($(".sendp"));
+
+	            //获取验证码
+	            if (s == 89) {
+	                sendMsg(phone);
+	            }
+	        }
+
+	        $("#subUser").click(function () {
+	        	alert(1);
+	            var recMobile = $("#recMobile").val();
+	            if (recMobile == "") {
+	                recMobile = "empty";
+	            }
+	            var phone = $("#userphone").val();
+	            if (!RegPhone(phone)) {
+	                alert("请输入正确的手机号！");
+	                return;
+	            }
+	            var tyzm = $("#yzm").val();
+	            if (tyzm == "") {
+	                alert("请输入验证码！");
+	                return;
+	            } else {
+	                yzm = tyzm;
+	            }
+
+	            $.ajax({
+	                type: "get",
+	                url: severs + "AddBindUser/" + openid + "/" + phone + "/" + yzm + "/" + recMobile + "/绑定得流量",
+	                dataType: "jsonp",
+	                success: function (result) {
+	                    if (!result.IsError) {
+	                        alert("注册成功，流量将于次月中旬赠送到账！")
+				if(bak_url== null || bak_url =="")
+	                          window.location.href = window.location.href;
+				else
+				  window.location.href = bak_url;
+	                    } else {
+				if(bak_url!= null || bak_url !="")
+					window.location.href = bak_url;
+
+	                        alert(result.Message);
+	                    }
+	                },
+	                error: function (result) {
+	                    alert("系统繁忙请稍后再试！");
+	                }
+	            });
+
+	        });
+	    });
+
+
+
+
+	    function sendMsg(phone) {
+	        $.ajax({
+	            type: "get",
+	            url: severs + "SendMsg/" + phone + "/注册得话费，推荐有惊喜",
+	            dataType: "jsonp",
+	            success: function (result) {
+	            },
+	            error: function (rusult) {
+	            }
+	        });
+	    }
+
+	    function init() {
+	        $.ajax({
+	            type: "get",
+	            url: severs + "GetPhone/" + openid,
+	            dataType: "jsonp",
+	            success: function (result) {
+	                if (!result.IsError) {
+	                    if (result.Data != "") {
+	                        mobile = result.Data;
+	                        $("#userphone").val(mobile);
+	                        $("#recMobile").attr("readonly", "readonly");
+	                        $("#recMobile").css({ "background": "#cccccc" });
+	                        //$("#yzmd").attr("readonly", "readonly");
+	                        //$("#yzmd").css({ "background": "#cccccc" });
+	                        //$("#tjphone").attr("readonly", "readonly");
+	                        //$("#tjphone").css({ "background": "#cccccc" });
+
+	                    }
+
+	                } else {
+	                    alert(result.Message);
+	                }
+	            },
+	            error: function (rusult) {
+	                alert(rusult.Message);
+	            }
+	        });
+	    }
+
+    </script>
+</head>
+<body>
+    <div id="weather" style="position:relative;">
+        <img src="zcsll/bg1.jpg">
+        <div class="main">
+            <nav>
+                <ul>
+					<li class="li1">
+                        <input value="15123233169" class="user" id="userphone" placeholder="请在此处填写您的真实手机号码" type="text">
+					</li>
+					<li class="li2" style="border-bottom-color:#FF0000;">
+						<input class="yzm" id="yzm" placeholder="输入验证码" type="text">
+						<div class="sendyzm">
+                            <p class="sendp" id="btn_validate">获取验证码</p>
+                            <!--<a class="sendp" id="btn_validate">获取验证码</a>-->
+						</div>
+						
+					</li>
+					<li class="li3">
+                        <input style="background: rgb(204, 204, 204) none repeat scroll 0% 0%;" readonly="readonly" class="recUser" id="recMobile" placeholder="推荐人手机号码（可不填）" type="text">
+						<div class="sub">
+							<p class="subp" id="subUser">提交</p>
+                            <!--<a class="subp">提交</a>-->
+						</div>
+					</li>
+                    
+                </ul>
+				
+            </nav>
+        </div>
+		  <div class="footerdiv">
+         	<p class="rule">活动规则：</p>
+			<br>
+			<p>1、新用户填写手机号码即可在次月获赠100MB流量，限赠送当月使用；</p>
+		
+			<p>2、流量仅限凉山移动号码领取，次月中旬前到账。</p>
+			<br>
+		
+			<div class="footer">
+				<p>*本活动最终解释权归“凉山移动”所有</p>
+			</div>
+        </div>
+
+
+		<div class="popups">
+			<div class="shade" style="display: none;"></div>			
+			<div class="tc popup_weixin">
+				<p>各位新用户~<br>凉山移动喊你免费领话费啦！！！</p>
+				<img src="zcsll/code.jpg">
+				<p>长按识别二维码关注凉山移动<br>底部菜单【五彩凉山】-【绑定送话费】进入</p>
+				
+			</div>			
+		</div><!--弹窗 end-->
+    </div>
+
+
+</body></html>

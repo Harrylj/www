@@ -1,0 +1,68 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style title="2345AdBlockStyleSheet"></style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>
+        优惠购机
+    </title>
+    <script src="yhgj/jquery-1.js"></script>
+    <link href="yhgj/style.css" rel="stylesheet">
+    <link href="yhgj/default.css" rel="stylesheet">
+    <script src="yhgj/request.js"></script>
+    <script>
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                var ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                var android = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+                if (ios) { document.writeln("<meta name=\"viewport\" content=\"width=device-width,user-scalable=no\" \/>") }
+            }(),
+        }
+        function adapt() {
+            var tableWidth = $(document).width(); //表格宽度 
+            var h = $(document).height();
+            var img = new Image();
+            img.src = $('#imgs').attr("src");
+            var imgWidth = img.width; //图片实际宽度 
+            var imgheight = img.height;
+            if (imgWidth < tableWidth) {
+                $('#imgs').attr("style", "width: auto");
+            } else {
+                $('#imgs').attr("style", "width: 100%");
+            }
+            if (imgheight < h) {
+                $('#imgs').attr("style", "height: auto");
+            } else {
+                $('#imgs').attr("style", "height: 100%");
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="weather" style="position:relative;">
+        <img style="height: 100%" src="yhgj/banner.jpg" id="imgs" onload="adapt();">
+        <div style="position:absolute; z-index:2; left:10px;    bottom: 5%;">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="http://lsyd.lmego.net/LS/purchase/yhq.html">
+                            <span>
+                                <img src="yhgj/yhqlq.jpg">
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://yyth5.vpclub.cn/hphyyt/ztewd/10461028/1/1253072.html">
+                            <span>
+                                <img src="yhgj/sjsc.jpg">
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+</body></html>

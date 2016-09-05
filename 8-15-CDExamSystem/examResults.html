@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link href="css/examResults.css" type="text/css" rel="stylesheet">
+
+    <title>测试结果</title>
+</head>
+<body>
+	<div class="exam-results vr">
+		<div class="er-header">
+			<!--
+            	作者：648267773@qq.com
+            	时间：2016-08-18
+            	描述：正确率这里直接改数值就可以了
+            -->
+			<div id="processingbar" class="processingbar"><font>40%</font></div>   
+			<p>答题正确率</p>
+		</div>
+		<div class="er-body">
+			<h1 class="er-h-01">共<span>12</span>题，答对<span>11</span>题，正确率<span>40%</span></h1>
+			<div class="erb-list-father">
+				<a class="erb-list" href="#">01</a>
+				<a class="erb-list erb-list-false" href="#">01</a>
+				<a class="erb-list" href="#">01</a>
+				<a class="erb-list" href="#">01</a>
+			</div>
+			<div class="clear"></div>
+			<div class="height-10"></div>
+			<p>提示：红色标记为错误答题，点击可查看</p>
+			<a class="er-a er-a-cjqtks" href="#">参加其他考试</a>
+			<a class="er-a er-a-cxks" href="#">重新考试</a>
+		</div>
+		
+	</div>
+	
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/cycle.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/raphael.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击跳转
+			$('.erb-list').on('click',function(){
+				var clickClass = 'erb-list-false';
+				//可跳转
+				if($(this).hasClass(clickClass))
+				{
+					return true;
+				}
+				//不可跳转
+				else
+				{
+					return false;
+				}
+			})
+			
+		})
+	</script>
+</body>
+</html>

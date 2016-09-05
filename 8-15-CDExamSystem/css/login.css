@@ -1,0 +1,79 @@
+.cd-ul-01 li:nth-child(1){
+	width: 25%;
+}
+.cd-ul-01 li:nth-child(2){
+	width: 70%;
+}
+.cd-ul-01 li:nth-child(3){
+	width: 5%;
+}
+.tc-modal{
+	display: none;
+}
+.modal-dialog{
+    top: 20%;
+ }
+.modal-header{
+ 	border: none;
+ }
+.modal-footer{
+	border: none;	
+}
+.modal-title{
+	color: red;
+	text-align: center;
+}
+.modal-body{
+	letter-spacing: 2px;
+}
+
+body{
+	padding: 0;
+	background-image: url(../images/login-03.jpg);
+}
+.login{
+	padding:150px 10px 20px 10px;
+}
+.login-p-02{
+	position: absolute;
+	bottom: 10px;
+	right: 0px;
+	
+}
+.login-p-02 a{
+	color: white;
+	font-size: 14px;
+}
+.login-user-img{
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	width: 40%;
+	margin-left: -20%;
+	
+}
+.cd-ul-01 li{
+	background-color: transparent;
+	border-bottom: 1px solid #7fc9a4;
+	color: white;
+}
+.login-bg-01
+,.login-bg-02{
+	background-size: 24px 24px;
+	background-position: 70% center;
+	background-repeat: no-repeat;
+}
+.login-bg-01{
+	background-image: url(../images/login-01.png);
+}
+.login-bg-02{
+	background-image: url(../images/login-02.png);
+}
+.cb-input{
+	color: white;
+	font-size: 16px;
+}
+.cb-btn-msdl{
+	background-color: transparent;
+	background-image: url(../images/login-bg.png);
+}

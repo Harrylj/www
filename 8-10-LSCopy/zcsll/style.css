@@ -1,0 +1,103 @@
+﻿/* 由 F12 开发人员工具生成。这可能不是原始源文件的准确表示形式。*/
+html {
+	margin: 0px; padding: 0px;
+}
+body {
+	margin: 0px; padding: 0px;
+}
+p {
+	margin: 0px; padding: 0px;
+}
+ol {
+	margin: 0px; padding: 0px;
+}
+ul {
+	margin: 0px; padding: 0px;
+}
+li {
+	margin: 0px; padding: 0px;
+}
+h1 {
+	margin: 0px; padding: 0px;
+}
+h2 {
+	margin: 0px; padding: 0px;
+}
+h3 {
+	margin: 0px; padding: 0px;
+}
+h4 {
+	margin: 0px; padding: 0px;
+}
+h5 {
+	margin: 0px; padding: 0px;
+}
+h6 {
+	margin: 0px; padding: 0px;
+}
+dl {
+	margin: 0px; padding: 0px;
+}
+dt {
+	margin: 0px; padding: 0px;
+}
+dd {
+	margin: 0px; padding: 0px;
+}
+form {
+	margin: 0px; padding: 0px;
+}
+input {
+	margin: 0px; padding: 0px;
+}
+textarea {
+	margin: 0px; padding: 0px;
+}
+table {
+	margin: 0px; padding: 0px;
+}
+tr {
+	margin: 0px; padding: 0px;
+}
+th {
+	margin: 0px; padding: 0px;
+}
+td {
+	margin: 0px; padding: 0px;
+}
+section {
+	margin: 0px; padding: 0px;
+}
+article {
+	margin: 0px; padding: 0px;
+}
+html {
+	font-size: small; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -webkit-touch-callout: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+	font-size: small; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; -webkit-touch-callout: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+ol {
+	list-style: none;
+}
+ul {
+	list-style: none;
+}
+
+
+.main,.footerdiv{width:90%; margin:0 auto;}
+		.main{ height:150px; background-color:#FFFFFF;  border-radius:10px;}
+		.main li{ height:50px;  width:100%; margin:0 auto; padding:0;}
+		.li1{ border-radius:10px 10px 0px 0px;}
+		.li3{ border-radius:0px 0px 10px 10px;}
+		.user,.yzm,.recUser{ font-size:14px; }
+		.user{height:50px; width:100%;border-radius:10px 10px 0px 0px; border: none; border-bottom: 1px solid; border-bottom-color:#CCCCCC;}
+		.yzm,.recUser{height:50px; width:70%;float:left; }
+        .yzm {    border-radius: 0px;border: none;  border-bottom: 1px solid; border-bottom-color: #CCCCCC;}
+		.recUser { border: none; border-radius: 10px;}
+		.sendyzm,.sub{width:30%; height:49px; float:left; margin:0 auto; text-align:center;}
+		.sendyzm{ border-bottom: 1px solid;    border-bottom-color: #CCCCCC;}
+		.sendp,.subp{ background-color: #4E2223; color: white;width:90%; line-height: 35px; border-radius: 10px; margin: 0 auto; margin-top: 5px; font-size: 14px;}
+ 		.footerdiv{ color:#FFFFFF; margin-top:20px;}
+ 		.rule{ font-size:16px;    font-weight: bold;}
+		.footer{ text-align: center;  margin-top: 10px; color:#4e2223; font-size:14px;	 	}

@@ -1,0 +1,26 @@
+.hdgz{
+	padding: 20px 10px;
+	background-color: white;
+}
+.hdgz h1{
+	line-height: 32px;
+	text-align: center;
+	font-size: 16px;
+	color: red;
+}
+.hdgz p{
+	font-size: 14px;
+	line-height: 24px;
+	color: black;
+	letter-spacing: 2px;
+}
+.hdgz-btn{
+	width: 60%;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 20px;
+	font-size: 16px;
+	background-color: #CCCCCC;
+	color: white;
+	border: none;
+}

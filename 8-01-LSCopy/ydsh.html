@@ -1,0 +1,227 @@
+<!-- saved from url=(0021)http://wz.nc10086.cn/ -->
+<!-- 由 F12 开发人员工具生成。这可能不是原始源文件的准确表示形式。 -->
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <style title="2345AdBlockStyleSheet"></style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>
+        移动生活  
+    </title>
+    <script src="ydsh/jquery-1.js"></script>
+    <link href="ydsh/style.css" rel="stylesheet">
+    <link href="ydsh/default.css" rel="stylesheet">
+    <script src="ydsh/request.js"></script>
+    <style>
+         .downloadAppSafari {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgba(0,0,0,.8);
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 304px;
+            display: none;
+        }
+        .isdownload_ios {
+            background-image: url(weather/4444.png);
+        }
+        .isdownload_android {
+            background-image: url(weather/2222.png);
+        }
+    </style>
+    <script>
+        var browser = {
+            versions: function () {
+                var u = navigator.userAgent, app = navigator.appVersion;
+                var ios = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+                var android = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1;
+                if (ios) { document.writeln("<meta name=\"viewport\" content=\"width=device-width,user-scalable=no\" \/>") }
+               // if (android) { document.writeln("<meta name=\"viewport\" content=\"width=device-width,initial-scale=0.72,maximum-scale=0.72, user-scalable=no\" \/>") }
+            }(),
+        }
+
+        var openid = GetQueryString("openid");
+        $(function () {
+            $("#kdyy").click(function () {
+                var href = "http://yd.lmego.net:8025/MallLS/broad.aspx?userid=" + openid;
+                window.location.href = href;
+            });
+
+            $("#move").click(function () {
+                document.location.href = "http://yd.lmego.net/LS/Move2016/index.html?openid=" + openid;
+            })
+            //$(".tcc").click(function () {
+            //    if (isWeixin()) {//微信环境
+            //        if (isIOS()) {
+            //            $(".downloadAppSafari").addClass("isdownload_ios").show();
+            //        }
+            //        if (isAndroid()) {
+            //            $(".downloadAppSafari").addClass("isdownload_android").show();
+            //        }
+            //        $(".tcc a").attr("href", "javascript:void(0);");
+            //    }
+            //});
+            $(".downloadAppSafari").click(function () {
+                $(".downloadAppSafari").hide();
+            })
+        });
+
+
+        var ua = navigator.userAgent.toLowerCase();
+        function isWeixin() {//微信环境
+            return navigator.userAgent.toLowerCase().indexOf("micromessenger") != -1 ? true : false;
+        }
+        function isIOS() {//ios系统
+            var a = ua;
+            return (a.indexOf("iphone") != -1 || a.indexOf("ipad") != -1 || a.indexOf("ipod") != -1) ? true : false;
+        }
+        function isAndroid() {//android系统
+            return ua.indexOf("android") != -1 ? true : false;
+        }
+
+
+
+    </script>
+</head>
+<body style="background-color:rgb(216, 39, 45);">
+    <div class="downloadAppSafari">
+    </div>
+    <div id="weather" style="position:relative;">
+        <img src="ydsh/index1.jpg" height="400" width="540">
+        <!--<img alt="" src="images/index1.png">-->
+        <div style="position:absolute; z-index:2; left:10px; top:30%">
+            <nav>
+                <ul class="float-li w25p-li">
+                    <li>
+                        <a href="http://che.scwxcs.cn:8094/webwap/init">
+                            <span><img src="ydsh/1.png" alt=""></span>
+                        </a>
+                    </li>
+                    <!--<li>飞机订票
+                        <a href="http://m.scal.com.cn">
+                            <span><img src="weather/2.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <li><!--http://m.ls.carbooking.sdtzcd.com/?urlcategory=3&appid=AP510000000000106852&areacode=513400&portaltype=1&columnid=&accesstype=2&ext=&version=3&usessionid=&ua=&resourceid=SV510000000510&backurl=http://liangshan.wxcs.cn/ 汽车订票-->
+                        <a href="http://jtpd.139mm.cn/index.php/home/jtpd/wap?urlcategory=3&amp;appid=AP510000000000107042&amp;areacode=513400&amp;portaltype=1&amp;columnid=&amp;accesstype=2&amp;ext=&amp;version=3&amp;usessionid=&amp;ua=&amp;resourceid=SV510000000560&amp;backurl=http://liangshan.wxcs.cn/">
+                            <span><img src="ydsh/3.png" alt="http://jtpd.139mm.cn/index.php/home/jtpd/wap?urlcategory=3&amp;appid=AP510000000000107042&amp;areacode=513400&amp;portaltype=1&amp;columnid=&amp;accesstype=2&amp;ext=&amp;version=3&amp;usessionid=&amp;ua=&amp;resourceid=SV510000000560&amp;backurl=http://liangshan.wxcs.cn/"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://223.87.14.4:8090/default.aspx?portaltype=1&amp;urlcategory=3&amp;appid=AP510000000000010758&amp;areacode=513400&amp;portaltype=1&amp;colorStr=dba112&amp;columnid=&amp;accesstype=2&amp;ext=&amp;version=3&amp;usessionid=&amp;ua=&amp;columnName=%E6%94%BF%E5%8A%A1%E7%94%9F%E6%B4%BB&amp;resourceid=SV510000000297&amp;backurl=http://liangshan.wxcs.cn/App/appList?columnId=16118">
+                            <span><img src="ydsh/4.png" alt=""></span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="http://mm.10086.cn/index.html">
+                            <span><img src="ydsh/5.png" alt=""></span>
+
+                        </a>
+                    </li>
+                    <!--<li>
+                        <a href="http://wap.sc.10086.cn/pams2/l/s.do?p=68">
+                            <span><img src="weather/6.png" alt=""></span>
+
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href="http://lsyd.lmego.net/BeautifulLS/yuey.aspx">
+                            <span><img src="ydsh/7.png" alt=""></span>
+
+                        </a>
+                    </li>
+                   <!-- <li>
+                        <a href="javascript:void(0);" id="kdyy">
+                            <span><img src="weather/8.png" alt=""></span>
+
+                     </a>
+                    </li>-->
+                    <!--<li>
+                        <a href="http://m.ls.lmego.com/">
+                            <span><img src="weather/9.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <!--<li>
+                        <a href="http://yd.lmego.net/MallLS/lsyd.aspx">
+                            <span><img src="weather/10.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <li>
+                        <a href="http://liangshan.wxcs.cn/">
+                            <span><img src="ydsh/11.png" alt=""></span>
+                        </a>
+                    </li>
+                     <!--<li>
+                        <a href="http://m.ls.lmego.com/T4G/T_4Gindex_er">
+                            <span><img src="weather/14.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <!--<li>
+                        <a href="http://yd.lmego.net/LS/Discount/Government.aspx">
+                            <span><img src="weather/13.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <!--<li>
+                        <a href="http://www.lssjzf.com/">
+                            <span><img src="weather/ykt.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <!--<li>
+                        <a href="http://m.ls.lmego.com/Mall/T_zq_PhoneDrawHald">
+                            <span><img src="weather/15.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <!--<li>
+                        <a id="move">
+                            <span><img src="weather/16.png" alt=""></span>
+                        </a>
+                    </li>-->
+
+                    <li>
+                        <a href="http://dhwap.mlocso.com:8888/cmwap/html/carwash.html?app=01083400">
+                            <span><img src="ydsh/17.png" alt=""></span>
+                        </a>
+                    </li>
+                     
+                    <!--医保-->
+                    <li class="tcc">
+                        <a href="http://lsyd.lmego.net/ls_andyou/yb.html">
+                            <span><img src="ydsh/yb.png" alt=""></span>
+                        </a>
+                    </li>
+		    <li>
+                        <a href="http://www.lssjzf.com/">
+                            <span><img src="ydsh/ykt.png" alt=""></span>
+                        </a>
+                    </li>
+                    <!--<li class="tcc">
+                        <a href="http://apk.r1.market.hiapk.com/data/upload/2014/03_03/13/com.thbt.ls.rst_130705.apk">
+                            <span><img src="weather/yb.png" alt=""></span>
+                        </a>
+                    </li>-->
+                    <!--医保ios版-->
+                    <!--<li class="tcc">
+                        <a href="https://itunes.apple.com/us/app/ren-she-tong-liang-shan-zhou/id794269878?l=zh&ls=1&mt=8">
+                            <span><img src="weather/ybios.png" alt=""></span>
+                        </a>
+                    </li>-->
+
+
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+        document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fe80a7e6bbd8f9386cf3023884be8b9e9' type='text/javascript'%3E%3C/script%3E"));
+    </script><script src="ydsh/h.js" type="text/javascript"></script>
+    <script src="ydsh/h.js" type="text/javascript"></script>
+
+
+</body></html>

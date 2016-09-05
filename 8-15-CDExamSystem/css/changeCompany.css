@@ -1,0 +1,97 @@
+body{
+	background-image: url(../images/login-03.jpg);
+}
+.change-company{
+	min-height: 480px;
+}
+.cc-header{
+	text-align: center;
+	padding: 40px 0 20px 0;
+}
+.cc-header img{
+	width: 100px;
+	height: 100px;
+	border: 2px solid white;
+	border-radius: 50%;
+}
+.swiper-slide{
+	background-color: white;
+	min-height: 240px;
+	width: 240px;
+	border-radius: 8px;
+	overflow: hidden;
+}
+.cc-list{
+	
+}
+.ccl-header{
+	position: relative;
+	padding:20px 10px 0 10px;
+}
+.ccl-line-01
+,.ccl-line-02{
+	height: 1px;
+	background-color: #CCCCCC;
+	margin: 15px auto;
+}
+.ccl-line-02{
+	width: 90%;
+}
+.ccl-name{
+	position: absolute;
+	left: 50%;
+	top: 15px;
+	line-height: 40px;
+	width: 60%;
+	margin-left: -30%;
+	text-align: center;
+	background-color: white;
+	font-size: 18px;
+}
+.cc-list li{
+	position: relative;
+	width: 50%;
+	float: left;
+	padding-top: 15px;
+}
+.cc-list h2{
+	font-size: 18px;
+	line-height: 20px;
+	text-align: center;
+}
+.cc-list li p{
+	font-size: 14px;
+	text-align: center;
+	color: #686868;
+	line-height: 24px;
+}
+.cc-list li:nth-child(1) h2{
+	color: #4ab37e;
+}
+.cc-list li:nth-child(2) h2{
+	color: red;
+}
+.cc-list p{
+	font-size: 14px;
+	line-height: 24px;
+	color: #686868;
+}
+.ccl-btn-xxxg{
+	display: block;
+	width: 100%;
+	line-height: 60px;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	border: none;
+	background-color: #686868;
+	margin-top: 15px;
+}
+.swiper-container-horizontal > .swiper-pagination{
+	bottom: 0px;
+}
+.swiper-container{
+	padding-bottom: 30px;
+}
+.swiper-slide-active{
+}

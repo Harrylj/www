@@ -1,0 +1,7 @@
+{
+    "file":"objectOne.png",
+    "frames":{
+        "hare1":{"x":0,"y":0,"w":180,"h":248,"offX":0,"offY":0},
+        "hare2":{"x":181,"y":0,"w":180,"h":248,"offX":0,"offY":0}
+    }
+}

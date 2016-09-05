@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link href="css/basic.css" type="text/css" rel="stylesheet">
+		<link href="css/examDetail.css" type="text/css" rel="stylesheet">
+
+		<title>测试中</title>
+	</head>
+
+	<body>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2016-08-19
+        	描述：.input-number-show:表示提否显示相关知识点，值0不显示，值1显示，默认为显示
+        -->
+        <input class="input-number-show" type="hidden"  value="1" />
+		<div class="exam-detail vr">
+			<div class="ed-header">
+				<h1><span class="edh-span-01">第<span class="edh-number-now">1</span>题</span>&nbsp;&nbsp;共<span class="edh-number-all">15</span>题</h1>
+				<div class="edh-time">
+					<p id="countdown"></p>
+				</div>
+				
+			</div>
+			<!--
+            	作者：648267773@qq.com
+            	时间：2016-08-19
+            	描述：.shq-click:表示选中
+            			.check-one:单选
+            			.check-more:多选
+            -->
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide slide1 swiper-no-swiping check-one" data-hash="slider1">
+						<div class="slide-header">
+							<h1>下面选项中你认为正确的是？1</h1>
+							<ol class="sh-question">
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="1" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="1" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="1" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="1" />
+								</li>
+							</ol>
+							<button class="sh-btn sh-btn-next ">下一题</button>
+						</div>
+						<div class="slide-body">
+							<h1>相关知识点</h1>
+							<h2>切和北极熊之间不得不说的事情</h2>
+							<h3>答案：</h3>
+							<p>1.就是这里的答案啊答案看这里吓</p>
+						</div>
+					</div>
+					<div class="swiper-slide slide2 swiper-no-swiping check-more" data-hash="slider2">
+						<div class="slide-header">
+							<h1>下面选项中你认为正确的是？2</h1>
+							<ol class="sh-question">
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="2" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="2" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="2" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="2" />
+								</li>
+							</ol>
+							<button class="sh-btn sh-btn-next ">下一题</button>
+						</div>
+						<div class="slide-body">
+							<h1>相关知识点</h1>
+							<h2>切和北极熊之间不得不说的事情</h2>
+							<h3>答案：</h3>
+							<p>1.就是这里的答案啊答案看这里吓</p>
+						</div>
+					</div>
+					<div class="swiper-slide slide3 swiper-no-swiping check-one" data-hash="slider3">
+						<div class="slide-header">
+							<h1>下面选项中你认为正确的是？3</h1>
+							<ol class="sh-question">
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="3" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="3" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="3" />
+								</li>
+								<li>
+									北极熊之所以不吃切是因为毛多
+									<input class="fr" type="checkbox" name="3" />
+								</li>
+							</ol>
+							<button class="sh-btn sh-btn-next ">下一题</button>
+						</div>
+						<div class="slide-body">
+							<h1>相关知识点</h1>
+							<h2>切和北极熊之间不得不说的事情</h2>
+							<h3>答案：</h3>
+							<p>1.就是这里的答案啊答案看这里吓</p>
+						</div>
+					</div>
+				</div>
+				<!-- 如果需要导航按钮 -->
+				<div class="swiper-button-prev"></div>
+				<div class="swiper-button-next"></div>
+
+			</div>
+
+		</div>
+		
+		<button class="index-tc none" data-toggle="modal" data-target="#myModal">弹窗</button>
+		<!-- 提示选择弹窗Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		        <h4 class="modal-title modal-title-01" id="myModalLabel">标题</h4>
+		      </div>
+		      
+		      <div class="modal-body modal-body-01">
+		        	内容
+		      </div>
+		      
+		    </div>
+		  </div>
+		</div>
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper3.08.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/countdown.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//倒计时
+				$('#countdown').countdown({
+				    //活动开始时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+				    //优先采取元素的data-stime值(该值只能为时间戳格式)
+				    startTime: '2016/7/19 00:00:00',
+				    //活动结束时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+				    //优先采取元素的data-etime值(该值只能为时间戳格式)         
+				    endTime: '2016/9/19 17:52:30',
+				    //活动开始前倒计时的修饰
+				    //可自定义元素,例如"<span>距离活动开始倒计时还有:</span>"            
+				    beforeStart: '',
+				    //活动进行中倒计时的修饰 
+				    //可自定义元素,例如"<span>距离活动截止还有:</span>"  
+				    beforeEnd: '',
+				    //活动结束后的修饰
+				    //可自定义元素,例如"<span>活动已结束</span>"             
+				    afterEnd: '亲，考试结束啦',
+				    //时间格式化(可采用"ddd:hh:mm:ss、 dd:hh:mm:ss、  hh:mm:ss、 mm:ss、 ss"等)                   
+				    format: 'hh:mm:ss',
+				    //活动结束后的回调函数                    
+				    callback: function() {
+				     console.log('亲，考试结束啦');
+				     alert('gameOVER');
+				    }
+				});
+				   
+				//swiper参数
+				var mySwiper = new Swiper('.swiper-container', {
+					direction: 'horizontal',
+					//布局分栏
+					slidesPerView: 1,
+					centeredSlides: true,
+					//autoplay: 2500, ///2.5S
+					//跳到指定位置
+					hashnav:true,
+					// 如果需要前进后退按钮
+					nextButton: '.swiper-button-next',
+					prevButton: '.swiper-button-prev'
+					
+				})
+				
+				
+				////跳到第1题，速度为0.5秒
+				var slideNumber = 1;
+				mySwiper.slideTo(slideNumber-1, 500, false);
+				//显示当前为第几题
+				$('.edh-number-now').html(slideNumber);
+				
+				
+				//.input-number-show:表示提否显示相关知识点，值0不显示，值1显示，默认为显示
+				//隐藏相关知识点
+				if($('.input-number-show').val()==0)
+				{
+					$('.slide-body').hide();
+				}
+				//显示相关知识点
+				else
+				{
+					$('.slide-body').show();
+				}
+				
+				//一共有多少道题
+				$('.edh-number-all').html($('.swiper-slide').length);
+				
+				//选中答案
+				$('.sh-question').children('li').on('click',function(){
+					var clickClass = 'shq-click';
+					var classCheckOne = 'check-one',
+						classCheckMore = 'check-more';
+					//单选
+					if($(this).parents('.swiper-slide').hasClass(classCheckOne))
+					{
+						//选中
+						$(this).addClass(clickClass).children('input').prop('checked',true);
+						$(this).siblings('li').removeClass(clickClass).children('input').prop('checked',false);
+					}
+					//多选
+					else if($(this).parents('.swiper-slide').hasClass(classCheckMore))
+					{
+						//选中
+						if(!$(this).hasClass(clickClass))
+						{
+							$(this).addClass(clickClass).children('input').prop('checked',true);	
+						}
+						//撤销
+						else
+						{
+							$(this).removeClass(clickClass).children('input').prop('checked',false);
+						}
+					}
+					//错误
+					else
+					{
+						alert('数据加载出错')
+					}
+					
+				})
+				
+				//点击下一题，必须选中至少1个答案
+				$('.sh-btn-next').on('click',function(){
+					//当前答题个数
+					var checkNumber = $(this).siblings('.sh-question').children('.shq-click').length;
+					//一共有多少道题
+					var questionNumber = $('.swiper-slide').length;
+					//当前为第几题
+					var questionNowNumber = $(this).parents('.swiper-slide').index() + 1,
+						htmlNowNumber = $('.edh-number-now');
+					var nextClick = $('.swiper-button-next');
+					var tcClick = $('.index-tc'),
+						tcTitle = $('.modal-title-01'),
+						tcContent = $('.modal-body-01'),
+						ts_01 = '错误提示',
+						ts_02 = '请选择至少1个答案';
+					//答案个数等于0
+					if(checkNumber== 0)
+					{
+						tcTitle.html(ts_01);
+						tcContent.html(ts_02);
+						tcClick.click();
+					}
+					//下一题
+					else
+					{
+						//alert(questionNumber);
+						//alert(questionNowNumber);
+						
+						//判断是否为最后一题
+						//最后一题
+						if(questionNumber == questionNowNumber)
+						{
+							alert('答题完成');
+						}
+						//不是最后一题
+						else
+						{
+							//当前为第几题
+							htmlNowNumber.html(questionNowNumber+1);
+							//跳到下一题
+							nextClick.click()
+						}
+
+					}
+					
+				})
+			
+			})
+		</script>
+	</body>
+
+</html>

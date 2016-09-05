@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/basic.css" type="text/css" rel="stylesheet">
+		<link href="css/index.css" type="text/css" rel="stylesheet">
+
+		<title>考试中心</title>
+	</head>
+
+	<body>
+		<div class="index vr">
+			<div class="index-header">
+				<img class="img-100" src="images/index-02.jpg" />
+				<img class="index-user-img" src="images/index-03.jpg" />
+				<div class="ib-content">
+					<div class="ib-content-top">
+						<h1>张达生<span>(市场部总监)</span></h1>
+						<p>成都达生科技有限公司</p>
+					</div>
+				</div>
+				<a class="index-btn-ghqy" href="#"><img src="images/index-05.png" />更换企业</a>
+			</div>
+			<div class="index-body">
+				<div class="ib-nav">
+					<ul>
+						<li class="ib-nav-click">待参加考试<span>10</span></li>
+						<li>已参加考试<span>20</span></li>
+					</ul>
+					<div class="clear"></div>
+				</div>
+				<div class="ib-list-father">
+					<div class="iblf-no  ib-list-click">
+						<div class="iblf-list">
+							<a class="iblfnl-a" href="#">参加考试></a>
+							<h1>2016年四川省司法考试</h1>
+							<h2>考试倒计时<p class="index-time countdown"></p></h2>
+							<p>共30题&nbsp;满分150分</p>
+						</div>
+						<div class="iblf-list">
+							<a class="iblfnl-a" href="#">参加考试></a>
+							<h1>2016年四川省司法考试</h1>
+							<h2>考试倒计时<p class="index-time countdown"></p></h2>
+							<p>共30题&nbsp;满分150分</p>
+						</div>
+					</div>
+					<div class="iblf-ok">
+						<!--
+                    	作者：648267773@qq.com
+                    	时间：2016-08-17
+                    	描述：.iblf-list-ok:表示及格  不显示重考链接
+                    		反之则表示不及格
+                    -->
+						<div class="iblf-list iblf-list-ok">
+							<a class="iblfnl-a" href="#">重考></a>
+							<h1>2016年四川省司法考试</h1>
+							<h3>考试合格</h3>
+							<p>共30题&nbsp;满分150分</p>
+							<div class="iblf-score">80</div>
+						</div>
+						<div class="iblf-list">
+							<a class="iblfnl-a" href="#">重考></a>
+							<h1>2016年四川省司法考试</h1>
+							<h3>考试不合格</h3>
+							<p>共30题&nbsp;满分150分</p>
+							<div class="iblf-score">50</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<a href="examList.html"><img class="index-img-a" src="images/index-01.png" /></a>
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/countdown.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//倒计时
+				$('.countdown').countdown({
+					//活动开始时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+					//优先采取元素的data-stime值(该值只能为时间戳格式)
+					startTime: '2016/7/19 00:00:00',
+					//活动结束时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+					//优先采取元素的data-etime值(该值只能为时间戳格式)         
+					endTime: '2016/8/19 18:52:30',
+					//活动开始前倒计时的修饰
+					//可自定义元素,例如"<span>距离活动开始倒计时还有:</span>"            
+					beforeStart: '',
+					//活动进行中倒计时的修饰 
+					//可自定义元素,例如"<span>距离活动截止还有:</span>"  
+					beforeEnd: '',
+					//活动结束后的修饰
+					//可自定义元素,例如"<span>活动已结束</span>"             
+					afterEnd: '亲，考试结束啦',
+					//时间格式化(可采用"ddd:hh:mm:ss、 dd:hh:mm:ss、  hh:mm:ss、 mm:ss、 ss"等)                   
+					format: 'hh:mm:ss',
+					//活动结束后的回调函数                    
+					callback: function() {
+						console.log('亲，考试结束啦');
+						alert('gameOVER');
+					}
+				});
+
+				//点击切换菜单栏
+				$('.ib-nav').children().children('li').on('click', function() {
+					var clickClass = 'ib-nav-click',
+						divClass = 'ib-list-click',
+						divFather = $('.ib-list-father'),
+						thisIndex = $(this).index();
+					$(this).addClass(clickClass).siblings().removeClass(clickClass);
+					//待参加考试
+					if(thisIndex == '0') {
+						divFather.children().eq(thisIndex).addClass(divClass).siblings().removeClass(divClass);
+					}
+					//已参加考试
+					else if(thisIndex == '1') {
+						divFather.children().eq(thisIndex).addClass(divClass).siblings().removeClass(divClass);
+					} else {
+						alert('数据错误')
+					}
+				})
+
+			})
+		</script>
+	</body>
+
+</html>

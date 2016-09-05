@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/tpList.css"/>
+    <title>达州移动</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-07-20
+    	描述：.bhd-number-val:投票资格，0表示没资格，1表示有资格,默认有资格1
+    -->
+	<input class="bhd-number-val" type="hidden" value="1" />
+	<div class="tp-list vr">
+		<div class="index-header">
+			<img class="img-100" src="images/tp-01.jpg"/>
+			<a href="hdgz.html"><button class="ih-btn-hdgz" ></button></a>	
+			<div class="ih-end" >
+				<p id="countdown"></p>
+				倒计时
+			</div>
+			<p class="ih-bottom">活动截止时间：7月31日24：00</p>
+		</div>
+		<div class="tl-body">
+			<div class="tbl-input-div">
+				<input class="tlb-input-search fl" type="text"  placeholder="请输入姓名/编号/分公司进行搜索"/>
+				<button class="tlb-btn-qd fr" type="button">搜索</button>
+				<div class="clear"></div>
+			</div>
+			
+			<div class="height-10"></div>
+			<div class="tlb-list-div">
+				<!--
+                    	作者：648267773@qq.com
+                    	时间：2016-07-26
+                    	描述：autoplay="autoplay" width="320" height="240"
+                -->
+				<div class="tlb-list">
+					<video class="tlb-video"  controls="controls" >
+					    <source src="movie.ogg" type="video/ogg" />
+					    <source src="movie.mp4" type="video/mp4" />
+					    <source src="movie.webm" type="video/webm" />
+					</video>
+					<h1><span class="red">000001</span>&nbsp;&nbsp;<span>秋刀鱼的晚餐</span></h1>
+					<p>成都分公司</p>
+					<div class="tlbl-footer">
+						<div class="flbl-left">
+							<h2 class="bhd-html-number">897690</h2>
+							<p>排名4589名</p>
+						</div>
+						<div class="flbl-right">
+							<button class="flbl-btn-tp">+投票</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				
+				<div class="tlb-list">
+					<video class="tlb-video"  controls="controls" >
+					    <source src="video/movie.ogg" type="video/ogg" />
+					    <source src="video/movie.mp4" type="video/mp4" />
+					    <source src="video/movie.webm" type="video/webm" />
+					</video>
+					<h1><span class="red">000001</span>&nbsp;&nbsp;<span>秋刀鱼的晚餐</span></h1>
+					<p>成都分公司</p>
+					<div class="tlbl-footer">
+						<div class="flbl-left">
+							<h2 class="bhd-html-number">897690</h2>
+							<p>排名4589名</p>
+						</div>
+						<div class="flbl-right">
+							<button class="flbl-btn-tp">+投票</button>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="tl-footer">
+			<a href="#"><button class="tlf-btn tlf-btn-left fl">查看分公司作品</button></a>
+			<a href="#"><button class="tlf-btn tlf-btn-right fr">查看我的地盘</button></a>
+		</div>
+		
+	</div>
+	
+	
+	<!--投票失败，已投过票-->
+	<button class="bhd-false none" data-toggle="modal" data-target="#myModalFalse">失败</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModalFalse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">投票失败</h4>
+	      </div>
+	      <div class="modal-body">
+	       		您已经为好友投过票！
+	      </div>    
+	      <div class="modal-footer text-center">
+	      	<button type="button" class="bhd-btn-01" data-dismiss="modal">确定</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--投票成功，已投过票-->
+	<button class="bhd-true none" data-toggle="modal" data-target="#myModalTrue">成功</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModalTrue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="myModalLabel">投票成功</h4>
+	      </div>
+	      <div class="modal-body">
+	       		您已经为好友投票成功！
+	      </div>    
+	      <div class="modal-footer text-center">
+	      	<button type="button" class="bhd-btn-01" data-dismiss="modal">确定</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/countdown.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$('#countdown').countdown({
+		    //活动开始时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+		    //优先采取元素的data-stime值(该值只能为时间戳格式)
+		    startTime: '2016/7/19 00:00:00',
+		    //活动结束时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+		    //优先采取元素的data-etime值(该值只能为时间戳格式)         
+		    endTime: '2016/7/31 24:00:00',
+		    //活动开始前倒计时的修饰
+		    //可自定义元素,例如"<span>距离活动开始倒计时还有:</span>"            
+		    beforeStart: '',
+		    //活动进行中倒计时的修饰 
+		    //可自定义元素,例如"<span>距离活动截止还有:</span>"  
+		    beforeEnd: '',
+		    //活动结束后的修饰
+		    //可自定义元素,例如"<span>活动已结束</span>"             
+		    afterEnd: '亲，活动结束啦，请继续关注哦!',
+		    //时间格式化(可采用"ddd:hh:mm:ss、 dd:hh:mm:ss、  hh:mm:ss、 mm:ss、 ss"等)                   
+		    format: 'hhh:mm:ss',
+		    //活动结束后的回调函数                    
+		    callback: function() {
+		     console.log('亲，活动结束啦，请继续关注哦!');
+		    }
+		   });
+		   
+		$(function(){
+			
+		   	//点击为他投票
+			$('.flbl-btn-tp').on('click',function(){
+				//.bhd-number-val:投票资格，0表示没资格，1表示有资格,默认有资格1
+				var numberVal = $('.bhd-number-val'),
+					htmlNumber = $(this).parents().siblings().children('.bhd-html-number');
+				var btnFalse = $('.bhd-false'),
+					btnTrue = $('.bhd-true');
+				
+				//失败
+				if(numberVal.val()=='0')
+				{
+					btnFalse.click();
+				}
+				//成功
+				else
+				{
+					htmlNumber.html(parseInt(htmlNumber.html())+1);
+					btnTrue.click();
+					numberVal.val(0);
+				}
+			})
+		})
+	</script>
+</body>
+</html>

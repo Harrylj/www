@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bidRecord.css"/>
+	<link rel="stylesheet" type="text/css" href="css/benefitList.css"/>
+
+    <title>一元约惠</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="benefit-list vr">
+		<div class="bl-header">
+			<ul class="blh-nav">
+				<li class="blh-nav-click">正在约惠</li>
+				<li>9期约惠</li>
+				<li>8期约惠</li>
+				<li>7期约惠</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		<div class="bl-boy">
+			<div class="blb-list blb-list-show blb-list-01">
+				<div class="swiper">
+					<div class="swiper-container">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide">
+				            	<img class="slide-img" src="images/index-02.jpg">
+				            	<p class="swiper-text">为你所想 尽在移卡通</p>
+				            </div>
+				            <div class="swiper-slide">
+				            	<img class="slide-img" src="images/index-02.jpg">
+				            	<p class="swiper-text">为你所想 尽在移卡通</p>
+				            </div>
+				            <div class="swiper-slide">
+				            	<img class="slide-img" src="images/index-02.jpg">
+				            	<p class="swiper-text">为你所想 尽在移卡通</p>
+				            </div>
+				        </div>
+				        <!-- 如果需要分页器 -->
+				        <div class="swiper-pagination"></div>
+				    </div>
+				</div>
+				<div class="blbl-title">
+					<h1><span>【正在进行】</span>Iphone6s一元约惠 寻土豪朋友</h1>
+					<h2>市场价格: <s>5600元</s></h2>
+					<p>目前价格: <span class="red">8元</span><span class="gray">（已有8人出价 价高者得）</span></p>
+				</div>
+				<div class="bl-line"></div>
+				<div class="br-table-div">
+					<table class="br-table-01" border="0" cellspacing="0" cellpadding="0">
+						<tr>
+							<th colspan="3">出价记录(10)<a class="bl-btn-more" href="bidRecord.html">更多》</a></th>
+						</tr>
+						<tr>
+							<td><img class="br-img-01" src="images/index-04.jpg"/>鲜汤</td>
+							<td>沙发</td>
+							<td>&yen;1</td>
+						</tr>
+						<tr>
+							<td><img class="br-img-01" src="images/index-04.jpg"/>鲜汤</td>
+							<td>沙发</td>
+							<td>&yen;1</td>
+						</tr>
+					</table>
+				</div>
+				<div class="bl-line"></div>
+				<a class="bl-btn-detail" href="#">点击查看图文详情<br />（建议在WIFI情况下阅读）</a>
+				<div class="bl-line"></div>
+			</div>
+			<div class="blb-list blb-list-02">
+				2
+			</div>
+			<div class="blb-list blb-list-03">
+				3
+			</div>
+			<div class="blb-list blb-list-04">
+				4
+			</div>
+		</div>
+		<div class="bl-footer">
+			<div class="blf-left">23:08:05</div>
+			<button class="blf-right">提交订单</button>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>	
+	<script src="js/swiper3.08.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var swiper = new Swiper('.swiper-container', {
+	        pagination: '.swiper-pagination',
+	        slidesPerView: 1,
+	        paginationClickable: true,
+	        spaceBetween: 30,
+	        loop: true,
+	        autoplay: 10000,//2秒自动滑动
+	        autoplayDisableOnInteraction: false
+	    });
+	    $(function(){
+	    	
+	    	$('.blh-nav').children().on('click',function(){
+	    		var clickClass = 'blh-nav-click',
+	    			clickListClass = 'blb-list-show';
+	    			thisIndex = $(this).index();
+	    		$(this).addClass(clickClass).siblings().removeClass(clickClass);
+	    		$('.bl-boy').children().eq(thisIndex).addClass(clickListClass).siblings().removeClass(clickListClass);
+	    	})
+	    	
+	    })
+	
+	
+	</script>
+</body>
+</html>

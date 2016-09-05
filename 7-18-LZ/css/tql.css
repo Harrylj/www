@@ -1,0 +1,50 @@
+.tql{
+	background-color: #feee5d;
+	padding-bottom: 20px;
+}
+.tql-body{
+	padding: 20px 10px;
+}
+
+.tql-list{
+	margin-bottom: 20px;
+}
+.tql-list h1{
+	position: relative;
+	background-color: #E77B18;
+	line-height: 24px;
+	font-size: 16px;
+	color: white;
+	padding: 5px 10px;
+	width: 80%;
+}
+.tql-list h1 img{
+	position: absolute;
+	right: -30px;
+	top: 0;
+	height: 100%;
+	width: 30px;
+	
+}
+.tql-list h1 span{
+	font-size: 14px;
+}
+.tql-list p{
+	color: #E77B18;
+	line-height: 24px;
+	font-size: 14px;
+	padding: 10px;
+	border: 1px solid #E77B18;
+	border-radius: 0 8px 8px 8px;
+	background-color: white;
+	
+}
+.tql-btn{
+	width: 60px;
+	height: 60px;
+	background-image: url(../images/btn-dwcj.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	border: none;
+	background-color: transparent;
+}

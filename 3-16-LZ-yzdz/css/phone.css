@@ -1,3 +1,6 @@
+.phone{
+	padding-bottom: 40px;
+}
 .phone-header{
 	padding-top: 40px;
 }
@@ -38,11 +41,14 @@
 	text-align: center;
 	height: 40px;
 	line-height: 40px;
+	border: none;
 }
 .phone-btn-wycj{
-	margin: 20px 0;
+	position: fixed;
+	bottom: 0;
+	left: 0;
 	width: 100%;
-	background-color: #FF4A4A;
+	background-color: #f30e92;
 	color: white;
 	border: none;
 	letter-spacing: 2px;
@@ -66,4 +72,61 @@
 	color: black;
 	text-align: center;
 	margin: 0;
+}
+.modal-footer{
+	text-align: center;
+}
+.po-nav{
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	
+}
+.po-nav li{
+	cursor: pointer;
+	list-style: none;
+	border-top: 1px solid transparent;
+	border-bottom: 1px solid transparent;
+	line-height: 40px;
+	font-size: 14px;
+	color: #666666;
+	text-align: center;
+}
+.po-nav .po-nav-click{
+	border-top: 1px solid #666666;
+	border-bottom: 1px solid #666666;
+	color: black;
+	font-size: 20px;
+}
+.modal-body-13{
+	padding: 20px 0;
+}
+.modal-13{
+	top: auto;
+	bottom: 0;
+	padding: 0!important;
+}
+.modal-dialog-13{
+	margin: 0;
+	width: 100%;
+	
+}
+.modal-content-13{
+	background-color: #cfccd6;
+}
+.modal-header-13{
+	text-align: right;
+}
+.pg-list{
+	
+}
+.pg-list h1{
+	display: none;
+	font-size: 18px;
+	color: black;
+	line-height: 30px;
+	margin: 10px 0 0 0;
+}
+.pg-list .show{
+	display: block;
 }

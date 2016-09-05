@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>注册签到送话费</title>
+  <script src="zcqdshf/jquery-1.js"></script>
+    <link href="zcqdshf/style.css" rel="stylesheet">
+    <script src="zcqdshf/request.js"></script>
+    <script>
+        var openid = GetQueryString("openid");
+        $(function () {
+            $("#res").click(function () {
+                window.location.href = "zcsll.html";
+            })
+            $("#sign").click(function () {
+                window.location.href = "http://lsyd.lmego.net/LS/Sign_61/index.aspx?openid=" + openid;
+            })
+        })
+    </script>
+</head>
+<body>
+    <img id="res" src="zcqdshf/01.jpg">
+    <img id="sign" src="zcqdshf/21.png">
+
+
+</body></html>

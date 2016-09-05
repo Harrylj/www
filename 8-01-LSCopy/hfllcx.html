@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="hfllcx/style.css">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <script type="text/javascript" src="hfllcx/jquery.js"></script>
+    <title>话费流量查询</title>
+</head>
+
+<body>
+
+    <div class="tu">
+        <img src="hfllcx/sj_bj.png" width="50%">
+    </div>
+    <div class="tu">
+        <img src="hfllcx/bdsj.png" width="80%">
+    </div>
+    <p id="pinput" class="bdhm">15123233169</p>
+
+    <form>
+        <input id="yzh" name="yzh" style="text-align:center;" type="text">
+        <input class="sub h2 bgcol" value="发送验证码" id="sms" type="button">
+    </form>
+
+    <p class="cx">
+        <a href="javascript:void(0)" onclick="checkYzh()" title="查询">
+            <img src="hfllcx/cx.png" width="90%"></a>
+    </p>
+    <input name="didev" id="didev" value="oJZJCuFTlZNGmqKwzzNCHwyeYtjE" type="hidden">
+    <p class="kfdh">客服热线：18882080292</p>
+
+    <script type="text/javascript">
+
+        function checkYzh() {
+            console.log($("#didev").val());
+            if ($("#yzh").val() == "") {
+                alert("请输入验证码");
+                return;
+            }
+           
+var userid = $("#didev").val();
+                        window.location.href = "/MobilePackage.aspx?UserId=" + $("#didev").val() + "&yzh=" + $("#yzh").val();
+                   // }
+               // }
+          //  });
+        }
+
+
+        var t = 0, n = 0;
+        $('#sms').click(function () {
+            $('#sms').attr('disabled', 'disbaled');
+            $('#sms').val('30分钟有效...');
+            //setInterval(function () {
+            //    if (t == 0) {
+            //        if (n == 1) {
+            //            // 终止循环
+            //            clearInterval();
+            //        }
+            //        t = 60;
+            //        // 这个N是循环开关
+            //        n = 1;
+            //        $('#sms').attr('disabled', 'disbaled');
+            //        $('#sms').val('60秒后重发...');
+            //    } else {
+            //        t--;
+            //        $('#sms').attr('disabled', 'disbaled');
+            //        $('#sms').val(t + '秒后重发...');
+            //    }
+            //}, 1000);
+            //话费查询修改前的代码
+
+            $.ajax({
+                url: "/Handler.ashx",
+                data: {
+                    "Method": "CheckMobileCostNew", "userId": $("#didev").val()
+                },
+                dataType: "json",
+                success: function () {
+
+                }
+            })
+            /**
+             * 首先，点击触发事件，你要先ajax去发送验证码
+             * 其次，马上修改状态
+             * 然后，进入倒计时
+             */
+            /*$.ajax({
+                // 发送验证码
+                ....
+            });*/
+            // 修改状态
+        });
+    </script>
+
+
+</body></html>

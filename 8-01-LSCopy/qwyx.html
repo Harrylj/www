@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <title>趣味游戏</title>
+    <meta name="viewport" content="width=640px">
+    <link rel="stylesheet" type="text/css" href="qwyx/style.css">
+    <script src="qwyx/jquery-1.js"></script>
+    <script type="text/javascript">
+			(function(){
+				var phoneWidth = parseInt(window.screen.width),
+					phoneScale = phoneWidth/640,
+					ua = navigator.userAgent;
+				if (/Android (\d+\.\d+)/.test(ua)){
+					var version = parseFloat(RegExp.$1);
+					// andriod 2.3
+					if(version > 2.3){
+						document.write('<meta name="viewport" content="width=640, minimum-scale = '+phoneScale+', maximum-scale = '+phoneScale+', target-densitydpi=device-dpi">');
+					// andriod 2.3以上
+					}else{
+						document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+					}
+					// 其他系统
+				} else {
+					document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+				}
+			})();
+
+			var ua = navigator.userAgent.toLowerCase();
+			function isWeixin() {//微信环境
+			    return navigator.userAgent.toLowerCase().indexOf("micromessenger") != -1 ? true : false;
+			}
+			function isIOS() {//ios系统
+			    var a = ua;
+			    return (a.indexOf("iphone") != -1 || a.indexOf("ipad") != -1 || a.indexOf("ipod") != -1) ? true : false;
+			}
+			function isAndroid() {//android系统
+			    return ua.indexOf("android") != -1 ? true : false;
+			}
+
+			$(function () {
+			    $("#android").click(function () {
+			        if (isWeixin()) {//微信环境
+			            if (isIOS()) {
+			                 $(".downloadAppSafari").addClass("isdownload_ios").show();
+			            }
+			            if (isAndroid()) {
+			                $(".downloadAppSafari").addClass("isdownload_android").show();
+			            }
+			            $(".ada").attr("href", "javascript:void(0);");
+			        }
+			    })
+			    $("#ios").click(function () {
+			        alert("ios版敬请期待！");
+			    });
+			    $(".downloadAppSafari").click(function () {
+			        $(".downloadAppSafari").hide();
+			    })
+			});
+
+
+
+    </script><meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">
+    <style>
+        .downloadAppSafari {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            background-color: rgba(0,0,0,.8);
+            background-repeat: no-repeat;
+            background-position: top right;
+            background-size: 500px;
+            display: none;
+        }
+        .isdownload_ios {
+            background-image: url(images/4444.png);
+        }
+        .isdownload_android {
+            background-image: url(images/2222.png);
+        }
+        .xz img{ width:49%;float:left;}
+        .yx img{ margin-left:20px;}
+    </style>
+</head>
+<body>
+    <div class="downloadAppSafari">
+    </div>
+    <article class="marbox sy-box">
+        <div class="sy-xin">
+            <div class="xz">
+                <a href="http://g.10086.cn/skin/AndGame5_5.5.0.0_Signed_20160203341_GH_3WMH.apk" class="ada"><img src="qwyx/1.png" id="android" class="tcc"></a>
+                <img src="qwyx/2.png" id="ios" class="tcc" style=" float:right;">
+            </div>
+            <div class="yx">
+                <a href="http://liangshan_bill.meiriq.com/meiriq?td_channelid=Liang_Shan"><img src="qwyx/qm.png"></a>
+                <a href="http://qcdn.moltentec.com/lsyd/1/index.html"><img src="qwyx/pt.png"></a>
+                <a href="https://www.pgyer.com/4sFG"><img src="qwyx/px.png"></a>
+		<a href="http://qcdn.moltentec.com/lsyd/4/index.html"><img src="qwyx/4.png"></a>
+            </div>
+        </div>
+     
+    </article>
+
+
+</body></html>

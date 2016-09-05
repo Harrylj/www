@@ -1,0 +1,135 @@
+body {margin:0;padding:0;height: 100%;font-size: 12px;font-family:"microsoft yahei", arial, verdana;word-break: break-all;  color:#333; background:#82A837;}
+ul,li,p,h1,h2,h3,h4,h5,h6,div,form,b,dd,dl,dt{margin:0;padding:0;}
+ul,li{list-style-type:none;} 
+a{ text-decoration:none; color:#000;}
+a:hover{ color:#d81710;}
+img{ border:none;}
+.clear{ clear:both; height:0; overflow:hidden;}
+.none{ display:none;}
+.block{ display:block;}
+.marbox{ width:640px; margin:0 auto;}
+.cnt{ width:1014px; margin:0 auto;}
+.left{ float:left;}
+
+.sy-box{background: url(BG.png) no-repeat;width: 640px;height: 960px;overflow: hidden;position: relative;}
+.sy-xin{color:#fff;width: 540px; margin: 305px 0 0 50px; font-size: 14px; line-height: 24px;}
+.sy-xin img{ margin-top:20px;}
+
+
+
+/*.photo{background: url(box-bj.jpg) no-repeat;height: 1080px; overflow: hidden;}
+.photo .qh{height: 36px; margin: 20px;}
+.photo .qh p{width: 141px;height: 36px;border:2px solid #e32d57; line-height: 36px; border-radius: 20px; text-align: center; font-size: 28px; color:#e32d57; float: left; margin-right: 20px; cursor: pointer;}
+.photo .qh p.hover{background: #e32d57; color:#fff;}
+.photo .box{width: 287px;height: 384px; background: #e60044; overflow: hidden; float: left; margin: 16px;}
+.photo .box h2{ margin: 5px 0 0 10px; font-size: 24px; color:#fff; height: 40px;}
+.photo .box div{width: 266px;height: 335px;background: #fff; margin: 0px 0 0 10px;}
+.photo .box div .wz{ color:#e60044; padding: 3px; font-size: 14px; line-height: 24px;height: 73px;}
+.photo .box div #player{ margin:0px 6px 0;}
+.photo .box div .tu{margin:0px 6px 0;}
+.photo .box div .tu img{width: 253px;height: 216px;}
+.photo .page ul {float: right; margin:5px  16px 0 0;}
+.photo .page ul li{ float: left;}
+.photo .page ul li a{background: #e60044; color:#fff; padding: 8px 16px; float: left; margin: 3px; border-radius: 5px;}
+.photo .page ul li a:hover{background: #fff; border:2px solid #e60044; color:#e60044; padding: 6px 14px;}
+.photo .page ul li.cus a{background: #fff; border:2px solid #e60044; color:#e60044; padding: 6px 14px;}
+
+.sc-box{background: url(sc-img-bjn.jpg) no-repeat; height: 1080px; overflow: hidden;}
+
+.sc-box .text{width: 328px;height: 37px; background: #e32d57; border:none; margin: 510px 0 0 30px; border-radius: 5px; color:#fff; padding-left: 10px; font-size: 18px;}
+.sc-box .text1{width: 328px;height: 37px; background: #e32d57; border:none; margin: 50px 0 0 30px; border-radius: 5px; color:#fff; padding-left: 10px; font-size: 18px;}
+
+.sc-box textarea{width: 580px;height: 123px; background: #e32d57; border:none; margin: 50px 0 0 30px; border-radius: 5px; padding: 5px; color:#fff; font-size: 18px;}
+:-moz-placeholder { 
+    color: #fff;  
+}
+::-moz-placeholder { 
+    color: #fff;
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #fff;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+.file {
+    position: relative;
+    display: inline-block;
+    background: #D0EEFF;
+    overflow: hidden;
+    color: #1E88C7;
+    text-decoration: none;
+    text-indent: 0;
+    line-height: 20px;
+    width: 166px;
+    height: 181px;
+   
+    margin: 30px 0 0 20px;
+    vertical-align:bottom;
+}
+.file input {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    width: 166px;
+    height: 181px;
+    opacity: 0;
+}
+
+.sc-tu{ margin: 8px 0 0 10px;}
+.sc-tu button{width: 125px;height: 40px; background: #890020; color:#fff; font-size: 20px; border:none; border-radius: 5px; margin: 0px 0 0 40px;}
+.file-video{background: url(j-vid.png) no-repeat;}
+.file-img {  background: url(j-pho.png) no-repeat;}
+
+.xq_l {
+    width:260px;margin:0 auto;
+}
+.xq_l li {
+    float:left; width:80px;text-align:center;    margin-top: 5px;
+}
+.xqli {
+        border: none;
+    border-radius: 30px;
+    background-color: #E60044;
+    height: 30px;
+    line-height: 30px;
+    color: white;
+    font-size: 16px;
+    margin-left:10px;
+}
+.parise {
+    line-height: 30px;
+    color: #E60044;
+    font-size: 16px;
+}
+.serchePhone {
+    height: 36px;
+    border: 2px solid #e32d57;
+    line-height: 36px;
+    border-radius: 20px 0px 0px 20px;
+    text-align: center;
+    font-size: 28px;
+    color: #e32d57;
+    float: left;
+    cursor: pointer;
+}
+.serche {
+    width: 80px;
+    height: 38px;
+    border: 2px solid #e32d57;
+    line-height: 36px;
+    border-radius: 0px 20px 20px 0px;
+    font-size: 19px;
+    color: white;
+    float: left;
+    cursor: pointer;
+    background-color: #E60044;
+}*/
+
+
+
+
+
