@@ -1,0 +1,14 @@
+.hdgz{
+	padding: 10px;
+}
+.hdgz h1{
+	font-size: 18px;
+	line-height: 40px;
+	color: #45b27b;
+	text-align: center;
+}
+.hdgz p{
+	font-size: 14px;
+	line-height: 24px;
+	color: black;
+}

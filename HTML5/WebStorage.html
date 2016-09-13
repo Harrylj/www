@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>数据储存</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<table border="1" cellspacing="0" cellpadding="0">
+			<tr>
+				<td>姓名：</td>
+				<td><input type="text" id="name" /></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text" id="email" /></td>
+			</tr>
+			<tr>
+				<td>电话号码：</td>
+				<td><input type="text" id="tel" /></td>
+			</tr>
+			<tr>
+				<td>备注：</td>
+				<td><input type="text" id="memo" /></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="button" value="保存" onclick="saveStorage()" /></td>
+			</tr>
+		</table>
+		<hr />
+		<p>检索：
+			<input type="text" id="find" />
+			<input type="button"  value="检索"  onclick="findStorage('msg')"/>
+		</p>
+		<p id="msg"></p>
+	</body>
+	<script src="js/WebSotorage.js" type="text/javascript" charset="utf-8"></script>
+</html>

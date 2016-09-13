@@ -1,0 +1,49 @@
+.record{
+	padding: 20px 10px;
+}
+.record h1{
+	line-height: 40px;
+	font-size: 20px;
+	color: #45B27B;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.record table{
+	border: 2px solid #45B27B;
+	width: 100%;
+}
+.record td
+,.record th{
+	text-align: center;
+	width: 38%;
+	table-layout:fixed; word-break: break-all; overflow:hidden;
+	
+}
+.record td:last-child
+,.record th:last-child{
+	width: 24%;
+}
+.record th{
+	color: white;
+	background-color: #45B27B;
+	line-height: 50px;
+	font-size: 16px;
+}
+.record td{
+	padding: 8px 3px;
+	line-height: 24px;
+	font-size: 12px;
+	color: black;
+	border: 1px solid #BABABA;
+	
+}
+.r-btn-return{
+	display: block;
+	width: 60%;
+	line-height: 40px;
+	background-color: #45B27B;
+	color: white;
+	text-align: center;
+	margin: 20px auto;
+	border-radius: 20px;
+}

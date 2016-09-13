@@ -1,0 +1,132 @@
+.index{
+	border: 10px solid transparent;
+}
+.index-header{
+	position: relative;
+}
+.index-btn-hdgz{
+	position: absolute;
+	right: 0;
+	top: 0;
+	background-color: #2A2A2A;
+	color: white;
+	display: inline-block;
+	line-height: 28px;
+	font-size: 16px;
+	padding: 0 5px;
+	
+}
+.index-btn-hdgz:hover{
+	color: white;
+}
+.im-ul-01 li{
+	float: left;
+	font-size: 14px;
+	line-height: 28px;
+	border: none;
+	width: 50%;
+	padding: 0 10px;
+	color: white;
+}
+.im-ul-01 li:first-child{
+	background-color: #3D3D3D;
+}
+.im-ul-01 li:last-child{
+	background-color: #45b27b;
+}
+.im-content{
+	position: relative;
+	padding-top: 40px;
+}
+.index-btn-tzjl{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 10px;
+	border: 1px solid #3D3D3D;
+	color: #3D3D3D;
+	padding: 0 5px;
+	font-size: 16px;
+	display: inline-block;
+	line-height: 24px;
+	
+}
+.imc-list{
+	position: relative;
+	min-height: 240px;
+	display: none;
+	padding-bottom: 10px;
+}
+.imc-input-tel{
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	width: 80%;
+	margin-left: -40%;
+	background-color: #505050;
+	color: white;
+	text-align: center;
+	font-size: 16px;
+	line-height: 34px;
+	border: none;
+	font-size: 16px;
+	letter-spacing: 2px;
+	opacity: .8;
+}
+.index-btn-01{
+	display: block;
+	margin: 20px  auto;
+	width: 90%;
+	line-height: 38px;
+	border: 1px solid #d8c386;
+	background-color: #ffda68;
+	color: #856b1b;
+	text-align: center;
+	border-radius: 19px;
+}
+.if-gz p{
+	display: block;
+	padding: 15px 15px 0 15px;
+	background-color: #ffefbf;
+	margin: -2% auto 0 auto;
+	border: 1px solid #545454;
+	border-bottom: none;
+	width: 90%;
+	font-size: 14px;
+	color: #a38425;
+	line-height: 24px;
+}
+.if-gz-img{
+	display: block;
+	width: 90%;
+	margin: auto;
+}
+.index-ul-01 li{
+	width: 50%;
+	float: left;
+	line-height: 24px;
+	font-size: 14px;
+	text-align: center;
+}
+.index-btn-02{
+	padding: 0 15px;
+	margin: 20px 5px;
+	color: white;
+	line-height: 40px;
+	border-radius: 20px;
+	font-size: 16px;
+	border: none;
+}
+.index-btn-jfhhl{
+	background-color: #45b27b;
+}
+.index-btn-zcnhl{
+	background-color: #ff8888;
+	
+}
+.imc-list-now{
+	display: block;
+}
+.imc-animate img:nth-child(2){
+	display: none;
+}
