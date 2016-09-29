@@ -1,0 +1,8 @@
+{
+    "file":"changeBtn.png",
+    "frames":{
+        "replayBtnChange":{"x":280,"y":0,"w":280,"h":68,"offX":0,"offY":0},
+        "shareBtnChange":{"x":0,"y":0,"w":280,"h":68,"offX":0,"offY":0},
+        "startBtn":{"x":20,"y":80,"w":218,"h":69,"offX":0,"offY":0}
+    }
+}

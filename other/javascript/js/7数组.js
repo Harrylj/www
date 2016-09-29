@@ -48,7 +48,90 @@ $(function(){
 	})
 	console.log(j);
 	
+//forEach()
+	var dataM = [1,2,3,4,5]
+	var sumM = 0;
+	//得到总和
+	dataM.forEach(function(value){
+		sumM+=value;
+	})
+	console.log(sumM);
+	//数组各元素加一
+	dataM.forEach(function(value,i,arr){
+		
+		arr[i] = value +1;
+	})
+	console.log(dataM);
 	
+	
+	//提前终止,没看懂
+	function foreach(a,f,t){
+		try
+		{
+			a.forEach(f,t)
+		}
+		catch(e)
+		{
+			if(e === foreach.break)
+			{
+				return;
+			}
+			else
+			{
+				throw e;
+			}
+		}
+	}
+	
+	foreach.break = new Error("StopIteration");
+	
+//map()
+	var n = [1,2,3];
+	var o ;
+	o = n.map(function(x){
+		return x*x;
+	})
+	//o是[1,4,9]
+	console.log(o)
+//filter()
+	var p = [5,4,3,2,1];
+	//x表示数组元素，i表示序列号
+	everyother = p.filter(function(x,i){
+		console.log(x + ' ' +i)
+		return x%2 == 0;
+		
+	})
+	console.log(everyother);
 
+//some(),every()
 
+	var q = [11,2,3,4,5];
+	qSome = q.some(function(x){
+		return x>10;
+		
+	})
+	qEvery = q.every(function(x){
+		return x>10;
+		
+	})
+	console.log(qSome + '    ' + qEvery)
+
+//reduce()
+	var u = [1,2,3,4,5];
+	var sum = u.reduce(function(x,y){
+		return x+y;
+	},0);	//数组求和
+	var product = u.reduce(function(x,y){
+		return x*y;
+	},1);	//数组求积
+	var max = u.reduce(function(x,y){
+		return x>y?x:y;
+	});		//求最大值
+
+	console.log('sum=' + sum + '   product=' + product + '   max=' + max)
+	
+	var objects = [{x:1},{y:2},{z:3}];
+	var merged = objects.reduce(union);
+	console.log(merged);
+	
 });

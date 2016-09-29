@@ -1,0 +1,203 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>达州中秋节</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-11-10
+    	描述：#jieguo:测试所用
+    		  #zige:值表示中奖资格，1表示可以中奖，0表示不可以中奖
+    		  #jiangping:值表示奖品种类，1:表示没有中奖;2：5元话费;3:10元话费,4:20元话费,5:50元话费,6:100元话费,7:100加油卡,8：300加油卡；
+    -->
+<div style="display:block;width:100%; height:100%;margin: 0 auto; background: black; position:relative;"
+     id="gameDiv">
+	<canvas id="gameCanvas" width="320" height="480" style="background-color: #0d0c0d;"></canvas>
+	<input  id="jieguo"  type="hidden"value="" />
+	
+	<input  id="zige"  type="hidden" value="" />
+	<input  id="jiangping" type="hidden" value=""/>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-11-11
+    	描述：#zzc:遮罩层
+    		#hdgz:活动规则
+    		#btn-hdgz:活动规则#btn-hdgz
+    -->
+    <input id="btn-hdgz" type="button" value="活动规则" />
+	<div id="zzc"></div>
+	<div id="hdgz">
+		<button id="hdgz-btn-colse"></button>
+		<h1>活动规则</h1>
+		<p>
+			<span class="red">1.</span>用户关注“达州移动”微信公众号即可参与游戏。游戏时，通过操作“←”“→”按钮躲避障碍物帮助玉兔奔月，奔跑距离越长，得分越高；
+			<br><span class="red">2.</span>每个用户不限参与次数，每局游戏结束均可自动抽奖一次，奖品包括5元/10元/20元话费（话费奖励仅限达州移动用户，中奖用户需绑定手机号方可获得话费奖励，次月到账）；
+			<br><span class="red">3.</span>活动期间，得分进行实时排名，于活动截止日之时，排名前20位用户可额外获赠2张电影票奖励。
+			<br><span class="red">4.</span>活动期间未绑定手机号码用户将取消其中奖资格； 
+
+		</p>
+	</div>
+	<div class="abc"></div>
+	<marquee class="marquee-gd" direction="down"scrollamount="1" >
+		<p>18200166593中奖手机1部</p>
+		<p>18200166593中奖手机2部</p>
+		<p>18200166593中奖手机3部</p>
+	</marquee> 
+	<img class="game-img-01 bounceInDown animated" src="images/home-02.png" />
+	<!--
+	<h1 class="game-img-02 rollIn animated" style="color: white;">1111111</h1>
+	-->
+	<a href="rank.html"><button class="btn-jl"></button></a>
+	<a href="search.html"><button class="btn-search">领取奖品</button></a>
+</div>
+<script src="jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	window.onload=function(){
+		//#zige:表示中奖资格，1表示可以中奖，0表示不可以中奖;
+		//这里默认可以中奖:1
+		document.getElementById('zige').value='1';
+		//#jiangping:值表示奖品种类，1:表示没有中奖;2：5元话费;3:10元话费,4:20元话费,5:50元话费,6:100元话费，7:100加油卡,8：300加油卡；
+		//这里默认中奖为：2
+		document.getElementById('jiangping').value='2';
+		
+		//隐藏遮罩层和活动规则
+		document.getElementById('hdgz-btn-colse').onclick=function(){
+			document.getElementById('hdgz').style.display="none";
+			document.getElementById('zzc').style.display="none";
+		}
+		//弹出活动规则
+		document.getElementById('btn-hdgz').onclick=function(){
+			
+			document.getElementById('hdgz').style.display="block";
+			document.getElementById('zzc').style.display="block";
+		}
+		
+		//点击隐藏分享图
+		document.getElementById('share').onclick=function(){
+			
+			document.getElementById('share').style.display="none";
+		}
+		
+	}
+</script>
+<script>var document_class = "GameApp";</script><!--这部分内容在编译时会被替换，要修改文档类，请到工程目录下的egretProperties.json内编辑。-->
+<script src="egret_loader.js"></script>
+<script src="game-min.js"></script>
+<script>
+    egret_h5.startGame();
+</script>
+<script src="launcher/zepto.min.js"></script>
+ <script language=javascript>
+		var mebtnopenurl = '#';
+		window.shareData = {
+		        "imgUrl": "http://cnhklm.com/game/youxi/hjby/icon.jpg",
+		        "timeLineLink": "http://www.baidu.com",
+		        "tTitle": "小白兔回家",
+		        "tContent": "我正在护送小白兔回家，冲刺100元话费！你也赶紧来挑战吧~"
+		};
+		 window.openWebsite = function(){
+            clickMore();
+        }		
+        window.log = function(str){
+            //$("#logo").append(str+"\n");
+        }
+        window.shareGame = function(){
+            dp_share();
+        };
+		function goHome(){
+			window.location=mebtnopenurl;
+		}
+		function clickMore(){
+			if((window.location+"").indexOf("f=zf",1)>0){
+				//window.location = "http://www.baidu.com";
+				window.location = "#"; 
+			}
+			 else{
+				goHome();
+			 }
+		}
+		function dp_share(){
+			document.getElementById("share").style.display="";
+		}
+		function dp_Ranking(){
+			window.location=mebtnopenurl;
+		}
+
+		function showAd(){
+		}
+		function hideAd(){
+		}
+		document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+		    
+		    WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+		        WeixinJSBridge.invoke('sendAppMessage', {
+		            "img_url": window.shareData.imgUrl,
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+
+		    WeixinJSBridge.on('menu:share:timeline', function(argv) {
+		        WeixinJSBridge.invoke('shareTimeline', {
+		            "img_url": window.shareData.imgUrl,
+		            "img_width": "640",
+		            "img_height": "640",
+		            "link": window.shareData.timeLineLink,
+		            "desc": window.shareData.tContent,
+		            "title": window.shareData.tTitle
+		        }, onShareComplete);
+		    });
+		}, false);
+		
+		</script>
+		
+		<div id="share" style="display: none">
+			<img width="100%" src="share.png"
+				style="position: fixed; z-index: 9999; top: 0; left: 0; display: "
+				ontouchstart="document.getElementById('share').style.display='none';" />
+		</div>
+		
+		<div style="display: none;">
+			<script type="text/javascript">
+            var myData = { gameid: "hjby" };
+            var domain = ["oixm.cn", "hiemma.cn", "peagame.net"][parseInt(Math.random() * 3)];
+			//window.shareData.timeLineLink = "http://"+ parseInt(Math.random()*100000) +"."+ myData.gameid +"."+domain+"/gamecenter.html?gameid=" + myData.gameid + (localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+			function dp_submitScore(score,stitle){
+				myData.score = parseInt(score);
+				myData.scoreName = (score/1000)+"米";
+				document.title =stitle;
+				//window.shareData.tTitle = document.title;
+				window.shareData.tTitle = 1111;
+			}
+			function onShareComplete(res) {
+                if (localStorage.myuid && myData.score != undefined) {
+                    setTimeout(function(){
+                        if (confirm("要将成绩提交到微赢游戏排行榜吗？")) {
+                           // window.location = "http://wx.9g.com/rank/submit2.jsp?gameid=" + myData.gameid + "&uid=" + localStorage.myuid + "&score=" + myData.score + "&scorename=" + encodeURIComponent(myData.scoreName);
+                        }
+                        else {
+                            document.location.href = mebtnopenurl;
+                        }
+                    }, 500);
+                }
+				else {
+		        	document.location.href = mebtnopenurl;
+				}
+	        }
+			</script>
+			<div style="display: none;">
+			
+			</div>
+		</div>
+		
+</body>
+</html>

@@ -53,6 +53,7 @@
 						<input class="imc-input-tel" type="tel" placeholder="输入任意达州移动号码" />
 						<img class="img-100" src="images/index-02.jpg" />
 						<button class="index-btn-01 index-btn-fqtz">发起挑战</button>
+						<button class="index-btn-01 index-btn-share">邀请好友</button>
 					</div>
 					<div class="imc-list imc-ing">
 						<div class="imc-animate">
@@ -68,10 +69,12 @@
 					</div>
 					<div class="imc-list imc-end">
 						<div class="imc-end-success">
+							<p class="index-p-11">战斗力太强，成功获赠 1 积分奖励</p>
 							<img class="img-100" src="images/index-true.jpg" />
 							<button class="index-btn-01 index-btn-star index-btn-cszj">乘胜追击</button>
 						</div>
 						<div class="imc-end-fail">
+							<p class="index-p-11">骚年，你还是太年轻了,换个对手试试</p>
 							<img class="img-100" src="images/index-false.jpg" />
 							<button class="index-btn-01 index-btn-star index-btn-cszj">再接再厉</button>
 						</div>
@@ -113,6 +116,7 @@
 				</div>
 			</div>
 		</div>
+		<img class="share-img" style="position:fixed;width:100%;height:100%;z-index:99999;display: none;left: 0;top: 0;" src="images/share-01.png"/>
 		<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
@@ -148,7 +152,7 @@
 						//循环打斗动画0.1秒
 						indexAnimate = setInterval(ddAnimate, 100);
 						//.end-type:值为1表示胜利，值为0表示失败,默认失败0；
-						$('.end-type').val(1);
+						$('.end-type').val(0);
 						//2秒后
 						setTimeout(endType, 2000);
 					}
@@ -195,6 +199,13 @@
 					$('.imc-star').addClass(clickClass).siblings().removeClass(clickClass);
 				})
 				
+				//点击分享
+				$('.index-btn-share').on('click',function(){
+					$('.share-img').show();
+				})
+				$('.share-img').on('click',function(){
+					$(this).hide();
+				})
 
 			})
 		</script>

@@ -130,3 +130,22 @@
 .imc-animate img:nth-child(2){
 	display: none;
 }
+.index-p-11{
+	position: absolute;
+	left: 50%;
+	top: 25%;
+	width: 90%;
+	padding: 5px 10px;
+	line-height: 24px;
+	margin-left: -45%;
+	font-size: 16px;
+	text-align: center;
+	color: white;
+	
+}
+.imc-end-success .index-p-11{
+	background-color: #fa6564;
+}
+.imc-end-fail .index-p-11{
+	background-color: #82b1ff;
+}

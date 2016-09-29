@@ -1,0 +1,12 @@
+.index-btn-yysj
+,.index-btn-01{
+	background-color: #fe2d54;
+	border: 1px solid white;
+	color: white;
+}
+.index-btn-yysj:hover
+,.index-btn-01:hover{
+	background-color: white;
+	color: #fe2d54;
+	border: 1px solid #FE2D54;
+}

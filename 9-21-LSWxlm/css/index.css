@@ -1,0 +1,80 @@
+a:hover{
+	text-decoration: none;
+}
+.slide-footer{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	line-height: 24px;
+	padding: 8px 10px;
+	color: white;
+	font-size: 14px;
+	background-image: url(../images/index-transtion.png);
+}
+.index-body{
+	padding: 15px 10px;
+}
+.ib-list-div{
+	border: 1px solid #BABABA;
+	overflow: hidden;
+}
+.ibl-header{
+	position: relative;
+	padding: 10px 10px 10px 86px;
+	border-bottom: 1px solid #BABABA;
+	min-height: 100px;
+}
+.ibl-header img{
+	position: absolute;
+	left: 10px;
+	top: 50%;
+	margin-top: -30px;
+	width: 70px;
+	width: 70px;
+}
+.ibl-header h1{
+	font-size: 16px;
+	padding: 5px 0;
+	line-height: 24px;
+	color: black;
+}
+.ibl-header p{
+	font-size: 12px;
+	padding: 5px 0;
+	line-height: 20px;
+	color: #666666;
+	
+}
+.ibl-nav li{
+	position: relative;
+	border-bottom: 1px solid #BABABA;
+	padding: 10px 15px 10px 66px;
+	margin-left: 20px;
+	min-height: 66px;
+}
+
+.ibl-nav a:last-child li {
+	border: none;
+}
+.ibl-nav img{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -23px;
+	width: 46px;
+	height: 46px;
+}
+.ibl-nav h1{
+	font-size: 14px;
+	line-height: 28px;
+	color: black;
+}
+.ib-href-right{
+	display: block;
+	line-height: 40px;
+	font-size: 14px;
+	text-align: right;
+	color: #999988;
+	margin-bottom: 15px;
+}
