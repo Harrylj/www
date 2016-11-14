@@ -1566,7 +1566,7 @@ function GameMain(b) {
 		this.overScene.init()
 	};
 	this.gameEnd = function() {
-		createjs.Sound.stop();
+		//createjs.Sound.stop();
 		this.gameScene.removeEventListener("GAMEEND", function() {
 			self.gameEnd()
 		});
@@ -1592,7 +1592,7 @@ var GD = {
 	SCORE: 0,
 	NPCLIVE: 0,
 	//游戏时间
-	LIMIT: 5,
+	LIMIT: 2,
 	TIME: 0,
 	RETIME: 0,
 	ENDKIND: 0,
@@ -1620,10 +1620,12 @@ var GamePlay = !1,
 	atype = isAndroid() ? ".ogg" : ".mp3",
 	audio = ["mfbgsound", "role_a1", "role_a2"];
 
+/*
 function regsistAudio() {
 	for (var b = 0; b < audio.length; b++) createjs.Sound.registerSound("images/" + audio[b] + atype, audio[b]);
 	createjs.Sound.addEventListener("fileload", audioloadHandler)
 }
+*/
 for (var gameManifest = [{
 		src: "images/index_23.jpg",
 		id: "index_23"
@@ -1748,7 +1750,7 @@ function initMainView() {
 }
 
 function handleGameComplete(b) {
-	regsistAudio();
+	//regsistAudio();
 	initMainView()
 }
 

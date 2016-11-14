@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta charset="utf-8">
+		<title>医保查询</title>
+		<link rel="stylesheet" type="text/css" href="css/web_index.css">
+		
+
+	</head>
+
+	<body>
+		<div class="intop"></div>
+		<div class="inbox">
+			<div class="inbox-login">
+				<form method="get">
+					<p>
+						<strong>手机号码：</strong>
+						<input class="index-input-tel" name="uid" maxlength="20" placeholder="请输入您的手机号码" type="tel">
+					</p>
+					<p>
+						<strong>查询密码：</strong>
+						<input class="index-input-password" name="uid" maxlength="20" placeholder="请输入您的查询密码" type="password">
+					</p>
+					
+					<div>
+						<div class="index-ts">错误提示</div>
+						<button class="index-btn-cx" type="button" name="">查询</button>
+					</div>
+				</form>
+			</div>
+			<div class="index-info">
+				<h1>查询成功</h1>
+				<div class="index-info-msg">
+					您的身份证号5454544545您的身份证号5454544545您的身份证号5454544545您的身份证号5454544545
+					您的身份证号5454544545您的身份证号5454544545您的身份证号5454544545您的身份证号5454544545
+					您的身份证号5454544545您的身份证号5454544545
+				</div>
+				<button class="index-btn-return" type="button" name="">返回登录</button>
+			</div>
+			
+		</div>
+		<div class="insm">请使用IE9以上、Chrome、Safari、Firefox浏览</div>
+	
+	<script src="js/jquerymin.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击查询
+			$('.index-btn-cx').on('click',function(){
+				var inputTel = $('.index-input-tel'),
+					inputPassword = $('.index-input-password'),
+					ts = $('.index-ts'),
+					re = /^1\d{10}$/,
+					ts_01 = '手机号码格式不正确',
+					ts_02 = '密码不正确',
+					ts_03 = '手机号码不能为空';
+				var truePW = '1234'; //正确的密码
+				//手机号码不能为空
+				if(inputTel.val()=='')
+				{
+					ts.html(ts_03);
+				}
+				//手机号码格式不正确
+				else if(!re.test(inputTel.val()))
+				{
+					ts.html(ts_01)
+				}
+				//密码不正确
+				else if(inputPassword.val()!=truePW)
+				{
+					ts.html(ts_02);
+				}
+				//正确
+				else
+				{
+					ts.html('');
+					$('.inbox-login').hide();
+					$('.index-info').show();
+				}
+				
+			})
+			//点击登录
+			$('.index-btn-return').on('click',function(){
+				$('.inbox-login').show();
+				$('.index-info').hide();
+			})
+			
+			//清空错误提示
+			$('.index-ts').html('');
+		})
+	</script>
+	
+	</body>
+
+</html>

@@ -131,7 +131,62 @@ $(function(){
 	console.log('sum=' + sum + '   product=' + product + '   max=' + max)
 	
 	var objects = [{x:1},{y:2},{z:3}];
-	var merged = objects.reduce(union);
+	/*
+	var merged = objects.reduce(join);
 	console.log(merged);
+	*/
+//indexOf(),lastIndexOf()
+	a = [0,1,2,1,0];
+	var b = a.indexOf(1),	//1
+		d = a.lastIndexOf(1),	//3
+		c = a.indexOf(3);	//-1
+	
+	function finadall(a,x){
+		var results= [],
+		len = a.length,
+		pos = 0 ;
+		while(pos < len){
+			pos = a.indexOf(x,pos);
+			if(pos === -1) break;
+			results.push(pos);
+			pos = pos + 1;
+		}
+		return results;
+	}
+	finadall(a,1);
+	console.log(finadall(a,1))
+
+
+//concat()
+	var cat = [1,2,3];
+	console.log(cat.concat(4,5));
+	console.log(cat.concat([4,5]));
+	console.log(cat.concat([4,5],[6,7]));
+	console.log(cat.concat(4,[5,[6,7]]));
+	
+	
+//slice()
+	var a = [1,2,3,4,5];
+	console.log(a.slice(0,3));
+	console.log(a.slice(3));
+	console.log(a.slice(1,-1));
+	console.log(a.slice(-3,-2));
+	
+	console.log(1);
+	console.log(Array.isArray([]));
+//
+
+	var a = {};
+	var i = 0;
+	while(i<10){
+		a[i] = i * i;
+		i++;
+	}
+	a.length = i;
+	console.log(a);
+	var total = 0;
+	for( var j =0; j < a.length; j++)
+		total += a[j];
+	console.log(a);
 	
 });

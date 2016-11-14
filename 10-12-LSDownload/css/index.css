@@ -1,0 +1,40 @@
+.index-list-father{
+	padding: 10px;
+}
+.index-list{
+	border-bottom: 1px solid #CCCCCC;
+	margin-bottom: 15px;
+}
+.il-footer{
+	position: relative;
+	padding-top: 10px;
+	padding-right: 90px;
+	padding-bottom: 10px;
+}
+.il-footer h1{
+	color: black;
+	line-height: 30px;
+	font-size: 18px;
+	
+}
+.il-footer p{
+	color: #666666;
+	line-height: 24px;
+	font-size: 16px;
+}
+
+.il-footer button{
+	position: absolute;
+	right: 0;
+	top: 20%;
+	border: none;
+	width: 70px;
+	height: 34px;
+	background-image: url(../images/download-btn-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+}
+.ilf-end button{
+	background-image: url(../images/download-btn-02.png);
+}
