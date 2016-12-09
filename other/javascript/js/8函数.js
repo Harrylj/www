@@ -104,3 +104,87 @@ function counter(){
 	
 }
 console.log(counter())
+
+
+function constfunc(v){ return function(){return v;}}
+var funcs = [];
+for(var i = 0; i < 10; i++) funcs[i] = constfunc(i);
+console.log(funcs[4]())
+
+
+/*为什么i等于10*/
+function  constfuncs(){
+	var funcs = [];
+	for(var i = 0; i < 10; i++)
+		funcs[i] = function(){ return i;}
+	return funcs;
+	
+}
+
+var funcs = constfuncs();
+console.log(funcs[5]())
+
+function f(y) { return this.x + y;}
+var o = {x:1};
+var g = f.bind(o)
+console.log(g(2))
+
+/*
+function bind(f,o){
+	if(f.bind) return  f.bind(o);
+	else  return function(){
+		return f.apply(o,arguments)
+	}
+}
+*/
+
+var a = [1,2,3,4,5,6];
+var b = 0;
+for(var i = 0; i<a.length;i++)
+{
+	b= a[i] + b;
+}
+var sum = function(x,y){
+	return x+y;
+}
+var c = a.reduce(sum)/a.length;
+
+var map = Array.prototype.map
+	? function(a,f) { return a.map(f);}		//如果已经存在map()方法，就直接使用它
+	: function(a,f) {						//否则，自己实现一个
+		var results = [];
+		for(var i = 0,len = a.length; i < len;i++ ){
+			if(i in a) results[i] = f.call(null,a[i],i,a);
+		}
+		return results;
+	};
+	
+function mapper(f){
+	return function(a){ return map(a,f);};
+}
+var increment = function(x){ return x + 1;}
+var incrementer = mapper(increment);
+console.log(incrementer([1,2,3]));
+
+
+
+var a = Math.floor(Math.random()*10);
+var i = 0;
+for(i; a>5; i++)
+{
+	
+	a = Math.floor(Math.random()*10);
+}
+//alert('a=' + a + ' ,i=' + i)
+function cat(){
+}
+cat.prototype={
+	food:"fish",
+	say: function(){
+	console.log("I love "+this.food);
+	}
+}
+var blackCat = new cat;
+blackCat.say();
+var bigDog = {food: 'meat'}
+blackCat.say.call(bigDog)

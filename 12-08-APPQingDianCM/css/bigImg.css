@@ -1,0 +1,14 @@
+body
+,html
+,.big-img{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	background-color: #666666;
+}
+.swiper-father{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+}
