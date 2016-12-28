@@ -44,3 +44,6 @@
 	margin-right: 2%;
 	margin-bottom: 2%;
 }
+.sbc-list p{
+	max-height: 9999px;
+}

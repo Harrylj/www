@@ -1,0 +1,55 @@
+.index{
+	background-image: url(../images/home.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+.index-btn-download{
+	position: relative;
+	display: block;
+	margin: -50% auto 30px auto;
+	width: 200px;
+	height: 50px;
+	background-image: url(../images/home3.png);
+}
+
+.index-btn-phone{
+	position: absolute;
+	left: 30%;
+	top: 26%;
+	width: 200px;
+	height: 30px;
+	background-image: url(../images/home5.png);
+}
+.index-footer{
+	position: relative;
+}
+.index-btn{
+	border: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.index-tc-bg{
+	background-image: url(../images/tanchu1.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+.index-tc-btn{
+	width: 40%;
+	line-height: 40px;
+	color: black;
+	border-radius: 20px;
+	text-align: center;
+	border: none;
+	font-size: 14px;
+	margin: 0 10px;
+}
+.index-btn-no{
+	background-color: #ffb0f0;
+}
+.index-btn-ok{
+	background-color: #6cf1e6;
+}
+
+

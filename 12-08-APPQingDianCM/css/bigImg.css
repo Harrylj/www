@@ -1,3 +1,9 @@
+@media only screen and (min-width:0px){
+	.swiper-container{height: auto;}
+}
+@media only screen and (min-width:480px){
+	.swiper-container{ height: auto;}
+}
 body
 ,html
 ,.big-img{
@@ -7,8 +13,5 @@ body
 	background-color: #666666;
 }
 .swiper-father{
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 100%;
+	
 }

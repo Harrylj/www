@@ -42,7 +42,7 @@
 	height: 24px;
 	overflow: hidden;
 	width: 100%;
-	letter-spacing: 1px;
+	letter-spacing: 0px;
 }
 .hpl-header{
 	border-top: 15px solid #efeff4;

@@ -1,3 +1,9 @@
+@media only screen and (min-width:0px){
+	.swiper-container{height: 256px;}
+}
+@media only screen and (min-width:480px){
+	.swiper-container{ height: 384px;}
+}
 .shop-header{
 	position: relative;
 }
@@ -111,11 +117,6 @@
 	width: 24px;
 	height: 24px;
 }
-.sb-nav .sb-nav-click
-,.sb-nav li:hover{
-	color: #FF591A;
-	border-bottom: 2px solid #FF591A;
-}
 .sbc-list{
 	position: relative;
 	padding:10px 0 10px 70px
@@ -149,18 +150,26 @@
 	line-height: 20px;
 	font-size: 14px;
 	color: #666666;
+	max-height: 65px;
+	overflow: hidden;
 }
 .sbcl-img-list{
 	padding: 5px 0;
+	height: 80px;
+	overflow: hidden;
+	width: 1000px;
 }
 .sbcl-img-list img{
-	display: block;
-	float: left;
-	height: 30%;
-	width: 30%;
-	margin-right: 3%;
-	margin-bottom: 3%;
+
 }
+.showimg-div{
+	width: 80px;
+	height: 80px;
+	margin-right: 2px;
+	float: left;
+}
+.showimg{ display:table-cell;border:none; text-align: center; vertical-align: middle; width:80px; height:80px; position:relative; overflow:hidden; background:gray; }
+
 .sbcl-footer{
 	text-align: right;
 	border-bottom:  1px solid #CCCCCC;
@@ -204,7 +213,11 @@
 	background-position: 0 center;
 	color: transparent;
 }
-.sb-nav li:hover .img-download
+/*.sb-nav li:hover .img-download
 ,.sb-nav-click .img-download{
 	background-image: url(../images/shop-04-hover.png);
+}*/
+.sb-nav .sb-nav-click{
+	color: #FF591A;
+	border-bottom: 2px solid #FF591A;
 }
