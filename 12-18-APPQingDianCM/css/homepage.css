@@ -1,0 +1,71 @@
+.sb-nav li{
+	width: 50%;
+}
+.sb-nav li:nth-child(2) img {
+    width: 24px;
+    height: 24px;
+}
+.sbcl-footer{
+	float: right;
+	border: none;
+	/*
+	width: 73%;
+	*/
+}
+.sbc-list h1{
+	width: auto;
+	float: left;
+	font-size: 14px;
+	color: #656565;
+	line-height: 36px;
+	height: 36px;
+	/*
+	width: 27%;
+	*/
+	overflow: hidden;
+}
+.sdf-line{
+	border-bottom: 1px solid #CCCCCC;
+}
+.sbcl-look
+,.sbcl-good
+,.sbcl-write{
+	font-size: 12px;
+	background-size: 14px 14px;
+	padding: 0 3px 0 18px;
+}
+.sbc-list p{
+	line-height: 24px;
+	font-size: 16px;
+	color: black;
+	padding: 0;
+	height: 24px;
+	overflow: hidden;
+	width: 100%;
+	letter-spacing: 0px;
+}
+.hpl-header{
+	border-top: 15px solid #efeff4;
+	border-bottom: 1px solid #CCCCCC;
+}
+.hpl-header h1
+,.hpl-header p{
+	padding: 0 10px;
+	line-height: 40px;
+	color: #B1B1B1;
+	font-size: 14px;
+	height: 40px;
+	overflow: hidden;
+}
+.hpl-header h1{
+	width: 70%;
+	float: left;
+}
+.hpl-header p{
+	width: 28%;
+	float: right;
+	text-align: right;
+}
+.sbc-list:last-child .sdf-line{
+	display: none;
+}

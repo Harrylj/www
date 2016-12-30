@@ -5,8 +5,7 @@
     <!-- 使用最新的ie内核渲染 -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- 移动设备优先, 禁止缩放 -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width">
     <!-- 国产浏览器(360)使用webkit内核 -->
     <meta name="renderer" content="webkit">
     <meta name="keywords" content="">
@@ -18,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="css/bigImg.css"/>
     <title>大图</title>
     <style type="text/css">
+    .swiper-slide, .swiper-wrapper{height: auto;}
     </style>
 </head>
 <body>
@@ -34,7 +34,10 @@
         	<div class="swiper-container">
 	            <div class="swiper-wrapper">
 	                <div class="swiper-slide">
-	                    <img class="img-100 img1" src="images/swiper-shop-01.jpg"/>
+	                    <img class="img-100" src="images/swiper-shop-01.jpg"/>
+	                </div>
+	                <div class="swiper-slide">
+	                    <img class="img-100" src="images/swiper-shop-01.jpg"/>
 	                </div>
 	                <div class="swiper-slide">
 	                    <img class="img-100" src="images/swiper-shop-02.jpg"/>
@@ -73,8 +76,7 @@
 		      	  allHtml = document.getElementById('swiper-all-number');
 		        nowHtml.innerHTML = nowIndex + 1;
 		        allHtml.innerHTML = allLength;
-		    var fatherHeight = mySwiper.height;
-		    var bodyHeight = window.screen.height;
+		    var bodyHeight = document.body.clientHeight;
 		    var indexImg = $('.swiper-slide-active').children('img').eq(0);
 		    if(indexImg.height() < bodyHeight)
 		    {
