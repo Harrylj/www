@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css"/>
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" type="text/css" href="css/transfer.css"/>
+	<link rel="stylesheet" type="text/css" href="css/setting.css"/>
+	<link rel="stylesheet" type="text/css" href="css/settingNext.css"/>
+    <title>个人中心</title>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-04-07
+    	描述：.s-dl-password:登录密码:默认是"1234"
+    -->
+    <input class="s-dl-password" type="hidden"/>
+	<div class="setting vr">
+		<!--
+        	作者：648267773@qq.com
+        	时间：2015-10-30
+        	描述：公用头01
+        -->
+		<div class="public-header-01-father">
+			<div class="public-header-01">
+				<a class="public-h-return" href="#">返回</a>
+				<h1>设置中心</h1>
+			</div>
+		</div>
+		<div class="s-header">
+			<img class="sl-img-user" src="images/user.jpg">
+			<img class="sl-img-pic" src="images/two/two-setting-01.png" />
+			<ul class="sh-ul">
+				<li>移卡通</li>
+				<li><span>HUUUHJSD7777</span></li>
+			</ul>
+			<button class="sh-btn-jcbd" data-toggle="modal" data-target="#myModalOne">解除绑定</button>
+		</div>
+		<div class="s-header-height"></div>
+		<div class="s-list" style="border: none;">
+			<div class="sl-line">
+				手机号码
+				<a class="sl-line-none" href="#">18200166593</a>
+			</div>
+				
+		</div>
+		<div class="s-height-30"></div>
+		<div class="s-list">
+			<div class="sl-line">
+				持卡人姓名
+				<a href="settingName.html">小鱼</a>
+			</div>
+			<div class="sl-line">
+				卡片备注
+				<a href="settingNote.html">小鱼儿的卡</a>
+			</div>
+			<div class="sl-line">
+				性别
+				<a href="settingSex.html">男</a>
+			</div>
+			<div class="sl-line">
+				持卡人身份证件
+				<a href="settingID.html">55121214454...</a>
+			</div>
+		</div>
+		<div class="s-height-30"></div>
+		<div class="s-list">
+			<div class="sl-line">
+				登录密码
+				<a href="settingPassword.html">********</a>
+			</div>
+			<div class="sl-line">
+				刷卡密码
+				<a href="settingPassword.html">*********</a>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+	<!-- Modal 解除绑定-->
+	<div class="modal fade" id="myModalOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">解除绑定</h4>
+	      </div>
+	      <div class="modal-body">
+	       		<div class="text-center">
+	       			<input class="sm-input-password"  type="text" placeholder="请输入登录密码" />
+	       			<p class="trm-ts"></p>
+	       		</div>
+	      </div>
+	      <div class="trm-footer">
+	      	<button type="button" class="trm-btn sf-btn-qx" data-dismiss="modal">取消</button>
+	      	<button type="button" class="trm-btn sf-btn-jcbd">解除绑定</button>
+	      	<div class="clear"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<input class="myModalStatus" type="hidden" data-toggle="modal" data-target="#myModalStatus"/>
+	<!-- Modal 解除绑定状态-->
+	<div class="modal fade" id="myModalStatus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title modal-title-status">解除绑定成功</h4>
+	      </div>
+	      
+	      <div class="modal-body">
+	       		<div class="text-center">
+	       			<p class="modal-content-status">
+	       				已挂失的卡片有资金可转入
+	       				<br>是否进行此操作
+	       			</p>
+	       		</div>
+	      </div>
+	      
+	      <div class="trm-footer">
+	      	<button type="button" class="trm-btn sf-btn-qx" data-dismiss="modal">取消</button>
+	      	<button type="button" class="trm-btn sf-btn-mszr">马上转入</button>
+	      	<div class="clear"></div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击“解除绑定”
+			$('.sf-btn-jcbd').on('click',function(){
+				var inputPassword = $('.sm-input-password'),
+					dlPassword = $('.s-dl-password'),
+					ts = $('.trm-ts'),
+					ts_01 = '登录密码不正确！',
+					ts_02 = '请输入登录密码！',
+					btnStatus = $('.myModalStatus');
+					
+				//.s-dl-password:登录密码:默认是"1234"
+				dlPassword.val('1234');
+				//请输入登录密码
+				if(inputPassword.val()=='')
+				{
+					ts.html(ts_02);
+				}
+				//验证码不正确
+				else if(inputPassword.val()!=dlPassword.val())
+				{
+					ts.html(ts_01);
+				}
+				else
+				{
+					ts.html('');
+					$('.sf-btn-qx').click();
+					btnStatus.click();
+					
+				}
+			})
+			
+			//点击"上传照片"
+			$('.sl-img-user').on('click',function(){
+				alert('上传头像')
+			})
+		})
+	</script>
+</body>
+</html>

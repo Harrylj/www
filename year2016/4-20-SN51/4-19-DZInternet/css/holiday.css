@@ -1,0 +1,57 @@
+.holiday{
+	position: relative;
+	background-color: #aa1d02;
+	padding-bottom: 30px;
+	background-repeat: no-repeat;
+	background-size: 100% auto;
+	background-image: url(../images/h-05.jpg);
+}
+.h-bg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	background-image: url(../images/h-02.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.h-header{
+	position: relative;
+	z-index: 2;
+}
+.h-body{
+	position: relative;
+	z-index: 3;
+}
+.hb-list{
+	margin: auto;
+	margin-top: 50px;
+	width: 90%;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 15px;
+}
+.hb-list:first-child{
+	background-image: url(../images/h-03.png);
+}
+.hb-list:nth-child(2){
+	background-image: url(../images/h-04.png);
+}
+.hb-list p{
+	line-height: 24px;
+	font-size: 14px;
+	color: black;
+}
+.hb-btn{
+	border-radius: 20px;
+	line-height: 40px;
+	border: none;
+	background-color: #202020;
+	font-size: 18px;
+	color: white;
+	width: 70%;
+	margin: 10px 0;
+}

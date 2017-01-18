@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<script src="js/Angular.js"></script>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body >
+
+<div ng-app="app">
+	<div ng-controller="FirstController">
+		<h4>The simplest adding machine ever</h4>
+		<button ng-click="add(1)" class="button">Add</button>
+		<a ng-click="subtract(1)" class="button alert">Subtract</a>
+		<h4>Current count: {{ counter }}</h4>
+		
+		<h1>{{ person }}</h1>
+		and their name:
+		<h2>{{ person.name }}</h2>
+		</div>
+	</div>
+</div>
+
+<div ng-app="myapp">
+	<div ng-controller="MyController">
+		<h1>{{ person }}</h1>
+		and their name:
+		<h2>{{ person.name }}</h2>
+		</div>
+	</div
+</div>
+	<script type="text/javascript">
+	
+		var app = angular.module('app',[])
+		app.controller('FirstController', function($scope) {
+			$scope.counter = 0;
+			$scope.add = function(amount) { $scope.counter += amount; };
+			$scope.subtract = function(amount) { $scope.counter -= amount; };
+			
+			$scope.person = {
+				name: 'Ari Lerner'
+			};
+		});
+
+		
+	</script>
+</body>
+</html>

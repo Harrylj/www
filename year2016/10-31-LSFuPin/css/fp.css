@@ -1,0 +1,90 @@
+.detail{
+	padding: 10px;
+	letter-spacing: 2px;
+	padding-bottom: 40px;
+	position: relative;
+	overflow: hidden;
+	background-color: #F2F2F2;
+	background-size: 100% auto;
+
+
+}
+.love-number{
+	color: black;
+}
+.love-number-bg{
+	background-color: transparent;
+}
+.dd-img-share{
+	display: none;
+	position: fixed;
+	z-index: 99999999;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+}
+body h1{
+	font-size: 20px;
+	line-height: 30px;
+	padding: 5px;
+	color: black;
+}
+body h2{
+	font-size: 18px;
+	line-height: 28px;
+	padding: 5px;
+	color: black;
+}
+body h3{
+	font-size: 16px;
+	line-height: 24px;
+	padding: 5px;
+	color: black;
+}
+.dd-header{
+	border-bottom: 1px solid #CCCCCC;
+}
+.dd-body{
+	padding: 10px 0;
+}
+.dd-body p{
+	padding: 5px;
+	line-height: 24px;
+	font-size: 16px;
+	color: #666666;
+	
+}
+.dd-body img{
+	margin: 10px 0;
+}
+.detail-bottom{
+	position: fixed;
+	bottom: 0;
+	left: 0;	
+	width: 100%;
+	height: 41px;
+	border-top: 1px solid #e5002e;
+	background-color: white;
+	max-width:100%;
+}
+.dd-btn{
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	width: 50%;
+	line-height: 40px;
+	background-color: transparent;
+	border: none;
+	color: #E5002E;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+}
+.dd-btn-click{
+	background-color: #E5002E;
+	color: white;
+}
+.game-btn-send{
+	display: none;
+}

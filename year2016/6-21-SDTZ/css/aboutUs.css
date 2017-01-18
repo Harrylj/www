@@ -1,0 +1,91 @@
+.aub-list-01{
+	background-color: #f81919;
+	padding:  100px 0;
+	text-align: center;
+}
+.aub-list-01 h1{
+	font-size: 32px;
+	line-height: 40px;
+	color: white;
+}
+.aub-list-01 p{
+	font-size: 24px;
+	line-height: 40px;
+	color: white;
+}
+.aub-btn-welcome{
+	line-height: 36px;
+	height: 40px;
+	padding: 0 10px;
+	border: 1px solid white;
+	font-size: 20px;
+	background-color: transparent;
+	color: white;
+	margin: 20px 0;
+	cursor: pointer;
+	
+}
+.aub-list-02
+,.aub-list-03
+,.aub-list-04{
+	padding: 30px 0 20px 0;
+	width: 1000px;
+	margin: auto;
+	text-align: center;
+}
+.aub-h-01{
+	font-size: 32px;
+	line-height: 50px;
+	color: black;
+}
+.aub-line{
+	width: 200px;
+	height: 5px;
+	background-color: #239FFF;
+	margin: 20px auto;
+}
+.aub-p-01{
+	padding: 20px 0;
+	line-height: 28px;
+	font-size: 16px;
+	color: black;
+}
+.aub-list-04{
+	padding: 100px 0;
+}
+.aub-list-04 h1{
+	color: black;
+	font-size: 20px;
+	line-height: 40px;
+}
+.aub-list-04 p{
+	line-height: 40px;
+	color: black;
+	font-size: 14px;
+}
+.aub-list-04 h2{
+	font-size: 20px;
+	color: #e50012;
+	line-height: 40px;
+}
+.aub-content{
+	position: absolute;
+	width: 300px;
+	left: 53%;
+	top: 20%;
+}
+.aub-content h1{
+	font-size: 30px;
+	line-height: 50px;
+	color: white;
+}
+.aub-content h2{
+	font-size: 24px;
+	line-height: 46px;
+	color: #29bf92;
+}
+.aub-content p{
+	font-size: 16px;
+	line-height: 36px;
+	color: #29bf92;
+}

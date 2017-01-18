@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <link rel="stylesheet" type="text/css" href="css/game.css"/>
+    <title>趣味竞猜</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-05-31
+    	描述：.my-jxw-val-all:我的吉祥物总数
+    -->
+    <input class="my-jxw-val-all" type="hidden" value="999" />	
+	<div class="game">
+		<div class="game-header">
+			<img src="images/user-img.jpg"/>
+			<p>吉祥物数量</p>
+			<h1 class="gh-h-01">数据</h1>
+			
+			<a class="gh-a-href" href="#">赠送流量换取吉祥物>></a>
+		</div>
+		<div class="game-body">
+			<h1 class="gb-h-01">趣味竞猜赢大奖</h1>
+			<img class="img-100" src="images/game-01.png"/>
+			<div class="swiper-father">
+				<div class="swiper-container">
+				        <div class="swiper-wrapper">
+				            <div class="swiper-slide">
+				            	<div class="ib-img-slide fl">
+				            		<h1>爱尔兰</h1>
+				            		<div class="country">
+				            			<div class="country-top"></div>
+				            			<img src="images/country/aierlan.png"/>
+				            		</div>
+				            	</div>
+				            	<div class="ib-swiper-center">
+				            		<img src="images/index-17.png" />
+				            		<p>
+				            			5月20日
+				            		   <br>13：35
+				            		</p>
+				            	</div>
+				            	<div class="ib-img-slide fr">
+				            		<h1>奥地利</h1>
+				            		<div class="country">
+				            			<div class="country-top"></div>
+				            			<img src="images/country/aodili.png"/>
+				            		</div>
+				            	</div>
+				            	<div class="clear"></div>
+				            	<h1 class="gb-h-02"><span>09</span>:<span>20</span>:<span>52</span></h1>
+				            	<p class="gb-p-03">距离竞猜结束</p>
+				            	<div class="text-center">
+				            		<button class="gb-btn-hyc">换一场</button>
+				            	</div>
+				            </div>
+				           
+				        </div>
+	
+				        <!-- 如果需要导航按钮 -->
+				        <div class="swiper-button-prev none"></div>
+				        <div class="swiper-button-next none"></div>
+				</div>
+			</div>
+			
+			
+		</div>
+		<div class="game-footer">
+			<div class="fg-one">
+				<h1>法国主队</h1>
+				<div class="gfo-nav-02-father">
+					<!--
+                    	作者：648267773@qq.com
+                    	时间：2016-05-31
+                    	描述：.gfo-nav-02-sqt:胜其他
+                    	.gfo-nav-02-pqt:平其他
+                    	.gfo-nav-02-fqt:负其他
+                    -->
+					<ul class="gfo-nav-02 gfo-nav-02-sqt">
+						<li>
+							<h1>主队胜</h1>
+							<p>赔率800</p>
+							<input class="gfo-score" type="hidden"  value="1" />
+						</li>
+						<li>
+							<h1>平局</h1>
+							<p>赔率800</p>
+							<input class="gfo-score" type="hidden"  value="2" />
+						</li>
+						<li class="gfo-nav-02-click">
+							<h1>主队负</h1>
+							<p>赔率800</p>
+							<input class="gfo-score" type="hidden"  value="3" />
+						</li>
+					</ul>
+					<div class="clear"></div>
+					
+				</div>
+				
+				
+			</div>
+			<div class="fg-two">
+				<h1>本次投注吉祥物</h1>
+				<div class="fgt-div">
+					<button class="fgt-btn-left"></button>
+					<input class="fgt-input-number" type="tel" value="100"/>
+					<button class="fgt-btn-right"></button>
+				</div>
+				<div class="fgt-div-right">
+					<label><input class="fg-checkbox" type="checkbox" name="" />&nbsp;全部投注</label>
+				</div>
+				
+				<button class="gf-btn-mstz">马上投注</button>
+			</div>
+		</div>
+		
+		
+	</div>
+	
+	<button class="g-btn-tc none" data-toggle="modal" data-target="#myModal">弹窗按钮</button>
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title modal-title-04" id="myModalLabel">Modal title</h4>
+	      </div>
+	      
+	      <div class="modal-body modal-body-04">
+	        	内容在这里哦
+	      </div>
+	      <div class="modal-footer">
+	        <a href="#"><button type="button" class="game-tc-btn game-tc-btn-true" data-dismiss="modal">去看看</button></a>
+	        <a href="#"><button type="button" class="game-tc-btn game-tc-btn-send" data-dismiss="modal">立即去赠送</button></a>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper3.08.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	/*
+        var swiper = new Swiper('.swiper-container', {
+	        slidesPerView: 1,
+	        paginationClickable: true,
+	        spaceBetween: 30,
+	        loop: true,
+	        autoplay: 8000,//8秒自动滑动
+	        autoplayDisableOnInteraction: false,
+	        // 如果需要前进后退按钮
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev'
+	    });
+	*/    
+	    $(function(){
+	    	//点击换一场
+	    	$('.gb-btn-hyc').on('click',function(){
+	    		$('.swiper-button-next').click();
+	    	})
+	    	
+
+	    	
+	    	//选择胜率
+	    	$('.gfo-nav-02').children().on('click',function(){
+	    		var clickClass = 'gfo-nav-02-click';
+	    		$('.gfo-nav-02').children().removeClass(clickClass);
+	    		$(this).addClass(clickClass);
+	    	})
+	    	
+	    	//点击减少投注吉祥物
+	    	$('.fgt-btn-left').on('click',function(){
+	    		var changeInput = $('.fgt-input-number');
+	    		//大于1时才可以减少
+	    		if(changeInput.val()>1)
+	    		{
+	    			changeInput.val(parseInt(changeInput.val())-10)
+	    		}
+	    	})
+	    	
+	    	//点击增加投注吉祥物
+	    	$('.fgt-btn-right').on('click',function(){
+	    		var changeInput = $('.fgt-input-number');
+	    		changeInput.val(parseInt(changeInput.val())+10)
+	    	})
+	    	
+	    	//点击"全部投注"
+	    	$('.fg-checkbox').on('click',function(){
+	    		var checkType = $(this).is(':checked'),
+	    			myAll = $('.my-jxw-val-all'); //我的吉祥物总数
+	    		if(checkType == true)
+	    		{
+	    			$('.fgt-input-number').val(myAll.val());
+	    		}
+	    	})
+	    	
+	    	//吉祥物总数显示
+	    	$('.gh-h-01').html($('.my-jxw-val-all').val());
+	    	
+	    	//点击“马上投注”
+	    	$('.gf-btn-mstz').on('click',function(){
+	    		var myAll = $('.my-jxw-val-all'), //我的吉祥物总数
+	    			inputNumber = $('.fgt-input-number');
+	    		var score = $('.gfo-nav-02-click').children('.gfo-score').val();//选中的序号
+	    		var ts_click = $('.g-btn-tc'),
+	    			ts_title = $('.modal-title-04'),
+	    			ts_body = $('.modal-body-04'),
+	    			ts_01 = '投注失败',
+	    			ts_02 = '投注成功',
+	    			ts_03 = '您的吉祥物数量不足',
+	    			ts_04 = '投注的吉祥物数量必须大于0',
+	    			ts_05 = '恭喜您投注成功！';
+	    		
+	    		var btn_tc_all = $('.game-tc-btn'),		//全部提示按钮
+	    			btn_tc_true = $('.game-tc-btn-true'),	//成功提示按钮
+	    			btn_tc_send = $('.game-tc-btn-send');	//赠送提示按钮
+	    		//判断投注吉祥物必须为正数
+	    		if(parseInt(inputNumber.val())>0)
+	    		{
+	    			//判断投注吉祥物不能大于总数
+		    		//成功
+		    		if(parseInt(myAll.val()) >= parseInt(inputNumber.val()))
+		    		{
+		    			btn_tc_all.hide();
+	    				btn_tc_true.show();
+		    			ts_title.html(ts_02);
+		    			ts_body.html(ts_05);
+		    			ts_click.click();
+		    			//alert('选中的序号为'+score);
+		    		}
+		    		//失败
+		    		else
+		    		{
+		    			btn_tc_all.hide();
+	    				btn_tc_send.show();
+		    			ts_title.html(ts_01);
+		    			ts_body.html(ts_03);
+		    			ts_click.click();
+		    		}
+	    		}
+	    		//失败
+	    		else
+	    		{
+	    			btn_tc_all.hide();
+	    			btn_tc_send.show();
+	    			ts_title.html(ts_01);
+		    		ts_body.html(ts_04);
+		    		ts_click.click();
+	    		}
+	    	})
+	    	
+	    	//过去的秒数
+	    	var last_seconds = 0;
+	    	var time_hours = $('.gb-h-02').children('span').eq(0).html(),
+	    		time_minutes = $('.gb-h-02').children('span').eq(1).html(),
+	    		time_seconds = $('.gb-h-02').children('span').eq(2).html();
+	    	//总秒数
+	    	var all_seconds = parseInt(time_hours)*3600 + parseInt(time_minutes)*60 + parseInt(time_seconds);
+	    	//倒计时函数
+	    	function gameOver(){
+	    		last_seconds = parseInt(last_seconds)+ 1;
+	    		//当前总秒数
+	    		_seconds = all_seconds -last_seconds;
+				//取秒数
+				if(_seconds>=0)
+				{
+					//取秒
+					time_seconds = (_seconds % 60 +1)  -1;
+					if(time_seconds<0)
+					{
+						time_seconds = time_seconds + 60  -1
+					}
+					//取分数 有问题
+					time_minutes =  parseInt(_seconds/60)%60
+					//取小时
+					time_hours = parseInt(_seconds/3600);
+				}
+	    		$('.gb-h-02').children('span').eq(2).html(addZore(time_seconds))
+	    		$('.gb-h-02').children('span').eq(1).html(addZore(time_minutes))
+	    		$('.gb-h-02').children('span').eq(0).html(addZore(time_hours))
+	    	}
+	    	//加0函数
+	    	function  addZore(num){
+	    		if(parseInt(num)<10)
+	    		{
+	    			num = '0' + parseInt(num);
+	    		}
+	    		return num;
+	    	}
+	    	setInterval(gameOver,1000);
+
+
+	    })
+	    
+    </script>
+
+</body>
+</html>

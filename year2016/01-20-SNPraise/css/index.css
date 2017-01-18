@@ -1,0 +1,33 @@
+.index{
+	background-color: #d80331;
+	padding-bottom: 20px;
+}
+.i-header{
+	position: relative;
+}
+.i-header p{
+	position: absolute;
+	bottom: 2%;
+	left: 0;
+	margin: 0;
+	width: 100%;
+	text-align: center;
+	color: white;
+	font-size: 16px;
+}
+.i-body{
+	background-image: url(../images/dz-09.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color: black;
+	padding: 10% 5% 5% 5%;
+}
+.i-body h1{
+	font-size: 16px;
+	line-height: 28px;
+	margin: 0;
+}
+.i-body p{
+	font-size: 14px;
+	line-height: 24px;
+}

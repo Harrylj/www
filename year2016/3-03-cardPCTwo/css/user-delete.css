@@ -1,0 +1,174 @@
+/*two*/
+.ud-phone-search{
+	margin: 15px;
+	text-align: center;
+}
+.ud-input{
+	border: 1px solid #ccc;
+	background-color: transparent;
+	border-radius: 4px;
+	width: 200px;
+	font-size: 16px;
+	color: #333;
+	height: 36px;
+	line-height: 36px;
+	letter-spacing: 2px;
+}
+.ud-input-phone{
+	padding-left: 24px;
+	/*
+	background-image: url(../images/public-08.png);
+	*/
+	background-repeat: no-repeat;
+	background-position: 2px;
+}
+
+.ud-btn{
+	height: 36px;
+	line-height: 30px;
+	border: none;
+	padding: 0 20px;
+	color: white;
+	letter-spacing: 3px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.ud-btn-cz{
+	background-color: #ff5454;
+	font-size: 16px;
+}
+.ud-card{
+	margin-bottom: 20px;
+}
+
+.ud-card-status{
+	float: left;
+	width: 30%;
+	margin-right: 2.5%;
+	text-align: center;
+	background-color: transparent;
+	padding: 10px 0 15px 0;
+	margin-bottom: 10px;
+	border: 1px dashed transparent;
+	border-radius: 16px;
+}
+.ud-card-status:hover
+,.ud-card-status-hover{
+	border: 1px dashed #ff5454;
+}
+.ud-card-status img{
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	display: block;
+	margin: auto;
+}
+.ud-card-status p{
+	font-size: 14px;
+	line-height: 36px;
+	height: 36px;
+	color: #666;
+	letter-spacing: 2px;
+	overflow: hidden;
+	margin-left: 75px;
+	text-align: left;
+}
+.ud-card-delete .uc-status
+,.ud-card-wait .uc-status{
+	color: #3dc23a;
+}
+.ud-card-status .ud-btn{
+	margin-top: 10px;
+	font-size: 18px;
+	border-radius: 16px;
+	height: 32px;
+	font-size: 16px;
+	line-height: 32px;
+	padding: 0 30px;
+}
+.ud-card-wait .ud-btn
+,.ud-card-success .ud-btn{
+	background-color: #d5d5d5;
+	color: black;
+}
+.ud-card-delete .ud-btn{
+	background-color: #ff5454;
+	color: white;
+}
+
+.ud-input-yzm{
+	padding: 0 8px;	
+}
+.ud-btn-hqyzm{
+	background-color: #3dc23a;
+	font-size: 16px;
+}
+
+.ud-ts-p{
+	height: 40px;
+	line-height: 40px;
+	color: red;
+}
+.ud-btn-ljgs{
+	display: block;
+	margin: auto;
+	background-color: #ff5454;
+	font-size: 18px;
+	padding: 0 145px;
+}
+
+.ud-ts-div{
+	margin-top: 50px;
+	color: red;
+}
+.ud-ts-div h1{
+	font-size: 16px;
+	letter-spacing: 3px;
+	line-height: 36px;
+}
+.ud-ts-div p{
+	padding-left: 20px;
+	font-size: 14px;
+	line-height: 26px;
+	letter-spacing: 2px;
+	color: #666;
+}
+.ud-yzm-get{
+	text-align: center;
+	margin-top: 30px;
+}
+.ud-content{
+	padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

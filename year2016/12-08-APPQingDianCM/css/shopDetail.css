@@ -1,0 +1,49 @@
+.shop-detail{
+	background-color: #efeff4;
+}
+.sd-footer{
+	margin-top: 15px;
+}
+.sd-footer h3{
+	line-height: 46px;
+	font-size: 18px;
+	padding: 0 10px;
+	color: black;
+	border-bottom:1px solid #E0E0E0;
+}
+.sbcl-footer{
+	border: none;
+	text-align: left;
+	padding: 0;
+}
+.sd-header
+,.sd-body
+,.sd-footer{
+	background-color: white;
+}
+.sd-header h1{
+	line-height: 36px;
+	border-bottom: 2px solid #E0E0E0;
+	color: #B2B2B2;
+	padding-left: 36px;
+	background-image: url(../images/sd-01.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 10px center;
+	font-size: 16px;
+}
+.sdf-list-div .sbc-list{
+	padding-bottom: 0;
+}
+.sdf-line{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #E0E0E0;
+}
+.sbcl-img-list img{
+	width: 48%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
+.sbc-list p{
+	max-height: 9999px;
+}

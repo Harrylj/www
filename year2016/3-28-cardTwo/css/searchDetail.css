@@ -1,0 +1,49 @@
+.sd-header{
+	position: relative;
+	background-color: #f1f1f1;
+	height: 48px;
+	padding: 8px;
+}
+.sdh-input{
+	float: left;
+	width: 80%;
+	height: 32px;
+	border: 1px solid #ccc;
+	line-height: 30px;
+	background-image: url(../images/search-buy.png);
+	background-position: 5px center;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	padding-left: 30px;
+	font-size: 1.125rem;
+	border-radius: 6px;
+	letter-spacing: 2px;
+}
+.sdh-btn-qx{
+	float: right;
+	cursor: pointer;
+	width: 18%;
+	border: none;
+	background-color: transparent;
+	height: 32px;
+	line-height: 32px;
+	font-size: 1.25rem;
+	text-align: center;
+	color: black;	
+}
+
+.sdb-btn{
+	background-color: transparent;
+	border: 1px solid #FF4C4C;
+	color: #FF4C4C;
+	padding: 0 15px;
+	height: 40px;
+	line-height: 38px;
+	font-size: 1.25rem;
+	margin: 10px 15px;
+	border-radius: 20px;
+	cursor: pointer;
+}
+.sdb-select{
+	text-align: center;
+}

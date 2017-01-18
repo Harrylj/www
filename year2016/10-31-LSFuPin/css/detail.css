@@ -1,0 +1,107 @@
+body{
+	overflow-x: hidden;
+}
+.detail{
+	position: relative
+}
+
+
+main{
+	padding: 0;
+}
+.game-user{
+	height: auto;
+	width: 100%;
+}
+.number-father{
+	position: relative;
+	display: inline-block;
+	width: 60%;
+	line-height: 32px;
+	height: 32px;
+	margin-bottom: 10px;
+	border-radius: 16px;
+	text-align: left;
+	background-repeat: no-repeat;
+
+}
+
+.love-number-bg{
+	position: absolute;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background-color: black;
+	opacity: .3;
+	border-radius: 12px;
+
+}
+.love-number{
+	display: inline-block;
+	padding-left: 25px;
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 0 center;
+	background-image: url(../images/detail-02.png);
+	font-size: 16px;
+	color: white;
+	letter-spacing: 1px;
+	position: relative;
+	z-index: 2;
+	color: white;
+}
+.love-number-click{
+ }
+ /*2015-08-31*/
+ .detail-bottom{
+ 	position: fixed;
+ 	bottom: 0;
+ 	width: 100%;
+ 	max-width: 768px;
+ 	z-index: 22;
+ 	text-align: center;
+ }
+ .detail-text{
+ 	color: white;
+ }
+.text-father{
+	position: relative;
+}
+.text-bg{
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	opacity: .2;
+}
+.detail-text{
+	position: relative;
+	z-index: 2;
+	line-height: 24px;
+	font-size: 1.125rem;
+	padding: 10px;
+	width: 100%;
+	letter-spacing: 2px;
+}
+.detail-main{
+	position: relative
+}
+.game-btn-send{
+	border: none;
+	color: transparent;
+	line-height: 30px;
+	background-color: transparent;
+	font-size: 16px;
+	cursor: pointer;
+	background-image: url(../images/game-btn-01.png);
+	width: 32px;
+	height: 32px;
+	background-size: 32px 24px;
+	background-repeat: no-repeat;
+	background-position: center center;
+}

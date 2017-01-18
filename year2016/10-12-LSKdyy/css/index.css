@@ -1,0 +1,12 @@
+.index-ul li{
+	width: 33.33%;
+	float: left;
+	text-align: center;
+	padding-bottom: 10px;
+}
+.index-ul img{
+	width: 90%;
+}
+.index-body{
+	padding: 10px;
+}

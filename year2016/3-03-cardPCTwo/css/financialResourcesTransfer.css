@@ -1,0 +1,72 @@
+body{
+	letter-spacing: 2px;
+}
+.job{
+	position: relative;
+}
+.frt-gray{
+	color: #999;
+	position: relative;
+}
+.frt-body{
+	padding: 20px;
+}
+.frt-body h1{
+	color: black;
+	font-size: 17px;
+	line-height: 50px;
+	margin-bottom: 10px;
+}
+.frt-red{
+	color: red;
+}
+.frt-table{
+	width: 100%;
+	border: 1px solid #ccc;
+}
+.frt-table th{
+	background-color: #e6e6e6;
+	height: 40px;
+	line-height: 40px;
+	color: #333;
+	text-align: center;
+}
+.frt-table tr:hover td{
+	background-color: #F2F2F2;
+}
+.frt-table td{
+	height: 60px;
+	line-height: 60px;
+	color: #333;
+	text-align: center;
+}
+.frt-btn{
+	height: 36px;
+	line-height: 32px;
+	border: none;
+	width: 120px;
+	text-align: center;
+	letter-spacing: 2px;
+	border-radius: 6px;
+	cursor: pointer;
+}
+.frt-btn:hover{
+	opacity: .8;
+}
+.frt-btn-mszy
+,.frt-btn-ok
+,.frt-btn-qd{
+	background-color: #0eb3d4;
+	color: white;
+}
+.frt-btn-zyz
+,.frt-btn-zbzy
+,.frt-btn-msck{
+	background-color: #ff4355;
+	color: white;
+}
+.frt-btn-yjzy{
+	background-color: #c9c9c9;
+	color: #333;
+}
+

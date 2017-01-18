@@ -1,0 +1,255 @@
+/*two */
+
+.login-form-fahter{
+	display: none;
+	position: fixed;
+	top: 18%;
+	left: 50%;
+	background-color: transparent;
+	border-radius: 4px;
+	padding: 10px;
+	z-index: 101;
+	margin-left: -160px;
+	background-image: url(../images/two/two-img-bg.png);
+	_position: absolute;
+	_top:18%;
+	_left:50%;
+}
+.login-form{
+	border-radius: 4px;
+	padding: 10px;
+	width: 300px;
+	position: relative;
+}
+.login-form h1{
+	margin-bottom: 10px;
+	color: white;
+	line-height: 36px;
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 1px;
+}
+.login-ul{
+	
+}
+.login-ul li{
+	position: relative;
+	height: 36px;
+	margin-bottom: 10px;
+
+	
+}
+.login-ul input{
+	border: 1px solid #ccc;
+	border-radius: 0;
+	line-height: 32px;
+	height: 32px;
+	letter-spacing: 2px;
+	color: #191a1a;
+}
+.register-input-password-again
+, .register-input-password {
+	width: 289px;
+	padding-left: 10px;
+	background-repeat: no-repeat;
+	background-position: 8px 5px;
+	font-size: 16px;
+}
+
+.login-input-phone, .login-input-pwd, .register-input-phone, .register-input-yzm {
+    width: 264px;
+    padding-left: 34px;
+    background-repeat: no-repeat;
+    background-position: 8px 5px;
+    font-size: 16px;
+}
+
+.login-input-yzm {
+    width: 264px;
+    padding-left: 34px;
+    background-repeat: no-repeat;
+    background-position: 8px 6px;
+    font-size: 16px;
+}
+
+.login-input-phone
+,.register-input-phone{
+	background-image: url(../images/public-03.png);
+}
+.login-input-yzm
+,.login-input-pwd
+,.register-input-yzm{
+	background-image: url(../images/public-04.png);
+}
+.login-input-tpyzm
+,.register-input-tpyzm{
+	font-size: 14px;
+	text-align: center;
+	width: 48%;
+	
+}
+.login-tpyzm
+,.register-tpyzm{
+	position: absolute;
+	right: 8px;
+	width: 48%;
+	height: 32px;
+	cursor: pointer;
+	top: 0;
+}
+.login-ul .login-btn-hqyzm
+,.login-ul .login-btn-next
+,.login-ul .register-btn-hqyzm
+,.login-ul .register-btn-next{
+	position: absolute;
+	top: 5px;
+	right: 0px;
+	border: none;
+	border-left: 1px solid #969696;
+	background-color: transparent;
+	border-radius: 0;
+	line-height: 24px;
+	padding: 0 15px 0 12px;
+	color: red;
+	height: 24px;
+	cursor: pointer;
+}
+.login-ts
+,.register-ts
+,.register-next-ts{
+	color: red;
+	font-size: 14px;
+}
+
+.login-ul .login-btn-login
+,.login-ul .register-btn-next{
+	background-color: #0EB3D4;
+	color: white;
+	width: 100%;
+	letter-spacing: 10px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 4px;
+	border:  none;
+}
+.login-btn-login:hover{
+	opacity: .8;
+}
+.login-ul .login-ul-footer{
+	margin: 0;
+}
+.login-ul-footer a{
+	position: relative;
+	color: white;
+	line-height: 32px;
+	font-size: 14px;
+}
+.login-a-left{
+	float: left;
+}
+.login-a-right{
+	float: right;
+}
+
+
+.login-p-01{
+	font-size: 15px;
+	letter-spacing: 2px;
+}
+
+.login-ul .login-ts-father{
+	height: 26px;
+	line-height: 26px;
+	margin: 0;
+}
+.login-ul .line-height-60{
+	height: 60px;
+	line-height: 60px;
+}
+.login-footer-father{
+	background-color: #0EB3D4;
+}
+
+
+
+.register-content-father{
+	background-color: white;
+	height: 600px;
+}
+.register .register-form-fahter{
+
+	position: absolute;
+	left: 50%;
+	margin-left: -200px;
+}
+.register-form{
+	border:none;
+	width: 300px;
+}
+.register-form li{
+	position: relative;
+	height: 40px;
+	line-height: 40px;
+	margin-bottom: 20px;
+}
+.register-form input{
+	line-height: 40px;
+	height: 40px;
+}
+.register-ul span{
+	position: absolute;
+	left: -130px;
+	width: 120px;
+	display: block;
+	text-align: right;
+	color: #333;
+	letter-spacing: 2px;
+}
+
+
+.register .register-input-phone
+,.register .register-input-yzm{
+	background-position: 8px 10px;
+}
+
+
+.register-ul .register-btn-hqyzm{
+	top: 10px;
+}
+
+
+.register-next-ul input{
+	width: 290px;
+	padding-left: 10px;
+}
+
+.card-number{
+	font-size: 22px;
+	letter-spacing: 2px;
+	color: #0EB3D4;
+}
+.login-ul .login-li-right{
+	text-align: right;
+	margin: 0;
+}
+.login-li-right a{
+	color: white;
+	font-size: 14px;
+	line-height: 36px;
+}
+.login-btn-close{
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	background-color: transparent;
+	background-image: url(../images/two/two-img-close.png);
+	background-position: center center;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	border: none;
+	width: 20px;
+	height: 20px;
+}
+

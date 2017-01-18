@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/buyPhoneNumber.css"/>
+    <title>手机靓号</title>
+	<style type="text/css">
+
+    </style>
+</head>
+<body>
+	<div class="buy-phone-number">
+		<div class="bpn-header">
+			<h1>18699876588</h1>
+			<p>预存话费300元</p>
+		</div>
+		<div class="bpn-body">
+			<ul class="bpn-ul">
+				<li>用户姓名&nbsp;&nbsp;<input class="bpn-input bpn-input-name" type="text" placeholder="请输入您的姓名" /></li>
+				<li>身份验证&nbsp;&nbsp;<input class="bpn-input bpn-input-type" type="text" placeholder="请输入您的身份证号码" /></li>
+				<li>联系方式&nbsp;&nbsp;<input class="bpn-input bpn-input-phone" type="tel" placeholder="请输入您的联系方式" /></li>
+				<li>取号地址&nbsp;&nbsp;
+					<select class="bpn-select">
+						<option selected="selected">请选择取号地址</option>
+						<option value="">地址1</option>
+						<option value="">地址2</option>
+						<option value="">地址1</option>
+						<option value="">地址1</option>
+						<option value="">地址1</option>
+					</select>
+				</li>
+			</ul>
+			<p class="bpn-ts">错误提示</p>
+		</div>
+		<div class="bpn-footer">
+			<p>总金额:&yen;<span>6789.9</span></p>
+			<button class="bpn-btn-ljyy" type="button">立即预约</button>
+			<div class="clear"></div>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			 //进入页面时提示清空
+			 $('.bpn-ts').html('');
+			 
+			 //点击“立刻预约”
+			 $('.bpn-btn-ljyy').on('click',function(){
+			 	var inputName = $('.bpn-input-name'),
+			 		inputType = $('.bpn-input-type'),
+			 		inputPhone = $('.bpn-input-phone'),
+			 		gs = /^1\d{10}$/,
+			 		ts = $('.bpn-ts'),
+			 		ts_01 = '姓名，身份证号码，联系方式都不能为空！',
+			 		ts_02 = '电话号码格式不正确！';
+			 	
+			 	//姓名，身份证号码，联系方式都不能为空！
+			 	if(inputName.val()=='' || inputType.val()=='' || inputPhone.val()=='')
+			 	{
+			 		ts.html(ts_01)
+			 	}
+			 	//电话号码格式不正确！
+			 	else if(!gs.test(inputPhone.val()))
+			 	{
+			 		ts.html(ts_02)
+			 	}
+			 	else
+			 	{
+			 		ts.html('');
+			 		alert('预约成功！');
+			 	}
+			 })
+		})
+	</script>
+</body>
+</html>

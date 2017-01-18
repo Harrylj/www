@@ -1,0 +1,144 @@
+body{
+	margin: 0;
+}
+.picture{
+	padding: 10px 10px 0 10px;
+	background-image: url(../images/yj-05.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.picture-header{
+	color: black;
+	padding: 10px;
+}
+.picture-header h1{
+	margin: 0;
+	font-size: 24px;
+	line-height: 50px;
+	text-align: center;
+}
+.picture-header h2{
+	margin: 0;
+	font-size: 20px;
+	line-height: 40px;
+	text-align: center;
+}
+.picture-header p{
+	color: black;
+	font-size: 14px;
+	line-height: 24px;
+}
+.pb-list{
+	display: inline-block;
+	width: 120px;
+	margin: 10px;
+	
+}
+.pb-list h1{
+	margin: 0;
+	color: black;
+	text-align: center;
+	font-size: 16px;
+	height: 32px;
+	line-break: 32px;
+	overflow: hidden;
+}
+.pb-list img{
+	width: 120px;
+	height: 120px;
+	border-radius: 8px;
+	
+}
+.p-btn{
+	width: 100%;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	height: 40px;
+	margin-top: 10px;
+	border: none;
+	
+}
+.p-btn-no{
+	background-image: url(../images/yj-03.png);
+}
+.p-btn-ok{
+	background-image: url(../images/yj-04.png);
+}
+.picture-footer{
+	border-radius:  10px 10px 0 0;
+	margin-top:20px ;
+	padding: 10px 10px 10px;
+	height: 280px;
+	overflow: hidden;
+	background-color:rgba(0,0,0,0.4);
+}
+.picture-footer h1{
+	margin: 0;
+	color: white;
+	font-size: 14px;
+	line-height: 32px;
+}
+.pf-img{
+	float: left;
+	width: 80px;
+	margin: 5px;
+}
+.pf-img img{
+	width: 80px;
+	height: 80px;
+	border-radius: 8px;
+}
+.pf-img p{
+	font-size: 12px;
+	letter-spacing: 0;
+	color: white;
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+	text-align: center;
+}
+.picture-body{
+	text-align: center;
+}
+.modal-header{
+	border: none;
+}
+.modal-title{
+	text-align: center;
+}
+.modal-footer{
+	border-top: 2px solid #999;
+}
+.btn-default{
+	border: none;
+	width: 100%;
+	text-align: center;
+}
+.modal-body{
+	padding-top: 0;
+}
+
+.share{
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	max-width: 768px;
+	left: 0;
+	top: 0;
+	background-color:rgba(0,0,0,0.4);
+}
+.btn-msfx{
+	display: block;
+	margin: 20px auto;
+	width: 140px;
+	height: 40px;
+	background-image: url(../images/yj-07.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.btn-one
+,.btn-two{
+	display: none;
+}

@@ -1,0 +1,25 @@
+.cd-ul-01 li:nth-child(2){
+	width: 70%;
+}
+.cd-ul-01 li:nth-child(3){
+	width: 5%;
+}
+.tc-modal{
+	display: none;
+}
+.modal-dialog{
+    top: 20%;
+ }
+.modal-header{
+ 	border: none;
+ }
+.modal-footer{
+	border: none;	
+}
+.modal-title{
+	color: red;
+	text-align: center;
+}
+.modal-body{
+	letter-spacing: 2px;
+}

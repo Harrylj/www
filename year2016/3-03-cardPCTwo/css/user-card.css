@@ -1,0 +1,260 @@
+/*two*/
+.uc-c-top{
+	margin-bottom: 20px;
+}
+.uc-c-left{
+	width: 240px;
+	text-align: center;
+}
+.uc-c-right{
+	width: 740px;
+	padding:10px 0 0 10px;
+	
+}
+.uc-user-info{
+	padding-left: 20px;
+	padding-bottom: 20px;
+	padding-right: 10px;
+}
+.uc-user-title{
+	color: #0eb3d4;
+	font-size: 14px;
+	line-height: 28px;
+	letter-spacing: 2px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+.uc-user-img{
+	height: 120px;
+	width: 120px;
+	border-radius: 50%;
+	border:1px solid #ccc;
+	box-shadow: 0 0 5px #ccc;
+	margin-top:-60px;
+}
+.uc-user-info p{
+	color: #666;
+	font-size: 14px;
+	line-height: 30px;
+	letter-spacing: 2px;
+}
+.uc-user-info .user-info-month{
+	color: #0EB3D4;
+}
+.uc-notice{
+	border: 1px solid #ccc;
+	padding: 10px 10px 20px 10px;
+	border-radius: 8px;
+}
+.uc-notice-top{
+	margin: auto;
+	display: block;
+}
+.uc-notice h1{
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	color: black;
+	font-size: 14px;
+	line-height: 50px;
+	letter-spacing: 3px;
+	
+}
+
+.uc-notice li{
+	font-size: 12px;
+	line-height: 24px;
+	letter-spacing: 2px;
+	text-align: left;
+}
+.uc-notice a{
+	color: #0EB3D4;
+}
+.uc-bill{
+	padding: 8px;
+}
+.uc-bill h1{
+	position: relative;
+	font-size: 20px;
+	line-height: 50px;
+	height: 50px;
+	letter-spacing: 4px;
+	border-bottom: 1px solid #ccc;
+}
+.uc-list{
+	position: absolute;
+	left: 100px;
+	top: 20px;
+	
+}
+.uc-list li{
+	float: left;
+	font-size: 14px;
+	height: 16px;
+	line-height: 16px;
+	color: #ff5a85;
+	border-left: 1px solid #ff5a85;
+	letter-spacing: 2px;
+	padding: 0 8px;
+	cursor: pointer;
+}
+.uc-table-father{
+	padding: 0 10px 10px 10px;
+}
+.uc-table{
+	width: 100%;
+}
+
+.uc-table th
+,.uc-table td{
+	border-bottom: 1px solid #ccc;
+	vertical-align: middle;
+	letter-spacing: 2px;
+}
+.uc-table th{
+	color: black;
+	height: 40px;
+	font-size: 14px;
+		
+}
+.uc-table td{
+	height: 90px;
+	line-height: 26px;
+	font-size: 14px;
+}
+.uc-table .uc-td-01{
+	color: #999;
+	font-size: 12px;
+}
+.uc-p-01{
+	color: black;
+}
+.uc-p-02{
+	color: #999;
+}
+.uc-deal-number{
+	color: black;
+	font-size: 20px;;
+}
+.uc-deal-ok .uc-deal-status{
+	color: #999;
+}
+.uc-deal-delete .uc-deal-status{
+	color: black;
+}
+.uc-deal-ing .uc-deal-status{
+	color: red;
+}
+.uc-c-right{
+	position: relative;
+	padding-top: 40px;
+}
+.uc-c-right h1{
+	text-align: center;
+	font-size: 16px;
+	color: #ff5a85;
+	line-height: 40px;
+}
+.uc-c-right{
+	color: #ff5a85;
+}
+.uc-c-right .uc-money-number{
+	margin-top: 40px;
+	line-height: 50px;
+	font-size: 28px;
+}
+.uc-money-left .uc-money-number
+,.uc-money-left p{
+	padding-left: 15px;
+	text-align: center;
+}
+.uc-money-right .uc-money-number
+,.uc-money-right p{
+	padding-right: 15px;
+	text-align: center;
+}
+.uc-money{
+	position: absolute;
+	top: 100px;
+	left: 50%;
+	width: 150px;
+	height: 150px;
+	background-repeat: no-repeat;
+}
+.uc-money-left{
+	background-image: url(../images/two/two-img-09.png);
+	margin-left: -160px;
+}
+.uc-money-right{
+	margin-left: 0px;
+	background-image: url(../images/two/two-img-10.png);
+}
+.uc-c-p-02{
+	font-size: 14px;
+}
+.uc-c-p-01
+,.uc-c-p-03{
+	position: absolute;
+	top: 150px;
+	font-size: 14px;
+	line-height: 28px;
+}
+.uc-c-p-01{
+	text-align: right;
+	right: 72%;
+}
+.uc-c-p-03{
+	left: 72%;
+	text-align: left;
+}
+.uc-c-p-04{
+	position: absolute;
+	top: 252px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	
+}
+.uc-btn-mscz{
+	position: absolute;
+	top: 290px;
+	left: 50%;
+	margin-left: -56px;
+	width: 115px;
+	height: 27px;
+	background-image: url(../images/two/two-img-11.png);
+	background-repeat: no-repeat;
+	
+}
+.uc-list .uc-list-hover{
+	color: black;
+}
+
+.uc-deal-down .uc-deal-number{
+	color: red;
+}
+.uc-deal-up .uc-deal-number{
+	color: #999;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

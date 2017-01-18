@@ -1,0 +1,7 @@
+html
+第二个和第三个.index-fg class 添加  index-fg-btn
+内容添加
+<a href="share"><button class="index-btn-02">详情</button></a>
+
+
+.ib-list-03 添加 style="margin-top: -8px;"

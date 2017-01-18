@@ -1,0 +1,66 @@
+1.game.html
+	(1):<img class="img-100" src="images/game-31.jpg" />
+	(2):删除旧的活动规则
+	（3）：.list-goods-footer内添加<button class="game-btn-send" type="button">送花</button>
+	(4):public.js--- .love-number点击事件修改
+
+	$('.game-list').on('click','.list-goods',function(){
+		var thisClick =$(this).children().children('.game-btn-send');
+		var lastNmuber= $('.last-number'),
+			loveNumber = thisClick.siblings('.number-father').children('.love-number'),
+			tpNumber = $('.tp-number'),
+			zzc = $('.zzc'),
+			jxtp = $('.jxtp'),
+			mscj = $('.mscj'),
+			over = $('.over');
+			
+		
+		//第一次投票
+		if(tpNumber.val()=='0')
+		{
+			loveNumber.html(parseInt(loveNumber.html())+1);
+			lastNmuber.val(parseInt(lastNmuber.val())-1);
+			tpNumber.val(parseInt(tpNumber.val())+1);
+			zzc.show();
+			jxtp.show();
+			
+			$.tipsBox({
+				obj: $(this),
+				str: "+1",
+			});
+		}
+		//最后一次投票抽奖
+		else if(tpNumber.val()=='4')
+		{
+			loveNumber.html(parseInt(loveNumber.html())+1);
+			lastNmuber.val(parseInt(lastNmuber.val())-1);
+			tpNumber.val(parseInt(tpNumber.val())+1);
+			zzc.show();
+			mscj.show();
+			
+			$.tipsBox({
+				obj: $(this),
+				str: "+1",
+			});
+		}
+		//可以投票但不提示抽奖
+		else if(parseInt(lastNmuber.val())>0)
+		{
+			loveNumber.html(parseInt(loveNumber.html())+1);
+			lastNmuber.val(parseInt(lastNmuber.val())-1);
+			tpNumber.val(parseInt(tpNumber.val())+1);
+			
+			$.tipsBox({
+				obj: $(this),
+				str: "+1",
+			});
+		}
+		//不能投票
+		else if(lastNmuber.val()=='0')
+		{
+			zzc.show();
+			over.show();
+		}
+		//运行投票资格函数
+		vote();
+	});

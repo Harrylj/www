@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/application.css"/>
+    <title>精品应用</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="application">
+		<div class="application-body">
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-01.jpg" />
+				<ul class="abl-ul">
+					<li>和生活</li>
+					<li>一站式本地生活服务</li>
+				</ul>
+				<a class="abl-btn-a" href="http://d.wxcs.cn">下载</a>
+			</div>
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-02.jpg" />
+				<ul class="abl-ul">
+					<li>蜀锦畅游</li>
+					<li>一站式综合旅游服务平台</li>
+				</ul>
+				<a class="abl-btn-a" href="http://chengdu.wxcs.cn/">下载</a>
+			</div>
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-03.png" />
+				<ul class="abl-ul">
+					<li>和百信</li>
+					<li>融生活、信安、电商于一体的本地综合数字化服务平台</li>
+				</ul>
+				<a class="abl-btn-a" href="http://223.87.10.65/client/downloadInit">下载</a>
+			</div>
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-04.png" />
+				<ul class="abl-ul">
+					<li>和多号</li>
+					<li>满足客户使用不同号码与不同人群进行语音、短信交流</li>
+				</ul>
+				<a class="abl-btn-a" href="http://ykdh.10086.cn/download">下载</a>
+			</div>
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-05.png" />
+				<ul class="abl-ul">
+					<li>四川移动掌厅</li>
+					<li> 业务一触惠订</li>
+				</ul>
+				<a class="abl-btn-a" href="http://www.sc.10086.cn/app/download_mobile.html?channel=suining_1&WT.mc_ev=suining_1">下载</a>
+			</div>
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-06.jpg" />
+				<ul class="abl-ul">
+					<li>咪咕音乐</li>
+					<li>只为热爱音乐的你</li>
+				</ul>
+				<a class="abl-btn-a" href="http://openbox.mobilem.360.cn/Qing/app?sid=201224&auto=1">下载</a>
+			</div>
+			
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-07.jpg" />
+				<ul class="abl-ul">
+					<li>和视频</li>
+					<li>为你提供在线免费视频服务，正版，高清，海量内容，流畅舒适的观看体验......</li>
+				</ul>
+				<a class="abl-btn-a" href="http://m.cmvideo.cn/wap/resource/mh/down/index.html">下载</a>
+			</div>
+			<div class="ab-list">
+				<img class="abl-img" src="images/application-08.png" />
+				<ul class="abl-ul">
+					<li>咪咕影院</li>
+					<li>  提供最新、最全、最高品质的独家电影内容及最新电影资讯</li>
+				</ul>
+				<a class="abl-btn-a" href="http://www.lovev.com/lovev/app/index.jsp#/downLoadmg">下载</a>
+			</div>
+			
+		</div>
+	</div>
+	<img class="app-ts" src="images/application-ts.png"/>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			window.onload = function(){
+			    if(isWeiXin()){
+			       $('.abl-btn-a').on('click',function(){
+			       		$('.app-ts').show();
+			       		return false;
+			       })
+			    }
+			}
+			function isWeiXin(){
+			    var ua = window.navigator.userAgent.toLowerCase();
+			    if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+			        return true;
+			    }else{
+			        return false;
+			    }
+			}
+		})
+		
+		
+	</script>
+</body>
+</html>

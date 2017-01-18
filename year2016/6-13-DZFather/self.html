@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/self.css"/>
+    <title>点亮我</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="self">
+		<div class="self-header">
+			<img src="images/self-01.png" />
+		</div>
+		<div class="self-body">
+			<div class="sb-list-div">
+				<!--
+                	作者：648267773@qq.com
+                	时间：2016-06-14
+                	描述：.sb-list-ok:表示已点亮
+                -->
+				<table class="sb-list-table" border="0" cellspacing="0" cellpadding="0">
+					<tr class="sb-list-ok">
+						<td>01</td>
+						<td>老爸！您辛苦了</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr class="sb-list-ok">
+						<td>02</td>
+						<td>父亲节，祝天下父母健康、平安</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>03</td>
+						<td>一年一度您的日子，在没有我在身边的时候希望
+也能快快乐乐过每一分每一秒</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>04</td>
+						<td>父亲节，别吝啬你的时间，抽空陪他聊会天；别吝啬你的
+拥抱，给他一个大拥抱；别吝啬你的赞美，让他知道他的
+美；别吝啬你的话费，多多少少是安慰</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>05</td>
+						<td>父亲节到了，祝父亲晚年没有病和痛，健
+健康康多吉祥</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>06</td>
+						<td>如果，您是一颗沧桑的老树，那么，我愿是那会唱歌的百
+灵，日夜栖在您的枝头鸣叫，换回您的年轻，让您永远青
+翠。爸爸，我爱您！</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>07</td>
+						<td>父亲是我生命里永远的太阳，祝老汉节日快乐！</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>08</td>
+						<td>父亲永远是我心中最帅的辣个男人，
+祝老爸永远年轻！</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>09</td>
+						<td>父亲节不送烟酒，只说句真情实话。
+今生你是我严父，来世我仍叫你爸。</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+					<tr>
+						<td>10</td>
+						<td>愿此后有更多的时间陪伴父母亲，
+陪伴才是最长情的告白</td>
+						<td><button class="sbl-btn"></button></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="self-footer">
+			<button class="sf-btn">找朋友点亮</button>
+		</div>
+	</div>
+	<img class="share-img" src="images/share-01.png"/>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//点击进行分享
+			$('.sf-btn').on('click',function(){
+				$('.share-img').show();
+			})
+			//点击隐藏分享图片
+			$('.share-img').on('click',function(){
+				$(this).hide();
+			})
+			
+		})
+	</script>
+</body>
+</html>

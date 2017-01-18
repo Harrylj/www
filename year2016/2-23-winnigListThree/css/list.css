@@ -1,0 +1,42 @@
+body{
+
+}
+.list-list{
+	margin-bottom: 20px;
+	/*
+	background-image: url(../images/sd-02.png);
+	background-size: 100% 100%;
+	*/
+	border: 2px dashed white;
+	padding: 0 20px 40px 20px;
+	min-height: 100px;
+	border-radius: 10px;
+	
+}
+.list-list h1{
+	text-align: center;
+	font-size: 1.25rem;
+	color: white;
+	line-height: 30px;
+}
+.list-list ul{
+	width: 100%;
+}
+.list-list li{
+	width: 50%;
+	text-align: center;
+	color: #5c8f35;
+	float: left;
+	font-size: 1.25rem;
+	line-height: 28px;
+}
+.list-body{
+	padding: 5px;
+}
+.list-list p{
+	padding: 10px 20px;
+	font-size: 1.125rem;
+	color: white;
+	font-size: 1.125rem;
+	line-height: 28px;
+}

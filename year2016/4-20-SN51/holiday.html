@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/holiday.css"/>
+    <title>五一劳动  畅享流量包</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<a class="none anzhuo-01" href="sms:10086?body=WYTH">安卓1</a>
+    <a class="none click-msg-01" href="sms:10086&body=WYTH">iPhone1</a>
+    <a class="none anzhuo-02" href="sms:10086?body=MQJ0508">安卓2</a>
+    <a class="none click-msg-02" href="sms:10086&body=MQJ0508">iPhone2</a>
+    
+    
+	<div class="holiday">
+		<div class="h-bg"></div>
+		<div class="h-header">
+			<img class="img-100" src="images/h-06.png" />
+		</div>
+		<div class="h-body">
+			<div class="hb-list">
+				<img class="img-100" src="images/h-07.png"/>
+				<div class="text-center">
+					<button class="hb-btn hb-btn-01">立即办理</button>
+				</div>
+			</div>
+			<div class="hb-list">
+				<img class="img-100" src="images/h-08.png" />
+				<div class="text-center">
+					<button class="hb-btn hb-btn-02">立即办理</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			
+			var ts_all = '请刷新当前页面',
+				ts_phone = '请使用手机点击办理';
+			//给a标签添加点击事件
+			var comment_01 = document.getElementsByTagName('a')[0],
+				comment_02 = document.getElementsByTagName('a')[1],
+				comment_03 = document.getElementsByTagName('a')[2],
+				comment_04 = document.getElementsByTagName('a')[3];
+			if (document.all) 
+			{
+			 // For IE 
+			//comment_01.click();
+			//comment_02.click();
+			} 
+			else if(document.createEvent) 
+			{
+			//FOR DOM2
+			var ev = document.createEvent('MouseEvents');
+			 ev.initEvent('click', false, true);
+			 //comment_01.dispatchEvent(ev);
+			 //comment_02.dispatchEvent(ev);
+			}
+			
+			//第一个立即办理
+			$('.hb-btn-01').on('click',function(){
+				var ua = navigator.userAgent.toLowerCase();	
+					if (/iphone|ipad|ipod/.test(ua)) 
+					{
+						comment_02.dispatchEvent(ev);
+						 window.location.reload();
+						//alert(ts_all)
+					} 
+					else if (/android/.test(ua)) 
+					{
+						
+						comment_01.dispatchEvent(ev);
+						 window.location.reload();
+						//alert(ts_all)
+					}
+					else
+					{
+						 window.location.reload();
+						//alert(ts_phone)
+					}
+					//alert(1);
+			})
+			
+			//第二个立即办理
+			$('.hb-btn-02').on('click',function(){
+				var ua = navigator.userAgent.toLowerCase();	
+					if (/iphone|ipad|ipod/.test(ua)) 
+					{
+						//alert("iphone");
+						comment_04.dispatchEvent(ev);
+						window.location.reload();
+						//alert(ts_all)
+					} 
+					else if (/android/.test(ua)) 
+					{
+						//alert("android");
+						comment_03.dispatchEvent(ev);
+						window.location.reload();
+						//alert(ts_all)
+					}
+					else
+					{
+						window.location.reload();
+						//alert(ts_phone)
+					}
+					//alert(2)
+			})
+			
+		})
+	</script>
+</body>
+</html>

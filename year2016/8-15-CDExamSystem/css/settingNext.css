@@ -1,0 +1,45 @@
+
+body{
+	background-color: #F2F2F2;
+}
+.snb-list{
+	height: 50px;
+	background-color: white;
+}
+.snb-input{
+	width: 100%;
+	padding: 0 15px;
+	height: 50px;
+	line-height: 50px;
+	font-size: 1.25rem;
+	border: none;
+	letter-spacing: 2px;
+}
+.snb-btn{
+	width: 90%;
+	height: 40px;
+	line-height: 38px;
+	color: white;
+	background-color: #FF5C5C;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 6px;
+}
+.snb-ts{
+	line-height: 60px;
+	height: 60px;
+	text-align: center;
+	color: red;
+	font-size: 1.125rem;
+}
+.sn-p-01{
+	font-size: 0.875rem;
+	line-height: 20px;
+	color: #999;
+	padding: 0 10px;
+}
+.snb-list label{
+	width: 30%;
+	padding-left: 20px;
+	line-height: 40px;
+}

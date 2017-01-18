@@ -1,0 +1,39 @@
+body{
+	background-color: #18def0;
+}
+.index{
+	position: relative;
+}
+.index-a-scjt{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	display: inline-block;
+	padding: 0 10px;
+	line-height: 32px;
+	color: black;
+}
+.index-body{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: 100%;
+	
+}
+.index-btn-join{
+	border: none;
+	width: 240px;
+	height: 50px;
+	background-color: transparent;
+	background-image: url(../images/yj-08.png);
+	margin: 10px 0;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.index-ts{
+	padding: 0 10px;
+	color: black;
+	font-size: 14px;
+	letter-spacing: 1px;
+	line-height: 24px;
+}

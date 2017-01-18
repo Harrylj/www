@@ -1,0 +1,106 @@
+body{
+	overflow-x: hidden;
+}
+.join{
+	overflow-x: hidden;
+}
+
+.join-main{
+	margin: 15px 0;
+	position: relative;
+	padding: 10px;
+	
+}
+.jm-bg{
+	position: absolute;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+	opacity: .5;
+	z-index: 0;
+}
+.join-table{
+	position: relative;
+	z-index: 1;
+	width: 100%;
+}
+.join-table td:first-child{
+	font-size: 1.25rem;
+	padding: 0 10px 0 0;
+	color: black;
+}
+
+.join-table tr:nth-child(3) td
+,.join-table tr:nth-child(4) td{
+	vertical-align: top;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	
+}
+.join-table tr:nth-child(3) td:first-child
+,.join-table tr:nth-child(4) td:first-child{
+	padding-top: 15px;
+	
+}
+.join-table tr:nth-child(5) td{
+	padding-top: 0px;
+}
+.join-table td{
+	line-height: 50px;
+}
+.join-input{
+	height: 40px;
+	line-height: 40px;
+	padding: 0 8px;
+	font-size: 1.375rem;
+	letter-spacing: 2px;
+
+}
+.join-input
+,.join-input-text{
+	background-color: #f3f3f3;
+	width: 90%;
+	border: 1px solid #e0e0e0;
+}
+
+.join-input-text{
+	height: 120px;
+	padding: 8px;
+	line-height: 24px;
+	font-size: 1rem;
+	line-height: 26px;
+	letter-spacing: 1px;
+	resize:none;
+}
+.join-img-add{
+	width: 80px;
+	height: 80px;
+}
+.join-btn-msjr{
+	background-color: #ff5581;
+	color: white;
+	height: 40px;
+	font-size: 1.5rem;
+	border: none;
+	width: 100%;
+	border-radius: 8px;
+	letter-spacing: 4px;
+}
+
+.join-btn-msjr:hover{
+	box-shadow: 0 0 10px #ccc;
+
+}
+
+
+
+
+
+
+
+
+
+
+

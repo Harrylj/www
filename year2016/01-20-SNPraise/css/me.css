@@ -1,0 +1,90 @@
+.me{
+	background-color: #d80331;
+	padding-bottom: 20px;
+}
+.me-header{
+	background-image: url(../images/public-bg.png);
+	padding-top: 20px;
+	letter-spacing: 2px;
+	padding-bottom: 25px;
+}
+.me-header h1{
+	color: white;
+	text-align: center;
+	font-size: 22px;
+	line-height: 32px;
+}
+.me-header p{
+	font-size: 16px;
+	line-height: 20px;
+	color: black;
+	text-align: center;
+}
+.me-h-list{
+	position: relative;
+	margin-left: 90px;
+	border-bottom: 1px solid black;
+	color: black;
+	line-height: 24px;
+	height: 100px;
+	font-size: 14px;
+}
+
+.me-h-list:before{
+	position: absolute;
+	left: -80px;
+	top: 0;
+	content: '.';
+	color: transparent;
+	width: 70px;
+	height: 70px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.me-h-list:nth-child(3):before{
+	background-image: url(../images/dz-01.png);
+}
+.me-h-list:nth-child(4):before{
+	background-image: url(../images/dz-02.png);
+}
+.me-h-list:nth-child(5):before{
+	background-image: url(../images/dz-03.png);
+}
+.me-header .me-ts{
+	border: 1px solid black;
+	width: 90%;
+	line-height: 24px;
+	font-size: 14px;
+	color: black;
+	margin: auto;
+}
+.me-body{
+	padding: 0 8px 20px 8px;
+}
+.me-body p{
+	color: white;
+	background-image: url(../images/dz-05.png);
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: 0 center;
+	padding-left:26px;
+	font-size: 14px;
+	line-height: 30px;
+	height: 30px;
+}
+.me-img-list img{
+	margin: 5px;
+	width: 40px;
+}
+.me-btn-hhpyljz{
+	margin-top: -20px;
+}
+.me-f-a{
+	display: block;
+	padding: 0 8px;
+	width: 100%;
+	color: white;
+	font-size: 14px;
+	text-align: right;
+	line-height: 24px;
+}

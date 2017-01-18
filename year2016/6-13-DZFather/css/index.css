@@ -1,0 +1,14 @@
+.index-btn-lqbtx{
+	position: relative;
+	top: 20px;
+	width: 180px;
+	height: 60px;
+	background: transparent url(../images/index-04.png)  no-repeat;
+	border: none;
+	background-size: 100% 100%;
+	
+}
+.index {
+	background-image: url(../images/index-bg.jpg);
+	padding-bottom: 100px;
+}

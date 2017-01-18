@@ -1,0 +1,53 @@
+.zswd{
+	padding: 0 10px 20px 10px;
+}
+.zswd-header{
+	background-image: url(../images/zswd-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 25px 6%;
+}
+.zswd-header p{
+	font-size: 14px;
+	line-height: 24px;
+	color: black;
+}
+.zswd-header p:nth-child(2){
+	text-indent: 2em;
+}
+.zswd-header p:nth-child(3){
+	text-align: right;
+}
+.zswd-body img{
+}
+.zswd-btn-ksks{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	border: none;
+	background-color: #FF4A4A;
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	letter-spacing: 2px;
+	margin: 10px 0;
+}
+.zb-list{
+	position: relative;
+	border: 1px solid #ccc;
+	margin: 8px 0;
+}
+.zb-ts{
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	height: 32px;
+	line-height: 32px;
+	padding:0 15px;
+	font-size: 14px;
+	color: white;
+	margin: 0;
+	letter-spacing: 4px;
+	background: rgba(52, 52, 52, .5);
+}

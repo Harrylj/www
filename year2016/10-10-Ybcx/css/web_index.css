@@ -1,0 +1,164 @@
+/* CSS Document */
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	background: url(../img/i_bg.jpg) no-repeat top center;
+	background-size: 100% 100%;
+}
+
+.intop {
+	padding-top: 300px;
+}
+
+.inbox {
+	width: 420px;
+	margin: 0 auto;
+	border: 2px solid #939393;
+	background-color: #eeeeee;
+	border-radius: 15px;
+	padding: 40px;
+	background: -webkit-linear-gradient(#FFF, #DDD);
+	background: linear-gradient(#FFF, #DDD);
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+	position: relative
+}
+
+.inbox p {
+	margin: 0;
+	padding: 0;
+	height: 80px;
+	font-family: "微软雅黑", "黑体"
+}
+
+.inbox p strong {
+	display: block;
+	float: left;
+	width: 120px;
+	line-height: 60px;
+	font-size: 22px;
+	color: #858585;
+	font-weight: normal
+}
+
+.inbox p input,
+.index-address {
+	height: 40px;
+	margin-top: 10px;
+	letter-spacing: 2px;
+	border: 1px solid #999;
+	padding: 0 10px;
+	font-size: 16px;
+	border-radius: 4px;
+	box-shadow: inset 3px 3px 3px rgba(100, 100, 100, 0.2);
+	-webkit-box-shadow: inset 3px 3px 3px rgba(100, 100, 100, 0.2);
+	line-height: 40px;
+}
+
+.inbox p input {
+	width: 260px;
+}
+
+.index-address {
+	width: 280px;
+}
+
+.inbox div {
+	text-align: center;
+}
+
+.inbox div button {
+	width: 150px;
+	height: 40px;
+	border: 0;
+	background-color: #d34000;
+	background: -webkit-linear-gradient(#ed8500, #d34000);
+	background: linear-gradient(#ed8500, #d34000);
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	-webkit-box-shadow: 2px 2px 3px rgba(100, 100, 100, 0.5);
+	font-size: 18px;
+	color: #FFF;
+	text-shadow: 1px 1px 2px #666
+}
+
+.jt {
+	position: absolute;
+	background: url(webjt.gif) no-repeat;
+	width: 299px;
+	height: 64px;
+	z-index: 10;
+	margin: -70px 0 0 -45px;
+}
+
+.insm {
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	color: #FFF;
+	text-shadow: 1px 1px 2px #000
+}
+.index-info-msg{
+	font-size: 16px;
+	color: #666666;
+	text-indent: 2em;
+	letter-spacing: 2px;
+	line-height: 24px;
+	padding: 5px 10px 20px 10px;
+}
+.index-ts{
+	text-align: center;
+	color: red;
+	line-height: 24px;
+	font-size: 14px;
+	padding-bottom: 20px;
+}
+.index-info{
+	display: none;
+}
+.index-info h1{
+	line-height: 20px;
+	font-size: 20px;
+	color: #858585;
+	text-align: center;
+	padding-bottom: 20px;
+}
+@media only screen and (max-width:480px){
+	*{
+	box-sizing: border-box;
+		
+	}
+	.inbox{
+		width: 300px;
+		padding: 10px;
+	}
+	.inbox p{
+		height: auto;
+	}
+	.intop{
+		padding-top: 80px;
+	}
+	body{
+		background-size: cover;
+		background-color: #F2F2F2;
+	}
+	.inbox p strong{
+		line-height: 46px;
+		font-size: 18px;
+	}
+	.inbox p input
+	,.index-address{
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+	.index-info h1{
+		padding: 0;
+	}
+
+}

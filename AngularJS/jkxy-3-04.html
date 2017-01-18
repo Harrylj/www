@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en" >
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+	<script src="js/Angular.js"></script>
+    <title>value,constant,factory,service</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body style="padding: 20px" ng-controller="myController">
+    <h2>{{one}}</h2>
+    <h2>{{two}}</h2>
+    <h2>{{three}}</h2>
+    <h2>{{four}}</h2>
+
+    <script type="text/javascript">
+        angular.module("myApp",[])
+                .value('valueOne','1')
+                .value('valueOne','11')     //value可修改值
+                .constant('valueTwo','2')
+                .constant('valueTwo','22')  //constant不可修改值
+                .factory('Data',function(){
+                    return {
+                        msg : '这是旧消息',
+                        setMsg : function(){
+                            this.msg = '这是新消息'
+                        }
+
+                    }
+                })
+                .service('User',function(){
+                    this.userName = '上官';
+                    this.lastName = '飞燕';
+                    this.getName = function(){
+                        return this.userName + this.lastName;
+                    }
+
+                })
+                .controller('myController',function($scope,valueOne,valueTwo,Data,User){
+                        $scope.one = valueOne;
+                        $scope.two = valueTwo;
+                        Data.setMsg();
+                        $scope.three = Data.msg;
+                        $scope.four = User.getName();
+                        //$scope.valueOne = '111';
+
+                })
+    </script>
+</body>
+</html>

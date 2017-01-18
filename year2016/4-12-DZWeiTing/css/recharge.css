@@ -1,0 +1,64 @@
+.recharge{
+	padding: 10px;
+}
+.rh-input-phone{
+	width: 100%;
+	margin-bottom: 15px;
+	border: none;
+	border-bottom: 1px solid #CCCCCC;
+	font-size: 16px;
+	line-height: 40px;
+	letter-spacing: 2px;
+	color: black;
+}
+.rb-ul{
+	
+}
+.rb-ul li{
+	float: left;
+	width: 46%;
+	margin: 5px 2%;
+	border: 1px solid #505050;
+	border-radius: 6px;
+	padding: 10px;
+	cursor: pointer;
+}
+.rb-ul h1
+,.rb-ul p{
+	text-align: center;
+	color: #505050;
+}
+.rb-ul h1{
+	line-height: 30px;
+	font-size: 18px;
+}
+.rb-ul p{
+	line-height: 20px;
+	font-size: 14px;
+}
+.rb-ul .rb-li-click{
+	border: 1px solid red;
+}
+.rb-li-click h1
+,.rb-li-click p{
+	color: red;
+}
+.rb-btn-ljcz{
+	margin-top: 30px;
+	color: #D6D5D8;
+	border: 1px solid #D6D5D8;
+	line-height: 40px;
+	width: 100%;
+	background-color: transparent;
+	border-radius: 6px;
+	font-size: 18px;
+}
+.rb-btn-div{
+	padding: 5px;
+	
+}
+.rb-btn-click{
+	color: red;
+	border: 1px solid red;
+}
+

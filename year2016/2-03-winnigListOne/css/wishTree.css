@@ -1,0 +1,67 @@
+.wish-tree{
+	position: relative;
+}
+.wt-hdgz{
+	background-image: url(../images/sd-03.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 70px 20px 60px 20px;
+}
+.wt-hdgz p{
+	font-size: 1rem;
+	color: black;
+	line-height: 28px;
+	text-align: center;
+}
+.wt-hdgz span{
+	color: #bd0304;
+}
+.wt-list{
+	float: left;
+	margin: 0 5px;
+	width: 140px;
+	margin-bottom: 15px;
+}
+.wt-img-p{
+	width: 140px;
+	height: 140px;
+	padding: 45px 0 0 0;
+	text-align: center;
+	background-image: url(../images/sd-04.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color: #bd0304;
+	margin-bottom: -10px;
+	
+}
+.wt-body{
+	padding: 10px;
+	background-image: url(../images/sd-01.png);
+	background-size: 100% auto;
+	background-position:0 bottom ; 
+	background-repeat: no-repeat;
+}
+.font-16{
+	font-size: 16px;
+	line-height: 28px;
+}
+.font-14{
+	font-size: 14px;
+	line-height: 24px;
+}
+.wt-btn{
+	height: 30px;
+	width: 70px;
+	border: none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-image: url(../images/sd-06.png);
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.wt-list p{
+	color: black;
+	text-align: center;
+	font-size: 14px;
+	text-shadow: 0 0 5px yellow;
+}

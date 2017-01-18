@@ -1,0 +1,119 @@
+.i-header{
+	position: relative;
+}
+.i-header h1{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	width: 86%;
+	margin-left: -43%;
+	margin-top: -20px;
+	color: #FCFF00;
+	text-align: center;
+	font-size: 22px;
+	background: rgba(0,0,0,0.2);
+	
+}
+.ib-title{
+	width: 90%;
+	margin: auto;
+	padding: 8px;
+	border: 1px dashed #666666;
+	border-radius: 10px;
+}
+.ibt-centent{
+	background-color: #FCFF00;
+	padding: 10px 5px;
+	border-radius: 10px;
+}
+.ibt-centent h1{
+	text-align: center;
+	font-size: 20px;
+	line-height: 30px;
+}
+.border-dashed{
+	border-top: 1px dashed #666666;
+	margin: 5px 0;
+}
+.ibt-p-01{
+	text-align: center;
+	font-size: 12px;
+	line-height: 20px;
+	color: black;
+}
+.ibt-p-02{
+	line-height: 24px;
+	font-size: 14px;
+	
+}
+.ib-ts p{
+	padding: 10px 0;
+	width: 90%;
+	margin: auto;
+	font-size: 14px;
+	color: #666666;
+	line-height: 24px;
+}
+.ib-btn{
+	width: 80%;
+	border: 1px solid red;
+	line-height: 40px;
+	text-align: center;
+	font-size: 16px;
+	border-radius: 6px;
+	letter-spacing: 2px;
+	color: red;
+	background-color: transparent;
+	margin: 15px 0;
+}
+.ib-line{
+	background-color: #E1E1E1;
+	height: 15px;
+}
+.ib-litt{
+	padding:0 10px;
+}
+.ib-litt h1{
+	color: #015bff;
+	line-height: 50px;
+	font-size: 18px;
+}
+.ib-litt table{
+	width: 100%;
+}
+.ib-litt th
+,.ib-litt td{
+	height: 40px;
+	text-align: center;
+	border-left: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+		font-size: 14px;
+	
+}
+.ib-litt th:last-child
+,.ib-litt td:last-child{
+	border-right: 1px solid #CCCCCC;
+}
+.ib-litt tr:last-child td
+,.ib-litt tr:nth-child(2) td:nth-child(3){
+	border-bottom: 1px solid #CCCCCC;
+}
+.ib-litt th{
+	color: black;
+}
+.ib-litt td{
+	color: #666666;
+}
+.ibl-btn{
+	width: 100%;
+	text-align: center;
+	border: none;
+	background-color: transparent;
+	color: red;
+	height: 40px;
+	line-height: 40px;
+	font-size: 16px;
+}

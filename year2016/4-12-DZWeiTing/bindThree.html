@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="css/public.css"/>
+	<link rel="stylesheet" type="text/css" href="css/bindOne.css"/>
+    <title>店员绑定</title>
+</head>
+<body>
+	<div class="bind-three member-center-phone vr">
+		<div class="cb-body">
+			<div class=" mcp-phone-div" style="padding-top: 0;">
+				<h1 class="bo-h-01">请核对和补全下列信息，以证明您所工作的渠道店</h1>
+			</div>
+			<p class="bo-p-01">工作区域&nbsp;&nbsp;<span class="red">请输入正确的区域</span></p>
+			<div class=" mcp-phone-div text-center">
+				<select class="bt-select" name="">
+					<option selected="selected" value="">请选择您所在的区域</option>
+					<option value="">区域1</option>
+					<option value="">区域2</option>
+					<option value="">区域3</option>
+				</select>
+			</div>	
+			<p class="bo-p-01">渠道名称</p>
+			<div class="mcp-phone-div text-center">
+				<input class="cb-input bt-input-name" type="tel" placeholder="请输入您的渠道名称"/>
+			</div>
+			<p class="bo-p-01">渠道编号</p>
+			<div class="mcp-phone-div text-center">
+				<input class="cb-input bt-input-number" type="tel" placeholder="请输入您的渠道编号"/>
+			</div>
+			<p class="bo-p-01">BOSS工号</p>
+			<div class="mcp-phone-div text-center">
+				<input class="cb-input bt-input-boss" type="tel" placeholder="请输入您的BOSS工号"/>
+			</div>
+			<div class="cb-bg clear"></div>
+			<p class="cb-ts"></p>
+			<div class="text-center">
+				<button class="cb-btn-next">完成绑定</button>
+			</div>
+		</div>
+	</div>
+	
+	<button class="none bt-btn-true" data-toggle="modal" data-target="#myModalTrue">按钮</button>
+	<!-- Modal成功 -->
+	<div class="modal fade" id="myModalTrue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title modal-title-11" id="myModalLabel">绑定成功</h4>
+	      </div>
+	      
+	      <div class="modal-body modal-body-11">
+	       	 恭喜店员，您的绑定已成功
+	      </div>
+	      
+	      <div class="modal-footer text-center">
+	        <button type="button" class="bt-btn-fh" data-dismiss="modal">返回</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){			
+			//点击“下一步”按钮验证
+			$('.cb-btn-next').on('click',function(){
+				var selectAddress = $('.bt-select option:selected'),
+					inputName = $('.bt-input-name'),
+					inputNumber = $('.bt-input-number'),
+					inputBoss = $('.bt-input-boss'),
+					btnTrue = $('.bt-btn-true');
+				
+				
+				//alert(selectIndex);
+				
+				var ts = $('.cb-ts'),
+					ts_01 = '请选择工作区域',
+					ts_02 = '渠道名称不能为空',
+					ts_03 = '渠道编号不能为空',
+					ts_04 = 'BOSS工号不能为空';
+				
+				//请选择工作区域
+				if(selectAddress.index() == '0')
+				{
+					ts.html(ts_01)
+				}
+				//渠道名称不能为空
+				else if(inputName.val() == '')
+				{
+					ts.html(ts_02)
+				}
+				//渠道编号不能为空
+				else if(inputNumber.val() == '')
+				{
+					ts.html(ts_03)
+				}
+				//BOSS工号不能为空
+				else if(inputBoss.val() == '')
+				{
+					ts.html(ts_04)
+				}
+				//成功
+				else
+				{
+					ts.html('');
+					btnTrue.click();
+					//window.location.href="cardBindTwo.html";
+				}
+				
+			});
+			
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>	
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/login.css"/>
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <title>移卡通</title>
+
+
+</head>
+<body>
+	<div class="index vr">
+		<div class="public-header-father">
+			<div class="public-header">
+				<p class="fl">欢迎使用移卡通!</p>
+				<div class="fr">
+					<a class="index-phone" href="#">手机移卡通</a><span>|</span><a class="index-serve" href="serve.html">客户服务</a>
+				</div>
+				<div class="clear"></div>
+			</div>
+		</div>
+		<div class="index-header-father">
+			<div class="index-header">
+				<img src="images/index-01.png" />
+				<div class="index-nav userCenter-nav">
+					<a href="user-delete.html">挂失</a>
+					<a href="user-search.html">查询</a>
+					<a href="user-pay.html">充值</a>
+					<a href="user-buy.html">购卡</a>
+					<a href="user-card.html">移卡通</a>
+					<a class="index-nav-click" href="#">首页</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="index-content">
+			<div class="swiper-container">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide slide1" id="slide1" data-hash="slider1">
+		                <img class="swiper-img" src="images/two/two-swiper-01.jpg" />
+		                	<img class="slide-img-01" src="images/two/two-img-01.png"   />
+		                	<input class="index-btn-more" type="button" />
+		                	<img class="slide-img-02" src="images/two/two-img-02.png" />
+		            </div>
+		            <div class="swiper-slide slide2" id="slide2" data-hash="slider2">
+		                <div class="slide2-img">
+		                	<img class="swiper-img" src="images/two/two-swiper-02.jpg" />
+		            		<div class="slide2-btn-div">
+		            			<input class="index-slide2-btn index-btn-login index-btn-hover" type="button" value="登录" />
+		            			<a href="register.html"><input class="index-slide2-btn index-btn-register" type="button" value="立即注册" /></a>
+		            		</div>
+		            		
+		                </div>
+		                <div class="slide2-div">
+		                	<p>更新维护 2015-09-14</p>
+		                	<p>关于移卡通升级支持新版本公交卡充值业务公告 2016-02-01</p>
+		                	<p>更新维护 2015-09-14</p>
+		                </div>
+		                <div class="slide2-nav">
+		                	<ul class="slide2-nav-ul">
+		                		<li>
+		                			<div class="slide2-nav-img-01"></div>
+		                			<h1>个人服务</h1>
+		                			<p class="slide2-p-01">一卡走遍大凉山</p>
+		                			<p class="slide2-p-02">注册绑卡/公交卡充值</p>
+		                		</li>
+		                		<li>
+		                			<div class="slide2-nav-img-02"></div>
+		                			<h1>商户服务</h1>
+		                			<p class="slide2-p-01">坐等生意上门</p>
+		                			<p class="slide2-p-03">商户合作(敬请期待中...)</p>
+		                		</li>
+		                		<li>
+		                			<div class="slide2-nav-img-03"></div>
+		                			<h1>服务电话</h1>
+		                			<p class="slide2-p-01">欢迎来电 全年24th</p>
+		                			<p class="slide2-p-04">13688088825</p>
+		                		</li>
+		                	</ul>
+		                	<div class="clear"></div>
+		                </div>
+		                <p class="slide-p-footer">ICPb备 11001465 IPC证110287 公网安备11010802011682号</p>
+		                
+		            </div>
+
+		        </div>
+		        <!-- 如果需要导航按钮 -->
+		        <div class="swiper-button-prev"></div>
+		        <div class="swiper-button-next"></div>
+		    	
+		    </div>
+		</div>	
+	</div>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-03-03
+    	描述：.login-form-fahter:登录框
+    -->
+    <div class="login-form-fahter">
+				<div class="login-form">
+					<input class="login-btn-close" type="button" />
+					<h1>登录移卡通</h1>
+					<ul class="login-ul">
+						<li><input class="public-input login-input-phone" type="text" placeholder="手机号码" ></li>
+						<li class="public-tpyzm-next"><input class="public-input login-input-yzm" placeholder="短信验证码" ></li>
+						<li style="margin: 0;"><input class="public-input login-input-tpyzm public-input-tpyzm" type="text"   placeholder="请输入图片验证码" ><img class="login-tpyzm" src="images/login-04.png"></li>
+						<li class="login-li-right"><a href="#">忘记登录密码？</a></li>
+						<li class="line-height-60"><input class="login-btn-login" type="button" value="登录"></li>
+						<li class="login-ul-footer">
+							<a class="login-a-left" href="#">手机验证登录</a>
+							<a class="login-a-right" href="register.html">免费注册</a>
+						</li>
+						<li class="login-ts-father"><p class="login-ts"></p></li>
+					</ul>
+				</div>
+	</div>
+	
+
+
+<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<!--
+	作者：648267773@qq.com
+	时间：2016-03-09
+	描述：
+	<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/myswiper.js" type="text/javascript" charset="utf-8"></script>
+-->
+
+<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	
+	var ie = !-[1,]; 
+	//判断是否ie浏览器
+	if(ie == true)
+	{
+		 document.getElementById('slide1').style.display='none';
+		 document.getElementById('slide2').style.display='block';
+	}
+	//不是则加载滑动插件
+	else
+	{
+		document.write("<script src='js/swiper.min.js'><\/script>");
+		document.write("<script src='js/myswiper.js'><\/script>");
+		
+	}
+	
+	
+
+		
+$(function(){
+		//获取浏览器高度
+		var bodyHeight = document.body.clientHeight,
+			bodyWidth = window.screen.availWidth, 
+			height_01 =  $('.public-header-father').height(),
+			height_02 = $('.index-header-father').height();
+		//滑块内容高度
+		var changeHeight = bodyHeight - height_01 -height_02 ;
+		$('.swiper-container').height(changeHeight)
+		
+		//点击“下滑按钮”触发点击切换按钮
+		$('.slide-img-02').on('click',function(){
+			$('.swiper-button-next').click();
+		})
+		
+		//阴影背景
+		var zzcbg = $('<div class="zzc"><div>');
+		zzcbg.css({
+			'width':bodyWidth,
+			'height':bodyHeight
+		})
+		zzcbg.appendTo($('body'));
+		
+		
+		//定义登录窗口阴影背景
+		var loginForm = $('.login-form-fahter'),
+			zzc = $('.zzc');
+		//点击'more'按钮,弹出登录窗口
+		$('.index-btn-more,.index-btn-login').on('click',function(){
+			loginForm.show();
+			zzc.show();
+		})
+		
+		
+		
+		//点击关闭按钮关闭登录窗
+		$('.login-btn-close').on('click',function(){
+			loginForm.hide();
+			zzc.hide();
+		})
+	})
+	
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,26 @@
+.tb-body{
+	padding: 10px;
+}
+.tbb-list{
+	margin: 5px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	width: 90px;
+	color: black;
+	border: 1px solid #ccc;
+	border-radius: 8px;
+}
+.tbb-list img{
+	width: 55px;
+	height: 55px;
+	margin-top: 5px;
+}
+.swiper-pagination-bullet{
+	background-color: white;
+	opacity: .8;
+}
+
+.swiper-pagination-bullet-active{
+	background-color: red;
+}

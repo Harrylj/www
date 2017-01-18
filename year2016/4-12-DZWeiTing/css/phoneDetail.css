@@ -1,0 +1,79 @@
+.pd-body{
+	border-top: 2px solid #F1F1F1;
+}
+.pdb-list h1{
+	font-size: 18px;
+	color: black;
+	padding: 5px 10px;
+	line-height: 26px;
+}
+.pdb-p-01{
+	line-height: 24px;
+	font-size: 14px;
+	color: black;
+	padding: 10px;
+}
+.pdb-span-01{
+	font-size: 20px;
+	color: red;
+}
+.pdb-ul-01 li{
+	width: 33%;
+	float: left;
+	color: #6B6B6B;
+	line-height: 36px;
+	padding: 0 10px;
+	font-size: 14px;
+	text-align: center;
+}
+.pdb-ul-01 li:nth-child(2){
+	text-align: center;
+}
+.pdb-ul-01 li:nth-child(3){
+	text-align: right;
+}
+.pdb-ul-02{
+	padding: 10px;
+}
+.pdb-ul-02 li{
+	float: left;
+	width: 25%;
+	line-height: 24px;
+	font-size: 10px;
+	border-top:1px solid #ccc ;
+	border-bottom:1px solid #ccc ;
+	background-image: url(../images/phone/pd-03.png);
+	background-size: 14px 14px;
+	background-repeat: no-repeat;
+	background-position: 3px 50%;
+	padding-left: 20px;
+}
+.pdb-ul-02 li:first-child{
+	border-left: 1px solid #CCCCCC;
+}
+.pdb-ul-02 li:last-child{
+	border-right: 1px solid #CCCCCC;
+}
+.pdb-wxts{
+	background-color: #f8f9dc;
+	font-size: 12px;
+	text-align: center;
+	padding: 10px;
+	line-height: 18px;
+}
+.phone-detail{
+	padding-bottom: 60px;
+}
+.pd-btn-ljgm{
+	position: fixed;
+	background-color: #FF2222;
+	line-height: 40px;
+	text-align: center;
+	font-size: 18px;
+	color: white;
+	width: 100%;
+	height: 40px;
+	bottom: 0;
+	left: 0;
+	border: none;
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/basic.css"/>
+    <link rel="stylesheet" type="text/css" href="css/picture.css"/>
+    <title>上传照片</title>
+
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-02-04
+    	描述：.pic-one:纪念馆参数：0未上传,1已上传
+    		.pic-two:红军亭:0未上传，1已上传
+    		.pic-val-one:纪念馆上传成功参数：0未上传，1已上传
+    		.pic-val-two:红军上传成功参数：0未上传，1已上传
+    -->
+    <input class="pic-one" type="hidden"  value="0" />
+    <input class="pic-two" type="hidden"  value="0" />
+    <input class="pic-val-one" type="hidden"  value="0" />
+    <input class="pic-val-two" type="hidden"  value="0" />
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-02-04
+    	描述：
+    -->
+	<div class="picture">
+		<div class="picture-header">
+			<h1>元九登高</h1>
+			<h2>挑战千万好礼</h2>
+			<p>
+				1、达州移动用户关注并绑定微信即可参与本活动
+<br>2、到达凤凰山元稹纪念馆与“堵不堵”APP宣传展架合影，并上传照片即可获赠18元话费
+<br>3、到达凤凰山红军亭与“堵不堵”APP宣传展架合影，	并上传照片即可获赠28元话费
+<br>4、点击“分享集赞抽iphone6s”将活动页面分享到朋友圈，集齐20个“红心”赞，并将朋友圈截图回复给			“达州移动”官方微信，可参与抽奖中iphone6s
+<br>5、活动参与及回复“红心”赞截图时间为2016年2月8日——2016年2月16日，过期参与无效</p>
+		</div>
+		<div class="picture-body">
+			<div class="pb-list">
+				<h1>元稹纪念馆</h1>
+				<div class="text-center">
+					<img src="images/yj-11.png" />
+				</div>
+				<div class="text-center">
+					<button class="p-btn p-btn-one p-btn-no" type="button"></button>
+				</div>
+			</div>
+			<div class="pb-list">
+				<h1>红军亭</h1>
+				<div class="text-center">
+					<img src="images/yj-02.png" />
+				</div>
+				<div class="text-center">
+					<button class="p-btn p-btn-two p-btn-ok" type="button"></button>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="picture-footer">
+			<h1>已上传<span>980</span>人次 送出话费&yen;<span>99999.00</span></h1>
+			<div class="pf-list">
+				<div class="pf-img">
+					<img src="images/yj-02.png" />
+					<p>18200166593</p>
+				</div>
+				<div class="pf-img">
+					<img src="images/yj-02.png" />
+					<p>18200166593</p>
+				</div>
+				<div class="pf-img">
+					<img src="images/yj-02.png" />
+					<p>18200166593</p>
+				</div>
+				<div class="pf-img">
+					<img src="images/yj-02.png" />
+					<p>18200166593</p>
+				</div>
+				
+				<div class="clear"></div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Button trigger modal -->
+	<button type="button" class="btn btn-one btn-primary btn-lg" data-toggle="modal" data-target="#myModalOne">
+	  	照片1
+	</button>
+	<button type="button" class="btn btn-two btn-primary btn-lg" data-toggle="modal" data-target="#myModalTwo">
+	  	照片2
+	</button>
+	
+	<!-- Modal -->
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-02-04
+    	描述：#myModalOne:弹窗1
+    		#myModalTwo：弹窗2
+    -->
+	<div class="modal fade" id="myModalOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">上传成功</h4>
+	      </div>
+	      <div class="modal-body">
+	        	您已经完成元稹纪念馆的照片上传，已经获得18元话费，继续登山到达红军亭合影上传还能获得28元话费，加油亲~!
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-qx btn-default" data-dismiss="modal">关闭</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <h4 class="modal-title" id="myModalLabel">上传成功</h4>
+	      </div>
+	      <div class="modal-body">
+	        	您已经完成红军亭的照片上传，已经获得18元话费，继续登山元稹纪念馆到达合影上传还能获得28元话费，加油亲~!
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-qx btn-default" data-dismiss="modal">关闭</button>
+	        
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2016-02-04
+    	描述：.share:分享页面
+    -->
+	<div class="share">
+		<img class="img-100" src="images/yj-06.png" />
+		<div class="text-center">
+			<a class="btn-msfx" href="screenshot.html"></a>
+		</div>
+		
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			//相片上传状态函数
+			//判断相片是否上传，添加对应的class
+			function pictrue(){
+				var picValOne = $('.pic-val-one'),
+					picValTwo = $('.pic-val-two'),
+					picBtnOne = $('.p-btn-one'),
+					picBtnTwo = $('.p-btn-two'),
+					picNo = 'p-btn-no',
+					picOk = 'p-btn-ok';
+				//按钮状态判断	
+				if(picValOne.val()=='0')
+				{
+					picBtnOne.addClass(picNo).removeClass(picOk);
+				}
+				else if(picValOne.val()=='1')
+				{
+					picBtnOne.addClass(picOk).removeClass(picNo);
+				}
+				else
+				{
+					alert('参数错误重新加载！')
+				}
+				//按钮状态判断	
+				if(picValTwo.val()=='0')
+				{
+					picBtnTwo.addClass(picNo).removeClass(picOk);
+				}
+				else if(picValTwo.val()=='1')
+				{
+					picBtnTwo.addClass(picOk).removeClass(picNo);
+				}
+				else
+				{
+					alert('参数错误重新加载！')
+				}
+				
+			}
+			//运行相片上传状态函数
+			pictrue();
+			
+			$('.p-btn').on('click',function(){
+				var picValOne = $('.pic-val-one'),
+					picvalTwo = $('.pic-val-two'),
+					picNo = 'p-btn-no',
+					picOk = 'p-btn-ok',
+					picClassOne = 'p-btn-one',
+					picClassTwo = 'p-btn-two',
+					btnOne = $('.btn-one'),
+					btnTwo = $('.btn-two');
+				var share = $('.share');
+				//先判断是哪个按钮
+				//按钮1
+				if($(this).hasClass(picClassOne))
+				{
+					//未上传
+					if(picValOne.val()=='0')
+					{
+						picValOne.val('1');
+						pictrue();
+						//判断图片2是否上传
+						//图片2未上传
+						if(picvalTwo.val()=='0')
+						{
+							//弹出弹窗1
+							btnOne.click();
+							alert('图片1上传成功');
+						}
+						//图片2已上传
+						else
+						{
+							share.show();
+						}
+					}
+					//已上传
+					else
+					{
+						//判断图片2是否上传
+						//图片2未上传
+						if(picvalTwo.val()=='0')
+						{
+							//弹出弹窗1
+							btnOne.click();
+						}
+						//图片2已上传
+						else
+						{
+							share.show();
+						}
+					}
+				}
+				//按钮2
+				else if($(this).hasClass(picClassTwo))
+				{
+					//未上传
+					if(picvalTwo.val()=='0')
+					{
+						
+						picvalTwo.val('1');
+						pictrue();
+						//判断图片1是否上传
+						//图片1未上传
+						if(picValOne.val()=='0')
+						{
+							//弹出弹窗2
+							btnTwo.click();
+							alert('图片2上传成功');
+						}
+						//图片1已上传
+						else
+						{
+							share.show();
+						}
+					}
+					//已上传
+					else
+					{
+						//判断图片1是否上传
+						//图片1未上传
+						if(picValOne.val()=='0')
+						{
+							//弹出弹窗2
+							btnTwo.click();
+						}
+						//图片1已上传
+						else
+						{
+							share.show();
+						}
+					}
+				}
+				//参数错误
+				else
+				{
+					alert('参数错误2，请重新加载')
+				}
+				
+				
+				
+			})
+		})
+	</script>
+</body>
+</html>

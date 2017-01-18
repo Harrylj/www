@@ -1,0 +1,30 @@
+*{
+	box-sizing: border-box;
+	
+}
+.inbox{
+	width: 300px;
+	padding: 10px;
+}
+.inbox p{
+	height: auto;
+}
+.intop{
+	padding-top: 80px;
+}
+body{
+	background-size: cover;
+	background-color: #F2F2F2;
+}
+.inbox p strong{
+	line-height: 46px;
+	font-size: 18px;
+}
+.inbox p input
+,.index-address{
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+.index-info h1{
+	padding: 0;
+}
