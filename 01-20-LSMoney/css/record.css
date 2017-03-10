@@ -1,0 +1,58 @@
+.record{
+	padding:30px 10px;
+}
+.r-header h1{
+	color: white;
+	font-size: 18px;
+	text-align: center;
+	line-height: 28px;
+}
+.r-header p{
+	text-align: center;
+	color: white;
+	font-size: 14px;
+	line-height: 30px;
+}
+.r-header span{
+	font-size: 24px;
+}
+
+.r-body{
+	padding: 20px;
+}
+.rb-list{
+	background-image: url(../images/jl-bg.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+.rb-list p{
+	font-size: 16px;
+	line-height: 28px;
+	text-align: center;
+	color: black;
+	margin: 0;
+}
+.record-table-div{
+    border: 1px solid #c0221f;
+    box-shadow: 0 0 3px #c0221f;
+    border-radius: 4px;
+    padding-bottom: 30px;
+}
+.record-table{
+    width: 100%;
+}
+.record-table td{
+    text-emphasis: #ce7581;
+    line-height: 24px;
+    color: #fef284;
+    font-size: 14px;
+    text-align: center;
+    border-top:  1px solid #e25b42;
+    border-bottom:  1px solid #e25b42;
+    padding: 8px 0;
+}
+.record-table td:first-child{
+    width: 30%;
+}
