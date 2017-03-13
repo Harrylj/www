@@ -1,0 +1,40 @@
+.deatils-news{
+	position: relative;
+	font-family: "微软雅黑";
+	background-color: #009c84;
+	letter-spacing: 2px;
+	padding: 10px;
+}
+.dn-body{
+	position: relative;
+	z-index: 10;
+	background-color: white;
+}
+.dn-body{
+	padding: 10px;
+}
+.dn-body h1{
+	color: #414141;
+	line-height: 24px;
+	font-size: 16px;
+}
+.dn-img{
+	margin: 10px 0;
+}
+.dn-body p{
+	color: #666666;
+	line-height: 24px;
+	font-size: 14px;
+	text-indent: 2em;
+}
+.dn-body-bg{
+	position: absolute;
+	left: 50%;
+	bottom: 5px;
+	margin-left: -49%;
+	content: ' ';
+	height: 12px;
+	width: 98%;
+	background-image: url(../images/main/zx-dn-bg.png);
+	background-size: 100% 100%;
+}

@@ -1,0 +1,17 @@
+.c-ul-01 li a:after{
+	display: none;
+}
+
+.c-ul-01 li:nth-child(1){
+	background-image: url(../images/zx-s-01.png);
+}
+.c-ul-01 li:nth-child(2){
+	background-image: url(../images/zx-s-02.png);
+}
+
+.c-ul-02 li:nth-child(1){
+	background-image: url(../images/zx-s-03.png);
+}
+.s-btn-exit{
+	margin-top: 100px;
+}
