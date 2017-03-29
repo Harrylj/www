@@ -1,0 +1,1 @@
+var __SERVERDATE__ = {server:new Date(Date.parse('2014-10-08 11:46:31'.replace(/-/g,'/'))),local: new Date()}

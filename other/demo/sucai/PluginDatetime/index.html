@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>手机日历选择器</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+<link href="css/mobiscroll.custom-2.5.0.min.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript" src="js/jquery-1.9.1.min.js" ></script>
+<script type="text/javascript" src="js/jquery.mobile-1.3.0.min.js" ></script>
+<script type="text/javascript" src="js/mobiscroll.js" ></script>
+<script type="text/javascript">
+$(function () {
+	var newjavascript={
+		plugdatetime:function ($dateTxt,type) {
+				//var curr = new Date().getFullYear();
+				var opt = {}
+				opt.time = {preset : type};
+				opt.date = {
+                    preset : type,
+                    minDate: new Date(2015,6,13),
+                    maxDate: new Date(2020,12,31),
+                    stepMinute: 1
+                };
+				opt.datetime = {
+					preset : type,
+					minDate: new Date(2010,1,01,01,01),
+					maxDate: new Date(2020,12,3,01,01),
+					stepMinute: 1
+				};
+
+
+				$dateTxt.val('').scroller('destroy').scroller($.extend(opt[type], { 
+					theme: "sense-ui", 
+					mode: "scroller", 
+					display: "modal", 
+					lang: "english",
+					monthText: "月",
+					dayText: "日",
+					yearText: "年",
+					hourText: "时",
+					minuteText: "分",
+					ampmText:"上午/下午",
+					setText: '确定',
+					cancelText: '取消',
+					//dateFormat: 'yy-mm-dd'
+                    dateFormat: 'yy'+'年'+'mm'+'月'+'dd'+'日'
+				})
+			);
+		}
+	}
+	newjavascript.plugdatetime($("#text"), "date")
+});
+</script>
+<style type="text/css">
+/*
+    .dwwr .dwsc:last-child{
+        display: none;
+    }
+*/
+</style>
+</head>
+<body>
+
+<div>手机点击输入框</div>
+
+<input type="text" id="text" />
+<input type="text" placeholder="1321212" />
+<a href="abc.html" data-ajax='false'>abc</a>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!doctype html>
+<!--[if lte IE 8]>     <html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class=""> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <meta name="description" content="Cascading grid layout library">
+
+  <title>Masonry &#xB7; Appendix</title>
+
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Montserrat:400,700">
+
+    <link rel="stylesheet" href="css/masonry-docs.css" media="screen">
+
+</head>
+<body class="appendix-page" data-page="appendix">
+
+  <div id="site-nav">
+    <div class="primary-content">
+      <h1><a href=".">Masonry</a></h1>
+      <ol>
+        <li class="nav-options"><a href="options.html">Options</a></li>
+        <li class="nav-methods"><a href="methods.html">Methods</a></li>
+        <li class="nav-events"><a href="events.html">Events</a></li>
+        <li class="nav-appendix"><a href="appendix.html">Appendix</a></li>
+        <li class="nav-faq"><a href="faq.html">FAQ</a></li>
+      </ol>
+    </div>
+  </div>
+
+
+  <div id="content">
+
+    <div class="primary-content">
+        <h1>Appendix</h1>
+
+        <ul id="page-nav">
+<li class="page-nav__item--h2"><a href="#imagesloaded">imagesLoaded</a></li>
+<li class="page-nav__item--h2"><a href="#web-fonts">Web fonts</a></li>
+<li class="page-nav__item--h3"><a href="#typekit">Typekit</a></li>
+<li class="page-nav__item--h2"><a href="#component-libraries">Component libraries</a></li>
+<li class="page-nav__item--h3"><a href="#docready">docReady</a></li>
+<li class="page-nav__item--h3"><a href="#classie">classie</a></li>
+<li class="page-nav__item--h3"><a href="#eventie">eventie</a></li>
+<li class="page-nav__item--h2"><a href="#submitting-issues">Submitting issues</a></li>
+<li class="page-nav__item--h3"><a href="#reduced-test-case-required">Reduced test case required</a></li>
+<li class="page-nav__item--h2"><a href="#upgrading-from-v2">Upgrading from v2</a></li>
+<li class="page-nav__item--h2"><a href="#requirejs">RequireJS</a></li>
+<li class="page-nav__item--h2"><a href="#browserify">Browserify</a></li>
+<li class="page-nav__item--h2"><a href="#extra-examples">Extra examples</a></li>
+<li class="page-nav__item--h2"><a href="#additional-resources">Additional resources</a></li>
+</ul>
+
+
+<h2 id="imagesloaded">imagesLoaded</h2>
+
+<p>Unloaded images can throw off Masonry layouts and cause item elements to overlap. <a href="http://imagesloaded.desandro.com">imagesLoaded</a> resolves this issue. imagesLoaded works by triggering a callback after all child images have been loaded.</p>
+
+<pre><code class="js"><span class="keyword">var</span> container = <span class="built_in">document</span>.querySelector(<span class="string">&apos;#container&apos;</span>);
+<span class="keyword">var</span> msnry;
+<span class="comment">// initialize Masonry after all images have loaded</span>
+imagesLoaded( container, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+  msnry = <span class="keyword">new</span> Masonry( container );
+});
+</code></pre>
+<pre><code class="js"><span class="comment">// or with jQuery</span>
+<span class="keyword">var</span> $container = $(<span class="string">&apos;#container&apos;</span>);
+<span class="comment">// initialize Masonry after all images have loaded  </span>
+$container.imagesLoaded( <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+  $container.masonry();
+});
+</code></pre>
+
+<p>Or initialize Masonry first, then trigger <a href="methods.html#layout"><code>layout</code></a> after images have loaded.</p>
+
+<pre><code class="js"><span class="comment">// initialize Masonry</span>
+<span class="keyword">var</span> msnry = <span class="keyword">new</span> Masonry( container );
+<span class="comment">// layout Masonry again after all images have loaded</span>
+imagesLoaded( container, <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+  msnry.layout();
+});
+</code></pre>
+<pre><code class="js"><span class="comment">// or with jQuery</span>
+<span class="comment">// initialize Masonry</span>
+<span class="keyword">var</span> $container = $(<span class="string">&apos;#container&apos;</span>).masonry();
+<span class="comment">// layout Masonry again after all images have loaded</span>
+$container.imagesLoaded( <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+  $container.masonry();
+});
+</code></pre>
+
+
+<h2 id="web-fonts">Web fonts</h2>
+
+<p>Like images, unloaded web fonts can throw off Masonry. To resolve this, trigger <a href="methods.html#layout"><code>layout</code></a> after fonts have been loaded. Both Typekit and Google WebFont Loader provide font events to control scripts based on how fonts are loaded.</p>
+
+<ul>
+  <li><a href="http://blog.typekit.com/2010/10/18/more-control-with-typekits-font-events/">Typekit font events</a></li>
+  <li><a href="https://developers.google.com/webfonts/docs/webfont_loader#Events">Google WebFont Loader: Events</a></li>
+</ul>
+
+<h3 id="typekit">Typekit</h3>
+
+<p>Try the script below when using Masonry on a page with Typekit. This will trigger Masonry when the document is ready and again when fonts have loaded. Be sure to remove Typekit&#x2019;s default script, <code>try{Typekit.load();}catch(e){}</code>.</p>
+
+<pre><code class="js"><span class="keyword">var</span> msnry;
+
+<span class="function"><span class="keyword">function</span> <span class="title">triggerMasonry</span><span class="params">()</span> </span>{
+  <span class="comment">// don&apos;t proceed if masonry has not been initialized</span>
+  <span class="keyword">if</span> ( !msnry ) {
+    <span class="keyword">return</span>;
+  }
+  msnry.layout();
+}
+<span class="comment">// initialize masonry on document ready</span>
+docReady( <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+  <span class="keyword">var</span> container = <span class="built_in">document</span>.querySelector(<span class="string">&apos;#container&apos;</span>);
+  msnry = <span class="keyword">new</span> Masonry( container, {
+    <span class="comment">// options...</span>
+  });
+});
+<span class="comment">// trigger masonry when fonts have loaded</span>
+Typekit.load({
+  active: triggerMasonry,
+  inactive: triggerMasonry
+});
+</code></pre>
+
+<pre><code class="js"><span class="comment">// or with jQuery</span>
+<span class="keyword">var</span> $container;
+
+<span class="function"><span class="keyword">function</span> <span class="title">triggerMasonry</span><span class="params">()</span> </span>{
+  <span class="comment">// don&apos;t proceed if $container has not been selected</span>
+  <span class="keyword">if</span> ( !$container ) {
+    <span class="keyword">return</span>;
+  }
+  <span class="comment">// init Masonry</span>
+  $container.masonry({
+    <span class="comment">// options...</span>
+  });
+}
+<span class="comment">// trigger masonry on document ready</span>
+$(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>{
+  $container = $(<span class="string">&apos;#container&apos;</span>);
+  triggerMasonry();
+});
+<span class="comment">// trigger masonry when fonts have loaded</span>
+Typekit.load({
+  active: triggerMasonry,
+  inactive: triggerMasonry
+});
+</code></pre>
+
+
+<h2 id="component-libraries">Component libraries</h2>
+
+<p>Masonry includes several component libraries. You might have seen these used in the example code. You can use some of these libraries in your own code.</p>
+
+<h3 id="docready">docReady</h3>
+
+<p><a href="https://github.com/desandro/doc-ready">docReady triggers initialization logic when the document is ready,</a> just like jQuery&apos;s <code>$(document).ready()</code>. <code>docReady</code> is used to initialize all the demos in these docs.</p>
+
+<pre><code class="js">docReady( <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+  <span class="comment">// document is ready, let&apos;s do some fun stuff!</span>
+  <span class="keyword">var</span> container = <span class="built_in">document</span>.querySelector(<span class="string">&apos;#container&apos;</span>);
+  <span class="keyword">var</span> msnry = <span class="keyword">new</span> Masonry( container );
+});
+</code></pre>
+
+<h3 id="classie">classie</h3>
+
+<p><a href="https://github.com/desandro/classie">classie has class helper functions.</a> classie is not included with Masonry.</p>
+
+<pre><code class="js">classie.has( element, <span class="string">&apos;my-class&apos;</span> ) <span class="comment">// returns true/false</span>
+classie.add( element, <span class="string">&apos;my-new-class&apos;</span> ) <span class="comment">// add new class</span>
+classie.remove( element, <span class="string">&apos;my-unwanted-class&apos;</span> ) <span class="comment">// remove class</span>
+classie.toggle( element, <span class="string">&apos;my-class&apos;</span> ) <span class="comment">// toggle class</span>
+</code></pre>
+
+<h3 id="eventie">eventie</h3>
+
+<p><a href="https://github.com/desandro/eventie">Eventie makes event binding in IE8 legit.</a></p>
+
+<pre><code class="js"><span class="keyword">var</span> elem = <span class="built_in">document</span>.querySelector(<span class="string">&apos;#my-elem&apos;</span>);
+<span class="function"><span class="keyword">function</span> <span class="title">onElemClick</span><span class="params">( event )</span> </span>{
+  <span class="built_in">console</span>.log( event.type + <span class="string">&apos; just happened on #&apos;</span> + event.target.id );
+  <span class="comment">// -&gt; click just happened on #my-elem</span>
+}
+<span class="comment">// bind it</span>
+eventie.bind( elem, <span class="string">&apos;click&apos;</span>, onElemClick );
+<span class="comment">// unbind it</span>
+eventie.unbind( elem, <span class="string">&apos;click&apos;</span>, onElemClick );
+</code></pre>
+
+<h2 id="submitting-issues">Submitting issues</h2>
+
+<h3 id="reduced-test-case-required">Reduced test case required</h3>
+
+<p>All bug reports and problem issues require a <a href="http://css-tricks.com/reduced-test-cases/"><strong>reduced test case</strong></a>. Create one by forking any one of the <a href="http://codepen.io/desandro/tag/masonry-docs">CodePen examples</a> from these docs.</p>
+
+<ul>
+  <li>A reduced test case clearly demonstrates the bug or issue.</li>
+  <li>It contains the bare minimum HTML, CSS, and JavaScript required to demonstrate the bug.</li>
+  <li>A link to your production site is <strong>not</strong> a reduced test case.</li>
+</ul>
+
+<p>Providing a reduced test case is the best way to get your issue addressed. Without a reduced test case, your issue may be closed.</p>
+
+
+<h2 id="upgrading-from-v2">Upgrading from v2</h2>
+
+<ul>
+  <li>smartresize jQuery plugin has been removed</li>
+  <li><a href="http://desandro.github.io/imagesloaded/">imagesLoaded</a> no longer included, but is still recommended.</li>
+  <li>jQuery animation has been removed. <code>animationOptions</code> has been removed. This means no animation for in IE8 and IE9.</li>
+  <li>Corner stamp is now integrated as <a href="options.html#stamp"><code>stamp</code> option</a> and <a href="methods.html#stamp"><code>stamp</code> method</a></li>
+  <li><code>isRTL</code> option removed, use <a href="options.html#isoriginleft"><code>isOriginLeft: false</code></a> instead</li>
+  <li><code>isResizable</code> option renamed to <a href="options.html#isresizebound"><code>isResizeBound</code></a></li>
+  <li><code>layout</code> method renamed to <a href="methods.html#layoutitems"><code>layoutItems</code></a></li>
+  <li><code>gutterWidth</code> option renamed to <a href="options.html#gutter"><code>gutter</code></a></li>
+</ul>
+
+
+<h2 id="requirejs">RequireJS</h2>
+
+<p>Masonry supports <a href="http://requirejs.org">RequireJS</a>.</p>
+
+<p>You can require <a href="masonry.pkgd.js">masonry.pkgd.js</a>.</p>
+
+<pre><code class="js">requirejs( [
+  <span class="string">&apos;path/to/masonry.pkgd.js&apos;</span>,
+], <span class="function"><span class="keyword">function</span><span class="params">( Masonry )</span> </span>{
+  <span class="keyword">new</span> Masonry( <span class="string">&apos;#container&apos;</span>, {...});
+});
+</code></pre>
+
+<p id="requirejs-pkgd-jquery">To use Masonry as a jQuery plugin with RequireJS and masonry.pkgd.js, you need to use jQuery Bridget.</p>
+
+
+<pre><code class="js"><span class="comment">// require the require function</span>
+requirejs( [ <span class="string">&apos;require&apos;</span>, <span class="string">&apos;jquery&apos;</span>, <span class="string">&apos;path/to/masonry.pkgd.js&apos;</span> ],
+  <span class="function"><span class="keyword">function</span><span class="params">( require, $, Masonry )</span> </span>{
+    <span class="comment">// require jquery-bridget, it&apos;s included in masonry.pkgd.js</span>
+    <span class="built_in">require</span>( [ <span class="string">&apos;jquery-bridget/jquery.bridget&apos;</span> ],
+    <span class="function"><span class="keyword">function</span><span class="params">()</span> </span>{
+      <span class="comment">// make Masonry a jQuery plugin</span>
+      $.bridget( <span class="string">&apos;masonry&apos;</span>, Masonry );
+      <span class="comment">// now you can use $().masonry()</span>
+      $(<span class="string">&apos;#container&apos;</span>).masonry({...});
+    }
+  );
+});
+</code></pre>
+
+<p id="requirejs-bower">Or, you can manage dependencies with <a href="http://bower.io">Bower</a>. Set <a href="http://requirejs.org/docs/api.html#config-baseUrl">baseUrl</a> to <code>bower_components</code> and set a path config for all your application code.</p>
+
+<pre><code class="js">requirejs.config({
+  baseUrl: <span class="string">&apos;bower_components/&apos;</span>,
+  paths: {
+    app: <span class="string">&apos;../&apos;</span>
+  }
+});
+
+requirejs( [
+  <span class="string">&apos;masonry/js/masonry&apos;</span>,
+  <span class="string">&apos;app/my-component.js&apos;</span>
+], <span class="function"><span class="keyword">function</span><span class="params">( Masonry, myComp )</span> </span>{
+  <span class="keyword">new</span> Masonry( <span class="string">&apos;#container&apos;</span>, {...});
+});
+</code></pre>
+
+<p id="requirejs-bower-jquery">You can require Bower dependencies and use Masonry as a jQuery plugin with jQuery Bridget.</p>
+
+<pre><code class="js">requirejs.config({
+  baseUrl: <span class="string">&apos;../bower_components&apos;</span>,
+  paths: {
+    jquery: <span class="string">&apos;jquery/jquery&apos;</span>
+  }
+});
+
+requirejs( [
+    <span class="string">&apos;jquery&apos;</span>,
+    <span class="string">&apos;masonry/js/masonry&apos;</span>,
+    <span class="string">&apos;jquery-bridget/jquery.bridget&apos;</span>
+  ],
+  <span class="function"><span class="keyword">function</span><span class="params">( $, Masonry )</span> </span>{
+    <span class="comment">// make Masonry a jQuery plugin</span>
+    $.bridget( <span class="string">&apos;masonry&apos;</span>, Masonry );
+    <span class="comment">// now you can use $().masonry()</span>
+    $(<span class="string">&apos;#container&apos;</span>).masonry({...});
+});
+</code></pre>
+
+
+<h2 id="browserify">Browserify</h2>
+
+<p>Masonry works with <a href="http://browserify.org">Browserify</a>. <a href="https://www.npmjs.org/package/masonry-layout">Install Masonry with npm</a>.</p>
+
+<pre><code>npm install masonry-layout
+</code></pre>
+
+<pre><code class="js"><span class="keyword">var</span> Masonry = <span class="built_in">require</span>(<span class="string">&apos;masonry-layout&apos;</span>);
+
+<span class="keyword">var</span> msnry = <span class="keyword">new</span> Masonry( <span class="string">&apos;#container&apos;</span>, {
+  <span class="comment">// options...</span>
+});
+</code></pre>
+
+<p id="browserify-jquery">To use Masonry as a jQuery plugin with Browserify, you need to use <a href="https://www.npmjs.org/package/jquery-bridget">jQuery Bridget</a></p>
+
+<pre><code>npm install jquery
+npm install jquery-bridget
+</code></pre>
+
+<pre><code class="js"><span class="keyword">var</span> $ = <span class="built_in">require</span>(<span class="string">&apos;jquery&apos;</span>);
+<span class="keyword">var</span> jQBridget = <span class="built_in">require</span>(<span class="string">&apos;jquery-bridget&apos;</span>);
+<span class="keyword">var</span> Masonry = <span class="built_in">require</span>(<span class="string">&apos;masonry-layout&apos;</span>);
+<span class="comment">// make Masonry a jQuery plugin</span>
+$.bridget( <span class="string">&apos;masonry&apos;</span>, Masonry );
+<span class="comment">// now you can use $().masonry()</span>
+$(<span class="string">&apos;#basic&apos;</span>).masonry({
+  columnWidth: <span class="number">60</span>
+});
+</code></pre>
+
+
+<h2 id="extra-examples">Extra examples</h2>
+
+<ul>
+  <li><a href="http://codepen.io/desandro/pen/kwsJb">Iteratively reveal items after each image is loaded</a>. See <a href="https://github.com/desandro/masonry/issues/501#issuecomment-34583942">explanation on issue #501</a></li>
+  <li><a href="http://codepen.io/desandro/pen/btHyq">Drag and drop in and out of Masonry</a> (sort of)</li>
+</ul>
+
+
+<h2 id="additional-resources">Additional resources</h2>
+
+<ul>
+  <li><a href="http://codepen.io/desandro/tag/masonry/">Masonry CodePens</a></li>
+  <li>The <a href="http://metafizzy.co/blog/">Metafizzy blog</a> has posts that cover specialized use cases</li>
+  <li><a href="http://stackoverflow.com/users/182183/desandro?tab=answers">My answers on Stack Overflow</a></li>
+  <li><a href="http://www.delicious.com/desandro/jquerymasonry">Sites using Masonry on Delicious</a></li>
+  <li><a href="http://stackoverflow.com/search?q=masonry">Stack Overflow questions about Masonry</a></li>
+  <li><a href="http://www.delicious.com/desandro/re:masonry">Related Masonry links</a></li>
+  <li>Other resources that are <a href="http://www.delicious.com/desandro/likemasonrybutnot">like Masonry but not</a></li>
+</ul>
+
+    </div>
+
+  </div>
+
+  <div id="footer">
+    <div class="primary-content">
+      <p class="made-by">
+        Masonry is made by <a href="http://desandro.com">David DeSandro</a>.
+        Make something rad with it.
+          &#xA0;&#xA0;Dave also makes:
+      </p>
+
+      <div class="row other-products">
+        <div class="cell other-product isotope-product">
+          <a href="http://isotope.metafizzy.co/">
+            <img src="http://i.imgur.com/xfGupRf.png" alt="Isotope">
+            <h3>Isotope</h3>
+            <p class="description">Filter &amp; sort magical&#xA0;layouts</p>
+          </a>
+        </div>
+
+        <div class="cell other-product flickity-product">
+          <a href="http://flickity.metafizzy.co/">
+            <img src="http://i.imgur.com/8BFo4Aj.png" alt="Flickity">
+            <h3>Flickity</h3>
+            <p class="description">Touch, responsive, flickable&#xA0;galleries</p>
+          </a>
+        </div>
+      </div>
+
+      <div class="row other-products">
+        <div class="cell other-product packery-product">
+          <a href="http://packery.metafizzy.co/">
+            <img src="http://i.imgur.com/uRXPQfm.png" alt="Packery">
+            <h3>Packery</h3>
+            <p class="description">Gap-less, draggable, bin-packing layout&#xA0;library</p>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+<!-- Masonry does NOT require jQuery.
+     jQuery is only used to demonstrate Masonry as a jQuery plugin -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="bower_components/jquery/dist/jquery.min.js"><\/script>')</script>
+
+  <script src="js/masonry-docs.min.js"></script>
+
+  <!-- Google Analytics - Remove this if you copy/pasted this page -->
+  <script>
+    var _gaq=[['_setAccount','UA-592624-5'],['_trackPageview'],['_setDomainName', 'desandro.com']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];g.async=1;
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+  </script>
+
+</body>
+</html>

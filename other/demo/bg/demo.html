@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta content="width=device-width,user-scalable=no" name="viewport">
+<title>惊喜购-抽奖页面</title>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+</head>
+
+<body>
+	<div class="top">
+    	<a class="arrow-left" href="#"></a>
+        <span>抽奖倒计时</span>
+    	<a class="refresh" href="#"></a>
+    </div>
+    <div id="timer" class="countdown">
+    	<b>0</b>
+        <b>0</b>
+        <b>0</b>
+        <span>时</span>
+        <b>0</b>
+        <b>0</b>
+        <span>分</span>
+        <b>0</b>
+        <b>0</b>
+        <span>秒</span>
+    </div>
+    <div class="title">上周获奖码</div>
+    <div class="code">
+    	<b>3</b>
+        <b>2</b>
+        <b>1</b>
+        <b>0</b>
+        <b>6</b>
+        <b>7</b>
+        <b>5</b>
+        <b>9</b>
+        <b>0</b>
+        <b>3</b>
+    </div>
+	<div class="mycode">我的惊喜码：6794034567</div>
+    <div class="banner1"></div>
+    <div id="ban2" class="banner2">
+    	<ul id="bul">
+        	<li>寂寞的猫 <span>抽奖获得2元</span> 2015-05-31 20:18:00</li>
+            <li>小克可人 <span>抽奖获得3元</span> 2015-05-31 20:18:00</li>
+            <li>运动达人 <span>抽奖获得4元</span> 2015-05-31 20:18:00</li>
+            <li>大好河山 <span>抽奖获得5元</span> 2015-05-31 20:18:00</li>
+            <li>机器猫 <span>抽奖获得6元</span> 2015-05-31 20:18:00</li>
+            <li>寂寞先生 <span>抽奖获得2元</span> 2015-05-31 20:18:00</li>
+            <li>小锋锋 <span>抽奖获得1元</span> 2015-05-31 20:18:00</li>
+            <li>哈哈哈哈 <span>抽奖获得9元</span> 2015-05-31 20:18:00</li>
+            
+        </ul>
+ 
+    </div>
+	
+</body>
+
+<script type="text/javascript" src="js/jquery-1.7.2.min.js" ></script>
+<script type="text/javascript">
+	var time_now_server,time_now_client,time_end,time_server_client,timerID;
+	time_end=new Date("2015/6/10 23:59:59");//结束的时间
+	time_end=time_end.getTime();
+
+	//time_now_server=new Date("2013/4/27 15:10:1");//开始的时间
+	time_now_server=new Date();
+	time_now_server=time_now_server.getTime();
+
+	time_now_client=new Date();
+	time_now_client=time_now_client.getTime();
+
+	time_server_client=time_now_server-time_now_client;
+	setTimeout("show_time()",1000);
+	
+	
+	function show_time(){
+	 	var timer = document.getElementById("timer");
+	 	if(!timer){return;}
+	 	timer.innerHTML =time_server_client;
+	 	var time_now,time_distance,str_time;
+	 	var int_day,int_hour,int_minute,int_second;
+	 	var time_now=new Date();
+	 	time_now=time_now.getTime()+time_server_client;
+		time_distance=time_end-time_now;
+	 	if(time_distance>0){
+	  		int_day=Math.floor(time_distance/86400000)
+	  		time_distance-=int_day*86400000;
+	  		int_hour=Math.floor(time_distance/3600000)
+	  		time_distance-=int_hour*3600000;
+	  		int_minute=Math.floor(time_distance/60000)
+	  		time_distance-=int_minute*60000;
+	  		int_second=Math.floor(time_distance/1000)
+	  		int_hour = Math.floor(int_day*24+int_hour); 
+			if(int_hour<99 && int_hour >=10)
+				int_hour="0"+int_hour;
+	  		if(int_hour<10)
+	   			int_hour="0"+int_hour;
+	  		if(int_minute<10)
+	   			int_minute="0"+int_minute;
+	  		if(int_second<10)
+	   			int_second="0"+int_second;
+	  		//str_time=int_day+"天"+int_hour+"时"+int_minute+"分"+int_second+"秒";
+			int_hour = int_hour+"";
+			int_minute = int_minute +"";
+			int_second = int_second+"";
+	  		str_time= "<b>"+int_hour.charAt(0)+"</b><b>"+int_hour.charAt(1)+"</b><b>"+int_hour.charAt(2)+"</b><span>时</span><b>"+int_minute.charAt(0)+"</b><b>"+int_minute.charAt(1)+"</b><span>分</span><b>"+int_second.charAt(0)+"</b><b>"+int_second.charAt(1)+"</b><span>秒</span>";
+			
+	  		timer.innerHTML=str_time;
+	  		setTimeout("show_time()",1000);
+	 	}else{
+	  		timer.innerHTML =timer.innerHTML;
+	  		clearTimeout(timerID)
+	 	}
+	}
+	
+	function autoScroll(obj,ul_bz){
+    	$(obj).find(ul_bz).animate({}, 300, function() {
+        	$(this).find("li:first").appendTo(this);
+    	});
+	}
+ 	self.setInterval('autoScroll("#ban2","#bul")', 2000);
+	
+</script>
+
+
+</html>

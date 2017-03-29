@@ -1,0 +1,38 @@
+* {
+ margin: 0;
+ padding: 0;
+ -webkit-box-sizing: border-box;
+ -moz-box-sizing: border-box;
+ -ms-box-sizing: border-box;
+ -o-box-sizing: border-box;
+ box-sizing: border-box;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+ font: 24px/1.5 'Microsoft YaHei', arial, tahoma, '\5b8b\4f53', sans-serif;
+ font-weight: 700;
+ background: #efefef;
+ -webkit-text-size-adjust: 100%;
+ text-size-adjust: 100%;
+}
+
+#countdown {
+ width: 60%;
+ margin: 20% auto;
+ color: #ff4d4d;
+}
+
+.countdown-day,
+.countdown-hour,
+.countdown-minute,
+.countdown-second {
+ display: inline-block;
+ margin: 0 .5rem;
+ background: #ff3f0f;
+ font-size: 2rem;
+ font-weight: 700;
+ color: #fff;
+}

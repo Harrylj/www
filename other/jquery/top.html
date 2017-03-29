@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/basic.css" type="text/css" rel="stylesheet">
+		<link href="css/index.css" type="text/css" rel="stylesheet">
+		<title></title>
+
+	</head>
+
+	<body>
+		<div class="div">
+			<a class="top-ico444" style="position: fixed; top: 20%; left: 20%;" >跳转</a>
+			<div class="height-100">
+				jQuery锚点链接平滑滚动的代码
+				<a href="#top-m03" class="top-ico3">1</a>
+			</div>
+			<div class="height-300">
+				<a href="#top-m01" class="top-ico4">2</a>
+			</div>
+			<div class="height-200">
+				<a href="#top-m02" class="top-ico4">3</a>
+			</div>
+			<div class="height-200">
+				<a href="#top-m03" class="top-ico4" name="top-m">4</a>
+			</div>
+			<div class="height-200">
+				<a href="#top-m04" class="top-ico4 top-ico44">5</a>
+			</div>
+			<div class="height-300">
+				<a href="#top-m05" class="top-ico3">6</a>
+			</div>
+			<div class="height-300">
+				<a href="#top-m05" class="top-ico3">6</a>
+			</div>
+			<div class="height-300">
+				<a href="#top-m05" class="top-ico3">6</a>
+			</div>
+			<div class="height-300">
+				<a href="#top-m05" class="top-ico3">6</a>
+			</div>
+			<div class="height-300">
+				<a href="#top-m05" class="top-ico3">6</a>
+			</div>
+			<div class="height-300">
+				<a href="#m10" class="top-ico3" >6</a>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$(function() {
+				/*
+				$("a[href*=#top-m]").click(function() {
+					//alert(1);
+					if (location.pathname.replace(/^\//, ') == this.pathname.replace(/^\//, ') && location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						//var $target = $(this);
+						console.log($target);
+						alert($target.length);
+						$target = $target.length && $target || $("[name=' + this.hash.slice(1) + ']");
+						if ($target.length) {
+							var targetOffset = $target.offset().top;
+							$("html,body").animate({
+									scrollTop: targetOffset
+								},
+								1000);
+							return false;
+						}
+						
+					}
+					
+				});
+				*/
+				/*
+				$('a[href*=#]').click(function() {
+					if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+						var $target = $(this.hash);
+						$target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+						if ($target.length) {
+							var targetOffset = $target.offset().top;
+							$('html,body').animate({
+								scrollTop: targetOffset - 3000
+							}, 800);
+							//return false;
+							alert(1);
+						}
+						else
+						{
+							var targetOffset = $target.offset().top;
+							$('html,body').animate({
+								scrollTop: targetOffset - 3000
+							}, 800);
+							alert('no')
+						}
+						alert($target.length);
+					}
+					alert(1);
+				});
+				*/
+			})
+			$(document).ready(function() {
+			    $("a[href*=#top]").click(function() {
+			    	
+			        if (location.pathname.replace(/^\//, ') == this.pathname.replace(/^\//, ') && location.hostname == this.hostname) {
+			            //alert(1);
+			            //var $target = $(this.hash);
+			            var $target = $(this);
+			            //console.log($target);
+			            $target = $target.length && $target || $("[name=' + this.hash.slice(1) + ']");
+			            if ($target.length) {
+			                var targetOffset = $target.offset().top;
+			                $("html,body").animate({
+			                    scrollTop: targetOffset
+			                },
+			                1000);
+			                return false;
+			            }
+			        }
+			    });
+			    
+			    $('.top-ico444').click(function(){
+			    	$('.top-ico44').click();
+			    })
+			});
+		</script>
+	</body>
+
+</html>

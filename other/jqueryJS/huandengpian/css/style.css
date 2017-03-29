@@ -1,0 +1,30 @@
+@charset "utf-8";
+*{margin:0;padding:0;list-style-type:none;}
+a,img{border:0;}
+a{color:#0068AC}
+a:hover{color: #277eb8;text-decoration:underline}
+body{font:12px/180% Arial, Helvetica, sans-serif, "新宋体";}
+
+/* slider-container */
+.slider-container{background:url(../images/nav_bottom.png) repeat-x 0 100%;padding-bottom:24px;height:505px;overflow:hidden;position:relative}
+.main-slider{width:100%;height:100%;position:relative;overflow:hidden}
+.slide-item{min-width:996px;width:100%;position:absolute;left:0;top:0;display:none}
+.slide-item img{width:100%;height:auto;min-height:320px}
+.slide-cont{position:absolute;left:50%;top:0;width:970px;margin-left:-485px;text-shadow:1px 1px 1px #111}
+.slide-cont{font-size:19px;color:#fff}
+.slide-cont h1{font-size:47px;font-weight:normal;color:#ffcf01;line-height:47px;margin-top:1.2em}
+.slide-cont h1 span{font-size:30px;text-transform:uppercase}
+.slide-cont a{color:#fff;font-size:14px;text-decoration:none;text-transform:uppercase;background:url(../images/icon_nav.png) no-repeat 100% 50%;padding-right:16px}
+.thumbs{position:absolute;left:0;bottom:24px;z-index:4;width:100%;height:100px;margin:0;padding:0;border-bottom:4px solid #fff;border-top:4px solid #fff}
+.thumbs li{float:left;list-style:none;position:relative;width:20%;*width:19.99%;height:100px;background-repeat:no-repeat;background-position:50% 0;background-size:100%}
+.thumbs li.thumb1{background-image:url("../images/sl1.jpg")}
+.thumbs li.thumb2{background-image:url("../images/sl2.jpg")}
+.thumbs li.thumb3{background-image:url("../images/sl3.jpg")}
+.thumbs li.thumb4{background-image:url("../images/sl4.jpg")}
+.thumbs li.thumb5{background-image:url("../images/sl5.jpg")}
+.thumbs li.curr,.thumbs li:hover{background:url(../images/nav_bian.png) repeat-x 0 0;cursor:pointer}
+.thumbs li div{height:82px;padding-top:18px;border-left:2px solid #fff;border-right:2px solid #fff}
+.thumbs li.curr i,.thumbs li:hover i{display:block}
+.thumbs li span{display:block;margin:0 18px;padding:10px 30px 0;background:url(../images/nav_bottom_bg.png) repeat 0 0;height:56px;font-size:12px;color:#fff;text-transform:uppercase}
+.thumbs li.curr span,.thumbs li:hover span{background-image:url(../images/nav_bottom_bg_1.png)}
+.thumbs li.curr em{display:block;width:11px;height:6px;overflow:hidden;background:url(../images/yellow-arrow.gif) no-repeat;position:absolute;top:-6px;left:50%;margin:0 0 0 -6px;}

@@ -1,0 +1,78 @@
+$side: radius;
+@mixin border($value: 1px){
+  border:$value solid red;
+}
+@mixin padding($value: 10px){
+  padding: $value;
+}
+.ad {
+  border: 1px solid red;
+  padding: 20px;
+  margin: 10px;
+  .ac {
+    border: 1px solid green;
+    height: 200px;
+    border-#{$side}: 15px;
+    width: 200px +300px;
+    background: {
+      color: #cccccc;
+    }
+  ;
+    &:hover {
+      @extend .ad;
+      background: {
+        color: #333333;
+      }
+    }
+  }
+}
+@mixin mixin($value: 5px){
+  color: red;
+  padding: 50px;
+  border:$value solid red;
+}
+.one{
+  @include mixin(10px);
+}
+.two{
+  @include mixin;
+}
+@mixin rounded($vert, $horz, $radius: 10px) {  border-#{$vert}-#{$horz}-radius: $radius;  -moz-border-radius-#{$vert}#{$horz}: $radius;  -webkit-border-#{$vert}-#{$horz}-radius: $radius;
+}
+.three{
+  @include padding(20px);
+  @include border;
+  @include rounded(left,right,20px)
+}
+.four p:nth-child(1){
+  color: lighten(#cc3, 10%);
+}
+.four p:nth-child(2){
+  color: darken(#cc3, 10%);
+}
+.four p:nth-child(3){
+  color: grayscale(#cc3);
+}
+.four p:nth-child(4){
+  color:complement(#cc3);
+}
+@import "css/add.css";
+
+$color: #cc3;
+.four p{
+  margin: 5px;
+  @if 1 + 1 == 2 { border: 1px solid; }
+  @if 5 > 3 { border: 2px dotted; }
+
+  @if lightness($color) < 30% {
+    background-color: #000;
+  }
+  @else {
+    background-color: #fff;
+  }
+}
+@for $i from 1 to 10 {
+  .five div:nth-child(#{$i}) {
+    border: #{$i}px solid blue;
+  }
+}

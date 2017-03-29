@@ -1,0 +1,16 @@
+.index{
+    margin: auto;
+}
+
+.container-fluid{
+    padding: 20px;
+
+}
+.box{
+    margin-bottom: 20px;
+    float: left;
+    width: 220px;
+}
+.box img{
+    max-width: 200px;
+}
