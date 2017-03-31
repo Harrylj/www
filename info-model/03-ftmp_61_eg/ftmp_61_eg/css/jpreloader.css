@@ -1,0 +1,39 @@
+#jpreOverlay {
+	
+}
+#jpreLoader{
+	width:540px;
+	height:14px;
+	background: #272829;
+	bottom: 40px;
+	-webkit-box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+	   -box-box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+		    box-shadow: inset 0px 1px 0px 0px rgba(0, 0, 0, 0.5), 0px 1px 0px 0px rgba(255, 255, 255, 0.1);
+	-webkit-border-radius: 7px;
+	   -box-border-radius: 7px;
+		    border-radius: 7px;
+}
+
+#jpreBar {
+	-webkit-border-radius: 7px;
+	   -box-border-radius: 7px;
+		    border-radius: 7px;
+}
+
+#jprePercentage {
+	display: none;
+}
+
+/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	#jpreLoader{
+		width:470px;
+	}
+}
+
+/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+@media only screen and (max-width: 479px) {
+	#jpreLoader{
+		width:300px;
+	}
+}

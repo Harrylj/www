@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+
+/* PREVIEW
+============================== */
+#preloader-color {
+	text-align: center;
+}
+#color-list li {
+	position: relative;
+	display: inline-block;
+}
+#color-list li a {
+	display: block;
+	height: 130px;
+	width: 130px;
+	padding: 7px 8px 12px 8px;
+	margin: 0 10px 10px 10px;
+	background: url(color-frame.png) no-repeat center center;
+}

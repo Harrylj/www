@@ -22,13 +22,23 @@
 </head>
 <body>
 	
-	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>-->
 	<script type="text/javascript">
 		
 
+	console.log(typeof null)
+	console.log(typeof undefined)
+	console.log(typeof NaN)
+	console.log(NaN == undefined)
+	console.log(NaN ==NaN)
+	var str = '123abc';
+	console.log(typeof str++)
+	console.log(str)
 
-
-	
+	function abc(n){
+		return n<10?'true '+n:'false '+n
+	}
+	console.log(abc(10))
 	</script>
 </body>
 </html>
