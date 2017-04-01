@@ -14,7 +14,7 @@ $(function(){
         $(".btn-main").eq(2).attr("href",'sms:10086?body=YRJ');
         $(".btn-main").eq(3).attr("href",'sms:10086?body=QMJ');
         $(".btn-main").eq(4).attr("href",'sms:10086?body=LLJX');
-        $(".btn-main").eq(5).attr("href",'sms:10086?body=LLHX');
+        $(".btn-main").eq(5).attr("href",'sms:10086?body=LLZX');
     }
     if(mobile == 'iphone'){
         $(".btn-main").eq(0).attr("href",'sms:10086&body=LLQT');
@@ -22,7 +22,7 @@ $(function(){
         $(".btn-main").eq(2).attr("href",'sms:10086&body=YRJ');
         $(".btn-main").eq(3).attr("href",'sms:10086&body=QMJ');
         $(".btn-main").eq(4).attr("href",'sms:10086&body=LLJX');
-        $(".btn-main").eq(5).attr("href",'sms:10086&body=LLHX');
+        $(".btn-main").eq(5).attr("href",'sms:10086&body=LLZX');
     }
 });
 
