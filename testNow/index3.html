@@ -22,33 +22,24 @@
 </head>
 <body>
 	
-	<!--<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>-->
+	
 	<script type="text/javascript">
-		
-	//object
-	console.log(typeof null)
-	//undefined
-	console.log(typeof undefined)
-	//number
-	console.log(typeof NaN)
-	//false
-	console.log(NaN == undefined)
-	//false
-	console.log(NaN ==NaN)
-	var str = '123abc';
-	//number
-	console.log(typeof str++)
-	//NaN
-	console.log(str)
+		var obj1 = new Object;
+		console.log(obj1)
+		var obj2 = obj1;
+		console.log(obj2)
+		obj2.name = 'alan';
+		obj1.name = 'lijian'
+		console.log(obj1.name);
+
+		var arr1 = new Array;
+		console.log(arr1);
+		var arr2 = arr1;
+		console.log(arr2)
+		arr2[0] = '2';
+		arr1[0] = '1';
+		console.log(arr1)
 	
-	function abc(n){
-		return n<10?'true '+n:'false '+n
-	}
-	//false 10
-	console.log(abc(10))
-	
-	var abc = new Array;
-	alert(typeof abc);
 	</script>
 </body>
 </html>
