@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义过滤器</title>
+	</head>
+	<body>
+		<div id="box">
+			{{msg | my-filter('12','5')}}
+		</div>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+		Vue.filter('my-filter',function(value,a,b){
+			console.log(a+',' +b)
+			return value<10?'0'+value:value
+			
+		})
+		new Vue({
+			el:"#box",
+			data:{
+				msg:"9"
+			}
+		})
+	</script>
+</html>

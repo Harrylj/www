@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>子组件修改父组件的数据方法1</title>
+	</head>
+	<body>
+		<div id="box">
+			父级=>{{giveData.a}}
+			<br />
+			<child-com :msg="giveData"></child-com>
+		</div>
+		<template id="child">
+			<div>
+				<span>子组件=></span>
+				<button @click="change">修改</button>
+				<span>{{msg.a}}</span>
+			</div>
+		</template>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//以前直接修改的方式不行了，方法1，现在要放在一个对象里，这样就可以修改
+		
+		new Vue({
+			el:"#box",
+			data:{
+				giveData:{
+					a:"我是父子件的数据"
+				}
+			},
+			components:{
+				"child-com":{
+					props:['msg'],
+					template:"#child",
+					methods:{
+						change(){
+							this.msg.a='我被修改了'
+						}
+					}
+				}
+			}
+		})
+		
+		
+	</script>
+</html>

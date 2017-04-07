@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>抽奖</title>
+		<meta charset="utf-8">
+
+        <!-- 使用最新的ie内核渲染 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- 移动设备优先, 禁止缩放 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+        <!-- 国产浏览器(360)使用webkit内核 -->
+        <meta name="renderer" content="webkit">
+        <!-- 禁止识别为手机号码 -->
+        <meta name="format-detection" content="telephone=no" />
+		<meta name="renderer" content="webkit">
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/reset.css" />
+		<style>
+			.g-content {
+				width: 100%;
+				background: #fbe3cc;
+				height: auto;
+				font-family: "微软雅黑", "microsoft yahei";
+                background-image: url("img/lottery/bg.png");
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+			}
+			.g-content .g-lottery-case {
+				width: 320px;
+				min-height: 500px;
+				margin: 0 auto;
+                padding: 20px 0;
+
+			}
+			
+			.g-content .g-lottery-case .g-left h2 {
+				font-size: 20px;
+				line-height: 32px;
+				font-weight: normal;
+				padding:10px 20px;
+                text-align: center;
+                letter-spacing: 2px;
+			}
+			
+			.g-content .g-lottery-case .g-left {
+			}
+			
+			.g-lottery-box {
+				width: 300px;
+				height: 300px;
+				margin:auto;
+				position: relative;
+				background: url(img/lottery/ly-plate-c.gif) no-repeat;
+                background-size: 100% 100%;
+			}
+			
+			.g-lottery-box .g-lottery-img {
+				width: 260px;
+				height: 260px;
+				position: relative;
+				background: url(img/lottery/bg-lottery.png) no-repeat;
+				left: 20px;
+				top: 20px;
+                background-size: 100% 100%;
+			}
+			
+			.g-lottery-box .playbtn {
+				width: 88px;
+				height: 88px;
+				position: absolute;
+				top: 86px;
+				left: 86px;
+				background: url(img/lottery/playbtn.png) no-repeat;
+                background-size: 100% 100%;
+			}
+            .marquee-bg{
+                background-image: url("img/lottery/gundong.png");
+                background-size: 100% 100%;
+                width: 320px;
+                height: 40px;
+                box-sizing: border-box;
+                padding: 0 10px 0 40px;
+
+            }
+            #marquee{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+            #marquee ul {
+                position: absolute;
+                left: 0;
+                top: 10px;
+                height: 20px;
+                overflow: hidden;
+                line-height: 20px;
+            }
+            #marquee li{
+                float: left;
+                list-style: none;
+                margin-right: 15px;
+            }
+            .img-01{
+                width: 80%;
+                margin: auto;
+                display: block;
+            }
+            .playnum{
+                color:#ffe866;
+            }
+            .index-hdgz{
+                color: white;
+                line-height: 28px;
+                text-align: center;
+                font-size: 14px;
+                text-decoration: underline;
+            }
+		</style>
+	</head>
+
+	<body>
+		<div class="g-content">
+			<div class="g-lottery-case">
+				<div class="g-left">
+                    <div class="marquee-bg">
+                        <div id="marquee">
+                            <ul>
+                                <li>18200166593中奖手机一部</li>
+                                <li>18200166593中奖手机一部</li>
+                                <li>18200166593中奖手机一部</li>
+                                <li>18200166593中奖手机一部</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <img class="img-01" src="img/lottery/H1.png" alt=""/>
+					<div class="g-lottery-box">
+						<div class="g-lottery-img">
+							<a class="playbtn" href="javascript:;" title="开始抽奖"></a>
+						</div>
+					</div>
+                    <h2>您今天还有<span class="playnum"></span>次机会</h2>
+                    <button class="abc-btn-hdgz" data-toggle="modal" data-target="#myModal">查看活动规则</button>
+                </div>
+			</div>
+			<div class="move-abc">
+				<div class="page main" >
+				    <ul>
+				        <li><img src="./file/pic02.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				        <li><img src="./file/pic03.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				        <li><img src="./file/pic04.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				        <li><img src="./file/pic05.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				        <li><img src="./file/pic06.png" alt=""><a href="javascript:void (0)" class="btn-main2 size-small">请期待</a></li>
+				        <li><img src="./file/pic07.png" alt=""><a href="javascript:void (0)" class="btn-main2 size-small">请期待</a></li>
+				        <li><img src="./file/pic08.png" alt=""><a href="javascript:void (0)" class="btn-main2 size-small">请期待</a></li>
+				        <li><img src="./file/pic09.png" alt=""><a href="javascript:void (0)" class="btn-main2 size-small">请期待</a></li>
+				        <li><img src="./file/pic10.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				        <li><img src="./file/pic11.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				        <li><img src="./file/pic12.png" alt=""><a href="javascript:void (0)" class="btn-main size-small">办理</a></li>
+				    </ul>
+				</div>
+				<div style="height: 50px;"></div>
+			</div>
+			
+		</div>
+		
+		
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+		    <div class="modal-dialog" role="document">
+		        <div class="modal-content">
+		            <div class="modal-body now-abc">
+		            	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		                <h1>活动规则</h1>
+		                <p>
+		                	1、目标客户办理88/108/138/168元档次宽带资费可参与大转盘抽奖，当月办理业务的次月11-13日进行抽奖，其他方式抽奖不进行核发。
+<br />2、所中取电子券于抽奖次月11日前进行核发，11-13日可到办理宽带业务网点使用电子券进行礼品兑换，并抽取次月电子券。
+<br />3、未在指定日期进行兑换导致电子券过期的行为客户自行负责；
+<br />4、凉山移动对本活动拥有最终解释权。
+		                </p>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+		<!--<script src="js/jquery-1.8.3.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/jquery.rotate.min.js"></script>
+		<script>
+            window.onload=function(){
+                var timer=null;
+                var speed=-1;
+                var od=document.getElementById("marquee");
+                var au=od.getElementsByTagName('ul')[0];
+                var ali=au.getElementsByTagName('li');
+                au.innerHTML=au.innerHTML+au.innerHTML;
+                au.style.width=ali[0].offsetWidth*ali.length+'px';
+                timer=setInterval(move,30);
+                function move(){
+                    if(au.offsetLeft<-au.offsetWidth/2){
+                        au.style.left='0';
+                    }
+                    if(au.offsetLeft>0){
+                        au.style.left=-au.offsetWidth/2+'px';
+                    }
+                    au.style.left=au.offsetLeft+speed+'px';
+                }
+                od.onmouseover=function(){
+                    clearInterval(timer);
+                };
+                od.onmouseout=function(){
+                    timer=setInterval(move,30)
+                };
+                document.getElementById("btn1").onclick=function(){
+                    speed=-4;
+                };
+                document.getElementById("btn2").onclick=function(){
+                    speed=4;
+                }
+            };
+
+            $(function() {
+
+				var $btn = $('.playbtn');
+				var playnum = 1; //初始次数，由后台传入
+				$('.playnum').html(playnum);
+				var isture = 0;
+				var clickfunc = function() {
+					var data = [1, 2, 3, 4];
+					//data为随机出来的结果，根据概率后的结果
+					data = data[Math.floor(Math.random() * data.length)];
+					//指定获奖结果
+                    data = 4;
+                    switch(data) {
+						case 1:
+							rotateFunc(1, 0, '50元电子券');
+							break;
+						case 2:
+							rotateFunc(2, 90, '30元电子券');
+							break;
+						case 3:
+							rotateFunc(3, 180, '20元电子券');
+							break;
+						case 4:
+							rotateFunc(4, 270, '谢谢惠顾');
+							break;
+					
+					}
+				};
+				$btn.click(function() {
+					if(isture) return; // 如果在执行就退出
+					isture = true; // 标志为 在执行
+					//先判断是否登录,未登录则执行下面的函数
+					if(1 == 2) {
+						$('.playnum').html('0');
+						alert("请先登录");
+						isture = false;
+					} else { //登录了就执行下面
+						if(playnum <= 0) { //当抽奖次数为0的时候执行
+							alert("没有次数了");
+							$('.playnum').html(0);
+							isture = false;
+						} else { //还有次数就执行
+							playnum = playnum - 1; //执行转盘了则次数减1
+							if(playnum <= 0) {
+								playnum = 0;
+							}
+							$('.playnum').html(playnum);
+							clickfunc();
+						}
+					}
+				});
+				var rotateFunc = function(awards, angle, text) {
+					isture = true;
+					$btn.stopRotate();
+					$btn.rotate({
+						angle: 0,
+						duration: 4000, //旋转时间
+						animateTo: angle + 1440, //让它根据得出来的结果加上1440度旋转
+						callback: function() {
+							isture = false; // 标志为 执行完毕
+							alert(text);
+						}
+					});
+				};
+				
+				var u = navigator.userAgent,mobile = '';
+			    var tw = 'an';
+			    if(u.indexOf('iPhone') > -1) mobile = 'iphone';
+			    if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) mobile = 'Android';
+			    if(mobile == 'Android'){
+			        $(".btn-main").eq(0).attr("href",'sms:10086?body=LLQT');
+			        $(".btn-main").eq(1).attr("href",'sms:10086?body=51SSBZ');
+			        $(".btn-main").eq(2).attr("href",'sms:10086?body=YRJ');
+			        $(".btn-main").eq(3).attr("href",'sms:10086?body=QMJ');
+			        $(".btn-main").eq(4).attr("href",'sms:10086?body=LLJX');
+			        $(".btn-main").eq(5).attr("href",'sms:10086?body=LLHX');
+			        $(".btn-main").eq(6).attr("href",'sms:10086?body=LLZX');
+			    }
+			    if(mobile == 'iphone'){
+			        $(".btn-main").eq(0).attr("href",'sms:10086&body=LLQT');
+			        $(".btn-main").eq(1).attr("href",'sms:10086&body=51SSBZ');
+			        $(".btn-main").eq(2).attr("href",'sms:10086&body=YRJ');
+			        $(".btn-main").eq(3).attr("href",'sms:10086&body=QMJ');
+			        $(".btn-main").eq(4).attr("href",'sms:10086&body=LLJX');
+			        $(".btn-main").eq(5).attr("href",'sms:10086&body=LLHX');
+			        $(".btn-main").eq(6).attr("href",'sms:10086&body=LLZX');
+			    }
+			});
+		</script>
+	</body>
+
+</html>

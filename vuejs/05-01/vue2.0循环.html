@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>循环</title>
+	</head>
+	<body>
+		<!--
+        	作者：648267773@qq.com
+        	时间：2017-04-05
+        	描述：:key="index" =》提高循环性能
+        -->
+		<div id="box">
+			{{msg}}
+			
+			<input v-model="addMsg" value="" />
+			<button @click ='add'>添加</button>
+			<ul>
+				<li v-for='(ele,index) in list' :key="index">
+					{{ele}}{{index}}
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var app = new Vue({
+			el:"#box",
+			data:{
+				msg:"welcome vue",
+				list:['apple','banana','orange'],
+				addMsg:''
+			},
+			methods:{
+				add:function(){
+					this.list.push(this.addMsg)
+				}
+			}
+		})
+	</script>
+</html>

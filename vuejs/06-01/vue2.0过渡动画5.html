@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>one</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../animate.css"/>
+	<style type="text/css">
+		li{
+			width: 80px;
+			height: 80px;
+			list-style: none;
+			color: white;
+			background-color: red;
+			text-align: center;
+			margin-bottom: 10px;
+			line-height: 80px;
+		}
+	</style>
+	<body>
+		<div id="box">
+			<input type="text" v-model="msg" />
+			
+			<transition-group tag="ul" enter-active-class='tada' leave-active-class='tada'>
+			  <li v-show="msg" v-for="(val,index) in lists" :key="index" class="animated">
+			    {{ val }}
+			  </li>
+			</transition-group>
+		</div>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		new Vue({
+			el:"#box",
+			data:{
+				msg:"",
+				items:['apple','banana','orange','pear']
+			},
+			computed:{
+				
+				lists:function(){
+					var arr = [];
+					this.items.forEach(function(val){
+						if(val.indexOf(this.msg)!= -1){
+							arr.push(val)
+						}
+					}.bind(this))
+					return arr;
+				}
+			}
+		})
+	</script>
+</html>

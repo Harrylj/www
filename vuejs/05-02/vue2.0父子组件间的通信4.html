@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>子组件获取父组件的数据</title>
+	</head>
+	<body>
+		<div id="box">
+			父级=>{{a}}
+			<br />
+			<child-com :msg="a"></child-com>
+		</div>
+		<template id="child">
+			<div>
+				<span>子组件=></span>
+				<button @click="change">修改</button>
+				<span>{{b}}</span>
+			</div>
+		</template>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//以前直接修改的方式不行了，可以通过mount进行中转操作，但是好像只能修改子集的.只是不报错
+		new Vue({
+			el:"#box",
+			data:{
+				a:"我是父子件的数据"
+			},
+			components:{
+				"child-com":{
+					data(){
+						return {
+							b:''
+						}	
+					},
+					props:['msg'],
+					template:"#child",
+					mounted(){
+						this.b = this.msg
+					},
+					methods:{
+						change(){
+							this.b ='我被改变了'
+						}
+					}
+					
+				}
+			}
+		})
+	</script>
+</html>

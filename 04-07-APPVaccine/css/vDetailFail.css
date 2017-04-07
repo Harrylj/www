@@ -1,0 +1,61 @@
+.detail-f{
+    padding-bottom: 20px;
+}
+.detail-f-header
+,.detail-t-header{
+    padding: 0 8px 8px 8px;
+    border-bottom: 5px solid #e0e0e0;
+    background-repeat: no-repeat;
+    background-size: 80px 66px;
+    background-position: 95% 5px;
+}
+.detail-f-header{
+    background-image: url("../images/detail-fail.png");
+}
+.detail-t-header{
+    background-image: url("../images/detail-true.png");
+}
+.detail-f-header h1
+,.detail-t-header h1{
+    color: #000000;
+    letter-spacing: 2px;
+    font-size: 1.125rem;
+    line-height: 40px;
+}
+.btn-mf{
+    background-color: #0df4bb;
+}
+.btn-bd{
+    margin-left: 15px;
+    background-color: #f85d7a;
+}
+
+.detail-f-content{
+    padding: 8px;
+}
+.detail-f-content p{
+    font-family: "微软雅黑", "黑体", "宋体";
+    font-size: 1rem;
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+.dfc-p-01{
+    color: #edc175;
+}
+.dfc-p-02{
+    color: black;
+
+}
+.btn-ljyy{
+    margin-top: 10px;
+    background-color: #36ca1e;
+}
+
+
+
+
+
+
+
+
+

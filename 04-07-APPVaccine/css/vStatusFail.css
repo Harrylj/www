@@ -1,0 +1,81 @@
+
+.select-age{
+    position: relative;
+    float: right;
+    color: white;
+    line-height: 48px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    margin-right: 20px;
+    font-family: "微软雅黑", "黑体", "宋体";
+}
+.select-age:after{
+    display: block;
+    position: absolute;
+    right: -15px;
+    top: 20px;
+    content: "##";
+    width: 15px;
+    height: 9px;
+    color: transparent;
+    background-image: url("../images/public-header-bottom.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+}
+.s-f-content{
+    padding-bottom: 20px;
+}
+.s-f-list{
+    position: relative;
+    margin-left: 30px;;
+    padding: 10px 10px 10px 30px;
+    border-left: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.s-f-list h1{
+    font-size: 1.125rem;
+    line-height: 30px;
+    color: black;
+    letter-spacing: 2px;
+}
+.s-f-list p{
+    line-height: 30px;
+    letter-spacing: 1px;
+}
+.s-f-list p span:nth-child(1){
+    font-size: 1rem;
+    color: #666666;
+}
+.s-f-list p span:nth-child(2){
+    display: inline-block;
+    text-indent: 1em;
+    font-size: 1.125rem;
+    color: red;
+}
+.s-f-list .s-f-list-img{
+    position: absolute;
+    top: 50%;
+    left: -20px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 40px;
+    margin-top: -20px;
+}
+.list-free .s-f-list-img{
+    background-image: url("../images/list-free.png");
+}
+.list-charge .s-f-list-img{
+    background-image: url("../images/list-charge.png");
+}
+
+
+
+
+
+
+
+
+
+
