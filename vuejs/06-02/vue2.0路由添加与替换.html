@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>one</title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="../animate.css"/>
+	<style type="text/css">
+		.router-link-active{
+			color: red;
+			font-size: 20px;
+		}
+	</style>
+	<body>
+		<div id="box">
+			<button @click="push">添加一个路由，有历史记录</button>
+			<button @click="replace">替换一个路由，无历史记录</button>
+			<div>
+				<router-link to="/home">主页</router-link>
+				<router-link to="/user">用户</router-link>
+			</div>
+			<div>
+				<transition enter-active-class='animated bounceInLeft' leave-active-class=" animated zoomOutRight">
+					<router-view></router-view>
+				</transition>
+				
+			</div>
+		</div>
+	</body>
+	<script src="../vue.js" type="text/javascript" charset="utf-8"></script>
+	<script src="../bower_components/vue-router/dist/vue-router.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		//组件
+		
+		var Home ={
+			template:'<h3>我是主页</h3>'
+		};
+		var User ={
+			template:`
+				<div>
+					<h3>我是用户信息</h3>
+				</div>
+			`
+		};
+		//配置路由
+		var routers=[
+			{path:'/home',component:Home},
+			{path:'/user',component:User},
+			{path:'*',redirect:'/home'}  //404
+		];
+		
+		//生成路由实例
+		const router = new VueRouter({
+			routes : routers
+		})
+		
+		new Vue({
+			router,
+			methods:{
+				push(){
+					router.push({path:'home'});
+				},
+				replace(){
+					router.replace({path:'user'})
+				}
+			}
+		}).$mount('#box')
+
+	</script>
+</html>
