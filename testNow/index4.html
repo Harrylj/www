@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+<div class="foo">1</div>
+<div class="foo">2</div>
+<div class="foo">3</div>
+<div class="foo">4</div>
+<div class="foo">5</div>
+	
+	<script type="text/javascript">
+		 let [a,b,c] = [1,2,3];
+         a ='a';
+
+        function write(){
+            let a ='b';
+            console.log(a)
+        }
+
+        write();
+        console.log(a,b,c)
+        const te = {};
+         Object.assign(te, { x: 3 });
+        console.log(te)
+
+
+         const foo = document.querySelectorAll('.foo');
+         const nodes = Array.from(foo);
+            console.log(foo)
+            console.log(nodes)
+
+        let x = 2
+         var f = v => v;
+         var e = () => 3.14;
+        console.log(f(4))
+        console.log(e())
+//         var obj = {
+//             birth: 1990,
+//             getAge: function () {
+//                 var b = this.birth; // 1990
+//                 var fn = function () {
+//                     console.log(b)
+//                     return new Date().getFullYear() - b; // this指向window或undefined
+//                 };
+//
+//                 return fn();
+//             }
+//         };
+         var obj = {
+             birth: 1990,
+             getAge: function () {
+                 var b = this.birth; // 1990
+                 var fn = () => new Date().getFullYear() - this.birth; // this指向obj对象
+                 return fn();
+             }
+         };
+        obj.getAge()
+	</script>
+</body>
+</html>

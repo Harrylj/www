@@ -1,0 +1,28 @@
+.details-message{
+	letter-spacing: 1px;
+	padding: 10px;
+	font-family: "微软雅黑";
+}
+.details-message h1{
+	text-align: center;
+	color: red;
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 15px;
+}
+.details-message h3
+,.details-message p{
+	font-size: 14px;
+	line-height: 22px;
+	margin-bottom: 10px;
+	color: #888888;
+}
+.details-message h3{
+	text-indent: 2em;
+}
+.details-message h2{
+	font-size: 16px;
+	line-height: 24px;
+	color: black;
+	margin-bottom: 10px;
+}

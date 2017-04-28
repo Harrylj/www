@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>设置</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personalcenter.css" />
+		<link rel="stylesheet" type="text/css" href="../css/setting.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<style>
+			.mui-table-view-cell>a:not(.mui-btn).mui-active {
+				background: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">设置</h1>
+		</header>
+		<div class="mui-content">
+			<!--单页面开始-->
+			<div id="setting" class="personal-center mui-page">
+				<!--页面主内容区开始-->
+				<div class="mui-page-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="pc-ul c-ul-01 pc-ul-01 mui-table-view mui-table-view-chevron">
+								<li class="mui-table-view-cell" id="1">
+									<a class="mui-navigate-right">清除缓存</a>
+								</li>
+								<li class="mui-table-view-cell" id="2">
+									<a class="mui-navigate-right">检查版本</a>
+								</li>
+
+							</ul>
+							<ul class="pc-ul c-ul-02 pc-ul-02 mui-table-view mui-table-view-chevron" style="display: none;">
+								<li class="mui-table-view-cell" id="3">
+									<a class="mui-navigate-right" href="#">关于</a>
+								</li>
+							</ul>
+
+							<button class="s-btn-exit" type="button" id="logout">退出登录</button>
+						</div>
+					</div>
+				</div>
+				<!--页面主内容区结束-->
+			</div>
+		</div>
+
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/update.js"></script>
+		<script type="text/javascript" src="../js/cacheUtil.js" ></script>
+		<script>
+			(function($, doc) {
+				var Intent = null,
+					File = null,
+					Uri = null,
+					main = null;
+				var cacheCaleState = false;
+				$.init();
+				$.plusReady(function() {
+					var elem = document.getElementById("logout");
+					elem.addEventListener("tap", function() {
+						localStorage.removeItem("userInfo")
+						var id = 'login';
+						startWindow(id, id + ".html");
+					});
+					mui(".mui-table-view").on('tap', '.mui-table-view-cell', function() {
+						//获取id
+						var id = this.getAttribute("id");
+						var pageId = "";
+						var pageUrl = "";
+						if(id == "1") {
+							plus.nativeUI.showWaiting("清除中...");
+							clear(); //清除全部缓存
+							setTimeout(function() {
+								plus.nativeUI.closeWaiting();
+							}, 1500);
+						} else if(id == "2") {
+							checkUpdate(function(){});
+						} else if(id == "3") {
+							mui.toast("该功能正在开发中");
+						}
+					})
+				});
+			}(mui, document));
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>通知消息</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<style>
+			.mui-btn {
+				padding: 10px;
+			}
+			
+			.mui-table-view-cell::after {
+				left: 0;
+			}
+			
+			.mui-table-view-cell {
+				overflow: hidden;
+				padding-top: 14px;
+				padding-bottom: 14px;
+				color: #333333;
+			}
+			
+			.mui-navigate-right::after {
+				color: #999999;
+				font-weight: bold;
+			}
+			
+			.custom-table-right {
+				margin-right: 16px;
+				color: #999999;
+				float: right;
+				margin-left: 8px;
+			}
+			
+			.mui-scroll-wrapper {
+				top: 45px;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="noticeCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">通知消息</h1>
+			<button class="mui-btn mui-btn-link mui-pull-right" ng-click="onClick($event)">清空</button>
+		</header>
+		<div class="mui-content ">
+			<div class="mui-loader">加载中...</div>
+			<ul class="mui-table-view" style="margin-top: 0px;">
+				<li class="mui-table-view-cell" ng-repeat="item in data" ng-click="onItemClick(item)">
+					<a class="mui-navigate-right">
+						<span class="custom-table-right">{{item.publishTime}}</span>
+						<span>{{item.title}}</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/controllers/noticeController.js"></script>
+		<script>
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", function() {
+					plusReady();
+				}, false);
+			}
+
+			function plusReady() {
+				_self = plus.webview.currentWebview();
+				_self.setPullToRefresh({
+					support: true,
+					height: '50px',
+					range: '100px',
+					style: 'circle',
+					offset: '45px'
+				}, pulldownRefresh);
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				var appElement = document.querySelector('[ng-controller=noticeCtrl]');
+				var $scope = angular.element(appElement).scope();
+				var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+				if(userInfo) {
+					$scope.getData(userInfo.userid, function() {
+						_self.endPullToRefresh();
+					})
+				}
+			}
+		</script>
+	</body>
+
+</html>

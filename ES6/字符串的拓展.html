@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>字符串的拓展</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<p>?𠮷</p>
+	<div id="diva"></div>
+	<script type="text/javascript">
+        function is32Bit(c) {
+            return c.codePointAt(0) > 0xFFFF;
+        }
+        console.log(is32Bit("𠮷"))// true
+        console.log(is32Bit("a")) // false
+        var s = '𠮷a';
+        for (let ch of s) {
+            //console.log(ch.codePointAt(0).toString(16));
+            console.log(ch);
+        }
+        console.log(s.codePointAt(0).toString(16)) // "20bb7"
+        console.log(s.codePointAt(2).toString(16)) // "61"
+
+        let alan = 'alan';
+        console.log('na'.repeat('3'))
+        var greeting = `\`Yo\` World!`;
+        console.log(greeting)
+
+        function fn() {
+            return "Hello World";
+        }
+
+        console.log(`foo ${fn()} bar`)
+
+        // 写法二
+        let str = '(name) => `Hello ${name}!`';
+        let func = eval.call(null, str);
+        console.log(func('Jack')) // "Hello Jack!"
+		
+		
+		var a = 5;
+var b = 10;
+
+function tag(s, v1, v2) {
+  console.log(s[0]);
+  console.log(s[1]);
+  console.log(s[2]);
+  console.log(v1);
+  console.log(v2);
+
+  return "OK";
+}
+
+tag`Hello ${ a + b } world ${ a * b}`;
+    </script>
+</body>
+</html>

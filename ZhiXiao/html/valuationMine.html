@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>我的计价</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/moneyMine.css" />
+		<link rel="stylesheet" type="text/css" href="../css/moneyImg.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<style>
+			.mi-btn {
+				background-color: #007aff;
+				border: 1px solid #007aff;
+				line-height: 27px;
+				padding: 0 10px 0 10px;
+				margin: 0;
+				font-size: 12px;
+				color: #fff;
+			}
+			
+			td {
+				word-wrap: break-word;
+			}
+			
+			.mui-scroll-wrapper {
+				top: 110px;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="valuationCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">我的计价</h1>
+			<button id="history" class="mui-btn mui-btn-link mui-pull-right">趋势图</button>
+		</header>
+		<div class="mui-content" style="background-color: #F9F9F9;">
+			<div class="mi-date-div" style="margin: 10px;">
+				<button class="mi-date-one mi-date-btn ">2017年1月</button>
+				<span class="mi-down">~</span>
+				<button class="mi-date-two mi-date-btn ">2017年3月</button>
+				<button class="mi-btn" id="query">查询</button>
+			</div>
+			<div class="mui-loader">加载中...</div>
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="money-mine">
+						<div class="mm-div" ng-repeat="item in data">
+							<h1>{{item.month}}计价信息</h1>
+							<table class="mm-table" border="0" cellspacing="0" cellpadding="0" style="table-layout:fixed">
+								<tr>
+									<td>产品名称</td>
+									<td>销售数量</td>
+									<td>交易详情</td>
+									<td>销售计价</td>
+								</tr>
+								<tr ng-repeat="item1 in item.commission">
+									<td>{{item1.productName}}</td>
+									<td>{{item1.sellAmounts}}</td>
+									<td>{{item1.sellDetails}}</td>
+									<td>{{item1.sellPrice}}</td>
+								</tr>
+								<tr>
+									<td>总计</td>
+									<td colspan="3">{{item.totalPrice}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/mui.dtpicker.js"></script>
+		<script type="text/javascript" src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<script type="text/javascript" src="../js/controllers/valuationController.js"></script>
+		<script>
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll();
+			mui.ready(function() {
+				document.getElementById("history").addEventListener("tap", function() {
+					//通过controller来获取Angular应用
+					var appElement = document.querySelector('[ng-controller=valuationCtrl]');
+					//获取$scope变量
+					var $scope = angular.element(appElement).scope();
+					$scope.onClick();
+				});
+
+				var dateOne = mui('.mi-date-one')[0],
+					dateTwo = mui('.mi-date-two')[0];
+				var nowDate = new Date();
+				startDate = new Date(nowDate.getFullYear(), nowDate.getMonth() - 1, 1);
+				endDate = nowDate;
+
+				dateOne.innerText = dateFormat1(startDate);
+				dateTwo.innerText = dateFormat1(endDate);
+
+				dateOne.addEventListener('tap', function() {
+					var picker = getDtPicker();
+					picker.show(function(rs) {
+						dateOne.innerText = rs.y.text + '-' + parseInt(rs.m.text) + '-' + rs.d.text;
+						startDate = new Date(rs.y.value, rs.m.value - 1, rs.d.value)
+						picker.dispose();
+					});
+				}, false);
+
+				dateTwo.addEventListener('tap', function() {
+					var picker = getDtPicker();
+					picker.show(function(rs) {
+						dateTwo.innerText = rs.y.text + '-' + parseInt(rs.m.text) + '-' + rs.d.text;
+						endDate = new Date(rs.y.value, rs.m.value - 1, rs.d.value)
+						picker.dispose();
+					});
+				}, false);
+
+				document.getElementById("query").addEventListener("tap", function() {
+					if(startDate > endDate) {
+						mui.alert("开始时间不能大于结束时间");
+					} else {
+						var appElement = document.querySelector('[ng-controller=valuationCtrl]');
+						var $scope = angular.element(appElement).scope();
+						$scope.getValuation(startDate, endDate);
+						$scope.$apply();
+					}
+				}, false);
+
+				function getDtPicker() {
+					return new mui.DtPicker({
+						type: "date", //设置日历初始视图模式 
+						beginDate: new Date(nowDate.getFullYear() - 100), //设置开始日期 
+						endDate: new Date(), //设置结束日期 
+					});
+				}
+			});
+		</script>
+	</body>
+
+</html>

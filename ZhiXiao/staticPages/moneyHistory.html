@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>工资历史记录</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personalcenter.css" />
+		<link rel="stylesheet" type="text/css" href="../css/notificationMessage.css" />
+		<link rel="stylesheet" type="text/css" href="../css/moneyHistory.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<style>			
+			.mpi-ul {
+				border-radius: 6px;
+			}
+			
+			.mh-btn-more {
+				border-radius: 0 0 6px 6px;
+				bottom: 0;
+			}
+			
+			.money-history {
+				padding-top: 0px;
+				background-color: #F9F9F9;
+			}
+			.mui-table-view::before {
+				display: none;
+			}
+			.mh-list {
+				margin-bottom: 8px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">工资历史记录</h1>
+		</header>
+		<div class="mui-content">
+			<!--单页面开始-->
+			<div id="setting" class="money-history notification-message personal-center mui-page">
+				<!--页面主内容区开始-->
+				<div class="mui-page-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<h1 class="mh-h-01">2017年度薪资记录</h1>
+							<div class="mh-list">
+								<ul class="mpi-ul pc-ul mui-table-view mui-table-view-chevron">
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.1工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.2工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.3工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.4工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.5工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.6工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.7工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.8工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.9工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.10工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.11工资信息</a>
+									</li>
+									<li class="mui-table-view-cell">
+										<a href="#" class="mui-navigate-right">2017.12工资信息</a>
+									</li>
+								</ul>
+								<button class="mh-btn-more">
+									<span class="mh-img"></span>
+									<span id="more-text">查看更多</span>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--页面主内容区结束-->
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript">
+			mui.init();
+			$(function() {
+				$('.mh-btn-more').on('click', function() {
+					$(this).parents('.mh-list').toggleClass('mh-list-show');
+					if($(this).parents('.mh-list').hasClass("mh-list-show")) {
+						document.getElementById("more-text").innerHTML = "收起";
+					} else {
+						document.getElementById("more-text").innerHTML = "查看更多";
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

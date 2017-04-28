@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>let和const</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<a href="abc">1</a>
+	<a href="abc">2</a>
+	<a href="abc">3</a>
+	<a href="abc">4</a>
+	<script type="text/javascript">
+		var a = [];
+		for (var i = 0; i < 10; i++) {
+		  a[i] = function () {
+		    console.log(i);
+		  };
+		}
+		a[6](); // 10
+
+		var a = [];
+		for (let i = 0; i < 10; i++) {
+		  a[i] = function () {
+		    console.log(i);
+		  };
+		}
+		a[6](); // 6
+		
+		for (let i = 0; i < 3; i++) {
+		  let i = 'abc';
+		  console.log(i);
+		  
+		}
+		// abc
+		// abc
+		// abc
+		
+		var a = [];
+		for (var i = 0; i < 10; i++) {
+		  a[i] = function () {
+		    console.log(i);
+		  };
+		  
+		}
+		a[6](); // 10
+		console.log(a)
+		
+		/*
+		function bar(x = y, y = 2) {
+		  return [x, y];
+		}
+		bar(); // 报错
+		*/
+		
+		var tmp = new Date();
+		function f() {
+		  console.log(tmp);
+		  if (false) {
+		    var tmp = 'hello world';
+		  }
+		}
+		f(); // undefined
+		/*
+		function add(){
+		    return ++add.count;
+		}
+		add.count = 0;
+		console.log(add());//1
+		console.log(add());//2
+		*/
+		var a = 0;
+		function add(){
+		    return a++;
+		}
+		console.log(add());//1
+		console.log(add());//2
+		/*
+		var arr = [1, 2, 3, 4];
+		for (var k = 0, length = arr.length; k < length; k++) {
+		 alert(arr[k]);
+		}
+		
+		
+
+		var arr = [1,2,3,4];
+		arr.forEach(alert);
+		*/
+		
+
+		if (true) {
+		  /*
+		  // TDZ开始
+		  tmp = 'abc'; // ReferenceError
+		  console.log(tmp); // ReferenceError
+		
+		  */
+		  let tmp; // TDZ结束
+		  console.log(tmp); // undefined
+		  
+		  tmp = 123;
+		  console.log(tmp); // 123
+		}
+		var tmp = new Date();
+
+		function f() {
+		  console.log(tmp);
+		  if (false) {
+		    var tmp = 'hello world';
+		  }
+		}
+		
+		f(); // undefined
+		
+		
+		function f1() {
+		  let n = 5;
+		  if (true) {
+		    
+		    let n = 10;
+		    console.log(n)
+		  }
+		  console.log(n); // 5
+		}
+		f1()
+		/*
+		var num1 = 'number';
+		var num2 = "number";
+		alert(num1 === num2)
+		*/
+
+		var numbers = [1, 4, 9];
+		var roots = numbers.map(Math.sqrt);
+		console.log(numbers,roots)
+		
+	</script>
+</body>
+</html>

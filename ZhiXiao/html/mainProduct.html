@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>产品库</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mainNews.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/product.css"/>
+	</head>
+
+	<body ng-controller="productCtrl">
+		
+		<div class="main-product">
+			<div class="mui-loader">加载中...</div>
+			<!--
+            	作者：648267773@qq.com
+            	时间：2017-02-28
+            	描述：.mn-nav-click:表示被选中
+            -->
+			<div class="swiper-container swiper-container-header">
+		        <div class="swiper-wrapper mn-nav">
+		            <div class="swiper-slide" ng-repeat="item in data" is-over="toggle.now">
+		               	{{item.category}}
+		            </div>
+		        </div>
+		   </div>
+		   <div class="swiper-container swiper-container-img">
+		        <div class="swiper-wrapper">
+		            <div class="swiper-slide" ng-repeat="item in imageNews" image-over="toggleImage.now" ng-click="onItemClick(itemNews)">
+		               	<img ng-src="{{item.image}}"/>
+		            </div>
+		        </div>
+		   </div>
+		    <!--
+            	作者：648267773@qq.com
+            	时间：2017-02-28
+            	描述：.content-list-click:表示被选中
+            -->
+		    <div class="content-div">
+		    	<div class="content-list" ng-repeat="item in data">
+		    		<ul class="mp-nav">
+		    			<a href="#" ng-repeat="itemNews in item.products" ng-click="onItemClick(itemNews)">
+		    			<li>
+		    				<p>{{itemNews.title}}</p>
+		    				<div class="mpn-right">查看</div>
+		    			</li>
+		    			</a>
+		    		</ul>
+		    	</div>		    	
+		    </div>
+		</div>
+		
+		
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js" ></script>
+		<script type="text/javascript" src="../js/angular.min.js" ></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script type="text/javascript" src="../js/controllers/productController.js" ></script>
+		<script type="text/javascript">
+			mui.init();
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", function() {
+					plusReady();
+				}, false);
+			}
+
+			function plusReady() {
+				_self = plus.webview.currentWebview();
+				_self.setPullToRefresh({
+					support: true,
+					height: '50px',
+					range: '100px',
+					style: 'circle',
+					offset: '45px'
+				}, pulldownRefresh);
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				var appElement = document.querySelector('[ng-controller=productCtrl]');
+				var $scope = angular.element(appElement).scope();
+				var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+				if(userInfo) {
+					$scope.getData(userInfo.userid, function() {
+						_self.endPullToRefresh();
+					});
+				}
+			}
+		</script>
+	</body>
+</html>

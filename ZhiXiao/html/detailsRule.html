@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>规章制度详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/detailsRule.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+	</head>
+
+	<body ng-controller="myCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">规章制度库</h1>
+		</header>
+		<div class="mui-content" style="background-color: #F9F9F9;">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="details-rule" id="content">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="dr-bottom">
+			<!--
+	            	作者：648267773@qq.com
+	            	时间：2017-03-08
+	            	描述：#field-range，滑块，这个是进来设置初始的位置
+	            -->
+			<div class="mui-input-row mui-input-range field-contain">
+				<label>当前进度</label>
+				<div class="dr-now-div">
+					<span id='field-range-val'>0</span>%
+				</div>
+				<input id='field-range' type="range" value="0" min="0" max="100" />
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui('.mui-scroll-wrapper').scroll({
+				bounce: false
+			});
+			mui('.mui-scroll-wrapper')[0].style.top = '45px';
+			mui('.mui-scroll-wrapper')[0].style.bottom = '50px';
+			//监听input事件，获取range的value值，也可以直接element.value获取该range的值
+			var rangeList = document.querySelectorAll('input[type="range"]')[0];
+			rangeList.addEventListener('input', function() {
+				var scrollH = mui('.mui-scroll')[0].offsetHeight;
+				var containerH = mui('.mui-scroll-wrapper')[0].offsetHeight;
+				var height = (containerH - scrollH) * this.value / 100
+				//滚动条移动到指定位置
+				mui('.mui-scroll-wrapper').scroll().scrollTo(0, height);
+				//改变百分比值
+				document.getElementById('field-range-val').innerHTML = this.value;
+			});
+
+			mui('.mui-scroll-wrapper')[0].addEventListener('scrollend', function(e) {
+				var scroll = mui('.mui-scroll-wrapper').scroll();
+				var scrollH = mui('.mui-scroll')[0].offsetHeight;
+				var containerH = this.offsetHeight;
+				var height = scrollH - containerH;
+				var abc = parseInt(Math.abs(scroll.y / height) * 100);
+				document.getElementById('field-range').value = abc;
+				document.getElementById('field-range-val').innerHTML = rangeList.value;
+				saveReading();
+			});
+
+			var oldBack = mui.back;
+			mui.back = function(event) {
+				saveReading();
+				oldBack();
+			};
+
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+
+			function plusReady() {
+				var self = plus.webview.currentWebview();
+				if(self.data) {
+					data = self.data;
+					init(data);
+				} else {
+					var itemId = self.itemId;
+					getDataById(itemId);
+				}
+			}
+
+			function getDataById(itemId) {
+				jQuery.ajax({
+					type: 'POST',
+					contentType: "application/json; charset=utf-8",
+					url: serverDomain + "detailsRule?itemId=" + itemId,
+					dataType: 'json',
+					timeout: 5000,
+					success: function(msg, status) {
+						console.log(JSON.stringify(msg));
+						if(!msg) {
+							mui.toast("信息获取失败");
+						} else if(msg.resultCode == "000000") {
+							data = msg.data;
+							var rules = JSON.parse(localStorage.getItem("rules"));
+							if(rules) {
+								for(var j = 0; j < rules.length; j++) {
+									if(data.rid == rules[j].rid) {
+										data.ratio = rules[j].ratio;
+									}
+								}
+							}
+							if(!data.ratio) {
+								data.ratio = 0;
+							}
+							init(data);
+						} else {
+							mui.toast(msg.resultMsg || '信息获取失败', null, "温馨提示", ["确定"]);
+						}
+					},
+					error: function(xhr, desc, err) {
+						console.log(JSON.stringify(xhr));
+						plus.nativeUI.toast("网络连接异常");
+					},
+					complete: function(XMLHttpRequest, textStatus) {
+						if(window.plus) {
+							plus.nativeUI.closeWaiting();
+						}
+					},
+					beforeSend: function(XMLHttpRequest) {
+						if(window.plus) {
+							plus.nativeUI.showWaiting("加载中...");
+						}
+					}
+				});
+			}
+
+			function init(data) {
+				document.getElementById("title").innerHTML = data.RulesTitle;
+				document.getElementById("content").innerHTML = escape2Html(data.RulesContent);
+				rangeList.value = data.ratio * 100;
+				var scrollH = mui('.mui-scroll')[0].offsetHeight;
+				var containerH = mui('.mui-scroll-wrapper')[0].offsetHeight;
+				var height = (containerH - scrollH) * rangeList.value / 100
+				if(height < 0) {
+					mui('.mui-scroll-wrapper').scroll().scrollTo(0, height);
+				}
+				document.getElementById('field-range-val').innerHTML = rangeList.value;
+
+				//当没有滚动条时，不显示进度条
+				if(scrollH < containerH) {
+					rangeList.value = 100;
+					document.getElementsByClassName('dr-bottom')[0].style.display = 'none';
+				}
+			}
+			
+			function saveReading() {
+				if(window.data) {
+					var scrollH = mui('.mui-scroll')[0].offsetHeight;
+					var containerH = mui('.mui-scroll-wrapper')[0].offsetHeight;
+					if(scrollH < containerH) {
+						data.ratio = 1;
+					} else {
+						data.ratio = rangeList.value / 100;
+					}
+					var rules = JSON.parse(localStorage.getItem("rules"));
+					if(rules) {
+						for(var i = 0; i < rules.length; i++) {
+							if(rules[i].rid == data.rid) {
+								rules[i].ratio = data.ratio;
+							}
+						}
+					} else {
+						rules = [];
+						rules.push(data);
+					}
+					localStorage.setItem("rules", JSON.stringify(rules));
+					mui.fire(mui.currentWebview.opener(), 'changeRules');
+				}
+			}
+		</script>
+	</body>
+
+</html>
