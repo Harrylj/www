@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>新闻详情</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mainNews.css" />
+		<link rel="stylesheet" type="text/css" href="../css/detailsNews.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<style>
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+			}
+			
+			.mui-content {
+				background-color: #FFFFFF;
+			}
+			.mui-bar-nav {
+				z-index: 11;
+			}
+		</style>
+	</head>
+
+	<body style="width: 100%; height: 100%; background-color: #FFFFFF;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">通知公告</h1>
+		</header>
+		<div class="mui-content" style="width: 100%; height: 100%;">
+			<div class="deatils-news" style="width: 100%; height: 100%;">
+				<div class="dn-body" style="width: 100%; height: 100%;">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll dn-body" id="content">
+							<h1>农业银行推行小微企业信贷业务模板化管理</h1>
+					<div class="dn-more"><span>今天&nbsp;&nbsp;12:50</span><span>农行咨询</span></div>
+					<img class="dn-img img-100" src="../images/main/zx-dn-01.jpg" />
+					<p>近日，农业银行信贷管理系统“小微企业信贷业务模板化管理功能”正式在天津、江苏、浙江、山东和江西等5家分行辖内的10家一级支行上线试运行。上线当日，江苏分行新北支行即开展了两笔信贷业务的模板化流程运作，初步尝到了模板化管理的“甜头”</p>
+					<p>小微企业信贷业务模板化管理，是在信贷业务调查、审查审批、贷后管理环节，使用统一、标准的表格模板代替文字报告，并将模板嵌入农业银行信贷管理系统，实现全流程电子表格化运作。模板化管理具有报告表格化、信息标准化、应用系统化、录入自动化等特点。此次上线的“小微企业信贷业务模板化管理功能”主要实现了信息自动录入、指标自动生成、直观图表展示、模板表格导出等功能。</p>
+						</div>
+					</div>
+
+				</div>
+				<div class="dn-body-bg"></div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				mui('.mui-scroll-wrapper').scroll();
+				$.ready(function() {
+					if(window.plus) {
+						plusReady();
+					} else {
+						document.addEventListener("plusready", plusReady, false);
+					}
+				});
+
+				function plusReady() {
+					var self = plus.webview.currentWebview();
+					data = self.data;
+					document.getElementById("title").innerHTML = data.title;
+					//					document.getElementById("content").innerHTML = data.content;
+				}
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

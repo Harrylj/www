@@ -1,0 +1,21 @@
+*{
+	margin: 0px;
+	padding: 0px;
+}
+#wf_container{
+	position: relative;
+}
+.wf_box{
+	padding: 5px;
+	float: left;
+}
+.wf_box_img{
+	padding: 5px;
+	border: 1px solid #CCCCCC;
+	box-shadow: 0 0 5px #CCCCCC;
+	border-radius: 5px;
+}
+.wf_box_img img{
+	width: 150px;
+	height: auto;
+}

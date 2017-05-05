@@ -1,0 +1,676 @@
+{
+  "html/main.html": {
+    "resources": [
+      "images/ic_tab_product.png",
+      "images/ic_tab_news.png",
+      "images/ic_message.png",
+      "images/ic_tab_charts.png",
+      "images/ic_tab_home.png",
+      "images/ic_user.png",
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "html/login.html",
+      "html/forget_password.html",
+      "html/mainFirstPage.html",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/reg.html",
+      "html/unlock.html",
+      "html/setting.html",
+      "html/forget_password.html",
+      "html/mainNews.html",
+      "html/mainProduct.html",
+      "html/mainTable.html",
+      "html/rules_list.html",
+      "html/notice.html",
+      "html/mainFirstPage.html",
+      "html/personalCenter.html"
+    ]
+  },
+  "html/login.html": {
+    "resources": [
+      "js/app.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/mui.enterfocus.js",
+      "images/zx-login-05.png",
+      "images/zx-login-01.png",
+      "js/jquery-2.1.3.min.js",
+      "css/login.css",
+      "images/zx-login-07.png",
+      "images/zx-login-06.png",
+      "images/zx-login-05-hover.png",
+      "js/common.js",
+      "images/zx-login-06-hover.png",
+      "fonts/mui.ttf",
+      "js/md5.js"
+    ],
+    "refer": [
+      "html/main.html",
+      "html/changePassowrd.html"
+    ]
+  },
+  "html/setting.html": {
+    "resources": [
+      "libs/easymob-webim-sdk/easemob.im-1.0.5.js",
+      "fonts/mui.ttf",
+      "libs/easymob-webim-sdk/json2.js",
+      "libs/easymob-webim-sdk/jquery-1.11.1.js",
+      "js/mui.locker.js",
+      "js/feedback.js",
+      "css/feedback-page.css",
+      "js/feedback-page.js",
+      "libs/easymob-webim-sdk/strophe-custom-2.0.0.js",
+      "js/mui.view.js",
+      "css/personalcenter.css",
+      "images/zx-s-03.png",
+      "css/mui.min.css",
+      "images/zx-s-02.png",
+      "css/style.css",
+      "css/setting.css",
+      "images/zx-s-01.png",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/mui.min.js",
+      "js/cacheUtil.js",
+      "js/common.js",
+      "js/update.js"
+    ],
+    "refer": [
+      "html/login.html"
+    ]
+  },
+  "html/reg.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "css/style.css"
+    ],
+    "refer": []
+  },
+  "html/unlock.html": {
+    "resources": [
+      "js/mui.locker.js"
+    ],
+    "refer": [
+      "html/login.html",
+      "html/main.html"
+    ]
+  },
+  "html/forget_password.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "css/style.css"
+    ],
+    "refer": []
+  },
+  "html/mainNews.html": {
+    "resources": [
+      "js/jquery-2.1.3.min.js",
+      "js/swiper.min.js",
+      "css/mainNews.css",
+      "css/mui.min.css",
+      "css/swiper.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "images/main/zx-mn-01.jpg",
+      "images/main/zx-mn-02.jpg",
+      "images/main/zx-mn-03.jpg",
+      "images/main/zx-mn-04.jpg",
+      "js/controllers/newsController.js",
+      "js/angular.min.js",
+      "js/common.js",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "html/detailsNews.html"
+    ]
+  },
+  "html/mainProduct.html": {
+    "resources": [
+      "css/bootstrap.min.css",
+      "images/main/zx-mp-right.png",
+      "js/jquery-2.1.3.min.js",
+      "css/mainNews.css",
+      "css/product.css",
+      "css/mui.min.css",
+      "css/swiper.min.css",
+      "js/swiper.min.js",
+      "css/style.css",
+      "images/main/zx-mp-01.jpg",
+      "js/controllers/productController.js",
+      "js/common.js",
+      "js/angular.min.js",
+      "js/mui.min.js"
+    ],
+    "refer": [
+      "html/detailsProduct.html"
+    ]
+  },
+  "html/mainTable.html": {
+    "resources": [
+      "css/bootstrap.min.css",
+      "css/mainTable.css",
+      "css/mainNews.css",
+      "css/mui.min.css",
+      "css/swiper.min.css",
+      "css/style.css",
+      "images/main/zx-mn-02.jpg",
+      "js/controllers/tableController.js",
+      "js/common.js",
+      "js/angular.min.js",
+      "js/mui.min.js",
+      "images/main/zx-mn-01.jpg",
+      "images/main/zx-mt-01.jpg",
+      "js/jquery-2.1.3.min.js"
+    ],
+    "refer": [
+      "html/charts.html",
+      "html/charts-pie.html",
+      "html/charts-lineAndbar.html",
+      "html/charts-table.html"
+    ]
+  },
+  "html/rules_list.html": {
+    "resources": [
+      "css/header.css",
+      "fonts/mui.ttf",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": []
+  },
+  "html/charts.html": {
+    "resources": [
+      "js/echarts.min.js",
+      "fonts/mui.ttf",
+      "css/header.css",
+      "js/common.js",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/controllers/tableController.js",
+      "js/angular.min.js"
+    ],
+    "refer": []
+  },
+  "html/notice.html": {
+    "resources": [
+      "css/header.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/common.js",
+      "js/controllers/noticeController.js",
+      "js/angular.min.js",
+      "js/jquery-2.1.3.min.js",
+      "js/mui.pullToRefresh.js",
+      "js/mui.pullToRefresh.material.js"
+    ],
+    "refer": [
+      "html/notice_details.html",
+      "html/noticeDetails.html",
+      "html/detailsNotice.html"
+    ]
+  },
+  "html/notice_details.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/header.css",
+      "js/common.js"
+    ],
+    "refer": []
+  },
+  "html/detailsProduct.html": {
+    "resources": [
+      "css/detailsProduct.css",
+      "fonts/mui.ttf",
+      "css/header.css",
+      "js/mui.min.js",
+      "css/mainNews.css",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/common.js",
+      "js/jquery-2.1.3.min.js"
+    ],
+    "refer": []
+  },
+  "html/detailsNews.html": {
+    "resources": [
+      "css/detailsNews.css",
+      "images/main/zx-dn-01.jpg",
+      "fonts/mui.ttf",
+      "images/main/zx-dn-bg.png",
+      "css/header.css",
+      "js/mui.min.js",
+      "css/mainNews.css",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/common.js",
+      "js/jquery-2.1.3.min.js"
+    ],
+    "refer": []
+  },
+  "html/mainFirstPage.html": {
+    "resources": [
+      "images/main/zx-mfp-03.png",
+      "css/mainFirstPage.css",
+      "images/main/zx-mfp-04.png",
+      "images/main/zx-mfp-02.png",
+      "images/main/zx-mfp-07.png",
+      "images/main/zx-mfp-05.png",
+      "images/main/zx-mn-03.jpg",
+      "images/main/zx-mfp-01.png",
+      "images/main/zx-mfp-08.png",
+      "images/main/zx-mfp-10.jpg",
+      "images/main/zx-mn-04.jpg",
+      "images/main/zx-mfp-06.png",
+      "images/main/zx-mn-01.jpg",
+      "js/swiper.min.js",
+      "css/style.css",
+      "images/main/zx-mn-02.jpg",
+      "css/bootstrap.min.css",
+      "js/mui.min.js",
+      "css/mainNews.css",
+      "js/jquery-2.1.3.min.js",
+      "css/swiper.min.css",
+      "css/mui.min.css",
+      "js/controllers/newsController.js",
+      "js/angular.min.js",
+      "js/common.js",
+      "fonts/mui.ttf"
+    ],
+    "refer": [
+      "html/detailsNews.html",
+      "html/setting.html",
+      "html/personalCenter.html",
+      "html/notice.html",
+      "html/moneyMine.html",
+      "html/valuationMine.html",
+      "html/businessSearch.html",
+      "html/ruleDatabase.html",
+      "html/businessSearchList.html",
+      "html/pullrefresh.html"
+    ]
+  },
+  "html/detailsNews1.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "css/header.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/main/zx-dn-bg.png",
+      "images/main/zx-dn-01.jpg"
+    ],
+    "refer": []
+  },
+  "html/changePassowrd.html": {
+    "resources": [
+      "js/app.js",
+      "images/zx-login-07.png",
+      "css/bootstrap.min.css",
+      "images/zx-login-01.png",
+      "js/jquery-2.1.3.min.js",
+      "js/mui.min.js",
+      "css/login.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/zx-login-06.png",
+      "js/mui.enterfocus.js",
+      "css/header.css",
+      "images/zx-login-06-hover.png",
+      "js/common.js",
+      "js/md5.js"
+    ],
+    "refer": [
+      "html/main.html"
+    ]
+  },
+  "html/personalCenter.html": {
+    "resources": [
+      "images/zx-pc-03.png",
+      "images/zx-pc-10.png",
+      "css/personalcenter.css",
+      "images/zx-pc-05.png",
+      "images/zx-pc-07.png",
+      "images/zx-pc-01.png",
+      "fonts/mui.ttf",
+      "images/zx-pc-04.png",
+      "images/zx-pc-pic.jpg",
+      "images/zx-pc-06.png",
+      "images/zx-pc-02.png",
+      "css/header.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "js/common.js",
+      "images/user-photo.png"
+    ],
+    "refer": [
+      "html/personalInfo.html",
+      "html/setting.html",
+      "html/personalInfoModify.html",
+      "html/moneyMine.html",
+      "html/businessSearch.html",
+      "html/valuationMine.html",
+      "html/businessSearchList.html",
+      "html/ruleDatabase.html"
+    ]
+  },
+  "html/personalInfo.html": {
+    "resources": [
+      "css/personalInfo.css",
+      "css/personalInfoModify.css",
+      "css/personalcenter.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/personalInfoModify.html": {
+    "resources": [
+      "css/personalInfoModify.css",
+      "css/personalcenter.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "images/zx-pc-pic.jpg",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/common.js",
+      "js/jquery-2.1.3.min.js",
+      "images/user-photo.png"
+    ],
+    "refer": [
+      "html/uploadPicture.html"
+    ]
+  },
+  "html/uploadPicture.html": {
+    "resources": [
+      "images/zx-up-01.png",
+      "js/common.js",
+      "js/jquery-2.1.3.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/moneyImg.html": {
+    "resources": [
+      "images/main/zx-mp-down.png",
+      "js/echarts.min.js",
+      "js/jquery-2.1.3.min.js",
+      "css/moneyImg.css",
+      "images/zx-mi-01.png",
+      "css/mui.picker.min.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "fonts/mui.ttf",
+      "js/mui.picker.min.js",
+      "js/mui.dtpicker.js"
+    ],
+    "refer": []
+  },
+  "html/moneyMine.html": {
+    "resources": [
+      "css/moneyMine.css",
+      "images/zx-mm-02.png",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/common.js",
+      "js/controllers/wagesController.js",
+      "js/angular.min.js",
+      "images/main/zx-mp-down.png",
+      "css/moneyImg.css",
+      "css/mui.picker.min.css",
+      "js/mui.picker.min.js",
+      "js/mui.dtpicker.js",
+      "js/jquery-2.1.3.min.js",
+      "images/zx-mm-01.png"
+    ],
+    "refer": [
+      "html/moneyImg.html",
+      "html/moneyHistory.html",
+      "html/wagesDetails.html"
+    ]
+  },
+  "html/businessSearch.html": {
+    "resources": [
+      "css/moneyMine.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/angular.min.js"
+    ],
+    "refer": []
+  },
+  "html/valuationMine.html": {
+    "resources": [
+      "css/moneyMine.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/common.js",
+      "images/main/zx-mp-down.png",
+      "css/moneyImg.css",
+      "js/mui.picker.min.js",
+      "js/mui.dtpicker.js",
+      "css/mui.picker.min.css",
+      "js/angular.min.js",
+      "js/controllers/valuationController.js",
+      "js/jquery-2.1.3.min.js",
+      "js/mui.pullToRefresh.js",
+      "js/mui.pullToRefresh.material.js"
+    ],
+    "refer": [
+      "html/valuationMineHistory.html",
+      "html/businessSearch.html"
+    ]
+  },
+  "html/charts-pie.html": {
+    "resources": [
+      "js/echarts.min.js",
+      "fonts/mui.ttf",
+      "css/header.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": []
+  },
+  "html/charts-lineAndbar.html": {
+    "resources": [
+      "js/echarts.min.js",
+      "fonts/mui.ttf",
+      "css/header.css",
+      "js/mui.min.js",
+      "css/mui.min.css",
+      "css/style.css"
+    ],
+    "refer": []
+  },
+  "html/charts-table.html": {
+    "resources": [
+      "js/echarts.min.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/header.css",
+      "css/moneyMine.css",
+      "css/bootstrap.min.css",
+      "js/angular.min.js"
+    ],
+    "refer": []
+  },
+  "html/noticeDetails.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/moneyHistory.html": {
+    "resources": [
+      "css/personalcenter.css",
+      "images/zx-mm-01.png",
+      "css/moneyHistory.css",
+      "js/jquery-2.1.3.min.js",
+      "css/notificationMessage.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "images/zx-mm-01-top.png",
+      "js/mui.min.js"
+    ],
+    "refer": []
+  },
+  "html/valuationMineHistory.html": {
+    "resources": [
+      "js/mui.min.js",
+      "css/moneyMine.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/echarts.min.js"
+    ],
+    "refer": []
+  },
+  "html/businessSearchList.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "js/controllers/businessController.js",
+      "js/common.js",
+      "js/mui.min.js",
+      "js/jquery-2.1.3.min.js",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/angular.min.js",
+      "css/header.css"
+    ],
+    "refer": [
+      "html/businessSearch.html"
+    ]
+  },
+  "html/ruleDatabase.html": {
+    "resources": [
+      "css/personalcenter.css",
+      "fonts/mui.ttf",
+      "css/ruleDatabase.css",
+      "css/notificationMessage.css",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/common.js",
+      "js/controllers/rulesController.js",
+      "js/angular.min.js",
+      "js/mui.min.js",
+      "js/jquery-2.1.3.min.js"
+    ],
+    "refer": [
+      "html/detailsRule.html"
+    ]
+  },
+  "html/detailsRule.html": {
+    "resources": [
+      "css/detailsRule.css",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/swiper.min.css",
+      "css/style.css",
+      "css/bootstrap.min.css",
+      "css/header.css",
+      "js/angular-sanitize.min.js",
+      "js/angular.min.js",
+      "js/jquery-2.1.3.min.js",
+      "js/common.js"
+    ],
+    "refer": []
+  },
+  "index.html": {
+    "resources": [
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "js/update.js",
+      "js/common.js"
+    ],
+    "refer": [
+      "html/login.html"
+    ]
+  },
+  "html/pullrefresh.html": {
+    "resources": [
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/header.css"
+    ],
+    "refer": []
+  },
+  "html/detailsNotice.html": {
+    "resources": [
+      "js/common.js",
+      "js/mui.min.js",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "css/header.css",
+      "js/jquery-2.1.3.min.js"
+    ]
+  },
+  "html/wagesDetails.html": {
+    "resources": [
+      "js/wagesUtils.js",
+      "js/jquery-2.1.3.min.js",
+      "js/mui.min.js",
+      "css/moneyMine.css",
+      "fonts/mui.ttf",
+      "css/mui.min.css",
+      "css/style.css",
+      "js/angular.min.js",
+      "css/bootstrap.min.css",
+      "css/header.css"
+    ]
+  }
+}

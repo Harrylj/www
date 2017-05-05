@@ -30,7 +30,7 @@
             </div>
         </div>
         <!--公用头部-->
-                	<input type="text" readonly="readonly" class="doubledate ipticon"/>
+        <input type="text" readonly="readonly" class="doubledate ipticon"/>
         <div class="vo-content">
 			<div class="vo-list">
 				<div class="vo-list-time vo-list-click">
@@ -70,6 +70,8 @@
 				isDisabled: "0"  // isDisabled为可选参数，“0”表示今日之前不可选，“1”标志今日之前可选
 			});
 			$('.doubledate').click();
+			alert($('.doubledate').val())
+			//alert(kDate);
 		});
 	</script>
     <script src="js/vTimeNow.js"></script>

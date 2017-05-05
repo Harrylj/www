@@ -355,6 +355,7 @@ function kui_mouseover_(obj){
 	if(!$(obj).hasClass("kui_td_kong")){
 		$(obj).addClass('td_hover');
 	}
+
 }
 //鼠标移走
 
@@ -378,6 +379,7 @@ function kui_click_(obj,now_date,kui_y,kui_m,kui_d){
 		//修改点击事件效果-Harry
 		$(obj).addClass('td_select').siblings().removeClass('td_select');
 
+		
 		//alert($('.doubledate').val())
 		/*
 		$('#kui_d_pane').hide();

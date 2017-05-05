@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>通知详情</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<style>
+			.mui-content {
+				margin: 16px;
+				background-color: #FFFFFF;
+			}
+			img {
+				-ms-interpolation-mode: bicubic;
+			}
+			
+			img {
+				max-width: 100%;
+				height: auto;
+			}
+			.Custom_UnionStyle {
+				text-indent: 0 !important;
+			}
+			p img{display:block;}
+		</style>
+	</head>
+
+	<body style="width: 100%; height: 100%; background-color: #FFFFFF;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">通知公告</h1>
+		</header>
+		<div class="mui-content" id="content"></div>
+
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/common.js"></script>
+		<script>
+			mui.init();
+
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", plusReady, false);
+			}
+
+			function plusReady() {
+				var self = plus.webview.currentWebview();
+				if(self.data) {
+					var data = self.data;
+					document.getElementById("title").innerHTML = data.title;
+					document.getElementById("content").innerHTML = escape2Html(data.content);
+				} else {
+					var itemId = self.itemId;
+					jQuery.ajax({
+						type: 'POST',
+						contentType: "application/json; charset=utf-8",
+						url: serverDomain + "detailsNotice?itemId=" + itemId,
+						dataType: 'json',
+						timeout: 5000,
+						success: function(msg, status) {
+							if(!msg) {
+								mui.toast("信息获取失败");
+							} else if(msg.resultCode == "000000") {
+								var data = msg.data;
+								document.getElementById("title").innerHTML = data.title;
+								document.getElementById("content").innerHTML = escape2Html(data.content);
+							} else {
+								mui.toast(msg.resultMsg || '信息获取失败', null, "温馨提示", ["确定"]);
+							}
+						},
+						error: function(xhr, desc, err) {
+							console.log(JSON.stringify(xhr));
+							plus.nativeUI.toast("网络连接异常");
+						},
+						complete: function(XMLHttpRequest, textStatus) {
+							if(window.plus) {
+								plus.nativeUI.closeWaiting();
+							}
+						},
+						beforeSend: function(XMLHttpRequest) {
+							if(window.plus) {
+								plus.nativeUI.showWaiting("加载中...");
+							}
+						}
+					});
+				}
+			}
+		</script>
+	</body>
+
+</html>

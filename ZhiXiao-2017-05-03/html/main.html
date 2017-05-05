@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>主界面</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: #F2F2F2;
+			}
+			
+			.mui-tab-item {
+				width: 25%;
+				height: 60px;
+				text-align: center;
+			}
+			
+			.mui-tab-item span {
+				color: white;
+			}
+			
+			.mui-icon {
+				width: auto !important;
+				height: 18px !important;
+			}
+			
+			.mui-active {
+				background-color: #0f7c6c;
+			}
+			
+			.mui-bar-nav {
+				background-color: #009C84;
+				padding-left: 16px;
+				padding-right: 16px;
+			}
+			
+			.mui-bar-nav img {
+				width: auto;
+				height: 18px;
+				margin-top: 13px;
+			}
+			
+			.mui-loader {
+				position: absolute;
+				top: 25%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<img id="myInfo" src="../images/ic_user.png" />
+			<img id="msgBtn" src="../images/ic_message.png" style="float: right;" hidden="true" />
+			<h1 id="title" class="mui-title" style="color: white">知晓</h1>
+		</header>
+		<div class="mui-loader">加载中...</div>
+		<nav class="mui-bar mui-bar-tab" style="background-color: #009c84">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="mainFirstPage.html">
+				<img class="mui-icon" src="../images/ic_tab_home.png"></img>
+				<span class="mui-tab-label">首页</span>
+			</a>
+			<a class="mui-tab-item" href="mainNews.html">
+				<img class="mui-icon" src="../images/ic_tab_news.png"></img>
+				<span class="mui-tab-label">新闻</span>
+			</a>
+			<a class="mui-tab-item" href="mainProduct.html">
+				<img class="mui-icon" src="../images/ic_tab_product.png"></img>
+				<span class="mui-tab-label">产品库</span>
+			</a>
+			<a class="mui-tab-item" href="mainTable.html">
+				<img class="mui-icon" src="../images/ic_tab_charts.png"></img>
+				<span class="mui-tab-label">报表</span>
+			</a>
+		</nav>
+
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript">
+			var subpages = ['mainFirstPage.html', 'mainNews.html', 'mainProduct.html', 'mainTable.html'];
+			var subpage_style = {
+				top: '44px',
+				bottom: '50px'
+			};
+			mui.init({
+				statusBarBackground: '#009C84',
+				preloadPages: [{
+					url: "personalCenter.html",
+					id: "personalCenter",
+				}]
+			});
+			//创建子页面，首个选项卡页面显示，其它均隐藏；
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				for(var i = 0; i < 4; i++) {
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if(i > 0) {
+						sub.hide();
+					}
+					self.append(sub);
+				}
+			});
+
+			//当前激活选项
+			var activeTab = subpages[0];
+			//选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				var targetTab = this.getAttribute('href');
+				if(targetTab == activeTab) {
+					return;
+				}
+				setMainHeader(this.children[1].innerText)
+				//显示目标选项卡
+				plus.webview.show(targetTab);
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+
+			(function($, doc) {
+				var infoButton = doc.getElementById("myInfo");
+				var msgButton = doc.getElementById("msgBtn");
+				infoButton.addEventListener('tap', function(event) {
+					var id = 'personalCenter';
+					openWindow(id, id + ".html")
+				});
+				msgButton.addEventListener('tap', function(event) {
+					var id = 'notice';
+					openWindow(id, id + ".html")
+				});
+
+				var backButtonPress = 0;
+				$.back = function(event) {
+					backButtonPress++;
+					if(backButtonPress > 1) {
+						plus.runtime.quit();
+					} else {
+						plus.nativeUI.toast('再按一次退出应用');
+					}
+					setTimeout(function() {
+						backButtonPress = 0;
+					}, 1000);
+					return false;
+				};
+			}(mui, document))
+
+			function setMainHeader(title) {
+				if("首页" == title) {
+					document.getElementById("title").innerText = "知晓";
+					document.getElementById("msgBtn").hidden = true;
+				} else {
+					document.getElementById("title").innerText = title;
+					document.getElementById("msgBtn").hidden = false;
+				}
+			}
+		</script>
+	</body>
+
+</html>

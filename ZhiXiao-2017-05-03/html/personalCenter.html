@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/personalcenter.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+
+		<style>
+			.mui-table-view-cell>a:not(.mui-btn).mui-active {
+				background: none;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">个人中心</h1>
+		</header>
+		<!--单页面开始-->
+		<div class="mui-content" id="content">
+			<div id="setting" class="personal-center mui-page">
+				<div class="pc-header" >
+					<button class="pch-btn-modify" id="modifyInfo" type="button"></button>
+					<div class="pch-img-div">
+						<div class="pch-img-bg">
+							<img src="../images/user-photo.png" alt="" id="headPortrait" />
+						</div>
+					</div>
+					<h1>员工号：<span id="staffNo">伸手碰阳光</span></h1>
+					<h1>姓名：<span id="userName">李美丽</span></h1>
+				</div>
+				<!--页面主内容区开始-->
+				<div class="mui-page-content">
+					<div class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<ul class="pc-ul pc-ul-01 mui-table-view mui-table-view-chevron">
+								<li class="mui-table-view-cell" id="moneyMine">
+									<a class="mui-navigate-right" href="#">我的工资</a>
+								</li>
+								<li class="mui-table-view-cell" id="valuationMine">
+									<a class="mui-navigate-right" href="#">我的计价</a>
+								</li>
+							</ul>
+							<ul class="pc-ul pc-ul-02 mui-table-view mui-table-view-chevron">
+								<li class="mui-table-view-cell" id="businessSearchList">
+									<a class="mui-navigate-right" href="#">"爱农行用产品"产品办理情况查询</a>
+								</li>
+								<li class="mui-table-view-cell" id="ruleDatabase">
+									<a class="mui-navigate-right" href="#">规章制度库</a>
+								</li>
+								<li class="mui-table-view-cell" id="personalInfo">
+									<a class="mui-navigate-right" href="#">个人详细信息</a>
+								</li>
+								<li class="mui-table-view-cell" id="setting">
+									<a class="mui-navigate-right" href="#">设置</a>
+								</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+				<!--页面主内容区结束-->
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js" ></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+				if(userInfo) {
+					document.getElementById("headPortrait").src = userInfo.UserImage || "../images/user-photo.png";
+					document.getElementById("staffNo").innerHTML = userInfo.userid;
+					document.getElementById("userName").innerHTML = userInfo.UserName;
+				}
+
+				$.ready(function() {
+					window.addEventListener('changeHead', function(event) {
+						userInfo = JSON.parse(localStorage.getItem("userInfo"));
+						document.getElementById("headPortrait").src = userInfo.UserImage || "../images/user-photo.png";
+					});
+					document.getElementById("modifyInfo").addEventListener("tap", function() {
+						var id = "personalInfoModify";
+						startWindow(id, id + ".html");
+					});
+					mui(".mui-table-view").on('tap', '.mui-table-view-cell', function() {
+						var id = this.getAttribute("id");
+						if (id) {
+							startWindow(id, id + ".html");
+						} else {
+							mui.toast("功能开发中")
+						}
+						
+					})
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

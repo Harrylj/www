@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>修改密码</title>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<link rel="stylesheet" type="text/css" href="../css/login.css" />
+		<style type="text/css">
+			h1 {
+				color: #009C84;
+				padding: 8px 10px;
+				line-height: 28px;
+				margin: 0;
+				font-weight: bold;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body style="width: 100%; height: 100%; background-color: white;">
+		<header class="mui-bar mui-bar-nav">
+			<h1 id="title" class="mui-title" style="color: white">密码修改</h1>
+		</header>
+		<div class="mui-content login">
+			<img class="l-img-01" src="../images/zx-login-01.png" style="display: none;" />
+			<h1 class="l-img-01" id="title">知晓</h1>
+			<form id='login-form' class="mui-input-group">
+				<div class="mui-input-row">
+					<input type="password" class="input-password input-password-one mui-input-clear mui-input" placeholder="请输入新的密码">
+				</div>
+				<div class="mui-input-row">
+					<input type="password" class="input-password input-password-two mui-input-clear mui-input" placeholder="确认输入新密码">
+				</div>
+			</form>
+			<p class="l-p-01"></p>
+
+			<div class="mui-content-padded">
+				<button id='btn-change' class="mui-btn mui-btn-block mui-btn-primary">确认修改</button>
+			</div>
+			<div class="mui-content-padded oauth-area">
+				Copy right © 中国农业银行贵阳分行
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/mui.enterfocus.js"></script>
+		<script type="text/javascript" src="../js/md5.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
+				$.plusReady(function() {
+					plus.screen.lockOrientation("portrait-primary");
+				});
+			}(mui, document));
+
+			jQuery(function() {
+				//输入框失去和获取焦点
+				jQuery('.input-password').on('focus', function() {
+					jQuery(this).addClass('input-password-hover')
+				})
+				jQuery('.input-password').on('blur', function() {
+					jQuery(this).removeClass('input-password-hover')
+				})
+				document.getElementsByClassName('input-password')[0].focus();
+				jQuery('.l-p-01').html('');
+				//点击登录
+				jQuery('#btn-change').on('click', function() {
+					var inputError = jQuery('.l-p-01');
+					var password1 = $('.input-password-one').val();
+					var password2 = $('.input-password-two').val();
+					if(password1 == '') {
+						inputError.html("请输入密码");
+					} else if(password1 != password2) {
+						inputError.html("两次密码输入不一致");
+					} else {
+						inputError.html('');
+						var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+						if(hex_md5(password1) == userInfo.Password) {
+							inputError.html("新密码不能和原始密码一样");
+							return;
+						}
+						var url = serverDomain + "ModifyPassword?userId=" + userInfo.userid + "&password=" + hex_md5(password1);
+						$.ajax({
+							type: 'POST',
+							contentType: "application/json; charset=utf-8",
+							url: url,
+							dataType: 'json',
+							timeout: 5000,
+							success: function(msg, status) {
+								if(!msg) {
+									alert("密码修改失败");
+								} else if(msg.resultCode == "000000") {
+									var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+									userInfo.isPassModified = 1;
+									userInfo.Password = hex_md5(password1);
+									localStorage.setItem("userInfo", JSON.stringify(userInfo));
+									var id = 'main';
+									startWindow(id, id + ".html");
+									plus.nativeUI.toast("修改成功");
+								} else {
+									plus.nativeUI.confirm(msg.resultMsg || '密码修改失败', null, "温馨提示", ["确定"]);
+								}
+							},
+							error: function(xhr, desc, err) {
+								console.log(JSON.stringify(xhr));
+								plus.nativeUI.toast("网络连接异常");
+							},
+							complete: function(XMLHttpRequest, textStatus) {
+								if(window.plus) {
+									plus.nativeUI.closeWaiting();
+								}
+							},
+							beforeSend: function(XMLHttpRequest) {
+								if(window.plus) {
+									plus.nativeUI.showWaiting("验证信息...");
+								}
+							}
+						});
+					}
+				})
+			})
+		</script>
+	</body>
+
+</html>

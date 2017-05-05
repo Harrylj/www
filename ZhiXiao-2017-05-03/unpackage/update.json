@@ -1,0 +1,14 @@
+{
+	"resultCode": "000000",
+	"resultMsg": "成功",
+	"data": {
+		"iOS": {
+			"version": "1.7.0",
+			"url": "itms-apps://itunes.apple.com/cn/app/hello-h5+/id682211190?l=zh&mt=8"
+		},
+		"Android": {
+			"version": "1.7.0",
+			"url": "http://d.m3w.cn/helloh5p/HelloH5.apk"
+		}
+	}
+}

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>工资增减趋势图</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/moneyImg.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+		<style>
+			.chart {
+				height: 300px;
+				width: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">工资增减趋势图</h1>
+		</header>
+		<div class="mui-content">
+			<div class="money-img">
+				<h2>条件筛选</h2>
+				<div class="mi-date-div">
+					时间：
+					<button data-options='{"type":"month"}' class="mi-date-one mi-date-btn ">
+						<span class="result-one">2017年1月</span>
+					</button>
+					<span class="mi-down">~</span>
+					<button data-options='{"type":"month"}' class="mi-date-two mi-date-btn ">
+						<span class="result-two">2017年3月</span>
+					</button>
+				</div>
+				<div class="mi-date-div">
+					<button class="mi-btn-more mi-btn-click " type="button">基本工资</button>
+					<button class="mi-btn-more " type="button">岗位工资</button>
+					<button class="mi-btn-more " type="button">预发绩效</button>
+					<button class="mi-btn-more " type="button">实发合计</button>
+					<button class="mi-btn-more " type="button">扣减总计</button>
+				</div>
+			</div>
+		</div>
+		<div class="chart" id="lineChart"></div>
+
+		<script src="../js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/mui.dtpicker.js"></script>
+		<script src="../js/mui.picker.min.js"></script>
+		<script type="text/javascript" src="../js/echarts.min.js"></script>
+		<script type="text/javascript">
+			(function($) {
+				$.init();
+				mui.ready(function() {
+					var resultOne = $('.result-one')[0],
+						resultTwo = $('.result-two')[0],
+						dateOne = $('.mi-date-one')[0],
+						dateTwo = $('.mi-date-two')[0];
+					dateOne.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var picker = new mui.DtPicker(options);
+						picker.show(function(rs) {
+							resultOne.innerText = rs.y.text + '年' + parseInt(rs.m.text) + '月';
+							picker.dispose();
+						});
+					}, false);
+
+					dateTwo.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+
+						var picker = new $.DtPicker(options);
+						picker.show(function(rs) {
+							resultTwo.innerText = rs.y.text + '年' + parseInt(rs.m.text) + '月';
+							picker.dispose();
+						});
+					}, false);
+
+					if(window.plus) {
+						plusReady();
+					} else {
+						document.addEventListener("plusready", plusReady, false);
+					}
+				});
+			})(mui);
+			jQuery(function() {
+				jQuery('.mi-btn-more').on('click', function() {
+					var clickClass = 'mi-btn-click';
+					jQuery(this).addClass(clickClass).siblings().removeClass(clickClass)
+				})
+			})
+
+			function plusReady() {
+				var self = plus.webview.currentWebview();
+				var data = self.data.reverse();
+				var label = {
+					normal: {
+						textStyle: {
+							color: '#333333',
+							position: 'center'
+						},
+						formatter: "{c}/1000"
+					}
+				};
+				var legendData = [];
+				var xAxisData = [];
+				var seriesData = [];
+				var basicPay = [];
+				var postPay = [];
+				var meritPay = [];
+				var deduction = [];
+				var total = [];
+				for(var i = 0; i < data.length; i++) {
+					var x = data[i];
+					xAxisData.push(x.month);
+					basicPay.push(x.basicPay);
+					postPay.push(x.postPay);
+					meritPay.push(x.meritPay);
+					deduction.push(x.deduction);
+					total.push(x.basicPay + x.postPay + x.meritPay - x.deduction);
+				}
+				var myChart = echarts.init(document.getElementById('lineChart'));
+				var option = getOption(xAxisData, basicPay, postPay, meritPay, deduction, total);
+				myChart.setOption(option)
+			}
+
+			function getOption(xAxisData, basicPay, postPay, meritPay, deduction, total) {
+				var chartOption = {
+					legend: {
+						left: '10%',
+						data: ['基础工资', '岗位工资', '绩效工资', '扣减总计', '实发合计']
+					},
+					grid: {
+						x: 40,
+						x2: 10,
+						y: 50
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: xAxisData,
+						axisLabel: {
+							interval: 0,
+							rotate: 30,
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						}
+					}],
+					series: [{
+						name: '基础工资',
+						type: "line",
+						data: basicPay,
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}/1000"
+							}
+						}
+					}, {
+						name: '岗位工资',
+						type: "line",
+						data: postPay,
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}/1000"
+							}
+						}
+					}, {
+						name: '绩效工资',
+						type: "line",
+						data: meritPay,
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}/1000"
+							}
+						}
+					}, {
+						name: '扣减总计',
+						type: "line",
+						data: deduction,
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}/1000"
+							}
+						}
+					}, {
+						name: '实发合计',
+						type: "line",
+						data: total,
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}/1000"
+							}
+						}
+					}]
+				}
+				return chartOption;
+			}
+		</script>
+	</body>
+
+</html>

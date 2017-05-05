@@ -1,0 +1,21 @@
+.mui-bar-nav {
+	background-color: #009C84;
+	padding-left: 16px;
+	padding-right: 16px;
+	box-shadow: none;
+}
+
+.mui-bar-nav img {
+	width: auto;
+	height: 18px;
+	margin-top: 13px;
+}
+
+.mui-bar-nav button {
+	color: white !important;
+}
+
+.mui-icon-left-nav {
+	color: white !important;
+	left: -10px !important;
+}

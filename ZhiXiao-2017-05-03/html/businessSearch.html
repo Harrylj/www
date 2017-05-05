@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>业务办理查询</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/moneyMine.css" />
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+		<style>
+			.mm-table {
+				border: 1px solid #CCCCCC;
+				background-color: white;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="myCtrl">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">已办理产品及积分</h1>
+		</header>
+		<div class="mui-content" style="background-color: #F9F9F9;">
+			<div class="money-mine">
+				<table class="mm-table" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>产品名称</td>
+						<td>产品编号</td>
+						<td>是否办理</td>
+						<td>所得积分</td>
+					</tr>
+					<tr ng-repeat="item in tableData">
+						<td>{{item.productName}}</td>
+						<td>{{item.productNo}}</td>
+						<td>{{item.amount > 0 ? "已办理" : "未办理"}}</td>
+						<td>{{item.integral}}</td>
+					</tr>
+					<tr>
+						<td>总计</td>
+						<td colspan="3">{{integralAmount}}</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var myApp = angular.module('myApp', []);
+				myApp.controller('myCtrl', function($scope, $http) {
+					if(window.plus) {
+						plusReady();
+					} else {
+						document.addEventListener("plusready", plusReady, false);
+					}
+
+					function plusReady() {
+						var self = plus.webview.currentWebview();
+						var data = self.data;
+						if(data) {
+							document.getElementById("title").innerHTML = data.transTime + "办理记录";
+							$scope.integralAmount = 0;
+							for(var i = 0; i < data.products.length; i++) {
+								$scope.integralAmount += data.products[i].integral;
+							}
+							$scope.tableData = data.products;
+							$scope.$apply();
+						}
+					}
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

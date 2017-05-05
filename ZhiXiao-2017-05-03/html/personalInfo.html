@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人信息详情</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personalcenter.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personalInfoModify.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/personalInfo.css"/>
+		<link rel="stylesheet" type="text/css" href="../css/header.css" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">个人详细信息</h1>
+		</header>
+		<div class="mui-content" id="content">
+			<!--单页面开始-->
+		<div id="setting" class="modify-person-info personal-center mui-page">
+
+			<!--页面主内容区开始-->
+			<div class="mui-page-content">
+				<div class="mui-scroll-wrapper">
+					<div class="mui-scroll">
+						<ul class="mpi-ul pc-ul mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">姓名：</a>
+								<p class="mui-input" id="userName"></p>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">性别：</a>
+								<p class="mui-input" id="gender"></p>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">身份证号：</a>
+								<p class="mui-input" id="CardID"></p>
+							</li>
+						</ul>
+						
+						<ul class="mpi-ul pc-ul mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">手机号：</a>
+								<p class="mui-input" id="Mobile"></p>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">邮箱：</a>
+								<p class="mui-input" id="Email"></p>
+							</li>
+
+						</ul>
+						
+						<ul class="mpi-ul pc-ul mui-table-view mui-table-view-chevron">
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">所属机构号：</a>
+								<p class="mui-input" id="IFARNumber"></p>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">所属机构名：</a>
+								<p class="mui-input" id="IFARName"></p>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">岗位：</a>
+								<p class="mui-input" id="UserPost"></p>
+							</li>
+							<li class="mui-table-view-cell">
+								<a class="mui-navigate-right">统一认证员工号：</a>
+								<p class="mui-input" id="userid"></p>
+							</li>
+						</ul>
+						
+					</div>
+				</div>
+			</div>
+			<!--页面主内容区结束-->
+		</div>
+		</div>
+		
+		<script src="../js/mui.min.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+				document.getElementById("userName").innerHTML = userInfo.UserName;
+				document.getElementById("gender").innerHTML = userInfo.sex;
+				document.getElementById("CardID").innerHTML = userInfo.CardID;
+				document.getElementById("Mobile").innerHTML = userInfo.Mobile;
+				document.getElementById("Email").innerHTML = userInfo.Email;
+				document.getElementById("IFARNumber").innerHTML = userInfo.IFARNumber;
+				document.getElementById("IFARName").innerHTML = userInfo.IFARName;
+				document.getElementById("UserPost").innerHTML = userInfo.UserPost;
+				document.getElementById("userid").innerHTML = userInfo.userid;
+			}(mui, document));
+		</script>
+	</body>
+</html>

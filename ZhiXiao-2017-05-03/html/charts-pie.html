@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html class="ui-page-login" ng-app="myApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>饼图</title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="chartsCtrl" style="background-color: white;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 id="title" class="mui-title" style="color: white">报表</h1>
+		</header>
+		<div class="mui-content">
+			<div id="main" style="width: 100%;height:100%;"></div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script>
+			mui.init()
+			mui.ready(function() {
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+			});
+
+			function plusReady() {
+				var self = plus.webview.currentWebview();
+				data = self.data;
+				document.getElementById("title").innerHTML = data.title;
+				var seriesData = data.tableData;
+				var legendData = [];
+				for(var i = 0; i < seriesData.length; i++) {
+					var x = seriesData[i];
+					var item = { name: x.name, icon: 'circle', textStyle: { color: '#666666' } };
+					legendData.push(item);
+				}
+				var myChart = echarts.init(document.getElementById('main'));
+				var option = getOption('', legendData, seriesData, data.unit);
+				myChart.setOption(option)
+			}
+
+			function getOption(title, legendData, seriesData, unit) {
+				var option = {
+					backgroundColor: '#fff',
+
+					title: {
+						text: title,
+						left: 'center',
+						top: '28%',
+						textStyle: {
+							color: '#666666'
+						}
+					},
+
+					tooltip: {
+						trigger: 'item',
+						formatter: "{b} : {c}" + unit + " ({d}%)"
+					},
+
+					legend: {
+						orient: 'vertical',
+						left: '10%',
+						top: '60%',
+						data: legendData,
+					},
+					series: [{
+						name: '业绩',
+						type: 'pie',
+						radius: ['40%', '60%'],
+						center: ['50%', '30%'],
+						avoidLabelOverlap: false,
+						data: seriesData,
+						label: {
+							normal: {
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}" + unit
+							}
+						}
+					}]
+				};
+				return option;
+			}
+		</script>
+	</body>
+
+</html>

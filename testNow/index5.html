@@ -21,11 +21,38 @@
 	</style>
 </head>
 <body>
-	
+	 <input id="file-input" type="file" />
 	<script type="text/javascript">
 		(function(){
-			alert(1)
-		})
+//			let num = parseInt(3.9); 
+//			alert(num)
+			let c = 0;
+//			c=++c
+//			console.log(c)
+			for(let a= 0,b=5; a<b ;a++)
+			{
+				//console.log(a)
+				c =a++;
+				console.log(a)
+				console.log(c)
+			}
+			
+			let one = 1,
+				two = '2';
+			console.log(one+two , one - two)
+			console.log(0 - +0)
+			
+			
+			var inputElement = document.getElementById("file-input");
+inputElement.addEventListener("change", handleFiles, false);
+function handleFiles() {
+  var fileList = this.files; 
+  console.log(fileList[0].size)
+}
+
+
+
+		})()
 
 		
 	</script>

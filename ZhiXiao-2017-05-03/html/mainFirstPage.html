@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html ng-app="newsApp">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>首页</title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/style.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mainNews.css" />
+		<link rel="stylesheet" type="text/css" href="../css/mainFirstPage.css" />
+		<style>
+			.cl-ul .hasImage {
+				padding-left: 10px;
+			}
+			
+			.mui-loader {
+				position: absolute;
+				top: 60%;
+				width: 100%;
+				height: 60%;
+				color: #888;
+				font-size: 14px;
+				text-align: center;
+				z-index: -1;
+			}
+		</style>
+	</head>
+
+	<body ng-controller="homeNewsCtrl">
+		<div class="main-first-page">
+			<div class="mui-loader">加载中...</div>
+			<div class="swiper-container swiper-container-img">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide" ng-repeat="item in imageNews" is-over="toggle.now" ng-click="onItemClick(item)">
+						<img ng-src="{{item.image}}" />
+						<div class="sci-footer">
+							<div class="scif-div">
+								<h1>图</h1>
+								<p>{{item.title}}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 如果需要分页器 -->
+				<div class="swiper-pagination swiper-pagination-img"></div>
+
+			</div>
+			<div class="content-div">
+				<ul class="mfp-nav">
+					<a href="#">
+						<li id="moneyMine">我的工资</li>
+					</a>
+					<a href="#">
+						<li id="businessSearchList">爱我农行</li>
+					</a>
+					<a href="#">
+						<li id="valuationMine">我的计价</li>
+					</a>
+					<a href="#">
+						<li id="ruleDatabase">规章制度</li>
+					</a>
+					<a href="#">
+						<li id="notice">通知公告</li>
+					</a>
+					<a href="#">
+						<li id="setting">设置</li>
+					</a>
+					<div class="clear"></div>
+				</ul>
+				<div class="content-list content-list-click">
+					<div class="mfp-news-title">最新新闻</div>
+					<ul class="cl-ul">
+						<li class="{{itemNews.showClass}}" ng-repeat="itemNews in data" ng-click="onItemClick(itemNews)">
+							<img class="cl-ul-img" ng-src="{{itemNews.image}}" ng-show="itemNews.hasImage" />
+							<h1>{{itemNews.title}}</h1>
+							<span>{{itemNews.publishTime}}</span><span>农行{{itemNews.category}}</span>
+						</li>
+					</ul>
+					<img class="img-100" src="../images/main/zx-mfp-10.jpg" style="display: none;" />
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../js/jquery-2.1.3.min.js"></script>
+		<script type="text/javascript" src="../js/swiper.min.js"></script>
+		<script type="text/javascript" src="../js/mui.min.js"></script>
+		<script type="text/javascript" src="../js/common.js"></script>
+		<script type="text/javascript" src="../js/angular.min.js"></script>
+		<script type="text/javascript" src="../js/controllers/newsController.js"></script>
+
+		<script>
+			(function($, doc) {
+				$.init({
+					preloadPages: [{
+						url: "moneyMine.html",
+						id: "moneyMine",
+					}, {
+						url: "valuationMine.html",
+						id: "valuationMine",
+					}, {
+						url: "setting.html",
+						id: "setting",
+					}]
+				});
+			}(mui, document));
+
+			if(window.plus) {
+				plusReady();
+			} else {
+				document.addEventListener("plusready", function() {
+					plusReady();
+				}, false);
+			}
+
+			function plusReady() {
+				setPushListener();
+				_self = plus.webview.currentWebview();
+				_self.setPullToRefresh({
+					support: true,
+					height: '50px',
+					range: '100px',
+					style: 'circle',
+					offset: '45px'
+				}, pulldownRefresh);
+				mui(".mfp-nav").on('tap', 'li', function() {
+					var id = this.getAttribute("id");
+					if(!openWindow(id, id + ".html")) {
+						mui.toast("该功能正在开发中")
+					}
+				})
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				var appElement = document.querySelector('[ng-controller=homeNewsCtrl]');
+				var $scope = angular.element(appElement).scope();
+				var userInfo = JSON.parse(localStorage.getItem("userInfo"));
+				if(userInfo) {
+					$scope.getData(userInfo.userid, function() {
+						_self.endPullToRefresh();
+					});
+				}
+			}
+
+			// 个推推送消息监听
+			function setPushListener() {
+				// 添加监听从系统消息中心点击某条消息启动应用事件
+				plus.push.addEventListener("click", function(msg) {
+					console.log('click:' + JSON.stringify(msg));
+					if(msg.payload) {
+						var ret = msg.payload.split(",");
+						var id = ret[0];
+						startWindowWithExtras(id, id + ".html", {
+							itemId: ret[1]
+						});
+					}
+				}, false);
+				// 监听在线消息事件
+				plus.push.addEventListener("receive", function(msg) {
+					console.log('receive:' + JSON.stringify(msg));
+					if(msg.payload) {
+						var ret = msg.payload.split(",");
+						var id = ret[0];
+						startWindowWithExtras(id, id + ".html", {
+							itemId: ret[1]
+						});
+					}
+
+				}, false);
+			}
+		</script>
+	</body>
+
+</html>

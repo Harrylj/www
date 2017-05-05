@@ -1,0 +1,99 @@
+.mui-input-group {
+	margin-top: 10px;
+}
+
+.mui-input-group:first-child {
+	margin-top: 20px;
+}
+
+.mui-content-padded {
+	margin-top: 25px;
+}
+
+.mui-btn {
+	padding: 10px;
+}
+
+.oauth-area {
+	position: absolute;
+	bottom: 20px;
+	left: 0px;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	color: #CCCCCC;
+	font-size: 12px;
+	z-index: -1;
+	display: none;
+}
+
+.login{
+	background-color: white;
+	padding: 10px 30px 0px 30px;
+}
+.l-img-01{
+	display: block;
+	width: 100%;
+	margin: 20%  auto 30% auto;
+}
+.mui-input-group::before{
+	display: none;
+}
+.mui-input-group::after{
+	display: none;	
+}
+.mui-input-group .mui-input-row::after{
+	display: none;
+}
+.mui-input-group .mui-input-row{
+	height: 60px;
+}
+.mui-input-group .mui-input{
+	border-bottom: 1px solid #CCCCCC;
+	color: #999999;
+}
+.mui-input-group .input-account,
+.mui-input-group .input-password{
+	background-repeat: no-repeat;
+	background-position: 5px center;
+	background-size: 18px 18px;
+	color: #999999;
+	padding-left: 30px;
+	font-size: 18px;
+	letter-spacing: 2px;
+}
+.mui-input-group .input-account{
+	background-image: url(../images/zx-login-05.png);
+}
+.mui-input-group .input-password{
+	background-image: url(../images/zx-login-06.png);
+}
+
+.mui-input-group .input-account-hover,
+.mui-input-group .input-account-hover::-webkit-input-placeholder,
+.mui-input-group .input-password-hover,
+.mui-input-group .input-password-hover::-webkit-input-placeholder{
+	border-color: #009c84;
+	color: #009c84;
+}
+.mui-input-group .input-account-hover{
+	background-image: url(../images/zx-login-05-hover.png);
+	
+}
+.mui-input-group .input-password-hover{
+	background-image: url(../images/zx-login-06-hover.png);
+}
+#btn-login, #btn-change{
+	border-radius: 20px;
+	background-color: #009c84;
+	border: none;
+}
+.l-p-01{
+	height: 20px;
+	line-height: 20px;
+	color: red;
+	font-size: 14px;
+	letter-spacing: 2px;
+}
+

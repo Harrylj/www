@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/header.css" />
+
+		<style>
+			html,
+			body {
+				margin: 0;
+				height: 100%;
+			}
+			
+			h1 {
+				color: #009C84;
+				padding: 8px 10px;
+				line-height: 28px;
+				font-size: 16px;
+				margin: 0;
+				font-weight: bold;
+				text-align: center;
+			}
+		</style>
+	</head>
+
+	<body style="background-color: white;">
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" style="color: white">计价趋势图</h1>
+		</header>
+		<div class="mui-content" style="background-color: white;">
+			<h1 id="title">2016年11月~2017年1月计价趋势图</h1>
+			<div id="main" style="width: 100%;height:250px;"></div>
+		</div>
+		
+		
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/echarts.min.js"></script>
+		<script>
+			mui.init()
+			mui.ready(function() {
+				if(window.plus) {
+					plusReady();
+				} else {
+					document.addEventListener("plusready", plusReady, false);
+				}
+			});
+
+			function plusReady() {
+				var self = plus.webview.currentWebview();
+				var data = self.data.reverse();
+				document.getElementById("title").innerHTML = self.title + "计价趋势图";
+				var seriesData = [];
+				var xAxisData = [];
+				for(var i = 0; i < data.length; i++) {
+					var x = data[i];
+					xAxisData.push(x.month);
+					seriesData.push(x.totalPrice)
+				}
+				data.reportType = "折线图";
+				var myChart = echarts.init(document.getElementById('main'));
+				if(data.reportType == "折线图") {
+					var option = lineOption('line', xAxisData, seriesData);
+					myChart.setOption(option)
+				}
+				if(data.reportType == "柱状图") {
+					var option = lineOption('bar', xAxisData, seriesData);
+					myChart.setOption(option)
+				}
+			}
+
+			var lineOption = function(chartType, xAxisData, seriesData) {
+				var option = {
+					grid: {
+						x: 40,
+						x2: 10,
+						y: 30,
+					},
+					toolbox: {
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					xAxis: [{
+						type: 'category',
+						data: xAxisData,
+						axisLabel: {
+							interval: 0,
+							rotate: 30,
+						}
+					}],
+					yAxis: [{
+						type: 'value',
+						splitArea: {
+							show: true
+						}
+					}],
+					tooltip: {
+						trigger: 'axis',
+						formatter: "{b} : {c}W"
+					},
+					series: [{
+						name: '工资',
+						type: chartType,
+						data: seriesData,
+						label: {
+							normal: {
+								show: true,
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}"
+							},
+							emphasis: {
+								show: true,
+								textStyle: {
+									color: '#333333',
+									position: 'center'
+								},
+								formatter: "{c}"
+							}
+						}
+					}]
+				};
+				return option;
+			}
+		</script>
+	</body>
+
+</html>
