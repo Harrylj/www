@@ -21,7 +21,10 @@
 	</style>
 </head>
 <body>
-	 <input id="file-input" type="file" />
+	<!--<a href="javascript:history.go(-1)" >返回上一页</a>-->
+;
+<a onclick="javascript :history.back();" >返aaaaa回上一aaaaaaaaaa页</a>
+
 	<script type="text/javascript">
 		(function(){
 //			let num = parseInt(3.9); 
@@ -41,17 +44,110 @@
 				two = '2';
 			console.log(one+two , one - two)
 			console.log(0 - +0)
+//
+//			function getnum(){
+//				var abc;
+//				if(arguments.length == 1 ){
+//					abc = arguments[0] + 10;
+//				}
+//				else{
+//					abc = arguments[0] + arguments[1];
+//				}
+//				return abc;
+//			}
+
+			function getnum(){
+				if(arguments.length == 1 ){
+					if(true){
+						return arguments[0] + 10;
+					}
+
+				}
+				else{
+					return arguments[0] + arguments[1];
+				}
+			}
+
+//			console.log(getnum(10),getnum(),getnum(10,20))
+
+//			function setName(obj){
+//				obj.name = "lijian";
+//				obj = new Object();
+//				obj.name = "zhongzhengqin";
+//			}
+//			var person = new Object();
+//			setName(person);
+//			alert(person.name);
+			var  abc = 124;
+			var  obj = new Object();
+			var  arr = new  Array();
+			console.log(abc instanceof Object,obj instanceof Array, arr instanceof Object)
+
+			var color = "blue";
+			function changeColor(){
+				if (color ==="blue"){
+					color = "red"
+				} else{
+					color ="blue"
+				}
+			}
+			changeColor();
+			//alert("color is now " + color);
+
+            let arrayLike = {
+                '3': 'd',
+                '0': 'a',
+                '1': 'b',
+                '2': 'c',
+
+                length: 4
+            };
+            let arr2 = Array.from(arrayLike);
+            console.log(arr2)
+            let arr3 = Array.from("hello");
+            console.log(arr3);
+            let arr4 = new Array();
+            let apple = 'apple';
+            for(let i=0;i<apple.length;i++){
+                arr4[i] = apple.split('')[i];
+            }
+            console.log(arr4)
+			
+			console.log(Array.from([1, , 2, , 3], (n) => n || 0))
+			console.log([1,2,3].map(x => x*x))
+			
+			function foo() {
+			  setTimeout(() => {
+			    console.log('id:', this.id);
+			  }, 100);
+			}
+			var id = 21;
+			foo.call({id:42})
+			
+			function Timer() {
+			  this.s1 = 0;
+			  this.s2 = 0;
+			  // 箭头函数
+			  setInterval(() => this.s1++, 1000);
+			  // 普通函数
+			  setInterval(function () {
+			    this.s2++;
+			  }, 1000);
+			}
+			
+			var timer = new Timer();
+			
+			console.log(setTimeout(() => console.log('s1: ', timer.s1), 3000));
+			console.log(setTimeout(() => console.log('s2: ', timer.s2), 3000));
+						
+			console.log(['a', 'b', 'c'].fill(7, 1, 2))
 			
 			
-			var inputElement = document.getElementById("file-input");
-inputElement.addEventListener("change", handleFiles, false);
-function handleFiles() {
-  var fileList = this.files; 
-  console.log(fileList[0].size)
-}
-
-
-
+			let arr5 = [ , ,];
+			for(let b of arr5){
+				console.log(1)
+			}
+			
 		})()
 
 		

@@ -27,8 +27,7 @@ $(function(){
 						  {"src":'23.jpg'},
 						  {"src":'24.jpg'},
 	]}
-	
-	
+
 	//滚动加载数据
 	window.onscroll = function(){
 		//滚动的距离

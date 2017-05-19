@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>名称</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+
+		<script type="text/javascript">
+			function abc() {
+				alert(1);
+			}
+			console.log(abc.name)
+			var obj1 = {
+				_year: '1234'
+			}
+			console.log(obj1._year)
+
+			var book = {
+				_yaer: 2004,
+				edition: 1
+			};
+			Object.defineProperty(book, "year", {
+				get: function() {
+					return this._year;
+				},
+				set: function(newValue) {
+					if(newValue > 2004) {
+						this._year = newValue;
+						this.edition += newValue - 2004;
+					}
+					console.log(newValue)
+				}
+			})
+			book.year = 2005;
+			//alert(book.edition); //2
+
+			var arr = [1, 2, 3];
+
+			function isArrayFn(obj) { //封装一个函数
+				if(typeof Array.isArray === "function") {
+					return Array.isArray(obj); //浏览器支持则使用isArray()方法
+				} else { //否则使用toString方法
+					return Object.prototype.toString.call(obj) === "[object Array]";
+				}
+			}
+			//alert(isArrayFn(arr)); // true
+			
+			var c = new String("123");
+			//alert(c instanceof String);  //true
+			//alert(typeof c);  //object
+			function fname(){
+				fname.prototype.abc = "alan"
+			}
+			var ab = new fname();
+			console.log(fname.abc)
+		</script>
+	</body>
+
+</html>

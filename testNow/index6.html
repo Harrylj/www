@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>名称</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<!--
+理想情况下我们应该先判断你的设备上是否
+有摄像头或相机，但简单起见，我们在这里直接
+写出了HTML标记，而不是用JavaScript先判断
+然后动态生成这些标记
+-->
+		<video id="video" width="640" height="480" autoplay></video>
+		<button id="snap">Snap Photo</button>
+		<canvas id="canvas" width="640" height="480"></canvas>
+
+		<script type="text/javascript">
+			// Put event listeners into place
+			window.addEventListener("DOMContentLoaded", function() {
+				// Grab elements, create settings, etc.
+				var canvas = document.getElementById("canvas"),
+					context = canvas.getContext("2d"),
+					video = document.getElementById("video"),
+					videoObj = {
+						"video": true
+					},
+					errBack = function(error) {
+						console.log("Video capture error: ", error.code);
+					};
+				// Put video listeners into place
+				if(navigator.getUserMedia) { // Standard
+					navigator.getUserMedia(videoObj, function(stream) {
+						video.src = stream;
+						video.play();
+					}, errBack);
+				} else if(navigator.webkitGetUserMedia) { // WebKit-prefixed
+					navigator.webkitGetUserMedia(videoObj, function(stream) {
+						video.src = window.webkitURL.createObjectURL(stream);
+						video.play();
+					}, errBack);
+				} else if(navigator.mozGetUserMedia) { // Firefox-prefixed
+					navigator.mozGetUserMedia(videoObj, function(stream) {
+						video.src = window.URL.createObjectURL(stream);
+						video.play();
+					}, errBack);
+				}
+			}, false);
+
+			// 触发拍照动作
+			document.getElementById("snap")
+				.addEventListener("click", function() {
+					context.drawImage(video, 0, 0, 640, 480);
+				});
+		</script>
+	</body>
+
+</html>

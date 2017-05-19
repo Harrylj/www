@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		window.onload = function(){
+			function Fibonacci (n) {
+			  //console.log(n)
+			  if ( n <= 1 ) {return 1};
+			
+			  return Fibonacci(n - 1) + Fibonacci(n - 2);
+			  //return Fibonacci(n - 1) + ' ,' + Fibonacci(n - 2);
+			}
+			console.log(Fibonacci(10));
+			console.log(Fibonacci(10))
+			
+			function sum(x, y) {
+			  if (y > 0) {
+			    return sum(x + 1, y - 1);
+			  } else {
+			    return x;
+			  }
+			}
+			
+			console.log(sum(2, 10))
+			
+			var foo = 'bar';
+			var baz = {foo};
+			 // {foo: "bar"}
+			console.log(baz)
+			function f(x,y){
+				return {x,y};
+			}
+			console.log(f(1,2))
+			var arr1 = [2,3,6,87,4];
+			var obj1 = {one:1,two:2,222:3}
+			for(var val in obj1){
+				console.log(obj1[val]);
+			}
+			console.log(obj1[222])
+			
+			function* helloWorldGenerator(){
+				yield 'hello';
+				yield 'world';
+				return 'ending';
+			}
+			var hw = helloWorldGenerator();
+			console.log(hw.next())
+			console.log(hw.next())
+			console.log(hw.next())
+			console.log(hw.next())
+			
+			function* f() {
+			  console.log('执行了！')
+			}
+			
+			var generator = f();
+			
+			setTimeout(function () {
+			  generator.next()
+			}, 2000);
+		}
+
+		
+	</script>
+</body>
+</html>
