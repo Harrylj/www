@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/*
+		let {keys, values, entries} = Object;
+		let obj = { a: 1, b: 2, c: 3 };
+		
+		for (let key of keys(obj)) {
+		  console.log(key); // 'a', 'b', 'c'
+		}
+		
+		for (let value of values(obj)) {
+		  console.log(value); // 1, 2, 3
+		}
+		
+		for (let [key, value] of entries(obj)) {
+		  console.log([key, value]); // ['a', 1], ['b', 2], ['c', 3]
+		}
+		*/
+		
+		/*
+		let obj2 = {aaa:11111,bbb: '' };
+		obj2['bbb']= 2222;
+		console.log(obj2)
+		
+		var obj3 = { foo: 'bar', baz: 42 };
+		console.log(Object.values(obj3))
+		console.log(Object.keys(obj3))
+		console.log(Object.entries(obj3))
+		let o1 = { a: 1 };
+		let o2 = { b: 2 };
+		o2.__proto__ = o1;
+		let { ...o3 } = o2;
+		console.log(o3) // { b: 2 }
+		o3.a // undefined
+		*/
+		function add(...values) {
+		  let sum = 0;
+		
+		  for (var val of values) {
+		    sum += val;
+		  }
+		
+		  return sum;
+		}
+		
+		console.log(add(2, 5, 3)) // 10
+		
+		let z = { a: 3, b: 4 };
+
+		var obj4 = { p: 'a' };
+		
+		console.log(Object.getOwnPropertyDescriptor(obj4, 'p'))
+		
+		const obj = {
+		  foo: 123,
+		  get bar() { return 'abc' }
+		};
+
+		console.log(Object.getOwnPropertyDescriptors(obj))
+		
+		var s1 = Symbol('foo');
+		var s2 = Symbol('bar');
+		
+
+		
+		s1.toString() // "Symbol(foo)"
+		s2.toString() // "Symbol(bar)"
+		
+		console.log(s1,s2)
+		
+		const obj5 = {
+		  toString() {
+		    return 'abc';
+		  }
+		};
+		const sym = Symbol(obj5);
+		console.log(sym) // Symbol(abc)
+		
+		var mySymbol = Symbol();
+		var a = {};
+		
+		a.mySymbol = 'Hello!';
+		console.log(a[mySymbol]) // undefined
+		console.log(a['mySymbol']) // "Hello!"
+		
+		var obj6 = {};
+
+		var foo = Symbol("foo");
+		
+		Object.defineProperty(obj6, foo, {
+		  value: "foobar",
+		});
+		console.log(obj6)
+		console.log(Object.getOwnPropertySymbols(obj6))
+		
+		var s1 = Symbol.for('foo');
+		var s2 = Symbol.for('foo');
+		
+		console.log(s1 === s2) // true
+		
+		console.log(Array.prototype[Symbol.unscopables])
+	</script>
+</body>
+</html>

@@ -57,20 +57,15 @@
                     <h2>您今天还有<span class="playnum"></span>次机会</h2>
 					
 					<div class="active-hdgz">
-		                <h1>活动规则</h1>
 						<p>
-							1.话费流量奖励仅限凉山移动用户；
-							<br />2.话费奖励将于奖励次月中旬到账；
-							<br />3.流量奖励将流量卷形式下发，请下载“四川移动和生活”客户端，进入底部菜单“我的” - “卡卷”进行激活使用。流量卷仅限中奖当月激活，激活流量当月省内使用有效；
-							<br />4.摄影抵扣卷为：西昌巴卜儿童亲子摄影现金抵扣卷，单张价值500
+							活动规则
+							<br />1、话费流量奖励仅限凉山移动用户；
+							<br />2、话费奖励将于6月15日前到账；
+							<br />3、流量奖励将流量券形式下发，请下载“四川移动和生活”客户端，进入底部菜单“我的”-“卡券”进行激活使用。流量券仅限中奖当月激活，激活流量当月省内使用有效；
+							<br />4、粽子兑换券仅可在西昌佳佳超市使用，客户凭中奖截图至西昌航天路营业厅领取，领取后可到西昌市内佳佳超市使用。领取时间截止6月5日，过期未领取作废。
 						</p>
 		            </div>
-					<div class="five-ten-footer">
-						<img class="fl" src="img/lottery/feet-01.png"/>
-						<img class="fr" src="img/lottery/feet-02.png"/>
-						<a href="http://a.app.qq.com/o/simple.jsp?pkgname=com.sichuan.iwant"><img class="ftf-btn-img" src="img/lottery/download.png"/></a>
-						<div class="clear"></div>
-					</div>
+					
 					
 					<div style="height: 100px;"></div>
 
@@ -149,25 +144,37 @@
 					//data为随机出来的结果，根据概率后的结果
 					data = data[Math.floor(Math.random() * data.length)];
 					//指定获奖结果
-                    data = 3;
+                    data = 10;
                     switch(data) {
 						case 1:
-							rotateFunc(1, 0, '5元话费');
+							rotateFunc(1, 36, '10元粽子兑换券');
 							break;
 						case 2:
-							rotateFunc(2, 60, '10元话费');
+							rotateFunc(2, 70, '下次继续');
 							break;
 						case 3:
-							rotateFunc(3, 120, '100M流量卷');
+							rotateFunc(3, 108, '50元粽子兑换券');
 							break;
 						case 4:
-							rotateFunc(4, 180, '200M流量卷');
+							rotateFunc(4, 145, '50M流量');
 							break;
 						case 5:
-							rotateFunc(5, 240, '500摄影抵用券');
+							rotateFunc(5, 170, '下次继续');
 							break;
 						case 6:
-							rotateFunc(6, 300, '谢谢惠顾 下次继续');
+							rotateFunc(6, 195, '5元粽子兑换券');
+							break;
+						case 7:
+							rotateFunc(7, 225, '10元话费');
+							break;
+						case 8:
+							rotateFunc(8, 260, '100M流量');
+							break;
+						case 9:
+							rotateFunc(9, 305, '20元粽子兑换券');
+							break;
+						case 10:
+							rotateFunc(10, 340, '200M流量');
 							break;
 					}
 				};
