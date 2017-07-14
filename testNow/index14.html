@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+//			'use strict'
+//			function test(){
+//				console.log(this.name)
+//			}
+//			let obj ={
+//				name:'alan',
+//				foo:function(){
+//					console.log(this)
+//				},
+//				foo2:function(){
+//					var _this = this
+//					console.log(this);
+//					setTimeout(()=>{
+//						console.log(this);
+//						console.log(_this);
+//					},1000);
+//				}
+//			}
+//			
+//			obj.foo2()
+
+//			'use strict';
+//			function foo() {
+//			  console.log(this);
+//			}
+//			setTimeout(foo, 1);
+			
+//			function Person(name) {
+//
+//			  this.name = name;
+//			  console.log(this);
+//			}
+//			var p = new Person('qiutc');
+//
+//		
+			var arr = [1,2,3,4,5];
+			
+//			var a = Math.max.apply(null,arr);
+			let m = Reflect.apply(Math.max,Math,arr)
+console.log(m)
+//			var obj = {
+//				name:'alan',
+//				foo: function(){
+//					console.log(this.name)
+//				}
+//			}
+//			var obj2 ={
+//				name:'abc'
+//			}
+//			function foo(){
+//				console.log(this)
+//			}
+//			obj.foo.call(obj2);
+//
+//			let obj ={
+//				name : "alan"
+//				
+//			}
+//			
+//			function foo(){
+//				console.log(this.name)
+//			}
+//			foo.call(obj)
+//			function Person(name){
+//				this.name = name;
+//				console.log(this)
+//			}
+//			var obj = {
+//				name: 'alanlan'
+//			}
+//			
+//			var Person2 = Person.bind(obj,'alan1111111')
+//			var p = new Person2('alan');
+//			var  obj = {
+//				name:'alan',
+//				foo:() =>{
+//					console.log(this)
+//				}
+//				
+//			}
+//			obj.foo()
+//			var proxy = new Proxy({}, {
+//			  get: function(target, property) {
+//			    return 35;
+//			  }
+//			});
+//			
+//			let obj = Object.create(proxy);
+//			console.log(obj.timea) // 35
+//			function createArray(...elements){
+//				let handler = {
+//					get(target, propKey, receiver){
+//						let index = Number(propKey);
+//						if(index<0){
+//							propKey = String(target.length + index);
+//						}
+//						return Reflect.get(target,propKey,receiver);
+//					}
+//				};
+//				
+//				let target = [];
+//				target.push(...elements);
+//				return new Proxy(target,handler);
+//			}
+//			
+//			let arr =createArray('a','b','c');
+//			console.log(arr[-1])
+//			var pipe = (function () {
+//			  return function (value) {
+//			    var funcStack = [];
+//			    var oproxy = new Proxy({} , {
+//			      get : function (pipeObject, fnName) {
+//			        if (fnName === 'get') {
+//			          return funcStack.reduce(function (val, fn) {
+//			            return fn(val);
+//			          },value);
+//			        }
+//			        funcStack.push(window[fnName]);
+//			        return oproxy;
+//			      }
+//			    });
+//			
+//			    return oproxy;
+//			  }
+//			}());
+//			
+//			var double = n => n * 2;
+//			var pow    = n => n * n;
+//			var reverseInt = n => n.toString().split("").reverse().join("") | 0;
+//			console.log(pipe(3).double.pow.get)
+			let a =1,b=2;
+			console.log(a+b)
+	</script>
+</body>
+</html>

@@ -26,7 +26,7 @@
 		const s = new Set();
 		
 		[2, 3, 5, 4, 5, 2, 2].forEach(x => s.add(x));
-		
+		console.log(s)
 		for (let i of s) {
 		  console.log(i);
 		}
@@ -37,6 +37,49 @@
 		
 		const items = new Set([1, 2, 3, 4, 5, 5, 5, 5,0]);
 		console.log(items.size) // 5
+		
+		s.delete(5);
+		console.log(s.has(2));
+		console.log(s);
+		let one = new Set([1,2,3]);
+		one.forEach((value,key) => console.log(value * 2));
+		
+		let two = new Set([9,7,5,3]);
+		let arr = [...two];
+		console.log(arr)
+		
+		let arr1 = [3, 5, 2, 2, 5, 5];
+		let unique = [...new Set(arr1)];
+		// [3, 5, 2]
+		console.log(unique);
+		
+		let three = new Set([1,2,3])
+		threeto = new Set([...three].map(x => x*2));
+		console.log(threeto)
+		
+		let four = new Set([1,2,3,4,5,6]);
+		fourto = new Set([...four].filter(x => (x % 3) == 0))
+		console.log(fourto)
+		
+		let a = new Set([1,2,3]);
+		let b = new Set([2,3,4]);
+		//union,intersect,difference
+		let union = new Set([...a,...b])
+		console.log(union)
+		let intersect = new Set([...a].filter(x => b.has(x)));
+		console.log(intersect)
+		//let difference = new Set([...a].filter(x => x != [...b].filter(x)));
+		let difference = new Set([...a].filter(x => !b.has(x)));
+		console.log(difference)
+		
+		let five = new Set([...a].map(val => val *2));
+		let six = new Set(Array.from(a,val => val *2))
+		console.log(a)
+		console.log(five)
+		console.log(six)
+		
+		let seven = x=> x*2;
+		console.log(seven(9))
 	</script>
 </body>
 </html>

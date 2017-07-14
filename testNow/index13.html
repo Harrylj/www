@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		const a = [[1, 2], [3, 4]];
+		const ws = new WeakSet(a);
+		// WeakSet {[1, 2], [3, 4]}
+		console.log(ws)
+		const b = [[3, 4]];
+		const wsb = new WeakSet(b);
+		console.log(wsb)
+		
+		const m = new Map();
+		const o = {p: 'Hello World'};
+		
+		m.set(o, 'content')
+		console.log(m.get(o)) // "content"
+		console.log(m.has(o),m.delete(o),m.has(o))
+		 // true
+		 // true
+		 // false
+		 const map = new Map([
+		  ['name', '张三'],
+		  ['title', 'Author']
+		]);
+		
+		console.log(map.size,map.has('name'),map.get('name'),map.has('title'),map.get('title'))
+		 // 2
+		 // true
+		 // "张三"
+		 // true
+		 // "Author"
+		 
+		const map1 = new Map();
+
+		map1.set('a', 555);
+		console.log(map1.get('a')) // undefined
+		
+		const map2 = new Map([
+		  [1, 'one'],
+		  [2, 'two'],
+		  [3, 'three'],
+		]);
+		console.log([...map2])
+		console.log([...map2.entries()])
+		
+		
+		const map3 = new Map()
+		  .set(1, 'a')
+		  .set(2, 'b')
+		  .set(3, 'c');
+		
+		const map4 = new Map(
+		  [...map3].filter(([k, v]) => k < 3)
+		);
+		console.log(map4);
+		// 产生 Map 结构 {1 => 'a', 2 => 'b'}
+		
+		const map5 = new Map(
+		  [...map3].map(([k, v]) => [k * 2, '_' + v])
+		);
+		console.log(map5);
+		// 产生 Map 结构 {2 => '_a', 4 => '_b', 6 => '_c'}
+		var map6 =new Map([
+		  [true, 7],
+		  [{foo: 3}, ['abc']]
+		])
+		console.log(map6)
+		
+		function strMapToObj(strMap){
+			let obj = Object.create(null);
+			for(let[n,m] of strMap){
+				obj[n] = m;
+				
+			}
+			return obj;
+		}
+		const myMap = new Map()
+			.set('yes',true)
+			.set('no', false);
+			
+		console.log(strMapToObj(myMap))
+		
+		function objToStrMap(obj){
+			let strMap = new Map();
+			for(let k of Object.keys(obj)){
+				strMap.set(k,obj[k]);
+			}
+			return strMap;
+		}
+		console.log(objToStrMap({yes:true,no:false}))
+	</script>
+</body>
+</html>
