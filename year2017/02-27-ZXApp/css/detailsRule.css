@@ -1,0 +1,69 @@
+.mui-input-row{
+	position: relative;
+	padding: 7px 0;
+	letter-spacing: 2px;
+	font-family: "微软雅黑";
+}
+.details-rule p{
+	padding: 5px ;
+	text-indent: 2em;
+	line-height: 24px;
+	margin-bottom: 10px;
+	color: #666666;
+}
+.dr-bottom{
+	position: fixed;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+	height: 50px;
+	background-color: #bce5df;
+}
+
+.details-rule{
+	padding: 10px 10px 50px 10px;
+}
+.mui-input-row label{
+	width: 25%;
+	text-align: center;
+	font-size: 14px;
+	padding: 0;
+	line-height: 36px;
+	margin: 0;
+	color: #19a690;
+}
+.mui-input-range label~input[type=range]{
+	width: 75%;
+	background-color: white;
+}
+.mui-tooltip{
+	display: none!important;
+}
+.dr-now-div{
+	position: absolute;
+	right: 10px;
+	top: 0;
+	color: #19a690;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  
+}
+/*横条样式*/  
+input[type=range] {  
+  -webkit-appearance: none;/*清除系统默认样式*/  
+  width: 100%;  
+  background: -webkit-linear-gradient(#19a690, #19a690) no-repeat, #ddd;/*设置左边颜色为#61bd12，右边颜色为#ddd*/  
+  background-size: 0% 100%;/*设置左右宽度比例*/  
+  height: 3px;/*横条的高度*/  
+}  
+/*拖动块的样式*/  
+input[type=range]::-webkit-slider-thumb {  
+  -webkit-appearance: none;/*清除系统默认样式*/  
+  height: 26px;/*拖动块高度*/  
+  width: 26px;/*拖动块宽度*/  
+  background:#19a690!important;/*拖动块背景*/  
+  border-radius: 50%; /*外观设置为圆形*/  
+  border: solid 1px #19a690!important; /*设置边框*/  
+}

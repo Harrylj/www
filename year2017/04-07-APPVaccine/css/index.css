@@ -1,0 +1,140 @@
+.index{
+	position: relative;
+}
+.ic-nav-01-swiper{
+	width: 100%;
+	height: 200px;
+	
+}
+.i-ts{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: white;
+	height: 30px;
+	line-height: 30px;
+	overflow: hidden;
+	padding: 0 10px;
+	letter-spacing: 2px;
+}
+.slide-img{
+   width: 100%;
+   height: 100%;
+}
+.ic-nav-01-swiper .swiper-pagination-bullet{
+	opacity: 1;
+	background-color: white;
+}   
+.ic-nav-01-swiper .swiper-pagination-bullet-active{
+	background-color: #27ae60;
+	
+}
+.swiper-container-horizontal > .swiper-pagination{
+	left: -10px;
+	text-align: right;	
+}
+.ic-nav-02-swiper{
+	width: 100%;
+	height: 70px;
+	padding: 10px 0;
+	font-size: 1.125rem;
+	color-interpolation: black;
+}
+.ic-nav-02-swiper .swiper-slide{
+	line-height: 50px;
+	text-align: center;
+	letter-spacing: 2px;	
+}
+.ic-nav-click span{
+	display: inline-block;
+	background-color: #27ae60;
+	border-radius: 50%;
+	color: white;
+}    
+.ic-list{
+	background-color: white;
+}
+.ic-list-box{
+	width: 100%;
+} 
+.ic-list-box li{
+	float: left;
+	line-height: 80px;	
+	height: 80px;
+}
+.ic-list-box li:first-child{
+	width: 26%;
+	color: #27ae60;
+	font-size: 0.875rem;
+	text-align: center;
+}
+.ic-list-box li:nth-child(2){
+	width: 50%;
+	border-bottom: 1px solid #ccc;
+}
+.ic-list-box li:nth-child(2) h1{
+	font-size: 1.125rem;
+	color: black;
+	line-height: 50px;
+	height: 50px;
+	overflow: hidden;
+}
+.ic-list-box li:nth-child(2) p{
+	line-height: 44px;
+	height: 44px;
+}
+.ic-list-box li:nth-child(2) img{
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 40px;
+	height: 20px;
+}
+.ic-list-box li:last-child{
+	background-image: url(../images/line-right.png);
+	background-repeat: no-repeat;
+	background-size: 14px 20px;
+	background-position: 90% 50%; 
+	width: 24%;
+	text-align: right;
+	padding-right: 7%;
+	border-bottom: 1px solid #ccc;
+	color: #ccc;
+}
+.ic-list-box-fail li:last-child{
+	color: red;
+}
+.ic-list-box-01 li:nth-child(2)
+,.ic-list-box-02 li:nth-child(2){
+	
+	background-repeat: no-repeat;
+	background-size: 40px 20px;
+	background-position: 5px 45px;
+}
+.ic-list-box-01 li:nth-child(2){
+	background-image: url(../images/vd-01.png);
+}
+.ic-list-box-02 li:nth-child(2){
+	background-image: url(../images/vd-02.png);
+}
+
+.ic-list-box-03 li:nth-child(2){	
+	background: url(../images/vd-01.png) no-repeat 5px 45px ,
+				url(../images/vd-02.png) no-repeat 60px 45px;
+	background-size: 40px 20px;
+}
+
+.swiper-slide-active span{
+	display: inline-block;
+	width: 50px;
+	height: 50px;
+	font-size: 0.75rem;
+
+}
+
+
+.ic-list-goods{
+	display: none;
+}
+.ic-list-click{
+	display: block;
+}

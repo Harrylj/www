@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+	let a = 1,
+		b,
+		c = undefined,
+		d = null ,
+		f = 'null' ,
+		g = false,
+		h = 'false'
+		
+	let aa = {
+		one : a && 11,    //11
+		two : b && 22,    //undefined
+		three : c && 33,  //undefined
+		four : d && 44,	  //null
+		five : f && 55,   //55
+		six : g && 66,	  //false
+		seven : h && 77   //77
+	}
+	console.log(aa.one,aa.two,aa.three,aa.four,aa.five,aa.six,aa.seven)
+	let bb = {
+		one : a || 11,   //1
+		two : b || 22,   //22
+		three : c || 33, //33
+		four : d || 44,  //44
+		five : f || 55,  //"null"
+		six : g || 66,   //66
+		seven : h || 77  //"false"
+	}
+	console.log(bb.one,bb.two,bb.three,bb.four,bb.five,bb.six,bb.seven)
+	
+	let	one = a && 11,    //11
+		two = b && 22,    //undefined
+		three = c && 33,  //undefined
+		four = d && 44,	  //null
+		five = f && 55,   //55
+		six = g && 66,	  //false
+		seven = h && 77   //77
+	
+	console.log(one,two,three,four,five,six,seven)
+    function cc(){
+    	//优先级（）> && > ||
+    	let	a = 11 &&  22 || 33          //22  
+    		b = (11 &&  22) || 33	     //22
+    		c = false && 22 || 33		 //33
+    		d = 11 || 22 && 33			 //11
+    		e = false || 22 && 33	     //33
+    		f = (11 || 22) && 33		 //33
+    		g = (11 && 22) && 33		 //33
+    		h = false && 22 && 33        //false
+    		i = 11 && 22 || 33 && ( 44 && 55)  //22
+    		j = (11 && 22) && 33 || 44 && 55  //33
+    		k = (11 && 22) && (33 || 44) && 55 && false //false
+    	console.log(a,b,c,d,e,f,g,h,i,j,k)   
+
+    }
+    cc()
+
+
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" href="css/login.css" />
+    <title>登录</title>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2015-07-23
+    	描述：验证信息
+    	登录账号：.number-user 默认为user
+    	登录密码: .number-password 默认为1234
+    	已被注册电话号码: .number-phone 默认为18200166593
+    	验证码：.number-yzm 默认为1234
+    	验证码所属手机号码:.number-yzm-phone 默认为18200166591
+    -->
+    <input class="number-user" type="hidden" value="user" />
+    <input class="number-password" type="hidden" value="1234" />
+    <input class="number-phone" type="hidden" value='18200166593'/>
+    <input class="number-yzm" type="hidden" value="1234" />
+    <input class="number-yzm-phone" type="hidden" value="18200166591" />
+    
+
+	<div class="v-login vr">
+		<div class="l-header">
+			<h1>育苗宝</h1>
+			<ul class="l-nav">
+				<li class="l-nav-li l-nav-click">登录<span></span></li>
+				<li></li>
+				<li class="l-nav-li">注册<span></span></li>
+			</ul>
+			<div class="clear"></div>
+			<div class="l-header-img"></div>
+		</div>
+		<div class="l-content">
+			<!--
+            	作者：648267773@qq.com
+            	时间：2015-07-20
+            	描述：登录
+            -->
+           	<div class="l-login l-click">
+           		<ul>
+           			<li><input class="public-input l-input-user" type="text" value="用户名"></li>
+           			<li><input class="public-input l-input-password pulibc-input-password" type="text" value="密码"></li>
+           			<li><p class="l-login-ts"></p></li>
+           			<li><button class="public-btn-02 l-btn-login" type="button">登录</button></li>
+           		</ul>
+           	</div>
+           	<div></div>
+            <!--
+            	作者：648267773@qq.com
+            	时间：2015-07-20
+            	描述：注册
+            -->
+            <div class="l-register ">
+            	<ul>
+            		<li><input class="public-input l-input-phone" type="text" value="请输入手机号码" /></li>
+            		<li><input class="public-input pulibc-input-password register-password-01" type="text" value="请输入密码" /></li>
+            		<li><input class="public-input pulibc-input-password register-password-02" type="text" value="请再次输入密码" /></li>
+            		<li><p class="l-register-tk l-register-tk-true">同意服务条款及隐私说明</p></li>
+            		<li><p class="l-register-ts"></p></li>
+            		<li><button class="public-btn-02 l-btn-register" type="button">注册</button></li>
+            	</ul>
+            </div>
+		</div>
+		
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

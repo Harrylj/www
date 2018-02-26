@@ -1,0 +1,48 @@
+@import  "index.css";
+
+.transition(@transition) {
+  -webkit-transition: @transition;
+-moz-transition: @transition;
+-o-transition: @transition;
+transition: @transition;
+}
+.opacity(@opacity) {
+  opacity: @opacity / 100;
+  filter: ~"alpha(opacity=@{opacity})";
+}
+
+a {
+.transition(all 0.4s);
+&:hover {
+  .opacity(70);
+  }
+}
+
+
+// Selector interpolation only works in 1.3.1+. Try it!
+@theGoodThings: ~".food, .beer, .sleep, .javascript";
+
+@{theGoodThings} {
+  font-weight: bold;
+}
+
+a{
+  color: red;
+  a{
+    font-size:1.333333rem
+  }
+}
+
+
+.font-dpr(@font-size){
+    font-size: @font-size;
+
+    [data-dpr="2"] & {
+        font-size: @font-size * 2;
+    }
+
+    [data-dpr="3"] & {
+        font-size: @font-size * 3;
+    }
+}
+div{.font-dpr(16px)}

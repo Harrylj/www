@@ -1,0 +1,470 @@
+.game{
+	position: relative;
+	overflow: hidden;
+	background-color: white;
+
+}
+.tpgz{
+	position: relative;
+	z-index: 10;
+	margin-bottom: 10px;
+}
+/*2015-11-17*/
+.game-nav{
+	height: 40px;
+	background-color: #FFFFFF;
+	padding-right: 30px;
+}
+.gn-btn{
+	position: relative;
+	float: right;
+	background-color: transparent;
+	display: block;
+	width: 70px;
+	height: 40px;
+	border: none;
+	letter-spacing: 2px;
+	color: #717171;
+	margin: 0;
+	padding: 0;
+	font-size: 14px;
+	line-height: 36px;
+	text-align: left;
+	padding:0 16px;
+}
+.gn-btn:hover
+,.gn-btn-click{
+	color: #f98194;
+}
+.gn-btn-tpzd{
+	/*
+	margin-left: 5%;
+	*/
+}
+/*
+.gn-btn:after{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	margin-top: -6px;
+	content: ' ';
+	height: 12px;
+	width: 2px;
+	background-color: #CECECE;
+	
+}
+*/
+.gn-btn:before
+,.game-search:before{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -8px;
+	content: ' ';
+	height: 16px;
+	width: 2px;
+	background-color: #CECECE;
+	
+}
+
+
+.gn-btn:after{
+	position: absolute;
+	right: 5%;
+	top: 0;
+	color: transparent;
+	display: block;
+	height: 40px;
+	width: 40px;
+	content: '.';
+	background-repeat: no-repeat;
+	background-size: 20px 20px;
+	background-position: right center;	
+}
+.gn-btn-xsbh-top:after
+,.gn-btn-xspx-top:after{
+	background-image: url(../images/line-top.png);
+}
+.gn-btn-xsbh-bottom:after
+,.gn-btn-xspx-bottom:after{
+	background-image: url(../images/line-bottom.png);
+}
+/*2155-11-17*/
+.game-nav-ul{
+	/*
+	position: absolute;
+	left: 50%;
+	top: 62%;
+	margin-left: -47%;
+	*/
+	width: 100%;
+
+}
+.game-nav-ul li{
+	display: none;
+	padding: 0 15px;
+	width: 100%;
+	border-bottom:1px solid #bababa;
+	color: black;
+	background-color: white;
+	height: 40px;
+	font-size: 1.25rem;
+	line-height: 40px;
+	letter-spacing: 4px;
+	
+}
+.game-nav-ul li:hover{
+	background-color: #ececec;
+}
+
+.game-nav-ul li:first-child{
+	position: relative;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	font-size: 1.5rem;
+	text-align: center;
+	color: white;
+	background-color: #25c3b6;
+	letter-spacing: 4px;
+	border: none;
+}
+.game-nav-ul .nav-li-01:after{
+	display: inline-block;
+	position: relative;
+	left: 3px;
+	top: 0px;
+	content: '##';
+	width: 20px;
+	height: 40px;
+	color: transparent;
+	background-image: url(../images/public-nav-right.png);
+	background-repeat: no-repeat;
+	background-size: 10px 16px;
+	background-position: center center;
+	opacity: .8;
+}
+.game-nav-ul .nav-li-colse:after{
+	background-image: url(../images/public-nav-bottom.png);
+	background-size: 16px 10px;
+	top: 0;
+}
+.game-nav-ul li:nth-child(2){
+	height: 40px;
+	line-height: 40px;
+	background-color: #ececec;
+	font-size: 1rem;
+	padding: 0 10px;
+}
+.game-search{
+	position: absolute;
+	top: 5%;
+	right: 0;
+	display: block;
+	width: 30px;
+	height: 40px;
+	background-image: url(../images/game-search.png);
+	background-repeat: no-repeat;
+	background-size: 22px 22px;
+	background-position: center;
+}
+.game-list{
+	position: relative;
+	width: 100%;
+	
+
+}
+/*
+.list-goods{
+	width: 45%;
+	margin:1.5% 1%;
+	background-color: white;
+}
+*/
+.list-goods{
+	position: relative;
+	width: 100%%;
+	background-color: white;
+	margin-bottom: 10px;
+	border: 1px solid #CCCCCC;
+	border-radius: 4px;
+	padding-bottom: 10px;
+	/*margin-left: 1%;
+	margin-right: 1%;*/
+}
+.list-goods:nth-child(odd){
+	
+}
+.list-goods:nth-child(even){
+	
+
+}
+.list-goods p{
+	padding: 0 8px 8px 8px;
+	line-height: 24px;
+	font-size: 1.125rem;
+	max-height: 74px;
+	overflow: hidden;
+	color: #787878;
+	font-weight: 500;
+	
+}
+.list-goods .list-goods-footer{
+	padding: 10px 8px 0 8px;
+	background-size: 20px 20px;
+	background-repeat: no-repeat;
+	background-position: 6px 4px;
+	font-size: 1.25rem;
+	line-height: 32px;
+	letter-spacing: 1px;
+	text-align: left;
+}
+.boy .list-goods-footer{
+	/*
+	background-image: url(../images/game-04.png);
+	*/
+}
+.girl .list-goods-footer{
+	/*
+	background-image: url(../images/game-05.png);
+	*/
+}
+.list-goods .goods-index{
+	/*position: absolute;
+	left: 0;
+	top: 0;
+	color: #ff9c00;
+	font-size: 1.5rem;
+	display: inline-block;
+	width: 60%;
+	line-height: 32px;
+	height: 32px;
+	margin-bottom: 10px;
+	text-align: center;
+	background-image: url(../images/game-34.png);*/
+}
+
+/*.love-number{
+	color: #f8114c;
+	border-radius: 20px;
+}*/
+.number-father{
+	
+}
+.goods-index-div{
+	position: absolute;
+	left: 0;
+	top: 5px;
+	color: white;
+	font-size: 1.25rem;
+	display: inline-block;
+	width: 60px;
+	line-height: 32px;
+	height: 32px;
+	border-radius: 0 16px 16px 0;
+	text-align: center;
+	background-image: url(../images/game-34.png);
+}
+
+
+.game .love-number
+,.search .love-number{
+	height: 30px;
+	line-height: 30px;
+	
+}
+
+.search .list-goods{
+	width: 100%;
+}
+
+
+/*2015-08-31*/
+/*returnTop*/
+
+p#back-to-top{
+
+   position:fixed;
+   /*display:none;*/
+   bottom:20px;
+   right:20px;
+   text-align: right;
+   padding-bottom: 15px;
+}
+p#back-to-top a{
+    text-align:center;
+    text-decoration:none;
+    color:#d1d1d1;
+    display:inline-block;
+    width:100px;
+    font-size: 1.25rem;
+    /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+    -moz-transition:color 1s;
+    -webkit-transition:color 1s;
+    -o-transition:color 1s;
+    background-image: url(../images/game-two-top.png);
+    background-size: 60px 60px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+}
+p#back-to-top a:hover{
+    color:#979797;
+}
+p#back-to-top a span{
+    background:transparent no-repeat -25px -290px;
+    border-radius:6px;
+    display:block;
+    height:10px;
+    width:56px;
+    margin-bottom:5px;
+    /*使用CSS3中的transition属性给<span>标签背景颜色添加渐变效果*/
+    -moz-transition:background 1s;
+    -webkit-transition:background 1s;
+    -o-transition:background 1s;
+}
+#back-to-top a:hover span{
+    background:transparent  no-repeat -25px -290px;
+}
+
+main{
+	border-top: 10px solid #F3F3F3;
+	padding: 8px;
+}
+
+.tpgz h1{
+	font-size: 1.5rem;
+	line-height: 50px;
+	text-align: center;
+	letter-spacing: 3px;	
+}
+.tpgz p{
+	font-size: 1rem;
+	line-height: 36px;
+	text-align: center;
+	letter-spacing: 2px;
+}
+
+
+.loadMeinvMOre{height:40px;line-height:40px;color:#999;letter-spacing:4px;text-align:center;font-size:1.5rem;background:#f9f9f9;display:block;clear:both;text-decoration:none;}
+.loadMeinvMOre:hover{ background:#f0f0f0;color:#666;}
+
+header{
+	position: relative;
+}
+.game-hdgz{
+	position: absolute;
+	right: 0;
+	top: 0;
+	line-height: 40px;
+	padding: 0 10px;
+	font-size: 14px;
+	color: white;
+}
+.game-ts-img{
+	position: fixed;
+	z-index: 99999;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	display: none;
+	
+}
+.game-header-number{
+	position: absolute;
+	top: 77%;
+	right: 0;
+	width: 38%;
+	line-height: 20px;
+	color: black;
+	font-size: 14px;
+	text-align: center;
+	height: 20px;
+	overflow: hidden;
+}
+.game-btn-mycenter{
+	border: none;
+	width: 200px;
+	height: 43px;
+	background-image: url(../images/game-two-01.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	background-color: transparent;
+	margin: 10px 0;
+}
+.tpgz .game-nav-p{
+	display: inline-block;
+	padding-left: 24px;
+	background-image: url(../images/game-two-02.jpg);
+	background-size: 20px 20px;
+	background-position: 0 center;
+	background-repeat: no-repeat;
+	font-size: 1.25rem;
+}
+.game-h{
+	text-align: center;
+	color: #969696;
+	font-size: 16px;
+	line-height: 32px;
+}
+.game-list-left{
+	float: left;
+	width: 49.6%;
+}
+.game-list-right{
+	float: right;
+	width: 49.6%;
+}
+.game-add-div{
+	width: 96%;
+	margin: auto;
+}
+.game-add-ul{
+	border:  1px solid #fcdcda;
+	border-left:none;
+	border-right: none;
+	padding: 15px 0;
+}
+.game-add-ul li:before{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	display: block;
+	background-color: #CCCCCC;
+	width: 2px;
+	height: 20px;
+	margin-top: -10px;
+	content: " ";	
+}
+.game-add-ul li:last-child:after{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	display: block;
+	background-color: #CCCCCC;
+	width: 2px;
+	height: 20px;
+	margin-top: -10px;
+	content: " ";	
+}
+.game-add-ul li{
+	position: relative;
+	width: 33%;
+	float: left;
+}
+.game-add-ul h2{
+	font-size: 16px;
+	color: black;
+	line-height: 24px;
+	text-align: center;
+}
+.game-add-ul p{
+	font-size: 14px;
+	line-height: 20px;
+	color: #999999;
+	text-align: center;
+}
+

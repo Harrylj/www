@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/detail.css"/>	
+	<link rel="stylesheet" href="css/basic.css"/>
+	<link rel="stylesheet" href="css/join.css"/>
+	
+    <title>报名参加</title>
+</head>
+<body>
+	<div class="join">
+        <img class="img-100" src="images/game-31.png"/>
+        <!--公用头部-->
+		<main class="join-main">
+			<div class="jm-bg"></div>
+			<table class="join-table">
+				<tr>
+					<td>姓名</td>
+					<td><input class="join-input join-input-name" type="text"/ placeholder="您的姓名"></td>
+				</tr>
+				<tr>
+					<td>手机</td>
+					<td><input class="join-input join-input-tel" type="tel" placeholder="您的手机"/></td>
+				</tr>
+				<tr>
+					<td colspan="2">一句话宣传自己</td>
+				</tr>
+				<tr>
+					<td colspan="2"><textarea class="img-100 join-input-text" placeholder="自由宣言！做最好的自己！"></textarea></td>
+				</tr>
+				<tr>
+					<td class="join-border-top" colspan="2">上传封面照</td>
+				</tr>
+				<tr>
+					<td colspan="2"><img class="join-img-add" src="images/join-add.png"></td>
+				</tr>
+				<tr>
+					<td class="join-border-top" colspan="2">上传其他照片</td>
+				</tr>
+				<tr>
+					<td colspan="2"><img class="join-img-add" src="images/join-add.png"><img class="join-img-add" src="images/join-add.png"></td>
+				</tr>
+				<tr>
+					<td class="join-border-top" colspan="2">上传小视频</td>
+				</tr>
+				<tr>
+					<td style="line-height:1px;"><img class="join-img-add" src="images/join-video.png"></td>
+					<td style="line-height: 24px;">只能上传2M以内10秒以下的视频</td>
+				</tr>
+				<tr>
+					<td colspan="2"><p class="join-ts" style="color: red;"></p></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button class="join-btn-msjr" type="button">马上报名</button></td>
+				</tr>
+			</table>
+		</main>
+		<p style="font-size: 12px; color: #999; text-align: center;">参赛者同意主办单位拥有所有参赛作品（文字、图片、声音、视频）的使用权</p>
+	</div>
+	
+	<button class="btn-join-tc" style="display: none;"  data-toggle="modal" data-target="#myTC">活动提示</button>
+	<div class="modal fade" style="top: 10%;" id="myTC" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body mbtc-body">
+				<div class="text-center mbtc-body-center ">
+					<img class="mbtc-img-01" src="images/game-100.png"/>
+					<h1>报名成功</h1>
+					<p>已经报名成功
+					<br />等待8月5日拉好友为你积人气赢好礼</p>
+				</div>
+				<button class="mbtc-btn-ok" type="button" data-dismiss="modal" aria-label="Close">好的</button>
+	      </div>
+	    </div>
+	    
+	  </div>
+	</div>
+	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/join.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dailyClear.css"/>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>确定订单</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2017-12-06
+    	描述：.co-list-more：更多。表示可点击，有右方向键
+    	      .co-list-right:右对齐，有文字 
+    -->
+	<div class="clear-order-next clear-order daily-clear ">
+		<div class="con-header">
+			<div class="con-list-goods">
+				<img src="images/more/home-care-02.png"/>
+				<h1>家电维修</h1>
+				<h2>仅限小区活动使用</h2>
+			</div>
+		</div>
+		<div class="co-list-01">
+			<div class="col-01-div co-list-right">
+				<h1>订单编号</h1>
+				<div class="colr-div">
+					<span>HUYGY879976757</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-01-div co-list-right">
+				<h1>服务类型</h1>
+				<div class="colr-div">
+					<span>油烟机清洗</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-01-div co-list-right">
+				<h1>服务地址</h1>
+				<div class="colr-div">
+					<span>四川省成都市高新区天府大道北段 天府五街美年广场8栋一单元3101</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-01-div co-list-right">
+				<h1>服务时间</h1>
+				<div class="colr-div">
+					<span>2017年10月28日 10:00-12:00</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-01-div co-list-right">
+				<h1>服务人员</h1>
+				<div class="colr-div">
+					<span>3人</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-01-div co-list-right">
+				<h1>联系人</h1>
+				<div class="colr-div">
+					<span>哈拉雷 19800166593</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="col-01-div co-list-right">
+				<h1>备注</h1>
+				<div class="colr-div">
+					<span>我家马桶也坏了</span>
+				</div>
+				<div class="clear"></div>
+			</div>
+
+		</div>
+		
+
+	
+		
+		
+		<div class="dc-bottom">
+			<ul>
+				<li class="con-false" data-toggle="modal" data-target="#myModalFalse">取消预约</li>
+				<li class="con-true" data-toggle="modal" data-target="#myModalTrue">再次预约</li>
+			</ul>
+			<div class="clear"></div>
+		</div>
+		
+	</div>
+	
+	<!-- Modal取消订单 -->
+	<div class="modal fade" id="myModalFalse" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        您确定要取消订单吗
+	      </div>
+	      <div class="modal-footer">
+	      	<a href="clearOrder2.html">
+	        <button type="button" class="btn btn-true">确定</button>
+	      	</a>
+	      </div>
+	    </div>
+	    <div class="modal-content" style="margin-top: 0.2rem;">
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-false btn-default" data-dismiss="modal">取消</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<!-- Modal确定订单 -->
+	<div class="modal fade" id="myModalTrue" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        <h1>预约成功</h1>
+	        <p>请在我的预约详情中查看订单</p>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-false btn-default" data-dismiss="modal">知道了</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			$(function(){
+
+//				$('.con-false').on('click',function(){
+//					alert('取消预定')
+//				})
+//				$('.con-true').on('click',function(){
+//					alert('确定预定')
+//				})
+			})
+
+
+	
+	</script>
+</body>
+</html>

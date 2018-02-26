@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/homeCare.css"/>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>居家服务</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<div class="home-care">
+		<img class="img-100" src="images/more/home-care-01.png"/>
+		<nav class="hc-nav">
+			<a href="dailyClear.html">日常保洁</a>
+			<a href="appliancesClear.html">家电清洗</a>
+			<a href="#">家电维修</a>
+			<a href="#">我的预约</a>
+			<div class="clear"></div>
+		</nav>
+		<div class="hc-footer">
+			<h1>优惠服务推荐</h1>
+			<div class="hc-swiper swiper-container swiper-container-horizontal">
+			    <div class="swiper-wrapper" >
+			      <div id="abc" class="swiper-slide" href="http://www.baidu.com" >
+			      		<img src="images/more/home-care-02.png"/>
+			      		<p>日常保洁3小时&yen;<span>70元</span>/次</p>
+			      </div>
+			      <div id="abc" class="swiper-slide" href="http://www.baidu.com" >
+			      		<img src="images/more/home-care-02.png"/>
+			      		<p>日常保洁3小时&yen;<span>70元</span>/次</p>
+			      </div>
+			      <div id="abc" class="swiper-slide" href="http://www.baidu.com" >
+			      		<img src="images/more/home-care-02.png"/>
+			      		<p>日常保洁3小时&yen;<span>70元</span>/次</p>
+			      </div>
+			      <div id="abc" class="swiper-slide" href="http://www.baidu.com" >
+			      		<img src="images/more/home-care-02.png"/>
+			      		<p>日常保洁3小时&yen;<span>70元</span>/次</p>
+			      </div>
+			      <div id="abc" class="swiper-slide" href="http://www.baidu.com" >
+			      		<img src="images/more/home-care-02.png"/>
+			      		<p>日常保洁3小时&yen;<span>70元</span>/次</p>
+			      </div>
+			      <div id="abc" class="swiper-slide" href="http://www.baidu.com" >
+			      		<img src="images/more/home-care-02.png"/>
+			      		<p>日常保洁3小时&yen;<span>70元</span>/次</p>
+			      </div>
+
+
+			  </div>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/swiper3.08.jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+	    var swiper = new Swiper('.swiper-container', {
+	      slidesPerView: 3.5,
+	      spaceBetween: 15,
+	      slidesPerGroup: 3,
+	      loop: true
+	    });
+  		
+  		/*
+		window.onload = function(){
+			
+//			document.querySelector('.swiper-slide').addEventListener('click',function(e){
+//				alert(2)
+//			})
+			document.getElementById('abc').addEventListener('click',function(e){
+				
+				var this_href = e.target;
+				console.log(e)
+				console.log(e.target.getAttribute('src'))
+				console.log(e.target)
+			},true)
+		}
+		*/
+		$(function(){
+			$('.swiper-slide').on('click',function(){
+				var this_href = $(this).attr('href');
+				window.location.href = this_href;
+			})
+		})
+	
+	</script>
+</body>
+</html>

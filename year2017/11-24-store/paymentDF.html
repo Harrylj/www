@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/paymentAll.css"/>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>电费</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2018-01-03
+    	描述：.ph-more-click   //合并付款选中
+			.pab-item-click'	//付款选中
+			.pab-item-more		//显示合并付款
+			.pab-item-more-click  //选中付款项
+			.pay-item-no	//未付款
+			.pab-item-ok	//已付款
+    -->
+	<div class="payment-all">
+		<div class="pa-header">
+			<button class="ph-more" type="button">选择合并付款</button>
+			<a href="#">共计12笔</a>
+		</div>
+		<div class="pa-body">
+			<div class="pab-item  pay-item-no">
+				<h1><span>11月电费</span><span>&yen;<span class="pab-money">420.30</span></span></h1>
+				<p class="pab-right-none">本月用电量99度 (当前处于第1阶梯)</p>
+				<h2>账户余额：&yen;987.09元</h2>
+				<p>物业信息: 三丰 1287989</p>
+				<p>缴费截止:2017-11-30 00:00:00</p>
+				<a class="pab-btn" href="#">立即缴费</a>
+			</div>
+			<div class="pab-item pab-item-click pay-item-no pab-item-more-click">
+				<h1><span>11月电费</span><span>&yen;<span class="pab-money">420.30</span></span></h1>
+				<p class="pab-right-none">本月用电量99度 (当前处于第1阶梯)</p>
+				<h2>账户余额：&yen;987.09元</h2>
+				<p>物业信息: 三丰 1287989</p>
+				<p>缴费截止:2017-11-30 00:00:00</p>
+				<a class="pab-btn" href="#">立即缴费</a>
+			</div>
+			
+			<div class="pab-item pab-item-ok">
+				<h1><span>11月电费</span><span>&yen;<span class="pab-money">420.30</span></span></h1>
+				<p class="pab-right-none">本月用电量99度 (当前处于第1阶梯)</p>
+				<h2>账户余额：&yen;987.09元</h2>
+				<p>物业信息: 三丰 1287989</p>
+				<p>缴费截止:2017-11-30 00:00:00</p>
+				<a class="pab-btn" href="#">已缴费</a>
+			</div>
+		</div>
+		
+		
+		<div class="pa-footer">
+			<div class="pa-footer-div">
+				<button class="paf-btn-all" type="button">全选</button>
+				<p>共计：&yen;<span class="paf-all-number">768.09</span></p>
+				<button class="paf-btn-pay">立即缴费</button>
+			</div>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+			$(function(){
+				
+				var classOne = 'ph-more-click',   //合并付款选中
+						classTwo = 'pab-item-click',	//付款选中
+						classThree = 'pab-item-more',	//显示合并付款
+						classFour = 'pay-item-no',	//未付款
+						classFive = 'pab-item-ok',	//已付款
+						classSex = 'pab-item-more-click',  //选中付款项
+						payMoney = '.pab-money'
+						payAllMoney = $('.paf-all-number'),	//付款总额
+						payItem = $('.pab-item');
+				
+				//价格计算函数
+				function addAllMoney(){
+					var addAllNumber = 0;
+					$('.' + classSex).each(function(){
+						var addNumber = $(this).children().children().children(payAllMoney).html();
+						addAllNumber= addAllNumber + Math.round(addNumber*100)/100;
+
+					})
+					payAllMoney.html(addAllNumber);
+				}
+				
+				//点击“选择合并付款“
+				$('.ph-more').on('click',function(){
+					//显示底部的合并付款
+					var showFooter = $('.pa-footer');
+					//合并
+					if(!$(this).hasClass(classOne))
+					{
+						$(this).addClass(classOne)
+						//显示选择付款项
+						payItem.each(function(){
+							console.log($(this).attr('class'))
+							if($(this).hasClass(classFour))
+							{
+								$(this).addClass(classThree)
+							}
+						})
+						showFooter.show();
+					}
+					//不合并
+					else{
+						$(this).removeClass(classOne);
+						//不显示选择付款项
+						payItem.each(function(){
+							$(this).removeClass(classThree)
+						})
+						showFooter.hide();
+					}
+					//运行价格计算函数
+					addAllMoney()
+				})
+				
+				//点击“选中付款”
+				$('.pab-item').on('click',function(){
+					//选中
+					if($(this).hasClass(classThree)&&!$(this).hasClass(classSex)){
+						$(this).addClass(classSex);
+					}
+					//取消选中
+					else if($(this).hasClass(classSex)){
+						$(this).removeClass(classSex)
+					}
+					//运行价格计算函数
+					addAllMoney()
+				})
+				
+				//点击“全选”
+				$('.paf-btn-all').on('click',function(){
+					var btnClass = 'paf-btn-all-click';
+					//全选
+					if(!$(this).hasClass(btnClass))
+					{
+						$(this).addClass(btnClass)
+						//选中显示的付款项
+						payItem.each(function(){
+							if($(this).hasClass(classThree))
+							{
+								$(this).addClass(classSex);
+							}
+						})
+					}
+					//取消
+					else{
+						$(this).removeClass(btnClass);
+						//不选中显示的付款项
+						payItem.each(function(){
+							$(this).removeClass(classSex);
+						})
+					}
+					//运行价格计算函数
+					addAllMoney()
+				})
+			})
+			
+
+
+	
+	</script>
+</body>
+</html>

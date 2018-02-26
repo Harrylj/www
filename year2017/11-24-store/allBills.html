@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dailyClear.css"/>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>全部账单</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2017-12-14
+    	描述：.ao-nav-click:选中
+    -->
+	<div class="all-order all-bills">
+		<ul class="ao-nav">
+			<li class="ao-nav-click">全部</li>
+			<li>物业费</li>
+			<li>燃气费</li>
+			<li>水费</li>
+		</ul>
+		<!--
+    	作者：648267773@qq.com
+    	时间：2017-12-14
+    	描述：.al-goods:全部
+    		  .al-two:物业费
+    		  .al-three:燃气费
+    		  .al-four:水费
+    		  .al-type-true:已缴费
+    		  .al-type-false:未缴费
+    -->
+		<div class="al-list">
+			
+			<div class="al-goods al-type-true al-two">
+				<div class="alg-header">
+					<h1><span>2017-03-04 00:00:00</span><a class="al-a" href="http://www.baidu.com">前往缴费</a></h1>
+					<h2><span>8月物业费</span><span>&yen;300.90</span></h2>
+				</div>
+				<div class="alg-body fadeIn animated">
+					<p><span>物业费</span><span>&yen;280:00</span></p>
+					<p><span>垃圾处理费</span><span>&yen;20.90</span></p>
+					<p><span>缴费公司</span><span>四川省成都保洁物业</span></p>
+				</div>
+			</div>
+			<div class="al-goods al-type-false al-three">
+				<div class="alg-header">
+					<h1><span>2017-03-04 00:00:00</span><a class="al-a" href="http://www.baidu.com">前往缴费</a></h1>
+					<h2><span>8月燃气费</span><span>&yen;300.90</span></h2>
+				</div>
+				<div class="alg-body fadeIn animated">
+					<p><span>物业费</span><span>&yen;280:00</span></p>
+					<p><span>垃圾处理费</span><span>&yen;20.90</span></p>
+					<p><span>缴费公司</span><span>四川省成都保洁物业</span></p>
+				</div>
+			</div>
+			<div class="al-goods al-type-true al-four">
+				<div class="alg-header">
+					<h1><span>2017-03-04 00:00:00</span><a class="al-a" href="http://www.baidu.com">前往缴费</a></h1>
+					<h2><span>8月水费</span><span>&yen;300.90</span></h2>
+				</div>
+				<div class="alg-body fadeIn animated">
+					<p><span>物业费</span><span>&yen;280:00</span></p>
+					<p><span>垃圾处理费</span><span>&yen;20.90</span></p>
+					<p><span>缴费公司</span><span>四川省成都保洁物业</span></p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			$(function(){
+				$('.ao-nav').children('li').on('click',function(){
+					var click_class = 'ao-nav-click',
+						this_index = $(this).index(),
+						all = $('.al-goods'),  //全部
+						two = $('.al-two'),	//日常保洁
+						three = $('.al-three'), //家电清洗
+						four = $('.al-four');   //家电维修
+					$(this).addClass(click_class).siblings().removeClass(click_class);
+					switch (this_index) {
+						//全部
+						case 0:
+							all.show()
+							break;
+						//日常保洁
+						case 1:
+							all.hide();
+							two.show();
+							break;
+						//家电清洗
+						case 2:
+							all.hide();
+							three.show();
+							break;
+						//家电维修
+						case 3:
+							all.hide();
+							four.show();
+							break;
+						default:
+							alert('数据错误，请重新加载数据！');
+					}
+				})
+				
+				//点击展开详情
+				$('.alg-header').on('click',function(){
+					$(this).siblings('.alg-body').toggle();
+				})
+				
+				//点击链接不跳转
+				$('.al-a').on('click',function(){
+					var thisFather = $(this).parents('.al-goods');
+					//al-goods
+					//al-type-false 未交费
+					//al-type-true	已缴费
+					//已缴费不跳转
+					if(thisFather.hasClass('al-type-true’')){
+						return false
+					}
+					//未交费跳转
+					else if(thisFather.hasClass('al-type-false')){
+						return true
+					}
+					else{
+						alert('数据错误');
+						return false
+					}
+					
+					
+				})
+				
+			})
+
+
+	
+	</script>
+</body>
+</html>

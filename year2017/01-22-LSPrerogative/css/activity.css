@@ -1,0 +1,29 @@
+
+.a-header h1{
+	color: black;
+	font-size: 1.5rem;
+	line-height: 36px;
+	text-align: center;
+}
+.ah-p-01{
+	text-align: center;
+	color: black;
+	font-size: 1rem;
+	line-height: 36px;
+}
+.ah-p-02{
+	text-align: center;
+	line-height: 36px;
+	font-size: 1rem;
+	color: #666666;
+}
+.a-body{
+	padding:20px 10px;
+}
+.a-body p{
+	font-size: 1.125rem;
+	line-height: 24px;
+	color: #666666;
+	text-indent: 2rem;
+}
+

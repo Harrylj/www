@@ -1,0 +1,41 @@
+myOrder----------我的预约
+appliancesClear--家电清洗
+clearOrder1------保洁预约1
+clearOrder2------保洁预约2
+clearOrderNext---确定订单-保洁
+dailyClear-------日常保洁
+homeCare---------居家服务
+notice-----------便民通告
+noticeDetail-----便民通知详情
+orderDetail------确定订单-家电维修
+suggestion-------投诉建议
+suggestionRecord---投诉记录	
+allBills---------全部账单
+livingPayment----生活缴费
+paymentAll-------全部缴费
+paymentDF--------电费
+paymentRQF-------燃气费
+paymentSF--------水费
+paymentWYF-------物业费
+
+community--------会员绑定
+communityLoginYes-------会员绑定户主入驻
+communityLoginNo--------会员绑定非户主入驻
+userCenter--------个人中心
+nearThePreferential-----附近优惠
+integralParadise--------积分乐园
+integralRules-----积分规则
+integralConsumption-----积分兑换
+integralConsumptionNext-----积分兑换详情
+integralDetail-----积分详情
+listOfActivities--------活动锦集
+
+
+1.clearOrder1.html 保洁预定，a).js时间选择,
+			b).好像少个选择地址,
+2.clearOrder2.html 保洁预定, a).js时间选择,
+  			b).服务类型
+3.clearOrderNext.html 确定订单, a).取消约定
+								b).确定预定
+4.communityLoginNo.html和communityLoginYes, a).js输入验证
+											b).短信倒计时

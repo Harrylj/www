@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="css/basic.css"/>
+    <link href="css/doubleDate.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/vTimeNow.css"/>
+	
+    <title>预约时间</title>
+    
+
+</head>
+<body>
+    <div class="v-order">
+        <!--公用头部-->
+        <div class="public-header s-f-header">
+            <div class="public-header-box">
+                <h1>预约时间</h1>
+                <a href="#"><span class="public-header-return">返回</span></a>
+            	<a href="#"><span class="public-header-right">确定</span></a>
+            </div>
+        </div>
+        <!--公用头部-->
+        <input type="text" readonly="readonly" class="doubledate ipticon"/>
+        <div class="vo-content">
+			<div class="vo-list">
+				<div class="vo-list-time vo-list-click">
+					<h1>8:00--8:30</h1>
+					<p>需等待20位，剩余8位</p>
+				</div>
+				<div class="vo-list-time">
+					<h1>9:00--9:30</h1>
+					<p>需等待20位，剩余8位</p>
+				</div>
+				<div class="vo-list-time">
+					<h1>10:00--10:30</h1>
+					<p>需等待20位，剩余8位</p>
+				</div>
+				<div class="vo-list-time">
+					<h1>11:00--11:30</h1>
+					<p>需等待20位，剩余8位</p>
+				</div>
+				<div class="vo-list-time">
+					<h1>13:00--13:30</h1>
+					<p>需等待20位，剩余8位</p>
+				</div>
+			</div>
+			
+        </div>
+        
+
+
+    </div>
+    <script src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/doubleDate2.0.js"></script>
+    <script type="text/javascript">
+		$(function(){
+			
+			$('.doubledate').kuiDate({
+				className:'doubledate',
+				isDisabled: "0"  // isDisabled为可选参数，“0”表示今日之前不可选，“1”标志今日之前可选
+			});
+			$('.doubledate').click();
+			alert($('.doubledate').val())
+			//alert(kDate);
+		});
+	</script>
+    <script src="js/vTimeNow.js"></script>
+    
+</body>
+</html>

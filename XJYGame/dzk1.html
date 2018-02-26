@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>打砖块</title>
+	<style type="text/css">
+		#g-canvas{border: 1px solid black;}
+	</style>
+</head>
+<body>
+	<canvas id="g-canvas" width="400" height="300"></canvas>
+	
+	<script type="text/javascript">
+		//65:00
+		
+		//规则----最外层只有函数，以及入口
+		var log = console.log.bind(console);
+		//挡板图片路径
+		var imageFromPath = function(path){
+			var  img = new Image();
+			img.src = path;
+			return img
+		}
+		
+		//挡板图片参数
+		var Paddle = function(){
+			var images = imageFromPath('images/paddle.jpg');
+			var o = {
+				//挡板图片
+				image: images,
+				//位置
+				x: 100,
+				y: 250,
+				speed: 10,
+			}
+			o.moveLeft = function(){
+				o.x  -= o.speed;
+			}
+			o.moveRight = function(){
+				o.x  += o.speed;
+			}
+			//挡板与球碰撞
+			o.collide = function(ball){
+				if(ball.y + ball.image.height > o.y){
+					if(ball.x > o.x && ball.x < o.x + o.image.width){
+						log('相撞')
+						return true;
+					}
+				}
+				return false;
+			}
+			return o
+		}
+		
+		var Ball = function(){
+			var images = imageFromPath('images/ball.jpg');
+			var o = {
+				//挡板图片
+				image: images,
+				//位置
+				x: 100,
+				y: 200,
+				speedX: 20,
+				speedY: 20,
+				fired: false,
+				
+			}
+			o.fire = function(){
+				o.fired = true
+			}
+			o.move = function(){
+				if(o.fired){
+					//log('move')		
+					if(o.x< 0 || o.x > 400 - o.image.width) {
+					   o.speedX = -o.speedX
+					}
+					if(o.y< 0 || o.y> 300 -o.image.height) {
+						o.speedY = -o.speedY
+					}
+					//move
+					o.x +=o.speedX;
+					o.y += o.speedY;
+				}			
+			}
+			o.反弹 =function(){
+				o.speedY *= -1
+			}
+			return o
+		}
+		
+		var  rectIntersects = function(a,b){
+			var o = a;
+			if(b.y > o.y && b.y < o.y  + o.image.height){
+				//console.log(1,o.x,b.x)
+				if(b.x>o.x && b.x > o.x + o.image.width){
+					console.log(2)
+					return true
+				}
+				
+				else(console.log(3))
+				
+			}
+			return  false;
+		}
+		
+		var Block = function(){
+			var images = imageFromPath('images/block.png');
+			var o = {
+				//挡板图片
+				image: images,
+				//位置
+				x: 100,
+				y: 100,
+				w: 50,
+				h: 20,
+				alive: true,
+			}
+			o.kill = function(){
+				o.alive = false;
+			}
+			o.collide = function(b){
+				return o.alive &&( rectIntersects(o,b) || rectIntersects(b,o) )
+
+			}
+
+			return o
+		}
+		
+		//生成挡板,瓜
+		var GuaGame = function(){
+			var g = {
+				actions: {},
+				keydowns: {},
+			};
+			var canvas = document.querySelector('#g-canvas');
+			var context = canvas.getContext('2d');
+			g.canvas = canvas;
+			g.context = context;
+			//draw
+			g.drawImage = function(guaImage){
+				g.context.drawImage(guaImage.image,guaImage.x,guaImage.y)
+			}
+			//evnets
+			window.addEventListener('keydown',function(event){
+				g.keydowns[event.key] = true
+			})
+			window.addEventListener('keyup',function(event){
+				g.keydowns[event.key] = false
+			})
+			g.registerAction = function(key,callback){
+				g.actions[key] = callback
+			}
+			//timer
+			setInterval(function(){
+				//events
+				var actions = Object.keys(g.actions)
+				for(var i = 0; i < actions.length; i++){
+					var key = actions[i];
+					if(g.keydowns[key]){
+						// 如果案件被按下，调用注册的action
+						g.actions[key]()
+					}
+				}
+				//update
+				g.update()
+				//清除挡板
+			    context.clearRect(0,0,canvas.width,canvas.height);
+				//draw
+				g.draw()
+			},1000/30)
+			return g;
+		}
+		
+		//入口函数
+		var _main = function(){	
+			//生成挡板函数
+			var game = GuaGame();
+			//调用挡板参数
+			var paddle = Paddle();
+			var ball = Ball();
+			
+			var blocks = []; 
+			for( var i = 0; i < 3; i++){
+				var b = Block();
+				blocks.push(b);
+			}
+			var block = Block();
+			game.registerAction('a',function(){
+				paddle.moveLeft()
+			})
+			game.registerAction('d',function(){
+				paddle.moveRight()
+			})
+			game.registerAction('f',function(){
+				ball.fire()
+			})
+			//更新
+			game.update = function(){
+				ball.move()
+				//判断相撞
+				if(paddle.collide(ball)){
+					//这里应该调用一个ball.反弹();
+					ball.反弹()
+				}
+				//-判断ball 和blocks 相撞
+				for(var i = 0; i<blocks.length;i++){
+					var block = blocks[i]
+					//判断 ball 和 block相撞
+					//if(block.collide(ball)){
+					if(block.collide(ball)){
+						log('block 相撞')
+						block.kill();
+						ball.反弹()
+					}
+				}
+				
+				
+			}
+			//绘制
+			game.draw = function(){
+					//生成挡板
+					//game.context.drawImage(paddle.image,paddle.x,paddle.y)
+					//draw
+					game.drawImage(paddle);
+					game.drawImage(ball);
+					//draw blocks
+					for(var i = 0; i<blocks.length;i++){
+						var block = blocks[i]
+						if(block.alive){
+							game.drawImage(block);
+						}
+					}
+					
+					
+			}
+		    
+		}
+		//调用入口函数
+		_main();
+		
+	    
+
+	
+	</script>
+</body>
+</html>

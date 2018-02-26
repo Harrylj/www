@@ -1,0 +1,8 @@
+.bg-img {
+  background-repeat: no-repeat;
+}
+.bg-center {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

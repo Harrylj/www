@@ -1,0 +1,29 @@
+@import "index.css";
+a {
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+a:hover {
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+}
+.food, .beer, .sleep, .javascript {
+  font-weight: bold;
+}
+a {
+  color: red;
+}
+a a {
+  font-size: 1.333333rem;
+}
+div {
+  font-size: 16px;
+}
+[data-dpr="2"] div {
+  font-size: 32px;
+}
+[data-dpr="3"] div {
+  font-size: 48px;
+}

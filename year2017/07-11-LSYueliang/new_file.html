@@ -1,0 +1,39 @@
+<!DOCTYPEhtml>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" />
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<p>长孙无瑰","一世寻你","一逍遥子一","五仙教杠把子","五仙教杠把子","凝眸莫回首","凝眸莫回首","叶小墨","唐离墨","墨临渊","夜色沉醉","我超想哭的","旧城不凉微暖","杨瑛","柳树树","毒毒毒毒毒弥","清绝引歌","爱吃鱼的羊","白梧卿","素馨","罗宾","花烦似锦","苏见樱","邢墨","醉风吟","长孙无瑰","长鸽麻麻","陆文龙","陆清明","默书</p>
+		<h1 class="abc"></h1>
+		<ul id="name-list">
+			
+		</ul>
+	</body>
+	<script type="text/javascript">
+		var  arr1 = ["长孙无瑰","一世寻你","一逍遥子一","五仙教杠把子","五仙教杠把子","凝眸莫回首","凝眸莫回首","叶小墨","唐离墨","夜色沉醉","我超想哭的","旧城不凉微暖","杨瑛","柳树树","毒毒毒毒毒弥","清绝引歌","爱吃鱼的羊","白梧卿","素馨","罗宾","花烦似锦","苏见樱","醉风吟","长孙无瑰","长鸽麻麻","陆文龙","陆清明","默书"];
+		Array.prototype.unique3 = function(){
+			 var res = [];
+			 var json = {};
+			 for(var i = 0; i < this.length; i++){
+			  if(!json[this[i]]){
+			   res.push(this[i]);
+			   json[this[i]] = 1;
+			  }
+			 }
+			 return res;
+			}
+		
+		var arr2 = arr1.unique3();
+		for(var i =1 ; i <= arr2.length; i++)
+		{
+			var nowtxt = document.getElementsByClassName('abc')[0].innerHTML;
+			document.getElementsByClassName('abc')[0].innerHTML= nowtxt + i + '.' + arr2[i-1] + '</br>';
+		}
+		//document.getElementsByClassName('abc')[0].innerHTML=arr1.unique3();
+		
+	</script>
+</html>
