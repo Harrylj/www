@@ -1,0 +1,161 @@
+body,html {
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+
+.home {
+    width: 100%;
+    height: 100%;
+    .swiper-button-next-01 {
+        left: auto;
+        right: 30px;
+        top: 280px;
+        bottom: auto;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+    }
+    .swiper-button-prev-01 {
+        left: auto;
+        right: 120px;
+        top: 280px;
+        bottom: auto;
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+    }
+    
+   
+    .home-header {
+        .hh-top {
+            position: relative;
+            
+            height: 80px;
+            padding: 0 10%;
+            min-width: 1100px;
+            overflow: hidden;
+            background-color: white;
+            .hh-logo-img {
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                width: 120px;
+                height: 40px;
+                margin-top: -20px;
+            }
+            .hh-nav {
+                li {
+                    float: left;
+                    a {
+                        padding: 0 30px;
+                        display: inline-block;
+                        color: #242424;
+                        line-height: 80px;
+                    }
+                }
+                .hh-nav-click {
+                    a {
+                        color: red;
+                    }
+                }
+            }
+            .hi-search {
+                position: absolute;
+                right: 40px;
+                top: 50%;
+                width: 14px;
+                height: 14px;
+                margin-top: -7px;
+                background: url(../images/home_15.png) no-repeat;
+            }
+        }
+    }
+    .home-header-more{
+        .hh-top{
+            background-color: #1f232c;
+            .hh-nav{
+                li{
+                    a{
+                        color: white;
+                    }
+                }
+            }
+            .hi-search{
+                background-image: url(../images/home_15_hover.png);
+            }
+        }
+    }
+    .home-header-father{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 99999;
+        .hhfm-div{
+            position: relative;
+            background-color: black;
+            padding-left: 80px;
+            padding-right: 20px;
+            
+            .hhfm-img{
+                position: absolute;
+                left: 20px;
+                top: 50%;
+                margin-top: -11px;
+            }
+            .qimo8{ overflow:hidden; width:100%;}
+            .qimo8 .qimo {/*width:99999999px;*/width:8000%; height:30px;}
+            .qimo8 .qimo div{ float:left;}
+            .qimo8 .qimo ul{float:left; height:40px; overflow:hidden; zoom:1; }
+            .qimo8 .qimo ul li{float:left; line-height:40px; list-style:none; font-size: 14px;}
+            .qimo8 li a{margin-right:10px;color:white;}
+        }
+    }
+    .swiper-container-02{
+        width: 100%;
+        height: 100%;
+        .swiper-no-swiping{
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    .home-right-fahter{
+        position: fixed;
+        z-index: 99999999;
+        right: 20px;
+        top: 50%;
+        margin-top: -420px;
+        .hhr-nav{
+            li{
+                a{
+                    display: inline-block;
+                    width: 120px;
+                    line-height: 40px;
+                    height: 40px;
+                    overflow: hidden;
+                    font-size: 16px;
+                    color: #1f232c;
+                    text-align: center;
+                    background-color: #f0f0f0;
+                }
+                
+            }
+            .hhr-nav-click{
+                a{
+                    background-color: red;
+                    color: white;
+                }
+            }
+        }
+    }
+    
+    .home-footer-father{
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 9999;
+    }
+    .swiper-pagination-02{
+        display: none;
+    }
+}

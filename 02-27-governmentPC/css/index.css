@@ -1,0 +1,132 @@
+body {
+  overflow-x: hidden;
+}
+.home .swiper-button-next-01 {
+  left: auto;
+  right: 30px;
+  top: 80px;
+  bottom: auto;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+}
+.home .swiper-button-prev-01 {
+  left: auto;
+  right: 120px;
+  top: 80px;
+  bottom: auto;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
+}
+.home .swiper-button-next-02 {
+  left: auto;
+  right: 30px;
+  top: auto;
+  bottom: 40px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%232d4b61'%2F%3E%3C%2Fsvg%3E");
+}
+.home .swiper-button-prev-02 {
+  left: auto;
+  right: 120px;
+  top: auto;
+  bottom: 40px;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M0%2C22L22%2C0l2.1%2C2.1L4.2%2C22l19.9%2C19.9L22%2C44L0%2C22L0%2C22L0%2C22z'%20fill%3D'%232d4b61'%2F%3E%3C%2Fsvg%3E");
+}
+.home .swiper-container-02 {
+  padding-bottom: 120px;
+}
+.home .nav-tabs .active a {
+  border: 1px solid transparent;
+  border-bottom-color: black;
+}
+.home .nav-tabs .active a:hover {
+  border: 1px solid transparent;
+  border-bottom-color: black;
+}
+.home .nav-tabs li a {
+  border: 1px solid transparent;
+}
+.home .nav-tabs li a:hover {
+  border: 1px solid transparent;
+}
+.home .hb-content-02 {
+  border-bottom: 1px solid #E0E0E0;
+  margin-bottom: 50px;
+}
+.home .home-header .hh-top {
+  position: relative;
+  height: 80px;
+  padding: 0 150px;
+  overflow: hidden;
+}
+.home .home-header .hh-top .hh-logo-img {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  width: 120px;
+  height: 40px;
+  margin-top: -20px;
+}
+.home .home-header .hh-top .hh-nav li {
+  float: left;
+}
+.home .home-header .hh-top .hh-nav li a {
+  padding: 0 30px;
+  display: inline-block;
+  color: #242424;
+  line-height: 80px;
+}
+.home .home-header .hh-top .hh-nav .hh-nav-click a {
+  color: red;
+}
+.home .home-header .hh-top .hi-search {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  background: url(../images/home_15.png) no-repeat;
+}
+.home .home-body {
+  margin: auto;
+  max-width: 1200px;
+}
+.home .home-body .hb-content-01 {
+  text-align: center;
+  padding-top: 15px;
+}
+.home p#back-to-top {
+  position: fixed;
+  display: none;
+  bottom: 100px;
+  right: 80px;
+}
+.home p#back-to-top a {
+  text-align: center;
+  text-decoration: none;
+  color: #d1d1d1;
+  display: block;
+  width: 48px;
+  /*使用CSS3中的transition属性给跳转链接中的文字添加渐变效果*/
+  -moz-transition: color 1s;
+  -webkit-transition: color 1s;
+  -o-transition: color 1s;
+}
+.home p#back-to-top a:hover {
+  color: #979797;
+}
+.home p#back-to-top a span {
+  background: transparent url(../images/home_return_top.jpg) no-repeat;
+  background-size: 100% 100%;
+  border-radius: 6px;
+  display: block;
+  height: 48px;
+  width: 48px;
+  margin-bottom: 5px;
+  /*使用CSS3中的transition属性给<span>标签背景颜色添加渐变效果*/
+  -moz-transition: background 1s;
+  -webkit-transition: background 1s;
+  -o-transition: background 1s;
+}
+.home #back-to-top a:hover span {
+  background: transparent url(../images/home_return_top.jpg) no-repeat;
+  background-size: 100% 100%;
+}
