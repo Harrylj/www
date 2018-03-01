@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="js cssanimations">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+		<title>
+			优惠买单</title>
+		<link href="./files/amazeui.min.css" rel="stylesheet">
+		<link href="./files/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="./files/base2.css">
+		<link rel="stylesheet" type="text/css" href="./files/pay_css.css"/>
+		<script src="./files/jquery.js"></script>
+		<!--<script src="./files/base.js"></script>
+		<script src="./files/layer.js"></script>-->
+		<link rel="stylesheet" href="./files/layer.css" id="layuicss-skinlayercss">
+		<!--<script src="./files/roll.js"></script>-->
+		<!--<script src="./files/public.js"></script>-->
+		<!--<script src="./files/mobile_common.js"></script>
+		<script src="./files/iscroll-probe.js"></script>-->
+		
+		<style>
+
+		</style>
+	</head>
+
+	<body>
+		<header data-am-widget="header" class="am-header am-header-default am-no-layout">
+			<div class="am-header-left am-header-nav">
+				<a href="http://i.juci.shop/" class=""> <i class="iconfont icon-angle-left"></i> </a>
+			</div>
+			<h1 class="am-header-title"> 买单 </h1>
+		</header>
+		<div class="am-g maidan_top">
+			<div class="am-u-sm-2">
+				<div class="logo"> <img class="am-circle" src="./files/bw-2014-06-19.jpg" width="50" height="50"></div>
+			</div>
+			<div class="am-u-sm-8">
+				<h3 style=" font-size:16px; margin:0;">可购便利店（江与城）</h3>
+			</div>
+			<div class="am-u-sm-2" style=" border-left:1px solid #dedede; ">
+				<a class="favor" href="http://i.juci.shop/wap/shop/favorites/shop_id/250.html">
+					<p> <i class="fa fa-star-o fa-lg"></i> <br>
+						<span style=" font-size:14px;">关注</span></p>
+				</a>
+			</div>
+		</div>
+
+		<div class="pay">
+			<form id="payform" class="payment" method="post">
+				<div class="am-g maidan_text">
+					<div style=" width:100%; height:50px;  z-index:999; position:absolute;"></div>
+					<div class="am-u-sm-4">
+						<label for="search_tex ">消费金额</label>
+					</div>
+					<div class="am-u-sm-8"> <span type="search" contenteditable="true" placeholder="询问商家后输入" class="am-form-field search_text line" id="search_text"></span> </div>
+				</div>
+				<input type="hidden" id="amount" name="amount" value="0">
+				<input type="hidden" id="jf" name="jf" value="0">
+				<input type="hidden" id="userjf" name="userjf" value="0.00">
+				<input id="code" type="hidden" name="code" value="alipay">
+			</form>
+		</div>
+
+		<div class="Background"> </div>
+		<!--填写END-->
+		<div class="zhifu_xz" style="height: 380px; background: #f5f5f5;">
+			<div class="zhifu_bg">
+				<div style=" text-indent:2em;font-size:14px; background: #fff; padding: 0 0 10px 0;">付款仅限到店支付，请确认金额后提交</div>
+				<ul id="pay-method" class="pay-method">
+					<li id="alipay" data-rel="alipay" class="media media-x payment active">
+						<div class="pag_bg">
+							<a class="float-left" href="javascript:;"> <img src="./files/alipay_mobile.png"> </a>
+							<div class="media-body">
+								<div class="line">
+									<div class="x6" style="font-size:12px; line-height:26px"> 支付宝
+										<!--<p>推荐已安装支付宝客户端的用户使用</p>-->
+									</div>
+									<div class="x2"> <span class="radio txt txt-small radius-circle bg-green"><i class="iconfont icon-qiandao1"></i></span> </div>
+								</div>
+							</div>
+						</div>
+					</li>
+					<li id="money" data-rel="money" class="media media-x payment">
+						<div class="pag_bg">
+							<a class="float-left" href="javascript:;"> <img src="./files/money_mobile.png"> </a>
+							<div class="media-body">
+								<div class="line">
+									<div class="x6" style="font-size:12px; line-height:26px"> 余额支付
+										<!--<p>推荐已安装余额支付客户端的用户使用</p>-->
+									</div>
+									<div class="x2"> <span class="radio txt txt-small radius-circle bg-green"><i class="iconfont icon-qiandao1"></i></span> </div>
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+				<div class="xbq_bg">
+					<div class="am-g" style=" background: #fff; padding-bottom: 10px; font-size:14px;">
+						<div class="blank-10"></div>
+						<div class="am-u-sm-12" style="  margin-bottom: 15px; color:#999; font-size:14px;"><span class="quan">抵</span> <span style=" color:#333;font-size: 16px;">星币券抵扣</span>
+							<span>可用:0</span>
+							<span style=" float:right; width:30%; text-align:center;">¥  <span style=" color: #FF3300; font-size: 16px;" id="jf_dk1">0</span></span>
+						</div>
+						<hr data-am-widget="divider" style="" class="am-divider am-divider-default am-no-layout">
+						<div class="blank-10"></div>
+						<div class="am-u-sm-4"><span class="alls shifu">总计 </span>¥ <span class="num" id="jf_zongji">0.00</span></div>
+						<div class="am-u-sm-4"><span class="tips" title="">已抵扣</span> <span class="num">¥ <span id="jf_dk">0</span></span>
+						</div>
+						<div class="am-u-sm-4"><span class="alls shifu">实付 </span><span class="num">¥ <span id="need_pay">0</span></span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<table>
+				<tbody>
+					<tr>
+						<td class="btn1"><span>1</span></td>
+						<!--<td  class="btn1" onClick="this.style.color='red'";>1</td>-->
+						<td class="btn2"><span>2</span></td>
+						<td class="btn3"><span>3</span></td>
+						<td><span class="del"><img src="./files/del.png"></span></td>
+					</tr>
+					<tr>
+						<td class="btn4"><span>4</span></td>
+						<td class="btn5"><span>5</span></td>
+						<td class="btn6"><span>6</span></td>
+						<td rowspan="3" class="Btn" onclick="javascrtpt:formsubmit();"><span>付<br>
+      <br>
+      款</span></td>
+					</tr>
+					<tr>
+						<td class="btn7"><span>7</span></td>
+						<td class="btn8"><span>8</span></td>
+						<td class="btn9"><span>9</span></td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn0"><span>0</span></td>
+						<td class="btn_0"><span>.</span></td>
+					</tr>
+				</tbody>
+			</table>
+			<script src="./files/jquery1.js"></script>
+			<script>
+				function Notes(obj) {
+					$("." + obj).find("p").click(function() {
+						$("." + obj).find(".notes-content").css('display', 'block')
+					})
+				}
+				Notes("notes")
+				$(".notes").find("p").click(function() {
+					$(".Background").css('display', 'block')
+				})
+				$(".sure").click(function() {
+					$(".Background").css('display', 'none')
+				})
+
+				function Close(obj) {
+					$("." + obj).click(function() {
+						$(".Background").css('display', 'none')
+						$(".notes").find(".notes-content").css('display', 'none')
+						$(".notes").find(".notes-content").find(" input").css(value = "")
+					})
+				}
+				Close("close")
+
+				function sure() {
+					var testa = $("#textarea").val();
+					<!--alert(testa);-->
+					$("#notes_text").html(testa); <!--?-->
+					if(testa == "") {
+						/*alert(2);*/
+						$("#textarea").val() == $("#notes_text").html("付款备注")
+					}
+					$(".notes").find(".notes-content").css('display', 'none');
+				}
+
+				function checkpoint() {
+					var search_text = $(".search_text");
+					if(search_text.text().indexOf(".") != -1) {
+						$(".search_text").text(search_text.substring(0, search_text.length - 1));
+					}
+				}
+				window.onload = function() {
+					var search_text = $(".search_text"); <!--获取里面的文本-->
+					search_text.addClass("line");
+					$(".btn1").click(function() {
+						<!--$(this).css('opacity','0')-->
+						<!--$(this).text().css('opacity','1')-->
+						search_text.append($(this).text()); /*append:在被指定元素的结尾(仍在内部)插入指定元素*/
+						/*alert(search_text.text())*/
+						//$(".search_text").css('opacity','0')
+						checkNum();
+					})
+					$(".btn2").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn3").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn4").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn5").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn6").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn7").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn8").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn9").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn0").click(function() {
+						search_text.append($(this).text());
+						checkNum();
+					})
+					$(".btn_0").click(function() {
+						checkpoint();
+						search_text.append($(this).text());
+						checkNum();
+					})
+				}
+				$(".del").click(function() {
+					var a = $(".search_text").text();
+					if(a.length > 0) {
+						$(".search_text").text(a.substring(0, a.length - 1));
+					}
+					checkNum();
+				});
+
+				function checkNum() {
+					var a = $(".search_text").text();
+					var dd = a.split(".");
+					var dd = dd[1];
+					if(dd && dd.length > 2) {
+						$(".search_text").text(a.substring(0, a.length - 1));
+					}
+					$('#amount').val($(".search_text").text() * 1);
+					jf_dk();
+				}
+				//计算星币券可以抵扣的金额
+				function jf_dk() {
+					var user_jf = $('#userjf').val() * 1;
+					var amount = $('#amount').val() * 1;
+					var bl = 100; //表示100星币券抵扣1元
+					var jf_rmb = user_jf / bl;
+					var jf_dk = 0;
+					var use_jf = 0;
+					var need_pay = 0;
+					if(jf_rmb > amount) {
+						jf_dk = amount;
+						use_jf = amount * bl;
+						need_pay = 0;
+					} else {
+						jf_dk = jf_rmb;
+						use_jf = user_jf;
+						need_pay = amount - jf_rmb;
+					}
+					$('#jf_zongji').text(amount.toFixed(2));
+					$('#jf_dk').text(jf_dk.toFixed(2));
+					$('#jf').val(use_jf);
+					var jf_rmb1 = jf_dk * 100;
+					var jf_dk1 = jf_dk;
+					$('#jf_jf').text(jf_rmb1.toFixed(0)); //本次扣除星币
+					$('#jf_dk1').text(jf_dk.toFixed(2));
+					//alert(need_pay.toFixed(2))
+					var pay = need_pay.toFixed(2);
+					$('#need_pay').text(need_pay.toFixed(2));
+				}
+
+				function formsubmit() {
+//					var path = "/wap/shop/breaks/shop_id/250";
+//					$('#payform').attr("action", path).submit();
+					alert('点击付款')
+				}
+			</script>
+			<script>
+				$(document).ready(function() {
+					var name = $("#alipay").attr("data-rel");
+					if(name == "alipay") {
+						$("#alipay").addClass("active");
+						$("#code").val(name);
+					}
+				});
+				$("#pay-method li").click(function() {
+					var code = $(this).attr("data-rel");
+					$("#code").val(code);
+					$("#pay-method li").each(function() {
+						$(this).removeClass("active");
+					});
+					$(this).addClass("active");
+				});
+			</script>
+			<script>
+				$("#pay-method li .pag_bg").click(function() {
+					var code = $(this).attr("data-rel");
+					$("#code").val(code);
+					$("#pay-method li .pag_bg").each(function() {
+						$(this).removeClass("active1");
+					});
+					$(this).addClass("active1");
+				});
+			</script>
+
+			<!--<script src="./files/amazeui.min.js"></script>-->
+
+		</div>
+	</body>
+
+</html>
