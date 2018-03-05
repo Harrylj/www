@@ -1,6 +1,10 @@
 var constant = require('../common/js/constant.js');
 var wxService = require('../common/js/wx.js');
 
+Page({
+
+});
+
 var handle = {
 	queryExam:function(args){
 		var url = constant.CGI.query;

@@ -3,7 +3,6 @@ var constant = require("constant.js");
 var us = require('../../lib/underscore.js');
 var queue = require("queue.js");
 
-
 var handle = {
   callNum : 0,//全局变量，表示当前队列中的异步请求数量，不得超过5个
   queryJH : function(args){

@@ -1,6 +1,4 @@
 var us = require('../../lib/underscore.js');
-
-
 var queue = function(name){
 	this.name = name;
 	this.callbackArray = [];

@@ -23,7 +23,7 @@
 		<view class="title">主创</view>
 		<scroll-view scroll-x>
 			<view class="casts-wrapper" style="width:{{movie.staff.length*183}}rpx;">
-				<view class="avatar" wx:for="{{movie.staff}}">
+				<view class="avatar" wx:for="{{movie.staff}}" wx:key="key">
 					<image mode="aspectFill" src="{{item.avatars.large}}"></image>
 					<view>{{item.name}}</view>
 				</view>

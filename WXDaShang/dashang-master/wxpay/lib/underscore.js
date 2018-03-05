@@ -2,14 +2,14 @@
 //     http://underscorejs.org
 //     (c) 2009-2015 Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
 //     Underscore may be freely distributed under the MIT license.
-Page({
 
-});
 
 (function() {
-
     // Baseline setup
     // --------------
+  Page({
+
+  });
 
     // Establish the root object, `window` in the browser, or `exports` on the server.
     var root = this;

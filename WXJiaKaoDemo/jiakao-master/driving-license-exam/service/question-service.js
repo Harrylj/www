@@ -1,6 +1,9 @@
 var handle,_fn;
 var answerService = require('answer-service.js');
 	
+Page({
+
+});
 
 handle = {
 	getQuestionType:function(answer){
