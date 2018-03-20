@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>名称</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<script type="text/javascript">
+			//以下是锚点JS
+			var a = $(document);
+			a.ready(function() {
+				var b = $('body'),
+					d = 'sideToolbar',
+					e = 'sideCatalog',
+					f = 'sideCatalog-catalog',
+					g = 'sideCatalogBtn',
+					h = 'sideToolbar-up',
+					i = '<div id="sideToolbar"style="display:none;">\<div class="sideCatalogBg"id="sideCatalog">\<div id="sideCatalog-sidebar">\<div class="sideCatalog-sidebar-top"></div>\<div class="sideCatalog-sidebar-bottom"></div>\</div>\<div id="sideCatalog-catalog">\<ul class="nav"style="width:225px;zoom:1">\</ul>\</div>\</div>\<a href="javascript:void(0);"id="sideCatalogBtn"class="sideCatalogBtnDisable"></a>\</div>',
+					j = '',
+					k = 200,
+					l = 0,
+					m = 0,
+					n = 0,
+					//限制存在个数，如数量过多，则只显示h2，不显示h3
+					//o, p = 13,
+					o, p = 100,
+					q = true,
+					r = true,
+					s = b;
+				if(s.length === 0) {
+					return
+				};
+				b.append(i);
+				//o = s.find(':header');
+				//指定获取目录的范围-------------这一定非常重要，因为每个人指定的范围都不一样，所以这是唯一要修改的地方
+				o = $('#cnblogs_post_body').find(':header')
+				if(o.length > p) {
+					r = false;
+					var t = s.find('h2');
+					var u = s.find('h3');
+					if(t.length + u.length > p) {
+						q = false
+					}
+				};
+				o.each(function(t) {
+					var u = $(this),
+						v = u[0];
+
+					var title = u.text();
+					var text = u.text();
+
+					u.attr('id', 'autoid-' + l + '-' + m + '-' + n)
+					//if (!u.attr('id')) {
+					//    u.attr('id', 'autoid-' + l + '-' + m + '-' + n)
+					//};
+					if(v.localName === 'h2') {
+						l++;
+						m = 0;
+						if(text.length > 14) text = text.substr(0, 20) + "...";
+						j += '<li><span>' + l + '&nbsp&nbsp</span><a href="#' + u.attr('id') + '" title="' + title + '">' + text + '</a><span class="sideCatalog-dot"></span></li>';
+					} else if(v.localName === 'h3') {
+						m++;
+						n = 0;
+						if(q) {
+							if(text.length > 12) text = text.substr(0, 16) + "...";
+							j += '<li class="h2Offset"><span>' + l + '.' + m + '&nbsp&nbsp</span><a href="#' + u.attr('id') + '" title="' + title + '">' + text + '</a></li>';
+						}
+					} else if(v.localName === 'h4') {
+						n++;
+						if(r) {
+							j += '<li class="h3Offset"><span>' + l + '.' + m + '.' + n + '&nbsp&nbsp</span><a href="#' + u.attr('id') + '" title="' + title + '">' + u.text() + '</a></li>';
+						}
+					}
+				});
+				$('#' + f + '>ul').html(j);
+				b.data('spy', 'scroll');
+				b.data('target', '.sideCatalogBg');
+				$('body').scrollspy({
+					target: '.sideCatalogBg'
+				});
+				$sideCatelog = $('#' + e);
+				$('#' + g).on('click', function() {
+					if($(this).hasClass('sideCatalogBtnDisable')) {
+						$sideCatelog.css('visibility', 'hidden')
+					} else {
+						$sideCatelog.css('visibility', 'visible')
+					};
+					$(this).toggleClass('sideCatalogBtnDisable')
+				});
+				$('#' + h).on('click', function() {
+					$("html,body").animate({
+						scrollTop: 0
+					}, 500)
+				});
+				$sideToolbar = $('#' + d);
+				a.on('scroll', function() {
+					var t = a.scrollTop();
+					if(t > k) {
+						$sideToolbar.css('display', 'block');
+						$('#gotop').show()
+					} else {
+						$sideToolbar.css('display', 'none')
+						$('#gotop').hide()
+					}
+				})
+			});
+			//以上是锚点JS
+			//以下是返回顶部JS
+			$(function() {
+				$('body').append('<div id="gotop" onclick="goTop();"></div>');
+				/*//把这里转移到了目录CSS中，这样就可以同步了
+				$(window).scroll(function () {
+				                300 < $(this).scrollTop() ?
+				                $('#gotop').show(): $('#gotop').hide()
+				            });
+				*/
+			});
+
+			function goTop(u, t, r) {
+				var scrollActivate = !0;
+				if(scrollActivate) {
+					u = u || 0.1;
+					t = t || 16;
+					var s = 0,
+						q = 0,
+						o = 0,
+						p = 0,
+						n = 0,
+						j = 0;
+					document.documentElement && (s = document.documentElement.scrollLeft || 0, q = document.documentElement.scrollTop || 0);
+					document.body && (o = document.body.scrollLeft || 0, p = document.body.scrollTop || 0);
+					n = window.scrollX || 0;
+					j = window.scrollY || 0;
+					s = Math.max(s, Math.max(o, n));
+					q = Math.max(q, Math.max(p, j));
+					p = 1 + u;
+					window.scrollTo(Math.floor(s / p), Math.floor(q / p));
+					0 < s || 0 < q ? window.setTimeout('goTop(' + u + ', ' + t + ')', t) : 'undefined' != typeof r && r()
+				} else {
+					scrollActivate = !0
+				}
+			}
+			//以上是返回顶部JS
+		</script>
+		<script type="text/javascript">
+			var message = function(data) {
+				alert(data[1].title);
+			};
+
+			var arr = [16, 15, 18, '19', 5, 7, 9, '1'];
+
+			console.log('abc'.charCodeAt())
+
+			/*
+			//var arr = [16,15,18,5,7,9];
+			//冒泡，小到大
+			for(var a = 0; a< arr.length; a++){
+				
+				for(var b=0; b< arr.length-a-1; b++){
+					 //arr[a] = arr[b];
+					//比较如果大则交换位置
+					if( parseInt(arr[b])  > parseInt(arr[b+1])){
+						var bb = arr[b+1];
+						arr[b+1] =arr[b]
+						arr[b] = bb;
+						
+						
+						//arr[b+1] = arr[b]
+						
+						console.log(arr[b],arr[a])
+						
+					}
+				}
+				
+				console.log(parseInt(arr[a]))
+			}
+			console.log(arr)
+			*/
+			/*
+			//计算出最大
+			for(var c= 0; c<arr.length;c++){
+				if(arr[c] < arr[c+1]){
+					arr[c+1] = arr[c]
+				}
+			}
+			console.log(arr[arr.length -1 ])
+			console.log(arr)
+			*/
+
+			/*
+			var arr = [16,15,18,'ss','aa',5,7,9,'aaa'];
+			function compare1(val1,val2){
+			    return val1;
+			};
+			function compare2(val1,val2){
+			    return val2;
+			};
+			function compare(val1,val2){
+			    return val1 - val2;
+			};
+			function compare3(val1,val2){
+			    return val2 - val1;
+			};
+			function compare4(val1,val2){
+			    return val2 + val1;
+			};
+			function compare5(val1,val2){
+			    return val2 * val1;
+			};
+			console.log(arr)
+			console.log(arr.sort())
+			console.log(arr.sort(compare1))
+			console.log(arr.sort(compare2))
+			console.log(arr.sort(compare))
+			console.log(arr.sort(compare3))
+			console.log(arr.sort(compare4))
+			console.log(arr.sort(compare5))
+			*/
+		</script>
+		<script type="text/javascript" src="http://web.cn/js/message.js"></script>
+	</body>
+
+</html>
