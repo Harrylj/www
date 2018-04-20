@@ -1,0 +1,319 @@
+$(function() {
+	/*var queryTag = '<div class="query-tag">' +
+						'<a class="tel" href="javascript:void(0)" id="teltag">电话咨询</a>' +
+						'<a class="net" href="http://p.qiao.baidu.com//im/index?siteid=1514&ucid=353991&rim" id="nettag" target="_blank">网络咨询</a>' +
+						'<div id="bizQQ_WPA"><img src="/builder/netbang/statics/images/netbang/qqzx.jpg"></div><script>BizQQWPA.addCustom({aty: "0",a: "1001",nameAccount: "4000409778",selector: "bizQQ_WPA"});BizQQWPA.visitor({nameAccount: "4000409778"});BizQQWPA.addCustom({aty: "0",a: "1001",nameAccount: "4000409778",selector: "bizQQ_WPA2"});BizQQWPA.visitor({nameAccount: "4000409778"});BizQQWPA.addCustom({aty: "0",a: "1001",nameAccount: "4000409778",selector: "bizQQ_WPA3"});BizQQWPA.visitor({nameAccount: "4000409778"});BizQQWPA.addCustom({aty: "0",a: "1001",nameAccount: "4000409778",selector: "bizQQ_WPA4"});BizQQWPA.visitor({nameAccount: "4000409778"});BizQQWPA.addCustom({aty: "0",a: "1001",nameAccount: "4000409778",selector: "bizQQ_WPA5"});BizQQWPA.visitor({nameAccount: "4000409778"});</script>' +
+					'</div>';
+	*/
+	var queryTag = '<style type="text/css">#nb_icon_wrap{display:none!important;}</style><div class="query-tag">' +
+						'<a class="tel" name="site_default_floatright_dianxun" href="javascript:void(0)" id="teltag">电话咨询</a>' +
+						'<a href="http://p.qiao.baidu.com//im/index?siteid=1514&ucid=353991&rim" id="nettag" class="net" name="site_default_floatright_QQzixun" target="_blank">网络咨询</a>' +
+						'</div>' + 
+					'</div>';	
+	var queryTag2 = '<div name="site_default_leftnav_QQzixun"><a href="http://p.qiao.baidu.com//im/index?siteid=1514&ucid=353991&rim" target="_blank"><img name="site_default_leftnav_QQzixun" src="http://www.zhengbang.com.cn/builder/netbang/statics/images/netbang/qqzx2.png"></a></div>';
+	
+	// var queryTag = '<div class="query-tag">' +
+	// 					'<a class="tel" name="site_default_floatright_dianxun" href="javascript:void(0)" id="teltag">电话咨询</a>' +
+	// 					'<a href="http://p.qiao.baidu.com//im/index?siteid=1514&ucid=353991&rim" id="nettag" class="net" name="site_default_floatright_QQzixun" target="_blank">网络咨询</a>' +
+	// 					'</div>' + 
+	// 				'</div>';	
+	// var queryTag2 = '<div id="bizQQ_WPA2" name="site_default_leftnav_QQzixun"><img name="site_default_leftnav_QQzixun" src="http://www.zhengbang.com.cn/builder/netbang/statics/images/netbang/qqzx2.jpg"></div>';
+	
+	var queryPop = '<div class="query-pop" style="height:260px;">' + 
+						/*'<div class="tel">' + 
+							'<p class="tip">输入您的电话，我们即刻给您回电</p>' + 
+							'<div class="input-wrap">' + 
+								'<input type="text" placeholder="请输入您的电话" class="phonenum" />' + 
+							'</div>' + 
+							'<div class="btn-wrap">' + 
+								'<a class="callbtn" id="popcallbtn">接通客服</a>' + 
+							'</div>' + 
+						'</div>' + */
+						'<div class="tel zx-tel">' + 
+							'<p class="tip">立即与正邦项目顾问通话</p>' + 
+							'<div class="phone-wrap">' + 
+								'<a name="site_default_floatlayer_dianxun" href="tel:400-040-9778">400-040-9778</a>' + 
+							'</div>' + 
+						'</div>' +
+						'<div class="net">' + 
+							'<p class="tip">您也可以咨询我们的在线客服或预约资深顾问</p>' + 
+							'<div class="btn-wrap">' + 
+								'<div class="query_pop_box"><input type="text" placeholder="输入您的电话号码" class="query_pop_input" value=""><button class="query_pop_button">预约顾问</button><div class="red_tip">请输入正确的手机号码格式</div></div>'+
+								'<p class="green_information_safety">信息保护中请放心填写</p>'+
+								'<a id="popnetbtn" href="http://p.qiao.baidu.com//im/index?siteid=1514&ucid=353991&rim" target="_blank">在线咨询</a>' + 
+							'</div>' + 
+						'</div>' + 
+						'<div class="query-pop-success">'+
+							'<div class="red_title">&nbsp;</div>'+
+							'<div class="subtitle">预约成功</div>'+
+							'<ul class="subdetail">'+
+								'<li>请保持手机畅通，注意接听正邦顾问电话（010-67656738接听免费）感谢您的支持！</li>'+
+							'</ul>'+
+						'</div>'+
+						'<a class="close-btn" name="site_default_floatlayer_close" href="javascript:void(0);">关闭浮窗</a>' +
+					'</div>'
+	var queryCover = '<div class="query-cover"></div>'; 
+	var telbox = '<div class="zhengbang_revise_gray_back"></div>'+
+					'<div class="zhengbang_revise_pop zhengbang_revise_box">'+
+					'    <div class="box">'+
+					'    	<div class="zhengbang_revise_txt zhengbang_revise_week">'+
+					'    		<div class="red_title">&nbsp;</div>'+
+					'	        <div class="subtitle">立即与正邦项目顾问通话</div>'+
+					'	        <ul class="subdetail">'+
+					'	            <li>提供您的电话号码，正邦项目顾问将致电联系您。</li>'+
+					'	            <li>等待时间：5分钟以内</li>'+
+					'	        </ul>'+
+					'    	</div>'+
+					'    	<div class="zhengbang_revise_txt zhengbang_revise_weekend">'+
+					'	        <div class="red_title">&nbsp;</div>'+
+					'	        <div class="subtitle">正邦的工作时间段为周一至周五9:00——18:00</div>'+
+					'	        <ul class="subdetail">'+
+					'	            <li>提供您的电话号码，正邦项目顾问将在工作日第一时间与您联系。</li>'+
+					'        	</ul>'+
+					'        </div>'+
+					'        <div class="zhengbang_revise_txt zhengbang_revise_success">'+
+					'        	<div class="red_title">&nbsp;</div>'+
+					'	        <div class="subtitle">预约成功</div>'+
+					'	        <ul class="subdetail">'+
+					'	            <li>请保持手机畅通，注意接听正邦顾问电话（010-67656738接听免费）感谢您的支持！</li>'+
+					'	        </ul>'+
+					'        </div>'+
+					'        <div class="zhengbang_revise_form">'+
+					'            <div class="input_box number_pop">'+
+					'                <input type="text" placeholder="请输入手机号" name="info[phone]" class="yui_input">'+
+					'                <div class="red_tip">请输入正确的手机号码格式 </div>'+
+					'            </div>'+
+					'            <p class="green_information_safety">信息保护中请放心填写</p>'+
+					'            <input type="submit" name="dosubmit" value="免费预约" class="yui_button btn_revise_form">'+
+					'            <input type="hidden" name="posi" value="">'+
+					'        </div>'+
+					'        <div class="yui_close"></div>'+
+					'    </div>'+
+					'</div><input type="hidden" name="posi" class="form-class form-posi" value=""><input type="hidden" name="name" class="form-name" value="">  ';
+	
+	$(".header .dept-nav").append($(queryTag2));
+	
+	$('body').append($(queryTag)).append($(queryPop)).append($(queryCover)).append($(telbox));
+	// $(".btn-qqstart").click(function(){
+	// 	$("#bizQQ_WPA").trigger("click");
+	// })
+	// $("#bizQQ_WPA2").click(function(){
+	// 	$("#bizQQ_WPA").trigger("click");
+	// })
+	$('.query-pop .callbtn').click(function() { 
+		lxb.call($('.query-pop .phonenum')[0]);
+	});
+	if (document.documentElement.clientWidth > 768) {
+	    dingshiqi();
+	}
+	$('#ismobile').click(function(e) {
+		e.preventDefault();
+		dingshiqi();
+	});	
+
+
+	// 2017-11-01 
+
+	// $('.query-tag .tel').click(function(e) {
+	// 	e.preventDefault();
+	// 	$('.query-cover, .query-pop').fadeIn(function(){
+	// 		clearInterval(autoPop);
+	// 	});
+	// });
+
+	$('.query-tag .tel').click(function(e) {
+		e.preventDefault();
+		$(".form-posi").val("电话咨询");
+		var _date=new Date();
+        if(1<=_date.getDay() &&_date.getDay()<=5 && 9<=_date.getHours() &&_date.getHours()<=18){
+            $(".zhengbang_revise_week").show().siblings('.zhengbang_revise_txt').hide();
+        }else{
+            $(".zhengbang_revise_weekend").show().siblings('.zhengbang_revise_txt').hide();
+        }
+        $(".zhengbang_revise_form").show().find(".yui_input").val("");
+		$('.zhengbang_revise_gray_back, .zhengbang_revise_pop').stop().fadeIn(function(){
+			clearInterval(autoPop);
+			autoPop=null;
+		});
+	});
+	//end 2017-11-01 
+
+
+	$('.query-pop .close-btn').click(function(e) {
+		e.preventDefault();
+		$('.query-cover, .query-pop').fadeOut(function(){
+			$(".query-pop .query-pop-success").hide().siblings().show();
+		});
+		dingshiqi();
+	});
+
+	
+	$(".header .bang-nav .inner-nav-li").eq(0).find("a").click(function(){
+		var movetop = $(".can-content").offset().top-80;
+		$("body,html").stop().animate({"scrollTop":movetop},800)
+	});
+	
+	$(".header .bang-nav .inner-nav-li").eq(1).find("a").click(function(){
+		var movetop = $(".our-cases").offset().top-80;
+		$("body,html").stop().animate({"scrollTop":movetop},800)
+	});
+
+
+/*------------------------------------ 2017-11-01 ------------------------------------/
+	/*
+	 * 邦网络-网站建设-索取报价按钮	
+	 */
+	// $(".quote_consult .askfor_click").click(function  () {
+ //        $(".zhengbang_revise_pop_project,.zhengbang_revise_gray_back").stop().fadeIn(function(){
+	// 		clearInterval(autoPop);
+	// 	});
+ //    });
+    /*
+	 * 邦网络-网站建设-索取报价弹层-关闭按钮	
+	 */
+	$(".zhengbang_revise_pop .yui_close").click(function(event) {
+		/* Act on the event */
+		$(this).closest(".zhengbang_revise_pop").stop().fadeOut();
+		$(".zhengbang_revise_gray_back").stop().fadeOut();
+		dingshiqi();
+
+	});
+
+	// 30s弹窗--预约顾问
+	$(document).on("click",".query-pop .query_pop_button",function(){
+			var flag=false;
+			var farther = $(this).closest('.query_pop_box');
+			var num=farther.find('.query_pop_input').val();
+            var myreg=/^1[3|4|5|7|8][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/;  
+            if(!(myreg.test(num))){
+                farther.find('.red_tip').text("请输入正确的手机号码格式").show();
+                flag = false;
+              	return false;
+            }else{
+                farther.find('.red_tip').hide();
+                flag=true;
+            }
+			console.log(flag);
+            if(flag){
+                var _phone = num;
+                var _url = window.location.href;
+				console.log(_url);
+                var _posi = "20s弹窗";
+                var _name = $(".form-name").val();
+                $.ajax({
+                    url: 'http://www.zhengbang.com.cn/builder/netbang/index.php?m=formguide&c=index&a=ajaxshow&formid=22&siteid=1',
+                    type: 'POST', 
+                    data:  {"phone":_phone,"url":_url,"posi":_posi,"name":_name},
+                    success:function(data){
+						
+                        var str = data;
+                        if(str=="成功"){
+                            $(".query-pop .query-pop-success").show().siblings().hide();
+                 			$(".query-pop .close-btn").show();
+                        }else if(str=="IP超出"){
+                            farther.find('.red_tip').text("提交频繁,请明天再次尝试").show();
+                        }
+                    },
+                    error:function(){
+                        console.log("error");
+                    }
+                })
+            }
+	})
+
+
+	// 正邦官网-子站-免费预约
+	$(".adviserbox .appointment_click").click(function  () {
+        var _posi = $(this).attr("data-posi");
+        var _name = $(this).attr("data-name");
+        $(".form-posi").val(_posi);
+        $(".form-name").val(_name);
+        var _date=new Date();
+        if(1<=_date.getDay() &&_date.getDay()<=5 && 9<=_date.getHours() &&_date.getHours()<=18){
+            $(".zhengbang_revise_week").show().siblings('.zhengbang_revise_txt').hide();
+        }else{
+            $(".zhengbang_revise_weekend").show().siblings('.zhengbang_revise_txt').hide();
+        }
+        $(".zhengbang_revise_form").show().find(".yui_input").val("");
+        $(".zhengbang_revise_pop,.zhengbang_revise_gray_back").stop().fadeIn();
+        clearInterval(autoPop);
+        autoPop=null;
+    });
+
+    // 右侧浮窗-电话咨询
+	// $('.zhengbang_revise_pop .yui_close').click(function  () {
+ //        $(this).parents('.zhengbang_revise_pop').hide();
+ //        $(".zhengbang_revise_gray_back").hide();
+ //        autoPop=null;
+	// 	autoPop=setInterval(function() {
+	// 		if($(".zhengbang_revise_pop").is(":hidden")){	
+	// 			$('.query-cover, .query-pop').fadeIn(function(){
+	// 				clearInterval(autoPop);
+	// 			});
+	// 		}
+	// 	}, 30000);
+
+ //    });
+    	$(document).on("click",".btn_revise_form",function(event) {
+			console.log("ing");
+    		var flag=false;
+			var farther = $(this).closest('.zhengbang_revise_pop');
+			var num=farther.find('.yui_input').val();
+            var myreg=/^1[3|4|5|7|8][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]$/;  
+            if(!(myreg.test(num))){
+                farther.find('.red_tip').text("请输入正确的手机号码格式").show();
+                flag = false;
+              	return false;
+            }else{
+                farther.find('.red_tip').hide();
+                flag=true;
+            }
+			console.log(flag);
+            if(flag){
+                var _phone = num;
+                var _url = window.location.href;
+				console.log(_url);
+                var _posi = $(".form-posi").val();
+                var _name = $(".form-name").val();
+                $.ajax({
+                    url: 'http://www.zhengbang.com.cn/builder/netbang/index.php?m=formguide&c=index&a=ajaxshow&formid=22&siteid=1',
+                    type: 'POST', 
+                    data:  {"phone":_phone,"url":_url,"posi":_posi,"name":_name},
+                    success:function(data){
+						console.log(data);
+                        var str = data;
+                        if(str=="成功"){
+                            $(".zhengbang_revise_success").show().siblings(".zhengbang_revise_txt").hide();
+                            $(".zhengbang_revise_form").hide();
+                        }else if(str=="IP超出"){
+                            farther.find('.red_tip').text("提交频繁,请明天再次尝试").show();
+                        }
+                    },
+                    error:function(){
+                        console.log("error");
+                    }
+                })
+            }
+            
+        });
+
+
+});
+var autoPop;
+var count=0;
+function dingshiqi(){
+	autoPop=null;
+	autoPop = setInterval(function() {
+		console.log($(".zhengbang_revise_box").is(":hidden"));
+	    if($(".zhengbang_revise_box").is(":hidden")){	
+			$('.query-cover, .query-pop').fadeIn(function(){
+				clearInterval(autoPop);
+				autoPop=null;
+			});
+		}
+	}, 30000);
+	// setInterval(function(){
+	// 	count++;
+	// 	console.log(count)
+	// },1000)
+}

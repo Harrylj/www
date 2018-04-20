@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		/*
+		var twoSum = function(nums, target) {
+		    var abc = new Array;
+		    for(var a= 0; a < nums.length ;a++){
+			        for(var b = 1; b < nums.length-a;b++){
+			        	
+			        	//判断相加是否相等
+					    if(nums[a]+nums[a+b] == target){      	
+					        abc.push(a,b+a)
+				                
+					    }
+			        }
+			return(abc.sort());
+			    
+		};
+		*/
+		/*
+		var twoSum = function(nums, target) {
+		    var ret = [];
+		    var exist = {};
+		    for(var i = 0; i < nums.length; i++){
+		        if(typeof(exist[target - nums[i]]) !== 'undefined'){
+		            ret.push(exist[target - nums[i]]);
+		            ret.push(i + 1);
+		        }
+		        
+		        exist[nums[i]] = i + 1;
+		    }
+		    
+		    return ret
+		};
+		*/
+		
+		var twoSum = function(nums, target) {
+			var ans = [];
+			var exist = {};
+			
+			for (var i = 0; i < nums.length; i++){
+				console.log(exist[target-nums[i]],typeof(exist[target-nums[i]]),target-nums[i],exist)
+			    if (typeof(exist[target-nums[i]]) !== 'undefined'){
+			    	
+			        ans.push(exist[target-nums[i]]);
+			        ans.push(i);
+			    }
+			    exist[nums[i]] = i;
+			}
+			console.log(exist)
+			return ans;
+		
+		};
+		
+		/*
+		var twoSum = function(nums, target) {
+    //创建空数组，空对象各一个。
+    var arr = [],
+        exist = {};
+    for(var i = 0; i<nums.length;i++){
+        //通过typeof判断是否存在该值。
+        if(typeof(exist[target - nums[i]]) !=="undefined"){
+              arr.push(target -nums[i]);
+              arr.push(i)
+        }
+        //给对象属性赋值
+        exist[nums[i]] = i
+        
+    }
+    
+    return arr;
+};
+*/
+		var aaa = [1,2,3,4,5,6,7,8,9]
+		console.log(twoSum(aaa,6))
+		console.log(aaa)
+		
+		var abc = {a:1,b:2}
+		console.log(abc['a'])
+		//[3, 5, 2, 6, 1, 7, 0, 8]
+		
+		//[1, 3, 0, 4]
+		//1 2 4 5
+		//[2, 4, 1, 5]
+		//3,5,2,6
+		
+		/*
+		function one(ar){
+			for(var c = 0; c<ar.length; c++){
+				for( var d = c+1; d< ar.length; d++){
+					//如果相等
+					if(ar[c]==ar[d]){
+						console.log(ar[c])
+						ar.splice(c,1)
+					}
+					
+				}
+			}
+			return ar;
+		}
+		*/
+		//console.log(one(aaa))
+		
+		
+	</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+var WebService=function() {
+WebService.initializeBase(this);
+this._timeout = 0;
+this._userContext = null;
+this._succeeded = null;
+this._failed = null;
+}
+WebService.prototype={
+_get_path:function() {
+ var p = this.get_path();
+ if (p) return p;
+ else return WebService._staticInstance.get_path();},
+GetInsights:function(PathParameter,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetInsights',false,{PathParameter:PathParameter},succeededCallback,failedCallback,userContext); },
+GetCareersContacts:function(country,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetCareersContacts',false,{country:country},succeededCallback,failedCallback,userContext); },
+GetLocationContacts:function(path,country,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetLocationContacts',false,{path:path,country:country},succeededCallback,failedCallback,userContext); },
+GetWork:function(PathParameter,startOrdinal,count,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetWork',false,{PathParameter:PathParameter,startOrdinal:startOrdinal,count:count},succeededCallback,failedCallback,userContext); },
+GetNews:function(PathParameter,startOrdinal,count,succeededCallback, failedCallback, userContext) {
+return this._invoke(this._get_path(), 'GetNews',false,{PathParameter:PathParameter,startOrdinal:startOrdinal,count:count},succeededCallback,failedCallback,userContext); }}
+WebService.registerClass('WebService',Sys.Net.WebServiceProxy);
+WebService._staticInstance = new WebService();
+WebService.set_path = function(value) { WebService._staticInstance.set_path(value); }
+WebService.get_path = function() { return WebService._staticInstance.get_path(); }
+WebService.set_timeout = function(value) { WebService._staticInstance.set_timeout(value); }
+WebService.get_timeout = function() { return WebService._staticInstance.get_timeout(); }
+WebService.set_defaultUserContext = function(value) { WebService._staticInstance.set_defaultUserContext(value); }
+WebService.get_defaultUserContext = function() { return WebService._staticInstance.get_defaultUserContext(); }
+WebService.set_defaultSucceededCallback = function(value) { WebService._staticInstance.set_defaultSucceededCallback(value); }
+WebService.get_defaultSucceededCallback = function() { return WebService._staticInstance.get_defaultSucceededCallback(); }
+WebService.set_defaultFailedCallback = function(value) { WebService._staticInstance.set_defaultFailedCallback(value); }
+WebService.get_defaultFailedCallback = function() { return WebService._staticInstance.get_defaultFailedCallback(); }
+WebService.set_enableJsonp = function(value) { WebService._staticInstance.set_enableJsonp(value); }
+WebService.get_enableJsonp = function() { return WebService._staticInstance.get_enableJsonp(); }
+WebService.set_jsonpCallbackParameter = function(value) { WebService._staticInstance.set_jsonpCallbackParameter(value); }
+WebService.get_jsonpCallbackParameter = function() { return WebService._staticInstance.get_jsonpCallbackParameter(); }
+WebService.set_path("/CMSPages/Webservice.asmx");
+WebService.GetInsights= function(PathParameter,onSuccess,onFailed,userContext) {WebService._staticInstance.GetInsights(PathParameter,onSuccess,onFailed,userContext); }
+WebService.GetCareersContacts= function(country,onSuccess,onFailed,userContext) {WebService._staticInstance.GetCareersContacts(country,onSuccess,onFailed,userContext); }
+WebService.GetLocationContacts= function(path,country,onSuccess,onFailed,userContext) {WebService._staticInstance.GetLocationContacts(path,country,onSuccess,onFailed,userContext); }
+WebService.GetWork= function(PathParameter,startOrdinal,count,onSuccess,onFailed,userContext) {WebService._staticInstance.GetWork(PathParameter,startOrdinal,count,onSuccess,onFailed,userContext); }
+WebService.GetNews= function(PathParameter,startOrdinal,count,onSuccess,onFailed,userContext) {WebService._staticInstance.GetNews(PathParameter,startOrdinal,count,onSuccess,onFailed,userContext); }
+var gtc = Sys.Net.WebServiceProxy._generateTypedConstructor;
+if (typeof(insight) === 'undefined') {
+var insight=gtc("insight");
+insight.registerClass('insight');
+}
+if (typeof(contact) === 'undefined') {
+var contact=gtc("contact");
+contact.registerClass('contact');
+}
+if (typeof(work) === 'undefined') {
+var work=gtc("work");
+work.registerClass('work');
+}
+if (typeof(news) === 'undefined') {
+var news=gtc("news");
+news.registerClass('news');
+}

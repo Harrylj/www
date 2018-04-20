@@ -1,0 +1,145 @@
+// (function(para) {
+//   var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+//   w['sensorsDataAnalytic201505'] = n;
+//   w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+//   var ifs = ['track','quick','register','registerPage','registerOnce','registerSession','registerSessionOnce','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify'];
+//   for (var i = 0; i < ifs.length; i++) {
+//     w[n][ifs[i]] = w[n].call(null, ifs[i]);
+//   }
+//   if (!w[n]._t) {
+//     x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+//     x.async = 1;
+//     x.src = p;
+//     y.parentNode.insertBefore(x, y);
+//     w[n]._t = 1 * new Date();
+//     w[n].para = para;
+//   }
+// })({
+//   sdk_url: base_url+'builder/staticize/resource/media/vtrack.min.js'//可视化
+//   name: 'sa',
+//   //server_url:'http://zhengbangchuangyi.cloud.sensorsdata.cn:8006/sa?token=97374cdf273f2cc9',
+//   config_url: 'http://zhengbangchuangyi.cloud.sensorsdata.cn/api/vtrack/config'
+// });  
+// sa.quick('autoTrack');
+
+
+// sa.quick('allTrack');  
+
+
+
+
+
+//2017-3-7
+
+// (function(para) {
+//   var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+//   w['sensorsDataAnalytic201505'] = n;
+//   w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+//   var ifs = ['track','quick','register','registerPage','registerOnce','clearAllRegister','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout'];
+//   for (var i = 0; i < ifs.length; i++) {
+//     w[n][ifs[i]] = w[n].call(null, ifs[i]);
+//   }
+//   if (!w[n]._t) {
+//     x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+//     x.async = 1;
+//     x.src = p;
+//     y.parentNode.insertBefore(x, y);
+//     w[n].para = para;
+//   }
+// })({
+//   sdk_url: base_url+'sensors/sensorsdata.min.js',
+//   name: 'sa',
+//   server_url: 'http://zhengbangchuangyi.cloud.sensorsdata.cn:8006/sa?token=97374cdf273f2cc9',
+//   // config_url: 'http://zhengbangchuangyi.cloud.sensorsdata.cn/api/vtrack/config'
+
+// });
+// sa.quick('autoTrack');
+// sa.quick('allTrack')
+
+
+/*2017-05-05*/
+(function(para) {
+  var p = para.sdk_url, n = para.name, w = window, d = document, s = 'script',x = null,y = null;
+  w['sensorsDataAnalytic201505'] = n;
+  w[n] = w[n] || function(a) {return function() {(w[n]._q = w[n]._q || []).push([a, arguments]);}};
+  var ifs = ['track','quick','register','registerPage','registerOnce','clearAllRegister','trackSignup', 'trackAbtest', 'setProfile','setOnceProfile','appendProfile', 'incrementProfile', 'deleteProfile', 'unsetProfile', 'identify','login','logout','trackLink','clearAllRegister'];
+  for (var i = 0; i < ifs.length; i++) {
+    w[n][ifs[i]] = w[n].call(null, ifs[i]);
+  }
+  if (!w[n]._t) {
+    x = d.createElement(s), y = d.getElementsByTagName(s)[0];
+    x.async = 1;
+    x.src = p;
+    y.parentNode.insertBefore(x, y);
+    w[n].para = para;
+  }
+})({
+  sdk_url: 'http://www.zhengbang.com.cn/builder/staticize/resource/media/sensorsdata.min.js',
+  name: 'sa',
+  web_url: 'https://zhengbangchuangyi.cloud.sensorsdata.cn/',
+  server_url: 'http://zhengbangchuangyi.cloud.sensorsdata.cn:8006/sa?token=97374cdf273f2cc9',
+  heatmap:{}
+});
+sa.quick('autoTrack');
+sa.quick('allTrack')
+
+
+
+//2017-3-8    统计所有页面的点击
+$(document).on('click','button,a',function(){
+
+  sa.track('buttonClick',{
+    pageUrl: location.host+location.pathname,
+    pageUrlDetail: location.href,
+    buttonName: $(this).prop('name'),
+    buttonHref: $(this).prop('href'),
+    buttonType: $(this).prop('tagName'),
+    buttonText: $(this).prop('text'),
+    buttonTitle: $(this).prop('title')
+  })
+});
+
+
+
+//2017-3-8    页面停留时间
+window.onload = function() {
+    // 在页面加载完毕或者也不用加载完毕,定义一个初始时间
+    var start = new Date();
+    // 在页面关闭前,调用sa的track方法
+    window.onunload = function(){
+      var end = new Date();
+      // 如果用户一直不关闭页面，可能出现超大值，可以根据业务需要处理，例如设置一个上限
+      var duration = (end.getTime() - start.getTime()) / 1000;
+      // 定义一个记录页面停留时间的事件pageView,并且保存需要的属性(停留时间和当前页面的地址)
+      sa.track('pageView', {
+        pageStayTime: duration,
+        pageUrl: window.location.href
+      });
+    };
+  }
+
+
+//2017-3-8   统计页面停留时间
+var saStartTime = new Date(); 
+   window.onbeforeunload = function() {  
+    var end = new Date();
+    var duration = (end.getTime() - saStartTime.getTime()) / 1000;
+    sa.track('index_leave', {
+      pageUrl: window.location.href,
+      pageStayTime: duration,
+      pagePosition: $(window).scrollTop()
+    });
+  };
+
+
+//监测上传数据   
+// var counter = 0;
+//   function test_script_1(){
+//     setTimeout(function(){
+//       if(++counter <= 500 ){
+//         sa.track('test_script_1');
+//         test_script_1();
+//       }
+//     },1000);
+//   }
+//   test_script_1();     
