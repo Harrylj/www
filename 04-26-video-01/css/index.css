@@ -1,0 +1,78 @@
+.index {
+  overflow-x: hidden;
+  min-width: 1000px;
+  padding-top: 80px;
+  background-image: url(../images/next_01.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.index .i-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  min-width: 1000px;
+  background-color: white;
+  z-index: 99999;
+}
+.index .i-header .nav-img-01 {
+  display: inline-block;
+  width: 140px;
+  height: 80px;
+  margin-left: 5%;
+  background-position: 100% 100%;
+  background-image: url(../images/index_41.png);
+}
+.index .i-header .nav-img-02 {
+  display: inline-block;
+  width: 480px;
+  height: 80px;
+  margin-left: 20%;
+  background-position: 100% 100%;
+  background-image: url(../images/index_42.png);
+}
+.index .i-header-hover {
+  background-color: black;
+}
+.index .i-header-hover .nav-img-01 {
+  background-image: url(../images/index_41_hover.png);
+}
+.index .i-header-hover .nav-img-02 {
+  background-image: url(../images/index_42_hover.png);
+}
+.index .i-main-01 {
+  display: table-cell;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  vertical-align: middle;
+}
+.index .i-main-02 {
+  position: relative;
+  background-color: white;
+}
+.index .i-main-02 .i-img-01 {
+  position: relative;
+  z-index: 22;
+}
+.index .i-main-02 .i-img-scale {
+  position: absolute;
+  right: 10%;
+  top: 10%;
+  width: 191px;
+  z-index: 1;
+}
+.index .i-main-03,
+.index .i-main-04,
+.index .i-main-05,
+.index .i-main-06 {
+  position: relative;
+  z-index: 2;
+}
+.index .i-main-03 {
+  margin-bottom: 200px;
+}
+.index-hover {
+  background-image: url(../images/index_09.jpg);
+}
