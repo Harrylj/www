@@ -2,7 +2,7 @@
     overflow-x: hidden;
     min-width: 1000px;
     padding-top: 80px;
-    background-image: url(../images/next_01.jpg);
+    background-image: url(../images/next_01.png);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
@@ -44,23 +44,209 @@
     .i-main-01{
         display: table-cell;
         text-align: center;
-        background-color: rgba(0,0,0,0.5);
+        background-color: rgba(0,0,0,0.7);
         vertical-align: middle;
     }
     .i-main-02{
         position: relative;
         background-color: white;
+        padding-bottom: 300px;
         .i-img-01{
             position: relative;
             z-index: 22;
         }
         .i-img-scale{
             position: absolute;
-            right: 10%;
-            top: 10%;
-            width: 191px;
+            left: 50%;
+            bottom: 130px;
+            width: 200px;
+            margin-left: -100px;
             z-index: 1;
         }
+    }
+    .i-main-03{
+        background-color: rgb(27,87,127);
+        overflow: hidden;
+        margin-bottom: 120px;
+        .main-03-content{
+            position: relative;
+            z-index: 10;
+        }
+//      .i-img-scale{
+//          position: absolute;
+//          left: 50%;
+//          top: 30%;
+//          width: 200px;
+//          margin-left: -100px;
+//          z-index: 1;
+//      }
+        .main-03-content-div{
+            position: relative;
+            padding: 120px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 90%;
+            transition: all 1s;
+            .content-div{
+                height: 300px;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                img{
+                    border-radius: 10px;
+                    width: 200px;
+                    height: 200px;
+                    transition: all 0.6s;
+                }
+                .content-left{
+                    width: 50px;
+                    h1{
+                        color: #90acc3;
+                        line-height: 40px;
+                        font-size: 18px;
+                        transition: all 0.6s;
+                    }
+                    h2,h3,p{
+                        opacity: 0;
+                        
+                    }
+                }
+            }
+        }
+        /*以下是图片动态效果*/
+        .content-div-hover-01{
+            .content-div-01{
+                img{
+                    position: absolute;
+                    left: 100px;
+                    top: 0;
+                    width: 300px;
+                    height: 300px;
+                }
+                .content-left{
+                  position: relative;
+                  width: 400px;
+                  z-index: 2;
+                  h1{
+                      font-size: 30px;
+                      line-height: 60px;
+                  }
+                  h2,h3,p{
+                      opacity: 1;
+                  }
+                  h2{
+                      font-size: 20px;
+                      color: white;
+                      line-height: 40px;
+                  }
+                  h3{
+                      color: #e68524;
+                      line-height: 30px;
+                      font-size: 16px;
+                  }
+                   p{
+                       color: white;
+                       font-size: 12px;
+                       line-height: 20px;
+                   } 
+                }
+            }
+            .content-div-02{
+                top: 50px;
+            }
+            .content-div-03{
+            }
+        }
+        .content-div-hover-02{
+            .content-div-02{
+                img{
+                    position: absolute;
+                    left: 100px;
+                    top: -50px;
+                    width: 300px;
+                    height: 300px;
+                }
+                .content-left{
+                  position: relative;
+                  width: 400px;
+                  z-index: 2;
+                  h1{
+                      font-size: 30px;
+                      line-height: 60px;
+                  }
+                  h2,h3,p{
+                      opacity: 1;
+                  }
+                  h2{
+                      font-size: 20px;
+                      color: white;
+                      line-height: 40px;
+                  }
+                  h3{
+                      color: #e68524;
+                      line-height: 30px;
+                      font-size: 16px;
+                  }
+                   p{
+                       color: white;
+                       font-size: 12px;
+                       line-height: 20px;
+                   } 
+                }
+            }
+            .content-div-01{
+            }
+            .content-div-03{
+            }
+        }
+        .content-div-hover-03{
+            .content-div-03{
+                img{
+                    position: absolute;
+                    left: 100px;
+                    top: 0;
+                    width: 300px;
+                    height: 300px;
+                }
+                .content-left{
+                  position: relative;
+                  width: 400px;
+                  z-index: 2;
+                  h1{
+                      font-size: 30px;
+                      line-height: 60px;
+                  }
+                  h2,h3,p{
+                      opacity: 1;
+                  }
+                  h2{
+                      font-size: 20px;
+                      color: white;
+                      line-height: 40px;
+                  }
+                  h3{
+                      color: #e68524;
+                      line-height: 30px;
+                      font-size: 16px;
+                  }
+                   p{
+                       color: white;
+                       font-size: 12px;
+                       line-height: 20px;
+                   } 
+                }
+            }
+            .content-div-01{
+            }
+            .content-div-02{
+                top: 50px;
+            }
+        }
+        /*以上是图片动态效果*/
+    }
+    .i-main-03-hover{
+        background-color: rgb(27,87,127);
     }
     .i-main-03,
     .i-main-04,
@@ -69,9 +255,7 @@
         position: relative;
         z-index: 2;
     }
-    .i-main-03{
-        margin-bottom: 200px;
-    }
+    
 }
 .index-hover{
     background-image: url(../images/index_09.jpg);
