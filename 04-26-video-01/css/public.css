@@ -49,7 +49,6 @@ a { text-decoration: none; color: #1F4E73 }
 	.swiper-container{height: 300px;}
 }
 .swiper-container{
-    width: 100%;
     margin: auto;
 }
 .slide-img{

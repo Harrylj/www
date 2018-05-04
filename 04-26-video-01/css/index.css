@@ -7,6 +7,42 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.index .swiper-01-div {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  left: 75%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px;
+  padding: 0 40px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  border-radius: 6px;
+}
+.index .swiper-01-div .swiper-slide {
+  border-radius: 10px;
+}
+.index .swiper-01-div .swiper-pagination,
+.index .swiper-01-div .swiper-button-prev,
+.index .swiper-01-div .swiper-button-next {
+  display: none;
+}
+.index .swiper-container {
+  border-radius: 8px;
+}
+.index .swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.index .i-img-scale {
+  position: absolute;
+  left: 50%;
+  top: 70px;
+  width: 400px;
+  margin-left: -200px;
+  z-index: 100;
+}
 .index .i-header {
   position: fixed;
   top: 0;
@@ -51,30 +87,21 @@
 .index .i-main-02 {
   position: relative;
   background-color: white;
-  padding-bottom: 300px;
+  padding-top: 140px;
 }
 .index .i-main-02 .i-img-01 {
   position: relative;
   z-index: 22;
 }
-.index .i-main-02 .i-img-scale {
-  position: absolute;
-  left: 50%;
-  bottom: 130px;
-  width: 200px;
-  margin-left: -100px;
-  z-index: 1;
-}
 .index .i-main-03 {
   background-color: #1b577f;
-  overflow: hidden;
-  margin-bottom: 120px;
   /*以下是图片动态效果*/
   /*以上是图片动态效果*/
 }
 .index .i-main-03 .main-03-content {
   position: relative;
   z-index: 10;
+  margin-bottom: 180px;
 }
 .index .i-main-03 .main-03-content-div {
   position: relative;
@@ -82,7 +109,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 90%;
+  width: 100%;
   transition: all 1s;
 }
 .index .i-main-03 .main-03-content-div .content-div {
@@ -113,7 +140,7 @@
 }
 .index .i-main-03 .content-div-hover-01 .content-div-01 img {
   position: absolute;
-  left: 100px;
+  left: 120px;
   top: 0;
   width: 300px;
   height: 300px;
@@ -141,18 +168,20 @@
   color: #e68524;
   line-height: 30px;
   font-size: 16px;
+  padding: 5px 0;
 }
 .index .i-main-03 .content-div-hover-01 .content-div-01 .content-left p {
   color: white;
   font-size: 12px;
   line-height: 20px;
+  padding: 5px 0;
 }
 .index .i-main-03 .content-div-hover-01 .content-div-02 {
   top: 50px;
 }
 .index .i-main-03 .content-div-hover-02 .content-div-02 img {
   position: absolute;
-  left: 100px;
+  left: 120px;
   top: -50px;
   width: 300px;
   height: 300px;
@@ -179,16 +208,18 @@
 .index .i-main-03 .content-div-hover-02 .content-div-02 .content-left h3 {
   color: #e68524;
   line-height: 30px;
+  padding: 5px 0;
   font-size: 16px;
 }
 .index .i-main-03 .content-div-hover-02 .content-div-02 .content-left p {
   color: white;
   font-size: 12px;
   line-height: 20px;
+  padding: 5px 0;
 }
 .index .i-main-03 .content-div-hover-03 .content-div-03 img {
   position: absolute;
-  left: 100px;
+  left: 120px;
   top: 0;
   width: 300px;
   height: 300px;
@@ -216,11 +247,13 @@
   color: #e68524;
   line-height: 30px;
   font-size: 16px;
+  padding: 5px 0;
 }
 .index .i-main-03 .content-div-hover-03 .content-div-03 .content-left p {
   color: white;
   font-size: 12px;
   line-height: 20px;
+  padding: 5px 0;
 }
 .index .i-main-03 .content-div-hover-03 .content-div-02 {
   top: 50px;
@@ -236,5 +269,5 @@
   z-index: 2;
 }
 .index-hover {
-  background-image: url(../images/index_09.jpg);
+  background-image: url(../images/index_09.png);
 }
