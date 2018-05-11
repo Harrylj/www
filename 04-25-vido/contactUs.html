@@ -21,6 +21,9 @@
 	</style>
 </head>
 <body>
+    <!--
+        .cum-item添加.cum-item-hover表示选中展开
+    -->
     <div class="contact-us">
         <div class="cu-main public-main">
             <div class="cum-list">
@@ -45,14 +48,70 @@
                             <li>负责1</li>
                         </ol>
                     </div>
-                </div>      
+                </div>
+                <div class="cum-item cum-item-hover">
+                    <div class="cum-header">
+                        <div class="cum-header-left">
+                            <h1>ios开发工程师</h1>
+                            <p>1天前</p>
+                        </div>
+                        <div class="cum-header-right">
+                            <h1>10K-15K</h1>
+                            <p>经验3-5年/本科</p>
+                        </div>
+                    </div>
+                    <div class="cum-item-content">
+                        <h1>工作职责</h1>
+                        <ol type="1">
+                            <li>负责1</li>
+                            <li>负责1</li>
+                            <li>负责1</li>
+                            <li>负责1</li>
+                        </ol>
+                        <h1>岗位要求</h1>
+                        <ol type="1">
+                            <li>负责1</li>
+                            <li>负责1的点点<span class="red-span">滴滴多</span>滴滴多</li>
+                            <li>负责1</li>
+                            <li>负责1</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="cum-item">
+                    <div class="cum-header">
+                        <div class="cum-header-left">
+                            <h1>ios开发工程师</h1>
+                            <p>1天前</p>
+                        </div>
+                        <div class="cum-header-right">
+                            <h1>10K-15K</h1>
+                            <p>经验3-5年/本科</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cum-item-content">
+                        <h1>工作职责</h1>
+                        <ol>
+                            <li>负责1</li>
+                            <li>负责1</li>
+                            <li>负责1</li>
+                            <li>负责1</li>
+                        </ol>
+                    </div>
+                </div>
+            
             </div>
         </div>
     </div>
-    
+    <script src="js/jquery-2.1.3.min.js"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		
+		$(function(){
+            $('.cum-item').on('click',function(){
+                var hover_class = 'cum-item-hover';
+                $(this).addClass(hover_class).siblings().removeClass(hover_class)
+            })
+        })
 
 
 
