@@ -43,10 +43,10 @@ a { text-decoration: none; color: #1F4E73 }
 .height-90{ height: 90px;}
 .none{ display: none;}
 @media only screen and (min-width:0px){
-	.swiper-container{height: 200px;}
+	/*.swiper-container{height: 200px;}*/
 }
 @media only screen and (min-width:480px){
-	.swiper-container{height: 300px;}
+	/*.swiper-container{height: 300px;}*/
 }
 .swiper-container{
     margin: auto;
