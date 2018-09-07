@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/teamStyle.css" />
+    <title>团队风采</title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <div class="team-style public-main">
+        <div class="teamstyle-swiper swiper-container swiper-container-horizontal">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" >
+                    <img class="img-100" src="images/teamstyle-swiper-01.jpg" alt="">
+                    <h1>广告中心跑团1</h1>
+                </div>
+                <div class="swiper-slide" >
+                    <img class="img-100" src="images/teamstyle-swiper-02.jpg" alt="">
+                    <h1>广告中心跑团2</h1>
+                </div>
+                <div class="swiper-slide" >
+                    <img class="img-100" src="images/teamstyle-swiper-01.jpg" alt="">
+                    <h1>广告中心跑团3</h1>
+                </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-bullets">
+            </div>
+        </div>
+    </div>
+    <script src="js/jquery-2.1.3.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            autoplay: {
+                delay: 5000,//5秒切换一次
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+  
+
+
+
+
+
+    </script>
+</body>
+
+</html>

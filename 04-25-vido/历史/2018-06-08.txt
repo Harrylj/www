@@ -1,0 +1,25 @@
+publication.html
+
+1.public_share.png图片
+.swiper-container的同级
+
+<div class="public-main pub-img-share-div">
+              <img class="pub-img-share" src="images/public_share.png"/>
+              <div class="pub-choice">
+                  <h5 class="pub-choice-content">广告刊列</h5>
+                  <ul>
+                    <li>全部内容</li>
+                    <li class="public-choice-click">广告刊列</li>
+                    <li>节目刊例</li>
+                  </ul>
+              </div>
+            </div>
+
+
+
+2.轮播内容
+<div class="publication-next public-main">
+
+                            <img class="choice-img-01 img-100" src="images/publication-01.jpg" alt="">
+                            <img class="choice-img-02 img-100" src="images/cn-02.jpg"/>
+                        </div>

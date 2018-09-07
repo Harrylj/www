@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Super Slide</title>
+<script type="text/javascript" src="../jquery.pack.js"></script>
+<script type="text/javascript" src="../jQuery.blockUI.js"></script>
+<script type="text/javascript" src="../jquery.SuperSlide.js"></script>
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link href="../demo.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!-- content S -->
+	<div id="demoContent">
+		<div class="effect">
+					<div class="slideTxtBox">
+						<div class="hd">
+							<ul><li><a href="">教育</a></li><li><a href="">培训</a></li><li><a href="">出国</a></li></ul>
+						</div>
+						<div class="bd">
+							<ul class="infoList">
+								<li><span class="date">2011-11-11</span><a href="">中国打破了世界软件巨头规则</a></li>
+								<li><span class="date">2011-11-11</span><a href="">口语：会说中文就能说英语！</a></li>
+								<li><span class="date">2011-11-11</span><a href="">农场摘菜不如在线学外语好玩</a></li>
+								<li><span class="date">2011-11-11</span><a href="">数理化老师竟也看学习资料？</a></li>
+								<li><span class="date">2011-11-11</span><a href="">学英语送ipad2,45天突破听说</a></li>
+								<li><span class="date">2011-11-11</span><a href="">学外语，上北外！</a></li>
+							</ul>
+							<ul class="infoList">
+								<li><span class="date">2011-11-11</span><a href="">名师教作文：３妙招巧写高分</a></li>
+								<li><span class="date">2011-11-11</span><a href="">耶鲁小子：教你备考SAT</a></li>
+								<li><span class="date">2011-11-11</span><a href="">施强：高端专业语言教学</a></li>
+								<li><span class="date">2011-11-11</span><a href="">数理化老师竟也看学习资料？</a></li>
+								<li><span class="date">2011-11-11</span><a href="">【推荐】名校英语方法曝光！</a></li>
+								<li><span class="date">2011-11-11</span><a href="">2012高考“考点”大曝光!!</a></li>
+							</ul>
+							<ul class="infoList">
+								<li><span class="date">2011-11-11</span><a href="">澳大利亚八大名校招生说明会</a></li>
+								<li><span class="date">2011-11-11</span><a href="">2012世界大学排名新鲜出炉</a></li>
+								<li><span class="date">2011-11-11</span><a href="">新加坡留学，国际双语课程</a></li>
+								<li><span class="date">2011-11-11</span><a href="">高考后留学日本名校随你选</a></li>
+								<li><span class="date">2011-11-11</span><a href="">教育培训行业优势资源推介</a></li>
+								<li><span class="date">2011-11-11</span><a href="">即刻预约今年最后一场教育展</a></li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">jQuery(".slideTxtBox").slide({effect:"left"});</script>
+		</div>
+
+		<div class="js">
+			<strong>js调用：</strong><span>jQuery(".slideTxtBox").slide(<i>{effect:"left"}</i>);</span>
+		</div>
+
+		<div class="css">
+			<strong>css代码：</strong>
+<blockquote>
+	<ol class="dp-css">
+		<li class="alt"><span><span class="comment">/*&nbsp;通用信息列表_普通式&nbsp;*/</span><span>&nbsp;</span></span></li>
+		<li><span>.infoList&nbsp;li{&nbsp;<span class="keyword">height</span><span>:</span><span class="value">24px</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">24px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.infoList&nbsp;li&nbsp;.date{&nbsp;<span class="keyword">float</span><span>:</span><span class="value">right</span><span>;&nbsp;</span><span class="keyword">color</span><span>:</span><span class="value">#999</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>&nbsp;</span></li>
+		<li class="alt"><span><span class="comment">/*&nbsp;文本切换盒子&nbsp;-&nbsp;公用类&nbsp;*/</span><span>&nbsp;</span></span></li>
+		<li><span>.slideTxtBox{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">450px</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ddd</span><span>;&nbsp;</span><span class="keyword">text-align</span><span>:</span><span class="value">left</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.slideTxtBox&nbsp;.hd{&nbsp;<span class="keyword">height</span><span>:</span><span class="value">30px</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">30px</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#f4f4f4</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">0&nbsp;20px</span><span>;&nbsp;</span><span class="keyword">border-bottom</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ddd</span><span>;&nbsp;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.slideTxtBox&nbsp;.hd&nbsp;ul{&nbsp;<span class="keyword">float</span><span>:</span><span class="value">left</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;left:</span><span class="value">20px</span><span>;&nbsp;top:</span><span class="value">-1px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">32px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.slideTxtBox&nbsp;.hd&nbsp;ul&nbsp;li{&nbsp;<span class="keyword">float</span><span>:</span><span class="value">left</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">0&nbsp;15px</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.slideTxtBox&nbsp;.hd&nbsp;ul&nbsp;li.on{&nbsp;<span class="keyword">height</span><span>:</span><span class="value">30px</span><span>;&nbsp;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#fff</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ddd</span><span>;&nbsp;</span><span class="keyword">border-bottom</span><span>:</span><span class="value">2px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#fff</span><span>;&nbsp;</span><span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.slideTxtBox&nbsp;.bd{&nbsp;<span class="keyword">padding</span><span>:</span><span class="value">15px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.slideTxtBox&nbsp;.bd&nbsp;ul{&nbsp;<span class="keyword">padding</span><span>:</span><span class="value">10px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.slideTxtBox&nbsp;.tempWrap{&nbsp;<span class="keyword">margin</span><span>:</span><span class="value">15px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+	</ol>
+</blockquote>
+
+		</div>
+
+	</div>
+<!-- content E -->
+</body>
+</html>

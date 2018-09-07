@@ -1,0 +1,92 @@
+html,
+body {
+  background-color: white;
+}
+.showcase {
+  padding-bottom: 100px;
+}
+.showcase .sc-header {
+  position: relative;
+}
+.showcase .sc-header h1 {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  margin-top: -20px;
+  font-size: 28px;
+  line-height: 40px;
+  color: white;
+  text-align: center;
+  z-index: 1;
+}
+.showcase .sc-body #myTabs {
+  display: flex;
+  justify-content: center;
+}
+.showcase .sc-body #myTabs li {
+  padding: 15px 20px;
+  line-height: 28px;
+  font-size: 16px;
+}
+.showcase .sc-body #myTabs li a {
+  color: #464646;
+  background-color: transparent;
+  border: none;
+}
+.showcase .sc-body #myTabs .active a {
+  color: #f48cba;
+  background-color: transparent;
+  border: none;
+}
+.showcase .sc-body .line-div {
+  border-top: 2px solid #e0e0e0;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list {
+  display: flex;
+  justify-content: left;
+  flex-wrap: wrap;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item {
+  margin: 30px 10px 10px 10px;
+  width: 31%;
+  box-shadow: 0 0 3px #cccccc;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body {
+  border: 1px solid #e0e0e0;
+  border-top: none;
+  padding: 0 15px;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body h1 {
+  color: #101010;
+  line-height: 32px;
+  padding: 10px 0;
+  font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 42px;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body p {
+  font-size: 14px;
+  line-height: 30px;
+  padding: 5px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 40px;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body h4 {
+  display: inline-block;
+  border-top: 1px solid #a1a1a1;
+  line-height: 40px;
+  font-size: 12px;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body h5 {
+  font-size: 12px;
+  line-height: 40px;
+  border-top: 1px solid #cccccc;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item-hover {
+  box-shadow: 0 0 10px gray;
+}

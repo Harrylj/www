@@ -41,6 +41,11 @@
   line-height: 1.333333rem;
   text-align: center;
 }
+.daily-clear .dc-bottom li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
 .daily-clear .dc-bottom li:nth-child(1) {
   width: 40%;
   background-color: white;

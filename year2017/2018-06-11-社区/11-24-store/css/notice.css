@@ -1,0 +1,48 @@
+.notice {
+  padding: 0.066666rem 0.266666rem;
+}
+.notice .n-item {
+  background-color: white;
+  border-radius: 0.106666rem;
+  padding-left: 1.333333rem;
+  padding-bottom: 0.2rem;
+  background-image: url(../images/icon/notice-icon-01.png);
+  background-repeat: no-repeat;
+  background-size: 0.666666rem 0.666666rem;
+  background-position: 0.266666rem 0.266666rem;
+  margin: 0.266666rem 0;
+}
+.notice .n-item h1 {
+  display: flex;
+  justify-content: space-between;
+  color: black;
+  line-height: 1.066666rem;
+  border-bottom: 1px solid #CCCCCC;
+  font-size: 16px;
+  padding-right: 0.2rem;
+}
+.notice .n-item h1 .ni-date {
+  color: #969696;
+  font-size: 14px;
+}
+.notice .n-item p {
+  padding-right: 0.2rem;
+  color: black;
+  line-height: 0.666666rem;
+  font-size: 14px;
+}
+.notice-detail {
+  padding: 0.266666rem;
+}
+.notice-detail h1 {
+  font-size: 18px;
+  line-height: 1.066666rem;
+  color: black;
+  text-align: center;
+}
+.notice-detail p {
+  font-size: 14px;
+  line-height: 0.666666rem;
+  margin-bottom: 0.2rem;
+  color: #333333;
+}

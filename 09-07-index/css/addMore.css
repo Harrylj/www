@@ -1,0 +1,187 @@
+* {
+  list-style: none;
+}
+
+
+/* 《左上角滚动 */
+
+.slideBox {
+  width: 653px;
+  height: 380px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slideBox .hd {
+  height: 15px;
+  /*overflow: hidden;*/
+  position: absolute;
+  right: 50px;
+  bottom: 10px;
+  z-index: 1;
+}
+
+.slideBox .hd ul {
+  overflow: hidden;
+  zoom: 1;
+  float: left;
+  margin: 0;
+}
+
+.slideBox .hd ul li {
+  float: left;
+  margin-right: 5px;
+  width: 15px;
+  height: 15px;
+  line-height: 14px;
+  text-align: center;
+  color: transparent;
+  background: #D1D1D1;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.slideBox .hd ul li.on {
+  background: #fff;
+  color: transparent;
+}
+
+.slideBox .bd {
+  position: relative;
+  height: 100%;
+  z-index: 0;
+}
+
+.slideBox .bd img {
+  width: 100%;
+  height: 100%;
+}
+
+
+/* 左上角滚动 》*/
+
+.slideBox-02 {
+  width: 105%;
+  height: 100%;
+}
+
+
+/*《滚动03*/
+.tempWrap {
+  /*width: 100%!important;*/
+}
+
+.topLoop {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.topLoop .hd {
+  overflow: hidden;
+  height: 30px;
+  background: #f4f4f4;
+}
+
+.topLoop .hd .prev,
+.topLoop .hd .next {
+  display: block;
+  width: 9px;
+  height: 10px;
+  line-height: 10px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  background: url("images/icoUp.gif") center no-repeat;
+}
+
+.topLoop .hd .next {
+  background: url("images/icoDown.gif") center no-repeat;
+}
+
+.topLoop .hd ul {
+  float: right;
+  overflow: hidden;
+  zoom: 1;
+  margin-top: 10px;
+}
+
+.topLoop .hd ul li {
+  position: relative;
+  _display: inline;
+  float: left;
+  width: 10px;
+  height: 10px;
+  overflow: hidden;
+  background: #ccc;
+  margin-right: 10px;
+  text-indent: -999px;
+  cursor: pointer;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  behavior: url(../PIE.htc);
+}
+
+.topLoop .hd ul li.on {
+  background: #f00;
+}
+
+.topLoop .bd {
+  padding: 10px;
+}
+
+.topLoop .bd ul {
+  overflow: hidden;
+  zoom: 1;
+}
+.slide-03 li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 36px;
+  vertical-align: middle;
+  
+}
+/*滚动03》*/
+
+/*《滚动04*/
+
+
+        /* 通用图片列表_普通式 */ 
+        .picList li{ width:174px;  } 
+        .picList .pic{ text-align:center; line-height:0px;  } 
+        .picList .pic img{ width:160px; height:120px; padding:2px; }
+        .picList .pic img:hover{box-shadow: 0 0 4px #CCCCCC;} 
+        .picList .pic a:hover img{ border-color:#f00;  } 
+        .picList .title{ line-height:24px;   } 
+         
+        /* 多个左滚动 - 公用类 */ 
+        .leftLoop{ overflow:hidden; position:relative;  } 
+        .leftLoop .hd{position:relative;height:30px; background:#f4f4f4;  } 
+        .leftLoop  .prev,.leftLoop .next{ position: absolute; display:block;  width:26px; height:26px;   overflow:hidden;   top: 50%;
+             cursor:pointer; no-repeat; margin-top: -13px;}
+        .leftLoop .prev {left: 10px;
+          background-image: url(../img/btn-left.png);
+        }
+        .leftLoop .next{right: 10px;
+          background-image: url(../img/btn-right.png);
+        }
+        .leftLoop  .prev:hover {left: 10px;
+          background-image: url(../img/btn-left-hover.png);
+        }
+        .leftLoop .next:hover{right: 10px;
+          background-image: url(../img/btn-right-hover.png);
+        }  
+        .leftLoop .hd ul{ float:right; overflow:hidden; zoom:1; margin-top:10px;  } 
+        .leftLoop .hd ul li{ position:relative; _display:inline; float:left;  width:10px; height:10px; overflow:hidden; background:#ccc; margin-right:10px; text-indent:-999px; cursor:pointer; 
+            -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; behavior: url(PIE.htc);} 
+        .leftLoop .hd ul li.on{ background:#f00;  } 
+        .leftLoop .bd{ padding:10px 30px;   } 
+        .leftLoop .bd ul{ overflow:hidden; zoom:1; } 
+        .leftLoop .bd ul li{ margin:0 10px; text-align:center; float:left;display:_inline;  } 
+
+
+/*滚动04》*/

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dailyClear.css"/>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>我的预约</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<!--
+    	作者：648267773@qq.com
+    	时间：2017-12-14
+    	描述：.ao-nav-click:选中
+    -->
+	<div class="all-order">
+		<ul class="ao-nav">
+			<li class="ao-nav-click">全部</li>
+			<li>日常保洁</li>
+			<li>家电清洗</li>
+			<li>家电维修</li>
+		</ul>
+		<!--
+    	作者：648267773@qq.com
+    	时间：2017-12-14
+    	描述：.aol-goods:所有的预约
+    		  .aol-two:日常保洁
+    		  .aol-three:家电清洗
+    		  .aol-four:家电维修
+    		  .aol-type-true:预约成功
+    		  .aol-type-false:取消订单
+    		  .aol-type-ok:已完成
+    -->
+		<div class="ao-list">
+			<div class="aol-goods aol-type-true aol-two">
+				<div class="aolg-header">
+					<p>预约时间:<span>2017-0908 10:00-12:00</span></p>
+					<p>预约成功</p>
+				</div>
+				<div class="con-list-goods">
+					<img src="images/more/home-care-02.png"/>
+					<h1>家电维修2</h1>
+					<h2><p>仅限小区活动使用</p><span>&yen;40.00</span></h2>
+				</div>
+				<div class="aolg-footer">
+					<button class="aol-btn aol-btn-false" data-toggle="modal" data-target="#myModalAll">取消预约</button>
+					<button class="aol-btn aol-btn-again" data-toggle="modal" data-target="#myModalAll">再次预约</button>
+					<button class="aol-btn aol-btn-del" data-toggle="modal" data-target="#myModalAll">删除预约</button>
+				</div>
+			</div>
+			<div class="aol-goods aol-type-false aol-three">
+				<div class="aolg-header">
+					<p>预约时间:<span>2017-0908 10:00-12:00</span></p>
+					<p>取消订单</p>
+				</div>
+				<div class="con-list-goods">
+					<img src="images/more/home-care-02.png"/>
+					<h1>家电维修3</h1>
+					<h2><p>仅限小区活动使用</p><span>&yen;40.00</span></h2>
+				</div>
+				<div class="aolg-footer">
+					<button class="aol-btn aol-btn-del" data-toggle="modal" data-target="#myModalAll">删除预约</button>
+				</div>
+			</div>
+			<div class="aol-goods aol-type-ok aol-four">
+				<div class="aolg-header">
+					<p>预约时间:<span>2017-0908 10:00-12:00</span></p>
+					<p>已完成</p>
+				</div>
+				<div class="con-list-goods">
+					<img src="images/more/home-care-02.png"/>
+					<h1>家电维修4</h1>
+					<h2><p>仅限小区活动使用</p><span>&yen;40.00</span></h2>
+				</div>
+				<div class="aolg-footer">
+					<button class="aol-btn aol-btn-again" data-toggle="modal" data-target="#myModalAll">再次预约</button>
+					<button class="aol-btn aol-btn-del" data-toggle="modal" data-target="#myModalAll">删除预约</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Modal是否确定 -->
+	<div class="modal fade" id="myModalAll" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-body">
+	        您确定操作吗
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-true" data-dismiss="modal">确定</button>
+	      </div>
+	    </div>
+	    <div class="modal-content" style="margin-top: 0.2rem;">
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-false btn-default" data-dismiss="modal">取消</button>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		
+			$(function(){
+				$('.ao-nav').children('li').on('click',function(){
+					var click_class = 'ao-nav-click',
+						this_index = $(this).index(),
+						all = $('.aol-goods'),  //全部
+						two = $('.aol-two'),	//日常保洁
+						three = $('.aol-three'), //家电清洗
+						four = $('.aol-four');   //家电维修
+					$(this).addClass(click_class).siblings().removeClass(click_class);
+					switch (this_index) {
+						//全部
+						case 0:
+							all.show()
+							break;
+						//日常保洁
+						case 1:
+							all.hide();
+							two.show();
+							break;
+						//家电清洗
+						case 2:
+							all.hide();
+							three.show();
+							break;
+						//家电维修
+						case 3:
+							all.hide();
+							four.show();
+							break;
+						default:
+							alert('数据错误，请重新加载数据！');
+					}
+				})
+			})
+
+
+	
+	</script>
+</body>
+</html>

@@ -17,11 +17,12 @@ paymentDF--------电费
 paymentRQF-------燃气费
 paymentSF--------水费
 paymentWYF-------物业费
+prestoreWYF------预存物业费
 
 community--------会员绑定
 communityLoginYes-------会员绑定户主入驻
 communityLoginNo--------会员绑定非户主入驻
-userCenter--------个人中心
+index---userCenter--------个人中心
 nearThePreferential-----附近优惠
 integralParadise--------积分乐园
 integralRules-----积分规则

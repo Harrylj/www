@@ -1,0 +1,54 @@
+.bg-img {
+  background-repeat: no-repeat;
+}
+.bg-center {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.appliances-clear {
+  padding-top: 0.266666rem;
+}
+.ac-list-goods {
+  position: relative;
+  padding: 0.266666rem 0.266666rem 0.266666rem 3.2rem ;
+  min-height: 2.533333rem;
+  margin-bottom: 0.133333rem;
+  background-color: white;
+}
+.ac-list-goods .acl-img {
+  position: absolute;
+  left: 0.266666rem;
+  right: 0.266666rem;
+  width: 2.666666rem;
+  height: 2rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ac-list-goods .acl-img img {
+  display: none;
+}
+.ac-list-goods h1 {
+  font-size: 16px;
+  line-height: 0.666666rem;
+  overflow: hidden;
+  color: black;
+}
+.ac-list-goods h2 {
+  font-size: 14px;
+  line-height: 0.666666rem;
+  color: #787878;
+  overflow: hidden;
+}
+.ac-list-goods p {
+  line-height: 0.666666rem;
+}
+.ac-list-goods p span {
+  font-size: 16px;
+  color: #F22424;
+}
+.ac-list-goods p s {
+  font-size: 12px;
+  color: #BCBCBC;
+}

@@ -1,3 +1,8 @@
+.index {
+  padding-top: 0;
+  background: none !important;
+  padding-bottom: 0;
+}
 .cu-main {
   background-color: white;
 }

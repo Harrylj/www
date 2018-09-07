@@ -1,0 +1,438 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="Super Slide,javascript,jQuery,js,图片滑动特效,图滚动特效,标签切换特效">
+<meta name="Description" content="Super Slide,javascript,jQuery,js,图片滑动特效,图滚动特效,标签切换特效">
+<title>SuperSlide</title>
+<script type="text/javascript" src="jquery.pack.js"></script>
+<script type="text/javascript" src="jQuery.blockUI.js"></script>
+<link href="default.css" rel="stylesheet" type="text/css">
+<link href="demo.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div id="topBar">
+	<span class="nav">
+		<a href="index.html">返回首页</a>|<a id="showParam" href="javascript:(void)">查看参数</a>|<a href="demo.html">demo展示</a>|<a id="showContact" href="javascript:(void)">联系作者</a>
+	</span>
+	<h1 class="SuperSlide" id="logo"><a href="index.html">SuperSlide 1.2</a></h1><span class="author"> -- 大话主席</span>
+</div>
+
+<!-- content S -->
+<div id="content">
+		<table class="param" border="0" cellspacing="0" cellpadding="0">
+		  <tr>
+		    <th width="100">参数</th>
+		    <th width="80">默认值</th>
+			<th>说明</th>
+		  </tr>
+		  <tr>
+		    <td class="t">effect</td>
+			<td class="t">fade</td>
+		    <td class="intro">效果 ||  fade：渐显； ||   top：上滚动；||   left：左滚动；||  topLoop：上循环滚动；||   leftLoop：左循环滚动；||  topMarquee：上无缝循环滚动；||   leftMarquee：左无缝循环滚动；</td>
+		  </tr>
+
+		  <tr class="new">
+		    <td class="t">autoPage:</td>
+			<td class="t">false</td>
+		    <td class="intro">系统自动分页（v1.2新增） &nbsp;&nbsp;<a class="link" target="_balnk" href="demoEffect/6.1-autoPage-Intro.html">&gt;&gt;详解</a></td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">titCell:</td>
+			<td class="t">.hd li</td>
+		    <td class="intro">导航元素--鼠标的触发元素 &nbsp;&nbsp;<a class="link" target="_balnk" href="images/cellIntro.gif">&gt;&gt;图解</a></td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">mainCell</td>
+			<td class="t">.bd</td>
+		    <td class="intro">内容元素的父层对象&nbsp;&nbsp;<a class="link" target="_balnk" href="images/cellIntro.gif">&gt;&gt;图解</a></td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">autoPlay</td>
+			<td class="t">false</td>
+		    <td class="intro">自动运行</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">interTime</td>
+			<td class="t">2500（毫秒）</td>
+		    <td class="intro">自动运行间隔。当effect为无缝滚动的时候，相当于运行速度。</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">delayTime</td>
+			<td class="t">500（毫秒）</td>
+		    <td class="intro">效果持续时间（一次效果执行所用的时间长度）。</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">defaultIndex</td>
+			<td class="t">0</td>
+		    <td class="intro">默认的当前位置索引。0是第一个； defaultIndex:1 时，相当于从2个开始执行</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">trigger</td>
+			<td class="t">mouseover</td>
+		    <td class="intro">触发方式 || mouseover：鼠标移过触发；|| click：鼠标点击触发；</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">scroll</td>
+			<td class="t">1</td>
+		    <td class="intro">每次滚动个数。</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">vis</td>
+			<td class="t">1</td>
+		    <td class="intro">visible，可视范围个数，当内容个数少于可视个数的时候，不执行效果。</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">prevCell</td>
+			<td class="t">.prev</td>
+		    <td class="intro">前一个按钮元素。</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">.nextCell</td>
+			<td class="t">.next</td>
+		    <td class="intro">后一个按钮元素。</td>
+		  </tr>
+
+		  <tr>
+		    <td class="t">titOnClassName</td>
+			<td class="t">on</td>
+		    <td class="intro">当前位置自动增加的class名称</td>
+		  </tr>
+
+
+
+		</table>
+		<div class="contact">
+		 大话主席 QQ：1216419047。 有bug，call我。
+		</div>
+		<script type="text/javascript">
+		jQuery("#showContact").click(function(){ jQuery(".contact").toggle(); });
+		jQuery("#showParam").click(function(){ jQuery(".param").toggle(); });</script>
+
+
+
+
+
+		<!-- 渐显效果 S -->
+		<div class="demoBox">
+			<div class="hd">
+				<em>1</em><h3>FadeIn Effect<strong>渐显效果</strong></h3>
+			</div>
+			<div class="bd">
+				<ul>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/1.1-fadeIn-txt.jpg" />
+						</div>
+						<div class="title">渐显-文本（默认效果）</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/1.2-fadeIn-pic.jpg" />
+						</div>
+						<div class="title">渐显-图片</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 渐显效果 E -->
+
+
+		<!-- 单个滚动效果 S -->
+		<div class="demoBox">
+			<div class="hd">
+				<em>2</em><h3>Single Slide Effect<strong>单个滚动效果</strong></h3>
+			</div>
+			<div class="bd">
+				<ul>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.1-singleSlideLeft-txt.jpg" />
+						</div>
+						<div class="title">单个（左）滚动-文本</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.2-singleSlideLeft-pic.jpg" />
+						</div>
+						<div class="title">单个（左）滚动-图片</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.3-singleSlideTop-txt.jpg" />
+						</div>
+						<div class="title">单个（上）滚动-文本</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.4-singleSlideTop-pic.jpg" />
+						</div>
+						<div class="title">单个（上）滚动-图片</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.5-singleSlideLeftLoop-txt.jpg" />
+						</div>
+						<div class="title">单个循环（左）滚动-文本</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.6-singleSlideLeftLoop-pic.jpg" />
+						</div>
+						<div class="title">单个循环（左）滚动-图片</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.7-singleSlideTopLoop-txt.jpg" />
+						</div>
+						<div class="title">单个循环（上）滚动-文本</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/2.8-singleSlideTopLoop-pic.jpg" />
+						</div>
+						<div class="title">单个循环（上）滚动-图片</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 单个滚动效果 E -->
+
+
+		<!-- 多个滚动 S -->
+		<div class="demoBox">
+			<div class="hd">
+				<em>3</em><h3>Multi Slide Effect<strong>多个循环滚动</strong></h3>
+				<span class="notice">
+					<i>特别说明</i>
+					<p>1、当内容个数少于可视个数的时候，不执行效果。例如只有1张图片，但可视个数为3（vis:3）。</br>
+						  2、现在是全按钮开启情况，不需要按钮的时候，只要删除按钮html或者隐藏即可。
+					</p>
+				</span>
+			</div>
+			<div class="bd">
+				<ul>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/3.1-multiSlideLeftLoop-pic.jpg" />
+						</div>
+						<div class="title">多个循环（左）滚动- 图片</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/3.2-multiSlideTopLoop-pic.jpg" />
+						</div>
+						<div class="title">多个循环（上）滚动- 图片</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/3.3-multiSlideLeftLoop-txt.jpg" />
+						</div>
+						<div class="title">多个循环（左）滚动- 文本</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/3.4-multiSlideTopLoop-txt.jpg" />
+						</div>
+						<div class="title">多个循环（上）滚动- 文本</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/3.5-multiSlideTopLoop-txt.jpg" />
+						</div>
+						<div class="title">单个循环（上）滚动- 文本</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 多图滚动 E -->
+
+
+		<!-- 无缝滚动 S -->
+		<div class="demoBox">
+			<div class="hd">
+				<em>4</em><h3>Marquee Effect<strong>无缝循环滚动</strong></h3>
+				<span class="notice">
+					<i>特别说明</i>
+					<p>1、当内容个数少于可视个数的时候，不执行效果。例如只有1张图片，但可视个数为3（vis:3）。</br>
+						  2、现在是全按钮开启情况，不需要按钮的时候，只要删除按钮html或者隐藏即可。
+					</p>
+				</span>
+			</div>
+			<div class="bd">
+				<ul>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/4.1-leftMarquee-pic.jpg" />
+						</div>
+						<div class="title">无缝循环（左）滚动 - 图片</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/4.2-topMarquee-pic.jpg" />
+						</div>
+						<div class="title">无缝循环（上）滚动- 图片</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/4.3-leftMarquee-txt.jpg" />
+						</div>
+						<div class="title">无缝循环（左）滚动- 文本</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/4.4-topMarquee-txt.jpg" />
+						</div>
+						<div class="title">无缝循环（上）滚动- 文本</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 无缝滚动 E -->
+
+		<!-- 衍生效果 S -->
+		<div class="demoBox">
+			<div class="hd">
+				<em>5</em><h3>More Idea<strong>衍生效果</strong></h3>
+				<span class="notice">
+					<i>特别说明</i>
+					<p>1、使用多重slide的时候，注意各个slide的调用顺序。</br>
+						  2、使用多重slide的时候，注意外层slide的mianCell、titCell、prevCell、nextCell要与内层slide的不同。
+					</p>
+				</span>
+			</div>
+			<div class="bd">
+				<ul>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/5.1-picBtnLeft.jpg" />
+						</div>
+						<div class="title">图片按钮（左）滚动</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/5.2-picBtnTopLoop.jpg" />
+						</div>
+						<div class="title">图片按钮（上）循环滚动</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/5.3-doubleSlide-txt.jpg" />
+						</div>
+						<div class="title">双重slide-文本滚动</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/5.4-doubleSlide-gallery.jpg" />
+						</div>
+						<div class="title">双重slide-相册效果（不完美）</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/5.5-doubleSlide-Mtime.jpg" />
+						</div>
+						<div class="title">双重slide-仿Mtime</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/5.6-focusNew.jpg" />
+						</div>
+						<div class="title">常见焦点图-立刻显示消失</div>
+					</li>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/5.7-tv-slideBox.jpg" />
+						</div>
+						<div class="title">视频网站大焦点图</div>
+					</li>
+					<li>
+						<div class="pic">
+							<img src="demoEffect/yourIdea.jpg" />
+						</div>
+						<div class="title">期待你的参与</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 无缝滚动 E -->
+
+		<!-- 无缝滚动 S -->
+		<div class="demoBox">
+			<div class="hd">
+				<em>6</em><h3>Special<strong>特殊说明</strong></h3>
+				<span class="notice">
+					<i>这是什么？</i>
+					<p>这里会讲解一些特殊参数，特效效果使用等。</p>
+				</span>
+			</div>
+			<div class="bd">
+				<ul>
+					<li class="new">
+						<em>new</em>
+						<div class="pic">
+							<img src="demoEffect/6.1-autoPage-Intro.jpg" />
+						</div>
+						<div class="title">autoPage自动分页说明</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 无缝滚动 E -->
+
+
+</div>
+<!-- content E -->
+
+
+<div id="footer">Copyright ©2011 大话主席 </div>
+
+
+
+<!-- 默认隐藏 展示盒子 -->
+<div id="showDemoBox">
+	<div class="hd"><em>×</em><h3></h3></div>
+	<div class="bd">
+		<iframe id="iframe" src="" scrolling="no" frameborder="0"  id="win" name="win"  ></iframe>
+	</div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript"> 
+
+	var demo=$("#showDemoBox");
+	var iframe = demo.find("#iframe");
+	$(".demoBox .notice").hover(function(){ $(this).addClass("noticeOn") },function(){ $(this).removeClass("noticeOn") });
+	$(".demoBox li").each(function(){ $(this).attr("title",$(this).find(".title").text()) });
+	$(".demoBox li").click(function() { 
+		   demo.find("h3").text( $(this).find(".title").text() );
+		   iframe.attr( "src", $(this).find("img").attr("src").replace(".jpg",".html") );
+
+           $.blockUI({ message:demo,css:{ 
+			    width: '1000px',
+				left: ($(window).width() - 1000) / 2 + 'px'
+		   } }); 
+		 //  $(".blockOverlay").click(function(){ $.unblockUI();});
+		   demo.find("em").click(function(){ $.unblockUI();});
+        }); 
+
+</script>

@@ -1,5 +1,10 @@
+.index{
+    padding-top: 0;
+    background:none !important;
+    padding-bottom: 0;
+}
 html,body{
-    background-color: white;
+    background-color: #F5F5F5;
 }
 .showcase{
     padding-bottom: 100px;
@@ -20,6 +25,7 @@ html,body{
     }
     .sc-body{
         #myTabs{
+            background-color: white;
             display: flex;
             justify-content: center;
             li{
@@ -27,14 +33,14 @@ html,body{
                 line-height: 28px;
                 font-size: 16px;
                 a{
-                    color: #464646;
+                    color: #969696;
                     background-color: transparent;
                     border:none;
                 }
             }
             .active{
                 a{
-                    color: #f48cba;
+                    color: #202020;
                     background-color: transparent;
                     border:none;
                 }
@@ -42,10 +48,23 @@ html,body{
             }
         }
         .line-div{
-            border-top: 2px solid #e0e0e0;
+//          border-top: 2px solid #e0e0e0;
         }
         .tab-content{
             .tab-pane{
+                position: relative;
+                .sc-list:before{
+                    position: relative;
+                    width: 33%;
+                    content: ' ';
+                    font-size: 0;
+                    display: none;
+                }
+                .sc-item-first{
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                }
                 .sc-list{
                     display: flex;
                     justify-content: left;
@@ -53,10 +72,14 @@ html,body{
                     .sc-item{
                         margin: 30px 10px 10px 10px;
                         width: 31%;
-                        box-shadow: 0 0 3px #cccccc;
+                        background-color: white;
+//                      box-shadow: 0 0 3px #cccccc;
+                        img{
+                            height:230px;
+                        }
                         .sci-body{
-                            border: 1px solid #e0e0e0;
-                            border-top: none;
+//                          border: 1px solid #e0e0e0;
+//                          border-top: none;
                             padding: 0 15px;
                             h1{
                                 color: #101010;
@@ -72,10 +95,12 @@ html,body{
                                 font-size: 14px;
                                 line-height: 30px;
                                 padding: 5px 0;
-                                white-space: nowrap;
+//                              white-space: nowrap;
+//                              overflow: hidden;
+//                              text-overflow: ellipsis;
+                                height: 70px;
                                 overflow: hidden;
-                                text-overflow: ellipsis;
-                                height: 40px;
+                                color: #969696;
                             }
                             h4{
                                 display: inline-block;
@@ -86,7 +111,8 @@ html,body{
                             h5{
                                 font-size: 12px;
                                 line-height: 40px;
-                                border-top: 1px solid #cccccc;
+                                color: #969696;
+                                border-top: 1px solid #eaeaea;
                             }
                         }
                     }

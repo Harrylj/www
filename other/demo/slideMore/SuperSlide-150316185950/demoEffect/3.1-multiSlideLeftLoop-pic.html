@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Super Slide</title>
+<script type="text/javascript" src="../jquery.pack.js"></script>
+<script type="text/javascript" src="../jQuery.blockUI.js"></script>
+<script type="text/javascript" src="../jquery.SuperSlide.js"></script>
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link href="../demo.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!-- content S -->
+	<div id="demoContent">
+		<div class="effect" style="width:460px">
+					<div class="leftLoop">
+						<div class="hd">
+							<a class="next"></a>
+							<ul><li>1</li><li>2</li><li>3</li></ul>
+							<a class="prev"></a>
+						</div>
+						<div class="bd">
+							<ul class="picList">
+								<li>
+									<div class="pic"><a href=""><img src="images/ad1.jpg" /></a></div>
+									<div class="title"><a href="">效果图1</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href=""><img src="images/ad2.jpg" /></a></div>
+									<div class="title"><a href="">效果图2</a></div>
+								</li>
+								<li>
+									<div class="pic"><a href=""><img src="images/ad3.jpg" /></a></div>
+									<div class="title"><a href="">效果图3</a></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">jQuery(".leftLoop").slide({ mainCell:".bd ul",effect:"leftLoop",vis:3,scroll:3,autoPlay:true});</script>
+		</div>
+		
+
+		<div class="js">
+			<strong>js调用：</strong><span>jQuery(".leftLoop").slide( <i>{ mainCell:".bd ul",effect:"leftLoop",vis:3,scroll:3,autoPlay:true} <i> );</span>
+		</div>
+
+		<div class="css">
+			<strong>css代码：</strong>
+<blockquote>
+	<ol class="dp-css">
+		<li class="alt"><span><span class="comment">/*&nbsp;通用图片列表_普通式&nbsp;*/</span><span>&nbsp;</span></span></li>
+		<li><span>.picList&nbsp;li{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">126px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picList&nbsp;.pic{&nbsp;<span class="keyword">text-align</span><span>:</span><span class="value">center</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">0px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picList&nbsp;.pic&nbsp;img{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">120px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">90px</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">2px</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ccc</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picList&nbsp;.pic&nbsp;a:hover&nbsp;img{&nbsp;<span class="keyword">border-color</span><span>:</span><span class="value">#f00</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picList&nbsp;.title{&nbsp;<span class="keyword">line-height</span><span>:</span><span class="value">24px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>&nbsp;</span></li>
+		<li><span><span class="comment">/*&nbsp;多个左滚动&nbsp;-&nbsp;公用类&nbsp;*/</span><span>&nbsp;</span></span></li>
+		<li class="alt"><span>.leftLoop{&nbsp;<span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ccc</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.leftLoop&nbsp;.hd{&nbsp;<span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">30px</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#f4f4f4</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.leftLoop&nbsp;.hd&nbsp;.prev,.leftLoop&nbsp;.hd&nbsp;.next{&nbsp;<span class="keyword">display</span><span>:</span><span class="value">block</span><span>;&nbsp;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">5px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">9px</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">10px</span><span>;&nbsp;</span><span class="keyword">float</span><span>:</span><span class="value">right</span><span>;&nbsp;</span><span class="keyword">margin-right</span><span>:</span><span class="value">10px</span><span>;&nbsp;</span><span class="keyword">margin-top</span><span>:</span><span class="value">10px</span><span>;&nbsp;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;&nbsp;&nbsp;</span></span></li>
+		<li><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;demoEffect/images/icoLeft.gif&quot;</span><span>)&nbsp;</span><span class="value">no-repeat</span><span>;}&nbsp;</span></span></li>
+		<li class="alt"><span>.leftLoop&nbsp;.hd&nbsp;.next{&nbsp;<span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;demoEffect/images/icoRight.gif&quot;</span><span>)&nbsp;</span><span class="value">no-repeat</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.leftLoop&nbsp;.hd&nbsp;ul{&nbsp;<span class="keyword">float</span><span>:</span><span class="value">right</span><span>;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;zoom:</span><span class="value">1</span><span>;&nbsp;</span><span class="keyword">margin-top</span><span>:</span><span class="value">10px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.leftLoop&nbsp;.hd&nbsp;ul&nbsp;li{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;</span><span class="keyword">_display</span><span>:</span><span class="value">inline</span><span>;&nbsp;</span><span class="keyword">float</span><span>:</span><span class="value">left</span><span>;&nbsp;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">10px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">10px</span><span>;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#ccc</span><span>;&nbsp;</span><span class="keyword">margin-right</span><span>:</span><span class="value">10px</span><span>;&nbsp;</span><span class="keyword">text-indent</span><span>:</span><span class="value">-999px</span><span>;&nbsp;</span><span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;</span></span></li>
+		<li><span>&nbsp;&nbsp;&nbsp;&nbsp;-webkit-border-radius:&nbsp;<span class="value">10px</span><span>;&nbsp;-moz-border-radius:&nbsp;</span><span class="value">10px</span><span>;&nbsp;border-radius:&nbsp;</span><span class="value">10px</span><span>;&nbsp;behavior:&nbsp;</span><span class="value">url</span><span>(PIE.htc);}&nbsp;</span></span></li>
+		<li class="alt"><span>.leftLoop&nbsp;.hd&nbsp;ul&nbsp;li.on{&nbsp;<span class="keyword">background</span><span>:</span><span class="value">#f00</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.leftLoop&nbsp;.bd{&nbsp;<span class="keyword">padding</span><span>:</span><span class="value">10px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.leftLoop&nbsp;.bd&nbsp;ul{&nbsp;<span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;zoom:</span><span class="value">1</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.leftLoop&nbsp;.bd&nbsp;ul&nbsp;li{&nbsp;<span class="keyword">margin</span><span>:</span><span class="value">0&nbsp;10px</span><span>;&nbsp;</span><span class="keyword">text-align</span><span>:</span><span class="value">center</span><span>;&nbsp;</span><span class="keyword">float</span><span>:</span><span class="value">left</span>;<span class="keyword">display</span><span>:</span><span class="value">_inline</span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+	</ol>
+</blockquote>
+
+		</div>
+
+	</div>
+<!-- content E -->
+</body>
+</html>

@@ -1,6 +1,11 @@
+.index {
+  padding-top: 0;
+  background: none !important;
+  padding-bottom: 0;
+}
 html,
 body {
-  background-color: white;
+  background-color: #F5F5F5;
 }
 .showcase {
   padding-bottom: 100px;
@@ -21,6 +26,7 @@ body {
   z-index: 1;
 }
 .showcase .sc-body #myTabs {
+  background-color: white;
   display: flex;
   justify-content: center;
 }
@@ -30,17 +36,29 @@ body {
   font-size: 16px;
 }
 .showcase .sc-body #myTabs li a {
-  color: #464646;
+  color: #969696;
   background-color: transparent;
   border: none;
 }
 .showcase .sc-body #myTabs .active a {
-  color: #f48cba;
+  color: #202020;
   background-color: transparent;
   border: none;
 }
-.showcase .sc-body .line-div {
-  border-top: 2px solid #e0e0e0;
+.showcase .sc-body .tab-content .tab-pane {
+  position: relative;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list:before {
+  position: relative;
+  width: 33%;
+  content: ' ';
+  font-size: 0;
+  display: none;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-item-first {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .showcase .sc-body .tab-content .tab-pane .sc-list {
   display: flex;
@@ -50,11 +68,12 @@ body {
 .showcase .sc-body .tab-content .tab-pane .sc-list .sc-item {
   margin: 30px 10px 10px 10px;
   width: 31%;
-  box-shadow: 0 0 3px #cccccc;
+  background-color: white;
+}
+.showcase .sc-body .tab-content .tab-pane .sc-list .sc-item img {
+  height: 230px;
 }
 .showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body {
-  border: 1px solid #e0e0e0;
-  border-top: none;
   padding: 0 15px;
 }
 .showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body h1 {
@@ -71,10 +90,9 @@ body {
   font-size: 14px;
   line-height: 30px;
   padding: 5px 0;
-  white-space: nowrap;
+  height: 70px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  height: 40px;
+  color: #969696;
 }
 .showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body h4 {
   display: inline-block;
@@ -85,7 +103,8 @@ body {
 .showcase .sc-body .tab-content .tab-pane .sc-list .sc-item .sci-body h5 {
   font-size: 12px;
   line-height: 40px;
-  border-top: 1px solid #cccccc;
+  color: #969696;
+  border-top: 1px solid #eaeaea;
 }
 .showcase .sc-body .tab-content .tab-pane .sc-list .sc-item-hover {
   box-shadow: 0 0 10px gray;
