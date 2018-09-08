@@ -1,0 +1,323 @@
+/*.mip-share .c-share-list {
+				background: #fff;
+				padding: 17px 21px;
+				margin-top: 13px
+			}
+			
+			mip-share .c-share-list .c-flexbox,
+			mip-share .c-share-list .c-row {
+				width: auto;
+				display: -webkit-box;
+				-webkit-box-orient: horizontal;
+				-webkit-box-direction: normal;
+				-webkit-box-pack: justify;
+				-webkit-box-align: stretch;
+				-webkit-box-lines: single;
+				display: -webkit-flex;
+				-webkit-flex-direction: row;
+				-webkit-justify-content: space-between;
+				-webkit-align-items: stretch;
+				-webkit-align-content: flex-start;
+				-webkit-flex-wrap: nowrap
+			}
+			
+			mip-share .c-share-list .c-row {
+				margin-right: -1.81818182%;
+				margin-left: -1.81818182%
+			}
+			
+			mip-share .c-share-list .c-row-tight {
+				margin-right: -1px;
+				margin-left: 0
+			}
+			
+			mip-share .c-share-list .c-row-tile {
+				position: relative;
+				margin: 0 -0.21rem
+			}
+			
+			mip-share .c-share-list .c-row-tile .c-row {
+				padding: 0 .21rem
+			}
+			
+			mip-share .c-share-list .c-row-top {
+				position: relative;
+				margin-top: -0.1rem
+			}
+			
+			mip-share .c-share-list .c-row-top .c-row:first-child {
+				padding-top: .1rem
+			}
+			
+			mip-share .c-share-list .c-row-bottom {
+				position: relative;
+				margin-bottom: -0.08rem
+			}
+			
+			mip-share .c-share-list .c-row-bottom .c-row:last-child {
+				padding-bottom: .08rem
+			}
+			
+			mip-share .c-share-list .c-row *,
+			mip-share .c-share-list .c-row-tile *,
+			mip-share .c-share-list .c-row-top *,
+			mip-share .c-share-list .c-row-bottom * {
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box
+			}
+			
+			mip-share .c-share-list .c-span1,
+			mip-share .c-share-list .c-span2,
+			mip-share .c-share-list .c-span3,
+			mip-share .c-share-list .c-span4,
+			mip-share .c-share-list .c-span5,
+			mip-share .c-share-list .c-span6,
+			mip-share .c-share-list .c-span7,
+			mip-share .c-share-list .c-span8,
+			mip-share .c-share-list .c-span9,
+			mip-share .c-share-list .c-span10,
+			mip-share .c-share-list .c-span11,
+			mip-share .c-share-list .c-span12 {
+				position: relative;
+				min-height: 1px;
+				padding-right: 1.81818182%;
+				padding-left: 1.81818182%
+			}
+			
+			mip-share .c-share-list .c-span3 {
+				width: 25%;
+				-webkit-box-flex: 3;
+				-webkit-flex: 3 3 auto
+			}
+			
+			mip-share .c-share-list .c-img {
+				display: block;
+				width: 100%;
+				height: 0;
+				border: 0 none;
+				background: #f7f7f7 url(//m.baidu.com/static/search/image_default.png) center center no-repeat;
+				margin: .04rem 0
+			}
+			
+			mip-share .c-share-list .c-img img {
+				width: 100%
+			}
+			
+			mip-share .c-share-list .c-img-s {
+				padding-bottom: 100%
+			}
+			
+			mip-share .c-share-list {
+				overflow: hidden;
+				margin-top: 0;
+				-webkit-box-sizing: border-box;
+				box-sizing: border-box
+			}
+			
+			mip-share .c-share-list .c-line-clamp1 {
+				line-height: 30px
+			}
+			
+			mip-share .c-share-list .c-share-btn {
+				color: #333;
+				text-align: center;
+				font-size: 12px
+			}
+			
+			mip-share .c-share-list .c-share-btn .c-img {
+				background: #fff;
+				border: 1px solid #f0f0f0;
+				border-radius: 50%
+			}
+			
+			mip-share .c-share-cancel-btn {
+				border-color: #f0f0f0
+			}
+			
+			mip-share .c-share-wechat-tips {
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 999;
+				width: 100%;
+				height: 100%;
+				background: rgba(0, 0, 0, 0.6) url(//m.baidu.com/se/static/pmd/pmd/share/images/wxtips.png) right 10px top 10px no-repeat;
+				background-size: 50%
+			}
+			
+			mip-share .c-popup-wrapper .c-share-popup-modal {
+				background-color: #f0f0f0
+			}
+			
+			mip-share .c-share-popup-modal .c-popup-head {
+				display: none
+			}
+			
+			mip-share .c-share-popup-modal .c-popup-content {
+				margin: 0 auto;
+				padding: 21px
+			}
+			.khcgal_content ul li img {
+				width: 200px;
+				height: 200px
+			}
+			
+			;
+			@media screen and (max-width: 415px) {
+				.khcgal_content ul li img {
+					width: 100%;
+					height: 200px
+				}
+				;
+				.khcgal_content ul li span {
+					width: 180px;
+					left: 3px;
+				}
+				#nao {
+					font-size: 12px
+				}
+			}
+			
+			.zixunzhongxin {
+				margin-top: 50px
+			}
+			
+			.lw_1 {
+				height: 25px;
+			}
+			
+			._img>span {
+				margin: 0 40px;
+			}
+			
+			;
+			@media only screen and (max-width:600px) {
+				._img>span {
+					margin: 0 5px;
+				}
+				._img>a {
+					font-size: 12px;
+				}
+				;
+			}
+			*/
+			.lw_2 {
+				color: #fff;
+				background: #6B7884;
+				display: block;
+				width: 18.5%;
+				height: 30px;
+				float: left;
+				margin-left: 5%;
+				margin-top: -20px;
+				text-decoration: none;
+			}
+			
+			.lw_3 {
+				color: #fff;
+				background: #6B7884;
+				display: block;
+				width: 18.5%;
+				height: 30px;
+				float: left;
+				margin-left: 5%;
+				margin-top: -20px;
+				text-decoration: none;
+			}
+			
+			.lw_4 {
+				color: #fff;
+				background: #6B7884;
+				display: block;
+				width: 18.5%;
+				height: 30px;
+				float: left;
+				margin-left: 5%;
+				margin-top: -20px;
+				text-decoration: none;
+			}
+			
+			.lw_5 {
+				color: #fff;
+				background: #6B7884;
+				display: block;
+				width: 18.5%;
+				height: 30px;
+				float: left;
+				margin-left: 5%;
+				margin-top: -20px;
+				text-decoration: none;
+			}
+			
+			.lw_6 {
+				line-height: 30px;
+				position: relative;
+				top: 100px
+			}
+			
+			/*.ft1 {
+				font-size: 12px;
+				left: 11%;
+			}
+			
+			.lw_7 {
+				position: relative;
+				top: 100px
+			}
+			
+			.dibu {
+				width: 223px;
+				height: 83px;
+				position: absolute;
+				right: 0px
+			}
+			
+			.gssl_bottom {
+				height: 235px
+			}
+			
+			.gssl_bottom img {
+				height: 235px
+			}
+			
+			.logo_lw_zj {
+				width: 179px;
+				height: 63px
+			}
+			
+			.lw_logo {
+				width: 1200px
+			}
+			
+			@media only screen and (max-width: 786px) {
+				.lw_logo {
+					width: 100%
+				}
+				.logo_lw_zj {
+					width: 100%;
+				}
+				.logo {
+					width: 40%!important
+				}
+				header>div ul {
+					width: 60%
+				}
+			}
+			
+			.toupiao_lw {
+				position: absolute;
+				bottom: 23%;
+				right: 10%
+			}
+			
+			.dibu_lw {
+				width: 90%;
+				text-align: right;
+				position: relative;
+				margin: 0 auto;
+				top: 20px
+			}
+			
+			.logo {
+				width: 1%
+			}*/

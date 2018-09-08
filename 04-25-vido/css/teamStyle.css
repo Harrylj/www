@@ -1,0 +1,30 @@
+.index {
+  padding-top: 0;
+  background: none !important;
+  padding-bottom: 0;
+}
+html,
+body {
+  background-color: #141414;
+}
+.team-style .teamstyle-swiper {
+  padding-bottom: 80px;
+}
+.team-style .teamstyle-swiper .swiper-slide {
+  position: relative;
+}
+.team-style .teamstyle-swiper .swiper-slide h1 {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 0 15px;
+  line-height: 60px;
+  color: white;
+  font-size: 26px;
+}
+.team-style .teamstyle-swiper .swiper-pagination-bullet {
+  background-color: #cccccc;
+}
+.team-style .teamstyle-swiper .swiper-pagination-bullet-active {
+  background-color: white;
+}

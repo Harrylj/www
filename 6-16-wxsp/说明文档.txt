@@ -1,0 +1,15 @@
+﻿页面名导向
+index.html--------首页，微信投票
+lxwm.html--------联系我们
+other2.html-------微信刷票
+other3.html-------人工投票
+detail.html------文章详情页面
+page:存放文章的位置
+
+$('.wx-name').html(wxName);
+$('.phone-num').html(phoneNum);
+
+
+
+addNumMore每次添加的文章数
+addTxtList文章数组

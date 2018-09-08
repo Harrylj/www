@@ -1,0 +1,33 @@
+.index{
+    padding-top: 0;
+    background:none !important;
+    padding-bottom: 0;
+}
+//定义变量
+@bottom-height:80px;
+html,body{
+    background-color: #141414;
+}
+.team-style{
+    .teamstyle-swiper{
+        padding-bottom: @bottom-height;
+        .swiper-slide{
+            position: relative;
+            h1{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                padding: 0 15px;
+                line-height: 60px;
+                color: white;
+                font-size: 26px;
+            }
+        }
+        .swiper-pagination-bullet{
+            background-color: #cccccc;
+        }
+        .swiper-pagination-bullet-active{
+            background-color: white;
+        }
+    }
+}
