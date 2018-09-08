@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/prestoreWYF.css"/>
+    <script src="js/flexible.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>预存物业费</title>
+	<style type="text/css">
+		body,html{ height: 100%;}
+	</style>
+</head>
+<body>
+	<div class="prestore-wyf">
+		<div class="pw-header">
+			<div class="pwh-header">
+				<h1 class="pw-h">请选择预存类型</h1>
+				<ul class="pw-list">
+					<li class="pwl-click">
+						<h1>一个月</h1>
+						<h2>&yen;100.00</h2>
+						<p>优惠价&yen;<span class="pw-check-money">460.00</span></p>
+					</li>
+					<li>
+						<h1>一个月</h1>
+						<h2>&yen;100.00</h2>
+						<p>优惠价&yen;<span class="pw-check-money">1460.00</span></p>
+					</li>
+					<li>
+						<h1>一个月</h1>
+						<h2>&yen;100.00</h2>
+						<p>优惠价&yen;<span class="pw-check-money">4260.00</span></p>
+					</li>
+					<li>
+						<h1>一个月</h1>
+						<h2>&yen;100.00</h2>
+						<p>优惠价&yen;<span class="pw-check-money">3460.00</span></p>
+					</li>
+					<li>
+						<h1>一个月</h1>
+						<h2>&yen;100.00</h2>
+						<p>优惠价&yen;<span class="pw-check-money">2460.00</span></p>
+					</li>
+				</ul>
+				<p class="pw-date">时间：2017年11月23日-2019年11月23日</p>
+				<div class="pw-content">
+					<h1>&yen;<span class="pwc-money">298.00</span></h1>
+					<p>已优惠&yen;2.00</p>
+					<button class="pw-btn-ljjf">立即缴费</button>
+				</div>
+			</div>
+			<div class="pwh-body">
+				<p>说明：</p>
+				<p>1、物业费预存说明但是是大打打卡的可靠的</p>
+				<p>2、物业费预存说明但是是大打打卡的可靠的</p>
+				<p>3、物业费预存说明但是是大打打卡的可靠的</p>
+			</div>
+		</div>
+		<div class="pw-footer">
+			<p>如果您有问题要咨询，请联系社区服务电话:028-8888888888</p>
+			<p>值班时间：工作日:08:30-17:30 周末:09:00-17:00</p>
+		</div>
+	</div>
+	
+	<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.pw-list').children('li').on('click',function(){
+				var clickClass = 'pwl-click',
+				    val_01 = $('.pwc-money'),
+				    val_02 = $(this).children().children('.pw-check-money');
+				$(this).addClass(clickClass).siblings().removeClass(clickClass);
+				val_01.html(val_02.html());
+			})
+		})
+
+
+
+	
+	</script>
+</body>
+</html>

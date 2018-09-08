@@ -1,0 +1,198 @@
+.living-payment .lp-header {
+  position: relative;
+  background-color: #3A3168;
+}
+.living-payment .lp-header .lp-a-more {
+  display: block;
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  color: white;
+  font-size: 16px;
+  padding-right: 12px;
+  line-height: 20px;
+  background-image: url(../images/icon/icon-right-white.png);
+  background-position: center right;
+  background-size: 10px 15px;
+  background-repeat: no-repeat;
+}
+.living-payment .lp-header .lph-div {
+  position: relative;
+  margin: auto;
+  width: 320px;
+  height: 240px;
+}
+.living-payment .lp-header .lph-div .lph-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: -60px;
+  margin-left: -60px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 2px solid #938eac;
+}
+.living-payment .lp-header .lph-div .lph-center h1 {
+  color: white;
+  font-size: 24px;
+  line-height: 30px;
+  text-align: center;
+}
+.living-payment .lp-header .lph-div .lph-center p {
+  text-align: center;
+  color: white;
+  line-height: 20px;
+  font-size: 12px;
+}
+.living-payment .lp-header .lph-div li {
+  position: absolute;
+  top: 12px;
+  height: 24px;
+  line-height: 24px;
+  font-size: 12px;
+  padding: 0 10px;
+  color: #3A3168;
+  border-radius: 12px;
+  background-color: #938EAC;
+}
+.living-payment .lp-header .lph-div li:nth-child(1) {
+  top: 48px;
+  left: 32.4px;
+}
+.living-payment .lp-header .lph-div li:nth-child(3) {
+  top: 192px;
+  left: 60px;
+}
+.living-payment .lp-header .lph-div li:nth-child(5) {
+  top: 84px;
+  left: 9.6px;
+}
+.living-payment .lp-header .lph-div li:nth-child(7) {
+  top: 156px;
+  left: 14.4px;
+}
+.living-payment .lp-header .lph-div li:nth-child(9) {
+  top: 126px;
+  left: 0px;
+}
+.living-payment .lp-header .lph-div li:nth-child(2) {
+  top: 54px;
+  right: 30px;
+}
+.living-payment .lp-header .lph-div li:nth-child(4) {
+  top: 198px;
+  right: 54px;
+}
+.living-payment .lp-header .lph-div li:nth-child(6) {
+  top: 90px;
+  right: 19.2px;
+}
+.living-payment .lp-header .lph-div li:nth-child(8) {
+  top: 162px;
+  right: 21.6px;
+}
+.living-payment .lp-header .lph-div li:nth-child(10) {
+  top: 120px;
+  right: 0px;
+}
+.living-payment .lp-content {
+  background-color: white;
+}
+.living-payment .lp-content .lpc-nav {
+  padding: 0.266666rem;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 0.266666rem solid #F0F0F0;
+}
+.living-payment .lp-content .lpc-nav li {
+  background-position: center top;
+  background-repeat: no-repeat;
+  text-align: center;
+  padding-top: 0.8rem;
+  line-height: 0.533333rem;
+  font-size: 14px;
+  color: black;
+  width: 1.6rem;
+}
+.living-payment .lp-content .lpc-nav .lpc-nav-01 {
+  background-image: url(../images/icon/living-nav-01.png);
+  background-size: 0.666666rem 0.653333rem;
+}
+.living-payment .lp-content .lpc-nav .lpc-nav-02 {
+  background-image: url(../images/icon/living-nav-02.png);
+  background-size: 0.533333rem 0.666666rem;
+}
+.living-payment .lp-content .lpc-nav .lpc-nav-03 {
+  background-position: center 0.133333rem;
+  background-image: url(../images/icon/living-nav-03.png);
+  background-size: 0.666666rem 0.4rem;
+}
+.living-payment .lp-content .lpc-nav .lpc-nav-04 {
+  background-position: center 0.066666rem;
+  background-image: url(../images/icon/living-nav-04.png);
+  background-size: 0.666666rem 0.533333rem;
+}
+.living-payment .lp-content .lpc-list {
+  padding: 0.266666rem;
+}
+.living-payment .lp-content .lpc-list .lpc-item {
+  margin-bottom: 0.266666rem;
+  border-radius: 0.133333rem 0.133333rem 0 0;
+  padding: 0.133333rem 0.133333rem 0.266666rem 0.8rem;
+}
+.living-payment .lp-content .lpc-list .lpc-item h1 {
+  position: relative;
+  color: white;
+  font-size: 18px;
+  line-height: 1.066666rem;
+}
+.living-payment .lp-content .lpc-list .lpc-item p {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 14px;
+}
+.living-payment .lp-content .lpc-list .lpc-item .lpc-money span {
+  font-size: 24px;
+}
+.living-payment .lp-content .lpc-list .lpc-item h1:before {
+  position: absolute;
+  display: block;
+  content: " .";
+  color: transparent;
+  left: -0.666666rem;
+  top: 50%;
+  margin-top: -0.266666rem;
+  width: 0.533333rem;
+  height: 0.533333rem;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.living-payment .lp-content .lpc-list .lpc-item-sf {
+  background-color: #f56f6f;
+}
+.living-payment .lp-content .lpc-list .lpc-item-sf h1:before {
+  background-image: url(../images/icon/living-nav-01-hover.png);
+}
+.living-payment .lp-content .lpc-list .lpc-item-df {
+  background-color: #ed6ff5;
+}
+.living-payment .lp-content .lpc-list .lpc-item-df h1:before {
+  background-image: url(../images/icon/living-nav-02-hover.png);
+}
+.living-payment .lp-content .lpc-list .lpc-item-rqf {
+  background-color: #f6d17f;
+}
+.living-payment .lp-content .lpc-list .lpc-item-rqf h1:before {
+  background-image: url(../images/icon/living-nav-03-hover.png);
+}
+.living-payment .lp-content .lpc-list .lpc-item-wyf {
+  background-color: #6fcef5;
+}
+.living-payment .lp-content .lpc-list .lpc-item-wyf h1:before {
+  background-image: url(../images/icon/living-nav-04-hover.png);
+}

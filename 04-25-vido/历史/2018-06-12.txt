@@ -1,0 +1,50 @@
+http://cdtv.sdtzcd.com/CDTV/NewMedia.aspx
+
+1.更改刊列编排筛选的JS
+$('body').on('click','.pub-choice li',function(){
+          //筛选
+                 var clickClass = 'public-choice-click';
+                 var thisIndex = $(this).index();
+                 var show_01 = $('.choice-img-01'),
+                     show_02 = $('.choice-img-02');
+                 //更改class
+                 $('.pub-choice').children('ul').children('li').eq(thisIndex).addClass(clickClass).siblings().removeClass(clickClass);
+                 //隐藏父元素，并更改显示内容
+                 $('.pub-choice').children('ul').children('li').parent().hide().siblings('.pub-choice-content').html($(this).html());
+                 
+                 switch (thisIndex){
+                    case 0:
+                      show_01.show();
+                      show_02.show();
+                      break;
+                    case 1:
+                      show_01.show();
+                      show_02.hide();
+                      break;
+                    case 2:
+                      show_01.hide();
+                      show_02.show();
+                      break;
+                    default:
+                      alert('系统出错,请刷新页面')
+                      break;
+                    
+                 }
+        })
+        
+3.index页面js注释
+if(scroll_h_01>h_01-80){
+        $('.i-header').addClass('i-header-hover')
+      }
+      else{
+        $('.i-header').removeClass('i-header-hover')
+}
+
+4.serviecesfour.html
+替换
+
+5.serviecesFour.html
+替换
+
+
+6.css替换

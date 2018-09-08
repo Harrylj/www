@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		.demo-video{
+		  position: relative;
+		}
+		.img-fonts{
+		  display: none;
+		  position: absolute;
+		  left: 0;
+		  top: 0;
+		  width: 100%;
+		  height: 100%;
+		  z-index: 11;
+		  background: rgba(0,0,0,0.5);
+		  opacity: 0;
+		  transition: opacity 1s ease-in-out;
+		}
+		.i-mian{
+		  position: relative;
+		}
+		.img-big{
+		  position: absolute;
+		  left: 0;
+		  bottom: 0;
+		  transition: all .5s;
+		  z-index: 22;
+		}
+		.img-big:hover{
+		  transform: scale(1.2);
+		  z-index: 99;
+		}
+		.img-big-hover{
+		  
+		}
+		.img-01{
+		  left: 20%;
+		  width: 55%;
+		}
+		.img-02{
+		  top: 0;
+		  bottom: auto;
+		  width: 50%;
+		}
+		.img-03{
+		  position: relative;
+		  width: 80%;
+		  z-index: 10;
+		}
+		.main-03{
+		  margin-top: -5%;
+		}
+	</style>
+</head>
+<body>
+  <div class="index">
+    <img class="img-100" src="images/index_01.jpg"/>
+    <div class="demo-video">
+      <img class="img-fonts" src="images/index_03.png"/>
+      <video id="my-video" autoplay="autoplay" width="100%" height="100%" poster="img/index_09.jpg" class="landscape">
+        <source src="/OMDSite/resources/videos/apac-harbor.ogv" type="video/ogg">
+        <source src="Untitled.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!--<div class="i-mian main-01"><img class="img-100" src="images/next_01.jpg"/><img class="img-big img-01" src="images/next_04.png"/></div>
+    <div class="i-mian main-02"><img class="img-100" src="images/next_02.jpg"/><img class="img-big img-02" src="images/next_05.png"/></div>
+    <div class="i-mian main-03"><img class="img-big img-03" src="images/next_06.jpg"/></div>
+    <div class="i-mian main-04"><img class="img-100" src="images/next_03.jpg"/></div>-->
+    <img class="img-100" src="images/next_11.jpg"/>
+    <img class="img-100" src="images/next_12.jpg"/>
+    <img class="img-100" src="images/next_13.png"/>
+    <img class="img-100" src="images/next_16.jpg"/>
+  </div>
+  <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		    var vid = document.getElementById("my-video");
+        vid.onended = function() {
+            var t = setTimeout(showImg,100)
+            document.getElementsByClassName('img-fonts')[0].style.display="block"
+        };
+        function showImg(){
+          document.getElementsByClassName('img-fonts')[0].style.opacity="1"
+        }
+        /*
+	      $(function(){
+	        $('.img-big').on('hover',function(){
+	          alert(1)
+	        })
+	      })
+	      */
+	</script>
+</body>
+</html>

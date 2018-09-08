@@ -43,6 +43,7 @@ a:hover{ text-decoration: none;}
 .height-60{ height: 60px;}
 .height-90{ height: 90px;}
 .none{ display: none;}
+<<<<<<< HEAD
 @font-face
 {
 	font-family: myFontOne;
@@ -54,6 +55,35 @@ a:hover{ text-decoration: none;}
 h1,h2,h3,h4,h5,h6,p,span,a,button{
 	letter-spacing: 2px;
 	font-family: myFontTwo;
+=======
+body,html{
+  height: 100%;
+}
+.public-main,
+.showcase{
+  min-height: 100%;
+}
+.company-news-index,
+.services-four{
+  height: 100%;
+}
+
+
+.index-content-more li{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@font-face
+{
+	/*font-family: myFontTwo;
+	src: url('../fonts/SourceHanSansCN-Light.otf');*/
+		/*url('Sansation_Light.eot');*/ /* IE9+ */
+}
+h1,h2,h3,h4,h5,h6,p,span,a,button,div{
+	letter-spacing: 2px;
+	font-family:  'Microsoft Yahei', helvetica, arial !important;
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
 }
 .public-nav-hover{
 	color: #26c3ed!important;
@@ -61,6 +91,14 @@ h1,h2,h3,h4,h5,h6,p,span,a,button{
 .index{
 	background:none;
 }
+<<<<<<< HEAD
+=======
+.bshare-custom-div{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
 @media only screen and (min-width:0px){
 	/*.swiper-container{height: 200px;}*/
 }
@@ -86,6 +124,54 @@ body{
 	max-width: 1100px;
 	min-width: 800px;
 }
+<<<<<<< HEAD
+=======
+.more-nav-div{
+  margin: auto;
+  max-width: 1100px;
+  min-width: 800px;
+}
+.more-nav-div a{
+  position: relative;
+  color: #ADADAD;
+  font-size: 14px;
+  line-height: 28px;
+  display: inline-block;
+  padding: 0 25px;
+}
+.more-nav-div a:before{
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  height: 20px;
+  width: 20px;
+  content: '/';
+  color: #ADADAD;
+  font-size: 14px;
+  line-height: 20px;
+  overflow: hidden;
+  text-align: center;
+  margin-top: -10px;
+}
+.more-nav-div a:first-child{
+  padding-left: 0;
+}
+.more-nav-div a:first-child:before{
+  display: none;
+}
+.more-nav-div a:last-child{
+  display: none;
+}
+.more-nav-div .more-nav-click{
+  color: #26c3ed;
+}
+.company-news .more-nav-div a:last-child
+,.services-four .more-nav-div a:last-child
+,.publication-next .more-nav-div a:last-child
+,.serivices-sex-next .more-nav-div a:last-child{
+  display: inline-block;
+}
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
 
 .modal-header
 ,.modal-footer{

@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Super Slide</title>
+<script type="text/javascript" src="../jquery.pack.js"></script>
+<script type="text/javascript" src="../jQuery.blockUI.js"></script>
+<script type="text/javascript" src="../jquery.SuperSlide.js"></script>
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link href="../demo.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<body>
+
+<!-- content S -->
+	<div id="demoContent">
+		<div class="effect">
+					<div class="gallery">
+						<div class="bd">
+							<ul>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad1.jpg" /></a></div>
+									<div class="title"><a href="">效果图1</a></div>
+								</li>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad2.jpg" /></a></div>
+									<div class="title"><a href="">效果图2</a></div>
+								</li>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad3.jpg" /></a></div>
+									<div class="title"><a href="">效果图3</a></div>
+								</li>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad4.jpg" /></a></div>
+									<div class="title"><a href="">效果图4</a></div>
+								</li>
+							</ul>
+						</div>
+						<div class="hd">
+							<a class="sPrev" >&lt;</a>
+							<a class="sNext" >&gt;</a>
+							<ul>
+								<li><img src="images/ad1.jpg" /></li>
+								<li><img src="images/ad2.jpg" /></li>
+								<li><img src="images/ad3.jpg" /></li>
+								<li><img src="images/ad4.jpg" /></li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">
+						jQuery(".hd").slide({ mainCell:"ul",effect:"leftLoop",autoPlay:false,vis:4,prevCell:".sPrev",nextCell:".sNext" });
+						jQuery(".gallery").slide({ mainCell:".bd ul",effect:"leftLoop", autoPlay:false, delayTime:0, defaultIndex:4 });
+
+					</script>
+		</div>
+		
+
+		<div class="js">
+			<strong>js调用：</strong><br/>
+			<span>jQuery(".hd").slide( <i>{ mainCell:"ul",effect:"leftLoop",autoPlay:false,vis:4,prevCell:".sPrev",nextCell:".sNext" }<i> );</span><br/>
+			<span>jQuery(".gallery").slide( <i>{ mainCell:".bd ul",effect:"leftLoop", autoPlay:false, delayTime:0, defaultIndex:4 }<i> );</span>
+		</div>
+
+		<div class="css">
+			<strong>css代码：</strong>
+<blockquote>
+	<ol class="dp-css">
+		<li class="alt"><span><span>.gallery{&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ccc</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">5px</span><span>;&nbsp;</span><span class="keyword">text-align</span><span>:</span><span class="value">left</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.bd&nbsp;li&nbsp;.pic{&nbsp;<span class="keyword">line-height</span><span>:</span><span class="value">0px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.gallery&nbsp;.bd&nbsp;li&nbsp;.bg,.gallery&nbsp;.bd&nbsp;li&nbsp;.title{&nbsp;<span class="keyword">display</span><span>:</span><span class="value">none</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.bd&nbsp;li&nbsp;img{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">450px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">230px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.gallery&nbsp;.hd{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">0&nbsp;15px</span><span>;&nbsp;</span><span class="keyword">margin-top</span><span>:</span><span class="value">10px</span><span>;&nbsp;zoom:</span><span class="value">1</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.hd&nbsp;.tempWrap{&nbsp;<span class="keyword">margin-left</span><span>:</span><span class="value">8px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.gallery&nbsp;.hd&nbsp;ul{&nbsp;<span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;zoom:</span><span class="value">1</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.hd&nbsp;li{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">100px</span><span>;&nbsp;</span><span class="keyword">padding-top</span><span>:</span><span class="value">4px</span><span>;&nbsp;</span><span class="keyword">text-align</span><span>:</span><span class="value">center</span><span>;&nbsp;</span><span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.gallery&nbsp;.hd&nbsp;li&nbsp;img{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">86px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">60px</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ddd</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">2px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.hd&nbsp;li.on{&nbsp;<span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;images/icoUp.gif&quot;</span><span>)&nbsp;</span><span class="value">no-repeat</span><span>&nbsp;</span><span class="value">center</span><span>&nbsp;</span><span class="value">0</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.gallery&nbsp;.hd&nbsp;li.on&nbsp;img{&nbsp;<span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#f60</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#fff</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.hd&nbsp;.sNext,.gallery&nbsp;.hd&nbsp;.sPrev{&nbsp;<span class="keyword">text-align</span><span>:</span><span class="value">center</span><span>;&nbsp;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">15px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">66px</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">66px</span><span>;&nbsp;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ddd</span><span>;&nbsp;</span><span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;&nbsp;left:</span><span class="value">0px</span><span>;&nbsp;top:</span><span class="value">4px</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.gallery&nbsp;.hd&nbsp;.sNext{&nbsp;left:<span class="value">auto</span><span>;&nbsp;right:</span><span class="value">0px</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.gallery&nbsp;.hd&nbsp;.sNext:hover,.gallery&nbsp;.hd&nbsp;.sPrev:hover{&nbsp;<span class="keyword">text-decoration</span><span>:</span><span class="value">none</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#f60</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+	</ol>
+</blockquote>
+
+
+
+
+		</div>
+
+	</div>
+<!-- content E -->
+</body>
+</html>

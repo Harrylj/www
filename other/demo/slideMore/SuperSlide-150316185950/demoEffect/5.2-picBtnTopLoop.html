@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Super Slide</title>
+<script type="text/javascript" src="../jquery.pack.js"></script>
+<script type="text/javascript" src="../jQuery.blockUI.js"></script>
+<script type="text/javascript" src="../jquery.SuperSlide.js"></script>
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link href="../demo.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+
+<body>
+
+<!-- content S -->
+	<div id="demoContent">
+		<div class="effect">
+					<div class="picBtnTop">
+						<div class="hd">
+							<ul>
+								<li><img src="images/ad1.jpg" /></li>
+								<li><img src="images/ad2.jpg" /></li>
+								<li><img src="images/ad3.jpg" /></li>
+							</ul>
+						</div>
+						<div class="bd">
+							<ul>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad1.jpg" /></a></div>
+									<div class="title"><a href="">效果图1</a></div>
+								</li>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad2.jpg" /></a></div>
+									<div class="title"><a href="">效果图2</a></div>
+								</li>
+								<li>
+									<div class="bg"></div>
+									<div class="pic"><a href=""><img src="images/ad3.jpg" /></a></div>
+									<div class="title"><a href="">效果图3</a></div>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<script type="text/javascript">jQuery(".picBtnTop").slide({ mainCell:".bd ul",effect:"topLoop",autoPlay:true });</script>
+		</div>
+		
+
+		<div class="js">
+			<strong>js调用：</strong><span>jQuery(".picBtnTop").slide( <i>{ mainCell:".bd ul",effect:"topLoop",autoPlay:true }<i> );</span>
+		</div>
+
+		<div class="css">
+			<strong>css代码：</strong>
+<blockquote>
+	<ol class="dp-css">
+		<li class="alt"><span><span class="comment">/*&nbsp;图片按钮(上)滚动&nbsp;-&nbsp;公用类&nbsp;*/</span><span>&nbsp;</span></span></li>
+		<li><span>.picBtnTop{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">500px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">214px</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ccc</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">5px</span><span>;&nbsp;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;&nbsp;zoom:</span><span class="value">1</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picBtnTop&nbsp;.hd{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">98px</span><span>;&nbsp;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">214px</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;right:</span><span class="value">5px</span><span>;}&nbsp;</span></span></li>
+		<li><span>.picBtnTop&nbsp;.hd&nbsp;ul&nbsp;li{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">93px</span><span>;&nbsp;</span><span class="keyword">padding</span><span>:</span><span class="value">0&nbsp;0</span><span>&nbsp;</span><span class="value">5px</span><span>&nbsp;</span><span class="value">5px</span><span>;&nbsp;&nbsp;</span><span class="keyword">text-align</span><span>:</span><span class="value">center</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">0px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picBtnTop&nbsp;.hd&nbsp;ul&nbsp;li&nbsp;img{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">85px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">60px</span><span>;&nbsp;</span><span class="keyword">border</span><span>:</span><span class="value">4px</span><span>&nbsp;</span><span class="value">solid</span><span>&nbsp;</span><span class="value">#ddd</span><span>;&nbsp;</span><span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picBtnTop&nbsp;.hd&nbsp;ul&nbsp;li.on{&nbsp;<span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;images/icoleft.gif&quot;</span><span>)&nbsp;</span><span class="value">no-repeat</span><span>&nbsp;</span><span class="value">0&nbsp;28px</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picBtnTop&nbsp;.hd&nbsp;ul&nbsp;li.on&nbsp;img{&nbsp;<span class="keyword">border-color</span><span>:</span><span class="value">#f60</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picBtnTop&nbsp;.bd{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">400px</span><span>;&nbsp;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">214px</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picBtnTop&nbsp;.bd&nbsp;img{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">400px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">214px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picBtnTop&nbsp;.bd&nbsp;li{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;zoom:</span><span class="value">1</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picBtnTop&nbsp;.bd&nbsp;li&nbsp;.pic{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;</span><span class="keyword">z-index</span><span>:</span><span class="value">0</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">0px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picBtnTop&nbsp;.bd&nbsp;li&nbsp;.bg{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">400px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">30px</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;left:</span><span class="value">0</span><span>;&nbsp;bottom:</span><span class="value">0</span><span>;&nbsp;</span><span class="keyword">z-index</span><span>:</span><span class="value">1</span><span>;&nbsp;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#000</span><span>;&nbsp;filter:alpha(opacity=</span><span class="value">60</span><span>);opacity:</span><span class="value">0.6</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.picBtnTop&nbsp;.bd&nbsp;li&nbsp;.title{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">400px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">30px</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">30px</span><span>;&nbsp;left:</span><span class="value">0</span><span>;&nbsp;bottom:</span><span class="value">0</span><span>;&nbsp;&nbsp;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;</span><span class="keyword">z-index</span><span>:</span><span class="value">2</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.picBtnTop&nbsp;.bd&nbsp;li&nbsp;.title&nbsp;a{&nbsp;<span class="keyword">color</span><span>:</span><span class="value">#fff</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+	</ol>
+</blockquote>
+
+
+
+		</div>
+
+	</div>
+<!-- content E -->
+</body>
+</html>

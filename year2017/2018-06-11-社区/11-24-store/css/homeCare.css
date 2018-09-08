@@ -1,0 +1,286 @@
+.bg-img {
+  background-repeat: no-repeat;
+}
+.bg-center {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.ubca-box-div {
+  padding: 0 0.2rem;
+}
+.ubca-box-div .ubca-box {
+  position: relative;
+  margin: 0.133333rem 0;
+  background-color: #f69b77;
+  min-height: 2.666666rem;
+  border-radius: 0.133333rem 0.133333rem 0 0;
+}
+.ubca-box-div .ubca-box p {
+  padding: 0.2rem;
+  font-size: 14px;
+  color: black;
+  line-height: 0.666666rem;
+}
+.ubca-box-div .ubca-box h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #ac6c53;
+  color: white;
+  padding: 0 0.2rem;
+  line-height: 0.8rem;
+  font-size: 16px;
+}
+.ubca-box-div .ubca-box-01 {
+  background-color: #F69B77;
+}
+.ubca-box-div .ubca-box-02 {
+  background-color: #f67777;
+}
+.column-1 {
+  width: 25%;
+}
+.column-2 {
+  width: 50%;
+}
+.column-3 {
+  width: 75%;
+}
+.column-4 {
+  width: 100%;
+}
+.hc-nav {
+  background-color: white;
+  padding-top: 0.533333rem;
+  padding-bottom: 0.533333rem;
+  margin-bottom: 0.266666rem;
+}
+.hc-nav a:nth-child(1) {
+  background-image: url("../images/icon/home-nav-icon-01.png");
+}
+.hc-nav a:nth-child(2) {
+  background-image: url("../images/icon/home-nav-icon-02.png");
+}
+.hc-nav a:nth-child(3) {
+  background-image: url("../images/icon/home-nav-icon-03.png");
+}
+.hc-nav a:nth-child(4) {
+  background-image: url("../images/icon/home-nav-icon-04.png");
+}
+.hc-nav a {
+  padding-top: 1rem;
+  display: block;
+  width: 25%;
+  float: left;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  background-position: center top;
+  background-size: 0.8rem;
+  background-repeat: no-repeat;
+}
+.hc-nav-01 a:nth-child(1) {
+  background-image: url("../images/icon/living-nav-01.png");
+}
+.hc-nav-01 a:nth-child(2) {
+  background-image: url("../images/icon/living-nav-02.png");
+}
+.hc-nav-01 a:nth-child(3) {
+  background-image: url("../images/icon/living-nav-03.png");
+}
+.hc-nav-01 a:nth-child(4) {
+  background-image: url("../images/icon/living-nav-04.png");
+}
+.hc-nav-01 .lpc-nav-01 {
+  background-size: 0.666666rem 0.653333rem;
+}
+.hc-nav-01 .lpc-nav-02 {
+  background-size: 0.533333rem 0.666666rem;
+}
+.hc-nav-01 .lpc-nav-03 {
+  background-position: center 0.133333rem;
+  background-size: 0.666666rem 0.4rem;
+}
+.hc-nav-01 .lpc-nav-04 {
+  background-position: center 0.066666rem;
+  background-size: 0.666666rem 0.533333rem;
+}
+.hc-nav-03 a:nth-child(1) {
+  background-image: url("../images/icon/user-center-01.png");
+}
+.hc-nav-03 a:nth-child(2) {
+  background-image: url("../images/icon/user-center-02.png");
+}
+.hc-nav-03 a:nth-child(3) {
+  background-image: url("../images/icon/user-center-03.png");
+}
+.hc-footer {
+  background-color: white;
+  padding: 10px 0 10px 10px;
+}
+.hc-footer h1 {
+  font-size: 18px;
+  line-height: 40px;
+  color: black;
+}
+.hc-footer .hc-swiper img {
+  width: 100%;
+}
+.hc-footer .hc-swiper p {
+  color: black;
+  font-size: 14px;
+  line-height: 30px;
+}
+.hc-footer .hc-swiper p span {
+  color: red;
+}
+.user-center .hc-nav a {
+  font-size: 14px;
+}
+.user-center .uc-header {
+  padding: 0.2rem;
+  background-color: #3A3168;
+}
+.user-center .uc-header p {
+  color: #b5aed9;
+  font-size: 14px;
+  line-height: 0.533333rem;
+}
+.user-center .uc-header .uc-user-img {
+  display: block;
+  width: 1.866666rem;
+  height: 1.866666rem;
+  border-radius: 50%;
+  margin: 0.133333rem auto;
+}
+.user-center .uc-header h1 {
+  color: white;
+  text-align: center;
+  line-height: 0.666666rem;
+  font-size: 16px;
+}
+.user-center .uc-header h2 {
+  color: #b5aed9;
+  font-size: 16px;
+  line-height: 0.8rem;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+.user-center .uc-header .uc-type {
+  position: relative;
+}
+.user-center .uc-header .uc-type:after {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  margin-top: -11px;
+  height: 22px;
+  text-align: center;
+  width: 50px;
+  line-height: 22px;
+  content: ".";
+  font-size: 12px;
+  color: white;
+  background-color: #4e4677;
+  border-radius: 4px;
+}
+.user-center .uc-header .uc-type:before {
+  z-index: 99;
+  position: absolute;
+  right: -10px;
+  top: 50%;
+  margin-top: -2px;
+  height: 4px;
+  content: ".";
+  font-size: 1px;
+  color: transparent;
+  border-right: 4px solid #4e4677;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+}
+.user-center .uc-header .uc-type-yes:after {
+  content: "户主";
+}
+.user-center .uc-header .uc-type-no:after {
+  content: "非户主";
+}
+.user-center .uc-header .uch-box {
+  margin: 0 auto -1.1rem auto;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  width: 94%;
+  border-radius: 0.133333rem;
+  height: 2.2rem;
+  padding: 0.266666rem;
+  background-color: white;
+  box-shadow: 0 0 0.066666rem #CCCCCC;
+}
+.user-center .uc-header .uch-box .uchb-list img {
+  width: 0.666666rem;
+  height: 0.666666rem;
+  border-radius: 50%;
+  margin: auto;
+  display: block;
+}
+.user-center .uc-header .uch-box .uchb-list p {
+  font-size: 14px;
+  line-height: 30px;
+  text-align: center;
+  color: black;
+}
+.user-center .uc-header .uch-box .uc-btn-yqjtcy {
+  position: absolute;
+  left: 50%;
+  bottom: -0.333333rem;
+  margin-left: -2rem;
+  line-height: 0.666666rem;
+  font-size: 14px;
+  width: 4rem;
+  color: #f56969;
+  text-align: center;
+  border: 1px solid #f56969;
+  background-color: white;
+  border-radius: 0.333333rem;
+}
+.user-center .uc-header .uch-box .hc-nav {
+  padding: 0;
+}
+.user-center .uc-body {
+  background-color: white;
+  padding-top: 2rem;
+}
+.user-center .uc-body h1 {
+  border-top: 15px solid #F0F0F0;
+  font-size: 16px;
+  line-height: 1.333333rem;
+  color: black;
+  padding: 0 0.2rem;
+}
+.user-center .uc-body .ubca-box-div {
+  padding: 0 0.2rem;
+}
+.user-center .uc-body .ubca-box-div .ubca-box {
+  position: relative;
+  margin: 0.133333rem 0;
+  background-color: #f69b77;
+  min-height: 2.666666rem;
+  border-radius: 0.133333rem 0.133333rem 0 0;
+}
+.user-center .uc-body .ubca-box-div .ubca-box p {
+  padding: 0.2rem;
+  font-size: 14px;
+  color: black;
+  line-height: 0.666666rem;
+}
+.user-center .uc-body .ubca-box-div .ubca-box h2 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #ac6c53;
+  color: white;
+  padding: 0 0.2rem;
+  line-height: 0.8rem;
+  font-size: 16px;
+}

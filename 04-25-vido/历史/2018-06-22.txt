@@ -1,0 +1,32 @@
+1.bshare-custom-div
+
+<div class="bshare-custom-div">
+          <div class="bshare-custom icon-medium">
+            <div class="bsPromo bsPromo2"></div>
+            <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+            <a title="分享到QQ空间" class="bshare-qzone" href="javascript:void(0);"></a>
+            <a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a>
+            <a title="分享到QQ好友" class="bshare-qqim" href="javascript:void(0);"></a>
+            <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+          </div>
+          <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+          <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+        
+2.so-01
+
+<div class="so-div-bg">
+                <img class="img-100" src="images/so-01-bg.png" alt="">
+                <p>第49届 . 50届 . 51届国际小姐世界大会走进社区</p>
+                <p>第14届 . 15届全球华语榜中榜暨亚洲影响力大典</p>
+                <p>第19届 . 20届 . 21届新丝路中国西部模特大赛</p>
+                <p>第8届—14届中国国际美食旅游节</p>
+                <p>第2届、第3届“全球汽车论坛”</p>
+                <p>2012 . 2013年世界斯诺克国际锦标赛</p>
+                <p>2013年—2017年中国网络视听大会</p>
+                <p>2010年—2017年中国•成都汽车音乐节</p>
+                <p>2010年—2017年中国•成都汽车音乐节</p>
+                <p>2016年—2017年ATP250成都网球公开赛</p>
+                <p>2015年—2017年成都市总工会百万职工技能大赛</p>
+                <p>2018年中国 以色列新经济与创新孵化研讨会</p>
+            </div>

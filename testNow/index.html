@@ -21,11 +21,16 @@
 	</style>
 </head>
 <body>
-	
-	<script type="text/javascript">
-		
-
-		
-	</script>
+<script>
+ username = ''
+ function  abc(){
+  if (username==""){
+    alert("请输入用户名");
+    return false;//因为username不符合我们的要求，所以在这里用return来终于函数往下继续执行
+  }
+  alert("欢迎你"+username);
+ }
+abc()
+</script>
 </body>
 </html>

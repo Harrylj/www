@@ -1,0 +1,84 @@
+*{margin:0;padding:0;}
+li{list-style: none;}
+a{cursor:pointer;text-decoration: none}
+.clearfix:after{
+	content:"";
+	clear:both;
+	display: block;
+}
+.clearfix{zoom:1;}
+
+
+.se-content{width:1030px;position: relative;left: 50%;margin-left:-445px;}
+
+/* 尾部咨询 */
+.allday{width: 1190px;position: relative;margin:20px auto 0;}
+.allday p.linkus{text-align: center;font-size: 34px;line-height: 100px;color: #000;margin-left:90px;}
+.allday p.linkus span{color: #e60012}
+.allday .fban{display: block;width: 100%;height: auto;}
+.allday .tel{position: absolute;bottom: 100px;right: 0;width: 400px;height: 260px;box-sizing:border-box;padding: 60px 30px;background: url(../images/service/sbg.png) repeat 0 0;}
+.allday .tel p{font-size: 16px;color: #fff;line-height: 30px;text-align: left;}
+.allday .tel p span{font-size: 40px;color: #fff;display: block;line-height: 80px;font-weight: bold;}
+.allday .tel .sqq{display: block;padding-left: 30px;line-height: 25px;height: 25px;background: url(../images/service/sqq.png) no-repeat 0 0;float: left;color: #fff;}
+.allday .tel .sqq:hover{text-decoration: underline;}
+
+/* 头部咨询 */
+.toptheme{border-bottom: 1px solid #999;}
+.toptheme p{font-size: 27px;color: #000;text-align: center;line-height: 60px;}
+.toptheme p span{color: #e60012;font-size: 32px;}
+.adviserbox{width: 100%;margin-top: 20px;}
+.adviserbox .adviser{float: left;width:500px;box-sizing:border-box;padding:20px 30px 20px 200px;position: relative;margin-right: 30px;background: #f7f7f7;}
+.adviserbox .last-adviser{margin-right: 0px;}
+.adviserbox .adviser .ad{position: absolute;top:50%;left: 30px;margin-top: -70px;}
+.adviserbox .adviser .ad .name{font-size: 14px;color: #6d6d6d;text-align: center;line-height: 30px;font-weight: bold;}
+.adviserbox .adviser .top{font-size: 18px;color: #2b2b2b;margin-bottom: 20px}
+.adviserbox .adviser .top span{font-size: 20px;color: #2b2b2b;font-weight: bold;}
+.adviserbox .adviser .instr{font-size: 14px;color: #6d6d6d;line-height: 25px;margin-bottom: 20px;}
+.adviserbox .adviser .link-qq a{padding-left: 40px;height: 30px;line-height: 30px;display:block;background: url(../images/service/clickqq.png) no-repeat 0 0;color: #666;font-size: 12px;}
+.adviserbox .adviser .link-qq a:hover{text-decoration: underline;}
+.adviserbox .adviser .quote_consult {margin: 0 -11px; } 
+.adviserbox .adviser .quote_consult input {cursor: pointer; float: left; border: none; width: 112px; height: 30px; margin: 0 11px; font-size: 12px; line-height: 30px; color: #fff; background: #e70012; }
+
+/* 子站改版样式 */
+.can-content{width:1030px;position: relative;left: 50%;margin-left:-445px;}
+.can-content .top-theme{width:610px;height: 60px;line-height: 60px;font-size: 30px;color: #2c2c2c;/* font-weight: bold; */border-bottom: 1px solid #c1c1c1;}
+.can-content .wcan .canbox{float: left;width:610px;margin-top:20px;}
+.can-content .wcan .canbox li{float: left;}
+.can-content .wcan .canbox li ol li{float: none;width: 100%;}
+.can-content .wcan .canbox li p{display: block;font-size: 14px;line-height: 28px;color: #999;}
+.can-content .wcan .canbox li p.theme{font-size: 26px;color: #303030;line-height: 60px;height: 60px;}
+.can-content .wcan .can-three li{width:33.3%;}
+.can-content .wcan .can-four li{width:25%;}
+
+.can-content .wcan .ourteam{float: left;width:420px;background: #e6e6e6;height: auto;position: relative;}
+.can-content .wcan .ourteam .top {padding:20px 20px 10px;border-bottom: 1px solid #fff;}
+.can-content .wcan .ourteam .top img{display: block;margin:0 auto;width:100%;height: auto;}
+.can-content .wcan .ourteam .text {padding: 20px 20px}
+.can-content .wcan .ourteam .text p{font-size: 20px;color: #303030;line-height: 40px;}
+.can-content .wcan .ourteam .text p span{color: #e60012;}
+.can-content .wcan .ourteam .text .fknow{position: absolute;width:123px;height: 50px;background: url(../images/service/fkbg.png) no-repeat 0 0;color: #fff;font-size:16px;line-height: 50px;padding-left: 20px; position: absolute;bottom: 20px;right: 20px;}
+
+
+// /*弹窗预约*/
+// .zhengbang_revise_gray_back{position: fixed; left: 0; top: 0; z-index: 11110; width: 100%; height: 100%; background: #000; opacity: 0.7; filter: alpha(opacity=70); display: none; }
+// .zhengbang_revise_pop {display: none; z-index: 	11111; width: 400px; height: 275px; background: #fff; overflow: hidden; position: fixed; margin: auto auto; top: 0; right: 0; bottom: 0; left: 0; }
+// .zhengbang_revise_pop .box {margin: 19px 40px 0; position: relative; }
+// .zhengbang_revise_pop .box .red_title {font-size: 16px; line-height: 1; color: #e70012; font-weight: bold; }
+// .zhengbang_revise_pop .box .subtitle {font-size: 14px; line-height: 1; color: #666666; margin-top: 22px; }
+// .zhengbang_revise_pop .box .subdetail {font-size: 14px; line-height: 1.5; color: #666666; margin-top: 14px; }
+// .zhengbang_revise_pop .box .input_box {margin-top: 7px; position: relative; font-size: 14px; line-height: 1.5; color: #666666; }
+// .zhengbang_revise_pop .box .input_box .red_tip {display: none; font-size: 14px; line-height: 38px; color: #e70012; position: absolute; top: 0; right: 10px; }
+// .zhengbang_revise_pop .box .green_information_safety {background: url(../images/service/zhengbang_revise_pop_10.png) left center no-repeat; font-size: 12px; line-height: 19px; color: #1db816; margin: 2px 0 10px; text-indent: 1.6em; }
+// .zhengbang_revise_pop .yui_close {position: absolute; top: 0; right: -23px; width: 15px; height: 15px; background: url(../images/service/zhengbang_revise_pop_03.png) center center no-repeat; cursor: pointer; }
+// .zhengbang_revise_pop .yui_button {width: 100%; height: 40px; background: #e70012; font-size: 18px; line-height: 40px; color: #fff; text-align: center; border: none; cursor: pointer; }
+// .zhengbang_revise_pop .yui_input {background-color: #fff; background: url(../images/service/zhengbang_revise_pop_07.png) left center no-repeat; border: 1px solid #adada9; width: 100%; height: 38px ; font-size: 14px; line-height: 38px; color: #333; text-indent: 2.5em; }
+// /*弹窗预约成功*/
+// .zhengbang_revise_success_pop {display: none; z-index: 11111; width: 400px; height: 195px; background: #fff; overflow: hidden; position: fixed; margin: auto auto; top: 0; right: 0; bottom: 0; left: 0; }
+// .zhengbang_revise_success_pop .box {margin: 19px 40px 0; position: relative; }
+// .zhengbang_revise_success_pop .box .red_title {font-size: 16px; line-height: 1; color: #e70012; font-weight: bold; }
+// .zhengbang_revise_success_pop .box .subtitle {font-size: 30px; line-height: 1; color: #e70012; margin-top: 42px; text-align: center; font-weight: bold; }
+// .zhengbang_revise_success_pop .box .subdetail {font-size: 14px; line-height: 1.5; color: #666666; margin-top: 22px; text-align: center; }
+// .zhengbang_revise_success_pop .yui_close {position: absolute; top: 0; right: -23px; width: 15px; height: 15px; background: url(../images/service/zhengbang_revise_pop_03.png) center center no-repeat; cursor: pointer; }
+
+
+

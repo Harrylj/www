@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Language" content="zh-CN">
+<meta name="Keywords" content="">
+<meta name="Description" content="">
+<title>Super Slide</title>
+<script type="text/javascript" src="../jquery.pack.js"></script>
+<script type="text/javascript" src="../jQuery.blockUI.js"></script>
+<script type="text/javascript" src="../jquery.SuperSlide.js"></script>
+<link href="../default.css" rel="stylesheet" type="text/css">
+<link href="../demo.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+<!-- content S -->
+	<div id="demoContent">
+		<div class="effect">
+
+			<div id="focusAd" class="tv-slideBox">
+					<a class="prev"></a><a class="next"></a>
+					<div class="bd">
+						  <ul>
+							<li class="li1">
+							  <div class="pic"><a href="#" target="_self"><img src="images/gtvAD1.jpg"></a></div>
+							  <div class="con">
+								<div class="bg"></div>
+								<div class="title"><a href="#" target="_self">【高清热播】《凰图腾》曹媛媛后宫与白冰一争高下 更新…</a></div>
+								<div class="intro">该剧以燕、蝶、鸿三人的爱情为主线，阐述了误入宫廷的浮生若梦。一场年少芳华，一段青春埋藏。该剧由张翰、郑爽、白冰等一代新生代演员主演，古装剧鼻祖刘仕裕导演。<a href="#" class="more">[详细]</a></div>
+							  </div>
+							</li>
+							<li class="li2">
+							  <div class="pic"><a href="#" target="_self"><img src="images/gtvAD2.jpg"></a></div>
+							  <div class="con">
+								<div class="bg"></div>
+								<div class="title"><a href="#" target="_self">【港剧热播】TVB艺术之作《天与地》高清连载至23集</a></div>
+								<div class="intro">该剧错综复杂但张力十足的剧情安排，寥寥数语但潜台词丰富的人物对白，插叙、倒叙的巧妙运用，甚至是通过生离死别给人们带来的沉重的人性拷问，都深深的吸引着观众。<a href="#" class="more">[详细]</a></div>
+							  </div>
+							</li>
+							<li class="li3">
+							  <div class="pic"><a href="#" target="_self"><img src="images/gtvAD3.jpg"></a></div>
+							  <div class="con">
+								<div class="bg"></div>
+								<div class="title"><a href="#" target="_self">【新剧热播】新版《亮剑》高清连载至第16集</a></div>
+								<div class="intro">新版《亮剑》在原版的基础上新增了35%的情节,其中“李云龙前传”部分讲述了李云龙在1936年到1937年间,所在的红九军25师171团与西北军阀马家军的对决。<a href="#" class="more">[详细]</a></div>
+							  </div>
+							</li>
+						  </ul>
+						</div>
+						<div class="hd">
+						  <ul>
+							<li class="li1"><span>1</span></li>
+							<li class="li2"><span>2</span></li>
+							<li class="li3"><span>3</span></li>
+						  </ul>
+						</div>
+				</div>
+
+				<script language="javascript"> jQuery("#focusAd").slide({ mainCell:".bd ul",effect: "leftLoop",autoPlay:true});</script>
+				 <!--[if IE 6]>
+				<script type="text/javascript" src="../DD_belatedPNG.js"></script>
+				<script>DD_belatedPNG.fix('#focusAd .bg,#focusAd .con,#focusAd .prev,#focusAd .next');</script>
+				<![endif]--> 
+		</div>
+		
+
+		<div class="js">
+			<strong>js调用：</strong><span> jQuery("#focusAd").slide(<i>{ mainCell:".bd ul",effect: "leftLoop",autoPlay:true}</i>);</span><br/><br/>
+				<span><i>要加上下面代码，让ie6支持png半透明：</i></span><br/>
+				&lt;!--[if IE 6]&gt; <br/>
+				&lt;script type="text/javascript" src="../DD_belatedPNG.js"&gt;&lt;/script&gt; <br/>
+				&lt;script&gt;DD_belatedPNG.fix('#focusAd .bg,#focusAd .con,#focusAd .prev,#focusAd .next');&lt;/script&gt; <br/>
+				&lt;![endif]--&gt;  <br/>
+
+		</div>
+
+		<div class="css">
+<blockquote>
+	<ol class="dp-css">
+		<li class="alt"><span><span>.tv-slideBox{&nbsp;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">288px</span><span>;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#333</span><span>;&nbsp;</span><span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;.hd{&nbsp;<span class="keyword">display</span><span>:</span><span class="value">none</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;li{&nbsp;<span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;li&nbsp;.pic{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">720px</span><span>;&nbsp;</span><span class="keyword">float</span><span>:</span><span class="value">left</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;li&nbsp;.pic&nbsp;img{&nbsp;<span class="keyword">width</span><span>:</span><span class="value">720px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;li&nbsp;.con{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">relative</span><span>;&nbsp;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">#fff</span><span>;&nbsp;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">288px</span><span>;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">240px</span><span>;&nbsp;</span><span class="keyword">padding-left</span><span>:</span><span class="value">20px</span><span>;&nbsp;&nbsp;&nbsp;</span><span class="keyword">float</span><span>:</span><span class="value">left</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;demoEffect/images/gtvSplit.png&quot;</span><span>)&nbsp;</span><span class="value">-281px</span><span>&nbsp;</span><span class="value">0</span><span>&nbsp;</span><span class="value">repeat-y</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;li&nbsp;.con&nbsp;.bg{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">96px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">96px</span><span>;&nbsp;right:</span><span class="value">0px</span><span>;&nbsp;top:</span><span class="value">0px</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;demoEffect/images/gtvSplit.png&quot;</span><span>)&nbsp;</span><span class="value">-84px</span><span>&nbsp;</span><span class="value">0</span><span>&nbsp;</span><span class="value">no-repeat</span><span>;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;li&nbsp;.con&nbsp;.title{&nbsp;&nbsp;<span class="keyword">width</span><span>:</span><span class="value">170px</span><span>;&nbsp;</span><span class="keyword">padding-top</span><span>:</span><span class="value">30px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">68px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;li&nbsp;.con&nbsp;.title&nbsp;a{&nbsp;<span class="keyword">color</span><span>:</span><span class="value">#fff</span><span>;&nbsp;&nbsp;</span><span class="keyword">font</span><span>:</span><span class="value">normal</span><span>&nbsp;</span><span class="value">14px</span><span>/</span><span class="value">22px</span><span>&nbsp;</span><span class="string">&quot;Microsoft&nbsp;YaHei&quot;</span><span>;&nbsp;</span><span class="keyword">_font-weight</span><span>:</span><span class="value">bold</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;li&nbsp;.con&nbsp;.intro{&nbsp;<span class="keyword">color</span><span>:</span><span class="value">#cbcbcb</span><span>;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">220px</span><span>;&nbsp;</span><span class="keyword">border-top</span><span>:</span><span class="value">1px</span><span>&nbsp;</span><span class="value">dotted</span><span>&nbsp;</span><span class="value">#cbcbcb</span><span>;&nbsp;&nbsp;</span><span class="keyword">padding-top</span><span>:</span><span class="value">10px</span><span>;&nbsp;</span><span class="keyword">margin-top</span><span>:</span><span class="value">10px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;li&nbsp;.con&nbsp;.intro&nbsp;.more{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;bottom:</span><span class="value">20px</span><span>;&nbsp;left:</span><span class="value">20px</span><span>;&nbsp;</span><span class="keyword">display</span><span>:</span><span class="value">block</span><span>;&nbsp;</span><span class="keyword">width</span><span>:</span><span class="value">94px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">28px</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;demoEffect/images/gtvSplit.png&quot;</span><span>)&nbsp;</span><span class="value">-184px</span><span>&nbsp;</span><span class="value">0</span><span>&nbsp;</span><span class="value">no-repeat</span><span>;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;</span><span class="keyword">line-height</span><span>:</span><span class="value">990px</span><span>;&nbsp;&nbsp;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;li&nbsp;.con&nbsp;.intro&nbsp;.more:hover{&nbsp;bottom:<span class="value">21px</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;.prev,.tv-slideBox&nbsp;.next{&nbsp;<span class="keyword">position</span><span>:</span><span class="value">absolute</span><span>;&nbsp;</span><span class="keyword">z-index</span><span>:</span><span class="value">1</span><span>;</span><span class="keyword">width</span><span>:</span><span class="value">39px</span><span>;&nbsp;</span><span class="keyword">height</span><span>:</span><span class="value">87px</span><span>;&nbsp;</span><span class="keyword">overflow</span><span>:</span><span class="value">hidden</span><span>;&nbsp;</span><span class="keyword">cursor</span><span>:</span><span class="value">pointer</span><span>;&nbsp;left:</span><span class="value">10px</span><span>;&nbsp;top:</span><span class="value">80px</span><span>;&nbsp;</span><span class="keyword">background</span><span>:</span><span class="value">url</span><span>(</span><span class="string">&quot;demoEffect/images/gtvSplit.png&quot;</span><span>)&nbsp;</span><span class="value">0&nbsp;0</span><span>&nbsp;</span><span class="value">no-repeat</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li><span>.tv-slideBox&nbsp;.next{&nbsp;<span class="keyword">background-position</span><span>:</span><span class="value">-41px</span><span>&nbsp;</span><span class="value">0</span><span>;&nbsp;left:</span><span class="value">674px</span><span>;&nbsp;}&nbsp;</span></span></li>
+		<li class="alt"><span>.tv-slideBox&nbsp;.prev:hover,.tv-slideBox&nbsp;.next:hover{&nbsp;top:<span class="value">79px</span><span>;&nbsp;&nbsp;}&nbsp;</span></span></li>
+	</ol>
+</blockquote>
+
+
+		</div>
+
+	</div>
+<!-- content E -->
+</body>
+</html>

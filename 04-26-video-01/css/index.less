@@ -1,0 +1,305 @@
+.index{
+    overflow-x: hidden;
+    min-width: 1000px;
+    padding-top: 80px;
+    background-image: url(../images/next_01.png);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    .swiper-01-div{
+        width: 300px;
+        height: 300px;
+        position: absolute;
+        left: 75%;
+        top: 50%;
+        margin-left: -150px;
+        margin-top: -150px;
+        padding:0 40px;
+//      background-image: url(../images/bg_swiper.png);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        border-radius: 6px;
+        .swiper-slide{
+            border-radius: 10px;
+        }
+        .swiper-pagination,
+        .swiper-button-prev,
+        .swiper-button-next{
+            display: none;
+        }
+    }
+    .swiper-container {
+//      height: 100%;
+//      width: 100%;
+        border-radius: 8px;
+    }
+    .swiper-slide {
+        background-position: center;
+        background-size: cover;
+    }
+    .swiper-container-01{
+        
+    }
+    .i-img-scale{
+            position: absolute;
+            left: 50%;
+            top: 70px;
+            width: 400px;
+            margin-left: -200px;
+            z-index: 100;
+    }
+    .i-header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 80px;
+        min-width: 1000px;
+        background-color: white;
+        z-index: 99999;
+        .nav-img-01{
+            display: inline-block;
+            width: 140px;
+            height: 80px;
+            margin-left: 5%;
+            background-position: 100% 100%;
+            background-image: url(../images/index_41.png);
+        }
+        .nav-img-02{
+            display: inline-block;
+            width: 480px;
+            height: 80px;
+            margin-left: 20%;
+            background-position: 100% 100%;
+            background-image: url(../images/index_42.png);
+        }
+    }
+    .i-header-hover{
+        background-color: black;
+        .nav-img-01{
+            background-image: url(../images/index_41_hover.png);
+        }
+        .nav-img-02{
+            background-image: url(../images/index_42_hover.png);
+        }
+    }
+    .i-main-01{
+        display: table-cell;
+        text-align: center;
+        background-color: rgba(0,0,0,0.7);
+        vertical-align: middle;
+    }
+    .i-main-02{
+        position: relative;
+        background-color: white;
+        padding-top: 140px;
+        .i-img-01{
+            position: relative;
+            z-index: 22;
+        }
+    }
+    .i-main-03{
+        background-color: rgb(27,87,127);
+//      overflow: hidden;
+        .main-03-content{
+            position: relative;
+            z-index: 10;
+            margin-bottom: 180px;
+        }
+//      .i-img-scale{
+//          position: absolute;
+//          left: 50%;
+//          top: 30%;
+//          width: 200px;
+//          margin-left: -100px;
+//          z-index: 1;
+//      }
+        .main-03-content-div{
+            position: relative;
+            padding: 120px 0;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            width: 100%;
+            transition: all 1s;
+            .content-div{
+                height: 300px;
+                position: relative;
+                display: flex;
+                flex-direction: row;
+                img{
+                    border-radius: 10px;
+                    width: 200px;
+                    height: 200px;
+                    transition: all 0.6s;
+                }
+                .content-left{
+                    width: 50px;
+                    h1{
+                        color: #D7D7D7;
+                        line-height: 40px;
+                        font-size: 20px;
+                        transition: all 0.6s;
+                    }
+                    h2,h3,p{
+                        opacity: 0;
+                        
+                    }
+                }
+            }
+        }
+        /*以下是图片动态效果*/
+        .content-div-hover-01{
+            .content-div-01{
+                img{
+                    position: absolute;
+                    left: 120px;
+                    top: 0;
+                    width: 300px;
+                    height: 300px;
+                }
+                .content-left{
+                  position: relative;
+                  width: 400px;
+                  z-index: 2;
+                  h1{
+                      font-size: 50px;
+                      line-height: 60px;
+                  }
+                  h2,h3,p{
+                      opacity: 1;
+                  }
+                  h2{
+                      font-size: 28px;
+                      color: #010101;
+                      line-height: 40px;
+                  }
+                  h3{
+                      color: #fe8718;
+                      line-height: 24px;
+                      font-size: 16px;
+                      padding: 5px 0;
+                  }
+                   p{
+                       color: white;
+                       font-size: 12px;
+                       line-height: 20px;
+                       padding: 5px 0;
+                   } 
+                }
+            }
+            .content-div-02{
+                top: 50px;
+            }
+            .content-div-03{
+            }
+        }
+        .content-div-hover-02{
+            .content-div-02{
+                img{
+                    position: absolute;
+                    left: 120px;
+                    top: -50px;
+                    width: 300px;
+                    height: 300px;
+                }
+                .content-left{
+                  position: relative;
+                  width: 400px;
+                  z-index: 2;
+                  h1{
+                      font-size: 50px;
+                      line-height: 60px;
+                  }
+                  h2,h3,p{
+                      opacity: 1;
+                  }
+                  h2{
+                      font-size: 28px;
+                      color: #010101;
+                      line-height: 40px;
+                  }
+                  h3{
+                      color: #e68524;
+                      line-height: 24px;
+                      padding: 5px 0;
+                      font-size: 16px;
+                  }
+                   p{
+                       color: white;
+                       font-size: 12px;
+                       line-height: 20px;
+                       padding:5px 0;
+                   } 
+                }
+            }
+            .content-div-01{
+            }
+            .content-div-03{
+            }
+        }
+        .content-div-hover-03{
+            .content-div-03{
+                img{
+                    position: absolute;
+                    left: 120px;
+                    top: 0;
+                    width: 300px;
+                    height: 300px;
+                }
+                .content-left{
+                  padding-top: 50px;
+                  position: relative;
+                  width: 400px;
+                  z-index: 2;
+                  h1{
+                      font-size: 50px;
+                      line-height: 60px;
+                  }
+                  h2,h3,p{
+                      opacity: 1;
+                  }
+                  h2{
+                      font-size: 28px;
+                      color: #010101;
+                      line-height: 40px;
+                  }
+                  h3{
+                      color: #e68524;
+                      line-height: 24px;
+                      font-size: 16px;
+                      padding: 5px 0;
+                  }
+                   p{
+                       color: white;
+                       font-size: 12px;
+                       line-height: 20px;
+                       padding: 5px 0;
+                   } 
+                }
+            }
+            .content-div-01{
+            }
+            .content-div-02{
+                top: 50px;
+            }
+        }
+        /*以上是图片动态效果*/
+    }
+    .i-main-03-hover{
+        background-color: white;
+    }
+    .i-main-03,
+    .i-main-04,
+    .i-main-05,
+    .i-main-06{
+        position: relative;
+        z-index: 2;
+    }
+    .i-main-04{
+    }
+    
+}
+.index-hover{
+    background-image: url(../images/index_09.png);
+}

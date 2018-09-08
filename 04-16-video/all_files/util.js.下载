@@ -1,0 +1,1736 @@
+$(function(){
+	ltLgStyle();
+	$(window).resize(function(){
+		ltLgStyle();
+	})
+})
+function ltLgStyle(){
+	if($(window).width()<1300){
+		$(".wrapper").addClass("on");
+	}else{
+		$(".wrapper").removeClass("on");
+	}
+}
+
+$(function() {
+	zTop();
+
+/*
+ * @2016-07-11
+ * 去除网站响应式
+ */
+	
+	// 导航
+	initHeader(); 
+	
+	// slider
+	initSlider();
+	
+	// 了解正邦
+	initAbout();
+	
+	// 右侧模块
+	initSub();
+	
+	//微信正邦
+	bangNewsAutoHeight();
+	
+	// tab
+	initTab();
+	
+	// 更多案例详情
+	initCaseinfo();
+	
+	// FAQ我要提问
+	initSelector();
+	
+	// 产品列表加载
+	initCaselist();
+	
+	// 反响列表加载
+	initCustomlist();
+	
+	// 动态列表加载
+	initNewslist();
+	
+	// mobile
+	//initMobile(); //edit 2016-07-11  
+	
+	// casedetail
+	initCasedetail();
+	
+	// praise
+	initPraise();
+	
+	// other service
+	initOtherService();
+	
+	// service case
+	initServiceCase();
+	
+	// hi there
+	fckrobot();
+	
+});
+
+
+function zTop(){
+	if ($('.z-top').length > 0){
+		var hei=$('.main-nav').outerHeight();
+		var left=$('.z-top').offset().left;
+		var top=$('.z-top').offset().top;
+		
+		$(window).scroll(function() {
+			var scrollDis=$(window).scrollTop();
+			if (scrollDis >= (top-hei)){
+				$('.z-top').css({
+					"position":"fixed",
+					"left":left+"px",
+					"top":hei+"px",
+					"z-index":10
+				});
+			} else {
+				$('.z-top').css({
+					"position":"static"
+				});
+			}
+		});
+	}
+}
+
+// TODO: del 
+function fckrobot() {
+	if ('undefined' == typeof(document.body.style.maxHeight)) {
+		confirm('您的浏览器版本过低，如果您在浏览网页过程中出现异常，请您尝试使用这些浏览器：IE10，Chrome，Firefox，Safari，Opera。');
+	}
+}
+// del end
+
+//微信正邦-新闻标题垂直居中
+function bangNewsAutoHeight(){
+	var _tempEleHeight = $(".bang-news.home-news .news-list li.image-news .text .tit");
+	_tempEleHeight.each(function(){
+		var _tempEleHeight =-$(this).outerHeight()/2;
+		$(this).css("margin-top",_tempEleHeight);
+	})
+}
+
+//首页服务咨询电话，PC端不能点击，手机端
+$().ready(function(){
+	var ismobile='ismobile';
+	$.ajax({
+		url: '/ajax',
+		type: 'post',
+		data: {
+			'ismobile': ismobile
+		},
+		dataType: 'json',
+		success: function(reply) {
+			if(reply=='2'){
+				$('#ismobile').attr('href','#');
+			}else{
+				$('#ismobile').attr('href','tel:4000099778');
+			}
+		}
+	});
+})
+
+
+$(window).bind('load', function() {
+	// 产品与服务副导航
+	initProductNav();
+});
+
+function initHeader() {
+	var deptNav = $('.header .dept-nav');
+	var deptNavList = deptNav.find('.dept-nav-ul');
+	var deptNavOpen = deptNav.find('.dept-nav-opener');
+	var qrCode = $('.header .qrcode');
+	var atTop = true; 
+	
+	function openDeptNav() {
+		deptNavList.stop().slideDown(800);
+//		if (document.documentElement.clientWidth > 992) { 
+			deptNavOpen.stop().fadeOut();
+//		} //edit 2016-07-11  
+		deptNav.addClass('opened');
+		deptNavOpen.addClass('opened');
+		
+		/*if (document.documentElement.clientWidth <= 992) { 
+			// closeNavUl();
+			navUl.css({height: 0}).removeClass('opened');
+			// closeSearch();				
+			search.css({top: 0});
+			if (cover) {
+				cover.remove();
+			}
+			searchbtn.removeClass('open');
+		} */ //edit 2016-07-11  
+	}
+	
+	function closeDeptNav() {
+		deptNavList.stop().slideUp(800);
+//		if (document.documentElement.clientWidth > 992) { 
+			deptNavOpen.stop().fadeIn();
+//		} //edit 2016-07-11  
+		deptNav.removeClass('opened');
+		deptNavOpen.removeClass('opened');
+	}
+		
+	// 横向导航的折叠
+	function openMainNav() {
+		qrCode.stop().animate({left: 0})
+	}
+	function closeMainNav() {
+		qrCode.stop().animate({left: -80})
+	}
+	
+	// 首页添加滚动展开折叠
+	/* if ($('body').attr('class').indexOf('index') > -1) {
+		$(window).bind('scroll', function() {
+			if (document.documentElement.clientWidth > 768) {
+				var top = document.documentElement.scrollTop || document.body.scrollTop;
+				if (top > 10 && atTop) {
+					closeDeptNav();
+					closeMainNav();
+					atTop = false;
+				} else if (top <= 10 && !atTop) {
+					openDeptNav();
+					openMainNav();
+					atTop = true;
+				}
+			}
+		});
+				
+		deptNav.bind({
+			'mouseenter': function() {
+				if (document.documentElement.clientWidth > 768) {
+					openDeptNav();
+				}
+			},
+			'mouseleave': function() {
+				if (document.documentElement.clientWidth > 768) {
+					if (!atTop) {
+						closeDeptNav();
+					}
+				}
+			}
+		});
+	
+	}
+	// 非首页的情况
+	else {		
+		deptNav.bind({
+			'mouseenter': openDeptNav,
+			'mouseleave': closeDeptNav
+		});
+		
+		$(window).bind('scroll', function() {
+			if (document.documentElement.clientWidth > 768) {
+				var top = document.documentElement.scrollTop || document.body.scrollTop;
+				if (top > 0 && atTop) {
+					closeMainNav();
+					atTop = false;
+				} else if (top <= 0 && !atTop) {
+					openMainNav();
+					atTop = true;
+				}
+			}
+		});
+	} */	// edit 2014.12.24
+
+	if( $('#cet-video')[0] ){
+
+		closeDeptNav();
+
+		deptNav.bind({
+			'mouseenter': openDeptNav
+		});
+		
+		$(window).bind('scroll', function() {
+//			if (document.documentElement.clientWidth > 768) {
+				var top = document.documentElement.scrollTop || document.body.scrollTop;
+				if (top > 0 && atTop) {
+					openDeptNav();
+					atTop = false;
+				} else if (top <= 0 && !atTop) {
+					closeDeptNav();
+					atTop = true;
+				}
+//			} //edit 2016-07-11  
+		});
+	}
+	
+	deptNavOpen.bind('touchend', function() {
+		if (deptNavOpen.hasClass('opened')) {
+			closeDeptNav();
+		} else {
+			openDeptNav();
+		}
+	});
+	
+	var displayHyBtn = $('.case-filter .sec-tit .hy');
+	displayHyBtn.click(function() {
+		if ($(this).hasClass('hide')) {
+			//displayHyBtn.css("display","none");
+			$('.case-filter .search-ind .ind-wrap').show();
+			$(this).removeClass('hide');
+		}else{
+			$('.case-filter .search-ind .ind-wrap').hide();
+			$(this).addClass('hide');
+		}
+	});
+
+	// search 
+	var search = $('.header .seach-wrap');
+	var searchbtn = $('.header .bang-nav-search');
+	var cover = null;
+	
+	searchbtn.click(function() {
+		if ($(this).hasClass('open')) {
+			closeSearch();
+			$(this).removeClass('open');
+		} else {
+			openSearch();
+			$(this).addClass('open');
+		}
+	});
+	
+	function openSearch() {
+		cover = $('<div>').css({
+			'position': 'fixed',
+			'top': 0,
+			'left': 0,
+			'z-index': 8888,
+			'width': '100%',
+			'height': '100%',
+			'background': '#000',
+			'opacity': 0
+		});
+		$('body').append(cover);
+		search.animate({top: $('h1.logo').height()}, 300);
+//		if (document.documentElement.clientWidth > 992) {
+			cover.animate({opacity: 0.2}, 300);
+//		} //edit 2016-07-11  
+		
+		cover.click(function() {
+			closeSearch();
+			searchbtn.removeClass('open');
+		});
+		
+		/*if (document.documentElement.clientWidth <= 992) {
+			// closeNavUl();
+			navUl.css({height: 0}).removeClass('opened');
+			// closeDeptNav();
+			//deptNavList.hide();
+			//deptNav.removeClass('opened');
+			//deptNavOpen.removeClass('opened');
+		}*/ //edit 2016-07-11  
+	}
+	function closeSearch() {
+		search.animate({top: 0}, 300);
+		cover.animate({opacity: 0}, 300, function() {
+			cover.remove();
+		});
+	}
+	
+	var navUl = $('.bang-nav-ul');
+	$('.bang-nav-mobile').bind({
+		'click': function() {
+			if (navUl.hasClass('opened')) {
+				closeNavUl();
+			} else {
+				openNavUl();
+			}
+		}
+	});
+	
+	function closeNavUl() {
+		navUl.animate({height: 0}, 600);
+		navUl.removeClass('opened');
+	}
+	function openNavUl() {
+		navUl.animate({height: navUl[0].scrollHeight-50}, 600);
+		navUl.addClass('opened');
+	
+		/*if (document.documentElement.clientWidth <= 992) {
+			// closeDeptNav();
+			//deptNavList.hide();
+			//deptNav.removeClass('opened');
+			//deptNavOpen.removeClass('opened');
+			// closeSearch();				
+			search.css({top: 0});
+			if (cover) {
+				cover.remove();
+			}
+			searchbtn.removeClass('open');
+		}*/ //edit 2016-07-11  
+	}
+	
+	$(window).resize(function() {
+		$('header *').removeAttr('style');
+	});
+}
+
+// slider
+function initSlider() {
+	
+	var cloneSliders = [];
+	var windowSize = getWindowSize();
+	
+	var mobileWidth = 768;
+	
+	function setSlider() {
+	
+		// 清除所有clone的slider
+		for (var i = 0; i < cloneSliders.length; i++) {
+			cloneSliders[i].remove();
+		}
+		cloneSliders = [];
+	
+		// 渐变slider
+		/* $(".fade-slider").each(function() {
+			var slider = $(this);
+			// 克隆html
+			var sliderclone = slider.clone();
+			
+			// 隐藏原来的html，在后面添加clone
+			slider.hide().after(sliderclone);
+			// 现实clone，并创建slide
+			sliderclone.show().slide({effect:'fold',mainCell:".bd ul",interTime:5000,delayTime:700,trigger:"mouseover",autoPlay:true});
+			
+			// 在clone数组中添加，用于下次清除
+			cloneSliders.push(sliderclone);
+		}); */
+		
+		// 水平slider
+		/* $(".leftloop-slider").each(function() {
+			var slider = $(this);
+			var sliderclone = slider.clone();
+			
+			slider.hide().after(sliderclone);
+			sliderclone.show().slide({effect:'leftLoop',mainCell:".bd ul",interTime:5000,delayTime:700,trigger:"mouseover",pnLoop:false});
+			
+			cloneSliders.push(sliderclone);
+		}); */
+		
+		// 服务carousel
+		$(".service-carousel").each(function() {
+			var visnum = 0;
+			if( $(this).hasClass('service-carousel-video') ){
+				switch (getWindowSize()) {
+					case 'lg': visnum = 5;
+							   break;
+					case 'md': visnum = 4;
+							   break;
+					case 'sm': visnum = 4;
+							   break;
+					case 'xs': break;	   
+				}
+			}else{
+				switch (getWindowSize()) {
+					case 'lg': visnum = 4;
+							   break;
+					case 'md': visnum = 3;
+							   break;
+					case 'sm': visnum = 3;
+							   break;
+					case 'xs': break;	   
+				}
+			}
+			
+			
+			if (windowSize != 'xs') {
+				var slider = $(this);
+				var sliderclone = slider.clone();
+				
+				if (slider.find('.bd li').length > visnum) {
+					slider.hide().after(sliderclone);	
+					sliderclone.show().slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:false,vis:visnum,scroll:1});
+					
+					cloneSliders.push(sliderclone);
+					sliderclone.find('.hd').show();
+				} else {
+					slider.hide().after(sliderclone);
+					sliderclone.show();	
+					cloneSliders.push(sliderclone);
+				}
+			}
+		});
+		$(".service-c").each(function() {
+			var visnum = 0;
+			switch (getWindowSize()) {
+				case 'lg': visnum = 5;
+						   break;
+				case 'md': visnum = 4;
+						   break;
+				case 'sm': visnum = 4;
+						   break;
+				case 'xs': break;	   
+			}
+			
+			if (windowSize != 'xs') {
+				var slider = $(this);
+				var sliderclone = slider.clone();
+				
+				if (slider.find('.bd li').length > visnum) {
+					slider.hide().after(sliderclone);	
+					sliderclone.show().slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:false,vis:visnum,scroll:1});
+					
+					cloneSliders.push(sliderclone);
+					sliderclone.find('.hd').show();
+				} else {
+					slider.hide().after(sliderclone);
+					sliderclone.show();	
+					cloneSliders.push(sliderclone);
+				}
+			}
+		});
+				
+		// 案例carousel
+		$(".case-carousel").each(function() {
+			var visnum = 0;
+			var windowSize = getWindowSize();
+			switch (windowSize) {
+				case 'lg': visnum = 3;
+						   break;
+				case 'md': visnum = 2;
+						   break;
+				case 'sm': break;
+				case 'xs': break;	   
+			}
+			
+			if (windowSize != 'xs' && windowSize != 'sm') {
+				var slider = $(this);
+				var sliderclone = slider.clone();
+				
+				slider.hide().after(sliderclone);	
+				sliderclone.show().slide({titCell:".hd ul",mainCell:".bd ul",autoPage:true,effect:"left",autoPlay:false,vis:visnum,scroll:visnum,pnLoop:false,
+					endFun:function( i,c,s ){ 
+						if (i == 0) {
+							s.find('a.next').addClass('nextEnd');
+						}
+					}
+				});
+				
+				cloneSliders.push(sliderclone);
+			} else {
+				// 手机版不创建carousel，而是复制4个案例
+				var slider = $(this);
+				var sliderclone = $('<div>');
+				if (windowSize == 'xs') {
+					sliderclone.append(slider.find('.block-1:lt(4)'));
+				} else {
+					sliderclone.append(slider.find('.block-1:lt(6)'));
+				}
+				slider.hide().after(sliderclone);
+				cloneSliders.push(sliderclone);
+			}
+		});	
+		$(document).on('click', '.case-carousel .nextEnd', function(e) {
+			e.preventDefault();
+			window.open($(this).parents('section.dept-cases').find('.tit a').attr('href'));
+		}); 
+		
+	}
+
+	function getWindowSize() {
+//		var width = document.documentElement.clientWidth;
+//		if (width >= 1200) {
+			return 'lg';
+		/*} else if (width >= 992) {
+			return 'md';
+		} else if (width >= 768) {
+			return 'sm';
+		} else {
+			return 'xs'
+		} 
+		*/ //edit 2016-07-11  
+	}
+	
+	setSlider();
+	
+	$(window).resize(function() {
+		var newSize = getWindowSize();
+		if (newSize != windowSize) {
+			setSlider();
+			windowSize = newSize;
+		}
+	});
+	
+	
+	
+	$(".fade-slider").each(function() {
+		$(this).flexslider({
+			selector: ".bd li",
+			animation: "fade",  
+			controlNav: true,
+			directionNav: false,
+			pauseOnAction: false			
+		});
+		var that = $(this);
+		for(var i = 0; i<that.find(".flex-control-nav li").length;i++){
+			var text = that.find(".my-control-nav li").eq(i).text();
+			that.find(".flex-control-nav li").eq(i).find("a").text(text);
+		}
+	});
+	$(".banner-slider").each(function() {
+		$(this).flexslider({
+			selector: ".bd li",
+			animation: "fade",  
+			controlNav: true,
+			directionNav: false,
+			pauseOnAction:true,
+			slideshow: false
+			
+		});
+		var that = $(this);
+		for(var i = 0; i<that.find(".flex-control-nav li").length;i++){
+			var text = that.find(".my-control-nav li").eq(i).text();
+			that.find(".flex-control-nav li").eq(i).find("a").text(text);
+		}
+	});
+	$(".fade-slider-footer").each(function() {
+		$(this).flexslider({
+			selector: ".bd li",
+			animation: "fade",  
+			controlNav: true,
+			directionNav: false,
+			pauseOnAction: false			
+		});
+		var that = $(this);
+		for(var i = 0; i<that.find(".flex-control-nav li").length;i++){
+			var text = that.find(".my-control-nav li").eq(i).text();
+			that.find(".flex-control-nav li").eq(i).find("a").text(i+1);
+		}
+	});
+	$(".leftloop-slider").each(function() {
+		$(this).flexslider({
+			selector: ".bd li",
+			animation: "left",  
+			controlNav: true,
+			directionNav: true,
+			pauseOnAction: false,
+			animationLoop: false
+		});
+	});
+}
+
+
+// 了解正邦
+function initAbout() {
+	if ($('.about-bang').length > 0) {
+		var detail = $('.about-bang .detail');
+		$('.about-bang .more-btn').click(function(e) {
+			e.preventDefault();
+			if ($(this).hasClass('opened')) {
+				detail.slideUp(600);
+				$(this).removeClass('opened');
+			} else {
+				detail.slideDown(600);
+				$(this).addClass('opened');
+			}
+		})
+	}
+}
+
+
+// 右侧模块
+function initSub() {
+	
+	// 其他案例
+	var subcaseLi = $('.sub-caselist-li');
+	if (subcaseLi.length) {
+		subcaseLi.filter('.active').find('.image').show();
+		subcaseLi.each(function() {
+			var li = $(this);
+			// li.find('img').bind('load', function() {
+				li.bind('mouseenter', function() {
+					subcaseLi.find('.image').stop().slideUp();
+					subcaseLi.removeClass('active');
+					$(this).find('.image').stop().slideDown();
+					$(this).addClass('active');
+				});
+			// });
+		});
+	}
+	
+	// 行业案例检索
+	var subInd = $('.sub-search-ind');
+	if (subInd.length) {
+		var indWrap = subInd.find('.ind-wrap');
+		var indMinHeight = indWrap.height();
+		var indMaxHeight = indWrap[0].scrollHeight;
+		subInd.find('.more-btn').click(function(e) {
+			e.preventDefault();
+			if ($(this).hasClass('opened')) {
+				indWrap.animate({'height': indMinHeight});
+				$(this).removeClass('opened');
+			} else {
+				indWrap.animate({'height': indMaxHeight});
+				$(this).addClass('opened');
+			}
+		});
+	}
+	
+	// 行业案例检索
+	var subReq = $('.sub-search-req');
+	if (subReq.length) {
+		var reqWrap = subReq.find('.req-wrap');
+		var reqMinHeight = reqWrap.height();
+		var reqMaxHeight = reqWrap[0].scrollHeight;
+		subReq.find('.more-btn').click(function(e) {
+			e.preventDefault();
+			if ($(this).hasClass('opened')) {
+				reqWrap.animate({'height': reqMinHeight});
+				$(this).removeClass('opened');
+			} else {
+				reqWrap.animate({'height': reqMaxHeight});
+				$(this).addClass('opened');
+			}
+		});
+	}
+	
+	// 电话api
+	var subTel = $('.sub-tel');
+	if (subTel.length) {
+		subTel.find('.callbtn').click(function() { 
+			lxb.call(subTel.find('#telinput')[0]);
+		});
+	}
+}
+
+
+// tab
+function initTab() {
+	$('.tab-wrap').each(function() {
+		var tabWrap = $(this);
+		var tabs = tabWrap.find('.tab');
+		var tabcons = tabWrap.find('.tabcon');
+		tabs.click(function(e) {
+			e.preventDefault();
+			if (!$(this).hasClass('active')) {
+				var i = tabs.index(this);
+				tabs.removeClass('active');
+				$(this).addClass('active');
+				tabcons.hide();
+				tabcons.eq(i).show();
+			}
+		});
+	})
+}
+
+
+// 更多案例详情
+function initCaseinfo() {
+	if ($('.caseinfo').length > 0) {
+		var detail = $('.caseinfo .info-more');
+		$('.caseinfo .more-btn').click(function(e) {
+			e.preventDefault();
+			if ($(this).hasClass('opened')) {
+				detail.slideUp(600);
+				$(this).removeClass('opened');
+			} else {
+				detail.slideDown(600);
+				$(this).addClass('opened');
+			}
+		})
+	}
+}
+
+// FAQ我要提问
+function initSelector() {
+	$('.chooser').each(function() {
+		var chooser = $(this);
+		var text = chooser.find('.text');
+		var input = chooser.find('input');
+		var selector = chooser.find('.selector');
+		var opts = selector.find('.opt');
+		chooser.bind({
+			'mouseenter': function() { selector.show(); },
+			'mouseleave': function() { selector.hide(); }
+		});
+		text.bind({
+			'click': function() { selector.show(); }
+		});
+		opts.bind({
+			'mouseenter': function() { $(this).addClass('hover'); },
+			'mouseleave': function() { $(this).removeClass('hover'); },
+			'click': function() {
+				opts.removeClass('selected');
+				$(this).addClass('selected');
+				text.text($(this).text()).css('color', '#666');
+				input.val($(this).attr('value'));
+				selector.hide();
+			}
+		});
+	});
+}
+
+
+// 产品与服务副导航
+function initProductNav() {
+	var productNav = $('.product-nav');
+	if (productNav.length > 0) {
+		var maxScroll = $('.product .col-main').height() - productNav.height();
+		var gotBot = false;
+		
+		$(window).scroll(function() {
+			setProductNav();
+		});
+		$(window).resize(function() {
+			maxScroll = $('.product .col-main').height() - productNav.height();
+			gotBot = !gotBot;
+			setProductNav();
+		});
+		
+		function setProductNav() {
+			if (document.documentElement.clientHeight <= 620) { productNav.removeAttr('style'); return false; }
+			var scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+			if (scrollTop >= maxScroll && !gotBot) {
+				if (document.documentElement.clientWidth>1200) {
+					productNav.css({
+						position: 'absolute',
+						top: maxScroll,
+						left: '50%',
+						'margin-left': 225
+					});
+				} else if (document.documentElement.clientWidth>991) {
+					productNav.css({
+						position: 'absolute',
+						top: maxScroll,
+						left: '0%',
+						'margin-left': 580
+					});
+				} /*else {
+					productNav.css({
+						position: 'absolute',
+						top: maxScroll,
+						left: '68%',
+						'margin-left': 0
+					});
+				}*/ //edit 2016-07-11  
+				gotBot = true;
+			} else if (scrollTop < maxScroll && gotBot) {
+				if (document.documentElement.clientWidth>1200) {
+					productNav.css({
+						position: 'fixed',
+						top: 120,
+						left: '50%',
+						'margin-left': 295
+					});
+				} else if (document.documentElement.clientWidth>991) {
+					productNav.css({
+						position: 'fixed',
+						top: 120,
+						left: '0%',
+						'margin-left': 730
+					});
+				} /*else {
+					productNav.css({
+						position: 'fixed',
+						top: 120,
+						left: '68%',
+						'margin-left': 0
+					});
+				}*/ //edit 2016-07-11  
+				gotBot = false;
+			}
+		}
+		
+		// 初始化位置
+		if (document.documentElement.clientHeight <= 620) { return false; }			
+		if ((document.documentElement.scrollTop || document.body.scrollTop) < maxScroll) {
+			if (document.documentElement.clientWidth>=1200) {
+				productNav.css({
+					position: 'fixed',
+					top: 120,
+					left: '50%',
+					'margin-left': 295
+				});
+			} else if (document.documentElement.clientWidth>991) {
+				productNav.css({
+					position: 'fixed',
+					top: 120,
+					left: '0%',
+					'margin-left': 730
+				});
+			} /*else {
+				productNav.css({
+					position: 'fixed',
+					top: 120,
+					left: '68%',
+					'margin-left': 0
+				});
+			}*/ //edit 2016-07-11  
+			gotBot = false;
+		} else {
+			if (document.documentElement.clientWidth>=1200) {
+				productNav.css({
+					position: 'absolute',
+					top: maxScroll,
+					left: '50%',
+					'margin-left': 225
+				});
+			} else if (document.documentElement.clientWidth>991) {
+				productNav.css({
+					position: 'absolute',
+					top: maxScroll,
+					left: '0%',
+					'margin-left': 580
+				});
+			} /*else {
+				productNav.css({
+					position: 'absolute',
+					top: maxScroll,
+					left: '68%',
+					'margin-left': 0
+				});
+			}*/
+			gotBot = true;
+		}
+	}
+}
+
+
+function initCaselist() {
+	//wonder 页面Ajax 请求
+	$('.productlist').find('.ajaxbtn').click(function(){
+		var ajaxlist = $('.productlist').find('.ajaxlist');
+		var ajaxbtn = $('.productlist').find('.ajaxbtn');
+		var getall = $('.productlist').find('.get-all');
+		var ajaxurl = $('.productlist').attr('ajaxurl');
+		var totalnum = $('.productlist').attr('totalnum');
+		var model = $('.productlist').attr('model');
+		var column = 30;
+		
+		// 我要咨询
+		var querybtn = $('.productlist').find('.ask-question');
+		if (querybtn.length < 1) {
+			querybtn = $('<div class="ask-question" style="margin: 0; display: none;"><a target="_blank" class="querybtn" href="http://qiao.baidu.com/v3/?module=default&amp;controller=im&amp;action=index&amp;ucid=353991&amp;type=n&amp;siteid=1514">我要咨询</a></div>');
+		}
+		ajaxbtn.after(querybtn);
+		
+		loadList(department,ajaxlist.find('li').length, column*1,model);
+		function loadList(department,start, offset,model) {
+			// 加载案例
+			$.ajax({
+				url: ajaxurl,
+				type: 'post',
+				data: {
+					'department': department,
+					'start': start,
+					'offset': offset,
+					'model': model
+				},
+				dataType: 'json',
+				success: function(response) {
+					var cases = response.cases;
+					var totalnum = response.num.num;
+					var upload = response.num.upload;
+				
+					// 将新案例插入列表
+					$.each(cases, function(caseIndex, caseData) {
+						var caseHtml = '';
+						// zhengbang
+						caseHtml = '<li>'+
+							'<div class="image">'+
+								'<a href=/index/wonderlist?guid='+caseData.guid+' target="_blank"><img alt="" src="'+upload+'/'+caseData.path_year+'/'+caseData.path_month+'/'+caseData.path_day+'/'+caseData.file+'" /></a>'+
+							'</div>'+
+						'</li>';				
+						ajaxlist.append($(caseHtml));
+					});
+			
+					// 到达总数，隐藏更多按钮，否则显示按钮
+					if (ajaxlist.find('li').length >= totalnum) {
+						ajaxbtn.hide();
+						getall.hide();
+						querybtn.show();
+					} else {
+						ajaxbtn.show();
+						getall.show();
+						querybtn.hide();
+					}
+				}
+			});
+		}
+	})	
+	
+	//wonderlist 页面Ajax请求
+	$('.wonderlist').find('.ajaxbtn').click(function(){
+		var ajaxlist = $('.wonderlist').find('.ajaxlist');
+		var ajaxbtn = $('.wonderlist').find('.ajaxbtn');
+		var ajaxurl = $('.wonderlist').attr('ajaxurl');
+		var totalnum = $('.wonderlist').attr('totalnum');
+		var guid = $('.wonderlist').attr('guid');
+		var column = 20;
+		
+		// 我要咨询
+		var querybtn = $('.wonderlist').find('.ask-question');
+		if (querybtn.length < 1) {
+			querybtn = $('<div class="ask-question" style="margin-top: 50px; display: none;"><a target="_blank" class="querybtn" href="http://qiao.baidu.com/v3/?module=default&amp;controller=im&amp;action=index&amp;ucid=353991&amp;type=n&amp;siteid=1514">我要咨询</a></div>');
+		}
+		ajaxbtn.after(querybtn);
+
+		loadList(department,guid,ajaxlist.find('li').length, column*1);
+		function loadList(department,guid,start, offset) {
+
+			// 加载案例
+			$.ajax({
+				url: ajaxurl,
+				type: 'post',
+				data: {
+					'department': department,
+					'guid': guid,
+					'start': start,
+					'offset': offset
+				},
+				dataType: 'json',
+				success: function(response) {
+					var cases = response.cases;
+					var totalnum = response.num.num;
+					var upload = response.num.upload;
+				
+					// 将新案例插入列表
+					$.each(cases, function(caseIndex, caseData) {
+						var caseHtml = '';
+						// zhengbang
+						caseHtml = '<li>'+
+							'<div class="image">'+
+								'<img alt="" src="'+upload+'/'+caseData.path_year+'/'+caseData.path_month+'/'+caseData.path_day+'/'+caseData.file+'" /></a>'+
+							'</div>'+
+						'</li>';				
+						ajaxlist.append($(caseHtml));
+					});
+			
+					// 到达总数，隐藏更多按钮，否则显示按钮
+					if (ajaxlist.find('li').length >= totalnum) {
+						ajaxbtn.hide();
+						querybtn.show();
+					} else {
+						ajaxbtn.show();
+						querybtn.hide();
+					}
+				}
+			});
+		}
+	})	
+	
+	//一键载入全部作品
+	$('.productlist').find('.get-all').click(function(){
+		var ajaxlist = $('.productlist').find('.ajaxlist');
+		var ajaxbtn = $('.productlist').find('.ajaxbtn');
+		var getall = $('.productlist').find('.get-all');
+		var ajaxurl = $('.productlist').attr('ajaxurl');
+		var totalnum = $('.productlist').attr('totalnum');
+		var model = $('.productlist').attr('model');
+		var firstnum = ajaxlist.find('li').length;
+		var lastnum = parseInt(totalnum) - parseInt(firstnum);
+		var industry = $('.productlist').attr('industry');
+		
+		// 我要咨询
+		var querybtn = $('.productlist').find('.ask-question');
+		if (querybtn.length < 1) {
+			querybtn = $('<div class="ask-question" style="margin: 0; display: none;"><a target="_blank" class="querybtn" href="http://qiao.baidu.com/v3/?module=default&amp;controller=im&amp;action=index&amp;ucid=353991&amp;type=n&amp;siteid=1514">我要咨询</a></div>');
+		}
+		ajaxbtn.after(querybtn);
+		
+		if(department != ''){
+			loadList(department, firstnum, lastnum);	
+		}else if(industry == ''){
+			indexList(firstnum, lastnum);
+		}
+		
+		//精彩作品一键加载全部作品
+		function loadList(department,start, offset) {
+			// 加载案例
+			$.ajax({
+				url: ajaxurl,
+				type: 'post',
+				data: {
+					'department': department,
+					'start': start,
+					'offset': offset,
+					'model': model
+				},
+				dataType: 'json',
+				success: function(response) {
+
+					var cases = response.cases;
+					var totalnum = response.num.num;
+					var upload = response.num.upload;
+				
+					// 将新案例插入列表
+					$.each(cases, function(caseIndex, caseData) {
+						var caseHtml = '';
+						// zhengbang
+						caseHtml = '<li>'+
+							'<div class="image">'+
+								'<a href=/index/wonderlist?guid='+caseData.guid+' target="_blank"><img alt="" src="'+upload+'/'+caseData.path_year+'/'+caseData.path_month+'/'+caseData.path_day+'/'+caseData.file+'" /></a>'+
+							'</div>'+
+						'</li>';				
+						ajaxlist.append($(caseHtml));
+					});
+			
+					// 到达总数，隐藏更多按钮，否则显示按钮
+					if (ajaxlist.find('li').length >= totalnum) {
+						ajaxbtn.hide();
+						getall.hide();
+						querybtn.show();
+					} else {
+						ajaxbtn.show();
+						getall.show();
+						querybtn.hide();
+					}
+				}
+			});
+		}
+		
+		//首页一键加载全部案例
+		function indexList(start, offset) {
+			// 加载案例
+			$.ajax({
+				url: ajaxurl,
+				type: 'post',
+				data: {
+					'start': start,
+					'offset': offset,
+				},
+				dataType: 'json',
+				success: function(response) {
+					var cases = response.cases;
+					// 将新案例插入列表
+					$.each(cases, function(caseIndex, caseData) {
+
+						var caseHtml = '';
+						// zhengbang
+						caseHtml = '<li>'+
+						'<div class="image">'+
+							'<a href="'+caseData.url+'" target="_blank"><img width="206" height="136" alt="'+caseData.alt+'" title="'+caseData.title+'" src="'+caseData.image+'" /></a>'+
+						'</div>'+
+						'<div class="name">'+
+							'<a href="'+caseData.url+'" target="_blank">'+caseData.name+'</a>'+
+						'</div>'+
+						'<div class="des">'+caseData.des+'</div>'+
+					'</li>';
+						ajaxlist.append($(caseHtml));
+					});
+			
+					// 到达总数，隐藏更多按钮，否则显示按钮
+					if (ajaxlist.find('li').length >= totalnum) {
+						ajaxbtn.hide();
+						getall.hide();
+						querybtn.show();
+					} else {
+						ajaxbtn.show();
+						getall.show();
+						querybtn.hide();
+					}
+				}
+			});
+		}
+	})	
+	
+	//caselist、caselist2、caselist3
+	$('.product-filter, .industry-filter').bind({
+		'mouseenter': function() {
+			$(this).addClass('hover');
+			$(this).find('.opt-wrap').removeAttr('style');
+		},
+		'mouseleave': function() {
+			$(this).removeClass('hover');
+		}
+	});
+	
+	$('.caselist, .caselist2, .caselist3').each(function() {
+		var caselist = $(this);
+		var ajaxlist = caselist.find('.ajaxlist');
+		var ajaxbtn = caselist.find('.ajaxbtn');
+		var getall = caselist.find('.get-all');
+		var industryElem = caselist.parents('section').find('.industry-filter');
+		var productElem = caselist.parents('section').find('.product-filter');
+		var loadingELem = caselist.find('.loading');
+		var industryLinks = industryElem.find('a');
+		var productLinks = productElem.find('a');
+		
+		var ajaxurl = caselist.attr('ajaxurl');
+		var totalnum = caselist.attr('totalnum');
+		//var column = caselist.hasClass('caselist') ? 5 : 3;
+		var column = caselist.hasClass('caselist3') ? 10 : 6;
+
+		// 初始搜索条件为空，department在header内定义
+		var industry = caselist.attr('industry') || '';
+		var product = '';
+
+		// 我要咨询
+		var querybtn = caselist.find('.ask-question');
+		if (querybtn.length < 1) {
+			querybtn = $('<div class="ask-question" style="margin: 0; display: none;"><a target="_blank" class="querybtn" href="http://qiao.baidu.com/v3/?module=default&amp;controller=im&amp;action=index&amp;ucid=353991&amp;type=n&amp;siteid=1514">我要咨询</a></div>');
+		}
+		ajaxbtn.after(querybtn);
+		
+		//点击一键加载按钮
+		getall.click(function(){
+			loadList(department,industry,product,ajaxlist.find('li').length,totalnum);
+		});
+
+		ajaxbtn.click(function() {
+			loadList(department, industry, product, ajaxlist.find('li').length, column*5);
+		});
+		
+		// 行业选择
+		industryLinks.click(function() {
+			industry = $(this).attr('value');
+			industryElem.find('.switch').text($(this).text());
+			industryElem.find('.opt-wrap').hide();
+			
+			product = '';
+			productElem.find('.switch').text('按产品选择');
+			
+			ajaxlist.empty();
+			loadList(department, industry, product, ajaxlist.find('li').length, column*5);
+			
+			industryLinks.removeClass('active');
+			$(this).addClass('active');
+			productLinks.removeClass('active');
+			productLinks.eq(0).addClass('active');
+		});
+		
+		// 产品选择
+		productLinks.click(function() {
+			product = $(this).attr('value');
+			productElem.find('.switch').text($(this).text());
+			productElem.find('.opt-wrap').hide();
+			
+			industry = '';
+			industryElem.find('.switch').text('按行业选择');
+			
+			ajaxlist.empty();
+			loadList(department, industry, product, ajaxlist.find('li').length, column*5);
+			
+			productLinks.removeClass('active');
+			$(this).addClass('active');
+			industryLinks.removeClass('active');
+			industryLinks.eq(0).addClass('active');
+		});
+		
+		function loadList(department, industry, product, start, offset) {
+
+			// 显示loading
+			loadingELem.fadeIn();
+			
+			// 加载案例
+			$.ajax({
+				url: ajaxurl,
+				type: 'post',
+				data: {
+					'department': department,
+					'industry': industry,
+					'product': product,
+					'start': start,
+					'offset': offset
+				},
+				dataType: 'json',
+				success: function(response) {
+				
+					var cases = response.cases;
+					totalnum = response.totalnum;
+					
+					// 隐藏loading
+					loadingELem.fadeOut();
+					
+					// 将新案例插入列表
+					$.each(cases, function(caseIndex, caseData) {
+						var caseHtml = '';
+						if (caselist.hasClass('caselist')) {
+							// zhengbang
+							caseHtml = '<li>'+
+											'<div class="image">'+
+												'<a href="'+caseData.url+'" target="_blank"><img width="206" height="136" alt="'+caseData.alt+'" title="'+caseData.title+'" src="'+caseData.image+'" /></a>'+
+											'</div>'+
+											'<div class="name">'+
+												'<a href="'+caseData.url+'" target="_blank">'+caseData.name+'</a>'+
+											'</div>'+
+											'<div class="des">'+caseData.des+'</div>'+
+										'</li>';
+						} else if (caselist.hasClass('caselist-emotion')) {		
+							caseHtml = '<li>'+
+							'<div class="con">'+
+							'<div class="image" style="width:330px;height:248px;">'+
+								'<a href="javascript:void(0);" class="video-open">'+
+									'<img src="'+caseData.image+'" width="330" height="248" alt="'+caseData.des+'" title="'+caseData.des+'" videoUrl="'+caseData.video_url+'" videoDetail="'+caseData.url+'" videoTitle=""/>'+
+									'<span></span>'+
+								'</a>'+
+							'</div>'+
+							'<div class="name">'+
+								'<a href="'+caseData.url+'" target="_blank">'+
+								'<span class="custom"></span>'+caseData.des+
+								'</a>'+
+							'</div>'+
+							'</div>'+
+							'</li>';
+						} else if (caselist.hasClass('caselist2')) {
+							if (caseData.video_url!=''){
+							caseHtml = '<li>'+
+											'<div class="con">'+
+												'<div class="image">'+
+													'<a href="'+caseData.url+'/'+parseInt(Math.random()*8999+1000)+'" target="_blank"><img width="330" height="218" alt="" src="'+caseData.image+'" /><span></span></a>'+
+												'</div>'+
+												'<div class="name">'+
+													'<a href="'+caseData.url+'" target="_blank"><span class="custom"></span> '+caseData.des+'</a>'+
+												'</div>'+
+											'</div>'+
+										'</li>';
+							} else {
+							caseHtml = '<li>'+
+								'<div class="con">'+
+								'<div class="image">'+
+								'<a href="'+caseData.url+'" target="_blank"><img width="330" height="218" alt="" src="'+caseData.image+'" /></a>'+
+								'</div>'+
+								'<div class="name">'+
+								'<a href="'+caseData.url+'" target="_blank"><span class="custom"></span> '+caseData.des+'</a>'+
+								'</div>'+
+								'</div>'+
+								'</li>';
+							}
+						} else {
+							// logovi
+							if(caseData.video_url!=''){
+							caseHtml = '<li>'+
+											'<div class="image">'+
+												'<a href="'+caseData.url+'/'+parseInt(Math.random()*8999+1000)+'" target="_blank"><img width="330" height="218" alt="" src="'+caseData.image+'" /><span></span></a>'+
+											'</div>'+
+											'<div class="name">'+
+												'<a href="'+caseData.url+'" target="_blank"><span class="custom"></span> '+caseData.des+'</a>'+
+											'</div>'+
+										'</li>';
+							}else{
+							caseHtml = '<li>'+
+								'<div class="image">'+
+								'<a href="'+caseData.url+'" target="_blank"><img width="330" height="218" alt="'+caseData.alt+'" title="'+caseData.title+'" src="'+caseData.image+'" /></a>'+
+								'</div>'+
+								'<div class="name">'+
+								'<a href="'+caseData.url+'" target="_blank"><span class="custom"></span> '+caseData.des+'</a>'+
+								'</div>'+
+								'</li>';
+							}
+							
+						}
+						ajaxlist.append($(caseHtml));
+					});
+					
+					if (caselist.hasClass('caselist-emotion')) {
+						
+						caseScripts = '<script type="text/javascript">'+
+						'$(".video-open").click(function(){'+
+							'videoOpen($(this));'+
+						'});'+
+						'$(".video-close").click(function(){'+
+							'thePlayer.stop();'+
+							'$(".video-open").children("img").removeAttr("id");' +
+							'$(".video-h").fadeOut();'+
+						'});'+
+						'</script>';
+						
+						ajaxbtn.append(caseScripts);
+					}
+					
+					// 到达总数，隐藏更多按钮，否则显示按钮
+					if (ajaxlist.find('li').length >= totalnum) {
+						ajaxbtn.hide();
+						getall.hide();
+						querybtn.show();
+					} else {
+						ajaxbtn.show();
+						getall.show();
+						querybtn.hide();
+					}
+					
+				}
+			});
+		}
+	});
+	
+	// search-result 
+	$('.search-result .ajaxbtn').click(function(e) {
+		e.preventDefault();
+		
+		var OFFSETS = {'product':6, 'case':10, 'news':6, 'faq':6};
+		var ajaxlist = $(this).parent().prev().prev();
+		var type = ajaxlist.attr('class');
+		type = type.slice(0, type.indexOf('list'));	// product, case, news, faq
+		var searchForm = $('.search-bang form');
+		var ajaxurl = searchForm.attr('ajaxurl');
+		var department = searchForm.find('input[name=department]').val();
+		var keyword = searchForm.find('input[name=keyword]').val();
+		var loadingELem = $(this).parent().prev();
+		var ajaxbtn = $(this);
+		var start = ajaxlist.find('li').length;
+		var offset = OFFSETS[type];
+		
+		// 显示loading
+		loadingELem.fadeIn();
+			
+		// 加载案例
+		$.ajax({
+			url: ajaxurl,
+			type: 'post',
+			data: {
+				'department': department,
+				'keyword': keyword,
+				'type': type,
+				'start': start,
+				'offset': offset
+			},
+			dataType: 'json',
+			success: function(response) {
+				var caseHtml = response.string;
+				var totalnum = response.num;
+				
+				// 隐藏loading
+				loadingELem.fadeOut();
+				ajaxlist.find('ul').append($(caseHtml));
+				
+				// 到达总数，隐藏更多按钮，否则显示按钮
+				if (ajaxlist.find('li').length >= totalnum) {
+					ajaxbtn.hide();
+					
+				} else {
+					ajaxbtn.show();
+				}
+			}
+		});		
+	});
+}
+
+
+
+function initCustomlist() {
+	var customlist = $('.custom-list');
+	var ajaxlist = customlist.find('.ajaxlist');
+	var ajaxbtn = customlist.find('.ajaxbtn');
+	var getall = customlist.find('.get-all');
+	var loadingELem = customlist.find('.loading');
+	var page = 1;
+	var totalnum = customlist.attr('totalnum');
+	
+	//var ajaxurl = '/ajax/evaluate';
+	var ajaxurl = customlist.attr('ajaxurl')+'/evaluate';
+	
+	ajaxbtn.click(function() {
+		page++;
+		loadList(page);
+	});
+	
+	//一键加载所有反响
+	getall.click(function(){
+		page++;
+		loadList(page,totalnum);
+	})
+	
+	function loadList(page,totalnum) {
+		
+		// 显示loading
+		loadingELem.fadeIn();
+		
+		// 加载案例
+		$.ajax({
+			url: ajaxurl,
+			type: 'post',
+			data: {
+				'page': page,
+				'totalnum':totalnum
+			},
+			dataType: 'json',
+			success: function(response) {
+				var evaluate = response.news;
+				var end = response.end;
+				
+				// 隐藏loading
+				loadingELem.fadeOut();
+				
+				// 将新案例插入列表
+				$.each(evaluate, function(evaluateIndex, evaluateData) {
+					var evaluateHtml = '<li class="custom-list-li">'+
+										'<div class="image"><img src="'+evaluateData.imageUrl+'" alt="" width="206" height="155" /></div>'+
+										'<div class="con">'+
+											'<h4 class="tit">'+evaluateData.name+'</h4>'+
+											'<blockquote class="des">'+
+												'<p>'+evaluateData.words+'</p>'+
+											'</blockquote>'+
+											'<div class="name">'+evaluateData.company_leader+'</div>'+
+										'</div>'+
+									'</li>';
+					ajaxlist.append($(evaluateHtml));
+				});
+				
+				// 到达总数，隐藏更多按钮，否则显示按钮
+				if (parseInt(end) == 1) {
+					ajaxbtn.hide();
+					getall.hide();
+				} else {
+					ajaxbtn.show();
+					getall.show();
+				}
+			}
+		});
+	}
+}
+
+
+function initNewslist() {
+	var newslist = $('.newslist');
+	var ajaxlist = newslist.find('.ajaxlist');
+	var ajaxbtn = newslist.find('.ajaxbtn');
+	var getall = newslist.find('.get-all');
+	var loadingELem = newslist.find('.loading');
+	var page = 1;
+	
+	//var ajaxurl = '/ajax/news';
+	var ajaxurl = newslist.attr('ajaxurl')+'/news';
+	var totalnum = newslist.attr('totalnum');
+	
+	ajaxbtn.click(function() {
+		page++;
+		loadList(page);
+	});
+	
+	getall.click(function() {
+		page++;
+		loadList(page,totalnum);
+	});
+	
+	function loadList(page,totalnum) {
+		
+		// 显示loading
+		loadingELem.fadeIn();
+		
+		// 加载案例
+		$.ajax({
+			url: ajaxurl,
+			type: 'post',
+			data: {
+				'page': page,
+				'totalnum':totalnum
+			},
+			dataType: 'json',
+			success: function(response) {
+				var news = response.news;
+				var end = response.end;
+				
+				// 隐藏loading
+				loadingELem.fadeOut();
+				
+				// 将新案例插入列表
+				$.each(news, function(newsIndex, newsData) {
+					var newsHtml = '<li class="newslist-li">'+
+									'<div class="con">'+
+										'<div class="image"><a target="_blank" href="'+newsData.hrefUrl+'"><img src="'+newsData.imageUrl+'" alt="" width="82" height="54"/></a></div>'+
+										'<div class="tit"><a target="_blank" href="'+newsData.hrefUrl+'">'+newsData.name+'</a></div>'+
+										'<div class="date">'+newsData.date+'</div>'+
+									'</div>'+
+								'</li>';
+					ajaxlist.append($(newsHtml));
+				});
+				
+				// 到达总数，隐藏更多按钮，否则显示按钮
+				if (parseInt(end) == 1) {
+					ajaxbtn.hide();
+					getall.hide();
+				} else {
+					ajaxbtn.show();
+					getall.show();
+				}
+			}
+		});
+	}
+}
+
+
+/*function initMobile() {
+	function setMobile() {
+	}
+	
+	setMobile();
+	$(window).resize(function() {
+		setMobile();
+	});
+}*/ //edit 2016-07-11  
+
+
+function initCasedetail() {
+	var caseDetail = $('.case-detail');
+	if (caseDetail.length > 0) {
+		if (caseDetail.find('.content').height() < document.documentElement.clientHeight) {
+			caseDetail.find('.offer-b').hide();
+		}
+	}
+}
+
+
+function initPraise() {
+	
+	var btn = $('.praisebtn');
+	var href = location.href.split('/');
+	var id = href.pop();
+	var type = href.pop();
+
+	if (!btn) { return false; }
+	
+	if ($.cookie(type+id) == '1') {
+		btn.addClass('active');
+	} else {
+		btn.removeClass('active');
+	}
+
+	btn.bind('click', function() {
+		var add;
+		
+		if ($(this).hasClass('active')) {
+			add = -1;
+		} else {
+			add = 1;
+		}
+		
+		$.ajax({
+			type: 'post',
+			url: '/ajax/praise',
+			data: 'type=' + type + '&id=' + id + '&add=' + add,
+			success: function(response) {
+				btn.text(response);
+				if (add > 0) {
+					btn.addClass('active');
+				} else {
+					btn.removeClass('active');
+				}
+				
+				$.cookie(type+id, add, { expires: 365 }); 
+			}
+		});
+	});
+}
+
+
+
+/* 案例详情页，其他服务部分 */
+function initOtherService() {
+	var otherService = $('.other-service');
+	var perpage = 5;
+	
+	if (otherService.length > 0) {
+		var lis = otherService.find('ul li');
+		if (lis.length > perpage) {
+			var curpage = 0;
+			var morebtn = $('<div class="btnwrap"><a class="more-btn" href="javascript:void(0)">展示更多服务</a></div>');
+			
+			lis.filter(':gt('+ (perpage-1) +')').hide();
+			otherService.append(morebtn);
+			
+			morebtn.click(function() {
+				curpage++;
+				lis.slice(curpage*perpage, curpage*perpage+perpage).fadeIn();
+				if (curpage*perpage+perpage >= lis.length) {
+					morebtn.fadeOut();
+				} 
+			});
+		}
+	}
+	
+}
+
+
+/* 服务详情页，服务案例部分 */
+function initServiceCase() {
+	var serviceCase = $('.service-case');
+	var perpage = 10;
+	
+	if (serviceCase.length > 0) {
+		var lis = serviceCase.find('ul li');
+		if (lis.length > perpage) {
+			var curpage = 0;
+			var morebtn = $('<div class="btnwrap"><a class="more-btn" href="javascript:void(0)">展示更多案例</a></div>');
+			
+			lis.filter(':gt('+ (perpage-1) +')').hide();
+			serviceCase.append(morebtn);
+			
+			morebtn.click(function() {
+				curpage++;
+				lis.slice(curpage*perpage, curpage*perpage+perpage).fadeIn();
+				if (curpage*perpage+perpage >= lis.length) {
+					morebtn.fadeOut();
+				} 
+			});
+		}
+	}
+}
+
+// 8.12
+/*$(window).on({
+	'resize':function(){
+		setVideo()
+	}
+})*/ //edit 2016-07-11  
+
+$(function(){
+	setVideo();
+	
+})
+
+function setVideo(){
+	//var gWin = $(window).width();
+	var ct = $('.inner-video .cet-suface');
+	if(ct[0]){
+		//if(gWin > 1200){
+			ct.children(".col-main").removeAttr("style")
+		/*}else{
+			ct.children(".col-main").css({width:gWin+'px',marginLeft:'-'+gWin/2+'px',left:'50%'})
+		}*/ //edit 2016-07-11  
+	}
+}
+
+function videoOpen(obj){
+
+	// if(navigator.userAgent.indexOf("iPhone") != -1 || navigator.userAgent.indexOf("iPad") != -1){
+	// 	window.location.href = obj.children('img').attr("alt");
+	// }else{  //edit 2017-03-20  
+		obj.children("img").attr('id',"thisvideo");			
+		var _url = $('#thisvideo').attr('videoUrl');	
+		var _img = $('#thisvideo').attr('src');	
+		var _href = $('#thisvideo').attr('videoDetail');	
+		var _title = $('#thisvideo').attr('videoTitle');	
+		var _winWidth = $(window).width();
+
+		/*if( _winWidth < 678 ){
+			var _width = obj.children("img").width();
+			var _height = obj.children("img").height();
+			var _winHeight = ( $(window).height() )/2;
+			$('.video-con').css({width:_width+'px',height:_height+'px',top:_winHeight-_height/2+'px',left:'15px'});
+		};*/ //edit 2016-07-11  
+
+		$('.video-more .video-a').attr('href',_href);
+		$('.video-title').html(_title);
+
+		thePlayer = jwplayer("videoJw").setup({
+		//skin: script_url+"/jwplayer/skins/opacity.zip",
+		stretching: "fill",
+		flashplayer: script_url+"/jwplayer/player.swf",
+		image: _img,
+		levels: [
+			{file:_url}
+		],
+		control: false,
+		width:'100%',
+		height:'100%',
+		autostart:true,
+		repeat:"always"
+			
+		});
+
+		$(".video-h").fadeIn();
+		
+	// }
+}
+
+
+
+

@@ -3,10 +3,99 @@
   background: none !important;
   padding-bottom: 0;
 }
+<<<<<<< HEAD
 .about-us .au-div-01 {
   position: relative;
 }
 .about-us .au-div-01 .au-div {
+=======
+.about-us {
+  padding-top: 200px !important;
+  background-image: url(../images/new/au-31.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.about-us .au-content-div {
+  display: flex;
+  justify-content: space-between;
+}
+.about-us .au-content-div .auc-left,
+.about-us .au-content-div .auc-right {
+  width: 46%;
+}
+.about-us .au-content-div .auc-left h4 {
+  right: -68px;
+}
+.about-us .au-content-div .auc-right {
+  margin-top: -10px;
+}
+.about-us .au-content-div .auc-right h1 {
+  font-size: 32px;
+  line-height: 60px;
+  color: white;
+}
+.about-us .au-content-div .auc-right p {
+  font-size: 14px;
+  color: white;
+  line-height: 24px;
+  margin-bottom: 40px;
+}
+.about-us .au-content-div .auc-right h4 {
+  left: -68px;
+}
+.about-us .au-content-div .au-share-logo {
+  margin-bottom: 18px;
+}
+.about-us .au-content-div .auc-font-div {
+  position: relative;
+  margin: 60px 0;
+  padding: 60px;
+  border: 1px solid #E0E0E0;
+  background-color: white;
+}
+.about-us .au-content-div .auc-font-div p {
+  font-size: 14px;
+  line-height: 24px;
+  color: black;
+}
+.about-us .au-content-div .auc-img-div {
+  position: relative;
+}
+.about-us .au-content-div .auc-img-div img {
+  width: 100%;
+  display: block;
+}
+.about-us .au-content-div .auc-img-div h4 {
+  position: absolute;
+  top: 55%;
+  font-size: 32px;
+  line-height: 50px;
+  color: #202020;
+}
+.about-us .au-content-div .auc-img-div h4 span {
+  color: white;
+}
+.about-us .au-content-div .auc-font-div:before,
+.about-us .au-content-div .auc-font-div:after {
+  position: absolute;
+  left: 50%;
+  content: ' ';
+  font-size: 1px;
+  height: 60px;
+  width: 2px;
+  background-color: #E0E0E0;
+}
+.about-us .au-content-div .auc-font-div:before {
+  top: -60px;
+}
+.about-us .au-content-div .auc-font-div:after {
+  bottom: -60px;
+}
+.about-us-old .au-div-01 {
+  position: relative;
+}
+.about-us-old .au-div-01 .au-div {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   position: absolute;
   left: 50%;
   top: 0;
@@ -17,66 +106,113 @@
   flex-direction: column;
   z-index: 99;
 }
+<<<<<<< HEAD
 .about-us .au-div-01 .au-div h1 {
+=======
+.about-us-old .au-div-01 .au-div h1 {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   color: white;
   line-height: 50px;
   font-size: 30px;
   text-align: center;
 }
+<<<<<<< HEAD
 .about-us .au-div-01 .au-div p {
+=======
+.about-us-old .au-div-01 .au-div p {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   font-size: 16px;
   line-height: 28px;
   color: white;
   text-align: center;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 {
+=======
+.about-us-old .au-div-02 {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   position: relative;
   padding: 80px 0;
   display: flex;
   justify-content: space-between;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 .au-02-left {
   width: 50%;
 }
 .about-us .au-div-02 .au-02-right {
+=======
+.about-us-old .au-div-02 .au-02-left {
+  width: 50%;
+}
+.about-us-old .au-div-02 .au-02-right {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   margin-top: -200px;
   position: relative;
   width: 50%;
   padding-top: 50px;
   text-align: right;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 .au-02-right .au-share-img {
+=======
+.about-us-old .au-div-02 .au-02-right .au-share-img {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   position: absolute;
   top: 0;
   right: 0;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 .au-02-right .aur-div {
+=======
+.about-us-old .au-div-02 .au-02-right .aur-div {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   display: inline-block;
   width: 500px;
   height: 500px;
   background-color: #2288ff;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 .au-02-img {
+=======
+.about-us-old .au-div-02 .au-02-img {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   position: absolute;
   bottom: -80px;
   left: -15%;
   z-index: 99;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 h1 {
+=======
+.about-us-old .au-div-02 h1 {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   font-size: 30px;
   color: black;
   line-height: 50px;
 }
+<<<<<<< HEAD
 .about-us .au-div-02 p {
+=======
+.about-us-old .au-div-02 p {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   color: #636768;
   font-size: 16px;
   line-height: 28px;
 }
+<<<<<<< HEAD
 .about-us .au-div-03 {
   position: relative;
   padding: 30px 0 100px 0;
 }
 .about-us .au-div-03 p {
+=======
+.about-us-old .au-div-03 {
+  position: relative;
+  padding: 30px 0 100px 0;
+}
+.about-us-old .au-div-03 p {
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
   font-size: 16px;
   line-height: 28px;
   color: black;

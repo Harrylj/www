@@ -7,6 +7,7 @@ var handle,
 URL = {
   // 电影列表
   movieList : 'https://www.wxapp-gateway.com/movie/',
+  //movieList : 'http://api.douban.com/v2/movie/in_theaters',
   // 电影详情
   movieDetail : 'https://www.wxapp-gateway.com/movie/subject'
 }

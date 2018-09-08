@@ -1,0 +1,209 @@
+.living-payment{
+    @num-10:12px;
+    .lp-header{
+        position: relative;
+        background-color: #3A3168;
+        .lp-a-more{
+            display: block;
+            position: absolute;
+            top: 0.2rem;
+            right: 0.2rem;
+            color: white;
+            font-size: 16px;
+            padding-right: 12px;
+            line-height: 20px;
+            background-image: url(../images/icon/icon-right-white.png);
+            background-position: center right;
+            background-size: 10px 15px;
+            background-repeat: no-repeat;
+        }
+        .lph-div{
+            position: relative;
+            margin: auto;
+            width:320px;
+            height: 240px;
+            .lph-center{
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                margin-top: -60px;
+                margin-left: -60px;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+                border: 2px solid #938eac;
+                h1{
+                    color: white;
+                    font-size: 24px;
+                    line-height: 30px;
+                    text-align: center;
+                }
+                p{
+                    text-align: center;
+                    color: white;
+                    line-height: 20px;
+                    font-size: 12px;
+                }
+            }
+            li{
+                position: absolute;
+                top: @num-10;
+                height: 24px;
+                line-height: 24px;
+                font-size: 12px;
+                padding: 0 10px;
+                color: #3A3168;
+                border-radius: 12px;
+                background-color: #938EAC;
+            }
+            li:nth-child(1){
+                top: 4*@num-10;
+                left: 2.7*@num-10;
+            }
+            li:nth-child(3){
+                top: 16*@num-10;
+                left: 5*@num-10;
+            }
+            li:nth-child(5){
+                top: 7*@num-10;
+                left: 0.8*@num-10;
+            }
+            li:nth-child(7){
+                top: 13*@num-10;
+                left: 1.2*@num-10;
+            }
+            li:nth-child(9){
+                top: 10.5*@num-10;
+                left: 0*@num-10;
+            }
+            li:nth-child(2){
+                top: 4.5*@num-10;
+                right: 2.5*@num-10;
+            }
+            li:nth-child(4){
+                top: 16.5*@num-10;
+                right: 4.5*@num-10;
+            }
+            li:nth-child(6){
+                top: 7.5*@num-10;
+                right: 1.6*@num-10;
+            }
+            li:nth-child(8){
+                top: 13.5*@num-10;
+                right: 1.8*@num-10;
+            }
+            li:nth-child(10){
+                top: 10*@num-10;
+                right: 0*@num-10;
+            }
+            
+        }
+    }
+    .lp-content{
+        background-color: white;
+        .lpc-nav{
+            padding: 0.266666rem;
+            display: flex;
+            justify-content: space-around;
+            border-bottom:0.266666rem solid #F0F0F0;
+            li{
+                background-position: center top; 
+                background-repeat: no-repeat;
+                text-align: center;
+                padding-top: 0.8rem;
+                line-height: 0.533333rem;
+                font-size: 14px;
+                color: black;
+                width: 1.6rem;   
+            }
+            .lpc-nav-01{
+                background-image: url(../images/icon/living-nav-01.png);
+                background-size: 0.666666rem 0.653333rem;
+            }
+            .lpc-nav-02{
+                background-image: url(../images/icon/living-nav-02.png);
+                background-size: 0.533333rem 0.666666rem;
+            }
+            .lpc-nav-03{
+                background-position: center 0.133333rem; 
+                background-image: url(../images/icon/living-nav-03.png);
+                background-size: 0.666666rem 0.4rem;
+            }
+            .lpc-nav-04{
+                background-position: center 0.066666rem;
+                background-image: url(../images/icon/living-nav-04.png);
+                background-size: 0.666666rem 0.533333rem
+            }
+            
+        }
+        .lpc-list{
+            padding: 0.266666rem;
+            .lpc-item{
+                margin-bottom: 0.266666rem;
+                border-radius: 0.133333rem 0.133333rem 0 0;
+                padding: 0.133333rem 0.133333rem 0.266666rem 0.8rem;
+                h1{
+                    position: relative;
+                    color: white;
+                    font-size: 18px;
+                    line-height: 1.066666rem;
+                }
+                p{
+                    display: flex;
+                    justify-content: space-between;
+                    color: white;
+                    font-size: 14px;
+                    
+                }
+                .lpc-money{
+                    span{
+                        font-size: 24px;
+                    }
+                }
+                h1:before{
+                    position: absolute;
+                    display: block;
+                    content: " .";
+                    color: transparent;
+                    left: -0.666666rem;
+                    top: 50%;
+                    margin-top: -0.266666rem;
+                    width: 0.533333rem;
+                    height: 0.533333rem;
+                    
+                    background-size: 100% 100%;
+                    background-repeat: no-repeat;
+                }
+            }
+            .lpc-item-sf{
+                background-color: #f56f6f;
+                h1:before{
+                    background-image: url(../images/icon/living-nav-01-hover.png);
+                }
+            }
+            .lpc-item-df{
+                background-color: #ed6ff5;
+                h1:before{
+                    background-image: url(../images/icon/living-nav-02-hover.png);
+                }
+            }
+            .lpc-item-rqf{
+                background-color: #f6d17f;
+                h1:before{
+                    background-image: url(../images/icon/living-nav-03-hover.png);
+                }
+            }
+            .lpc-item-wyf{
+                background-color: #6fcef5;
+                h1:before{
+                    background-image: url(../images/icon/living-nav-04-hover.png);
+                }
+            }
+        }
+        
+    }
+    
+}

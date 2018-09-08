@@ -1,0 +1,168 @@
+.btn-choice{
+    border: none;
+            background-color: transparent;
+            color: black;
+            font-size: 16px;
+            line-height: 0.8rem;
+            padding: 0 0.266666rem 0 0.666666rem ;
+            background-image: url(../images/icon/icon-payment-no.png);
+            background-repeat: no-repeat;
+            background-position: 0 center;
+            background-size: 0.533333rem 0.533333rem;
+}
+.btn-choice-click{
+    background-image: url(../images/icon/icon-payment-ok.png);
+}
+.payment-all{
+    overflow-x: hidden;
+    padding-bottom: 1.333333rem;
+    .pa-header{
+        border-top: 0.2rem solid #F0F0F0;
+        border-bottom: 0.2rem solid #F0F0F0;
+        background-color: white;
+        display: flex;
+        justify-content: space-between;
+        color: black;
+        padding: 0 0.266666rem;
+        line-height: 1.2rem;
+        font-size: 14px;
+        .ph-more{
+//          border: none;
+//          background-color: transparent;
+//          color: black;
+//          font-size: 16px;
+//          line-height: 0.8rem;
+//          padding: 0 0.266666rem 0 0.666666rem ;
+//          background-image: url(../images/icon/icon-payment-no.png);
+//          background-repeat: no-repeat;
+//          background-position: 0 center;
+//          background-size: 0.533333rem 0.533333rem;
+            .btn-choice;
+        }
+        .ph-more-click{
+            .btn-choice-click;
+        }
+        
+    }
+    .pa-body{
+        background-color: white;
+        padding: 0.4rem 0.266666rem;
+        .pab-item{
+            position: relative;
+            background-color: #3A3168;
+            border-radius: 0.106666rem;
+            padding: 0.266666rem;
+            margin-bottom: 0.333333rem;
+            cursor: pointer;
+            h1{
+                color: white;
+                display: flex;
+                justify-content: space-between;
+                font-size: 16px;
+                line-height: 1.066666rem;
+            }
+            h2{
+                padding-right:2.4rem;
+                color: #10eed6;
+                line-height: 0.666666rem;
+                font-size: 14px;
+            }
+            .pab-right-none{
+                padding-right: 0;
+            }
+            p{
+                padding-right:2.4rem;
+                color: #b3a9e4;
+                line-height: 0.666666rem;
+                font-size: 14px;
+            }
+            .pab-btn{
+                display: block;
+                position: absolute;
+                right: 0.266666rem;
+                bottom: 0.333333rem;
+                border: 1px solid white;
+                line-height: 30px;
+                color: white;
+                padding: 0 0.2rem;
+                font-size: 14px;
+                border-radius: 15px;
+                text-decoration: none;
+            }
+            
+        }
+        .pab-item-more{
+            position: relative;    
+            left: 0.8rem;
+            top: 0;
+        }
+        .pab-item-more:before{
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: -0.8rem;
+            content: ' .';
+            color: transparent;
+            font-size: 1px;
+            margin-top: -0.266666rem;
+            width: 0.533333rem;
+            height: 0.533333rem;
+            background-image: url(../images/icon/icon-payment-no.png);
+            background-size: 100% 100%;
+        }
+        .pab-item-more-click:before{
+            background-image: url(../images/icon/icon-payment-ok.png);
+        }
+        .pab-item-ok{
+            background-color: #DDDDDD;
+            h1{
+                color: black;
+            }
+            p{
+                color: #969696;
+            }
+            .pab-btn{
+                border: none;
+                color: black;
+            }
+        }
+        
+    }
+    .pa-footer{
+        display: none;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1.333333rem;
+        .pa-footer-div{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            .paf-btn-all{
+                margin-left: 0.266666rem;
+                .btn-choice;
+            }
+            .paf-btn-all-click{
+                .btn-choice-click;
+            }
+            p{
+                font-size: 14px;
+                color: black;
+                line-height: 1.333333rem;
+            }
+            .paf-btn-pay{
+                border: none;
+                background-color: #e38223;
+                color: white;
+                font-size: 16px;
+                padding:0 0.666666rem;
+                line-height: 1.333333rem;
+                letter-spacing: 5px;
+            }
+        }
+        
+    }
+}

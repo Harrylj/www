@@ -1,0 +1,150 @@
+.community h2 {
+  color: #f60e0e;
+  text-align: center;
+  line-height: 1.333333rem;
+  font-size: 14px;
+}
+.community .com-btn {
+  display: block;
+  margin: 0.4rem auto 0 auto;
+  line-height: 1.066666rem;
+  border: 1px solid #3A3168;
+  border-radius: 0.133333rem;
+  width: 5.333333rem;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.community .com-btn-hzrz {
+  background-color: #3A3168;
+  color: white;
+}
+.community .com-btn-jtcyrz {
+  background-color: white;
+  color: #3A3168;
+}
+.community p {
+  line-height: 1.066666rem;
+  color: #3A3168;
+  font-size: 14px;
+  text-align: center;
+}
+.community-login-yes {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.community-login-yes .cly-header .clyh-box {
+  position: relative;
+  height: 5.333333rem;
+  background-image: url(../images/more/community-02.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.community-login-yes .cly-header .clyh-box .clyh-a {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  display: block;
+  text-decoration: none;
+  color: white;
+  background-image: url(../images/icon/icon-right-white.png);
+  background-size: 8px 12px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 14px;
+  padding-right: 12px;
+}
+.community-login-yes .cly-header .clyh-box .clyh-div {
+  position: absolute;
+  top: 1.333333rem;
+  left: 0;
+  width: 100%;
+}
+.community-login-yes .cly-header .clyh-box .clyh-div .cly-user-img {
+  display: block;
+  margin: auto;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+.community-login-yes .cly-header .clyh-box .clyh-div p {
+  text-align: center;
+  font-size: 14px;
+  color: white;
+  line-height: 0.8rem;
+}
+.community-login-yes .cly-header .cly-list li {
+  position: relative;
+  padding-left: 0.4rem;
+  width: 90%;
+  margin: auto;
+  border-bottom: 1px solid #CCCCCC;
+  height: 1.36rem;
+}
+.community-login-yes .cly-header .cly-list li:before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -0.066666rem;
+  display: block;
+  width: 0.133333rem;
+  height: 0.133333rem;
+  content: '.';
+  font-size: 1px;
+  color: transparent;
+  background-color: #3A3168;
+  border-radius: 50%;
+}
+.community-login-yes .cly-header .cly-list li:nth-child(2),
+.community-login-yes .cly-header .cly-list li:nth-child(4) {
+  display: flex;
+  justify-content: space-between;
+}
+.community-login-yes .cly-header .cly-list .cly-input {
+  width: 100%;
+  border: none;
+  line-height: 1.333333rem;
+  font-size: 14px;
+  padding: 0 0.2rem;
+}
+.community-login-yes .cly-header .cly-list select {
+  border: none;
+  font-size: 14px;
+}
+.community-login-yes .cly-header .cly-list .cly-input-address {
+  width: auto;
+}
+.community-login-yes .cly-header .cly-list .cly-input-tel {
+  width: 4rem;
+}
+.community-login-yes .cly-header .cly-list .cly-btn-yzm {
+  padding: 0 0.266666rem;
+  color: #3A3168;
+  line-height: 1.333333rem;
+  font-size: 14px;
+  border: none;
+  background-color: transparent;
+}
+.community-login-yes .cly-header .cly-btn-qdrz {
+  display: block;
+  margin: 1.333333rem auto;
+  width: 50%;
+  line-height: 1.2rem;
+  border-radius: 0.133333rem;
+  background-color: #3A3168;
+  color: white;
+  font-size: 16px;
+  border: none;
+}
+.community-login-yes .cly-footer {
+  padding-bottom: 0.2rem;
+}
+.community-login-yes .cly-footer p {
+  font-size: 14px;
+  line-height: 0.666666rem;
+  color: #B4B4B4;
+  padding: 0 0.2rem;
+}
