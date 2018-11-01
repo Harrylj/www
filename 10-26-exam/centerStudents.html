@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/centerStudents.css" />
+    <title>学员中心</title>
+    <style type="text/css">
+    </style>
+  </head>
+
+  <body>
+    <div class="center-students">
+      <!-- 顶部 -->
+      <div class="cs-header">
+        <!-- 调用公用头部 -->
+        <div class="cs-header-top"></div>
+        <div class="cs-header-img"></div>
+      </div>
+      <!-- 内容 -->
+      <div class="cs-body">
+        <div class="csb-left">
+          <div class="csbl-one">
+            <h1>18</h1>
+            <p>18年10月</p>
+            <p>星期四</p>
+          </div>
+          <div class="csbl-two">
+            <p>欢迎08届01班</p>
+            <p>渣渣辉</p>
+          </div>
+          <div class="csbl-nav-div">
+            <!-- 左侧导航菜单 -->
+            <!-- .csbl-nav-hover:表示选中状态 -->
+            <ul class="csbl-nav">
+              <li class="csbl-nav-hover">在线课堂</li>
+              <li>在线管理</li>
+              <li>个人中心</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 右侧内容 -->
+        <div class="csb-right">
+          <!-- 右侧公用顶部 -->
+          <!-- .csbr-a-red：表示激活的a标签 -->
+          <div class="csbr-header">
+            <code class="language-javascript">$('#iframeID').contents().find('#元素id')</code>
+            <button class="abc">abc</button>
+            <p id="aaa">当前课程：<a class="csbr-a-red" href="#">中国人民历史事件</a></p>
+          </div>
+          <div class="csbr-body">
+            <!-- .csbr-body-list-hover：表示选中状态 -->
+            <!-- 在线课堂 -->
+            <div id="centerStudentsZXKT" class="csbr-body-list csbr-body-list-hover"></div>
+            <!-- 信息管理 -->
+            <div id="centerStudentsXXGL" class="csbr-body-list"></div>
+            <!-- 个人中心 -->
+            <div id="centerStudentsGRZX" class="csbr-body-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        // 点击左侧导航栏
+        $('.csbl-nav').children('li').on('click',function(){
+          var otherFather = $('.csbr-body'),  // 响应处父元素
+              thisIndex = $(this).index(),    // 点击元素的索引值
+              classNavHover = 'csbl-nav-hover',         // 导航栏激活类名
+              classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
+          $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
+          otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+        })
+        // 左侧导航栏默认选中第2个
+        $('.csbl-nav').children('li').eq(1).click();
+        // 加载在线课堂
+        $('#centerStudentsZXKT').load('centerStudentsZXKT.html');
+        // 加载信息管理
+        $('#centerStudentsXXGL').load('centerStudentsXXGL.html');
+        // 加载个人中心
+        $('#centerStudentsGRZX').load('centerStudentsGRZX.html');
+
+        
+        // 加载公用头部
+        publicHeader('.cs-header-top')
+      })
+    </script>  
+  </body>
+
+</html>
