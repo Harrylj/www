@@ -1,0 +1,101 @@
+<!-- .info-list-div-hover:表示打钩
+  .info-list-hover:表示选中
+-->
+<div class="csbr-body-xxgl">
+  <h1>信息管理</h1>
+  <p>共计23封消息 <button>全部设为已读</button></p>
+  <div class="info-div">
+    <div class="info-list">
+      <h2>昨天(3封)</h2>
+      <ul>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+      </ul>
+    </div>
+    <div class="info-list">
+      <h2>周一(3封)</h2>
+      <ul>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+        <li>
+          <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="info-footer">
+    <div class="info-footer-left">
+      选择: <button class="ifl-btn ifl-btn-all">全部</button> | <button class="ifl-btn ifl-btn-read">已读</button> | <button class="ifl-btn ifl-btn-no">未读</button> | <button class="ifl-btn ifl-btn-rev">反选</button>
+    </div>
+    <div class="clear"></div>
+  </div>
+  <a href="#">aaaa</a>
+  <button class="button-01">111</button>
+  <button class="button-02">222</button>
+</div>
+
+
+<script type="text/javascript">
+  $(function () {
+    $('.button-01').on('click', function () {
+      parent.$(window.parent.document).find('#aaa').css({ 'color': 'red' });
+
+    })
+    $('.button-02').on('click', function () {
+      
+      alert(1)
+    })
+    // 点击div选中input
+    $('.info-list-btn-div').on('click',function(){
+      var classHover = 'info-list-div-hover',
+        classFatherHover = 'info-list-hover';
+      // 未选中
+      if($(this).hasClass(classHover)){
+        $(this).removeClass(classHover).children("input:checkbox").removeAttr("checked");
+        $(this).parent().removeClass(classFatherHover);
+      }
+      // 选中
+      else
+      {
+        $(this).addClass(classHover).children("input:checkbox").prop("checked", "checked");
+        $(this).parent().addClass(classFatherHover);
+      }
+
+      $("#CheckAll").click(function () {
+        $("input:checkbox").prop("checked", "checked");
+      });
+      $("#CheckNo").click(function () {
+        $("input:checkbox").removeAttr("checked");
+      });
+      $("#CheckRev").click(function () {
+        $("input:checkbox").each(function () {
+          this.checked = !this.checked;
+        });
+      });
+      
+    })
+    $('.abc').on('click', function () {
+      // $('#iframe-one').contents().find('.button-01').css({ 'color': 'red' });
+      // $('.button-01').css({ 'color': 'red' });
+      // $('#ifa1').contents().find('.button-02').css({ 'color': 'blue' });
+      $('.button-02').css({ 'color': 'red' });
+    })
+  })
+</script>

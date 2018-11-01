@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" href="swiper.min.css">
+    <title>测试包</title>
+    <style type="text/css">
+      .swiper-container {
+        /*width: 320px;*/
+        height: 500px;
+      }
+      
+      .slide1 {
+        background-color: red;
+      }
+      
+      .slide2 {
+        background-color: green;
+      }
+      
+      .slide3 {
+        background-color: blue;
+      }
+      
+      .parallax-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 130%;
+        -webkit-background-size: cover;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper-container swiper-container-horizontal">
+      <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-1950px, 0px, 0px);">
+        <div class="swiper-slide "><img src="images/header-swiper-01.jpg" /></div>
+        <div class="swiper-slide "><img src="images/header-swiper-02.jpg" /></div>
+
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+      <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+      <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+    </div>
+
+    <script src="swiper.min.js"></script>
+    <script>
+      var swiper = new Swiper('.swiper-container', {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+    </script>
+  </body>
+
+</html>

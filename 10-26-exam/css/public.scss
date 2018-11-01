@@ -1,0 +1,76 @@
+/* 
+  $public-color-01: 最常用的颜色
+  $public-color-01-hover: 最常用的颜色激活效果
+*/
+$public-color-01: #e60012;
+$public-color-01-hover: #ba0000;
+@mixin bg-all{
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+}
+/*子页面公用头*/
+.ih-one{
+  background-color: #ececed;
+  padding-left: 20px;
+  .ih-tilte{
+    float: left;
+    display: inline-block;
+    color: #828282;
+    height: 30px;
+    line-height: 30px;
+    background-image: url(../images/exam-04.png);
+    background-position: 0 center;
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    padding-left: 20px;
+    font-size: 14px;
+  }
+}
+/*公用底部*/
+.index-footer{
+  position: relative;
+  border-top: 1px solid #e0f0f0;
+  padding: 20px 15px 20px 100px;
+  background-color: white;
+  .title-img{
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    margin-top: -29px;
+    width: 50px;
+    height: 58px;
+    background-image: url(../images/exam-01.png);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  h2{
+    color: #888888;
+    line-height: 40px;
+    font-size: 14px;
+  }
+}
+/*公用二维码*/
+.index-gzh{
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  margin-left: 570px;
+  width: 150px;
+  background-color: white;
+  padding: 15px 20px 10px 15px;
+  .index-gzh-div{
+    position: relative;
+    img{
+      width: 100%;
+    }
+    p{
+      padding-top: 5px;
+      color: #888888;
+      line-height: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}

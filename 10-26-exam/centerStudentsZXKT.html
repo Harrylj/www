@@ -1,0 +1,86 @@
+<div class="csbr-body-zxkt">
+  <div class="zxkt-progress-bar">
+    <div class="zxkt-progress-bar-left">学习进度</div>
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <div class="zxkt-progress-bar-right">30%</div>
+    <div class="clear"></div>
+  </div>
+  <h1>在线课堂</h1>
+  <h2>总计10门课程</h2>
+  <table class="zxkt-table">
+    <tr>
+      <td>课程类别</td>
+      <td>课程名称</td>
+      <td>考试时间</td>
+      <td>学习状态</td>
+      <td>任课老师</td>
+      <td>操作</td>
+    </tr>
+    <tr>
+      <td>01必修</td>
+      <td><a class="csbr-a-red" href="#">论毛泽东，邓小平味道领袖的功绩</a></td>
+      <td>2018年6月20日</td>
+      <td>去学习</td>
+      <td>李健</td>
+      <td>
+        <a href="#"><button class="zxkt-btn">完成</button></a>
+        <a href="#"><button class="zxkt-btn">考试</button></a>
+      </td>
+    </tr>
+    <tr>
+      <td>01必修</td>
+      <td><a class="csbr-a-red" href="#">论毛泽东，邓小平味道领袖的功绩</a></td>
+      <td>2018年6月20日</td>
+      <td>去学习</td>
+      <td>李健</td>
+      <td>
+        <a href="#"><button class="zxkt-btn">完成</button></a>
+        <a href="#"><button class="zxkt-btn">考试</button></a>
+      </td>
+    </tr>
+  </table>
+  <p>总计10门课程</p>
+  <table class="zxkt-table">
+    <tr>
+      <td>课程类别</td>
+      <td>课程名称</td>
+      <td>考试时间</td>
+      <td>学习状态</td>
+      <td>任课老师</td>
+      <td>操作</td>
+    </tr>
+    <tr>
+      <td>01必修</td>
+      <td><a class="csbr-a-red" href="#">论毛泽东，邓小平味道领袖的功绩</a></td>
+      <td>2018年6月20日</td>
+      <td>去学习</td>
+      <td>李健</td>
+      <td>
+        <button class="zxkt-btn zxkt-btn-delete">删除</button>
+      </td>
+    </tr>
+    <tr>
+      <td>01必修</td>
+      <td><a class="csbr-a-red" href="#">论毛泽东，邓小平味道领袖的功绩</a></td>
+      <td>2018年6月20日</td>
+      <td>去学习</td>
+      <td>李健</td>
+      <td>
+        <button class="zxkt-btn zxkt-btn-delete">删除</button>
+      </td>
+    </tr>
+  </table>
+</div>
+<script type="text/javascript">
+  $(function(){
+    // 进度条
+    $('.progress-bar').width($('.zxkt-progress-bar-right').html())
+    // 删除
+    $('.zxkt-btn-delete').on('click',function(){
+      $(this).parent().parent('tr').remove();
+      alert('删除成功')
+    })
+  })
+</script>

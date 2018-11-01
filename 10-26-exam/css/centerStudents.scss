@@ -1,0 +1,94 @@
+@import 'public.scss';
+.cs-header-img{
+  height: 124px;
+  background-image: url(../images/cs-01.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.cs-body{
+  position: relative;
+  padding-left: 170px;
+  background-color: white;
+  .csb-left{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 130px;
+  }
+  .csbl-nav-hover{
+    background-color: $public-color-01;
+  }
+  .csb-right{
+    .csbr-body-list{
+      position: relative;
+      display: none;
+    }
+    .csbr-body-list-hover{
+      display: block;
+    }
+    .csbr-a-red{
+      position: relative;
+      display: inline-block;
+    }
+    .csbr-a-red:after{
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      height: 14px;
+      width: 14px;
+      content: ' ';
+      margin-top: -7px;
+      font-size: 1px;
+      background-image: url(../images/cs-02.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    .csbr-a-red:hover{
+      color: red;
+    }
+    .csbr-a-red:hover:after{
+      background-image: url(../images/cs-02-hover.png);
+    }
+  }
+}
+.csbr-body-zxkt{
+  .zxkt-table{
+    width: 100%;
+  }
+  .progress-bar{
+    background-color: $public-color-01;
+  }
+  .zxkt-progress-bar-left
+  ,.progress
+  ,.zxkt-progress-bar-right{
+    display: inline-block
+  }
+  .progress{
+    width: 200px;
+    margin-bottom: 0;
+  }
+}
+.csbr-body-xxgl{
+  .info-list-btn{
+    color: red;
+  }
+  .info-list-btn-div{
+    display: inline-block;
+    cursor: pointer;
+    width: 54px;
+    height: 14px;
+    background-image: url(../images/xxgl-checkbox.png);
+    @include bg-all;
+  }
+  .info-list-div-hover{
+    background-image: url(../images/xxgl-checkbox-hover.png);
+  }
+  .info-list-hover{
+    a{
+      color: $public-color-01;
+    }
+  }
+  .info-list-btn{
+    /*display: none;*/
+  }
+}

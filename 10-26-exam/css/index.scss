@@ -1,0 +1,335 @@
+@import 'public.scss';
+.ih-one{
+  .ih-right{
+    float: right;
+    line-height: 30px;
+    .ihr-input{
+      width: 270px;
+      height: 24px;
+      margin: 2px 0;
+      line-height: 30px;
+      color: black;
+      font-size: 14px;
+      padding: 0 30px 0 8px;
+      background-image: url(../images/exam-02.png);
+      background-position: 98% center;
+      background-size: 14px 14px;
+      background-repeat: no-repeat;
+      border: none;
+    }
+    a{
+      display: inline-block;
+      line-height: 30px;
+      font-size: 16px;
+      padding: 0 15px;
+      color: #828282;
+    }
+  }
+}
+.ih-two{
+  position: relative;
+  background-image: url(../images/exam-03.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover cover;
+  background-repeat: no-repeat;
+  background-color: white;
+  height: 130px;
+  #login-myTabs{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    width: 300px;
+    height: 120px;
+    .nav-tabs{
+      li{
+        width: 33.33%;
+        background-color: #7c7c7c;
+        a{
+          width: 100%;
+          font-size: 14px;
+          text-align: center;
+          padding: 6px 0;
+          color: white;
+        }
+        a:hover{
+          background-color: $public-color-01;
+        }
+      }
+      .active{
+        a{
+          background-color: $public-color-01;
+        }
+      }
+      li:nth-child(2){
+        border-left:1px solid white!important;
+        border-right:1px solid white!important; 
+      }
+    }
+    .tab-content{
+      position: relative;
+      padding: 8px 0;
+      background-color: rgba(215,215,215,0.5);
+      .login-username-div
+      ,.login-password-div{
+        line-height: 36px;
+        color: white;
+        font-size: 14px;
+        padding: 0 10px;
+      }
+      .login-username-input
+      ,.login-password-input{
+        width: 165px;
+        padding: 0 8px;
+        background-color: white;
+        height: 28px;
+        line-height: 30px;
+        border: none;
+        color: black;
+        margin-left: 10px;
+      }
+      .login-btn{
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        background-color: white;
+        border: 1px solid $public-color-01;
+        height: 64px;
+        width: 64px;
+        color: $public-color-01;
+        line-height: 20px;
+        padding: 8px 8px;
+        text-align: center;
+        font-size: 16px;
+      }
+    }
+  }
+}
+.ih-nav{
+  height: 40px;
+  background-color: $public-color-01;
+  a{
+    float: left;
+    display: inline-block;
+    line-height: 40px;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    padding: 0 25px;
+    background-color: $public-color-01;
+  }
+  a:hover{
+    text-decoration: none;
+    background-color: $public-color-01-hover;
+  }
+  .ih-nav-hover{
+    background-color: $public-color-01-hover;
+  }
+}
+.index-body{
+  background-color: white;
+}
+.ib-one{
+  height: 330px;
+  .ib-one-left{
+    height: 100%;
+    float: left;
+    width: 70%;
+    background-color: #efefef;
+  }
+  .ib-one-right{
+    float: right;
+    padding: 10px;
+    width: 29.8%;
+    height: 100%;
+    h1{
+      color: $public-color-01;
+      line-height: 30px;
+      font-size: 16px;
+      font-weight: bold;
+    }
+    .line-div{
+      border-top: 1px solid #cfcfcf;
+      margin: 10px 0
+    }
+    ul{
+      li{
+        font-size: 14px;
+        line-height: 28px;
+        height: 28px;
+        overflow: hidden;
+        color: #3c3c3c;
+      }
+    }
+    h2{
+      color: $public-color-01;
+      font-size: 14px;
+      line-height: 40px;
+    }
+  }
+}
+.ib-content{
+  padding: 20px;
+}
+.ib-two{
+  position: relative;
+  height: 180px;
+  border: 1px solid #e0e0ee;
+  .ib-two-zykc
+  ,.ib-two-xxdt{
+    padding: 10px 15px 15px 90px;
+    position: relative;
+    height: 100%;
+    width: 49%;
+  }
+  .ib-two-zykc{
+    float: left;
+  }
+  .ib-two-xxdt{
+    float: right;
+  }
+  .zykc-title
+  ,.xxdt-title{
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    background-color: $public-color-01;
+    border: 1px solid white;
+    height: 64px;
+    width: 64px;
+    color:white;
+    line-height: 20px;
+    padding: 8px 8px;
+    text-align: center;
+    font-size: 16px;
+  }
+  li{
+    position: relative;
+    a{
+      position: relative;
+      display: inline-block;
+      color: black;
+      font-size: 14px;
+      line-height: 28px;
+      height: 28px;
+      padding-right: 30px;
+      overflow: hidden;
+    }
+  }
+  .index-title-video{
+    a:after{
+      position: absolute;
+      right: 0px;
+      top: 50%;
+      margin-top: -8px;
+      display: block;
+      height: 16px;
+      line-height: 16px;
+      padding:0 2px; 
+      content: '视频';
+      font-size: 12px;
+      color: white;
+      background-color: $public-color-01;
+      border-radius: 2px;
+    }
+  }
+}
+.ib-three{
+  margin: 20px 0;
+  .ib-three-title{
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    p{
+      display: inline-block;
+      color: white;
+      padding: 0 15px;
+      font-size: 16px;
+      background-color: $public-color-01;
+      line-height: 40px;
+    }
+  }
+  .ibt-table{
+    width: 100%;
+    border: 0;
+    tr:nth-child(1){
+      td{
+        background-color: #f7f7ff
+      }
+    }
+    td:last-child{
+      border-right: 1px solid #e0e0e0;
+      line-height: 50px;
+    }
+    td{
+      background-color: white;
+      border-bottom: 1px solid #e0e0e0;
+      border-left: 1px solid #e0e0e0;
+      line-height: 40px;
+      padding: 0 10px;
+      font-size: 14px;
+    }
+    td:nth-child(4){
+      a{
+        color: #8cc582;
+      }
+    }
+    td:nth-child(5){
+      a{
+        color: #5079ff;
+      }
+    }
+    td:nth-child(6){
+      a{
+        color: $public-color-01;
+      }
+    }
+  }
+}
+/*转到publicDefault.css
+
+.index-footer{
+  position: relative;
+  border-top: 1px solid #e0f0f0;
+  padding: 20px 15px 20px 100px;
+  background-color: white;
+  .title-img{
+    position: absolute;
+    left: 24px;
+    top: 50%;
+    margin-top: -29px;
+    width: 50px;
+    height: 58px;
+    background-image: url(../images/exam-01.png);
+    background-position: center center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  }
+  h2{
+    color: #888888;
+    line-height: 40px;
+    font-size: 14px;
+  }
+}
+.index-gzh{
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  margin-left: 570px;
+  width: 150px;
+  background-color: white;
+  padding: 15px 20px 10px 15px;
+  .index-gzh-div{
+    position: relative;
+    img{
+      width: 100%;
+    }
+    p{
+      padding-top: 5px;
+      color: #888888;
+      line-height: 20px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
+*/
