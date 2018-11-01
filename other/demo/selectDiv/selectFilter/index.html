@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+		<title>选择框</title>
+		<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+		<style type="text/css">
+			body {
+				padding: 30px;
+			}
+			
+			.item {
+				width: 240px;
+				height: 32px;
+				margin: 100px auto;
+			}
+		</style>
+	</head>
+	<body>
+
+		<div class="item">
+			
+			<!-- 这里开始 -->
+			
+			<div class="filter-box filter-box-01">
+				<div class="filter-text">
+					<input class="filter-title" type="text" readonly placeholder="pleace select" />
+					<i class="icon icon-filter-arrow"></i>
+				</div>
+				<select name="filter">
+					<option value="new" disabled>最新的</option>
+					<option value="unaudited">未审核</option>
+					<option value="nothrough" selected>未通过</option>
+					<option value="audit">正在审核</option>
+					<option value="audited">已审核</option>
+					<option value="passed">已通过</option>
+					<option value="1">111</option>
+					<option value="2">222</option>
+					<option value="3">333</option>
+					<option value="4">444</option>
+					<option value="5">555</option>
+					<option value="6">666</option>
+				</select>
+			</div>
+			
+			<!-- 这里结束 -->
+			
+			<div class="filter-box  filter-box-02">
+				<div class="filter-text">
+					<input class="filter-title" type="text" readonly placeholder="pleace select" />
+					<i class="icon icon-filter-arrow"></i>
+				</div>
+				<select name="filter">
+					<option value="new" disabled>最新的</option>
+					<option value="unaudited">未审核</option>
+					<option value="nothrough" selected>未通过</option>
+					<option value="audit">正在审核</option>
+					<option value="audited">已审核</option>
+					<option value="passed">已通过</option>
+					<option value="1">111</option>
+					<option value="2">222</option>
+					<option value="3">333</option>
+					<option value="4">444</option>
+					<option value="5">555</option>
+					<option value="6">666</option>
+				</select>
+			</div>
+			
+		</div>
+		
+		<!--
+			
+			select   --  name 可以接收选择的值【用于表单提交  名称自定义】
+			
+			option   --  1.  value    传给后台的参数
+						 1.  selected 设置默认选中
+					     2.  disabled 设置禁止选则
+
+		-->
+		
+		<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+		<script type="text/javascript" src="js/selectFilter.js"></script>
+		<script type="text/javascript">
+			//本小插件支持移动端哦
+			
+			//这里是初始化
+			$('.filter-box-01').selectFilter({
+				callBack : function (val){
+					//返回选择的值
+					console.log(val+'-是返回的值')
+				}
+			});
+			$('.filter-box-02').selectFilter({
+				callBack : function (val){
+					//返回选择的值
+					console.log(val+'-是返回的值')
+				}
+			});
+		</script>
+		
+	</body>
+</html>
