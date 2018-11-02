@@ -45,7 +45,7 @@
             <!-- .csbl-nav-hover:表示选中状态 -->
             <ul class="csbl-nav">
               <li class="csbl-nav-hover">在线课堂</li>
-              <li>在线管理</li>
+              <li>信息管理</li>
               <li>个人中心</li>
             </ul>
           </div>
@@ -55,9 +55,8 @@
           <!-- 右侧公用顶部 -->
           <!-- .csbr-a-red：表示激活的a标签 -->
           <div class="csbr-header">
-            <code class="language-javascript">$('#iframeID').contents().find('#元素id')</code>
-            <button class="abc">abc</button>
-            <p id="aaa">当前课程：<a class="csbr-a-red" href="#">中国人民历史事件</a></p>
+            <p class="csbr-nav-xxgl">当前课程：<a class="csbr-a-red" href="#">中国人民历史事件</a></p>
+            <p class="csbr-nav-xxgl-detail"><a class="csbr-header-btn csbr-header-btn-xxgl" href="#">信息管理</a>/<a class="csbr-header-btn csbr-header-btn-xxxx" href="#">消息信息</a></p>
           </div>
           <div class="csbr-body">
             <!-- .csbr-body-list-hover：表示选中状态 -->
@@ -84,6 +83,8 @@
               classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
           $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
           otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+          // 调用显示信息管理
+          showXXGL()
         })
         // 左侧导航栏默认选中第2个
         $('.csbl-nav').children('li').eq(1).click();
@@ -93,8 +94,23 @@
         $('#centerStudentsXXGL').load('centerStudentsXXGL.html');
         // 加载个人中心
         $('#centerStudentsGRZX').load('centerStudentsGRZX.html');
-
         
+
+        // 点击 右侧头部的信息管理
+        $('.csbr-header-btn-xxgl').on('click',function(){
+          // 调用显示信息管理
+          showXXGL()
+        })
+        // 显示信息管理
+        function showXXGL() {
+          // 显示通用导航和信息管理内容
+          $('.csbr-nav-xxgl').show();
+          $('.csbr-xxgl').show();
+          // 隐藏邮箱详情和邮箱详情导航
+          $('.csbr-xxgl-detail').hide();
+          $('.csbr-nav-xxgl-detail').hide();
+        }
+
         // 加载公用头部
         publicHeader('.cs-header-top')
       })

@@ -84,6 +84,10 @@
   background-repeat: no-repeat;
 }
 
+.csbr-header .csbr-header-btn-xxxx {
+  color: red;
+}
+
 .cs-body {
   position: relative;
   padding-left: 170px;
@@ -99,6 +103,10 @@
 
 .cs-body .csbl-nav-hover {
   background-color: #e60012;
+}
+
+.cs-body .csb-right .csbr-nav-xxgl-detail {
+  display: none;
 }
 
 .cs-body .csb-right .csbr-body-list {
@@ -156,8 +164,8 @@
   margin-bottom: 0;
 }
 
-.csbr-body-xxgl .info-list-btn {
-  color: red;
+.csbr-body-xxgl .info-list-ok a {
+  color: gray;
 }
 
 .csbr-body-xxgl .info-list-btn-div {
@@ -181,4 +189,8 @@
 
 .csbr-body-xxgl .info-list-btn {
   /*display: none;*/
+}
+
+.csbr-body-xxgl .csbr-xxgl-detail {
+  display: none;
 }
