@@ -5,6 +5,11 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+.csbr-header{
+  .csbr-header-btn-xxxx{
+    color: red;
+  }
+}
 .cs-body{
   position: relative;
   padding-left: 170px;
@@ -19,6 +24,9 @@
     background-color: $public-color-01;
   }
   .csb-right{
+    .csbr-nav-xxgl-detail{
+      display: none;
+    }
     .csbr-body-list{
       position: relative;
       display: none;
@@ -69,8 +77,10 @@
   }
 }
 .csbr-body-xxgl{
-  .info-list-btn{
-    color: red;
+  .info-list-ok{
+    a{
+      color: gray;
+    }
   }
   .info-list-btn-div{
     display: inline-block;
@@ -90,5 +100,8 @@
   }
   .info-list-btn{
     /*display: none;*/
+  }
+  .csbr-xxgl-detail{
+    display: none;
   }
 }
