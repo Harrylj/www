@@ -1,7 +1,128 @@
 <div class="csbr-body-grzx">
-  个人中心
   <h1>个人中心</h1>
+  <!-- 个人信息 -->
+  <div class="grzx-user">
+    <img class="grzx-user-img" src="images/user-img.jpg" alt="">
+    <h2 class="grzx-user-name">张韶涵</h2>
+    <p><span>4</span>门课程 | 5门考试</p>
+  </div>
+  <!-- 基本信息修改 -->
+  <!-- .grzx-info-input-warning: 输入错误提示框 -->
   <div class="grzx-info">
-    
+    <h1>基本信息</h1>
+    <div class="grzx-info-list">
+      <p>头像<button class="grzx-info-list-btn">修改</button></p>
+      <div class="grzx-info-modify">
+        <p><img class="grzx-user-img-modify" src="images/bg.png" alt=""></p>
+        <div><button class="grzx-info-btn-01 grzx-info-btn-img">更改头像</button><button class="grzx-info-btn-01 grzx-info-btn-cancel">取消修改</button></div>
+      </div>
+    </div>
+    <div class="grzx-info-list">
+      <p>姓名<button class="grzx-info-list-btn">修改</button></p>
+      <div class="grzx-info-modify">
+        <h4>请按照以下操作进行姓名修改</h4>
+        <p><input class="grzx-info-input grzx-info-input-name" type="text" placeholder="请输入新姓名"></p>
+        <p class="grzx-info-warning">错误提示</p>
+        <div><button class="grzx-info-btn-01 grzx-info-btn-name">更改姓名</button><button class="grzx-info-btn-01 grzx-info-btn-cancel">取消修改</button></div>
+      </div>
+    </div>
+    <div class="grzx-info-list">
+      <p>密码<button class="grzx-info-list-btn">修改</button></p>
+      <div class="grzx-info-modify">
+        <h4>请按照以下操作进行密码修改</h4>
+        <p><input class="grzx-info-input grzx-info-input-password-now" type="text" placeholder="请输入原密码"></p>
+        <p><input class="grzx-info-input grzx-info-input-password-new" type="text" placeholder="请输入新密码"></p>
+        <p><input class="grzx-info-input grzx-info-input-password-again" type="text" placeholder="请确认新密码"></p>
+        <p class="grzx-info-warning">错误提示</p>
+        <div><button class="grzx-info-btn-01 grzx-info-btn-password">更改密码</button><button class="grzx-info-btn-01 grzx-info-btn-cancel">取消修改</button></div>
+      </div>
+    </div>
   </div>
 </div>
+<script type="text/javascript">
+  $(function(){
+    var grzxBtnModify = 'grzx-info-list-btn',  // 修改按钮class
+        grzxDivModify = 'grzx-info-modify',   // 修改内容class
+        grzxBtnCancel = 'grzx-info-btn-cancel',  // 取消修改class
+        divWarning = 'grzx-info-warning',   // 错误提示class
+        inputWarning = 'grzx-info-input-warning';  // 输入框错误提示class
+    // 点击修改，显示对应修改内容
+    $('.' + grzxBtnModify).on('click',function(){
+      $(this).hide().parents('.grzx-info-list').children('.' + grzxDivModify).show();
+    })
+
+    // 点击取消修改
+    $('.' + grzxBtnCancel).on('click',function(){
+      $(this).parents('.'+ grzxDivModify).hide().siblings().children('.' + grzxBtnModify).show();
+    })
+
+    // 点击更改头像
+    $('.grzx-info-btn-img').on('click',function(){
+      $('.grzx-user-img').attr('src', $('.grzx-user-img-modify').attr('src'))
+      alert('更改成功')
+      $('.' + grzxBtnCancel).click();
+    })
+    // 点击更改姓名
+    $('.grzx-info-btn-name').on('click',function(){
+      var inputName = $('.grzx-info-input-name');
+      // 为空
+      if(inputName.val() == ''){
+        $(this).parent().siblings('.' + divWarning).show().html('姓名不能为空')
+        inputName.addClass(inputWarning);
+      }
+      // 成功
+      else{
+        $(this).parent().siblings('.' + divWarning).hide();
+        $('.' + grzxBtnCancel).click();
+        $('.grzx-user-name').html(inputName.val())
+        inputName.removeClass(inputWarning);
+        alert('姓名修改成功')
+      }
+    })
+    // 点击更改密码
+    $('.grzx-info-btn-password').on('click',function(){
+      var inputPasswordNow = $('.grzx-info-input-password-now'),
+          inputPasswordNew = $('.grzx-info-input-password-new'),
+          inputPasswordAgain = $('.grzx-info-input-password-again'),
+          passwordNumber = '123456'; //默认密码
+      // 原密码为空
+      if(inputPasswordNow.val() == ''){
+        $(this).parent().siblings('.' + divWarning).show().html('原密码不能为空');
+        inputPasswordNow.addClass(inputWarning);
+        inputPasswordNew.removeClass(inputWarning);
+        inputPasswordAgain.removeClass(inputWarning);
+      }
+      // 新密码为空
+      else if(inputPasswordNew.val() == ''){
+        $(this).parent().siblings('.' + divWarning).show().html('新密码不能为空');
+        inputPasswordNow.removeClass(inputWarning);
+        inputPasswordNew.addClass(inputWarning);
+        inputPasswordAgain.removeClass(inputWarning);
+      }
+      // 新密码输入不一致
+      else if(inputPasswordNew.val() != inputPasswordAgain.val()){
+        $(this).parent().siblings('.' + divWarning).show().html('新密码输入不一致');
+        inputPasswordNow.removeClass(inputWarning);
+        inputPasswordNew.addClass(inputWarning);
+        inputPasswordAgain.addClass(inputWarning);
+      }
+      // 原密码输入错误
+      else if(inputPasswordNow.val() != passwordNumber){
+        $(this).parent().siblings('.' + divWarning).show().html('原密码输入错误');
+        inputPasswordNow.addClass(inputWarning);
+        inputPasswordNew.removeClass(inputWarning);
+        inputPasswordAgain.removeClass(inputWarning);
+        alert('默认密码为'+passwordNumber)
+      }
+      // 修改成功
+      else{
+         $(this).parent().siblings('.' + divWarning).show().html('');
+        inputPasswordNow.removeClass(inputWarning);
+        inputPasswordNew.removeClass(inputWarning);
+        inputPasswordAgain.removeClass(inputWarning);
+        $('.' + grzxBtnCancel).click();
+        alert('修改密码成功')
+      }
+    })
+  })
+</script>

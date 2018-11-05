@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <title>课程学习</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+
+  <body>
+    <div class="student-study">
+      <!-- 顶部 -->
+      <div class="ss-header">
+        <!-- 调用公用头部 -->
+        <div class="ss-header-top"></div>
+        <div class="cs-header-img"></div>
+      </div>
+      <div class="ss-body">
+        <div class="ssb-nav">
+          <a href="index.html">平台首页</a>/<a href="centerStudents.html">在线课堂</a>/<a class="ssb-nav-hover" href="#">课程学习</a>
+        </div>
+        <div class="ssb-content">
+          <!-- 左侧导航栏  -->
+          <div class="ssbc-left">
+            <ul>
+              <a href="#">
+                <li>第一讲</li>
+              </a>
+              <a href="#">
+                <li>第二讲</li>
+              </a>
+              <a href="#">
+                <li>第三讲</li>
+              </a>
+              <a href="#">
+                <li>第四讲</li>
+              </a>
+            </ul>
+          </div>
+          <div class="ssbc-right">
+            <h1>中共十九大人民代表大会</h1>
+            <div class="ssbcr-header">
+              <div class="ssbcr-header-left">
+                <!-- 视频 -->
+                <!-- autoplay="autoplay" -->
+                <video width="100%" height="100%" controls="controls">
+                  <source src="movie.ogg" type="video/ogg" />
+                  <source src="movie.mp4" type="video/mp4" />
+                  <source src="movie.webm" type="video/webm" />
+                </video>
+              </div>
+              <div class="ssbcr-header-right">
+                <!-- 课程简介 -->
+                <div class="ssbcr-kcjj">
+                  <h2>课程简介</h2>
+                  <table>
+                    <tr>
+                      <td>主讲老师</td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                  </table>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+      <!-- public-footer -->
+      <div class="index-footer"></div>
+      <!-- 公用二维码 -->
+      <div class="index-gzh"></div>
+    </div>
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        // 调用公用底部
+        publicFooter('.index-footer')
+        // 调用公用二维码
+        publicEWM('.index-gzh')
+        // 加载公用头部
+        publicHeader('.ss-header-top')
+      })
+    </script>  
+  </body>
+
+</html>

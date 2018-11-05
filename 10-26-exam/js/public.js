@@ -12,7 +12,7 @@ function publicEWM(fatherClass) {
 }
 // 公用顶部导航-- publicHeader('.classname')
 function publicHeader(fatherClass){
-  var addEle = $('<div class="ih-one"><a class= "ih-tilte" href = "#" > 考试平台首页</a ><div class="clear"></div></div>'),
+  var addEle = $('<div class="ih-one"><a class= "ih-tilte" href = "index.html" > 考试平台首页</a ><div class="clear"></div></div>'),
     fatherDiv = $(fatherClass);
   addEle.appendTo(fatherDiv)
 }

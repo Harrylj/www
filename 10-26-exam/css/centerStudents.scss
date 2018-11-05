@@ -1,10 +1,4 @@
 @import 'public.scss';
-.cs-header-img{
-  height: 124px;
-  background-image: url(../images/cs-01.jpg);
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-}
 .csbr-header{
   .csbr-header-btn-xxxx{
     color: red;
@@ -59,6 +53,9 @@
     }
   }
 }
+.csbr-body{
+  min-height: 600px;
+}
 .csbr-body-zxkt{
   .zxkt-table{
     width: 100%;
@@ -103,5 +100,28 @@
   }
   .csbr-xxgl-detail{
     display: none;
+  }
+}
+.csbr-body-grzx{
+  .grzx-user{
+  }
+  .grzx-info{
+    background-color: #f9f9fa;
+    .grzx-info-modify{
+      display: none;
+    }
+  }
+  .grzx-user-img
+  ,.grzx-user-img-modify{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+  }
+  .grzx-info-warning{
+    display: none;
+    color: red;
+  }
+  .grzx-info-input-warning{
+    border: 1px solid red;
   }
 }

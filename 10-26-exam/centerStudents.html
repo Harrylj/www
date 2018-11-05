@@ -69,12 +69,29 @@
           </div>
         </div>
       </div>
+      <!-- public-footer -->
+      <div class="index-footer"></div>
+      <!-- 公用二维码 -->
+      <div class="index-gzh"></div>
     </div>    
     <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/public.js"></script>
     <script type="text/javascript">
       $(function(){
+        // 加载在线课堂
+        $('#centerStudentsZXKT').load('centerStudentsZXKT.html');
+        // 加载信息管理
+        $('#centerStudentsXXGL').load('centerStudentsXXGL.html');
+        // 加载个人中心
+        $('#centerStudentsGRZX').load('centerStudentsGRZX.html');
+        // 调用公用底部
+        publicFooter('.index-footer')
+        // 调用公用二维码
+        publicEWM('.index-gzh')
+        // 加载公用头部
+        publicHeader('.cs-header-top')
+        
         // 点击左侧导航栏
         $('.csbl-nav').children('li').on('click',function(){
           var otherFather = $('.csbr-body'),  // 响应处父元素
@@ -87,14 +104,7 @@
           showXXGL()
         })
         // 左侧导航栏默认选中第2个
-        $('.csbl-nav').children('li').eq(1).click();
-        // 加载在线课堂
-        $('#centerStudentsZXKT').load('centerStudentsZXKT.html');
-        // 加载信息管理
-        $('#centerStudentsXXGL').load('centerStudentsXXGL.html');
-        // 加载个人中心
-        $('#centerStudentsGRZX').load('centerStudentsGRZX.html');
-        
+        $('.csbl-nav').children('li').eq(2).click();
 
         // 点击 右侧头部的信息管理
         $('.csbr-header-btn-xxgl').on('click',function(){
@@ -111,8 +121,7 @@
           $('.csbr-nav-xxgl-detail').hide();
         }
 
-        // 加载公用头部
-        publicHeader('.cs-header-top')
+        
       })
     </script>  
   </body>

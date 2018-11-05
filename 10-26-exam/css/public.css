@@ -76,3 +76,10 @@
   text-align: center;
   font-size: 12px;
 }
+
+.cs-header-img {
+  height: 124px;
+  background-image: url(../images/cs-01.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
