@@ -1,0 +1,96 @@
+@import "public.scss";
+.student-study{
+
+}
+
+// 课程学习和在线考试
+.st-body
+,.ss-body{
+  background-color: white;
+  padding: 0 15px;
+  .ssb-nav-hover{
+    color: $public-color-01;
+  }
+  .ssb-nav{
+    a{
+    display: inline-block;
+    margin: 0 15px;
+    }
+    a:first-child{
+      margin-left: 0; 
+    }
+  }
+  
+}
+.ss-body{
+  .ssb-content{
+    position: relative;
+    padding-left: 120px;
+    min-height: 1000px;
+    .ssbc-left{
+      position: absolute;
+      top: 5px;
+      left: 20px;
+      .ssbc-left-hover{
+        color: $public-color-01;
+      }
+    }
+    .ssbc-right{
+      h1{
+        color: $public-color-01;
+      }
+      .ssbcr-header{
+        height: 360px;
+        .ssbcr-header-left{
+          float: left;
+          height: 100%;
+          width: 60%;
+          background-color: #d0d0d0;
+        }
+        .ssbcr-header-right{
+          float: right;
+          height: 100%;
+          width: 39%;
+          .ssbcr-a-test{
+            color: $public-color-01;
+          }
+          .ssbcr-kcjj-table{
+            width: 100%;
+            td:nth-child(1){
+              width: 100px;
+            }
+          }
+          .ssbcr-zxtw{
+            display: none;
+          }
+          .ssbcr-zxtw-btn{
+            color: white;
+            background-color: #a9a9a9;
+          }
+          .ssbcr-zxtw-btn-hover{
+            background-color: $public-color-01;
+          }
+          .ssbcr-zxtw-return{
+            border: none;
+            background-color: transparent;
+            padding-left: 20px;
+            background-image: url(../images/ss-return.png);
+            background-size: 9px 16px;
+            background-position: left center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+    }
+  }
+}
+.student-test{
+  .stb-content-test{
+    h1{
+      background-color: #f5f5f5;
+    }
+  }
+  .info-list-div-hover{
+    border: 1px solid red;
+  }
+}

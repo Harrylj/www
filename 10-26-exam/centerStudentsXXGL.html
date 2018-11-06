@@ -21,10 +21,10 @@
               href="#">论毛泽东，邓小平味道领袖的功绩</a>
           </li>
           <li class="info-list-ok">
-            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" value="1" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
           </li>
           <li class="info-list-ok">
-            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" value="2" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
           </li>
           <li>
             <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
@@ -85,12 +85,12 @@
     // 点击div选中input
     $('.info-list-btn-div').on('click',function(){
     var classFatherHover = 'info-list-hover';
-      // 未选中
+      // 点击取消选中
       if($(this).hasClass(classHover)){
         $(this).removeClass(classHover).children("input:checkbox").removeAttr("checked");
         $(this).parent().removeClass(classFatherHover);
       }
-      // 选中
+      // 点击选中
       else
       {
         $(this).addClass(classHover).children("input:checkbox").prop("checked", "checked");

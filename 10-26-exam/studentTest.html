@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+    <link rel="stylesheet" type="text/css" href="css/studentStudy.css" />
+    <title>在线考试</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+
+  <body>
+    <div class="student-test">
+      <!-- 顶部 -->
+      <div class="ss-header">
+        <!-- 调用公用头部 -->
+        <div class="ss-header-top"></div>
+        <div class="cs-header-img"></div>
+      </div>
+      <!-- 主要内容 -->
+      <div class="st-body">
+        <div class="ssb-nav">
+          <a href="index.html">平台首页</a>/<a href="centerStudents.html">在线课堂</a>/<a href="studentStudy.html">课程学习</a>/<a class="ssb-nav-hover" href="#">在线考试</a>
+        </div>
+        <!-- .stbc-test-list-a:定位元素 -->
+        <!-- .stbc-test-list-one:为stbc-test-list添加表示单选 
+              .stbc-test-list-two:为stbc-test-list添加表示多选
+        -->
+        <div class="stb-content">
+          <div class="stb-content-test">
+            <h1>单选题（共30题 每题5分）</h1>
+            <div class="stbc-test-list stbc-test-list-one">
+              <a class="stbc-test-list-a" href="#"></a>
+              <h2>在中国历史上，有哪些发育有利于进步</h2></a>
+              <ul>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+              </ul>
+            </div>
+            <div class="stbc-test-list stbc-test-list-two">
+              <a class="stbc-test-list-a" href="#"></a>
+              <h2>在中国历史上，有哪些发育有利于进步</h2></a>
+              <ul>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                <li class="info-list-btn-div"><input class="info-list-btn" type="checkbox" name="one" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- public-footer -->
+      <div class="index-footer"></div>
+      <!-- 公用二维码 -->
+      <div class="index-gzh"></div>
+    </div>
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        // 调用公用底部
+        publicFooter('.index-footer')
+        // 调用公用二维码
+        publicEWM('.index-gzh')
+        // 加载公用头部
+        publicHeader('.ss-header-top')
+        
+        var classHover = 'info-list-div-hover', // .info-list-btn-div添加表示打钩
+          // classListRead = 'info-list-ok',  // li添加表示已选，没有则表示未选
+          classFahterDiv = 'stbc-test-list'; // 祖父元素
+          classFahterDivOne = 'stbc-test-list-one'; // 单选祖父元素
+          classFahterDivTwo = 'stbc-test-list-two'; // 多选祖父元素
+        // 点击div选中input
+        $('.info-list-btn-div').on('click', function () {
+          // var classFatherHover = 'info-list-hover';
+          // 单选
+          if($(this).parents('.' + classFahterDiv).hasClass(classFahterDivOne)){
+            // 点击取消选中
+            if ($(this).hasClass(classHover)) {
+              $(this).removeClass(classHover).children("input").removeAttr("checked");
+              // $(this).parent().removeClass(classFatherHover);
+              // alert('点击取消选中')
+            }
+            // 点击选中
+            else {
+              $(this).addClass(classHover).children("input").prop("checked", "checked");
+              // $(this).parent().addClass(classFatherHover);
+              // 取消兄弟元素的选中状态
+              $(this).siblings('li').each(function(){
+                //$(this).parent().removeClass(classFatherHover);
+                $(this).removeClass(classHover).children("input").removeAttr("checked");
+              })
+              // alert('点击选中')
+              
+            }
+          }
+          // 多选
+          else if($(this).parents('.' + classFahterDiv).hasClass(classFahterDivTwo)) {
+            // 未选中
+            if ($(this).hasClass(classHover)) {
+              $(this).removeClass(classHover).children("input").removeAttr("checked");
+              //$(this).parent().removeClass(classFatherHover);
+            }
+            // 选中
+            else {
+              $(this).addClass(classHover).children("input").prop("checked", "checked");
+              //$(this).parent().addClass(classFatherHover);
+            }
+          }
+          else{
+            alert('数据出错，既不是单选也不是多选')
+          }
+
+        })
+
+
+
+        // 刷新页面时，更新选中状态--学员信息管理和在线考试
+        function shuaxin(){
+          $('.info-list-btn').each(function () {
+            // 选中则为父元素添加选中状态
+            if ($(this).is(':checked')) {
+              $(this).parents('.info-list-btn-div').addClass(classHover);
+            }
+          })
+        }
+        // 刷新页面时，更新选中状态
+        shuaxin();
+        
+      })
+    </script>  
+  </body>
+
+</html>

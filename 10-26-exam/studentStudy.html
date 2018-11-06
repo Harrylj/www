@@ -14,6 +14,7 @@
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/studentStudy.css">
     <title>课程学习</title>
     <style type="text/css">
 
@@ -34,10 +35,11 @@
         </div>
         <div class="ssb-content">
           <!-- 左侧导航栏  -->
+          <!-- .ssbc-left-hover：表示选中 -->
           <div class="ssbc-left">
-            <ul>
+            <ul class="ssbc-left-nav">
               <a href="#">
-                <li>第一讲</li>
+                <li class="ssbc-left-hover">第一讲</li>
               </a>
               <a href="#">
                 <li>第二讲</li>
@@ -56,7 +58,7 @@
               <div class="ssbcr-header-left">
                 <!-- 视频 -->
                 <!-- autoplay="autoplay" -->
-                <video width="100%" height="100%" controls="controls">
+                <video class="ssbcr-video" width="100%" height="100%" controls="controls">
                   <source src="movie.ogg" type="video/ogg" />
                   <source src="movie.mp4" type="video/mp4" />
                   <source src="movie.webm" type="video/webm" />
@@ -66,35 +68,103 @@
                 <!-- 课程简介 -->
                 <div class="ssbcr-kcjj">
                   <h2>课程简介</h2>
-                  <table>
+                  <table class="ssbcr-kcjj-table">
                     <tr>
                       <td>主讲老师</td>
-                      <td></td>
+                      <td>张冬至</td>
+                    </tr>
+                    <tr>
+                      <td>课题类型</td>
+                      <td>必修课</td>
+                    </tr>
+                    <tr>
+                      <td>考试时间</td>
+                      <td>2018年10月30日 <a class="ssbcr-a-test" href="studentTest.html">去考试></a></td>
+                    </tr>
+                    <tr>
+                      <td>课程时间</td>
+                      <td>50分钟</td>
+                    </tr>
+                    <tr>
+                      <td>课程简介</td>
+                      <td>我国国有企业资产规模究竟多大？海内外国有金融资产“家底”有多厚？行政事业单位掌管着多少国有资产？土地、海洋、油气等自然资源究竟有多少？</td>
                     </tr>
                     <tr>
                       <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <td></td>
-                      <td></td>
+                      <td><button class="ssbcr-btn-zxtw">在线提问</button></td>
                     </tr>
                   </table>
                 </div>
+                <!-- 在线提问 -->
+                <div class="ssbcr-zxtw">
+                  <button class="ssbcr-zxtw-return">课程简介</button>
+                  <textarea class="ssbcr-zxtw-input" name=""  cols="30" rows="10" placeholder="在线提问：请输入您的问题，老师在线回答"></textarea>
+                  <div class="ssbcr-zxtw-btn-div">
+                    <button class="ssbcr-zxtw-btn ssbcr-zxtw-btn-clear">清除问题</button>
+                    <button class="ssbcr-zxtw-btn ssbcr-zxtw-btn-submit ssbcr-zxtw-btn-hover">提交问题</button>
+                  </div>
+                </div>
               </div>
             </div> 
+            <div class="ssbcr-body">
+              <!-- Nav tabs -->
+              <ul class="nav nav-tabs" role="tablist">
+                <li role="presentation" class="active"><a href="#ss-kcbj" aria-controls="ss-kcbj" role="tab" data-toggle="tab">课程笔记</a></li>
+                <li role="presentation"><a href="#ss-zxwd" aria-controls="ss-zxwd" role="tab" data-toggle="tab">在线问答</a></li>
+              </ul>
+              <!-- Tab panes -->
+              <div class="tab-content">
+                <!-- 课程笔记 -->
+                <div role="tabpanel" class="tab-pane active" id="ss-kcbj">
+                  <p>1.人民生活水平不断提升</p>
+                  <p>2.lalalala</p>
+                </div>
+                <!-- 在线问答 -->
+                <div role="tabpanel" class="tab-pane" id="ss-zxwd">
+                  <div class="ss-zxwd-list">
+                    <div class="ss-zxwd-list-number"><span class="zxwd-list-number-now">1</span>/3</div>
+                    <div class="ss-zxwd-list-div">
+                      <h2>学员张萌</h2>
+                      <p>今天历史课程没听懂，可以再说讲解一遍么</p>
+                      <h4>提问时间: <span>2018年10月10日 00:00:00</span></h4>
+                    </div>
+                    <div class="ss-zxwd-list-div">
+                      <h2>在线答疑</h2>
+                      <p>这个知道了，好的</p>
+                      <h4>答疑时间: <span>2018年10月10日 00:00:00</span></h4>
+                    </div>
+                  </div>
+                  <div class="ss-zxwd-list">
+                    <div class="ss-zxwd-list-number"><span class="zxwd-list-number-now">2</span>/3</div>
+                    <div class="ss-zxwd-list-div">
+                      <h2>学员张萌</h2>
+                      <p>今天历史课程没听懂，可以再说讲解一遍么</p>
+                      <h4>提问时间: <span>2018年10月10日 00:00:00</span></h4>
+                    </div>
+                    <div class="ss-zxwd-list-div">
+                      <h2>在线答疑</h2>
+                      <p>这个知道了，好的</p>
+                      <h4>答疑时间: <span>2018年10月10日 00:00:00</span></h4>
+                    </div>
+                  </div>
+                  <div class="ss-zxwd-list">
+                    <div class="ss-zxwd-list-number"><span class="zxwd-list-number-now">1</span>/3</div>
+                    <div class="ss-zxwd-list-div">
+                      <h2>学员张萌</h2>
+                      <p>今天历史课程没听懂，可以再说讲解一遍么</p>
+                      <h4>提问时间: <span>2018年10月10日 00:00:00</span></h4>
+                    </div>
+                    <div class="ss-zxwd-list-div">
+                      <h2>在线答疑</h2>
+                      <p>这个知道了，好的</p>
+                      <h4>答疑时间: <span>2018年10月10日 00:00:00</span></h4>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
@@ -114,6 +184,36 @@
         publicEWM('.index-gzh')
         // 加载公用头部
         publicHeader('.ss-header-top')
+        // 课程笔记，在线问答切换
+        $('#myTabs a').click(function (e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+
+        // 点击左侧导航栏
+        $('.ssbc-left-nav').children().children('li').on('click',function(){
+          alert('这里我没写，重新加载')
+        })
+        // 点击清除问题
+        $('.ssbcr-zxtw-btn-clear').on('click',function(){
+          $('.ssbcr-zxtw-input').val('');
+        })
+        // 点击提交问题
+        $('.ssbcr-zxtw-btn-submit').on('click', function () {
+          alert($('.ssbcr-zxtw-input').val())
+        })
+        // 默认选中课程笔记
+        $('#myTabs a:first').tab('show') // Select first tab
+        // 点击在线提问
+        $('.ssbcr-btn-zxtw').on('click',function(){
+          $('.ssbcr-kcjj').hide();
+          $('.ssbcr-zxtw').show();
+        })
+        // 点击返回课程简介
+        $('.ssbcr-zxtw-return').on('click',function(){
+          $('.ssbcr-kcjj').show();
+          $('.ssbcr-zxtw').hide();
+        })
       })
     </script>  
   </body>
