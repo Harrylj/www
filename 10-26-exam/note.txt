@@ -1,4 +1,4 @@
-http://192.168.31.129:8081/10-26-exam/centerStudents.html
+﻿http://192.168.31.129:8081/10-26-exam/centerStudents.html
 兼容ie8+
 使用box-sizing:border-box
 jquery 2.1.3
@@ -19,9 +19,14 @@ studentStudy.html  ---学员中心-在线课堂-课程学习
 studentTest.html  ---学员中心--在线课堂-课程学习-在线考试
 
 
-
-
-
+centerAdministrators.html  ---管理员中心
+centerAdministratorsGLZX.hmtl ---管理员中心-管理中心
+centerAdministratorsXJKC.html ---管理员中心-新建课程
+centerAdministratorsXXGL.html ---管理员中心-消息管理  -------这里到底是消息管理还是系统消息
+centerAdministratorsGRZX.html ---管理员中心-个人中心
+adminStudents.html -----管理员中心-管理中心--添加学生
+adminTeachers.html -----管理员中心-管理中心--添加老师
+adminClass.html -----管理员中心-管理中心--添加班级
 
 
 2018-10-31-10:36
