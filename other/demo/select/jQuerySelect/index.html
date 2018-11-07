@@ -1,0 +1,87 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>实用select下拉框美化jquery插件</title>
+	<link rel="stylesheet" type="text/css" href="lib/css/htools.select.skin.css?v=1.0">
+</head>
+<style type="text/css">
+	select{
+	  display: none;
+	}
+</style>
+<body>
+	<div class="_htools-selec-box">
+        <label>
+            <select id="select">
+                <option value="1">原生的select</option>
+                <option value="2">项目1</option>
+                <option value="3">项目2</option>
+                <option value="4">项目3</option>
+                <option value="5">项目4</option>
+            </select>
+        </label>
+        <label>
+            <select id="myselect">
+                <option value="1">插件效果</option>
+                <option value="2">项目1</option>
+                <option value="3">项目2</option>
+                <option value="4">项目3</option>
+                <option value="5">项目4</option>
+            </select>
+        </label>
+        <label>
+          <select >
+                <option value="1">插件效果</option>
+                <option value="2">项目1</option>
+                <option value="3">项目2</option>
+                <option value="4">项目3</option>
+                <option value="5">项目4</option>
+          </select>
+        </label>
+        <button id="get">
+            获取值
+        </button>
+    </div>
+	
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	<script src="lib/js/jquery.htools.select.js"></script>
+	<script type="text/javascript">
+	  $(function(){
+	    $('select').each(function(i){
+        var abc = $('select').length;
+        var className = 'select-more-' + i;
+        $(this).addClass(className)
+        var $className = $('.'+ className);
+        $className.goSelectInput({
+              height: 30,
+              width: 250
+          });
+        console.log(i,abc)
+      })
+	  })
+	  
+		var $select = $("#select");
+	        var $myselect = $("#myselect");
+
+	        /**
+	         * 初始化插件
+	         */
+	        /*
+	        $myselect.goSelectInput({
+	            height: 30,
+	            width: 250
+	        });
+          */
+	        /**
+	         * 获取两者的值
+	         */
+	        $("#get").click(function(){
+	            alert("原生select的值为" + $select.val() + ",选中文本为'" + $select.find("option:selected").text() + "'");
+	            alert("插件效果的select的值为" + $myselect.val() + ",选中文本为'" + $myselect.find("option:selected").text() + "'");
+	        });
+	</script>
+</body>
+</html>
