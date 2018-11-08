@@ -37,8 +37,7 @@
             <p>星期四</p>
           </div>
           <div class="csbl-two">
-            <p>欢迎08届01班</p>
-            <p>渣渣辉</p>
+            <p>欢迎管理员</p>
           </div>
           <div class="csbl-nav-div">
             <!-- 左侧导航菜单 -->
@@ -55,10 +54,7 @@
         <div class="csb-right">
           <!-- 右侧公用顶部 -->
           <!-- .csbr-a-red：表示激活的a标签 -->
-          <div class="csbr-header">
-            <p class="csbr-nav-xxgl">当前课程：<a class="csbr-a-red" href="studentStudy.html">中国人民历史事件</a></p>
-            <p class="csbr-nav-xxgl-detail"><a class="csbr-header-btn csbr-header-btn-xxgl" href="#">信息管理</a>/<a class="csbr-header-btn csbr-header-btn-xxxx" href="#">消息信息</a></p>
-          </div>
+          <div class="csbr-header"></div>
           <div class="csbr-body">
             <!-- .csbr-body-list-hover：表示选中状态 -->
             <!-- 管理中心-->
@@ -105,26 +101,10 @@
               classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
           $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
           otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
-          // 调用显示信息管理
-          showXXGL()
         })
         // 左侧导航栏默认选中第2个
-        $('.csbl-nav').children('li').eq(1).click();
+        $('.csbl-nav').children('li').eq(0).click();
 
-        // 点击 右侧头部的信息管理
-        $('.csbr-header-btn-xxgl').on('click',function(){
-          // 调用显示信息管理
-          showXXGL()
-        })
-        // 显示信息管理
-        function showXXGL() {
-          // 显示通用导航和信息管理内容
-          $('.csbr-nav-xxgl').show();
-          $('.csbr-xxgl').show();
-          // 隐藏邮箱详情和邮箱详情导航
-          $('.csbr-xxgl-detail').hide();
-          $('.csbr-nav-xxgl-detail').hide();
-        }
 
         
       })

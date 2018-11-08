@@ -1,6 +1,111 @@
-<div>
-  管理中心
+<div class="cabr-body-glzx">
+  <!-- 管理中心 -->
+  <div class="ca-one-div">
+    <h1 class="public-h1-01">管理中心</h1>
+    <div class="ca-glzx-header">
+      <div class="ca-glzx-list">
+        <h2>325</h2>
+        <h5>学生人数</h5>
+        <p>
+          <button class="ca-glzx-btn ca-glzx-btn-student">添加学生</button>
+        </p>
+      </div>
+      <div class="ca-glzx-list">
+        <h2>325</h2>
+        <h5>老师人数</h5>
+        <p>
+          <button class="ca-glzx-btn ca-glzx-btn-teacher">添加老师</button>
+        </p>
+      </div>
+      <div class="ca-glzx-list">
+        <h2>325</h2>
+        <h5>学生人数</h5>
+        <p>
+          <button class="ca-glzx-btn ca-glzx-btn-class">添加班级</button>
+        </p>
+      </div>
+      <div class="ca-glzx-list">
+        <h2>325</h2>
+        <h5>未考试人数</h5>
+        <p>
+          <button class="ca-glzx-btn">提醒考试</button>
+        </p>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="ca-glzx-body">
+      <h4 class="public-h4-01">课程信息</h4>
+      <table class="zxkt-table">
+          <tr>
+            <td>课程类别</td>
+            <td>课程名称</td>
+            <td>考试时间</td>
+            <td>学习状态</td>
+            <td>任课老师</td>
+            <td>操作</td>
+          </tr>
+          <tr>
+            <td>01必修</td>
+            <td><a class="csbr-a-red" href="studentStudy.html">论毛泽东，邓小平味道领袖的功绩</a></td>
+            <td>2018年6月20日</td>
+            <td>去学习</td>
+            <td>李健</td>
+            <td>
+              <a href="#"><button class="zxkt-btn">完成</button></a>
+            </td>
+          </tr>
+          <tr>
+            <td>01必修</td>
+            <td><a class="csbr-a-red" href="studentStudy.html">论毛泽东，邓小平味道领袖的功绩</a></td>
+            <td>2018年6月20日</td>
+            <td>去学习</td>
+            <td>李健</td>
+            <td>
+              <a href="#"><button class="zxkt-btn">完成</button></a>
+            </td>
+          </tr>
+        </table>  
+    </div>
+  </div>
+  <!-- 添加内容 -->
+  <!-- .ca-add-div-hover：.ca-add-div添加表示选中状态 -->
+  <div class="ca-two-div">
+    <div class="ca-two-div-header">
+      <div class="ssb-nav">
+        <a href="centerAdministrators.html">平台首页</a>/<a class="ssb-nav-hover" href="#">添加</a>
+      </div>
+    </div>
+    <div class="ca-two-div-body">
+      <!-- 添加学生 -->
+      <div id="adminStudents" class="ca-add-div"></div>
+      <!-- 添加老师 -->
+      <div id="adminTeachers" class="ca-add-div"></div>
+      <!-- 添加班级 -->
+      <div id="adminClass" class="ca-add-div"></div>
+    </div>
+    
+  </div>
+
 </div>
 
 <script type="text/javascript">
-</script>  
+  $(function () {
+    // 加载添加学生
+    $('#adminStudents').load('adminStudents.html');
+    // 加载添加老师
+    $('#adminTeachers').load('adminTeachers.html');
+    // 加载添加班级
+    $('#adminClass').load('adminClass.html');
+    
+    // 点击添加按钮
+    $('.ca-glzx-btn').on('click',function(){
+      var thisFather = $('.ca-one-div'), // 点击处祖父元素 
+        otherFather = $('.ca-two-div'),  // 响应处祖父元素
+        thisIndex = $(this).parents('.ca-glzx-list').index(),    // 点击元素的索引值
+        classOtherHover = 'ca-add-div-hover'; // 响应处激活类名
+        $('.ssb-nav-hover').html($(this).html())
+        thisFather.hide();
+        otherFather.show().children('.ca-two-div-body').children('.ca-add-div').eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+    })
+  })
+</script>

@@ -52,6 +52,7 @@
 
 /*公用二维码*/
 .index-gzh {
+  display: none;
   position: fixed;
   left: 50%;
   top: 30%;
@@ -75,6 +76,21 @@
   line-height: 20px;
   text-align: center;
   font-size: 12px;
+}
+
+.cs-header-img {
+  height: 124px;
+  background-image: url(../images/cs-01.jpg);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.ca-header-img {
+  background-image: url(../images/ca-01.jpg);
+}
+
+.ct-header-img {
+  background-image: url(../images/ct-01.jpg);
 }
 
 .csbr-header .csbr-header-btn-xxxx {

@@ -87,3 +87,142 @@ $public-color-01-hover: #ba0000;
 .ct-header-img{
   background-image: url(../images/ct-01.jpg);
 }
+.csbr-header{
+  .csbr-header-btn-xxxx{
+    color: red;
+  }
+}
+.cs-body{
+  position: relative;
+  padding-left: 170px;
+  background-color: white;
+  .csb-left{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 130px;
+  }
+  .csbl-nav-hover{
+    background-color: $public-color-01;
+  }
+  .csb-right{
+    .csbr-nav-xxgl-detail{
+      display: none;
+    }
+    .csbr-body-list{
+      position: relative;
+      display: none;
+    }
+    .csbr-body-list-hover{
+      display: block;
+    }
+    .csbr-a-red{
+      position: relative;
+      display: inline-block;
+    }
+    .csbr-a-red:after{
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      height: 14px;
+      width: 14px;
+      content: ' ';
+      margin-top: -7px;
+      font-size: 1px;
+      background-image: url(../images/cs-02.png);
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+    .csbr-a-red:hover{
+      color: red;
+    }
+    .csbr-a-red:hover:after{
+      background-image: url(../images/cs-02-hover.png);
+    }
+  }
+}
+.csbr-body{
+  min-height: 600px;
+}
+.csbr-body-zxkt{
+  .progress-bar{
+    background-color: $public-color-01;
+  }
+  .zxkt-progress-bar-left
+  ,.progress
+  ,.zxkt-progress-bar-right{
+    display: inline-block
+  }
+  .progress{
+    width: 200px;
+    margin-bottom: 0;
+  }
+}
+.csbr-body-xxgl{
+  .info-list-ok{
+    a{
+      color: gray;
+    }
+  }
+  .info-list-btn-div{
+    display: inline-block;
+    cursor: pointer;
+    width: 54px;
+    height: 14px;
+    background-image: url(../images/xxgl-checkbox.png);
+    @include bg-all;
+  }
+  .info-list-div-hover{
+    background-image: url(../images/xxgl-checkbox-hover.png);
+  }
+  .info-list-hover{
+    a{
+      color: $public-color-01;
+    }
+  }
+  .info-list-btn{
+    /*display: none;*/
+  }
+  .csbr-xxgl-detail{
+    display: none;
+  }
+}
+.csbr-body-grzx{
+  .grzx-user{
+  }
+  .grzx-info{
+    background-color: #f9f9fa;
+    .grzx-info-modify{
+      display: none;
+    }
+  }
+  .grzx-user-img
+  ,.grzx-user-img-modify{
+    width: 76px;
+    height: 76px;
+    border-radius: 50%;
+  }
+  .grzx-info-warning{
+    display: none;
+    color: red;
+  }
+  .grzx-info-input-warning{
+    border: 1px solid red;
+  }
+}
+.zxkt-table{
+  width: 100%;
+}
+
+.ssb-nav{
+  a{
+  display: inline-block;
+  margin: 0 15px;
+  }
+  a:first-child{
+    margin-left: 0; 
+  }
+  .ssb-nav-hover{
+    color: $public-color-01;
+  }
+}

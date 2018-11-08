@@ -1,1 +1,11 @@
-null
+.center-administrators .ca-two-div {
+  display: none;
+}
+
+.center-administrators .ca-add-div {
+  display: none;
+}
+
+.center-administrators .ca-add-div-hover {
+  display: block;
+}
