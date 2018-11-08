@@ -84,3 +84,11 @@
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
+
+.ca-header-img {
+  background-image: url(../images/ca-01.jpg);
+}
+
+.ct-header-img {
+  background-image: url(../images/ct-01.jpg);
+}
