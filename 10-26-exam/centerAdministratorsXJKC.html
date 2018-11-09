@@ -1,6 +1,109 @@
-<div>
-  系统消息
+<div class="cabr-body-xjkc">
+  <h1>新建课程</h1>
+  <div class="ca-xjkc-content">
+    <h2>课程设置</h2>
+    <table class="xjkc-table">
+      <tr>
+        <td>课程模式</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">视频</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程类型</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">必修课</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程阶段</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">第一讲</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+    </table>
+    <table class="xjkc-table">
+      <tr>
+        <td>课程名称</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">轮什么演讲</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>任课老师</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">李健</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程时间</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">2018年8月24日-2018年10月24日</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程简介</td>
+        <td>
+          <textarea class="ca-xjkc-textarea" name="" id="" cols="30" rows="10" placeholder="请简单介绍课程的主要内容"></textarea>
+        </td>
+      </tr>
+    </table>
+    <p class="ca-xjkc-ts">错误提示</p>
+    <button class="xjkc-btn-tjkc">提交课程</button>
+  </div>
 </div>
 
 <script type="text/javascript">
+$(function(){
+  // 点击提交课程
+  $('.xjkc-btn-tjkc').on('click',function(){
+    var inputDiv = $('.ca-xjkc-textarea'), // 输入框
+      tsDiv = $('.ca-xjkc-ts');  // 提示内容
+    // 为空
+    if(inputDiv.val() == ""){
+      tsDiv.show().html('输入不能为空')
+    }
+    else{
+      tsDiv.hide();
+      alert('提交课程')
+    }
+    
+  })
+})
 </script>  

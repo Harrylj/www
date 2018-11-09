@@ -72,7 +72,7 @@
   <div class="ca-two-div">
     <div class="ca-two-div-header">
       <div class="ssb-nav">
-        <a href="centerAdministrators.html">平台首页</a>/<a class="ssb-nav-hover" href="#">添加</a>
+        <a href="centerAdministrators.html">管理中心</a>/<a class="ssb-nav-hover" href="#">添加</a>
       </div>
     </div>
     <div class="ca-two-div-body">
@@ -103,9 +103,15 @@
         otherFather = $('.ca-two-div'),  // 响应处祖父元素
         thisIndex = $(this).parents('.ca-glzx-list').index(),    // 点击元素的索引值
         classOtherHover = 'ca-add-div-hover'; // 响应处激活类名
-        $('.ssb-nav-hover').html($(this).html())
-        thisFather.hide();
-        otherFather.show().children('.ca-two-div-body').children('.ca-add-div').eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+        // 提醒考试
+        if( thisIndex == '3'){
+          alert('提醒去考试')
+        } 
+        else{
+          $('.ssb-nav-hover').html($(this).html())
+          thisFather.hide();
+          otherFather.show().children('.ca-two-div-body').children('.ca-add-div').eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+        }
     })
   })
 </script>

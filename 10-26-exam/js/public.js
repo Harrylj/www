@@ -16,3 +16,4 @@ function publicHeader(fatherClass){
     fatherDiv = $(fatherClass);
   addEle.appendTo(fatherDiv)
 }
+

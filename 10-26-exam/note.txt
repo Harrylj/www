@@ -10,6 +10,8 @@ swiper 3.08
 
 name
 
+2018-10-07-10:36
+
 index.html    ---统战在线考试平台--首页
 centerStudents.html  ---学员中心
 centerStudentsZXKT.html ---学员中心-在线课堂
@@ -18,7 +20,7 @@ centerStudentsGRZX.html ---学员中心-个人中心
 studentStudy.html  ---学员中心-在线课堂-课程学习
 studentTest.html  ---学员中心--在线课堂-课程学习-在线考试
 
-
+2018-11-09-17:20
 centerAdministrators.html  ---管理员中心
 centerAdministratorsGLZX.hmtl ---管理员中心-管理中心
 centerAdministratorsXJKC.html ---管理员中心-新建课程
@@ -29,5 +31,6 @@ adminTeachers.html -----管理员中心-管理中心--添加老师
 adminClass.html -----管理员中心-管理中心--添加班级
 
 
-2018-10-31-10:36
-index.html
+
+
+

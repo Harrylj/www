@@ -9,3 +9,92 @@
 .center-administrators .ca-add-div-hover {
   display: block;
 }
+
+.center-administrators .abc-div-bg-left {
+  float: left;
+}
+
+.center-administrators .abc-div-bg-right {
+  float: right;
+}
+
+.center-administrators .acc-list-modify {
+  display: none;
+}
+
+.center-administrators .acc-btn-tjkc-div {
+  display: none;
+}
+
+.center-administrators .ac-content-list {
+  border: 1px solid red;
+  margin-bottom: 10px;
+}
+
+.center-administrators .ac-top {
+  border: 1px solid green;
+}
+
+.center-administrators .ac-top .ac-content-list {
+  display: none;
+  border: 1px solid blue;
+}
+
+.center-administrators .ac-top .acc-list-modify {
+  display: block;
+}
+
+.center-administrators .ac-top .acc-list-look {
+  display: none;
+}
+
+.center-administrators .ca-xtxx-textatea
+, .center-administrators .ca-xjkc-textarea {
+  width: 100%;
+  height: 200px;
+}
+
+.center-administrators .xtxx-table-01
+, .center-administrators .xjkc-table
+, .center-administrators .acc-table {
+  width: 100%;
+  background-color: white;
+}
+
+.center-administrators .xtxx-table-01
+td:first-child, .center-administrators .xjkc-table
+td:first-child, .center-administrators .acc-table td:first-child {
+  vertical-align: top;
+  width: 150px;
+}
+
+.center-administrators .ca-xtxx-setting
+, .center-administrators .ca-xtxx-lsxx {
+  background-color: #f7f7f7;
+  margin-bottom: 10px;
+}
+
+.center-administrators .csbr-body-xxgl {
+  padding: 15px;
+}
+
+.center-administrators .ca-xtxx-lsxx {
+  padding: 15px;
+}
+
+.center-administrators .ca-xtxx-lsxx .info-footer {
+  margin: 0 -15px;
+}
+
+.center-administrators .ca-xjkc-ts {
+  color: red;
+}
+
+.center-administrators .ca-xjkc-content {
+  padding: 15px;
+  background-color: #f7f7f7;
+}
+
+.center-administrators .ca-xjkc-ts {
+  display: none;
+}

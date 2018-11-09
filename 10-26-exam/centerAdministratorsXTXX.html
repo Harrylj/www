@@ -1,6 +1,204 @@
-<div>
-  管理中心
+<!-- 
+  .csbr-xxgl： 信息管理
+  .csbr-xxgl-detail: 信息管理详情
+
+
+  .info-list-div-hover: .info-list-btn-div添加表示打钩
+  .info-list-hover: .info-list-btn-div添加表示选中
+  .info-list-ok: li添加表示已读，没有则表示未读
+-->
+<div class="csbr-body-xxgl cabr-body-xtxx">
+  <h1>系统消息</h1>
+  <!-- 系统消息设置 -->
+  <div class="ca-xtxx-setting">
+    <h2>系统消息设置</h2>
+    <div class="xtxx-setting-body">
+      <table class="xtxx-table-01">
+        <tr>
+          <td>消息对象</td>
+          <td>
+            <label>
+              <select>
+                <option value="1">全体学生</option>
+                <option value="2">项目1</option>
+                <option value="3">项目2</option>
+              </select>
+            </label>
+          </td>
+        </tr>
+        <tr>
+          <td>消息内容</td>
+          <td>
+            <textarea class="ca-xtxx-textatea"  cols="30" rows="10" placeholder="请简单介绍课程的主要内容"></textarea>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td><button class="ca-xtxx-btn-fsxx">发送消息</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <!-- 历史消息 -->
+  <div class="ca-xtxx-lsxx csbr-xxgl">
+    <h1>历史消息</h1>
+    <p>共计23封消息 <button class="ifl-btn-read-all">全部设为已读</button></p>
+    <div class="info-div">
+      <div class="info-list">
+        <h2>昨天(3封)</h2>
+        <ul>
+          <li class="info-list-hover">
+            <div class="info-list-btn-div info-list-div-hover"><input class="info-list-btn" type="checkbox" checked /></div><a
+              href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+          <li class="info-list-ok">
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" value="1" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+          <li class="info-list-ok">
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" value="2" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+          <li>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+        </ul>
+      </div>
+      <div class="info-list">
+        <h2>周一(3封)</h2>
+        <ul>
+          <li>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+          <li>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+          <li>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+          <li>
+            <div class="info-list-btn-div"><input class="info-list-btn" type="checkbox" /></div><a href="#">论毛泽东，邓小平味道领袖的功绩</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="info-footer">
+      <div class="info-footer-left">
+        选择: <button class="ifl-btn ifl-btn-all">全部</button> | <button class="ifl-btn ifl-btn-delete-all">全部删除</button> | <button class="ifl-btn ifl-btn-delete">删除</button>
+      </div>
+      <div class="info-footer-right">
+        1/4 <button>下一页</button> <a href="#">跳转</a>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <!-- 信息消息 -->
+  <div class="csbr-xxgl-detail">
+    <div class="info-footer">
+      <div class="info-footer-left">
+        选择:<button class="ifl-btn ifl-btn-detail-read">已读</button> | <button class="ifl-btn ifl-btn-detail-delete">删除</button>
+      </div>
+      <div class="clear"></div>
+    </div>
+    <div class="xxgl-detail-body">
+      <div class="xxgl-detail-content">
+        <h1>李萌同学：</h1>
+        <p>您《中国近代史》的课程已经开课了，课程与2018年10月30日结束，请尽快去参加学习.</p>
+      </div>
+    </div>
+  </div>
 </div>
 
+
 <script type="text/javascript">
-</script>  
+  $(function () {
+    // 更新select框--需要调用htols.select.js和pulbic.js
+    // selectUpdate()
+
+    var classHover = 'info-list-div-hover', // .info-list-btn-div添加表示打钩
+      classListRead = 'info-list-ok';  // li添加表示已读，没有则表示未读
+    // 点击div选中input
+    $('.info-list-btn-div').on('click', function () {
+      var classFatherHover = 'info-list-hover';
+      // 点击取消选中
+      if ($(this).hasClass(classHover)) {
+        $(this).removeClass(classHover).children("input:checkbox").removeAttr("checked");
+        $(this).parent().removeClass(classFatherHover);
+      }
+      // 点击选中
+      else {
+        $(this).addClass(classHover).children("input:checkbox").prop("checked", "checked");
+        $(this).parent().addClass(classFatherHover);
+      }
+    })
+    // 点击发送消息
+    $('.ca-xtxx-btn-fsxx').on('click',function(){
+      var thisInput = $('.ca-xtxx-textatea');
+      if(thisInput.val() ==''){
+        alert('消息不能为空')
+      }
+      else{
+        alert('发送消息成功')
+      }
+    })
+
+    // 全部设置为已读
+    $('.ifl-btn-read-all').on('click', function () {
+      $('.info-list-btn-div').each(function () {
+        $(this).parent('li').addClass(classListRead);
+      })
+      alert('全部设置为已读')
+    })
+    // 全选
+    $('.ifl-btn-all').on('click', function () {
+      $('.info-list-btn-div').each(function () {
+        if (!$(this).hasClass(classHover)) {
+          $(this).click();
+        }
+      })
+      alert('全选成功')
+    })
+    
+    // 点击全部删除
+    $('.ifl-btn-delete-all').on('click',function(){
+      $('.info-list').each(function(){
+        $(this).remove();
+      })
+      alert('全部删除成功')
+    })
+
+
+    // 删除
+    $('.ifl-btn-delete').on('click', function () {
+      $('.info-list-div-hover').each(function () {
+        $(this).parent('li').remove();
+      })
+      alert('删除成功')
+    })
+
+    // 点击显示内容-信息信息
+    $('.info-list-btn-div').siblings('a').on('click', function () {
+      // 隐藏通用导航和信息管理内容
+      $('.csbr-nav-xxgl').hide();
+      $('.csbr-xxgl').hide();
+      // 显示邮箱详情和邮箱详情导航
+      $('.csbr-xxgl-detail').show();
+      $('.csbr-nav-xxgl-detail').show();
+    })
+
+
+    // -----这里是信息消息
+    // 信息消息-已读
+    $('.ifl-btn-detail-read').on('click', function () {
+      alert('这里不知道有啥用')
+    })
+    // 信息消息-删除
+    $('.ifl-btn-detail-delete').on('click', function () {
+      // 显示通用导航和信息管理内容
+      $('.csbr-nav-xxgl').show();
+      $('.csbr-xxgl').show();
+      // 隐藏邮箱详情和邮箱详情导航
+      $('.csbr-xxgl-detail').hide();
+      $('.csbr-nav-xxgl-detail').hide();
+      alert('消息删除成功')
+    })
+  })
+</script>
