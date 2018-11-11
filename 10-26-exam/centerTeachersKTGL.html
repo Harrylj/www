@@ -1,0 +1,127 @@
+<div class="cabr-body-glzx ct-body-ktgl">
+  <!-- 考题管理 -->
+  <div class="ca-one-div ct-one-div">
+    <h1 class="public-h1-01">考题管理</h1>
+    <p class="ctktgl-p-red">目前49套题库</p>
+    <div class="ctktgl-right-nav">
+      <button class="ctktgl-btn-one ctktgl-btn-drkt">导入题库</button>
+      <button class="ctktgl-btn-one ctktgl-btn-zxzj">在线组卷</button>
+      <button class="ctktgl-btn-one ctktgl-btn-zxcs">在线测试</button>
+      <button class="ctktgl-btn-one ctktgl-btn-xjkt">新建考题</button>
+    </div>
+    <div class="ca-glzx-body">
+      <table class="zxkt-table">
+        <tr>
+          <td>编号</td>
+          <td>考题类别</td>
+          <td>考题题型</td>
+          <td>导入时间</td>
+          <td>操作</td>
+        </tr>
+        <tr>
+          <td>0100</td>
+          <td>思想品德类</td>
+          <td>单选100，多选100，判断20，简答20，</td>
+          <td>2018年6月20日</td>
+          <td>
+            <a href="#">
+              <button class="zxkt-btn">提醒</button>
+            </a>
+            <a href="#">
+              <button class="zxkt-btn">删除</button>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>0100</td>
+          <td>思想品德类</td>
+          <td>单选100，多选100，判断20，简答20，</td>
+          <td>2018年6月20日</td>
+          <td>
+            <a href="#">
+              <button class="zxkt-btn">提醒</button>
+            </a>
+            <a href="#">
+              <button class="zxkt-btn">删除</button>
+            </a>
+          </td>
+        </tr>
+        <tr>
+          <td>0100</td>
+          <td>思想品德类</td>
+          <td>单选100，多选100，判断20，简答20，</td>
+          <td>2018年6月20日</td>
+          <td>
+            <a href="#">
+              <button class="zxkt-btn">提醒</button>
+            </a>
+            <a href="#">
+              <button class="zxkt-btn">删除</button>
+            </a>
+          </td>
+        </tr>
+      </table>
+      <div class="info-footer">
+        <div class="info-footer-left">
+          <button class="ifl-btn">升序</button>
+          <button class="ifl-btn">全部下载</button>
+          <button class="ifl-btn">全部删除</button>
+        </div>
+        <div class="info-footer-right">
+          1/4
+          <button>下一页</button>
+          <a href="#">跳转</a>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+  <!-- 二级导航栏 -->
+  <div class="ct-two-nav">
+    <div class="ssb-nav">
+      <a class="ctktgl-btn-ktgl" href="#">考题管理</a>/
+      <a class="ssb-nav-hover" href="#">导入</a>
+    </div>
+  </div>
+  <!-- 二级页面 -->
+  <div class="ct-two-div">
+    <!-- .csbr-body-list-hover：表示选中状态 -->
+    <!-- 导入考题 -->
+    <div id="teacherManageDRKT" class="csbr-body-list csbr-body-list-hover"></div>
+    <!-- 在线组卷 -->
+    <div id="teacherManageZXZJ" class="csbr-body-list"></div>
+    <!-- 在线测试 -->
+    <div id="teacherManageZXCS" class="csbr-body-list"></div>
+    <!-- 新建考题 -->
+    <div id="teacherManageXJKT" class="csbr-body-list"></div>
+  </div>
+
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    // 加载导入考题
+    $('#teacherManageDRKT').load('teacherManageDRKT.html');
+    // 加载在线组卷
+    $('#teacherManageZXZJ').load('teacherManageZXZJ.html');
+    // 加载在线测试
+    $('#teacherManageZXCS').load('teacherManageZXCS.html');
+    // 加载新建考题
+    $('#teacherManageXJKT').load('teacherManageXJKT.html');
+    // 点击右侧导航栏
+    $('.ctktgl-btn-one').on('click', function () {
+      var otherFather = $('.ct-two-div'),  // 响应处父元素
+        thisIndex = $(this).index(),    // 点击元素的索引值
+        classNavHover = 'ctktgl-btn-one-hover',         // 导航栏激活类名
+        classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
+      $('.ssb-nav-hover').html($(this).html()).parents('.ct-two-nav').show();
+      $(this).addClass(classNavHover).siblings().removeClass(classNavHover).parents('.ca-one-div').hide().siblings(otherFather).show();
+      otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+    })
+    // 点击考题管理
+    $('.ctktgl-btn-ktgl').on('click',function(){
+      $('.ct-one-div').show().siblings().hide();
+      $('.ctktgl-btn-one').removeClass('ctktgl-btn-one-hover');
+    })
+  })
+</script>

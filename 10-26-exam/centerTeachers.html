@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/centerAdministrators.css" />
+    <link rel="stylesheet" type="text/css" href="css/centerTeachers.css" />
+    <title>教师中心</title>
+    <style type="text/css">
+    </style>
+  </head>
+
+  <body>
+    <div class="center-teachers">
+      <!-- 顶部 -->
+      <div class="cs-header">
+        <!-- 调用公用头部 -->
+        <div class="cs-header-top"></div>
+        <div class="cs-header-img ct-header-img"></div>
+      </div>
+      <!-- 内容 -->
+      <div class="cs-body">
+        <div class="csb-left">
+          <div class="csbl-one">
+            <h1>18</h1>
+            <p>18年10月</p>
+            <p>星期四</p>
+          </div>
+          <div class="csbl-two">
+            <p>欢迎<span>游本昌</span>老师</p>
+          </div>
+          <div class="csbl-nav-div">
+            <!-- 左侧导航菜单 -->
+            <!-- .csbl-nav-hover:表示选中状态 -->
+            <ul class="csbl-nav">
+              <li class="csbl-nav-hover">学生详情</li>
+              <li>课程信息</li>
+              <li>考题管理</li>
+              <li>在线答疑</li>
+              <li>个人中心</li>
+            </ul>
+          </div>
+        </div>
+        <!-- 右侧内容 -->
+        <div class="csb-right">
+          <!-- 右侧公用顶部 -->
+          <!-- .csbr-a-red：表示激活的a标签 -->
+          <div class="csbr-header"></div>
+          <div class="csbr-body">
+            <!-- .csbr-body-list-hover：表示选中状态 -->
+            <!-- 学生详情-->
+            <div id="centerTeachersXSXQ" class="csbr-body-list csbr-body-list-hover"></div>
+            <!-- 课程信息 -->
+            <div id="centerTeachersKCXX" class="csbr-body-list"></div>
+            <!-- 考题管理 -->
+            <div id="centerTeachersKTGL" class="csbr-body-list"></div>
+            <!-- 在线答疑 -->
+            <div id="centerTeachersZXDY" class="csbr-body-list"></div>
+            <!-- 个人中心 -->
+            <div id="centerTeachersGRZX" class="csbr-body-list"></div>
+          </div>
+        </div>
+      </div>
+      <!-- public-footer -->
+      <div class="index-footer"></div>
+      <!-- 公用二维码 -->
+      <div class="index-gzh"></div>
+    </div>    
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        // 这里我用window.localStorage.typeNavNum记录状态
+        if(!window.localStorage){
+            alert("浏览器不支持localstorage");
+            return false;
+        }else{
+            
+        }
+
+        // 加载学生详情
+        $('#centerTeachersXSXQ').load('centerTeachersXSXQ.html');
+        // 加载课程信息
+        $('#centerTeachersKCXX').load('centerTeachersKCXX.html');
+        // 加载考题管理
+        $('#centerTeachersKTGL').load('centerTeachersKTGL.html');
+        // 加载在线答疑
+        $('#centerTeachersZXDY').load('centerTeachersZXDY.html');
+        // 加载个人中心
+        $('#centerTeachersGRZX').load('centerTeachersGRZX.html');
+        // 调用公用底部
+        publicFooter('.index-footer')
+        // 调用公用二维码
+        publicEWM('.index-gzh')
+        // 加载公用头部
+        publicHeader('.cs-header-top')
+        
+        // 点击左侧导航栏
+        $('.csbl-nav').children('li').on('click',function(){
+          var otherFather = $('.csbr-body'),  // 响应处父元素
+              thisIndex = $(this).index(),    // 点击元素的索引值
+              classNavHover = 'csbl-nav-hover',         // 导航栏激活类名
+              classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
+          $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
+          otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+          // 导航状态值
+          window.localStorage.typeNavNum = thisIndex;
+        })
+        // 左侧导航栏默认选中第1个
+        // $('.csbl-nav').children('li').eq(1).click();
+        
+        // 返回课程信息
+        $('.center-teachers').on('click','.return-teacher-kcxx',function(){
+          $('.ct-kcxx-div').show().siblings().hide();
+
+        })
+
+        
+      })
+    </script>  
+  </body>
+
+</html>

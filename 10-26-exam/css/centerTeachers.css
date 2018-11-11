@@ -245,148 +245,64 @@
   color: #e60012;
 }
 
-.center-administrators
-.ca-two-div, body .ca-two-div {
+.center-teachers .teacher-course-new {
   display: none;
 }
 
-.center-administrators
-.ca-add-div, body .ca-add-div {
-  display: none;
-}
-
-.center-administrators
-.ca-add-div-hover, body .ca-add-div-hover {
-  display: block;
-}
-
-.center-administrators
-.abc-div-bg-left, body .abc-div-bg-left {
-  float: left;
-}
-
-.center-administrators
-.abc-div-bg-right, body .abc-div-bg-right {
-  float: left;
-}
-
-.center-administrators
-.acc-list-modify, body .acc-list-modify {
-  display: none;
-}
-
-.center-administrators
-.ac-content-list, body .ac-content-list {
-  border: 1px solid red;
-  margin-bottom: 10px;
-}
-
-.center-administrators
-.ac-top, body .ac-top {
-  border: 1px solid green;
-}
-
-.center-administrators
-.ac-top .ac-content-list, body .ac-top .ac-content-list {
-  display: none;
-  border: 1px solid blue;
-}
-
-.center-administrators
-.ac-top .acc-list-modify, body .ac-top .acc-list-modify {
-  display: block;
-}
-
-.center-administrators
-.ac-top .acc-list-look, body .ac-top .acc-list-look {
-  display: none;
-}
-
-.center-administrators
-.ca-xtxx-textatea
-, .center-administrators
-.ca-xjkc-textarea, body .ca-xtxx-textatea
-, body .ca-xjkc-textarea {
-  width: 100%;
-  height: 200px;
-}
-
-.center-administrators
-.xtxx-table-01
-, .center-administrators
-.xjkc-table
-, .center-administrators
-.acc-table, body .xtxx-table-01
-, body .xjkc-table
-, body .acc-table {
-  width: 100%;
-  background-color: white;
-}
-
-.center-administrators
-.xtxx-table-01
-td:first-child, .center-administrators
-.xjkc-table
-td:first-child, .center-administrators
-.acc-table td:first-child, body .xtxx-table-01
-td:first-child, body .xjkc-table
-td:first-child, body .acc-table td:first-child {
-  vertical-align: top;
-  width: 150px;
-}
-
-.center-administrators
-.ca-xtxx-setting
-, .center-administrators
-.ca-xtxx-lsxx, body .ca-xtxx-setting
-, body .ca-xtxx-lsxx {
-  background-color: #f7f7f7;
-  margin-bottom: 10px;
-}
-
-.center-administrators
-.csbr-body-xxgl, body .csbr-body-xxgl {
-  padding: 15px;
-}
-
-.center-administrators
-.ca-xtxx-lsxx, body .ca-xtxx-lsxx {
-  padding: 15px;
-}
-
-.center-administrators
-.ca-xtxx-lsxx .info-footer, body .ca-xtxx-lsxx .info-footer {
-  margin: 0 -15px;
-}
-
-.center-administrators
-.ca-xjkc-ts, body .ca-xjkc-ts {
-  color: red;
-}
-
-.center-administrators
-.ca-xjkc-content, body .ca-xjkc-content {
-  padding: 15px;
-  background-color: #f7f7f7;
-}
-
-.center-administrators
-.ca-xjkc-ts, body .ca-xjkc-ts {
-  display: none;
-}
-
-.center-administrators
-.xjkc-table, body .xjkc-table {
-  margin-bottom: 10px;
-}
-
-.center-administrators
-.tcn-tmxq-number, body .tcn-tmxq-number {
-  display: inline-block;
+.center-teachers .ct-kcxx-number {
   color: #e60012;
 }
 
-.center-administrators
-.ac-content-disable, body .ac-content-disable {
-  opacity: 0.5;
+.center-teachers .ctkcxx-nav li {
+  float: left;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.center-teachers .ctkcxx-nav .ctkcxx-nav-hover {
+  color: #e60012;
+}
+
+.center-teachers .ctkcxx-content-list {
+  width: 32%;
+  margin: 1% 1.2% 1% 0;
+  float: left;
+  border: 1px solid #ccc;
+}
+
+.center-teachers .ctkcxx-content-list-hover {
+  border: 1px solid #e60012;
+}
+
+.center-teachers .abc-btn {
+  display: none;
+}
+
+.center-teachers .tcn-btn-kcwc
+, .center-teachers .tmzxzt-btn-xyb
+, .center-teachers .tmzxcs-btn-xzwc {
+  color: white;
+  background-color: #e60012;
+}
+
+.center-teachers .tcn-p-ts {
+  display: none;
+  color: #e60012;
+}
+
+.center-teachers .ctktgl-btn-one:hover
+, .center-teachers .ctktgl-btn-one-hover {
+  color: #e60012;
+}
+
+.center-teachers .ct-two-div {
+  display: none;
+}
+
+.center-teachers .ct-two-nav {
+  display: none;
+}
+
+.center-teachers .cm-drkt-btn:hover {
+  color: #e60012;
 }

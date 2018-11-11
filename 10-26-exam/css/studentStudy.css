@@ -158,10 +158,6 @@
   min-height: 600px;
 }
 
-.csbr-body-zxkt .zxkt-table {
-  width: 100%;
-}
-
 .csbr-body-zxkt .progress-bar {
   background-color: #e60012;
 }
@@ -230,6 +226,23 @@
 
 .csbr-body-grzx .grzx-info-input-warning {
   border: 1px solid red;
+}
+
+.zxkt-table {
+  width: 100%;
+}
+
+.ssb-nav a {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+.ssb-nav a:first-child {
+  margin-left: 0;
+}
+
+.ssb-nav .ssb-nav-hover {
+  color: #e60012;
 }
 
 .st-body
@@ -337,4 +350,12 @@
 
 .student-test .stbc-answer-btn-hover {
   color: gray;
+}
+
+.tcd-zxdy-div-hover {
+  display: none;
+}
+
+.tcd-btn-zxdy-hover {
+  color: #e60012;
 }

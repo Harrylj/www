@@ -1,4 +1,6 @@
-.center-administrators{
+@import 'public.scss';
+.center-administrators
+,body{
   .ca-two-div{
       display: none;
   }
@@ -12,12 +14,9 @@
     float: left;
   }
   .abc-div-bg-right{
-    float: right;
+    float: left;
   }
   .acc-list-modify{
-    display: none;
-  }
-  .acc-btn-tjkc-div{
     display: none;
   }
   .ac-content-list{
@@ -75,5 +74,15 @@
   }
   .ca-xjkc-ts{
     display: none;
+  }
+  .xjkc-table{
+    margin-bottom: 10px;
+  }
+  .tcn-tmxq-number{
+    display: inline-block;
+    color: $public-color-01;
+  }
+  .ac-content-disable{
+    opacity: 0.5;
   }
 }

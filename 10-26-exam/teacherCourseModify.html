@@ -1,0 +1,140 @@
+<div class="ca-two-div-header">
+  <div class="ssb-nav">
+    <a class="return-teacher-kcxx" href="#">课程信息</a>/
+    <a href="teacherCourseDetail.html">课程详情</a>/
+    <a class="ssb-nav-hover" href="#">修改课程详情</a>
+  </div>
+</div>
+<div class="techaer-course-new cabr-body-xjkc">
+  <h1>修改课程信息</h1>
+  <!-- 课程设置 -->
+  <div class="ca-xjkc-content">
+    <h2>课程设置</h2>
+    <table class="xjkc-table">
+      <tr>
+        <td>课程模式</td>
+        <td>
+          <input class="tcn-btn-one" type="text" placeholder="视频">
+          <button class="tcn-btn-two tcn-btn-drsp">导入视频</button>
+        </td>
+      </tr>
+      <tr>
+        <td>课程类型</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">必修课</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程阶段</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">第一讲</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+          <span class="tcn-p-warn">第二讲 第三讲 已经选择</span>
+        </td>
+      </tr>
+    </table>
+    <table class="xjkc-table">
+      <tr>
+        <td>课程名称</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">轮什么演讲</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程时间</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">2018年8月24日-2018年10月24日</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>课程简介</td>
+        <td>
+          <textarea class="ca-xjkc-textarea" name="" id="" cols="30" rows="10" placeholder="请简单介绍课程的主要内容"></textarea>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <div class="ca-xjkc-content">
+    <table class="xjkc-table">
+      <tr>
+        <td>考试时间</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">2018年8月24日 00:00:00</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>时长</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">120分钟</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+      <tr>
+        <td>试题</td>
+        <td>
+          <input class="tcn-btn-one" type="text" placeholder="试题">
+          <button class="tcn-btn-two tcn-btn-drst">导入试题</button>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <p class="tcn-p-ts">错误提示</p>
+  <p>
+    <button class="tcn-btn-kcwc">提交修改</button>
+  </p>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+
+
+
+    // 点击提交修改
+    $('.tcn-btn-kcwc').on('click', function () {
+      var tsDiv = $('.tcn-p-ts');
+      // 课程简介不能为空
+      if ($('.ca-xjkc-textarea').val() == '') {
+        tsDiv.html('课程简介不能为空').show();
+      }
+      // 完成
+      else {
+        tsDiv.html('').hide();
+        alert('课程完成')
+      }
+    })
+  })
+</script>

@@ -1,0 +1,54 @@
+@import 'public.scss';
+.center-teachers{
+    .teacher-course-new{
+        display: none;
+    }
+    .ct-kcxx-number{
+        color:$public-color-01;
+    }
+    .ctkcxx-nav{
+        li{
+            float: left;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+        .ctkcxx-nav-hover{
+            color: $public-color-01;
+        }
+    }
+    .ctkcxx-content-list{
+        width: 32%;
+        margin: 1% 1.2% 1% 0; 
+        float: left;
+        border: 1px solid #ccc;
+    }
+    .ctkcxx-content-list-hover{
+        border: 1px solid $public-color-01;
+    }
+    .abc-btn{
+        display: none;
+    }
+    .tcn-btn-kcwc
+    ,.tmzxzt-btn-xyb
+    ,.tmzxcs-btn-xzwc{
+        color: white;
+        background-color: $public-color-01;
+    }
+    .tcn-p-ts{
+        display: none;
+        color: $public-color-01;
+    }
+    .ctktgl-btn-one:hover
+    ,.ctktgl-btn-one-hover{
+        color: $public-color-01;
+    }
+    .ct-two-div{
+        display: none;
+    }
+    .ct-two-nav{
+        display: none;
+    }
+    .cm-drkt-btn:hover{
+        color: $public-color-01;
+    }
+}

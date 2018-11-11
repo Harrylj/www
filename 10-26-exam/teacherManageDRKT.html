@@ -1,0 +1,116 @@
+<div class="ca-two-div-header tm-drkt ">
+  <div class="techaer-course-new cabr-body-xjkc">
+    <h1>导入考题</h1>
+    <!-- 课程设置 -->
+    <div class="ca-xjkc-content">
+      <h2>考试设置</h2>
+      <table class="xjkc-table">
+        <tr>
+          <td>考题类别</td>
+          <td>
+            <input class="tcn-btn-one tcn-btn-one-ktlb" type="text" placeholder="政治类">
+          </td>
+        </tr>
+        <tr>
+          <td>课程模式</td>
+          <td>
+            <label>
+              <select>
+                <option value="1">单选题</option>
+                <option value="2">多选题</option>
+                <option value="3">简答题</option>
+                <option value="4">判断题</option>
+              </select>
+            </label>
+            <button class="tcn-btn-two">导入</button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="acc-tjbj-div">
+              <div class="abc-div-bg-02">
+                <p class="tmdrkt-delete-p">单选excel表11道</p>
+                <button class="adc-btn-delete">删除</button>
+              </div>
+              <div class="abc-div-bg-02">
+                <p class="tmdrkt-delete-p">单选excel表11道</p>
+                <button class="adc-btn-delete">删除</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <label>
+              <select>
+                <option value="1">单选题</option>
+                <option value="2">多选题</option>
+                <option value="3">简答题</option>
+                <option value="4">判断题</option>
+              </select>
+            </label>
+            <button class="tcn-btn-two">导入</button>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <div class="acc-tjbj-div">
+              <div class="abc-div-bg-02">
+                <p class="tmdrkt-delete-p">单选excel表11道</p>
+                <button class="adc-btn-delete">删除</button>
+              </div>
+              <div class="abc-div-bg-02">
+                <p class="tmdrkt-delete-p">单选excel表11道</p>
+                <button class="adc-btn-delete">删除</button>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+              <p><button class="tcn-btn-two">导入答案</button></p>
+              <p><button class="tcn-btn-two">继续导入</button></p>
+            </td>
+          </tr>
+        <tr>
+          <td></td>
+          <td>
+            <p class="tcn-p-ts">错误提示</p>
+            <p>
+              <button class="cm-drkt-btn cm-drkt-btn-kcwc">课程完成</button>
+              <button class="cm-drkt-btn">清除考题</button>
+            </p>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <script type="text/javascript">
+    $(function () {
+      // 点击删除课程
+      $('.tm-drkt').on('click', '.adc-btn-delete', function () {
+        $(this).parents('.abc-div-bg-02').remove();
+      })
+
+
+      // 点击课程完成
+      $('.cm-drkt-btn-kcwc').on('click', function () {
+        var tsDiv = $('.tcn-p-ts');
+        // 考题类别不能为空
+        if ($('.tcn-btn-one-ktlb').val() == '') {
+          tsDiv.html('考题类别不能为空').show();
+        }
+        // 完成
+        else {
+          tsDiv.html('').hide();
+          alert('课程完成')
+        }
+      })
+    })
+  </script>

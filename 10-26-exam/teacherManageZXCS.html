@@ -1,0 +1,109 @@
+<div class="cabr-body-xjkc tm-zxcc">
+  <h1>在线测试</h1>
+  <!-- 测试设置 -->
+  <div class="ca-xjkc-content">
+    <h2>测试设置</h2>
+    <table class="xjkc-table">
+      <tr>
+        <td>考题名称</td>
+        <td>
+          <input class="tcn-btn-one tm-zxzj-ksmc" type="text" placeholder="请输入考题名称">
+        </td>
+      </tr>
+      <tr>
+        <td>考试班级</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">2018级3班</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+
+
+      <tr>
+        <td>选题方式</td>
+        <td>
+          <label>
+            <select>
+              <option value="1">按照全部所有试卷</option>
+              <option value="2">项目1</option>
+              <option value="3">项目2</option>
+            </select>
+          </label>
+        </td>
+      </tr>
+
+    </table>
+
+
+  </div>
+  <p class="tcn-p-ts">错误提示</p>
+  <p>
+    <button class="tmzxzt-btn tmzxcs-btn-xzwc">选择完成</button>
+    <button class="tmzxzt-btn tmzxcs-btn-null">清空选择</button>
+  </p>
+</div>
+
+<script type="text/javascript">
+  $(function () {
+    // select 更改对应分数
+    $('.tcn-tmxq-select').change(function () {
+      var classSelect = 'tcn-tmxq-select';
+      numOne = $(this).find("option:selected").val();
+      numTwo = $(this).parent().siblings('label').children('.' + classSelect).find("option:selected").val();
+      $(this).parent().siblings('.tcn-tmxq-number').children('span').html(numOne * numTwo);
+      // 初始加载总分函数
+      getAllNum('.tmzxzt-number-div', '.tmzxzt-input-all-num')
+    })
+    // 初始化选中分数
+    $('.tcn-tmxq-number').each(function () {
+      var numOne = $(this).siblings('label').eq(1).children('.tcn-tmxq-select').find("option:selected").val(),
+        numTwo = $(this).siblings('label').eq(2).children('.tcn-tmxq-select').find("option:selected").val();
+      $(this).children('span').html(numOne * numTwo)
+    })
+    // 计算总分
+    $('.tcn-btn-jszf').on('click', function () {
+      // 初始加载总分函数
+      getAllNum('.tmzxzt-number-div', '.tmzxzt-input-all-num')
+    })
+
+    // 初始加载总分函数
+    getAllNum('.tmzxzt-number-div', '.tmzxzt-input-all-num')
+    // 计算总分函数--onlyDivOne：计算值的父元素,onlyDivTwo:总值必须唯一，不然其他页面的值会影响到你
+    function getAllNum(onlyDivOne, onlyDivTwo) {
+      var numberAll = 0;
+      $(onlyDivOne).children('.tcn-tmxq-div').each(function () {
+        numberAll = numberAll + parseInt($(this).find('.tcn-tmxq-number').children('span').html());
+      })
+      $(onlyDivTwo).val(numberAll + '分');
+    }
+
+    // 点击继续添加
+    $('.TMZXZJ-btn-jxtj').on('click', function () {
+      alert('添加个鬼')
+    })
+
+    // 点击删除导入试卷
+    $('.tm-zxzj').on('click', '.adc-btn-delete', function () {
+      $(this).parents('.abc-div-bg-02').remove();
+    })
+
+    // 点击选择完成
+    $('.tmzxcs-btn-xzwc').on('click', function () {
+      var tsDiv = $('.tcn-p-ts');
+      // 班级名称不能为空
+      if ($('.tm-zxzj-ksmc').val() == '') {
+        tsDiv.html('班级名称不能为空').show();
+      }
+      // 完成
+      else {
+        tsDiv.html('').hide();
+        alert('选择完成');
+      }
+    })
+  })
+</script>

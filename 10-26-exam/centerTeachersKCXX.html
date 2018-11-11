@@ -1,0 +1,200 @@
+<div class="ct-body-kcxx">
+    <!-- 课程信息 -->
+    <div class="ct-kcxx-div">
+        <div class="ctckxx-header">
+            <h1>课程信息</h1>
+            <p class="ctkcxx-number">目前49门课</p>
+            <button class="ctkcxx-btn-xjkc">新建课程</button>
+        </div>
+        <div class="ctkcxx-body">
+            <!-- 导航处 -->
+            <!-- .ctkcxx-nav-hover：表示激活导航栏 -->
+            <div class="ctkcxx-body-nav-div">
+                <ul class="ctkcxx-nav">
+                    <li class="ctkcxx-nav-hover">全部课程</li>
+                    <li>选修课</li>
+                    <li>必修课</li>
+                    <li>开课时间</li>
+                </ul>
+                <div class="ctkcxx-body-right info-footer-right">
+                    1/4
+                    <button>下一页</button>
+                    <a href="#">跳转</a>
+                </div>
+                <div class="clear"></div>
+            </div>
+            <!-- 课程列表 -->
+            <!-- .ctkcxx-content-list-choice: .ctkcxx-content-list添加表示 选修课 -->
+            <!-- .ctkcxx-content-list-must: .ctkcxx-content-list添加表示 必修课 -->
+            <!-- .ctkcxx-content-list-hover: .ctkcxx-content-list添加表示 激活 -->
+            <div class="ctkcxx-content">
+                <a href="teacherCourseDetail.html">
+                    <div class="ctkcxx-content-list ctkcxx-content-list-hover ctkcxx-content-list-choice">
+                        <div class="ctkcxx-cl-img">
+                            <img src="images/ct-02.png" alt="">
+                        </div>
+                        <p>伊朗公布绑架细节，恐怖组织里应外合淡淡的淡淡的淡淡</p>
+                        <h5>课程时间:
+                            <span>00:55:00</span>
+                        </h5>
+                        <div class="ctkcxx-cl-footer">
+                            <div class="ctkcxx-cl-type">选修还是必修课</div>
+                            <div class="ctkcxx-cl-footer-right">34人学习</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="teacherCourseDetail.html">
+                    <div class="ctkcxx-content-list ctkcxx-content-list-must">
+                        <div class="ctkcxx-cl-img">
+                            <img src="images/ct-02.png" alt="">
+                        </div>
+                        <p>伊朗公布绑架细节，恐怖组织里应外合淡淡的淡淡的淡淡</p>
+                        <h5>课程时间:
+                            <span>00:55:00</span>
+                        </h5>
+                        <div class="ctkcxx-cl-footer">
+                            <div class="ctkcxx-cl-type">选修还是必修课</div>
+                            <div class="ctkcxx-cl-footer-right">34人学习</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="teacherCourseDetail.html">
+                    <div class="ctkcxx-content-list ctkcxx-content-list-must">
+                        <div class="ctkcxx-cl-img">
+                            <img src="images/ct-02.png" alt="">
+                        </div>
+                        <p>伊朗公布绑架细节，恐怖组织里应外合淡淡的淡淡的淡淡</p>
+                        <h5>课程时间:
+                            <span>00:55:00</span>
+                        </h5>
+                        <div class="ctkcxx-cl-footer">
+                            <div class="ctkcxx-cl-type">选修还是必修课</div>
+                            <div class="ctkcxx-cl-footer-right">34人学习</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+                <a href="teacherCourseDetail.html">
+                    <div class="ctkcxx-content-list ctkcxx-content-list-must">
+                        <div class="ctkcxx-cl-img">
+                            <img src="images/ct-02.png" alt="">
+                        </div>
+                        <p>伊朗公布绑架细节，恐怖组织里应外合淡淡的淡淡的淡淡</p>
+                        <h5>课程时间:
+                            <span>00:55:00</span>
+                        </h5>
+                        <div class="ctkcxx-cl-footer">
+                            <div class="ctkcxx-cl-type">选修还是必修课</div>
+                            <div class="ctkcxx-cl-footer-right">34人学习</div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </a>
+
+                <div class="clear"></div>
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 新建课程 -->
+    <div id="teacherCourseNew" class="teacher-course-new">
+        新建课程
+    </div>
+    <!-- 修改课程 -->
+    <div id="teacherCourseModify" class="teacher-course-modify">
+        修改课程
+    </div>
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        // 显示修改课程信息
+        // window.localStorage.typeNavNum=212
+
+        // 显示修改课程信息
+        if(window.localStorage.typeNavNum == 212){
+            $('.teacher-course-modify').show().siblings().hide();
+            $('.csbl-nav').children('li').eq(1).click();
+        }
+        // 显示课程信息
+        else
+        {
+            $('.ct-kcxx-div').show().siblings().hide();
+        }
+
+        
+        // 加载新建课程
+        $('#teacherCourseNew').load('teacherCourseNew.html');
+        // 加载修改课程
+        $('#teacherCourseModify').load('teacherCourseModify.html');
+
+        // 点击新建课程
+        $('.ctkcxx-btn-xjkc').on('click',function(){
+            $('.teacher-course-new').show();
+            $('.ct-kcxx-div').hide();
+        })
+        // 显示新建课程
+        // $('.ctkcxx-btn-xjkc').click();
+        
+        // 课程hover
+        $('.ctkcxx-content-list').on("mouseover",function(){
+            var classHover = 'ctkcxx-content-list-hover';
+            $('.ctkcxx-content-list').removeClass(classHover)
+            $(this).addClass(classHover);
+        })
+        // 课程hover
+        $('.ctkcxx-content-list').on("mouseout",function(){
+            var classHover = 'ctkcxx-content-list-hover';
+            $('.ctkcxx-content-list').removeClass(classHover);
+        })
+        
+        // 点击选择课程类型
+        $('.ctkcxx-nav').children().on('click',function(){
+            var classHover = 'ctkcxx-nav-hover',            // 激活导航class
+                classType = 'ctkcxx-content-list',          // 所有课程
+                classTypeChoice = 'ctkcxx-content-list-choice',  // 选修课
+                classTypeMust = 'ctkcxx-content-list-must',     // 必修课
+                thisIndex = $(this).index();
+            $(this).addClass(classHover).siblings().removeClass(classHover);
+            switch(thisIndex){
+                // 全部课程
+                case 0:
+                $('.' + classType).show();
+                return false;
+                // 选修课
+                case 1:
+                $('.' + classType).hide();
+                $('.' + classTypeChoice).show();
+                return false;
+                // 必修课
+                case 2:
+                $('.' + classType).hide();
+                $('.' + classTypeMust).show();
+                return false;
+                // 开课时间
+                case 3:
+                alert('开课时间');
+                return false;
+            }
+        })
+        
+        // 遍历判断是选修还是必修课
+        $('.ctkcxx-content-list').each(function(){
+            // 选修课
+            if($(this).hasClass('ctkcxx-content-list-choice')){
+                $(this).find('.ctkcxx-cl-type').html('选修课')
+            }
+            // 必修课
+            else if($(this).hasClass('ctkcxx-content-list-must')){
+                $(this).find('.ctkcxx-cl-type').html('必修课')
+            }
+            else
+            {
+                alert('数据错了，都不是')
+            }
+        })
+    })
+</script>
