@@ -359,3 +359,65 @@
 .tcd-btn-zxdy-hover {
   color: #e60012;
 }
+
+.to-content-header-left {
+  float: left;
+}
+
+.to-content-header-right {
+  float: right;
+}
+
+.to-btn-one-hover
+, .to-btn-two {
+  color: #e60012;
+}
+
+.csbr-body-list {
+  display: none;
+}
+
+.csbr-body-list-hover {
+  display: block;
+}
+
+.to-sure-div {
+  display: none;
+}
+
+.tio-header-left {
+  float: left;
+}
+
+.tio-header-right {
+  float: right;
+}
+
+.teacher-online .stb-content-test {
+  width: 100%;
+}
+
+.teacher-online .stb-content-test .too-list-btn-add {
+  display: block;
+}
+
+.teacher-online .stb-content-test .too-list-btn-delete {
+  display: none;
+}
+
+.teacher-online .stbc-test-list-hover {
+  border: 1px solid blue;
+}
+
+.teacher-online .stbc-test-list-hover .too-list-btn-delete {
+  display: block;
+}
+
+.teacher-online .stbc-test-list-hover .too-list-btn-add {
+  display: none;
+}
+
+.teacher-online .stbc-answer-div {
+  background-color: #f2f2f2;
+  padding: 10px;
+}

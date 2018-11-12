@@ -5,13 +5,8 @@ jquery 2.1.3
 swiper 3.08
 /**/
 
-
-学生详情--上面的那个看不懂
-
-还差---2.3个页面
--考题管理-在线答疑
-平台首页-教师中心-考题管理-在线组卷
-
+2018-11-12:18:40,---页面结构搭建完成
+还差css
 
 跳转用localStorage实现,主要是老师的修改课程信息界面
 用window.localStorage.typeNavNum记录状态
@@ -23,6 +18,9 @@ num: 各自对应的状态值---0~9
 211：教师中心-课程信息-新建课程
 212：教师中心-课程信息-修改课程信息
 
+
+
+****表示未完成
 
 2018-10-07-10:36
 
@@ -52,6 +50,7 @@ centerTeachersKTGL.html -----教师中心-考题管理
 centerTeachersZXDY.html -----教师中心-在线答疑*****
 centerTeachersGRZX.html -----教师中心-个人中心
 
+2018-11-11-10:00
 TeacherCourseNew.html -----教师中心-课程信息-新建课程-211-----这里需要进入页面点击修改课程信息按钮才能进入
 TeacherCourseModify.html -----教师中心-课程信息-修改课程信息-212
 TeacherCourseDetail.html -----教师中心-课程信息-课程详情
@@ -61,7 +60,15 @@ teacherManageDRKT.html -----教师中心-考题管理-导入考题
 teacherManageZXZJ.html -----教师中心-考题管理-在线组卷
 teacherManageZXCS.html -----教师中心-考题管理-在线测试
 teacherManageXJKT.html -----教师中心-考题管理-新建考题
+
+2018-11-12-09:00
+
 teacherOnline.html-----平台首页-教师中心-考题管理-在线组卷详情*****
+teacherOnlineOne.html-----平台首页-教师中心-考题管理-在线组卷详情-单选题
+teacherOnlineMore.html-----平台首页-教师中心-考题管理-在线组卷详情-多选题
+teacherOnlineTF.html-----平台首页-教师中心-考题管理-在线组卷详情-判断题
+teacherOnlineAnswer.html-----平台首页-教师中心-考题管理-在线组卷详情-简答题
+teacherOnlineAll.html-----平台首页-教师中心-考题管理-在线组卷详情-合成页面
 
 
 

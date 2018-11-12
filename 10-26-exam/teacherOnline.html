@@ -1,6 +1,281 @@
-<div>
-  在线组卷
-</div>
+<!DOCTYPE html>
+<html>
 
-<script type="text/javascript">
-</script>  
+<head lang="en">
+  <meta charset="UTF-8">
+  <!-- 使用最新的ie内核渲染 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- 国产浏览器(360)使用webkit内核 -->
+  <meta name="renderer" content="webkit">
+  <!-- 禁止识别为手机号码 -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+  <link rel="stylesheet" type="text/css" href="css/studentStudy.css" />
+  <title>在线组卷</title>
+  <style type="text/css">
+
+  </style>
+</head>
+
+<body>
+  <div class="student-test teacher-online">
+    <!-- 顶部 -->
+    <div class="ss-header">
+      <!-- 调用公用头部 -->
+      <div class="ss-header-top"></div>
+      <div class="cs-header-img ct-header-img"></div>
+    </div>
+
+    <!-- 主要内容 -->
+    <div class="st-body">
+      <!-- 导航栏 -->
+
+      <div class="ssb-nav">
+        <a href="index.html">平台首页</a>/<a href="centerTeachers.html">教师中心</a>/<a href="centerTeachers.html">考题管理</a>/<a
+          class="ssb-nav-hover" href="#">在线组卷</a>
+      </div>
+      <div class="to-cononent-div">
+        <div class="to-content-header">
+          <div class="to-content-header-left">
+            <div class="toch-nav-div">
+              <!-- .to-btn-one-hover: .to-btn-one添加类表示激活选中 -->
+              <button class="to-btn-one to-btn-one-hover">单选题(<span class="to-btn-one-number">0</span>/30)</button>
+              <button class="to-btn-one">多选题(<span class="to-btn-one-number">0</span>/15)</button>
+              <button class="to-btn-one">判断题(<span class="to-btn-one-number">0</span>/5)</button>
+              <button class="to-btn-one">简答题(<span class="to-btn-one-number">0</span>/2)</button>
+            </div>
+            <span>总分100分</span>
+          </div>
+          <div class="to-content-header-right">
+            <button class="to-btn-two">上一页</button>
+            <button class="to-btn-two to-btn-two-ok">完成</button>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!-- .stbc-test-list-a:定位元素 -->
+        <!-- .stbc-test-list-one:为stbc-test-list添加表示单选 
+                      .stbc-test-list-two:为stbc-test-list添加表示多选
+                      answer="null":为stbc-test-list的选中答案
+                -->
+        <!-- .to-chioce-div:选择页面 -->
+        <div class="stb-content to-chioce-div">
+          <div class="stb-content-test">
+            <!-- .csbr-body-list-hover：表示选中状态 -->
+            <!-- .stbc-test-list-hover :.stbc-test-list 添加类表示加入题库 -->
+            <!-- .stbc-test-list-one：.stbc-test-list 添加类表示单选题
+                .stbc-test-list-more：.stbc-test-list 添加类表示多选题
+                .stbc-test-list-tf：.stbc-test-list 添加类表示判断题
+                .stbc-test-list-answer：.stbc-test-list 添加类表示简答题 -->
+            <!-- 单选题-->
+            <div id="teacherOnlineOne" class="csbr-body-list csbr-body-list-hover"></div>
+            <!-- 多选题 -->
+            <div id="teacherOnlineMore" class="csbr-body-list"></div>
+            <!-- 判断题 -->
+            <div id="teacherOnlineTF" class="csbr-body-list"></div>
+            <!-- 简答题 -->
+            <div id="teacherOnlineAnswer" class="csbr-body-list"></div>
+
+            <!-- 单选题 -->
+            <!-- <h1>单选题（共30题 每题5分）</h1>
+                  <div class="stbc-test-list-one-father">
+                    <div class="stbc-test-list stbc-test-list-one" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+                    <div class="stbc-test-list stbc-test-list-one" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+                    <div class="stbc-test-list stbc-test-list-one" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+                    <div class="stbc-test-list stbc-test-list-one" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+                  </div> -->
+            <!-- 多选题 -->
+
+            <!-- <h1>多选题（共30题 每题5分）</h1>
+                  <div class="stbc-test-list-two-father">
+                    <div class="stbc-test-list stbc-test-list-two" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+                    <div class="stbc-test-list stbc-test-list-two" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+                    <div class="stbc-test-list stbc-test-list-two" answer="">
+                      <span class="stbc-test-list-number">编号</span>
+                      <h2>在中国历史上，有哪些发育有利于进步</h2>
+                      <ul>
+                        <li class="info-list-btn-div" answernum="a"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="b"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="c"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                        <li class="info-list-btn-div" answernum="d"><input class="info-list-btn" type="checkbox" /><span>论毛泽东，邓小平味道领袖的功绩</span></li>
+                      </ul>
+                    </div>
+        
+                  </div> -->
+          </div>
+
+        </div>
+        <!-- .to-sure-div:合成页面 -->
+        <div class="stb-content to-sure-div">
+          <!-- 合成页面 -->
+          <div id="teacherOnlineAll"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- public-footer -->
+    <div class="index-footer"></div>
+    <!-- 公用二维码 -->
+    <div class="index-gzh"></div>
+  </div>
+  <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/countdown.js"></script>
+  <script src="js/public.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      // 单选题
+      $('#teacherOnlineOne').load('teacherOnlineOne.html');
+      // 多选题
+      $('#teacherOnlineMore').load('teacherOnlineMore.html');
+      // 简答题
+      $('#teacherOnlineTF').load('teacherOnlineTF.html');
+      // 判断题
+      $('#teacherOnlineAnswer').load('teacherOnlineAnswer.html');
+      // 合成页面
+      $('#teacherOnlineAll').load('teacherOnlineAll.html');
+
+      // 调用公用底部
+      publicFooter('.index-footer')
+      // 调用公用二维码
+      publicEWM('.index-gzh')
+      // 加载公用头部
+      publicHeader('.ss-header-top')
+
+      // 点击顶部导航栏
+      $('.toch-nav-div').children('button').on('click', function () {
+        var otherFather = $('.stb-content-test'),  // 响应处父元素
+          thisIndex = $(this).index(),    // 点击元素的索引值
+          classNavHover = 'to-btn-one-hover',         // 导航栏激活类名
+          classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
+        $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
+        otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+      })
+      // 点击完成--完成选题，显示选题后的页面
+      $('.to-btn-two').on('click', function () {
+        $('.to-sure-div').show().siblings().hide();
+      })
+            
+      // 点击加入题库 
+      $('body').on('click','.too-list-btn-add',function(){
+        $(this).parents('.stbc-test-list').addClass('stbc-test-list-hover');
+        // 调用计算选择题库
+        computerNumberTO($(this))
+      })
+      // 点击移除题库 
+      $('body').on('click', '.too-list-btn-delete', function () {
+        $(this).parents('.stbc-test-list').removeClass('stbc-test-list-hover');
+        // 调用计算选择题库
+        computerNumberTO($(this))
+      })
+      
+      // 计算选择题库：通过点击加入和删除题库实现 this_e 当前点击按钮
+      function computerNumberTO(this_e){
+        var classNav = 'toch-nav-div', // 导航按钮
+            navNumber = 'to-btn-one-number', //导航按钮现题数
+            classChecked = 'stbc-test-list-hover', // 加入题库
+            classDivOne = 'stbc-test-list-one',  // 单选
+            classDivMore = 'stbc-test-list-more', // 多选
+            classDivTF = 'stbc-test-list-tf', //判断
+            classDivAnswer = 'stbc-test-list-answer'; //简答
+        var nowNum = this_e.parents('.stbc-test-list-one-father').find('.stbc-test-list-hover').length; // 当前选择题数
+        var numOne = $('.' + classDivOne).parent().children('.'+classChecked).length; // 选中的单选题数
+        var numMore = $('.' + classDivMore).parent().children('.' + classChecked).length; // 选中的多选题数
+        var numTF = $('.' + classDivTF).parent().children('.' + classChecked).length;  // 选中的判断题数
+        var numAnswer = $('.' + classDivAnswer).parent().children('.' + classChecked).length; // 选中的简答题数
+        $('.' + classNav).children().eq(0).find('.' + navNumber).html(numOne)
+        $('.' + classNav).children().eq(1).find('.' + navNumber).html(numMore)
+        $('.' + classNav).children().eq(2).find('.' + navNumber).html(numTF)
+        $('.' + classNav).children().eq(3).find('.' + navNumber).html(numAnswer)
+        this_e.parents('.stbc-test-list-one-father').siblings('.tio-header').find('.too-one-select-number').html(nowNum)
+      }
+
+      //  点击完成按钮
+      $('.to-btn-two-ok').on('click',function(){
+         var classChecked = 'stbc-test-list-hover', // 加入题库
+          classDivOne = 'stbc-test-list-one',  // 单选
+          classDivMore = 'stbc-test-list-more', // 多选
+          classDivTF = 'stbc-test-list-tf', //判断
+          classDivAnswer = 'stbc-test-list-answer'; //简答
+        var arrOne = [],
+         arrMore = [], arrTF = [], arrAnswer = [];
+        $('.'+ classChecked).each(function(){
+          if($(this).hasClass(classDivOne)){
+            arrOne.push($(this).index())
+          }
+          else if($(this).hasClass(classDivMore)){
+            arrMore.push($(this).index())
+          }
+          else if ($(this).hasClass(classDivTF)) {
+            arrTF.push($(this).index())
+          }
+          else if ($(this).hasClass(classDivAnswer)) {
+            arrAnswer.push($(this).index())
+          }
+          // var a = $(this).hasClass(classDivOne).index();
+          
+        })
+        console.log('提交序号:', arrOne, arrMore, arrTF, arrAnswer)
+      })
+    })
+  </script>
+</body>
+
+</html>

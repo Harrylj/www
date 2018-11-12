@@ -256,7 +256,7 @@
   <p class="tcn-p-ts">错误提示</p>
   <p>
     <button class="tmzxzt-btn tmzxzt-btn-null">清空设置</button>
-    <button class="tmzxzt-btn tmzxzt-btn-xyb">下一步</button>
+    <a href="./teacherOnline.html"> <button class="tmzxzt-btn tmzxzt-btn-xyb">下一步</button></a>
   </p>
 </div>
 
@@ -310,6 +310,7 @@
       // 考题名称不能为空
       if ($('.tm-zxzj-ksmc').val() == '') {
         tsDiv.html('考题名称不能为空').show();
+        return false;
       }
       // 完成
       else {

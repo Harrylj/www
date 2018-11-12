@@ -306,3 +306,12 @@
 .center-teachers .cm-drkt-btn:hover {
   color: #e60012;
 }
+
+.center-teachers .ctzxdy-list-btn {
+  float: right;
+  color: #e60012;
+}
+
+.center-teachers .ctzxdy-list-left {
+  float: left;
+}
