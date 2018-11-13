@@ -4,6 +4,9 @@
 */
 $public-color-01: #e60012;
 $public-color-01-hover: #ba0000;
+$public-bgColor-01: #f5f5f5;
+$public-borderColor-01: #e0e0e0;
+$public-fontColor-01: #333333;
 @mixin bg-all{
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -75,8 +78,16 @@ $public-color-01-hover: #ba0000;
     }
   }
 }
+.ssb-nav{
+  font-size: 20px;
+  line-height: 40px;
+  a{
+    font-size: 16px;
+  }
+}
 .cs-header-img{
   height: 124px;
+  border-bottom: 2px solid #e0e0e0;
   background-image: url(../images/cs-01.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -88,11 +99,17 @@ $public-color-01-hover: #ba0000;
   background-image: url(../images/ct-01.jpg);
 }
 .csbr-header{
+  border-bottom: 1px solid $public-borderColor-01;
+  padding-bottom: 5px;
   .csbr-header-btn-xxxx{
-    color: red;
+    color: $public-color-01;
+  }
+  .csbr-nav-xxgl{
+    line-height: 40px;
   }
 }
 .cs-body{
+  padding-right: 20px;
   position: relative;
   padding-left: 170px;
   background-color: white;
@@ -102,9 +119,45 @@ $public-color-01-hover: #ba0000;
     left: 20px;
     width: 130px;
   }
-  .csbl-nav-hover{
-    background-color: $public-color-01;
+  .csbl-one{
+    background-color: $public-bgColor-01;
+    padding: 15px 8px;
+    h1,p{
+      color: $public-color-01;
+      text-align: center;
+    }
+    h1{
+      font-size: 50px;
+      line-height: 60px;
+    }
+    p{
+      font-size: 16px;
+      line-height: 20px;
+    }
   }
+  .csbl-two{
+    margin: 10px 0;
+    p{
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+    }
+  }
+  .csbl-nav{
+    li{
+      text-align: center;
+      background-color: $public-bgColor-01;
+      font-size: 16px;
+      line-height: 36px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+    .csbl-nav-hover{
+      color: white;
+      background-color: $public-color-01;
+    }
+  }
+
   .csb-right{
     .csbr-nav-xxgl-detail{
       display: none;
@@ -116,11 +169,15 @@ $public-color-01-hover: #ba0000;
     .csbr-body-list-hover{
       display: block;
     }
-    .csbr-a-red{
+    
+  }
+}
+.csbr-a-red{
       position: relative;
       display: inline-block;
-    }
-    .csbr-a-red:after{
+      color: $public-fontColor-01;
+}
+.csbr-a-red:after{
       position: absolute;
       right: -30px;
       top: 50%;
@@ -132,28 +189,47 @@ $public-color-01-hover: #ba0000;
       background-image: url(../images/cs-02.png);
       background-size: 100% 100%;
       background-repeat: no-repeat;
-    }
-    .csbr-a-red:hover{
+}
+.csbr-a-red:hover{
       color: red;
-    }
-    .csbr-a-red:hover:after{
+}
+.csbr-a-red:hover:after{
       background-image: url(../images/cs-02-hover.png);
-    }
-  }
 }
 .csbr-body{
-  min-height: 600px;
+  min-height: 800px;
+  padding-top: 5px;
+}
+.csbr-body-zxkt>h1{
+  color: #202020;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.csbr-body-zxkt>h2
+,.csbr-body-zxkt>p{
+  font-size: 12px;
+  color: #969696;
+  line-height: 30px;
 }
 .csbr-body-zxkt{
+  position: relative;
+  .zxkt-progress-bar{
+    position: absolute;
+    right: 0;
+    top: 12px;
+  }
   .progress-bar{
     background-color: $public-color-01;
   }
   .zxkt-progress-bar-left
   ,.progress
   ,.zxkt-progress-bar-right{
-    display: inline-block
+    display: inline-block;
+    line-height: 12px;
   }
   .progress{
+    height: 10px;
     width: 200px;
     margin-bottom: 0;
   }
@@ -212,6 +288,33 @@ $public-color-01-hover: #ba0000;
 }
 .zxkt-table{
   width: 100%;
+  margin-bottom: 15px;
+  tr:first-child{
+    td{
+      border-top:1px solid #e0e0ee;
+      background-color: #f0f0f0;
+    }
+  }
+  td{
+    line-height: 40px;
+    text-align: center;
+    border-left: 1px solid #e0e0ee;
+    border-bottom: 1px solid #e0e0ee;
+    padding: 0 10px;
+  }
+  td:nth-child(2){
+    text-align: left;
+  }
+  td:last-child{
+    border-right:1px solid #e0e0ee;
+  }
+}
+.zxkt-btn{
+  line-height: 20px;
+  padding: 0 12px;
+  font-size: 12px;
+  background-color: $public-bgColor-01;
+  border:1px solid #e0e0e0;
 }
 
 .ssb-nav{
@@ -224,5 +327,42 @@ $public-color-01-hover: #ba0000;
   }
   .ssb-nav-hover{
     color: $public-color-01;
+  }
+}
+
+.ssbcr-zxtw-btn{
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  line-height: 32px;
+  background-color: #dbdebd;
+}
+.ssbcr-btn-zxtw
+,.ssbcr-header .ssbcr-zxtw-btn-hover
+,.tcd-btn-xgkcxx{
+  background-color: $public-color-01;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  line-height: 32px;
+}
+
+
+
+.ssb-content {
+  .nav-tabs > li.active > a
+  ,.nav-tabs > li.active > a:focus
+  ,.nav-tabs > li.active > a:hover{
+    color: $public-color-01;
+    border: none;
+    border-bottom: 2px solid $public-color-01;
+  }
+  .tab-content{
+    padding: 10px;
+    p{
+      line-height: 24px;
+    }
   }
 }

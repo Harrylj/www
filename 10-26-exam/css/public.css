@@ -78,8 +78,18 @@
   font-size: 12px;
 }
 
+.ssb-nav {
+  font-size: 20px;
+  line-height: 40px;
+}
+
+.ssb-nav a {
+  font-size: 16px;
+}
+
 .cs-header-img {
   height: 124px;
+  border-bottom: 2px solid #e0e0e0;
   background-image: url(../images/cs-01.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -93,11 +103,21 @@
   background-image: url(../images/ct-01.jpg);
 }
 
+.csbr-header {
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 5px;
+}
+
 .csbr-header .csbr-header-btn-xxxx {
-  color: red;
+  color: #e60012;
+}
+
+.csbr-header .csbr-nav-xxgl {
+  line-height: 40px;
 }
 
 .cs-body {
+  padding-right: 20px;
   position: relative;
   padding-left: 170px;
   background-color: white;
@@ -110,7 +130,47 @@
   width: 130px;
 }
 
-.cs-body .csbl-nav-hover {
+.cs-body .csbl-one {
+  background-color: #f5f5f5;
+  padding: 15px 8px;
+}
+
+.cs-body .csbl-one h1, .cs-body .csbl-one p {
+  color: #e60012;
+  text-align: center;
+}
+
+.cs-body .csbl-one h1 {
+  font-size: 50px;
+  line-height: 60px;
+}
+
+.cs-body .csbl-one p {
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.cs-body .csbl-two {
+  margin: 10px 0;
+}
+
+.cs-body .csbl-two p {
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.cs-body .csbl-nav li {
+  text-align: center;
+  background-color: #f5f5f5;
+  font-size: 16px;
+  line-height: 36px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.cs-body .csbl-nav .csbl-nav-hover {
+  color: white;
   background-color: #e60012;
 }
 
@@ -127,12 +187,13 @@
   display: block;
 }
 
-.cs-body .csb-right .csbr-a-red {
+.csbr-a-red {
   position: relative;
   display: inline-block;
+  color: #333333;
 }
 
-.cs-body .csb-right .csbr-a-red:after {
+.csbr-a-red:after {
   position: absolute;
   right: -30px;
   top: 50%;
@@ -146,16 +207,41 @@
   background-repeat: no-repeat;
 }
 
-.cs-body .csb-right .csbr-a-red:hover {
+.csbr-a-red:hover {
   color: red;
 }
 
-.cs-body .csb-right .csbr-a-red:hover:after {
+.csbr-a-red:hover:after {
   background-image: url(../images/cs-02-hover.png);
 }
 
 .csbr-body {
-  min-height: 600px;
+  min-height: 800px;
+  padding-top: 5px;
+}
+
+.csbr-body-zxkt > h1 {
+  color: #202020;
+  line-height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.csbr-body-zxkt > h2
+, .csbr-body-zxkt > p {
+  font-size: 12px;
+  color: #969696;
+  line-height: 30px;
+}
+
+.csbr-body-zxkt {
+  position: relative;
+}
+
+.csbr-body-zxkt .zxkt-progress-bar {
+  position: absolute;
+  right: 0;
+  top: 12px;
 }
 
 .csbr-body-zxkt .progress-bar {
@@ -166,9 +252,11 @@
 , .csbr-body-zxkt .progress
 , .csbr-body-zxkt .zxkt-progress-bar-right {
   display: inline-block;
+  line-height: 12px;
 }
 
 .csbr-body-zxkt .progress {
+  height: 10px;
   width: 200px;
   margin-bottom: 0;
 }
@@ -230,6 +318,36 @@
 
 .zxkt-table {
   width: 100%;
+  margin-bottom: 15px;
+}
+
+.zxkt-table tr:first-child td {
+  border-top: 1px solid #e0e0ee;
+  background-color: #f0f0f0;
+}
+
+.zxkt-table td {
+  line-height: 40px;
+  text-align: center;
+  border-left: 1px solid #e0e0ee;
+  border-bottom: 1px solid #e0e0ee;
+  padding: 0 10px;
+}
+
+.zxkt-table td:nth-child(2) {
+  text-align: left;
+}
+
+.zxkt-table td:last-child {
+  border-right: 1px solid #e0e0ee;
+}
+
+.zxkt-btn {
+  line-height: 20px;
+  padding: 0 12px;
+  font-size: 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #e0e0e0;
 }
 
 .ssb-nav a {
@@ -243,4 +361,40 @@
 
 .ssb-nav .ssb-nav-hover {
   color: #e60012;
+}
+
+.ssbcr-zxtw-btn {
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  line-height: 32px;
+  background-color: #dbdebd;
+}
+
+.ssbcr-btn-zxtw
+, .ssbcr-header .ssbcr-zxtw-btn-hover
+, .tcd-btn-xgkcxx {
+  background-color: #e60012;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  line-height: 32px;
+}
+
+.ssb-content .nav-tabs > li.active > a
+, .ssb-content .nav-tabs > li.active > a:focus
+, .ssb-content .nav-tabs > li.active > a:hover {
+  color: #e60012;
+  border: none;
+  border-bottom: 2px solid #e60012;
+}
+
+.ssb-content .tab-content {
+  padding: 10px;
+}
+
+.ssb-content .tab-content p {
+  line-height: 24px;
 }

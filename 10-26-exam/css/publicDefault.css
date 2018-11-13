@@ -14,9 +14,9 @@ input, textarea, select { *font-size: 100%;letter-spacing: 1px; }
 legend { color: #000 }
 /* 通用 */
 html,body{ background: #F2F2F2; min-height: 480px;}
-body, input, button, textarea { -webkit-text-size-adjust: none; font: normal 16px/20px 'Microsoft Yahei', helvetica, arial; color: #555; outline: none; box-sizing:border-box; -webkit-box-sizing:border-box; }
+/* body, input, button, textarea { -webkit-text-size-adjust: none; font: normal 16px/20px 'Microsoft Yahei', helvetica, arial; color: #555; outline: none; box-sizing:border-box; -webkit-box-sizing:border-box; } */
 p { padding: 0; margin: 0 }
-a { text-decoration: none; color: #1F4E73 }
+a { text-decoration: none; color: #333333; }
 *{ box-sizing: border-box; letter-spacing: 1px;}
 .fl { float: left }
 .fr { float: right; }
