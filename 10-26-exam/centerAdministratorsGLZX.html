@@ -97,6 +97,7 @@
     // 加载添加班级
     $('#adminClass').load('adminClass.html');
     
+
     // 点击添加按钮
     $('.ca-glzx-btn').on('click',function(){
       var thisFather = $('.ca-one-div'), // 点击处祖父元素 
@@ -113,5 +114,6 @@
           otherFather.show().children('.ca-two-div-body').children('.ca-add-div').eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
         }
     })
+    
   })
 </script>

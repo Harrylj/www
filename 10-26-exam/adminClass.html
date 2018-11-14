@@ -343,7 +343,7 @@
     $('.admin-class').on('click', '.acc-btn-tjkc', function () {
       var htmlSelectOne = $(this).siblings('.acc-btn-tjkc-div').children('.abc-div-bg-left').find("option:selected").val(),
         htmlSelectTwo = $(this).siblings('.acc-btn-tjkc-div').children('.abc-div-bg-right').find("option:selected").val(),
-        htmldiv = $('<div class="abc-div-bg-02"><div class="abc-div-bg-left">' + htmlSelectOne + '</div><div class="abc-div-bg-right">' + htmlSelectTwo + '</div><button class="adc-btn-delete">删除</button></div>');
+        htmldiv = $('<div class="abc-div-bg-02"><div class="abc-div-bg-left">' + htmlSelectOne + '</div><div class="abc-div-bg-right">' + htmlSelectTwo + '</div><button class="adc-btn-delete">删除</button><div class="clear"></div></div>');
       $(this).siblings('.acc-tjbj-div').append(htmldiv);
       console.log(htmlSelectOne, htmlSelectTwo)
     })

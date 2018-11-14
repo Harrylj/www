@@ -91,7 +91,13 @@ $public-fontColor-01: #333333;
   line-height: 24px;
 }
 .ssbcr-zxtw-btn-div{
-  padding-top: 15px;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  width: 120px;
+  .ssbcr-zxtw-btn{
+    margin-bottom: 15px;
+  }
 }
 .tab-pane{
   position: relative;
@@ -153,8 +159,11 @@ $public-fontColor-01: #333333;
     color: gray;
   }
 }
-
+.tcd-zxdy-div{
+  position: relative;
+}
 .tcd-zxdy-div-hover{
+  position: relative;
   display: none;
 }
 .tcd-btn-zxdy{
@@ -243,4 +252,13 @@ $public-fontColor-01: #333333;
   .ssbc-left-hover{
     background-image: url(../images/ss-nav-bg-hover.png)
   }
+}
+.ssbcr-zxtw-textarea{
+  width: 700px;
+  height: 80px;
+  resize: none;
+  background-color: #f1f1f1;
+  padding:5px 10px;
+  line-height: 24px;
+  border: none;
 }

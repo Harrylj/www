@@ -98,13 +98,19 @@
               thisIndex = $(this).index(),    // 点击元素的索引值
               classNavHover = 'csbl-nav-hover',         // 导航栏激活类名
               classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
+          if (thisIndex == '2') {
+            $('.csbr-header').addClass('csbr-header-info');
+          }
+          else{
+            $('.csbr-header').removeClass('csbr-header-info');
+          }
           $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
           otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
           // 调用显示信息管理
           showXXGL()
         })
         // 左侧导航栏默认选中第2个
-        $('.csbl-nav').children('li').eq(0).click();
+        $('.csbl-nav').children('li').eq(1).click();
 
         // 点击 右侧头部的信息管理
         $('.csbr-header-btn-xxgl').on('click',function(){
