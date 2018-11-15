@@ -16,7 +16,7 @@
 2. tecaherCourseDetail.html  头顶图片  把学员中心换成老师中心
 .cs-header-img添加 ct-header-img
 
-3. addminClass.html
+3. addminClass.html  js替换
 // 点击增加课程,添加课程就是把选择的select的用DIV复制过去
     $('.admin-class').on('click', '.acc-btn-tjkc', function () {
       var htmlSelectOne = $(this).siblings('.acc-btn-tjkc-div').children('.abc-div-bg-left').find("option:selected").val(),
@@ -25,3 +25,22 @@
       $(this).siblings('.acc-tjbj-div').append(htmldiv);
       console.log(htmlSelectOne, htmlSelectTwo)
     })
+
+4.TeacherCourseNew.html 提交课程按钮去掉
+.xjkc-btn-tjkc 删掉
+
+5.sutdentTest.html head引入public.css
+  <link rel="stylesheet" type="text/css" href="css/public.css" />
+
+
+6.teacherOnline.html head引入public.css
+  <link rel="stylesheet" type="text/css" href="css/public.css" />
+
+7. teacherOnline.html js替换
+$('.to-btn-two').on('click', function () {
+        $('.to-sure-div').show().siblings().hide();
+})
+替换成
+$('.to-btn-two-ok').on('click', function () {
+        $('.to-sure-div').show().siblings().hide();
+})

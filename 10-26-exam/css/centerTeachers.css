@@ -43,28 +43,10 @@
   color: #e60012;
 }
 
-.center-teachers .ctktgl-btn-one:hover
-, .center-teachers .ctktgl-btn-one-hover {
-  color: #e60012;
-}
-
 .center-teachers .ct-two-div {
   display: none;
 }
 
 .center-teachers .ct-two-nav {
   display: none;
-}
-
-.center-teachers .cm-drkt-btn:hover {
-  color: #e60012;
-}
-
-.center-teachers .ctzxdy-list-btn {
-  float: right;
-  color: #e60012;
-}
-
-.center-teachers .ctzxdy-list-left {
-  float: left;
 }

@@ -1,4 +1,12 @@
 <div class="admin-students">
+  <!-- ajax 提交 -->
+  <form id="daoruteacher" onsubmit='return false'>
+      <button class="ash-btn daoru">导入教师信息<tton>
+          <input class="hidden" type="file" name="file1" id="file1" />
+          <button class="ash-btn" onclick="InfoImport()">确认导入<tton>
+              <text style="color:#ff0000" id="text1"></text>
+  </form>
+  <!-- ajax 提交 -->
   <h1 class="public-h1-01">添加学生</h1>
   <div class="as-header">
     添加学生
@@ -49,4 +57,25 @@
 </div>
 
 <script type="text/javascript">
+  function InfoImport() {
+      var formData = new FormData($("#daoruteacher")[0]);
+      $.ajax({
+        type: 'POST',
+        url: 'https://www.baidu.com/',
+        data: formData,
+        async: false,
+        cache: false,
+        contentType: false,
+        processData: false,  //必须要
+        success: function (data) {
+          debugger;
+          $("#text1").text(data);
+
+        },
+        error: function (data) {
+          console.log(JSON.stringify(data))
+        }
+      });
+      return false;
+    }
 </script>

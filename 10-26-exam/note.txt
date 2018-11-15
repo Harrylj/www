@@ -33,7 +33,7 @@ centerStudentsZXKT.html ---学员中心-在线课堂********
 centerStudentsZXXL.html ---学员中心-信息管理*****
 centerStudentsGRZX.html ---学员中心-个人中心****
 studentStudy.html  ---学员中心-在线课堂-课程学习*******
-studentTest.html  ---学员中心--在线课堂-课程学习-在线考试
+studentTest.html  ---学员中心--在线课堂-课程学习-在线考试******
 
 2018-11-09-17:20
 centerAdministrators.html  ---管理员中心-0*******
@@ -46,23 +46,23 @@ adminTeachers.html -----管理员中心-管理中心--添加老师*****
 adminClass.html -----管理员中心-管理中心--添加班级*******
 
 2018-11-10-13:00
-centerTeachers.html -----教师中心-2
+centerTeachers.html -----教师中心-2********
 centerTeachersXSXQ.html -----教师中心-学生详情********
-centerTeachersKCXX.html -----教师中心-课程信息
-centerTeachersKTGL.html -----教师中心-考题管理
-centerTeachersZXDY.html -----教师中心-在线答疑
+centerTeachersKCXX.html -----教师中心-课程信息******
+centerTeachersKTGL.html -----教师中心-考题管理****
+centerTeachersZXDY.html -----教师中心-在线答疑*****
 centerTeachersGRZX.html -----教师中心-个人中心****
 
 2018-11-11-10:00
-TeacherCourseNew.html -----教师中心-课程信息-新建课程-211-----这里需要进入页面点击修改课程信息按钮才能进入
-TeacherCourseModify.html -----教师中心-课程信息-修改课程信息-212
+TeacherCourseNew.html -----教师中心-课程信息-新建课程-211-----这里需要进入页面点击修改课程信息按钮才能进入 *****
+TeacherCourseModify.html -----教师中心-课程信息-修改课程信息-212*********
 TeacherCourseDetail.html -----教师中心-课程信息-课程详情*******
 
 
-teacherManageDRKT.html -----教师中心-考题管理-导入考题
-teacherManageZXZJ.html -----教师中心-考题管理-在线组卷
-teacherManageZXCS.html -----教师中心-考题管理-在线测试
-teacherManageXJKT.html -----教师中心-考题管理-新建考题
+teacherManageDRKT.html -----教师中心-考题管理-导入考题***
+teacherManageZXZJ.html -----教师中心-考题管理-在线组卷****
+teacherManageZXCS.html -----教师中心-考题管理-在线测试****
+teacherManageXJKT.html -----教师中心-考题管理-新建考题****
 
 2018-11-12-09:00
 

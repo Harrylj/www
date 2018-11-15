@@ -13,7 +13,7 @@ $public-fontColor-01: #333333;
     }
     .ctkcxx-nav{
         li{
-            float: left;
+            float: left; 
             margin-right: 15px;
             cursor: pointer;
         }
@@ -43,24 +43,10 @@ $public-fontColor-01: #333333;
         display: none;
         color: $public-color-01;
     }
-    .ctktgl-btn-one:hover
-    ,.ctktgl-btn-one-hover{
-        color: $public-color-01;
-    }
     .ct-two-div{
         display: none;
     }
     .ct-two-nav{
         display: none;
-    }
-    .cm-drkt-btn:hover{
-        color: $public-color-01;
-    }
-    .ctzxdy-list-btn{
-        float: right;
-        color: $public-color-01;
-    }
-    .ctzxdy-list-left{
-        float: left;
     }
 }

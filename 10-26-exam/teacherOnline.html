@@ -13,6 +13,7 @@
   <meta name="description" content="">
   <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+  <link rel="stylesheet" type="text/css" href="css/public.css" />
   <link rel="stylesheet" type="text/css" href="css/studentStudy.css" />
   <title>在线组卷</title>
   <style type="text/css">
@@ -209,10 +210,10 @@
         otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
       })
       // 点击完成--完成选题，显示选题后的页面
-      $('.to-btn-two').on('click', function () {
+      $('.to-btn-two-ok').on('click', function () {
         $('.to-sure-div').show().siblings().hide();
       })
-            
+      $('.to-btn-two-ok').click();    
       // 点击加入题库 
       $('body').on('click','.too-list-btn-add',function(){
         $(this).parents('.stbc-test-list').addClass('stbc-test-list-hover');

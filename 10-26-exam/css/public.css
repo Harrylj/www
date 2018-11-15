@@ -94,17 +94,24 @@
   background-image: url(../images/ct-01.jpg);
 }
 
-.csbr-header {
+.csbr-header
+, #teacherCourseNew .ssb-nav {
   border-bottom: 1px solid #e0e0e0;
   padding-bottom: 5px;
 }
 
-.csbr-header .csbr-header-btn-xxxx {
+.csbr-header
+.csbr-header-btn-xxxx, #teacherCourseNew .ssb-nav .csbr-header-btn-xxxx {
   color: #e60012;
 }
 
-.csbr-header .csbr-nav-xxgl {
+.csbr-header
+.csbr-nav-xxgl, #teacherCourseNew .ssb-nav .csbr-nav-xxgl {
   line-height: 28px;
+}
+
+#teacherCourseNew .ssb-nav {
+  position: relative;
 }
 
 .csbr-header-info {
@@ -226,11 +233,18 @@
   padding-top: 5px;
 }
 
+.ctckxx-header {
+  position: relative;
+}
+
 .csbr-body-zxkt > h1
 , .csbr-body-grzx > h1
 , .csbr-xxgl > h1
 , .public-h1-01
-, .cabr-body-xtxx > h1 {
+, .cabr-body-xtxx > h1
+, .techaer-course-new > h1
+, .cabr-body-xjkc > h1
+, .ctckxx-header > h1 {
   color: #202020;
   line-height: 50px;
   font-size: 20px;
@@ -240,7 +254,8 @@
 .csbr-body-zxkt > h2
 , .csbr-body-zxkt > p
 , .csbr-xxgl > p
-, .public-h4-01 {
+, .public-h4-01
+, .ctzxdy-div-01 > h4 {
   font-size: 12px;
   color: #969696;
   line-height: 30px;
@@ -248,6 +263,21 @@
 
 .center-administrators div.cabr-body-xtxx {
   padding-top: 0;
+}
+
+.xjkc-table td:first-child {
+  font-weight: bold;
+}
+
+.tcn-p-warn {
+  color: #999999;
+  display: inline-block;
+  padding-left: 20px;
+  background-image: url(../images/ca-icon-warn.png);
+  background-size: 14px 14px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
 }
 
 .public-h4-01 {
@@ -289,6 +319,29 @@
   padding-left: 10px;
 }
 
+.ctzxdy-list-div .ctzxdy-list {
+  border: 1px solid #e0e0e0;
+  margin-bottom: 8px;
+}
+
+.ctzxdy-list-div .ctzxdy-list .ctzxdy-list-left {
+  width: 80%;
+  float: left;
+  line-height: 40px;
+  padding: 0 10px;
+  height: 40px;
+  overflow: hidden;
+}
+
+.ctzxdy-list-div .ctzxdy-list .ctzxdy-list-btn {
+  float: right;
+  color: #e60012;
+  line-height: 40px;
+  border: none;
+  padding: 0 10px;
+  background-color: transparent;
+}
+
 .csbr-body-zxkt {
   position: relative;
 }
@@ -320,24 +373,77 @@
   display: none;
 }
 
-.info-footer {
+.info-footer
+, .ctkcxx-body-nav-div {
   background-color: #f5f5f5;
   line-height: 36px;
   margin: 30px 0;
   padding: 0 10px;
 }
 
-.info-footer .info-footer-left {
+.info-footer
+.info-footer-left, .ctkcxx-body-nav-div .info-footer-left {
   float: left;
 }
 
-.info-footer .info-footer-right {
+.info-footer
+.info-footer-right, .ctkcxx-body-nav-div .info-footer-right {
   float: right;
 }
 
-.info-footer .info-footer-right button {
+.info-footer
+.info-footer-right button, .ctkcxx-body-nav-div .info-footer-right button {
   background-color: transparent;
   border: none;
+}
+
+.ctkcxx-body-nav-div {
+  margin: 0 0 5px 0;
+}
+
+.ctkcxx-content-list p, .ctkcxx-content-list h5 {
+  padding: 0 20px;
+  line-height: 22px;
+  overflow: hidden;
+}
+
+.ctkcxx-content-list p {
+  height: 44px;
+  color: #222222;
+  margin-top: 10px;
+}
+
+.ctkcxx-content-list h5 {
+  height: 22px;
+  color: #999999;
+}
+
+.ctkcxx-content-list .ctkcxx-cl-footer {
+  border-top: 1px solid #e0e0e0;
+  color: #666666;
+  line-height: 50px;
+  padding: 0 20px;
+  margin-top: 10px;
+}
+
+.ctkcxx-content-list .ctkcxx-cl-type {
+  float: left;
+}
+
+.ctkcxx-content-list .ctkcxx-cl-footer-right {
+  float: right;
+}
+
+.ctkcxx-nav li:lia {
+  padding-left: 25px;
+  background-image: url(../images/ct-icon-time.png);
+  background-position: 0 center;
+  background-repeat: no-repeat;
+}
+
+.ctkcxx-cl-img img {
+  width: 100%;
+  height: 180px;
 }
 
 .csbr-body-xxgl .info-list-ok a {
@@ -411,7 +517,10 @@
 .zxkt-btn
 , .ca-glzx-btn
 , .ash-btn
-, .acc-btn-drxs {
+, .acc-btn-drxs
+, .tcn-btn-two
+, .tcn-btn-jxtj
+, .TMZXZJ-btn-jxtj {
   line-height: 20px;
   padding: 0 12px;
   font-size: 12px;
@@ -426,9 +535,25 @@
   background-color: #e7e7ee;
 }
 
-.acc-btn-drxs {
+.acc-btn-drxs
+, .tcn-btn-drsp
+, .tcn-btn-jxtj {
+  position: relative;
+  top: -2px;
   line-height: 26px;
   margin-left: 10px;
+}
+
+.tcn-tmxq-div label select
+, .tcn-tmxq-div label option {
+  width: 120px;
+  margin: 10px;
+}
+
+.tcn-tmxq-div label:first-child select
+, .tcn-tmxq-div label:first-child option
+, .xjkc-table .tcn-btn-jxtj {
+  margin-left: 0;
 }
 
 .xxgl-detail-content h1, .xxgl-detail-content p {
@@ -451,7 +576,7 @@
 a, .csbr-nav-xxgl-detail a {
   display: inline-block;
   margin: 0 15px;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 .ssb-nav
@@ -471,7 +596,9 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 
 .ssbcr-zxtw-
 , .grzx-info-btn-01
-, .acc-btn-qxxz {
+, .acc-btn-qxxz
+, .cm-drkt-btn
+, .tmzxzt-btn {
   color: white;
   text-align: center;
   padding: 0 20px;
@@ -490,7 +617,12 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 , .grzx-info-btn-password
 , .acc-btn-qdxz
 , .xjkc-btn-tjkc
-, .ca-xtxx-btn-fsxx {
+, .ca-xtxx-btn-fsxx
+, .acc-btn-wcxg
+, .tcn-btn-kcwc
+, .cm-drkt-btn-kcwc
+, .tmzxzt-btn-xyb
+, .stbc-answer-btn-submit {
   background-color: #e60012;
   color: white;
   text-align: center;
@@ -498,6 +630,67 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
   border: none;
   line-height: 32px;
   border-radius: 4px;
+}
+
+.stbc-answer-btn-submit {
+  position: relative;
+  top: 50px;
+  padding: 0 40px;
+  line-height: 40px;
+  margin: auto;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.cm-drkt-btn-kcwc {
+  margin-right: 10px;
+}
+
+.ctktgl-btn-one
+, .ctkcxx-btn-xjkc {
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  line-height: 40px;
+  background-color: #f5f5f5;
+}
+
+.ctktgl-btn-one:hover
+, .ctktgl-btn-one-hover
+, .ctkcxx-btn-xjkc {
+  color: white;
+  background-color: #e60012;
+}
+
+.ctkcxx-btn-xjkc {
+  position: absolute;
+  right: 0;
+  top: 20px;
+  padding: 0 25px;
+}
+
+.ctktgl-p-red
+, .ctkcxx-number {
+  line-height: 24px;
+  padding-bottom: 5px;
+  color: #e60012;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.ctkcxx-number {
+  margin-bottom: 10px;
+}
+
+.ct-one-div {
+  position: relative;
+}
+
+.ctktgl-right-nav {
+  position: absolute;
+  right: 0px;
+  top: 20px;
 }
 
 .ssbcr-zxtw-btn-clear {
@@ -510,6 +703,11 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 
 .grzx-info-btn-01 {
   margin-right: 15px;
+}
+
+.tcn-p-ts {
+  height: 28px;
+  line-height: 28px;
 }
 
 .ssb-content .nav-tabs > li.active > a
@@ -630,6 +828,11 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
   border: none;
 }
 
+.center-teachers .csbr-header
+, .center-administrators .csbr-header {
+  padding: 0;
+}
+
 .ca-glzx-header {
   margin-top: 5px;
   margin-bottom: 15px;
@@ -696,6 +899,38 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
   background-color: white;
 }
 
+.center-teachers #teacherCourseNew
+.ca-xjkc-content:nth-child(3)
+, .center-teachers #teacherCourseNew
+.xjkc-table:last-child tr:last-child td, .center-teachers #centerTeachersKTGL .ca-xjkc-content:nth-child(3)
+, .center-teachers #centerTeachersKTGL .xjkc-table:last-child tr:last-child td {
+  padding-bottom: 140px;
+}
+
+.center-teachers #teacherCourseNew
+.tcn-p-ts
+, .center-teachers #teacherCourseNew
+.tcn-btn-kcwc
+, .center-teachers #teacherCourseNew
+.tcn-p-ts
+, .center-teachers #teacherCourseNew
+.tmzxzt-btn, .center-teachers #centerTeachersKTGL .tcn-p-ts
+, .center-teachers #centerTeachersKTGL .tcn-btn-kcwc
+, .center-teachers #centerTeachersKTGL .tcn-p-ts
+, .center-teachers #centerTeachersKTGL .tmzxzt-btn {
+  position: relative;
+  top: -120px;
+  margin-left: 118px;
+}
+
+.center-teachers #teacherCourseNew
+.tmzxzt-btn-xyb
+, .center-teachers #teacherCourseNew
+.tmzxcs-btn-null, .center-teachers #centerTeachersKTGL .tmzxzt-btn-xyb
+, .center-teachers #centerTeachersKTGL .tmzxcs-btn-null {
+  margin-left: 10px;
+}
+
 .ac-content-list .acc-list-header
 , .ca-xjkc-content > h2
 , .ca-xtxx-setting > h2 {
@@ -734,7 +969,8 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 , .xjkc-table select
 , .xjkc-table option
 , .xtxx-table-01 select
-, .xtxx-table-01 option {
+, .xtxx-table-01 option
+, .tcn-btn-one {
   width: 340px;
   background-color: #f5f5f5;
   border: 1px solid #e0e0e0;
@@ -745,7 +981,8 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
   height: 30px;
 }
 
-.ac-top div.abc-div-bg-01 {
+.ac-top div.abc-div-bg-01
+, .acc-list-modify div.abc-div-bg-01 {
   padding: 0;
 }
 
@@ -797,4 +1034,17 @@ label {
   background-position: 0 center;
   background-repeat: no-repeat;
   margin-bottom: 10px;
+}
+
+.abc-div-bg-02 {
+  clear: both;
+}
+
+.abc-div-bg-02 > p {
+  background-color: #ededed;
+  padding: 0 10px;
+  line-height: 30px;
+  float: left;
+  display: inline-block;
+  margin-bottom: 5px;
 }

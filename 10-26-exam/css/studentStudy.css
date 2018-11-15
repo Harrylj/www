@@ -149,25 +149,15 @@
   background-color: #f5f5f5;
 }
 
-.student-test .info-list-div-hover {
-  border: 1px solid red;
-}
-
 .student-test .stb-content-answer-div {
+  z-index: 9999;
   position: fixed;
-  top: 200px;
+  top: 218px;
   left: 50%;
   width: 300px;
   margin-left: 200px;
-  border: 1px solid red;
-}
-
-.student-test .stbc-answer-btn {
-  color: #e60012;
-}
-
-.student-test .stbc-answer-btn-hover {
-  color: gray;
+  background-color: #f5f5f5;
+  border: 1px solid #f5f5f5;
 }
 
 .tcd-zxdy-div {
@@ -193,13 +183,44 @@
   float: left;
 }
 
+.to-content-header-left span {
+  font-weight: bold;
+}
+
+.toch-nav-div {
+  display: inline-block;
+}
+
 .to-content-header-right {
   float: right;
 }
 
+.to-content-header {
+  padding-top: 15px;
+}
+
+.to-btn-one
+, .to-btn-two
+, .too-list-btn {
+  background-color: #e5e5ee;
+  margin-right: 5px;
+  padding: 0 15px;
+  line-height: 40px;
+  background-color: #e5e5e5;
+  font-weight: bold;
+  border: none;
+}
+
 .to-btn-one-hover
 , .to-btn-two {
-  color: #e60012;
+  color: white;
+  background-color: #e60012;
+}
+
+.to-btn-two
+, .too-list-btn {
+  line-height: 36px;
+  padding: 0 25px;
 }
 
 .csbr-body-list {
@@ -232,10 +253,6 @@
 
 .teacher-online .stb-content-test .too-list-btn-delete {
   display: none;
-}
-
-.teacher-online .stbc-test-list-hover {
-  border: 1px solid blue;
 }
 
 .teacher-online .stbc-test-list-hover .too-list-btn-delete {
@@ -291,4 +308,231 @@
   padding: 5px 10px;
   line-height: 24px;
   border: none;
+}
+
+.stb-content-test > h1
+, .tio-header-left {
+  color: black;
+  font-weight: bold;
+  padding: 0 20px;
+  line-height: 40px;
+  margin: 20px 0 10px 0;
+}
+
+.tio-header-left {
+  float: left;
+  margin: 0;
+}
+
+.tio-header-right {
+  line-height: 40px;
+  padding: 0 20px;
+  float: right;
+  font-weight: bold;
+}
+
+.student-test .ssb-nav {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.tio-header {
+  margin: 20px 0 10px 0;
+  background-color: #f5f5f5;
+  position: relative;
+}
+
+.stbc-test-list {
+  min-height: 160px;
+  position: relative;
+  border: 1px solid #e0e0e0;
+  padding: 10px 20px 10px 60px;
+  margin-bottom: 5px;
+}
+
+.stbc-test-list h2 {
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 32px;
+}
+
+.stbc-test-list ul {
+  padding: 5px 0;
+}
+
+.stbc-test-list-number {
+  position: absolute;
+  left: 20px;
+  top: 14px;
+  display: inline-block;
+  background-color: #399cc6;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.info-list-btn-div {
+  cursor: pointer;
+  position: relative;
+  line-height: 30px;
+  margin-bottom: 2px;
+  padding-left: 25px;
+  background-image: url(../images/ct-checked-01.png);
+  background-repeat: no-repeat;
+  background-position: 0 center;
+}
+
+.info-list-btn-div span {
+  display: inline-block;
+  padding: 0 10px;
+}
+
+.info-list-div-hover {
+  background-image: url(../images/ct-checked-01-hover.png);
+}
+
+.info-list-div-hover span {
+  background-color: #e60012;
+  color: white;
+}
+
+.stbc-answer-div {
+  padding: 10px 0;
+}
+
+.stbc-answer-textarea {
+  resize: none;
+  line-height: 28px;
+  padding: 10px;
+  height: 200px;
+  width: 100%;
+  border: 1px solid #e0e0e0;
+}
+
+textarea.info-list-div-hover {
+  background-image: none;
+}
+
+.stb-content-answer-header {
+  clear: both;
+}
+
+.stb-content-answer-header > h1 {
+  width: 40%;
+  float: left;
+  color: white;
+  text-align: center;
+  background-color: #389cc6;
+}
+
+.stb-content-answer-header > h2 {
+  float: right;
+  width: 60%;
+  color: #e60012;
+  background-color: white;
+  text-align: center;
+}
+
+.stb-content-answer-header > h1
+, .stb-content-answer-header > h2 {
+  height: 50px;
+  line-height: 50px;
+}
+
+.stbc-answer-one-div > h3
+, .stbc-answer-two-div > h3
+, .stbc-answer-three-div > h3
+, .stbc-answer-four-div > h3 {
+  line-height: 50px;
+  font-weight: bold;
+  padding: 0 2px;
+}
+
+.stbc-answer-btn {
+  width: 44px;
+  height: 44px;
+  margin-left: 5px;
+  margin-bottom: 5px;
+  line-height: 46px;
+  border: none;
+  background-color: white;
+  color: #e60012;
+  border-radius: 2px;
+  font-size: 18px;
+}
+
+.stbc-answer-btn-hover {
+  color: gray;
+}
+
+.too-list-footer {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.teacher-online .stbc-test-list-hover {
+  background-repeat: no-repeat;
+  background-image: url(../images/to-bg-check.jpg);
+  background-position: top right;
+}
+
+.teacher-online .info-list-div-hover {
+  background-image: url(../images/ct-checked-02-hover.png);
+}
+
+.teacher-online .info-list-div-hover span {
+  background-color: transparent;
+  color: #e60012;
+}
+
+.teacher-online .stbc-test-list-number {
+  background-color: transparent;
+  color: #666666;
+  border: 1px solid #666666;
+  overflow: hidden;
+}
+
+#teacherOnlineAll .tia-header {
+  position: relative;
+}
+
+#teacherOnlineAll .tia-header .tia-hader-left {
+  line-height: 50px;
+}
+
+#teacherOnlineAll .tia-header .tia-hader-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#teacherOnlineAll .tia-header .tia-btn-one {
+  display: inline-block;
+  background-color: transparent;
+  padding-left: 22px;
+  line-height: 50px;
+  border: none;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  margin-left: 15px;
+}
+
+#teacherOnlineAll .tia-header .tia-btn-zxxz {
+  background-image: url(../images/to-icon-01.png);
+}
+
+#teacherOnlineAll .tia-header .tia-btn-dywb {
+  background-image: url(../images/to-icon-02.png);
+}
+
+#teacherOnlineAll .tia-body > h1 {
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
+  margin: 10px 0;
+  font-weight: bold;
 }

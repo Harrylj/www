@@ -92,7 +92,8 @@ $public-fontColor-01: #333333;
 .ct-header-img{
   background-image: url(../images/ct-01.jpg);
 }
-.csbr-header{
+.csbr-header
+,#teacherCourseNew .ssb-nav{
   border-bottom: 1px solid $public-borderColor-01;
   padding-bottom: 5px;
   .csbr-header-btn-xxxx{
@@ -101,6 +102,9 @@ $public-fontColor-01: #333333;
   .csbr-nav-xxgl{
     line-height: 28px;
   }
+}
+#teacherCourseNew .ssb-nav{
+  position: relative;
 }
 .csbr-header-info{
   border: none;
@@ -206,11 +210,17 @@ $public-fontColor-01: #333333;
   min-height: 800px;
   padding-top: 5px;
 }
+.ctckxx-header{
+  position: relative;
+}
 .csbr-body-zxkt>h1
 ,.csbr-body-grzx>h1
 ,.csbr-xxgl>h1
 ,.public-h1-01
-,.cabr-body-xtxx>h1{
+,.cabr-body-xtxx>h1
+,.techaer-course-new>h1
+,.cabr-body-xjkc>h1
+,.ctckxx-header>h1{
   color: #202020;
   line-height: 50px;
   font-size: 20px;
@@ -219,13 +229,29 @@ $public-fontColor-01: #333333;
 .csbr-body-zxkt>h2
 ,.csbr-body-zxkt>p
 ,.csbr-xxgl>p
-,.public-h4-01{
+,.public-h4-01
+,.ctzxdy-div-01>h4{
   font-size: 12px;
   color: #969696;
   line-height: 30px;
 }
 .center-administrators div.cabr-body-xtxx{
   padding-top: 0; 
+}
+.xjkc-table{
+  td:first-child{
+    font-weight: bold;
+  }
+}
+.tcn-p-warn{
+  color: #999999;
+  display: inline-block;
+  padding-left: 20px;
+  background-image: url(../images/ca-icon-warn.png);
+  background-size: 14px 14px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  margin-left: 10px;
 }
 .public-h4-01{
   margin-bottom: 5px;
@@ -261,6 +287,28 @@ $public-fontColor-01: #333333;
     padding-left: 10px;
   }
 }
+.ctzxdy-list-div{
+  .ctzxdy-list{
+    border: 1px solid $public-borderColor-01;
+    margin-bottom: 8px;
+    .ctzxdy-list-left{
+      width: 80%;
+      float: left;
+      line-height: 40px;
+      padding: 0 10px;
+      height: 40px;
+      overflow: hidden;
+    }
+    .ctzxdy-list-btn{
+        float: right;
+        color: $public-color-01;
+        line-height: 40px;
+        border: none;
+        padding: 0 10px;
+        background-color: transparent;
+    }
+  }
+}
 .csbr-body-zxkt{
   position: relative;
   .zxkt-progress-bar{
@@ -286,7 +334,8 @@ $public-fontColor-01: #333333;
 .info-list-btn{
   display: none;
 }
-.info-footer{
+.info-footer
+,.ctkcxx-body-nav-div{
   background-color: $public-bgColor-01;
   line-height: 36px;
   margin: 30px 0;
@@ -300,6 +349,50 @@ $public-fontColor-01: #333333;
       background-color: transparent;
       border: none;
     }
+  }
+}
+.ctkcxx-body-nav-div{
+  margin: 0 0 5px 0;
+}
+.ctkcxx-content-list{
+  p,h5{
+    padding: 0 20px;
+    line-height: 22px;
+    overflow: hidden;
+  }
+  p{
+    height: 44px;
+    color: #222222;
+    margin-top: 10px;
+  }
+  h5{
+    height: 22px;
+    color: #999999;
+  }
+  .ctkcxx-cl-footer{
+    border-top: 1px solid $public-borderColor-01;
+    color: #666666;
+    line-height: 50px;
+    padding: 0 20px;
+    margin-top: 10px;
+  }
+  .ctkcxx-cl-type{
+    float: left;
+  }
+  .ctkcxx-cl-footer-right{
+    float: right;
+  }
+}
+.ctkcxx-nav li:lia{
+  padding-left: 25px;
+  background-image: url(../images/ct-icon-time.png);
+  background-position: 0 center;
+  background-repeat: no-repeat;
+}
+.ctkcxx-cl-img{
+  img{
+    width: 100%;
+    height: 180px;
   }
 }
 .csbr-body-xxgl{
@@ -372,7 +465,10 @@ $public-fontColor-01: #333333;
 .zxkt-btn
 ,.ca-glzx-btn
 ,.ash-btn
-,.acc-btn-drxs{
+,.acc-btn-drxs
+,.tcn-btn-two
+,.tcn-btn-jxtj
+,.TMZXZJ-btn-jxtj{
   line-height: 20px;
   padding: 0 12px;
   font-size: 12px;
@@ -385,9 +481,23 @@ $public-fontColor-01: #333333;
   margin-top: 10px;
   background-color: #e7e7ee;
 }
-.acc-btn-drxs{
+.acc-btn-drxs
+,.tcn-btn-drsp
+,.tcn-btn-jxtj{
+  position: relative;
+  top: -2px;
   line-height: 26px;
   margin-left: 10px;
+}
+.tcn-tmxq-div label select
+,.tcn-tmxq-div label option{
+  width: 120px;
+  margin: 10px;
+}
+.tcn-tmxq-div label:first-child select
+,.tcn-tmxq-div label:first-child option
+,.xjkc-table .tcn-btn-jxtj{
+  margin-left: 0;
 }
 .xxgl-detail-content{
 
@@ -407,7 +517,7 @@ $public-fontColor-01: #333333;
   a{
   display: inline-block;
   margin: 0 15px;
-  font-size: 16px;
+  font-size: 14px;
   }
   a:first-child{
     margin-left: 0; 
@@ -422,7 +532,9 @@ $public-fontColor-01: #333333;
 }
 .ssbcr-zxtw-
 ,.grzx-info-btn-01
-,.acc-btn-qxxz{
+,.acc-btn-qxxz
+,.cm-drkt-btn
+,.tmzxzt-btn{
   color: white;
   text-align: center;
   padding: 0 20px;
@@ -431,6 +543,15 @@ $public-fontColor-01: #333333;
   background-color: #a9a9a9;
   border-radius: 4px;
 }
+// .cm-drkt-btn{
+//   color: #222222;
+//   text-align: center;
+//   padding: 0 20px;
+//   border: none;
+//   line-height: 32px;
+//   background-color:$public-bgColor-01;
+//   border-radius: 4px;
+// }
 .ssbcr-btn-zxtw
 ,.ssbcr-header .ssbcr-zxtw-btn-hover
 ,.tcd-btn-xgkcxx
@@ -440,7 +561,12 @@ $public-fontColor-01: #333333;
 ,.grzx-info-btn-password
 ,.acc-btn-qdxz
 ,.xjkc-btn-tjkc
-,.ca-xtxx-btn-fsxx{
+,.ca-xtxx-btn-fsxx
+,.acc-btn-wcxg
+,.tcn-btn-kcwc
+,.cm-drkt-btn-kcwc
+,.tmzxzt-btn-xyb
+,.stbc-answer-btn-submit{
   background-color: $public-color-01;
   color: white;
   text-align: center;
@@ -449,16 +575,72 @@ $public-fontColor-01: #333333;
   line-height: 32px;
   border-radius: 4px;
 }
+.stbc-answer-btn-submit{
+  position: relative;
+  top: 50px;
+  padding: 0 40px;
+  line-height: 40px;
+  margin: auto;
+  display: block;
+  font-size: 16px;
+  font-weight: bold;
+}
+.cm-drkt-btn-kcwc{
+  margin-right: 10px;
+}
+.ctktgl-btn-one
+,.ctkcxx-btn-xjkc{
+  text-align: center;
+  padding: 0 20px;
+  border: none;
+  line-height: 40px;
+  background-color: $public-bgColor-01;
+}
+.ctktgl-btn-one:hover
+,.ctktgl-btn-one-hover
+,.ctkcxx-btn-xjkc{
+ color: white;
+ background-color: $public-color-01;
+}
+.ctkcxx-btn-xjkc{
+  position: absolute;
+  right: 0;
+  top: 20px;
+  padding: 0 25px;
+}
+.ctktgl-p-red
+,.ctkcxx-number{
+  line-height: 24px;
+  padding-bottom: 5px;
+  color: $public-color-01;
+  border-bottom: 1px solid $public-borderColor-01;
+  margin-bottom: 20px;
+}
+.ctkcxx-number{
+  margin-bottom: 10px;
+}
+.ct-one-div{
+  position: relative;
+}
+.ctktgl-right-nav{
+  position: absolute;
+  right: 0px;
+  top: 20px;
+}
 .ssbcr-zxtw-btn-clear{
   color:#222222;
 }
 .xjkc-btn-tjkc{
   margin-left: 100px;
 }
+
 .grzx-info-btn-01{
   margin-right: 15px; 
 }
-
+.tcn-p-ts{
+  height: 28px;
+  line-height: 28px;
+}
 
 .ssb-content {
   .nav-tabs > li.active > a
@@ -563,6 +745,10 @@ $public-fontColor-01: #333333;
 .center-teachers .csbr-header{
   border: none;
 }
+.center-teachers .csbr-header
+,.center-administrators .csbr-header{
+  padding: 0;
+}
 .ca-glzx-header{
   margin-top: 5px;
   margin-bottom: 15px;
@@ -621,6 +807,25 @@ $public-fontColor-01: #333333;
   background-color: white;
   
 }
+ .center-teachers #teacherCourseNew
+,.center-teachers #centerTeachersKTGL{
+  .ca-xjkc-content:nth-child(3)
+  ,.xjkc-table:last-child tr:last-child td{
+  padding-bottom: 140px;
+  }
+  .tcn-p-ts
+  ,.tcn-btn-kcwc
+  ,.tcn-p-ts
+  ,.tmzxzt-btn{
+    position: relative;
+    top: -120px;
+    margin-left: 118px;
+  }
+  .tmzxzt-btn-xyb
+  ,.tmzxcs-btn-null{
+    margin-left: 10px;
+  }
+}
 .ac-content-list .acc-list-header
 ,.ca-xjkc-content > h2
 ,.ca-xtxx-setting > h2{
@@ -657,7 +862,8 @@ $public-fontColor-01: #333333;
 ,.xjkc-table select
 ,.xjkc-table option
 ,.xtxx-table-01 select
-,.xtxx-table-01 option{
+,.xtxx-table-01 option
+,.tcn-btn-one{
   width: 340px;
   background-color: $public-bgColor-01;
   border: 1px solid $public-borderColor-01;
@@ -667,11 +873,11 @@ $public-fontColor-01: #333333;
   line-height: 30px;
   height: 30px;
 }
-.ac-top {
-  div.abc-div-bg-01{
+.ac-top  div.abc-div-bg-01
+,.acc-list-modify div.abc-div-bg-01{
     padding: 0;
-  }
 }
+
 .xtxx-table-01 select
 ,.xtxx-table-01 option{
   background-color: white;
@@ -715,4 +921,14 @@ label{
  background-repeat: no-repeat; 
  margin-bottom: 10px;
 }
-
+.abc-div-bg-02{
+  clear: both;
+}
+.abc-div-bg-02>p{
+  background-color: #ededed;
+  padding: 0 10px;
+  line-height: 30px;
+  float: left;
+  display: inline-block;
+  margin-bottom: 5px;
+}
