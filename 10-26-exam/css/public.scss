@@ -534,7 +534,8 @@ $public-fontColor-01: #333333;
 ,.grzx-info-btn-01
 ,.acc-btn-qxxz
 ,.cm-drkt-btn
-,.tmzxzt-btn{
+,.tmzxzt-btn
+,.ssbcr-zxtw-btn{
   color: white;
   text-align: center;
   padding: 0 20px;
@@ -566,7 +567,8 @@ $public-fontColor-01: #333333;
 ,.tcn-btn-kcwc
 ,.cm-drkt-btn-kcwc
 ,.tmzxzt-btn-xyb
-,.stbc-answer-btn-submit{
+,.stbc-answer-btn-submit
+,.tcn-btn-tjxg{
   background-color: $public-color-01;
   color: white;
   text-align: center;
@@ -574,6 +576,9 @@ $public-fontColor-01: #333333;
   border: none;
   line-height: 32px;
   border-radius: 4px;
+}
+.ssbcr-zxtw-btn-clear{
+  color: white;
 }
 .stbc-answer-btn-submit{
   position: relative;
@@ -627,9 +632,7 @@ $public-fontColor-01: #333333;
   right: 0px;
   top: 20px;
 }
-.ssbcr-zxtw-btn-clear{
-  color:#222222;
-}
+
 .xjkc-btn-tjkc{
   margin-left: 100px;
 }
@@ -640,6 +643,10 @@ $public-fontColor-01: #333333;
 .tcn-p-ts{
   height: 28px;
   line-height: 28px;
+}
+.center-teachers #teacherManageDRKT .xjkc-table .tcn-p-ts{
+  margin: 0;
+  top: 0;
 }
 
 .ssb-content {
@@ -808,7 +815,8 @@ $public-fontColor-01: #333333;
   
 }
  .center-teachers #teacherCourseNew
-,.center-teachers #centerTeachersKTGL{
+,.center-teachers #centerTeachersKTGL
+,.center-teachers #teacherCourseModify{
   .ca-xjkc-content:nth-child(3)
   ,.xjkc-table:last-child tr:last-child td{
   padding-bottom: 140px;
@@ -816,7 +824,8 @@ $public-fontColor-01: #333333;
   .tcn-p-ts
   ,.tcn-btn-kcwc
   ,.tcn-p-ts
-  ,.tmzxzt-btn{
+  ,.tmzxzt-btn
+  ,.tcn-btn-tjxg{
     position: relative;
     top: -120px;
     margin-left: 118px;

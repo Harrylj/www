@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+.bottom{
+	width:988px;
+	height:197px;
+	margin:0 auto;
+	background:url(../cdflyz/images/bottomback.jpg) no-repeat top center;
+}
+.footerdiv{
+	margin:0 auto;
+	width:968px;
+	height:142px;
+}
+.footerdiv .bq{
+	text-align:center;
+	padding-top:10px;
+}
+.footerdiv1{
+	text-align:center;
+	padding-top:40px;color:#E00001;
+}
+.footerdiv1 a{
+	color:#E00001; text-decoration:none;
+}
+.footerdiv2{
+	margin:0 auto;
+}

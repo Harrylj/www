@@ -598,7 +598,8 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 , .grzx-info-btn-01
 , .acc-btn-qxxz
 , .cm-drkt-btn
-, .tmzxzt-btn {
+, .tmzxzt-btn
+, .ssbcr-zxtw-btn {
   color: white;
   text-align: center;
   padding: 0 20px;
@@ -622,7 +623,8 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 , .tcn-btn-kcwc
 , .cm-drkt-btn-kcwc
 , .tmzxzt-btn-xyb
-, .stbc-answer-btn-submit {
+, .stbc-answer-btn-submit
+, .tcn-btn-tjxg {
   background-color: #e60012;
   color: white;
   text-align: center;
@@ -630,6 +632,10 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
   border: none;
   line-height: 32px;
   border-radius: 4px;
+}
+
+.ssbcr-zxtw-btn-clear {
+  color: white;
 }
 
 .stbc-answer-btn-submit {
@@ -693,10 +699,6 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
   top: 20px;
 }
 
-.ssbcr-zxtw-btn-clear {
-  color: #222222;
-}
-
 .xjkc-btn-tjkc {
   margin-left: 100px;
 }
@@ -708,6 +710,11 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 .tcn-p-ts {
   height: 28px;
   line-height: 28px;
+}
+
+.center-teachers #teacherManageDRKT .xjkc-table .tcn-p-ts {
+  margin: 0;
+  top: 0;
 }
 
 .ssb-content .nav-tabs > li.active > a
@@ -902,8 +909,11 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 .center-teachers #teacherCourseNew
 .ca-xjkc-content:nth-child(3)
 , .center-teachers #teacherCourseNew
-.xjkc-table:last-child tr:last-child td, .center-teachers #centerTeachersKTGL .ca-xjkc-content:nth-child(3)
-, .center-teachers #centerTeachersKTGL .xjkc-table:last-child tr:last-child td {
+.xjkc-table:last-child tr:last-child td, .center-teachers #centerTeachersKTGL
+.ca-xjkc-content:nth-child(3)
+, .center-teachers #centerTeachersKTGL
+.xjkc-table:last-child tr:last-child td, .center-teachers #teacherCourseModify .ca-xjkc-content:nth-child(3)
+, .center-teachers #teacherCourseModify .xjkc-table:last-child tr:last-child td {
   padding-bottom: 140px;
 }
 
@@ -914,10 +924,22 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 , .center-teachers #teacherCourseNew
 .tcn-p-ts
 , .center-teachers #teacherCourseNew
-.tmzxzt-btn, .center-teachers #centerTeachersKTGL .tcn-p-ts
-, .center-teachers #centerTeachersKTGL .tcn-btn-kcwc
-, .center-teachers #centerTeachersKTGL .tcn-p-ts
-, .center-teachers #centerTeachersKTGL .tmzxzt-btn {
+.tmzxzt-btn
+, .center-teachers #teacherCourseNew
+.tcn-btn-tjxg, .center-teachers #centerTeachersKTGL
+.tcn-p-ts
+, .center-teachers #centerTeachersKTGL
+.tcn-btn-kcwc
+, .center-teachers #centerTeachersKTGL
+.tcn-p-ts
+, .center-teachers #centerTeachersKTGL
+.tmzxzt-btn
+, .center-teachers #centerTeachersKTGL
+.tcn-btn-tjxg, .center-teachers #teacherCourseModify .tcn-p-ts
+, .center-teachers #teacherCourseModify .tcn-btn-kcwc
+, .center-teachers #teacherCourseModify .tcn-p-ts
+, .center-teachers #teacherCourseModify .tmzxzt-btn
+, .center-teachers #teacherCourseModify .tcn-btn-tjxg {
   position: relative;
   top: -120px;
   margin-left: 118px;
@@ -926,8 +948,11 @@ a:first-child, .csbr-nav-xxgl-detail a:first-child {
 .center-teachers #teacherCourseNew
 .tmzxzt-btn-xyb
 , .center-teachers #teacherCourseNew
-.tmzxcs-btn-null, .center-teachers #centerTeachersKTGL .tmzxzt-btn-xyb
-, .center-teachers #centerTeachersKTGL .tmzxcs-btn-null {
+.tmzxcs-btn-null, .center-teachers #centerTeachersKTGL
+.tmzxzt-btn-xyb
+, .center-teachers #centerTeachersKTGL
+.tmzxcs-btn-null, .center-teachers #teacherCourseModify .tmzxzt-btn-xyb
+, .center-teachers #teacherCourseModify .tmzxcs-btn-null {
   margin-left: 10px;
 }
 

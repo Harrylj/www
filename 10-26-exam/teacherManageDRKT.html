@@ -8,7 +8,7 @@
         <tr>
           <td>考题类别</td>
           <td>
-            <input class="tcn-btn-one tcn-btn-one-ktlb" type="text" placeholder="政治类">
+            <input class="tcn-btn-one tcn-btn-one-ktlb tm-all-input-ktlb" type="text" placeholder="政治类">
           </td>
         </tr>
         <tr>
@@ -79,7 +79,7 @@
         <tr>
           <td></td>
           <td>
-            <p class="tcn-p-ts">错误提示</p>
+            <p class="tcn-p-ts tmdrkt-p-ts">错误提示</p>
             <p>
               <button class="cm-drkt-btn cm-drkt-btn-kcwc">课程完成</button>
               <button class="cm-drkt-btn">清除考题</button>
@@ -101,9 +101,9 @@
 
       // 点击课程完成
       $('.cm-drkt-btn-kcwc').on('click', function () {
-        var tsDiv = $('.tcn-p-ts');
+        var tsDiv = $('.tmdrkt-p-ts');
         // 考题类别不能为空
-        if ($('.tcn-btn-one-ktlb').val() == '') {
+        if ($('.tm-all-input-ktlb').val() == '') {
           tsDiv.html('考题类别不能为空').show();
         }
         // 完成

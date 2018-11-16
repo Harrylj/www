@@ -7,7 +7,7 @@
       <tr>
         <td>考题名称</td>
         <td>
-          <input class="tcn-btn-one tm-zxzj-ksmc" type="text" placeholder="请输入考题名称">
+          <input class="tcn-btn-one tm-zxzj-ksmc tmzxcs-all-input-ktmc" type="text" placeholder="请输入考题名称">
         </td>
       </tr>
       <tr>
@@ -41,9 +41,9 @@
 
 
   </div>
-  <p class="tcn-p-ts">错误提示</p>
+  <p class="tcn-p-ts tmzxcs-p-ts">错误提示</p>
   <p>
-    <button class="tmzxzt-btn tmzxcs-btn-xzwc">选择完成</button>
+    <button class="tmzxzt-btn tmzxcs-btn-xzwc tmzxcs-all-btn-xzwc">选择完成</button>
     <button class="tmzxzt-btn tmzxcs-btn-null">清空选择</button>
   </p>
 </div>
@@ -93,11 +93,11 @@
     })
 
     // 点击选择完成
-    $('.tmzxcs-btn-xzwc').on('click', function () {
-      var tsDiv = $('.tcn-p-ts');
-      // 班级名称不能为空
-      if ($('.tm-zxzj-ksmc').val() == '') {
-        tsDiv.html('班级名称不能为空').show();
+    $('.tmzxcs-all-btn-xzwc').on('click', function () {
+      var tsDiv = $('.tmzxcs-p-ts');
+      // 考题不能为空
+      if ($('.tmzxcs-all-input-ktmc').val() == '') {
+        tsDiv.html('考题名称不能为空').show();
       }
       // 完成
       else {

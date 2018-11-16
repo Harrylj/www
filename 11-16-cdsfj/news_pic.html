@@ -1,0 +1,175 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+<meta name="SiteDomain" content="www.cdjustice.chengdu.gov.cn">
+<meta name="SiteIDCode" content="5101000046">
+<meta name="ColumnName" content="<CMSPRO_CHANNEL CODE='' FIELD='channelName'>栏目标题</CMSPRO_CHANNEL>">
+<meta name="ColumnDescription" content="<CMSPRO_CHANNEL CODE='' FIELD='channelName'>栏目标题</CMSPRO_CHANNEL>">
+<meta name="ColumnKeywords" content="<CMSPRO_CHANNEL CODE='' FIELD='channelName'>栏目标题</CMSPRO_CHANNEL>">
+<meta name="ColumnType" content="<CMSPRO_CHANNEL CODE='' FIELD='channelName'>栏目标题</CMSPRO_CHANNEL>">
+<title><CMSPRO_CHANNEL FIELD="channelName">栏目名称</CMSPRO_CHANNEL>-<CMSPRO_WEBSITE FIELD="name" ></CMSPRO_WEBSITE></title>
+<script language="javascript" src="js/jquery-1.9.1.min.js"></script>
+<style type="text/css">
+* {
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+body {
+    font-size: 12px;
+    font-family: "宋体";
+}
+a {
+    text-decoration: none;
+}
+ul, li, ol {
+    margin: 0px;
+    padding: 0px;
+    list-style-type: none;
+}
+.pic_div {
+    width: 350px;
+    height: 270px;
+    position: relative;
+    background-color: #FFF;
+}
+.pic_img {
+    position: relative;
+}
+.pic_img li {
+    display: none;
+    position: absolute;
+}
+.pic_img li img {
+    width: 350px;
+    height: 270px;
+}
+.pic_opdiv {
+    z-index: 2;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    background: #000;
+    bottom: 0px;
+    opacity: 0.5;
+    -moz-opacity: 0.5;
+    filter: alpha(opacity=50);
+}
+.pic_txt {
+    z-index: 3;
+    position: absolute;
+    height: 30px;
+    width: 60%;
+    left: 10px;
+    bottom: 0px;
+    overflow: hidden;
+}
+.pic_txt li {
+    line-height: 30px;
+    color: #FFF;
+    display: none;
+    position: absolute;
+}
+.pic_txt li a {
+    font-size: 14px;
+    color: #FFF;
+}
+.pic_btn {
+    z-index: 4;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+.pic_btn li {
+    line-height: 20px;
+    background-color: #666;
+    text-align: center;
+    color: #FFF;
+    width: 20px;
+    height: 20px;
+    border-right: 1px solid #FFF;
+    float: left;
+    cursor: pointer;
+}
+.pic_btn li.hover {
+    background-color: #F00;
+}
+</style>
+<script type="text/javascript">
+$(function() {
+    var maxnum = 4; //图片数量
+    var jgtime = 4000; //间隔时间
+    var sulv = 500; //切换时间
+    var num = 0;
+    var timename = window.setInterval(qiehuan, jgtime);
+    $("#img li:eq(0)").css("display", "list-item");
+    $("#txt li:eq(0)").css("display", "list-item");
+    $("#btn li:eq(0)").addClass('hover');
+
+    function qiehuan() {
+        $("#img li:eq(" + num + ")").fadeToggle(sulv);
+        $("#txt li:eq(" + num + ")").fadeToggle(sulv);
+        $("#btn li:eq(" + num + ")").toggleClass("hover");
+        if(num == maxnum - 1) {
+            num = -1;
+        }
+        $("#img li:eq(" + (num + 1) + ")").fadeToggle(sulv);
+        $("#txt li:eq(" + (num + 1) + ")").fadeToggle(sulv);
+        $("#btn li:eq(" + (num + 1) + ")").toggleClass("hover");
+        num++;
+    };
+    $("#btn li").each(function() {
+        $(this).hover(function() {
+            if(num != $(this).index()) {
+                window.clearInterval(timename);
+                $("#img li").stop(true, true);
+                $("#txt li").stop(true, true);
+                num = $(this).index();
+                $("#img li").fadeOut(sulv);
+                $("#txt li").fadeOut(sulv);
+                $("#btn li").removeClass("hover");
+                $("#img li:eq(" + num + ")").fadeIn(sulv);
+                $("#txt li:eq(" + num + ")").fadeIn(sulv);
+                $(this).toggleClass("hover");
+                timename = window.setInterval(qiehuan, jgtime);
+            }
+        }, function() {});
+    });
+});
+</script>
+</head>
+
+<body style="background:#CCC;">
+<div class="pic_div">
+    <div class="pic_img">
+        <ul id="img">
+            <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3" NUM="4" STARTPOS="0" CHANNELCODE="tpxw">
+               <li><a href="<CMSPRO_DOCUMENT FIELD='url'></CMSPRO_DOCUMENT>" target="_blank" ><CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src ='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS></a></li>
+            </CMSPRO_DOCUMENTS>
+        </ul>
+    </div>
+    <div class="pic_opdiv"></div>
+    <div class="pic_txt">
+        <ul id="txt">
+            <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3" NUM="4" STARTPOS="0" CHANNELCODE="tpxw">
+                <li>
+                    <CMSPRO_DOCUMENT FIELD="title" NUM="20" AUTOLINK="true" LINKALT="true" TARGET="_blank">稿件标题</CMSPRO_DOCUMENT>
+                </li>
+            </CMSPRO_DOCUMENTS>
+        </ul>
+    </div>
+    <div class="pic_btn">
+        <ul id="btn">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>

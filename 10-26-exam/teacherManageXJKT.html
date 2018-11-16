@@ -8,7 +8,7 @@
       <tr>
         <td>考试题目</td>
         <td>
-          <input class="tcn-btn-one tcn-btn-one-kstm" type="text" placeholder="政治类">
+          <input id="tcm-input-kstm" class="tcn-btn-one tcn-btn-one-kstm" type="text" placeholder="政治类">
         </td>
       </tr>
       <tr>
@@ -252,8 +252,8 @@
             </tr>
       </table>
   </div>
-  <p class="tcn-p-ts">错误提示</p>
-  <p><button class="tcn-btn-kcwc">完成设置</button></p>
+  <p class="tcn-p-ts tmxjkt-p-ts">错误提示</p>
+  <p><button  class="tcn-btn-kcwc tmxjkt-btn-wcsz">完成设置</button></p>
 </div>
 
 <script type="text/javascript">
@@ -300,11 +300,11 @@
       $(this).parents('.abc-div-bg-02').remove();
     })
 
-    // 点击完成设置
-    $('.tcn-btn-kcwc').on('click',function(){
-      var tsDiv = $('.tcn-p-ts');
+    // 点击课程完成
+    $('.tmxjkt-btn-wcsz').on('click',function(){
+      var tsDiv = $('.tmxjkt-p-ts');
       // 考题题目不能为空
-      if($('.tcn-btn-one-kstm').val() == '')
+      if($('#tcm-input-kstm').val() == '')
       {
         tsDiv.html('考题题目不能为空').show();
       }

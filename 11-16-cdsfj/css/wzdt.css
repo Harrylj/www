@@ -1,0 +1,12 @@
+*{padding:0; margin:0;outline:none;}
+body{font-size:14px;}
+a{color:#000;text-decoration: none; cursor: pointer;}
+a:hover{color:#F00; }
+table{border-collapse:collapse;empty-cells:hide;border-spacing: 1px;width: 100%;}
+td{border: 2px solid white;height: 30px;line-height: 25px;}
+.one{background: #e5f1fd;font-weight: bold;text-align: center;width: 120px;}
+.one a{color: #f76d15;}
+.two{background: #f7f7f7;text-align: center;width: 120px;}
+.two a{color: #086c98;}
+.three{background: #f7f7f7;color: #086c98;padding-left: 10px;}
+.three a{color: #086c98;}

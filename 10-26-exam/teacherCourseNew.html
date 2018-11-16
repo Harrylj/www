@@ -70,7 +70,7 @@
       <tr>
         <td>课程简介</td>
         <td>
-          <textarea class="ca-xjkc-textarea" name="" id="" cols="30" rows="10" placeholder="请简单介绍课程的主要内容"></textarea>
+          <textarea class="ca-xjkc-textarea tcn-all-input-kcjj" name="" id="" cols="30" rows="10" placeholder="请简单介绍课程的主要内容"></textarea>
         </td>
       </tr>
     </table>
@@ -82,7 +82,7 @@
       <tr>
         <td>考试题目</td>
         <td>
-          <input class="tcn-btn-one" type="text" placeholder="政治类">
+          <input id="tcn-input-kstm" class="tcn-btn-one tcn-all-input-kstm" type="text" placeholder="政治类">
         </td>
       </tr>
       <tr>
@@ -326,26 +326,12 @@
             </tr>
       </table>
   </div>
-  <p class="tcn-p-ts">错误提示</p>
-  <p><button class="tcn-btn-kcwc">课程完成</button></p>
+  <p class="tcn-p-ts tcn-all-p-ts">错误提示</p>
+  <p><button class="tcn-btn-kcwc tcn-all-btn-kcwc">课程完成</button></p>
 </div>
 
 <script type="text/javascript">
   $(function () {
-    // 点击提交课程
-    $('.xjkc-btn-tjkc').on('click', function () {
-      var inputDiv = $('.ca-xjkc-textarea'), // 输入框
-        tsDiv = $('.ca-xjkc-ts');  // 提示内容
-      // 为空
-      if (inputDiv.val() == "") {
-        tsDiv.show().html('输入不能为空')
-      }
-      else {
-        tsDiv.hide();
-        alert('提交课程')
-      }
-
-    })
     // select 更改对应分数
     $('.tcn-tmxq-select').change(function () {
       var classSelect = 'tcn-tmxq-select';
@@ -388,13 +374,18 @@
     $('.techaer-course-new').on('click', '.adc-btn-delete', function () {
       $(this).parents('.abc-div-bg-02').remove();
     })
-
-    $('.tcn-btn-kcwc').on('click',function(){
-      var tsDiv = $('.tcn-p-ts');
+    
+    // 点击课程完成
+    $('.tcn-all-btn-kcwc').on('click',function(){
+      var tsDiv = $('.tcn-all-p-ts');
       // 课程简介不能为空
-      if($('.ca-xjkc-textarea').val() == '')
+      if($('.tcn-all-input-kcjj').val() == '')
       {
         tsDiv.html('课程简介不能为空').show();
+      }
+      // 考试题目不能为空
+      else if($('.tcn-all-input-kstm').val() == ''){
+        tsDiv.html('考试题目不能为空').show();
       }
       // 完成
       else

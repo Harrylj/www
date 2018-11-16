@@ -8,7 +8,9 @@ swiper 3.08
 2018-11-12:18:40,---页面结构搭建完成
 
 
-还差css
+
+
+还差1个---答题卡的自动下滑
 
 跳转用localStorage实现,主要是老师的修改课程信息界面
 用window.localStorage.typeNavNum记录状态

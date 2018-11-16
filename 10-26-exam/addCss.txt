@@ -1,22 +1,39 @@
 学生个人中心，其他不用
-1------.csbr-header添加class: csbr-header-info
+1 centerStudent.html
+js------.csbr-header添加class: csbr-header-info
+
 
 // 替换
 // 点击左侧导航栏
         $('.csbl-nav').children('li')
-
-
-         if (thisIndex == '2') {
+JS
+// 点击左侧导航栏
+        $('.csbl-nav').children('li').on('click',function(){
+          var otherFather = $('.csbr-body'),  // 响应处父元素
+              thisIndex = $(this).index(),    // 点击元素的索引值
+              classNavHover = 'csbl-nav-hover',         // 导航栏激活类名
+              classOtherHover = 'csbr-body-list-hover'; // 响应处激活类名
+          if (thisIndex == '2') {
             $('.csbr-header').addClass('csbr-header-info');
           }
           else{
             $('.csbr-header').removeClass('csbr-header-info');
           }
+          $(this).addClass(classNavHover).siblings().removeClass(classNavHover);
+          otherFather.children().eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+          // 调用显示信息管理
+          showXXGL()
+        })
+
+
+
+
 
 2. tecaherCourseDetail.html  头顶图片  把学员中心换成老师中心
-.cs-header-img添加 ct-header-img
+html .cs-header-img添加 ct-header-img
 
-3. addminClass.html  js替换
+3. addminClass.html  
+js替换
 // 点击增加课程,添加课程就是把选择的select的用DIV复制过去
     $('.admin-class').on('click', '.acc-btn-tjkc', function () {
       var htmlSelectOne = $(this).siblings('.acc-btn-tjkc-div').children('.abc-div-bg-left').find("option:selected").val(),
@@ -26,7 +43,8 @@
       console.log(htmlSelectOne, htmlSelectTwo)
     })
 
-4.TeacherCourseNew.html 提交课程按钮去掉
+4.TeacherCourseNew.html 
+HTML   提交课程按钮去掉
 .xjkc-btn-tjkc 删掉
 
 5.sutdentTest.html head引入public.css
@@ -36,7 +54,8 @@
 6.teacherOnline.html head引入public.css
   <link rel="stylesheet" type="text/css" href="css/public.css" />
 
-7. teacherOnline.html js替换
+7. teacherOnline.html 
+js替换
 $('.to-btn-two').on('click', function () {
         $('.to-sure-div').show().siblings().hide();
 })
@@ -44,3 +63,23 @@ $('.to-btn-two').on('click', function () {
 $('.to-btn-two-ok').on('click', function () {
         $('.to-sure-div').show().siblings().hide();
 })
+
+
+8 sutdentTest.html 
+添加js
+      
+      // 答题卡位置随滚动条变化
+      window.onscroll = function(){
+        var a = document.documentElement.scrollTop || document.body.scrollTop;//滚动条y轴上的距离
+        var b = document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度
+        var c = document.documentElement.scrollHeight || document.body.scrollHeight;//可视化的高度与溢出的距离（总高度）
+        var abc = $('.stb-content-test').offset().top;
+        // 若滚动高度大于
+        if(abc >= a){
+          $('.stb-content-answer-div').css('top', aaa - a + 'px')
+          
+        }
+        else{
+          $('.stb-content-answer-div').css('top','0')
+        }
+      }
