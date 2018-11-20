@@ -1,7 +1,6 @@
-*{padding:0; margin:0;outline:none; box-sizing: border-box;}
+*{padding:0; margin:0;outline:none; box-sizing: border-box;letter-spacing: 1px;font-family: "微软雅黑", "黑体", "宋体";}
 body{font-size:12px;background: #F5F5F5; no-repeat center top;}
 a{color:#000;text-decoration: none; cursor: pointer;}
-a:hover{color:#C00; }
 ul,li,ol{list-style-type:none;}
 table{border-collapse:collapse; border-spacing:0;}
 button,select,option{cursor:pointer;}
@@ -101,8 +100,9 @@ a.fontcolor1{color: #c01705;}
 .tz-index{
 	
 }
-
-
+a:hover
+,.tziz-one-ul-div a:hover
+,.tizb-three-list a:hover{color:#C00; }
 
 
 
