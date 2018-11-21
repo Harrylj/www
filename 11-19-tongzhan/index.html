@@ -21,27 +21,6 @@
 
     </style>
     <script type="text/javascript">
-      // 更新时间
-      function startTime() {
-        var today = new Date()
-        var h = today.getHours()
-        var m = today.getMinutes()
-        var s = today.getSeconds()
-        var day = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-        // add a zero in front of numbers<10
-        m = checkTime(m)
-        s = checkTime(s)
-        // document.getElementById('txt').innerHTML = h + ":" + m + ":" + s
-        document.getElementsByClassName('tziht-one')[0].innerHTML = today.getFullYear() + '年' + today.getMonth() + '月' + today.getDate() + '日 ' + h + ":" + m + ":" + s + ' ' + day[today.getDay()];
-        t = setTimeout('startTime()', 500)
-      }
-
-      function checkTime(i) {
-        if(i < 10) {
-          i = "0" + i
-        }
-        return i
-      }
 
       $.ajax({
         url: 'http://wthrcdn.etouch.cn/weather_mini?city=成都',
@@ -55,42 +34,7 @@
   </head>
 
   <body onload="startTime()">
-    <div class="tz-more">
-      <!--获取当前栏目名称-->
-      <CMSPRO_CHANNEL FIELD='channelName'>栏目名称</CMSPRO_CHANNEL>
-      <TABLE>
-
-        <TR>
-
-          <TD>
-
-            当前位置1:
-            <CMSPRO_LOCATION LINK="&gt;" SELFONLY="false" AUTOLINK="true" TARGET="_blank" LINKEXTRA="onclick='alert(1);'" HOMEPAGEDESC="首页">
-
-            </CMSPRO_LOCATION>
-
-          </TD>
-
-        </TR>
-
-        <TR>
-
-          <TD>
-
-            当前位置2:
-            <CMSPRO_LOCATION LINK="&gt;" SELFONLY="false" AUTOLINK="false" TARGET="_blank" LINKEXTRA="onclick='alert(1);'" HOMEPAGEDESC="首页">
-
-            </CMSPRO_LOCATION>
-
-          </TD>
-
-        </TR>
-
-      </TABLE>
-
-    </div>
-
-    <div class="tz-index center">
+		<div class="tz-index center">
       <!--公用顶部-->
       <div class="tzi-header">
         <div class="tzih-top">
@@ -650,7 +594,9 @@
       </div>
       
         <!-- 公用二维码 -->
-      <div class="index-gzh"></div>
+      <div class="index-gzh">
+      	<div class= "index-gzh-div" ><img src="images/exam-ewm.png" alt=""><p>"统战新语"公众号</p></div>
+      </div>
     </div>
 
   </body>
