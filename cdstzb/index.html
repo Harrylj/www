@@ -15,34 +15,12 @@
     <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript" ></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
 
     </style>
     <script type="text/javascript">
-      // 更新时间
-      function startTime() {
-        var today = new Date()
-        var h = today.getHours()
-        var m = today.getMinutes()
-        var s = today.getSeconds()
-        var day = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
-        // add a zero in front of numbers<10
-        m = checkTime(m)
-        s = checkTime(s)
-        // document.getElementById('txt').innerHTML = h + ":" + m + ":" + s
-        document.getElementsByClassName('tziht-one')[0].innerHTML = today.getFullYear() + '年' + today.getMonth() + '月' + today.getDate() + '日 ' + h + ":" + m + ":" + s + ' ' + day[today.getDay()];
-        t = setTimeout('startTime()', 500)
-      }
-
-      function checkTime(i) {
-        if(i < 10) {
-          i = "0" + i
-        }
-        return i
-      }
-
       $.ajax({
         url: 'http://wthrcdn.etouch.cn/weather_mini?city=成都',
         data: "",
@@ -56,38 +34,30 @@
 
   <body onload="startTime()">
     <div class="tz-more">
-      <!--获取当前栏目名称-->
-      <CMSPRO_CHANNEL FIELD='channelName'>栏目名称</CMSPRO_CHANNEL>
-      <TABLE>
+      <div class="tz-more-one">
+        <ul>
+          <li>
+            <CMSPRO_CHANNEL CODE="bbjs" FIELD="channelName" AUTOLINK="true" target="_blank" LINKALT="true">栏目名称</CMSPRO_CHANNEL>
+          </li>
+          <li>
+            <CMSPRO_CHANNEL CODE="ddhz" FIELD="channelName" AUTOLINK="true" target="_blank" LINKALT="true">栏目名称</CMSPRO_CHANNEL>
+          </li>
+        </ul>
+        <p>看得到吗</p>
 
-        <TR>
+        <!--面包屑-->
+        <CMSPRO_LOCATION LINK="&nbsp;&gt;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页"></CMSPRO_LOCATION>
+        <p>15:59</p>
+        <p>16:08</p>
+        <p>2018/11/21</p>
 
-          <TD>
-
-            当前位置1:
-            <CMSPRO_LOCATION LINK="&gt;" SELFONLY="false" AUTOLINK="true" TARGET="_blank" LINKEXTRA="onclick='alert(1);'" HOMEPAGEDESC="首页">
-
-            </CMSPRO_LOCATION>
-
-          </TD>
-
-        </TR>
-
-        <TR>
-
-          <TD>
-
-            当前位置2:
-            <CMSPRO_LOCATION LINK="&gt;" SELFONLY="false" AUTOLINK="false" TARGET="_blank" LINKEXTRA="onclick='alert(1);'" HOMEPAGEDESC="首页">
-
-            </CMSPRO_LOCATION>
-
-          </TD>
-
-        </TR>
-
-      </TABLE>
-
+        <p>16:14</p>
+        <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="1" STARTPOS="0" NUM="" CHILDTYPE="3">
+          <li>
+            <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
+          </li>
+        </CMSPRO_CHANNELS>
+      </div>
     </div>
 
     <div class="tz-index center">
@@ -139,6 +109,33 @@
         <!--.tzih-nav-one-hover:.tzih-nav-one表示激活-->
         <div class="tzih-bottom">
           <div class="tzih-bottom-nav">
+            <!--导航，最大数为10-->
+            <ul class="tzih-nav-one">
+              <li>
+                <a href="/cdstzb/index.shtml" target="_blank" title="ucap">首页</a>
+              </li>
+
+              <li>
+                <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="0" STARTPOS="0" NUM="1" CHILDTYPE="3">
+                  <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
+                </CMSPRO_CHANNELS>
+                
+                <ul class="tzih-nav-two">
+                  <li>
+                    <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="1" STARTPOS="0" NUM="" CHILDTYPE="3">
+                      <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
+                    </CMSPRO_CHANNELS>
+                  </li>
+                </ul
+                <li>
+
+                  <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="0" STARTPOS='1' NUM="" CHILDTYPE="3">
+                    <li>
+                      <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="8">栏目名称</CMSPRO_CHANNEL>
+                      <li>
+                  </CMSPRO_CHANNELS>
+            </ul>
+            <!-- 导航
             <ul class="tzih-nav-one">
               <li>
                 <a class="tzih-bottom tzih-nav-one-hover" href="#">首页</a>
@@ -173,6 +170,7 @@
                 <a class="tzih-bottom" href="#">多党合作</a>
               </li>
             </ul>
+            -->
           </div>
         </div>
       </div>
@@ -648,8 +646,8 @@
           <h2>Copyright 2018 中共成都市委统战部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：四川省成都市蜀锦路59号第三办公区</h2>
         </div>
       </div>
-      
-        <!-- 公用二维码 -->
+
+      <!-- 公用二维码 -->
       <div class="index-gzh"></div>
     </div>
 

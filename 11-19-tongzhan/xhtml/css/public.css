@@ -104,11 +104,7 @@ a:hover
 ,.tziz-one-ul-div a:hover
 ,.tizb-three-list a:hover{color:#C00; }
 
-.tziz-one-ul-div a:hover
-,.tizb-three-list a:hover
-,.infoList a:hover{
-  background-image: url(../images/tz-index-11-hover.png);
-}
+
 
 /*公用底部*/
 .index-footer {
@@ -135,34 +131,10 @@ a:hover
   color: #888888;
   line-height: 40px;
   font-size: 14px;
-  font-weight: 500;
 }
 
-/*公用二维码*/
-.index-gzh {
-  position: fixed;
-  left: 50%;
-  top: 30%;
-  margin-left: 570px;
-  width: 150px;
-  background-color: white;
-  padding: 15px 20px 10px 15px;
-}
 
-.index-gzh .index-gzh-div {
-  position: relative;
-}
 
-.index-gzh .index-gzh-div img {
-  width: 100%;
-}
 
-.index-gzh .index-gzh-div p {
-  padding-top: 5px;
-  color: #888888;
-  line-height: 20px;
-  text-align: center;
-  font-size: 12px;
-}
 
 
