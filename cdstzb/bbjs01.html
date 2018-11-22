@@ -20,10 +20,10 @@
   </head>
 
   <body>
- 
+
     <div class="tz-index">
       <div>
-              本部介绍01
+        本部介绍01
         <p>上一级</p>
         <CMSPRO_CHANNELS CODE="bbjs01" CHILDLEVEL="-1" STARTPOS="0" NUM="" CHILDTYPE="3">
           <li>
@@ -37,20 +37,42 @@
           </li>
         </CMSPRO_CHANNELS>
         <p>1111111111111</p>
-        <CMSPRO_WEBSITE FIELD="name" CODE="cdstzb" NUM= "0" DATEFORMAT="" 
+        <CMSPRO_WEBSITE FIELD="name" CODE="cdstzb" NUM="0" DATEFORMAT="" AUTOLINK="true" TARGET="_blank" LINKALT="true" LINKALTTEXT="ucap" PUBLISHNAME='首页' TRUNCATEDTIPS="Text">
 
-       AUTOLINK="true" TARGET= "_blank" LINKALT="true" LINKALTTEXT="ucap"    
+        </CMSPRO_WEBSITE>
 
-       PUBLISHNAME='首页'  
-
-       TRUNCATEDTIPS="Text" > 
-
-       </CMSPRO_WEBSITE>
-
-
+        <p>获取列表</p>
+        <table>
+          <tr>
+            <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1" NUM="108" STARTPOS="0" PAGESIZE="5" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div">
+              <td>
+                (
+                <CMSPRO_ROWNO>
+                  当前记录序号
+                </CMSPRO_ROWNO>
+                )
+              </td>
+              <td>
+                <CMSPRO_DOCUMENT FIELD="title" NUM="2" AUTOLINK="true" LINKALT="true" LINKALTTEXT="test" >
+                  标题
+                </CMSPRO_DOCUMENT>
+              </td>
+              <td>
+                <CMSPRO_DOCUMENT FIELD="createdTime" DATEFORMAT="yyyy-MM-dd">
+                  生成时间
+                </CMSPRO_DOCUMENT>
+              </td>
+              <CMSPRO_NOTEXISTSDATA>
+                <TD>
+                  ddd
+                </TD>
+              </CMSPRO_NOTEXISTSDATA>
+            </CMSPRO_DOCUMENTS>
+            </td>
+          </tr>
+        </table>
       </div>
     </div>
-    
 
   </body>
 
