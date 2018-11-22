@@ -166,3 +166,16 @@ a:hover
 }
 
 
+.iframe-top-header{
+	position: relative;
+    background-color: transparent;
+	height: 700px;
+}
+.z-index-more{
+	z-index: 99999;
+	border: 1px solid red;;
+}
+.iframe-bottom-footer{
+	height: 260px;
+	background-color: white;
+}

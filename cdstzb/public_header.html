@@ -45,12 +45,20 @@
         }
         return i
       }
-
+	    $.ajax({
+	        url: 'http://wthrcdn.etouch.cn/weather_mini?city=成都',
+	        data: "",
+	        dataType: "jsonp",
+	        success: function(data) {
+	          console.log(data, data.data.city, data.data.wendu, data.data.forecast[0].fengxiang);
+	        }
+	      })
     </script>
   </head>
 
   <body onload="startTime()" >
-    <div>
+  	<!--公用顶部-->
+    <div class="tzi-header">
       <div class="tzih-top">
           <div class="tziht-one fl">
             2018年8月29日 16:07:20 星期三
@@ -134,9 +142,11 @@
        // 点击导航栏
       $('.tzih-nav-one').children('li').on('mouseover', function() {
         $(this).children('.tzih-nav-two').show();
+        parent.$(".iframe-top-header").addClass('z-index-more');
       })
       $('.tzih-nav-one').children('li').on('mouseout', function() {
         $(this).children('.tzih-nav-two').hide();
+        parent.$(".iframe-top-header").removeClass('z-index-more');
       })
 
     })
