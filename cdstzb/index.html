@@ -28,11 +28,10 @@
 
   <body>
     <div class="tz-index center">
-      
       <!--<iframe frameborder="0" scrolling="no" src="<CMSPRO_CHANNEL CODE='top' FIELD='url'></CMSPRO_CHANNEL>" width="100%" height="100%"></iframe>-->
-      <iframe class="iframe-top-header" allowtransparency="true" frameborder="0" scrolling="no" src="public_header.html" width="100%"></iframe>
-
-
+      <iframe class="iframe-top-header" allowtransparency="true" frameborder="0" scrolling="no" src="<CMSPRO_CHANNEL CODE='indexTopNav'  FIELD='url' ></CMSPRO_CHANNEL>" width="100%"></iframe>
+      
+      
       <!--主要内容-->
       <div class="tzi-body public-body">
 				<div class="tzib-one">
@@ -46,12 +45,16 @@
 											<li class=" on"></li>
 											<li class=" "></li>
 											<li class=" "></li>
+											<li class=" "></li>
+											<li class=" "></li>
 										</ul>
 									</div>
 									<div class="bd">
 										<div class="tempWrap">
 											<ul>
-												<li><img src="images/index-slide-01.jpg"></li>
+												<a href="#"><li><img src="images/index-slide-01.jpg"><p>111</p></li></a>
+<a href="#"><li><img src="images/index-slide-01.jpg"><p>111</p></li></a>
+<a href="#"><li><img src="images/index-slide-01.jpg"><p>111</p></li></a>
 
 												<li><img src="images/index-slide-01.jpg"></li>
 
@@ -65,10 +68,14 @@
 						</div>
 					</div>
 					<div class="tzib-one-right fr">
-						<a href="#">
-							<h2>要闻</h2></a>
-						<a href="#">
-							<h1 class="fontht">市委统战部学习传达市委十三届四次全会精神</h1></a>
+						<a href="<CMSPRO_CHANNEL CODE='yaowen'  FIELD='url' ></CMSPRO_CHANNEL>">
+							<h2><CMSPRO_CHANNEL CODE='yaowen'  FIELD='channelName' ></CMSPRO_CHANNEL></h2>
+						</a>
+						<CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="9" NUM="1" STARTPOS="0" PAGESIZE="0" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div">
+						<a href="<CMSPRO_DOCUMENT FIELD='url' NUM=''></CMSPRO_DOCUMENT>" target="_blank" >
+							<h1 class="fontht"><CMSPRO_DOCUMENT FIELD="title" NUM=""></CMSPRO_DOCUMENT></h1>
+						</a>
+						</CMSPRO_DOCUMENTS>
 						<div class="tziz-one-ul-div">
 							<ul>
 								<li>
