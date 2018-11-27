@@ -8,7 +8,7 @@ select{appearance:none;-moz-appearance:none;-webkit-appearance:none;}
 input,img,select,iframe{border:none;}
 .fl{float:left;}
 .fr{float:right;}
-.clear{clear:both;}
+.clear{clear:both;}\n
 .clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
 .clearfix{zoom:1;height: auto !important;}
 .hidd{overflow:hidden;}
@@ -125,10 +125,6 @@ a:hover
   margin-top: -29px;
   width: 50px;
   height: 58px;
-  background-image: url(../images/exam-01.png);
-  background-position: center center;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
 }
 
 .index-footer h2 {
@@ -168,8 +164,9 @@ a:hover
 
 .iframe-top-header{
 	position: relative;
-    background-color: transparent;
+  background-color: transparent;
 	height: 700px;
+	
 }
 .z-index-more{
 	z-index: 99999;

@@ -18,131 +18,119 @@
     <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
-			html, body {
-				background-color: white;
-			}
+      html,
+      body {
+        background-color: white;
+      }
     </style>
     <script type="text/javascript">
-
     </script>
   </head>
 
-  <body >
-     <div class="tzi-footer">
-        <div class="tzif-top">
-          <div class="filter-box select-02">
-            <div class="filter-box  filter-box-02">
-              <div class="filter-text">
-                <input class="filter-title" type="text" readonly placeholder="pleace select" />
-                <i class="icon icon-filter-arrow"></i>
-              </div>
-              <select name="filter">
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="1" STARTPOS="0">
+  <body>
+    <div class="tzi-footer iframe-bottom-footer">
+      <div class="tzif-top">
+        <div class="filter-box select-02">
+          <div class="filter-box  filter-box-02">
+            <div class="filter-text">
+              <input class="filter-title" type="text" readonly placeholder="pleace select" />
+              <i class="icon icon-filter-arrow"></i>
+            </div>
+            <select name="filter">
+              <!--<CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
+                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0">
                       <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>" selected="selected"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
                    </CMSPRO_DOCUMENTS>
-                 </CMSPRO_CHANNELS>
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="" STARTPOS="1">
-                    <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                  </CMSPRO_DOCUMENTS>
-                </CMSPRO_CHANNELS>
-              </select>
-              <!--<select name="filter">
+                 </CMSPRO_CHANNELS>-->
+              <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
+                <option value="#" selected><CMSPRO_CHANNEL CODE=''  FIELD='' >栏目名称</CMSPRO_CHANNEL></option>
+                <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="" STARTPOS="0">
+                  <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
+                </CMSPRO_DOCUMENTS>
+              </CMSPRO_CHANNELS>
+            </select>
+            <!--<select name="filter">
                 <option value="https://www.baidu.com/" selected>上级统战机关</option>
                 <option value="https://www.baidu.com/"> 副省级城市统战部</option>
                 <option value="https://www.baidu.com/">市级统战系统</option>
                 <option value="https://www.baidu.com/">区市县</option>
                 <option value="https://www.baidu.com/">其他链接</option>
               </select>-->
-            </div>
           </div>
-          <div class="filter-box  filter-box-03">
-            <div class="filter-text">
-              <input class="filter-title" type="text" readonly placeholder="pleace select" />
-              <i class="icon icon-filter-arrow"></i>
-            </div>
-            <select name="filter">
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="1" STARTPOS="0">
-                      <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>" selected="selected"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                   </CMSPRO_DOCUMENTS>
-                 </CMSPRO_CHANNELS>
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="" STARTPOS="1">
-                    <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                  </CMSPRO_DOCUMENTS>
-                </CMSPRO_CHANNELS>
-              </select>
+        </div>
+        <div class="filter-box  filter-box-03">
+          <div class="filter-text">
+            <input class="filter-title" type="text" readonly placeholder="pleace select" />
+            <i class="icon icon-filter-arrow"></i>
           </div>
-          <div class="filter-box  filter-box-04">
-            <div class="filter-text">
-              <input class="filter-title" type="text" readonly placeholder="pleace select" />
-              <i class="icon icon-filter-arrow"></i>
-            </div>
-            <select name="filter">
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="1" STARTPOS="0">
-                      <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>" selected="selected"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                   </CMSPRO_DOCUMENTS>
-                 </CMSPRO_CHANNELS>
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="" STARTPOS="1">
-                    <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                  </CMSPRO_DOCUMENTS>
-                </CMSPRO_CHANNELS>
-              </select>
+          <select name="filter">
+            <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='1' NUM="1" CHILDTYPE="3">
+              <option value="#" selected><CMSPRO_CHANNEL CODE=''  FIELD='' >栏目名称</CMSPRO_CHANNEL></option>
+              <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="" STARTPOS="0">
+                <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
+              </CMSPRO_DOCUMENTS>
+            </CMSPRO_CHANNELS>
+          </select>
+        </div>
+        <div class="filter-box  filter-box-04">
+          <div class="filter-text">
+            <input class="filter-title" type="text" readonly placeholder="pleace select" />
+            <i class="icon icon-filter-arrow"></i>
           </div>
-          <div class="filter-box  filter-box-05">
-            <div class="filter-text">
-              <input class="filter-title" type="text" readonly placeholder="pleace select" />
-              <i class="icon icon-filter-arrow"></i>
-            </div>
-            <select name="filter">
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="1" STARTPOS="0">
-                      <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>" selected="selected"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                   </CMSPRO_DOCUMENTS>
-                 </CMSPRO_CHANNELS>
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="" STARTPOS="1">
-                    <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                  </CMSPRO_DOCUMENTS>
-                </CMSPRO_CHANNELS>
-              </select>
+          <select name="filter">
+            <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='2' NUM="1" CHILDTYPE="3">
+              <option value="#" selected><CMSPRO_CHANNEL CODE=''  FIELD='' >栏目名称</CMSPRO_CHANNEL></option>
+              <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="" STARTPOS="0">
+                <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
+              </CMSPRO_DOCUMENTS>
+            </CMSPRO_CHANNELS>
+          </select>
+        </div>
+        <div class="filter-box  filter-box-05">
+          <div class="filter-text">
+            <input class="filter-title" type="text" readonly placeholder="pleace select" />
+            <i class="icon icon-filter-arrow"></i>
           </div>
-          <div class="filter-box  filter-box-06">
-            <div class="filter-text">
-              <input class="filter-title" type="text" readonly placeholder="pleace select" />
-              <i class="icon icon-filter-arrow"></i>
-            </div>
-            <select name="filter">
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="1" STARTPOS="0">
-                      <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>" selected="selected"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                   </CMSPRO_DOCUMENTS>
-                 </CMSPRO_CHANNELS>
-                <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='0' NUM="1" CHILDTYPE="3">
-                  <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="" STARTPOS="1">
-                    <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
-                  </CMSPRO_DOCUMENTS>
-                </CMSPRO_CHANNELS>
-              </select>
+          <select name="filter">
+            <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='3' NUM="1" CHILDTYPE="3">
+              <option value="#" selected><CMSPRO_CHANNEL CODE=''  FIELD='' >栏目名称</CMSPRO_CHANNEL></option>
+              <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="" STARTPOS="0">
+                <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
+              </CMSPRO_DOCUMENTS>
+            </CMSPRO_CHANNELS>
+          </select>
+        </div>
+        <div class="filter-box  filter-box-06">
+          <div class="filter-text">
+            <input class="filter-title" type="text" readonly placeholder="pleace select" />
+            <i class="icon icon-filter-arrow"></i>
           </div>
+          <select name="filter">
+            <CMSPRO_CHANNELS CODE="publicFooter" CHILDLEVEL="1" STARTPOS='4' NUM="1" CHILDTYPE="3">
+              <option value="#" selected><CMSPRO_CHANNEL CODE=''  FIELD='' >栏目名称</CMSPRO_CHANNEL></option>
+              <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="" STARTPOS="0">
+                <option value="<CMSPRO_DOCUMENT FIELD='subTitle' NUM=''>子标题</CMSPRO_DOCUMENT>"><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></option>
+              </CMSPRO_DOCUMENTS>
+            </CMSPRO_CHANNELS>
+          </select>
+        </div>
 
-          <div class="clear"></div>
-        </div>
-        <div class="tzif-body index-footer">
-          <div class="title-img"></div>
-          <h2> 中共成都市委统战部</h2>
-          <h2>Copyright 2018 中共成都市委统战部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：四川省成都市蜀锦路59号第三办公区</h2>
-        </div>
+        <div class="clear"></div>
       </div>
+      <div class="tzif-body index-footer">
+        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="2" CHANNELCODE="publicFooter">
+          <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+        </CMSPRO_DOCUMENTS>
+        <CMSPRO_DOCUMENTS CHANNELCODE="publicFooter" DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="2" STARTPOS="0">
+          <h2><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></h2>    
+        </CMSPRO_DOCUMENTS>
+      </div>
+    </div>
 
   </body>
   <script type="text/javascript">
     $(function() {
-     $('.filter-box-02').selectFilter({
+      $('.filter-box-02').selectFilter({
         callBack: function(val) {
           window.open(val);
           //返回选择的值

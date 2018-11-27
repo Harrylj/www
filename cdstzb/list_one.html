@@ -20,40 +20,27 @@
   </head>
 
   <body>
-
+ 
     <div class="public-body tz-index">
-      <p>list_two.html</p>
+      <p>list_one.html</p>
       <h1><CMSPRO_CHANNEL FIELD="channelName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
       <!-- 公共头部 begin -->
-      <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+        <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
       <!-- 公共头部 end -->
-      
-      <CMSPRO_CHANNELS CODE='' CHILDLEVEL='1' STARTPOS='0' NUM='' CHILDTYPE='3'>
-        <div class="public-body">
-          <h1>
-            <a href="<CMSPRO_CHANNEL CODE='' FIELD='url'></CMSPRO_CHANNEL>" target="_blank">
-              <CMSPRO_CHANNEL CODE='' FIELD="channelName">栏目名称</CMSPRO_CHANNEL>
-            </a>
-            <CMSPRO_CHANNEL FIELD='channelName' TARGET='_blank' LINKALT='true' AUTOLINK='true'>栏目名称</CMSPRO_CHANNEL>
-          </h1>
-          <p>
-            <ul>
-              <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="7" STARTPOS="0" PAGESIZE="0" CHANNELCODE="" ORDER="PUBLISHED_TIME  desc">
-                <li style="color: red;">
-                  <span><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="MM-dd">12-12</CMSPRO_DOCUMENT></span>
-                  <CMSPRO_DOCUMENT FIELD="title" NUM="48" AUTOLINK="true" LINKALT="true" LINKALTTEXT="">标题</CMSPRO_DOCUMENT>
-                  <CMSPRO_NOTEXISTSDATA>&nbsp;</CMSPRO_NOTEXISTSDATA>
-                </li>
-              </CMSPRO_DOCUMENTS>
-            </ul>
-          </p>
-        </div>
+      <CMSPRO_CHANNELS CODE='' CHILDLEVEL ='1' STARTPOS='0' NUM='' CHILDTYPE='3'>
+      <li>
+      <a href="<CMSPRO_CHANNEL CODE='' FIELD='url'></CMSPRO_CHANNEL>" target="_blank">
+      <img src="<CMSPRO_CHANNEL CODE='' LOGOINDEX='0'>栏目标题</CMSPRO_CHANNEL>" /><CMSPRO_CHANNEL CODE='' FIELD="channelName">栏目名称</CMSPRO_CHANNEL>
+      </a>
+      <CMSPRO_CHANNEL FIELD='channelName' TARGET='_blank' LINKALT='true' AUTOLINK='true'>栏目名称</CMSPRO_CHANNEL>
+      </li>
       </CMSPRO_CHANNELS>
-
+      
       <!-- 公共底部 begin -->
-      <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+        <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
       <!-- 公共底部 end -->
     </div>
+    
 
   </body>
 
