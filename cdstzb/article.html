@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
     <title>
-      文章列表
+      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
     </title>
     <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
     <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
@@ -18,247 +18,56 @@
     <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
-      table td{
-        border: 1px solid #CCCCCC;
-      }
     </style>
     <script type="text/javascript">
     </script>
   </head>
 
-  <body>
-    <div class="article">
-      <p> 内容在哪里啊</p>
-
-      <table width="1002" border="0" cellspacing="0" cellpadding="0" align="center">
-
-        <tr>
-
-          <td>
-
-            <CMSPRO_INCLUDE NAME="_channel" PATHTYPE="1" ISDYNAMIC="true">
-
-              <CMSPRO_CHANNELS CODE="" CHILDLEVEL="1" STARTPOS="1" NUM="2" CHILDTYPE="0">
-
-                <CMSPRO_EXISTSDATA>
-
-                  <CMSPRO_CHANNEL FIELD="channelName" AUTOLINK="true" NUM="3" TARGET="_blank" DATEFORMAT="" LINKTYPE="">
-
-                  </CMSPRO_CHANNEL>
-
-                </CMSPRO_EXISTSDATA>
-
-                <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="1" NUM="8" STARTPOS="1">
-
-                  <CMSPRO_RECORD NUM="4" SUPPLEMENT="&lt;TD&gt;&lt;/TD&gt;">
-
-                    <TD>
-
-                      (
-
-                      <CMSPRO_ROWNO>
-
-                        当前记录序号
-
-                      </CMSPRO_ROWNO>
-
-                      )
-
-                    </td>
-
-                    <TD>
-
-                      (
-
-                      <CMSPRO_NEWICO FIELD="createdTime" TIME="1[h]" TYPE="TEXT" TYPEVALUE="新">
-
-                      </CMSPRO_NEWICO>
-
-                      )
-
-                    </td>
-
-                    <td>
-
-                      <CMSPRO_DOCUMENT FIELD="title" NUM="2" AUTOLINK="true" LINKALT="true" LINKALTTEXT="asdfas" TRUNCATEDTIP="...">
-
-                        标题
-
-                      </CMSPRO_DOCUMENT>
-
-                    </td>
-
-                    <td>
-
-                      <CMSPRO_DOCUMENT FIELD="createdTime" DATEFORMAT="yyyy-MM-dd">
-
-                        生成时间
-
-                      </CMSPRO_DOCUMENT>
-
-                    </td>
-
-                  </CMSPRO_RECORD>
-
-
-
-                </CMSPRO_DOCUMENTS>
-
-              </CMSPRO_CHANNELS>
-
-            </CMSPRO_INCLUDE>
-
-          </td>
-
-        </tr>
-
-      </table>
-
-      <CMSPRO_INCLUDE NAME="_document" PATHTYPE="1" ISDYNAMIC="true">
-
-        <table border="0" cellspacing="0" cellpadding="0">
-
-          <tr>
-
-            <td>
-
-              <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="1" NUM="8" STARTPOS="1">
-
-                <CMSPRO_RECORD NUM="4" SUPPLEMENT="&lt;TD&gt;&lt;/TD&gt;">
-
-                  <TD>
-
-                    (
-
-                    <CMSPRO_ROWNO>
-
-                      当前记录序号
-
-                    </CMSPRO_ROWNO>
-
-                    )
-
-                  </td>
-
-                  <TD>
-
-                    (
-
-                    <CMSPRO_NEWICO FIELD="createdTime" TIME="1[h]" TYPE="TEXT" TYPEVALUE="新">
-
-                    </CMSPRO_NEWICO>
-
-                    )
-
-                  </td>
-
-                  <td>
-
-                    <CMSPRO_DOCUMENT FIELD="title" NUM="2" AUTOLINK="true" LINKALT="true" LINKALTTEXT="asdfas" TRUNCATEDTIP="...">
-
-                      标题
-
-                    </CMSPRO_DOCUMENT>
-
-                  </td>
-
-                  <td>
-
-                    <CMSPRO_DOCUMENT FIELD="createdTime" DATEFORMAT="yyyy-MM-dd">
-
-                      生成时间
-
-                    </CMSPRO_DOCUMENT>
-
-                  </td>
-
-                </CMSPRO_RECORD>
-
-
-              </CMSPRO_DOCUMENTS>
-
-      </CMSPRO_INCLUDE>
-
-      </td>
-
-      </tr>
-
-      </table>
-
-      <CMSPRO_INCLUDE NAME="_appendix" PATHTYPE="1" ISDYNAMIC="true">
-
-        <CMSPRO_APPENDIXS MODE="ALL" STARTPOS="0" NUM="20">
-
-          <CMSPRO_RECORD NUM="3" SUPPLEMENT="&lt;TD&gt;&lt;/TD&gt;">
-
-            <CMSPRO_EXISTSDATA>yufgf</CMSPRO_EXISTSDATA>
-
-            <TD>
-
-              <CMSPRO_ROWNO>
-
-                当前记录序号
-
-              </CMSPRO_ROWNO>
-
-              <CMSPRO_APPENDIX FIELD="title" AUTOLINK="true" TARGET="_blank" LINKALT="true" LINKALTTEXT="rrr" LINKEXTRA="onclick='jaadsfsd:dsfdsfe()'">
-
-              </CMSPRO_APPENDIX>
-
-            </TD>
-
-          </CMSPRO_RECORD>
-
-
-
-        </CMSPRO_APPENDIXS>
-
-      </CMSPRO_INCLUDE>
-
-      <table height="100%" width="100%">
-
-        <tr>
-
-          <td align="center">栏目名称：
-
-            <CMSPRO_DOCUMENT FIELD="CHANNELNAME"></CMSPRO_DOCUMENT>
-
-          </td>
-
-          <tr>
-
-            <tr>
-
-              <td align="center">站点名称：
-
-                <CMSPRO_DOCUMENT FIELD="SITENAME">
-
-                </CMSPRO_DOCUMENT>
-
-              </td>
-
-              <tr>
-
-                <tr>
-
-                  <td align="center">发布时间：
-
-                    <CMSPRO_DOCUMENT FIELD="createdTime" DATEFORMAT="yyyy年MM月dd日">时间</CMSPRO_DOCUMENT>
-
-                  </td>
-
-                  <tr>
-
-                    <tr>
-
-                      <td height="100" valign="top">
-
-                        <CMSPRO_DOCUMENT FIELD="content">内容</CMSPRO_DOCUMENT>
-                      </td>
-
-                      <tr>
-
-      </table>
+  <body class="body-bg-article">
+    <div class="article center">
+      <!-- 公共头部 begin -->
+        <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!-- 公共头部 end -->
+      <div class="tzi-body public-body">
+        <div class="ab-one">
+<!--      <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>-->
+          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION> 
+        </div>
+        <div class="ab-content-div">
+          <h1 class="abc-title fontst"><UCAPTITLE><CMSPRO_DOCUMENT FIELD="title">信息标题</CMSPRO_DOCUMENT></UCAPTITLE></h1>
+          <div class="abc-content">
+            <div class="abcc-header">
+              <div class="abcch-left fl">
+                <!--<span>2018-08-09</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>民盟中央网站</span>-->
+                <span><PUBLISHTIME><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2014-12-12</CMSPRO_DOCUMENT></PUBLISHTIME></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><CMSPRO_DOCUMENT FIELD='source'>来源</CMSPRO_DOCUMENT></span>
+              </div>
+              <div class="abcch-right fr">
+                <a class="abc-a-fzlj" href="#">复制链接</a>
+                <a class="abc-a-dywb" href="#">打印文本</a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!-- 正文 -->
+            <div class="abcc-body">
+                            <!--正文内容-->
+              <UCAPCONTENT><CMSPRO_DOCUMENT FIELD="content"> 内容 </CMSPRO_DOCUMENT></UCAPCONTENT>
+            </div>
+            <!--翻页-->
+            <div class="abcc-footer">
+              <ul>
+                <li>上一篇：<CMSPRO_DOCUMENTNAVIGATION TYPE="PREV">上篇</CMSPRO_DOCUMENTNAVIGATION></li>
+                <li>下一篇：<CMSPRO_DOCUMENTNAVIGATION TYPE="NEXT">下篇</CMSPRO_DOCUMENTNAVIGATION></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 公共底部 begin -->
+        <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!-- 公共底部 end -->
+      <!-- 公共二维码 begin -->
+        <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!-- 公共二维码 end -->
 
     </div>
   </body>

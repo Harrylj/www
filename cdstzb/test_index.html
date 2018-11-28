@@ -33,78 +33,20 @@
   </head>
 
   <body>
-    <div class="tz-more">
-      <div class="tz-more-one">
-        <ul>
-          <li>
-            <CMSPRO_CHANNEL CODE="bbjs" FIELD="channelName" AUTOLINK="true" target="_blank" LINKALT="true">栏目名称</CMSPRO_CHANNEL>
-          </li>
-          <li>
-            <CMSPRO_CHANNEL CODE="ddhz" FIELD="channelName" AUTOLINK="true" target="_blank" LINKALT="true">栏目名称</CMSPRO_CHANNEL>
-          </li>
-        </ul>
-        <p>看得到吗</p>
-
-        <!--面包屑-->
-        <CMSPRO_LOCATION LINK="&nbsp;&gt;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页"></CMSPRO_LOCATION>
-        <p>15:59</p>
-        <p>16:08</p>
-
-
-        <p>16:39</p>
-
-
-                
-        <p>16:14</p>
-        <p>上一级</p>
-        <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="-1" STARTPOS="0" NUM="" CHILDTYPE="3">
-          <li>
-            <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
-          </li>
-        </CMSPRO_CHANNELS>
+    <div class="tz-more center">
+      <h1><CMSPRO_CHANNEL FIELD="channelName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+      <!-- 公共头部 begin -->
+        <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!-- 公共头部 end -->
+      <div class="tzi-body public-body">
         
-        <p>获取子栏目列表，站点不可用</p>
-        <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="1" STARTPOS="0" NUM="" CHILDTYPE="3">
-          <li>
-            <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
-          </li>
-        </CMSPRO_CHANNELS>
-        
-        <p>获取同级栏目</p>
-        <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="0" STARTPOS="0" NUM="" CHILDTYPE="3">
-          <li>
-            <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
-          <li>
-       </CMSPRO_CHANNELS>
-       
-       <p>测试下导航栏</p>
-        
-        <ul class="tzih-nav-one">
-              <li>
-                <a href="/cdstzb/index.shtml" target="_blank" title="ucap">首页</a>
-              </li>
-
-              <li>
-                <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="0" STARTPOS="0" NUM="1" CHILDTYPE="3">
-                  <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
-                </CMSPRO_CHANNELS>
-                
-                <ul class="tzih-nav-two">
-                  <li>
-                    <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="1" STARTPOS="0" NUM="" CHILDTYPE="3">
-                      <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
-                    </CMSPRO_CHANNELS>
-                  </li>
-                </ul
-                <li>
-
-                  <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="0" STARTPOS='1' NUM="" CHILDTYPE="3">
-                    <li>
-                      <CMSPRO_CHANNEL FIELD="channelName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="8">栏目名称</CMSPRO_CHANNEL>
-                      <li>
-                  </CMSPRO_CHANNELS>
-            </ul>
       </div>
+      <!-- 公共底部 begin -->
+        <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!-- 公共底部 end -->
+      <!-- 公共二维码 begin -->
+        <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!-- 公共二维码 end -->
     </div>
 
   </body>

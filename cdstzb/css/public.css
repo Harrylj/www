@@ -115,6 +115,9 @@ a:hover
   background-image: url(../images/tz-index-11-hover.png);
 }
 
+.tzih-bottom a:hover{
+  color: white!important;
+}
 /*公用底部*/
 .index-footer {
   position: relative;
@@ -170,7 +173,7 @@ a:hover
 .iframe-top-header{
 	position: relative;
   background-color: transparent;
-	height: 700px;
+	/*height: 700px;*/
 	
 }
 .z-index-more{
@@ -179,4 +182,7 @@ a:hover
 .iframe-bottom-footer{
 	height: 260px;
 	background-color: white;
+}
+.body-bg-article{
+  background-color: #5F5F5F;
 }

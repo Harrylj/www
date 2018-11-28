@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+      html,
+      body {
+        background-color: white;
+      }
+    </style>
+    <script type="text/javascript">
+    </script>
+  </head>
+
+  <body>
+    <div class="index-gzh">
+      <div class="index-gzh-div">
+        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="publicEWM">
+          <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+          <p><CMSPRO_DOCUMENT FIELD="title" NUM="12">稿件标题</CMSPRO_DOCUMENT></p>
+        </CMSPRO_DOCUMENTS>
+      </div>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    $(function() {
+      $('.filter-box-02').selectFilter({
+        callBack: function(val) {
+          window.open(val);
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-03').selectFilter({
+        callBack: function(val) {
+          window.open(val);
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-04').selectFilter({
+        callBack: function(val) {
+          window.open(val);
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-05').selectFilter({
+        callBack: function(val) {
+          window.open(val);
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-06').selectFilter({
+        callBack: function(val) {
+          window.open(val);
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+    })
+  </script>
+
+</html>
