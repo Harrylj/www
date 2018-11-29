@@ -39,10 +39,12 @@ input,img,select,iframe{border:none;}
 .margtop10{ margin-top:10px;}
 .margtop15{ margin-top:15px;}
 .margtop20{ margin-top:20px;}
+.margright0{ margin-right:0px;}
 .margright5{ margin-right:5px;}
 .margright10{ margin-right:10px;}
 .margright15{ margin-right:15px;}
 .margright20{ margin-right:20px;}
+.margleft0{ margin-left:0px;}
 .margleft5{ margin-left:5px;}
 .margleft10{ margin-left:10px;}
 .margleft15{ margin-left:15px;}
@@ -60,6 +62,7 @@ input,img,select,iframe{border:none;}
 .paddlr10{ padding:0 10px 0 10px;}
 .paddlr15{ padding:0 15px 0 15px;}
 .paddlr20{ padding:0 20px 0 20px;}
+.paddlr33{ padding:0 33px 0 33px;}
 .paddleft5{ padding-left:5px;}
 .paddleft10{ padding-left:10px;}
 .paddleft15{ padding-left:15px;}
@@ -187,4 +190,10 @@ a:hover
 }
 .body-bg-article{
   background-color: #5F5F5F;
+}
+.tzih-nav-one .tzih-nav-one-more a{
+  padding-right: 20px;
+  background-image: url(../images/tz-index-71.png);
+  background-repeat: no-repeat;
+  background-position: 92% center;
 }

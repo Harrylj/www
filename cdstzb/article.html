@@ -18,20 +18,57 @@
     <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
+
     </style>
     <script type="text/javascript">
+      // 内容页上一篇下一篇功能;_nNowPageID当前信息ID,suffixName后缀名
+    function ContentUporNext(_nNowPageID, _target, _type) {
+      if(!content_str) return false;
+      if(content_str.lastIndexOf(",") == content_str.length - 1) {
+        content_str = content_str.substring(0, content_str.length - 1);
+      }
+      var tst = content_str.split(",");
+      for(var i = 0; i < tst.length; i++) {
+        var iscan = tst[i].indexOf(_nNowPageID + ":");
+        if(iscan != -1) {
+          if(i == 0) { ///此时没有上一篇
+            var prevReg = /^[PREV]|[prev]$/;
+            if("PREV" != _type) {
+              var content_tst = tst[i + 1].split(":");
+              document.write("<a href='" + content_tst[2] + "' target='" + _target + "'>" + content_tst[1] + "<FONT face=Webdings>4</FONT></a>");
+            }
+          } else if(i == tst.length - 1) { //此时没有下一篇
+            if("NEXT" != _type) {
+              var content_tst = tst[i - 1].split(":");
+              document.write("<a href='" + content_tst[2] + "' target='" + _target + "'><FONT face=Webdings>3</FONT>" + content_tst[1] + "</a>");
+            }
+          } else {
+            if("PREV" == _type) {
+              var content_up = tst[i - 1].split(":");
+              document.write("<a href='" + content_up[2] + "' target='" + _target + "'><FONT face=Webdings>3</FONT>" + content_up[1] + "</a>&nbsp;&nbsp;&nbsp;&nbsp;");
+            }
+            if("NEXT" == _type) {
+              var content_next = tst[i + 1].split(":");
+              document.write("<a href='" + content_next[2] + "' target='" + _target + "'>" + content_next[1] + "<FONT face=Webdings>4</FONT></a>");
+            }
+          }
+          break;
+        }
+      }
+    }
+    console.log(ContentUporNext('44d0dece4c924cc39425ac23a8853de7','_self','NEXT'))
     </script>
   </head>
 
   <body class="body-bg-article">
     <div class="article center">
       <!-- 公共头部 begin -->
-        <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
       <!-- 公共头部 end -->
       <div class="tzi-body public-body">
         <div class="ab-one">
-<!--      <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>-->
-          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION> 
+          <!--      <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>-->
+          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
         </div>
         <div class="ab-content-div">
           <h1 class="abc-title fontst"><UCAPTITLE><CMSPRO_DOCUMENT FIELD="title">信息标题</CMSPRO_DOCUMENT></UCAPTITLE></h1>
@@ -43,35 +80,42 @@
               </div>
               <div class="abcch-right fr">
                 <a class="abc-a-fzlj" href="#">复制链接</a>
-                <a class="abc-a-dywb" href="#">打印文本</a>
+                <a class="abc-a-dywb" href="#" onclick="window.print();" style="cursor: hand">打印文本</a>
               </div>
               <div class="clear"></div>
             </div>
             <!-- 正文 -->
             <div class="abcc-body">
-                            <!--正文内容-->
-              <UCAPCONTENT><CMSPRO_DOCUMENT FIELD="content"> 内容 </CMSPRO_DOCUMENT></UCAPCONTENT>
+              <!--正文内容-->
+              <UCAPCONTENT>
+                <CMSPRO_DOCUMENT FIELD="content"> 内容 </CMSPRO_DOCUMENT>
+              </UCAPCONTENT>
             </div>
             <!--翻页-->
             <div class="abcc-footer">
               <ul>
-                <li>上一篇：<CMSPRO_DOCUMENTNAVIGATION TYPE="PREV">上篇</CMSPRO_DOCUMENTNAVIGATION></li>
-                <li>下一篇：<CMSPRO_DOCUMENTNAVIGATION TYPE="NEXT">下篇</CMSPRO_DOCUMENTNAVIGATION></li>
+                <li>上一篇：
+                  <CMSPRO_DOCUMENTNAVIGATION TYPE="PREV">上篇</CMSPRO_DOCUMENTNAVIGATION>
+                </li>
+                <li>下一篇：
+                  <CMSPRO_DOCUMENTNAVIGATION TYPE="NEXT">下篇</CMSPRO_DOCUMENTNAVIGATION>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       </div>
       <!-- 公共底部 begin -->
-        <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
       <!-- 公共底部 end -->
       <!-- 公共二维码 begin -->
-        <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
       <!-- 公共二维码 end -->
-
     </div>
   </body>
   <script type="text/javascript">
+    
+
   </script>
 
 </html>

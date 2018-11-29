@@ -29,7 +29,7 @@
       <!-- 公共头部 end -->
       
       <CMSPRO_CHANNELS CODE='' CHILDLEVEL='1' STARTPOS='0' NUM='' CHILDTYPE='3'>
-        <div class="tzi-body public-body" style="margin: 0;">
+        <div class="tzi-body public-body">
         	<div class="list-two-body">
 	        	<div class="ltb-one">
 	        		<img class="img-100" src="images/list-one-01.jpg"/>
@@ -75,7 +75,7 @@
 	        					<a class="tz-index-more-01" href="#">更多资讯</a>
 	        					<div class="ltbtl-list-a-div">
 	        						<a href="#">
-	        							<div class="ltbtl-list-img">
+	        							<div class="ltbtl-list-img ltbtl-list-img-one">
 	        								<img src="images/swiper-02.jpg"/>
 	        								<h5>李健</h5>
 	        								<p>睡的主席</p>
@@ -96,7 +96,7 @@
 	        							</div>
 	        						</a>
 	        						<a href="#">
-	        							<div class="ltbtl-list-img">
+	        							<div class="ltbtl-list-img ltbtl-list-img-two">
 	        								<img src="images/swiper-02.jpg"/>
 	        								<h5>李健</h5>
 	        								<p>睡的主席</p>
@@ -113,7 +113,7 @@
 	        		<div class="ltb-two-right tzib-three-right fr">
 	        			<div class="ltbtl-list-div">
 	        				<div class="ltbtl-list">
-	        					<h2>多党合作历史</h2>
+	        					<h2 class="ltb-title-two">多党合作历史</h2>
 	        					<a class="tz-index-more-01" href="#">更多资讯</a>
 	        					<div class="ltbtl-list-a-div">
 	        						<a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
@@ -123,7 +123,7 @@
 	        					</div>
 	        				</div>
 	        				<div class="ltbtl-list">
-	        					<h2>网站导航</h2>
+	        					<h2 class="ltb-title-three">网站导航</h2>
 	        					<div class="ltbtl-list-a-div">
 	        						<a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
 	        						<a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
@@ -131,31 +131,53 @@
 	        						<a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
 	        					</div>
 	        				</div>
+	        				
+	        				<!--右侧滚动公告-->
+                  <div class="tzib-loop-div">
+                    <CMSPRO_CHANNELS CODE="_SITE" STARTPOS='17' NUM="1" CHILDTYPE="3">
+                      <div class="tzib-loop-div-header">
+                        <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+                        <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+                      </div>
+                      <div class="topLoop">
+                        <div class="bd">
+                          <ul class="infoList">
+                            <!--<CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
+                              <li>
+                                <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                              </li>
+                            </CMSPRO_DOCUMENTS>-->
+                            <li>
+                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
+                            </li>
+                            <li>
+                              <a href="#">会议精神和解答</a>
+                            </li>
+                            <li>
+                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
+                            </li>
+                            <li>
+                              <a href="#">中央统战工作会议精神和解答</a>
+                            </li>
+                            <li>
+                              <a href="#">2018年团结报</a>
+                            </li>
+                            <li>
+                              <a href="#">2018年各党派团体重点考察调研巡礼018年各党派团体重点考察调研巡礼</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </CMSPRO_CHANNELS>
+                  </div>
+                  
 	        			</div>
 	        		</div>
 	        		<div class="clear"></div>
 	        	</div>
         	</div>
         	
-        	<div class="test-more" style="display: none;">
-        		<h1>
-	            <a href="<CMSPRO_CHANNEL CODE='' FIELD='url'></CMSPRO_CHANNEL>" target="_blank">
-	              <CMSPRO_CHANNEL CODE='' FIELD="channelName">栏目名称</CMSPRO_CHANNEL>
-	            </a>
-	            <CMSPRO_CHANNEL FIELD='channelName' TARGET='_blank' LINKALT='true' AUTOLINK='true'>栏目名称</CMSPRO_CHANNEL>
-	          </h1>
-	          <p>
-	            <ul>
-	              <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="7" STARTPOS="0" PAGESIZE="0" CHANNELCODE="" ORDER="PUBLISHED_TIME  desc">
-	                <li style="color: red;">
-	                  <span><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="MM-dd">12-12</CMSPRO_DOCUMENT></span>
-	                  <CMSPRO_DOCUMENT FIELD="title" NUM="48" AUTOLINK="true" LINKALT="true" LINKALTTEXT="">标题</CMSPRO_DOCUMENT>
-	                  <CMSPRO_NOTEXISTSDATA>&nbsp;</CMSPRO_NOTEXISTSDATA>
-	                </li>
-	              </CMSPRO_DOCUMENTS>
-	            </ul>
-	          </p>
-        	</div>
+        
         </div>
       </CMSPRO_CHANNELS>
 
@@ -168,5 +190,15 @@
     </div>
 
   </body>
-
+  <script type="text/javascript">
+    $(function(){
+      jQuery(".topLoop").slide({
+        mainCell: ".bd ul",
+        effect: "topMarquee",
+        vis: 6,
+        interTime: 40,
+        autoPlay: true
+      });
+    })
+  </script>
 </html>
