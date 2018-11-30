@@ -941,3 +941,15 @@
   cursor: pointer;
   line-height: 32px;
 }
+.list-one-body-01 .ltbtl-list{
+  position: relative;
+  border-top: 1px solid #F5F5F5;
+}
+.ltb-one-title{
+  padding-top: 20px;
+  font-size: 14px;
+  line-height: 40px;
+}
+.list-two-body .topLoop{
+  height: 200px; 
+}

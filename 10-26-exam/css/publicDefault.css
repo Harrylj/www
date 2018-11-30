@@ -59,3 +59,75 @@ a { text-decoration: none; color: #333333; }
 }
 
 
+.login-index-header{
+  background-color: #ececed;
+}
+.login .ih-two{
+  height: auto;
+}
+.login .ih-two #login-myTabs{
+  position: relative;
+  right: 0;
+  width: 100%;
+  height: auto;
+}
+.login .ih-two #login-myTabs .nav-tabs li a{
+  padding: 0;
+  line-height: 40px;
+}
+.login-content-div{
+  position: absolute;
+  width: 450px;
+  border: 1px solid red;
+  left: 50%;
+  top: 28%;
+  margin-left: -225px;
+  background-color: #4a4a4a;
+}
+.login .ih-two #login-myTabs .nav-tabs li:nth-child(2){
+  border-left: 1px solid #4A4A4A!important;
+  border-right: 1px solid #4A4A4A!important;
+}
+.login .login-username-div{
+  margin-bottom: 15px;
+}
+.login .login-username-div
+,.login .login-password-div{
+  text-align: center;
+}
+.login .login-username-input
+,.login .login-password-input
+,.login .login-btn{
+  line-height: 38px;
+  background-repeat: no-repeat;
+  padding: 0 36px;
+  width: 100%;
+  background-position:  10px center;
+  border: none;
+  font-size: 14px;
+}
+.login .login-btn{
+  background-color: #e60012;
+  color: white;
+}
+.login .login-username-input{
+  background-image: url(../images/login-user.png);
+}
+.login .login-username-input:focus{
+  background-image: url(../images/login-user-hover.png);
+}
+.login .login-password-input{
+  background-image: url(../images/login-password.png);
+}
+.login .login-password-input:focus{
+  background-image: url(../images/login-password-hover.png);
+}
+.login .tab-content{
+  padding: 30px 60px;
+}
+.login .tab-content p{
+  line-height: 24px;
+  padding: 4px 0;
+  color: white;
+  font-size: 12px;
+}

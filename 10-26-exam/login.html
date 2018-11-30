@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/publicDefault.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>统战在线考试平台</title>
+    <style type="text/css">
+      html,
+      body {
+        background-color: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="login-index-header">
+      <!-- header -->
+      <div class="index-header index">
+        <!-- header top -->
+        <div class="ih-one">
+          <a class="ih-tilte" href="#">成都统一战线工作部</a>
+          <div class="ih-right">
+            <input type="text" class="ihr-input" placeholder="成都市管42座下穿隧道平安度过汛期">
+            <!-- <a href="#">APP下载</a> -->
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!-- header login -->
+
+      </div>
+    </div>
+    <div class="login">
+      <div class="ih-two">
+        <img src="images/login-01.jpg" />
+        <div class="login-content-div">
+          <div id="login-myTabs">
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#login-student" aria-controls="login-student" role="tab" data-toggle="tab">学员中心</a>
+              </li>
+              <li role="presentation">
+                <a href="#login-teacher" aria-controls="login-teacher" role="tab" data-toggle="tab">教师中心</a>
+              </li>
+              <li role="presentation">
+                <a href="#login-administrator" aria-controls="login-administrator" role="tab" data-toggle="tab">管理员</a>
+              </li>
+            </ul>
+            <!-- Tab panes -->
+
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="login-student">
+              <form action="">
+                <div class="login-username-div"><input type="text"class="login-username-input"  placeholder="请输入您的账号" ></div>
+                <div class="login-password-div"><input type="password"  class="login-password-input" placeholder="请输入您的密码"></div>
+                <p class="login-ts-p">如果忘记密码，请联系RTRY</p>
+                <button class="login-btn">学员登录</button>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="login-teacher">
+              <form action="">
+                <div class="login-username-div"><input type="text"class="login-username-input"  placeholder="请输入您的账号" ></div>
+                <div class="login-password-div"><input type="password"  class="login-password-input" placeholder="请输入您的密码"></div>
+                <p class="login-ts-p">如果忘记密码，请联系RTRY</p>
+                <button class="login-btn">教师登录</button>
+              </form>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="login-administrator">
+              <form action="">
+                <div class="login-username-div"><input type="text" class="login-username-input" placeholder="请输入您的账号"></div>
+                <div class="login-password-div"><input type="password" class="login-password-input" placeholder="请输入您的密码"></div>
+                <p class="login-ts-p">如果忘记密码，请联系RTRY</p>
+                <button class="login-btn">管理登录</button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <div class="login-index-footer">
+      <!-- public-footer -->
+      <div class="index-footer index"></div>
+      <!-- 公用二维码 -->
+      <div class="index-gzh"></div>
+    </div>
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/public.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('#login-myTabs a').click(function(e) {
+          e.preventDefault()
+          $(this).tab('show')
+        })
+        $('#login-myTabs a:first').tab('show')
+
+        // 调用公用底部
+        publicFooter('.index-footer')
+        // 调用公用二维码
+        publicEWM('.index-gzh')
+      })
+    </script>
+  </body>
+
+</html>
