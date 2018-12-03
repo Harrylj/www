@@ -789,6 +789,19 @@
 	font-size: 1px;
 	border-radius: 2px;
 }
+.list-border-a{
+  margin-bottom: 20px;
+}
+.ltbtl-list-a-div .list-border-span{
+  display: block;
+  position: absolute;
+  bottom: -22px;
+  left: 0;
+  width: 100%;
+  content: " ";
+  height: 1px;
+  border-top: 1px solid #F5F5F5;
+}
 .ltbtl-list-img-div .ltbtl-list-a-div a{
   padding: 0;
 	position: static;
@@ -886,7 +899,8 @@
   padding-left: 0;
 }
 .ab-one .ab-a-hover
-,.ab-one a:last-child{
+,.ab-one a span
+,.public-list-header-nav a span{
    color: #d00000;
 }
 .ab-content-div{
