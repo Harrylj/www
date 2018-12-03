@@ -1,50 +1,53 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
-    <title>
-      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
-    </title>
-    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
-    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
-    <link rel="stylesheet" type="text/css" href="css/public.css" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4"></script>
-    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-  </head>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+		<title>
+			<CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+		</title>
+		<link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+		<link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 
-  <body>
+	</head>
 
-    <div class="list-two center">
-      <h1 style="color: red;"><CMSPRO_CHANNEL FIELD="channelName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
-      <!-- 公共头部 begin -->
-      <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
-      <!-- 公共头部 end -->
-      
-        <div class="tzi-body public-body">
-          <div class="list-two-body list-one-body-01">
-            <div class="ltb-one">
-              <img class="img-100" src="images/list-one-01.jpg"/>
-            </div>
-            <!--主要内容-->
-            <div class="ltb-two">
-              <!--左侧内容-->
-              <div class="ltb-two-left tzib-three-left fl">
-                <div class="ltb-one-title">
-                  <div class="public-list-header-nav fl">
-                    <a href="#">首页</a>/<a href="#">要闻动态</a>/<a href="#"><span>要闻详情</span></a>
-                   </div>
-                  <div class="ab-one-right fr">共1998条记录</div>
-                  <div class="clear"></div>
-                </div>
-                <div class="ltbtl-list-div">
-                  <div class="ltbtl-list">
+	<body>
+
+		<div class="list-two center">
+			<h1 style="color: red;"><CMSPRO_CHANNEL FIELD="channelName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+			<!-- 公共头部 begin -->
+			<!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+			<!-- 公共头部 end -->
+
+			<div class="tzi-body public-body">
+				<div class="list-two-body list-one-body-01">
+					<div class="ltb-one">
+						<img class="img-100" src="images/list-one-01.jpg" />
+					</div>
+					<!--主要内容-->
+					<div class="ltb-two">
+						<!--左侧内容-->
+						<div class="ltb-two-left tzib-three-left fl">
+							<div class="ltb-one-title">
+								<div class="public-list-header-nav fl">
+									<a href="#">首页</a>/
+									<a href="#">要闻动态</a>/
+									<a href="#"><span>要闻详情</span></a>
+								</div>
+								<div id="now_all_page" class="ab-one-right fr">22条记录  第1页</div>
+								<div class="clear"></div>
+							</div>
+							<div class="ltbtl-list-div">
+								<div class="ltbtl-list">
                     <div class="ltbtl-list-a-div">
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span><span class="fr">2018-08-19</span></a>
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span><span class="fr">2018-08-19</span></a>
@@ -78,79 +81,102 @@
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span><span class="fr">2018-08-19</span></a>
                     </div>
                   </div>
-                </div>
+								<div class="page_num">
+									<div id="page_div">
+										<div class="pagination_totalCount">当前2页</div>
+										<div class="pagination_index"><span class="arrow"><a href="list_one.shtml">上一页</a></span></div>
+										<div class="pagination_index">
+											<a href="list_one.shtml">1</a>
+										</div>
+										<div class="pagination_curr">
+											<a href="list_one_2.shtml">2</a>
+										</div>
+										<div class="pagination_index">
+											<a href="list_one_3.shtml">3</a>
+										</div>
+										<div class="pagination_index">
+											<a href="list_one_4.shtml">4</a>
+										</div>
+										<div class="pagination_index">
+											<a href="list_one_5.shtml">5</a>
+										</div>
+										<div class="pagination_index"><span class="arrow"><a href="list_one_3.shtml">下一页</a></span></div>
+										<div class="pagination_totalCount">共5页,22条记录</div>
+										<div class="clear"></div>
+									</div>
+								</div>
+							</div>
 
-                
-              </div>
-              <!--右侧内容-->
-              <div class="ltb-two-right tzib-three-right fr">
-                <div class="ltbtl-list-div">
-                  <!--右侧滚动公告-->
-                  <div class="tzib-loop-div">
-                      <div class="tzib-loop-div-header">
-                        <h1>通知公告</h1>
-                        <a class="tz-index-more-01" href="#">更多资讯</a>
-                      </div>
-                      <div class="topLoop">
-                        <div class="bd">
-                          <ul class="infoList">
-                            <li>
-                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
-                            </li>
-                            <li>
-                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
-                            </li>
-                            <li>
-                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
-                            </li>
-                            <li>
-                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
-                            </li>
-                            <li>
-                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
-                            </li>
-                            <li>
-                              <a href="#">2018年各党派团体重点考察调研巡礼</a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                  </div>
-                  
-                </div>
-              </div>
-              <div class="clear"></div>
-            </div>
-          </div>
-          
-        
-        </div>
+						</div>
+						<!--右侧内容-->
+						<div class="ltb-two-right tzib-three-right fr">
+							<div class="ltbtl-list-div">
+								<!--右侧滚动公告-->
+								<div class="tzib-loop-div">
+									<div class="tzib-loop-div-header">
+										<h1>通知公告</h1>
+										<a class="tz-index-more-01" href="#">更多资讯</a>
+									</div>
+									<div class="topLoop">
+										<div class="bd">
+											<ul class="infoList">
+												<li>
+													<a href="#">2018年各党派团体重点考察调研巡礼</a>
+												</li>
+												<li>
+													<a href="#">2018年各党派团体重点考察调研巡礼</a>
+												</li>
+												<li>
+													<a href="#">2018年各党派团体重点考察调研巡礼</a>
+												</li>
+												<li>
+													<a href="#">2018年各党派团体重点考察调研巡礼</a>
+												</li>
+												<li>
+													<a href="#">2018年各党派团体重点考察调研巡礼</a>
+												</li>
+												<li>
+													<a href="#">2018年各党派团体重点考察调研巡礼</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</div>
 
-      <!-- 公共底部 begin -->
-      <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
-      <!-- 公共底部 end -->
-      <!-- 公共二维码 begin -->
-        <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
-      <!-- 公共二维码 end -->
-    </div>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
 
-  </body>
-  <script type="text/javascript">
-    $(function(){
-      jQuery(".topLoop").slide({
-        mainCell: ".bd ul",
-        effect: "topMarquee",
-        vis: 6,
-        interTime: 40,
-        autoPlay: true
-      });
-      // 添加边框
-      $('.ltbtl-list-a-div').children('a').each(function(){
-        var this_index = $(this).index();
-        if(this_index%6 == 0 && this_index >=6){
-          $(this).addClass('list-border-a').append('<span class="list-border-span"></span>')
-        }
-      })
-    })
-  </script>
+			</div>
+
+			<!-- 公共底部 begin -->
+			<!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+			<!-- 公共底部 end -->
+			<!-- 公共二维码 begin -->
+			<!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+			<!-- 公共二维码 end -->
+		</div>
+
+	</body>
+	<script type="text/javascript">
+		$(function() {
+			jQuery(".topLoop").slide({
+				mainCell: ".bd ul",
+				effect: "topMarquee",
+				vis: 6,
+				interTime: 40,
+				autoPlay: true
+			});
+			// 添加边框
+			$('.ltbtl-list-a-div').children('a').each(function() {
+				var this_index = $(this).index() + 1;
+				if(this_index % 6 == 0 && this_index >= 6) {
+					$(this).addClass('list-border-a').append('<span class="list-border-span"></span>')
+				}
+			})
+		})
+	</script>
+
 </html>

@@ -38,9 +38,9 @@
         if(nCurrIndex > 1) {
           if((nCurrIndex - 1) > 0) {
             if((nCurrIndex - 1) == 1)
-              con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "." + _sPageExt + "\"><<</a></span></div>";
+              con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "." + _sPageExt + "\">上一页</a></span></div>";
             else
-              con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "_" + (nCurrIndex - 1) + "." + _sPageExt + "\"><<</a></span></div>";
+              con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "_" + (nCurrIndex - 1) + "." + _sPageExt + "\">上一页</a></span></div>";
           }
    }
         var startpage = 0,
@@ -68,8 +68,9 @@
             con_text += "<div class=\"pagination_index\"><a href=\"" + _sPageName + param + "." + _sPageExt + "\">" + k + "</a></div>";
         }
         if(nCurrIndex < _nPageCount)
-          con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "_" + (nCurrIndex + 1) + "." + _sPageExt + "\">>></a></span></div>";
-        document.getElementById(divName).innerHTML = con_text + "<div class=\"pagination_totalCount\">共" + _nPageCount + "页," + _nPageSum + "条记录</div>"
+          con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "_" + (nCurrIndex + 1) + "." + _sPageExt + "\">下一页</a></span></div>";
+        document.getElementById(divName).innerHTML = con_text + "<div class=\"pagination_totalCount\">共" + _nPageCount + "页," + _nPageSum + "条记录</div><div class='clear'></div>";
+				document.getElementById("now_all_page").innerHTML = "共<span>"+  _nPageSum + "</span>条记录  第" + _nCurrIndex + "页" ;
       }
     </script>
   </head>
@@ -100,8 +101,8 @@
 
                 <div class="ltbtl-list">
                   <div class="ltbtl-list-a-div">
-                    <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="60000" STARTPOS="0" PAGESIZE="7" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL">
-                      <a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="48" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2012-12-12</CMSPRO_DOCUMENT></span></a>
+                    <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="60000" STARTPOS="0" PAGESIZE="24" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL">
+                      <a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="7" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2012-12-12</CMSPRO_DOCUMENT></span></a>
                     </CMSPRO_DOCUMENTS>
                   </div>
 
@@ -164,7 +165,7 @@
       });
       // 添加边框
       $('.ltbtl-list-a-div').children('a').each(function(){
-        var this_index = $(this).index();
+        var this_index = $(this).index() + 1;
         if(this_index%6 == 0 && this_index >=6){
           $(this).addClass('list-border-a').append('<span class="list-border-span"></span>')
         }

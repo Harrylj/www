@@ -558,6 +558,7 @@ a:hover,
 
 /* 导航栏 */
 .page_num {
+  text-align: center;
   padding: 20px;
   font-size: 14px;
 }
@@ -578,16 +579,29 @@ a:hover,
 }
 
 #page_div .pagination_index,
-#page_div .pagination_index_num {
+#page_div .pagination_curr,
+#page_div .pagination_index_num,
+#page_div .pagination_totalCount{
   background: #FFFFFF;
   border: 1px solid #bfbfbf;
-  padding: 0 8px;
-  margin-right: 2px;
-  float: left;
-  height: 22px;
+  padding: 2px 8px;
+  margin-right: 8px;
+  display: inline-block;
+  line-height: 22px;
   text-align: center;
+  
 }
-
+#page_div  .pagination_totalCount{
+  display: none;
+  border: none;
+}
+#page_div .pagination_curr{
+	color: #d00000;
+	border:1px solid #d00000;
+}
+#page_div .pagination_curr a{
+	color: #d00000;
+}
 #page_div .pagination_index a,
 #page_div .pagination_index_num a {
   padding: 0px;
@@ -630,4 +644,10 @@ a:hover,
 
 .pagination_index_last a {
   color: #8b8b8b;
+}
+
+#now_all_page span{
+	display: inline-block;
+	padding: 0 4px;
+	color: #2626ac;
 }
