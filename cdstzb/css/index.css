@@ -792,6 +792,9 @@
 .list-border-a{
   margin-bottom: 20px;
 }
+.ltb-two-right .list-border-a{
+  margin-bottom: 0;
+}
 .ltbtl-list-a-div .list-border-span{
   display: block;
   position: absolute;
@@ -801,6 +804,9 @@
   content: " ";
   height: 1px;
   border-top: 1px solid #F5F5F5;
+}
+.ltb-two-right .list-border-span{
+  display: none;
 }
 .ltbtl-list-img-div .ltbtl-list-a-div a{
   padding: 0;
@@ -826,6 +832,43 @@
 .ltbtl-list-img img{
 	width: 170px;
 	height: 200px;
+}
+.ltbtl-list-imgbook-div .ltbtl-list-imgbook{
+  position: relative;
+  width: 230px;
+}
+.ltbtl-list-imgbook img{
+  width: 230px;
+  height: 140px;
+}
+.ltbtl-list-imgbook-div .ltbtl-list-imgbook p{
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 28px;
+  line-height: 28px;
+  overflow: hidden;
+  color: white;
+  font-size: 14px;
+  background-color: rgba(0,0,0,.5);
+  text-align: left;
+  padding: 0 20px;
+}
+.ltbtl-list-img-div .ltbtl-list-a-div a:before
+,.ltbtl-list-imgbook-div .ltbtl-list-a-div a:before{
+  display: none;
+}
+.ltbtl-list-imgbook-div .ltbtl-list-a-div{
+  padding: 20px 0 0 0;
+}
+.ltbtl-list-imgbook{
+  float: left;
+  margin: 0 10px 20px 10px;
+  text-align: center;
+}
+.ltbtl-list-imgbook-div .list-border-span{
+  display: none;
 }
 .ltbtl-list-img-div .ltbtl-list-a-div{
 	padding: 20px 0;
@@ -963,6 +1006,9 @@
   padding-top: 20px;
   font-size: 14px;
   line-height: 40px;
+}
+.ltb-one-title span{
+  color: #d00000;
 }
 .list-two-body .topLoop{
   height: 200px; 

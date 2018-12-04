@@ -69,8 +69,9 @@
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span><span class="fr">2018-08-19</span></a>
                     </div>
                   </div>
+                  
                   <div class="ltbtl-list ltbtl-list-img-div">
-                    <h2>新闻资讯</h2>
+                    <h2>人物介绍</h2>
                     <a class="tz-index-more-01" href="#">更多资讯</a>
                     <div class="ltbtl-list-a-div">
                       <a href="#">
@@ -104,6 +105,53 @@
                       <div class="clear"></div>
                     </div>
                   </div>
+                  <!--图文内容-->
+                  <div class="ltbtl-list ltbtl-list-imgbook-div">
+                    <h2>图文</h2>
+                    <a class="tz-index-more-01" href="#">更多资讯</a>
+                    <div class="ltbtl-list-a-div">
+                      <a href="#">
+                        <div class="ltbtl-list-imgbook ltbtl-list-img-one">
+                          <img src="images/swiper-02.jpg"/>
+                          <p>测试主席</p>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="ltbtl-list-imgbook">
+                          <img src="images/swiper-02.jpg"/>
+                          <p>测试主席</p>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="ltbtl-list-imgbook ltbtl-list-img-two">
+                          <img src="images/swiper-02.jpg"/>
+                          <p>测试主席</p>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="ltbtl-list-imgbook ltbtl-list-img-one">
+                          <img src="images/swiper-02.jpg"/>
+                          <p>测试主席</p>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="ltbtl-list-imgbook">
+                          <img src="images/swiper-02.jpg"/>
+
+                          <p>测试主席</p>
+                        </div>
+                      </a>
+                      <a href="#">
+                        <div class="ltbtl-list-imgbook ltbtl-list-img-two">
+                          <img src="images/swiper-02.jpg"/>
+                          <p>测试主席</p>
+                        </div>
+                      </a>
+                      <div class="clear"></div>
+                    </div>
+                  </div>
+                  
+                  
                 </div>
 
                 
@@ -115,6 +163,10 @@
                     <h2 class="ltb-title-two">多党合作历史</h2>
                     <a class="tz-index-more-01" href="#">更多资讯</a>
                     <div class="ltbtl-list-a-div">
+                      <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
+                      <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
+                      <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
+                      <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
                       <a href="#"><span>2018年各党派团地重点考察研究巡礼</span></a>
@@ -160,6 +212,13 @@
         interTime: 40,
         autoPlay: true
       });
+      // 添加边框
+      $('.ltbtl-list-a-div').children('a').each(function() {
+        var this_index = $(this).index() + 1;
+        if(this_index % 6 == 0 && this_index >= 6) {
+          $(this).addClass('list-border-a').append('<span class="list-border-span"></span>')
+        }
+      })
     })
   </script>
 </html>

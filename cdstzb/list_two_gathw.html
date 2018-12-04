@@ -69,7 +69,7 @@
         if(nCurrIndex < _nPageCount)
           con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "_" + (nCurrIndex + 1) + "." + _sPageExt + "\">下一页</a></span></div>";
         document.getElementById(divName).innerHTML = con_text + "<div class=\"pagination_totalCount\">共" + _nPageCount + "页," + _nPageSum + "条记录</div><div class='clear'></div>";
-				document.getElementById("now_all_page").innerHTML = "共<span>"+  _nPageSum + "</span>条记录  第" + _nCurrIndex + "页" ;
+        document.getElementById("now_all_page").innerHTML = "共<span>"+  _nPageSum + "</span>条记录  第" + _nCurrIndex + "页" ;
       }
     </script>
   
@@ -98,12 +98,13 @@
                 <div class="clear"></div>
               </div>
               <div class="ltbtl-list-div">
-
                 <div class="ltbtl-list">
                   <div class="ltbtl-list-a-div">
-                    <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="60000" STARTPOS="0" PAGESIZE="24" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL">
-                      <a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="34" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2012-12-12</CMSPRO_DOCUMENT></span></a>
-                    </CMSPRO_DOCUMENTS>
+                    <CMSPRO_CHANNELS CODE="" STARTPOS='1' NUM="1" CHILDTYPE="3" CHILDLEVEL="0">
+                      <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="60000" STARTPOS="0" PAGESIZE="24" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL">
+                        <a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="34" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2012-12-12</CMSPRO_DOCUMENT></span></a>
+                      </CMSPRO_DOCUMENTS>
+                    </CMSPRO_CHANNELS>
                   </div>
 
                 </div>
@@ -116,26 +117,26 @@
             <!--右侧内容-->
             <div class="ltb-two-right tzib-three-right fr">
               <div class="ltbtl-list-div">
-                <!--右侧滚动公告-->
-                <div class="tzib-loop-div">
-                  <CMSPRO_CHANNELS CODE="_SITE" STARTPOS='17' NUM="1" CHILDTYPE="3">
-                    <div class="tzib-loop-div-header">
-                      <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
-                      <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
-                    </div>
-                    <div class="topLoop">
-                      <div class="bd">
-                        <ul class="infoList">
-                          <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
-                            <li>
-                              <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
-                            </li>
-                          </CMSPRO_DOCUMENTS>
-                        </ul>
+                <!--右侧滚动公告--自用 -->
+                  <div class="tzib-loop-div">
+                    <CMSPRO_CHANNELS CODE="" STARTPOS='0' NUM="1" CHILDTYPE="3" CHILDLEVEL="0">
+                      <div class="tzib-loop-div-header">
+                        <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+                        <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
                       </div>
-                    </div>
-                  </CMSPRO_CHANNELS>
-                </div>
+                      <div class="topLoop">
+                        <div class="bd">
+                          <ul class="infoList">
+                            <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
+                              <li>
+                                <CMSPRO_DOCUMENT FIELD="title" NUM="28" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                              </li>
+                            </CMSPRO_DOCUMENTS>
+                          </ul>
+                        </div>
+                      </div>
+                    </CMSPRO_CHANNELS>
+                  </div>
 
               </div>
             </div>
