@@ -23,6 +23,25 @@
       }
     </style>
     <script type="text/javascript">
+    $(document).ready(function(){
+      $("#searchBtn").click(function(){
+          $.ajax({
+              type:"GET",
+              url:"http://10.190.232.85:8003/trsapp/appDataWeb.do?method=queryAppData&appId=22291&groupId=20162",
+              dataType:"json",
+              success:function(data){
+                  if(data.errorCode==0){
+                                           $("#nickname").val(mylogin.nickname);                             
+                                   }else{
+                                           $("#nickname").val("用户");                         
+                                   }
+              },
+              error:function(jqXHR){
+                  console.log("Error: "+jqXHR.status);
+              }
+          });
+      });
+  });
     </script>
   </head>
 
@@ -33,6 +52,11 @@
       <!-- 公共头部 begin -->
         <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
       <!-- 公共头部 end -->
+      <p>
+        <input id="nickname" type="" name="" value="" />
+        <button id="searchBtn">ajax</button>
+      </p>
+      
       <div class="tzi-body public-body">
         <div class="ab-one">
           <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>

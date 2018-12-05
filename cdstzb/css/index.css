@@ -1013,3 +1013,47 @@
 .list-two-body .topLoop{
   height: 200px; 
 }
+.ab-two{
+  position: relative;
+  padding: 20px;
+  min-height: 400px;
+}
+.abt-left{
+  width: 78%;
+  padding-left: 10px;
+}
+.abt-right{
+  position: absolute;
+  width: 200px;
+  top: 30px;
+  right: 0;
+  z-index: 99;
+}
+.abt-right img{
+  width: 200px;
+  height: 280px;
+  margin-bottom: 20px;
+}
+.abt-btn{
+  display: block;
+  margin:0  auto 15px auto;
+  color: #015293;
+  line-height: 40px;
+  width: 110px;
+  text-align: center;
+  color: white;
+  border: none;
+  background-color: #015293;
+  cursor: pointer;
+}
+
+.abt-right p{
+  display: none;
+}
+.abt-left>h1{
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 50px;
+  color: black;
+  letter-spacing: 2px;
+}

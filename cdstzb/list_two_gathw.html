@@ -69,7 +69,6 @@
         if(nCurrIndex < _nPageCount)
           con_text += "<div class=\"pagination_index\"><span class=\"arrow\"><a href=\"" + _sPageName + "_" + (nCurrIndex + 1) + "." + _sPageExt + "\">下一页</a></span></div>";
         document.getElementById(divName).innerHTML = con_text + "<div class=\"pagination_totalCount\">共" + _nPageCount + "页," + _nPageSum + "条记录</div><div class='clear'></div>";
-        document.getElementById("now_all_page").innerHTML = "共<span>"+  _nPageSum + "</span>条记录  第" + _nCurrIndex + "页" ;
       }
     </script>
   
@@ -91,26 +90,18 @@
           <div class="ltb-two">
             <!--左侧内容-->
             <div class="ltb-two-left tzib-three-left fl">
-              <div class="ltb-one-title">
-                <!--      <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>-->
-                <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
-                <div id="now_all_page" class="ab-one-right fr">共1998条记录</div>
-                <div class="clear"></div>
-              </div>
+              <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
               <div class="ltbtl-list-div">
-                <div class="ltbtl-list">
-                  <div class="ltbtl-list-a-div">
-                    <CMSPRO_CHANNELS CODE="" STARTPOS='1' NUM="1" CHILDTYPE="3" CHILDLEVEL="0">
-                      <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="60000" STARTPOS="0" PAGESIZE="24" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL">
+                  <div class="ltbtl-list">
+                    <div class="ltbtl-list-a-div">
+                      <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="" STARTPOS="0" PAGESIZE="24" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL">
                         <a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="34" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2012-12-12</CMSPRO_DOCUMENT></span></a>
                       </CMSPRO_DOCUMENTS>
-                    </CMSPRO_CHANNELS>
+                    </div>
                   </div>
-
-                </div>
-                <div class="page_num">
-                  <div id="page_div"></div>
-                </div>
+                  <div class="page_num">
+                    <div id="page_div"></div>
+                  </div>
               </div>
 
             </div>
@@ -119,7 +110,7 @@
               <div class="ltbtl-list-div">
                 <!--右侧滚动公告--自用 -->
                   <div class="tzib-loop-div">
-                    <CMSPRO_CHANNELS CODE="" STARTPOS='0' NUM="1" CHILDTYPE="3" CHILDLEVEL="0">
+                    <CMSPRO_CHANNELS CODE="" STARTPOS='0' NUM="1" CHILDTYPE="3">
                       <div class="tzib-loop-div-header">
                         <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
                         <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
@@ -129,7 +120,7 @@
                           <ul class="infoList">
                             <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
                               <li>
-                                <CMSPRO_DOCUMENT FIELD="title" NUM="28" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                                <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                               </li>
                             </CMSPRO_DOCUMENTS>
                           </ul>
