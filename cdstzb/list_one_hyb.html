@@ -3,6 +3,7 @@
 
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
     <title>
       <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
@@ -21,48 +22,99 @@
 
     </style>
     <script type="text/javascript">
-      // 内容页上一篇下一篇功能;_nNowPageID当前信息ID,suffixName后缀名
-    function ContentUporNext(_nNowPageID, _target, _type) {
-      if(!content_str) return false;
-      if(content_str.lastIndexOf(",") == content_str.length - 1) {
-        content_str = content_str.substring(0, content_str.length - 1);
-      }
-      var tst = content_str.split(",");
-      for(var i = 0; i < tst.length; i++) {
-        var iscan = tst[i].indexOf(_nNowPageID + ":");
-        if(iscan != -1) {
-          if(i == 0) { ///此时没有上一篇
-            var prevReg = /^[PREV]|[prev]$/;
-            if("PREV" != _type) {
-              var content_tst = tst[i + 1].split(":");
-              document.write("<a href='" + content_tst[2] + "' target='" + _target + "'>" + content_tst[1] + "<FONT face=Webdings>4</FONT></a>");
+      $(document).ready(function() {
+        $(".hyb-btn-wyly").click(function() {
+          $.getJSON("trsapp/appDataWeb.do?method=queryAppData&appId=22291&groupId=20162", function(json) {
+            alert(json[0].name);
+          });
+        });
+
+        // 写入
+        $('.hyb-btn-wyxr').click(function() {
+          $.ajax({
+            type: 'get',
+            url: 'trsapp/appDataWeb.do?method=queryAppData&appId=22291&groupId=20162',
+            dataType: 'jsonp',
+            // jsonp:"jsoncallback",  
+            success: function(data) {
+              alert(data);
+            },
+            error: function() {
+              alert('fail');
             }
-          } else if(i == tst.length - 1) { //此时没有下一篇
-            if("NEXT" != _type) {
-              var content_tst = tst[i - 1].split(":");
-              document.write("<a href='" + content_tst[2] + "' target='" + _target + "'><FONT face=Webdings>3</FONT>" + content_tst[1] + "</a>");
-            }
-          } else {
-            if("PREV" == _type) {
-              var content_up = tst[i - 1].split(":");
-              document.write("<a href='" + content_up[2] + "' target='" + _target + "'><FONT face=Webdings>3</FONT>" + content_up[1] + "</a>&nbsp;&nbsp;&nbsp;&nbsp;");
-            }
-            if("NEXT" == _type) {
-              var content_next = tst[i + 1].split(":");
-              document.write("<a href='" + content_next[2] + "' target='" + _target + "'>" + content_next[1] + "<FONT face=Webdings>4</FONT></a>");
-            }
+          });
+
+        })
+
+        var aaa = {
+          "code": 0,
+          "message": "获取数据成功！",
+          "datas": [{
+            "UNAME": "test1",
+            "QUERYNUMBER": null,
+            "METADATAID": "1000177",
+            "OPERTIME": null,
+            "STATUS": "0",
+            "CRTIME": "2018-12-05 16:50:11",
+            "SUBMITDEPT": "0",
+            "CONTENT": "111",
+            "QUERYPWD": null,
+            "TEL": "18200166593",
+            "ISURGENT": "0",
+            "REPLYUSER": null,
+            "ISPUBLIC": "1",
+            "DELETED": "0",
+            "IPADDRESS": null,
+            "CRUSER": "stzb_gly1",
+            "REPLYCONTENT": null,
+            "PUBLISHTIME": "2018-12-06 14:47:31",
+            "HITCOUNTS": "0",
+            "RWN": "1",
+            "REPLYTIME": null,
+            "OPERUSER": null,
+            "HASAPPENDIX": "0",
+            "ISOVERTIME": null,
+            "SUBMITDEPTNAME": null,
+            "REPLYDEPT": null,
+            "TITLE": "test1"
+          }, {
+            "UNAME": "测试测试",
+            "QUERYNUMBER": null,
+            "METADATAID": "985362",
+            "OPERTIME": null,
+            "STATUS": "0",
+            "CRTIME": "2018-11-29 11:09:20",
+            "SUBMITDEPT": "0",
+            "CONTENT": "测试测试测试",
+            "QUERYPWD": null,
+            "TEL": "18981759010",
+            "ISURGENT": "0",
+            "REPLYUSER": null,
+            "ISPUBLIC": "1",
+            "DELETED": "0",
+            "IPADDRESS": null,
+            "CRUSER": "zhouqiang",
+            "REPLYCONTENT": null,
+            "PUBLISHTIME": "2018-11-29 11:11:37",
+            "HITCOUNTS": "1",
+            "RWN": "2",
+            "REPLYTIME": null,
+            "OPERUSER": null,
+            "HASAPPENDIX": "0",
+            "ISOVERTIME": null,
+            "SUBMITDEPTNAME": null,
+            "REPLYDEPT": null,
+            "TITLE": "测试"
+          }],
+          "page_info": {
+            "pageSize": "15",
+            "result_count": 2,
+            "page_count": 1,
+            "pageIndex": "1"
           }
-          break;
         }
-      }
-    }
-    console.log(ContentUporNext('44d0dece4c924cc39425ac23a8853de7','_self','NEXT'))
-    function copyUrl()
-     {
-      var clipBoardContent=this.location.href;
-      window.clipboardData.setData("Text",clipBoardContent);
-      alert("复制成功!");
-     }
+
+      });
     </script>
   </head>
 
@@ -78,11 +130,54 @@
         <div class="hyb-body">
           <div class="hyb-one">
             <h1><span>回音壁</span><p>总信件<span>123</span>封</p></h1>
-            <a href="#">我要留言</a>
+            <a class="hyb-btn-wyxr" href="#">我要写入</a>
+            <a class="hyb-btn-wyly" href="#">我要留言</a>
+          </div>
+          <div class="hyb-two">
+            <!--.hybtwo-item-ok ： hybtwo-item添加表示已回复-->
+            <div class="hybtwo-item">
+              <div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div>
+              <div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div>
+              <p>成都交通太堵了</p>
+              <h5>留言时间：2017年12月30日 00:00:00</h5>
+              <div class="hytwo-item-more">
+                <p><span class="red">回复：</span><span>感谢留言，已经到了。我们会尽快处理的</span></p>
+                <h5>回复时间：2017年12月30日 00:00:00</h5>
+              </div>
+            </div>
+            <div class="hybtwo-item hybtwo-item-ok">
+              <div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div>
+              <div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div>
+              <p>成都交通太堵了</p>
+              <h5>留言时间：2017年12月30日 00:00:00</h5>
+              <div class="hytwo-item-more">
+                <p><span class="red">回复：</span><span>感谢留言，已经到了。我们会尽快处理的</span></p>
+                <h5>回复时间：2017年12月30日 00:00:00</h5>
+              </div>
+            </div>
+            <div class="hybtwo-item">
+              <div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div>
+              <div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div>
+              <p>成都交通太堵了</p>
+              <h5>留言时间：2017年12月30日 00:00:00</h5>
+              <div class="hytwo-item-more">
+                <p><span class="red">回复：</span><span>感谢留言，已经到了。我们会尽快处理的</span></p>
+                <h5>回复时间：2017年12月30日 00:00:00</h5>
+              </div>
+            </div>
+            <div class="hybtwo-item hybtwo-item-ok">
+              <div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div>
+              <div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div>
+              <p>成都交通太堵了</p>
+              <h5>留言时间：2017年12月30日 00:00:00</h5>
+              <div class="hytwo-item-more">
+                <p><span class="red">回复：</span><span>感谢留言，已经到了。我们会尽快处理的</span></p>
+                <h5>回复时间：2017年12月30日 00:00:00</h5>
+              </div>
+            </div>
           </div>
         </div>
-      
-      
+
       </div>
       <!-- 公共底部 begin -->
       <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
@@ -93,8 +188,6 @@
     </div>
   </body>
   <script type="text/javascript">
-    
-
   </script>
 
 </html>
