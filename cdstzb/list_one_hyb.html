@@ -24,26 +24,48 @@
     <script type="text/javascript">
       $(document).ready(function() {
         $(".hyb-btn-wyly").click(function() {
-          $.getJSON("trsapp/appDataWeb.do?method=queryAppData&appId=22291&groupId=20162", function(json) {
-            alert(json[0].name);
+          $.getJSON("http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd", function(json) {
+            console.log(json);
           });
         });
 
         // 写入
         $('.hyb-btn-wyxr').click(function() {
+          /*
           $.ajax({
             type: 'get',
-            url: 'trsapp/appDataWeb.do?method=queryAppData&appId=22291&groupId=20162',
-            dataType: 'jsonp',
+            url: 'http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd',
+            dataType: 'json',
             // jsonp:"jsoncallback",  
             success: function(data) {
-              alert(data);
+              console.log(data);
             },
             error: function() {
               alert('fail');
             }
           });
-
+          */
+         
+          $.ajax({
+            type: 'get',
+            url: 'http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd',
+            data: {"UNAME": "222"},
+            dataType: 'json',
+            // jsonp: 'json',
+            success: function(data) {
+              console.log(data)
+              if(data.Success == true) {
+                alert('成功啦')
+              } else {
+                console.log(data);
+              }
+            },
+            error: function(data) {
+              console.log('fail:' + data);
+            }
+          });
+          alert(22222222222)
+          
         })
 
         var aaa = {

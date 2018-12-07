@@ -20,44 +20,7 @@
     <style type="text/css">
 
     </style>
-    <script type="text/javascript">
-      // 内容页上一篇下一篇功能;_nNowPageID当前信息ID,suffixName后缀名
-    function ContentUporNext(_nNowPageID, _target, _type) {
-      if(!content_str) return false;
-      if(content_str.lastIndexOf(",") == content_str.length - 1) {
-        content_str = content_str.substring(0, content_str.length - 1);
-      }
-      var tst = content_str.split(",");
-      for(var i = 0; i < tst.length; i++) {
-        var iscan = tst[i].indexOf(_nNowPageID + ":");
-        if(iscan != -1) {
-          if(i == 0) { ///此时没有上一篇
-            var prevReg = /^[PREV]|[prev]$/;
-            if("PREV" != _type) {
-              var content_tst = tst[i + 1].split(":");
-              document.write("<a href='" + content_tst[2] + "' target='" + _target + "'>" + content_tst[1] + "<FONT face=Webdings>4</FONT></a>");
-            }
-          } else if(i == tst.length - 1) { //此时没有下一篇
-            if("NEXT" != _type) {
-              var content_tst = tst[i - 1].split(":");
-              document.write("<a href='" + content_tst[2] + "' target='" + _target + "'><FONT face=Webdings>3</FONT>" + content_tst[1] + "</a>");
-            }
-          } else {
-            if("PREV" == _type) {
-              var content_up = tst[i - 1].split(":");
-              document.write("<a href='" + content_up[2] + "' target='" + _target + "'><FONT face=Webdings>3</FONT>" + content_up[1] + "</a>&nbsp;&nbsp;&nbsp;&nbsp;");
-            }
-            if("NEXT" == _type) {
-              var content_next = tst[i + 1].split(":");
-              document.write("<a href='" + content_next[2] + "' target='" + _target + "'>" + content_next[1] + "<FONT face=Webdings>4</FONT></a>");
-            }
-          }
-          break;
-        }
-      }
-    }
-    
-    </script>
+
   </head>
 
   <body class="body-bg-article">

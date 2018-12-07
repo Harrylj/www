@@ -30,11 +30,12 @@
         var m = today.getMinutes()
         var s = today.getSeconds()
         var day = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var month = today.getMonth() + 1;
         // add a zero in front of numbers<10
         m = checkTime(m)
         s = checkTime(s)
         // document.getElementById('txt').innerHTML = h + ":" + m + ":" + s
-        document.getElementsByClassName('tziht-one')[0].innerHTML = today.getFullYear() + '年' + today.getMonth() + '月' + today.getDate() + '日 ' + h + ":" + m + ":" + s + ' ' + day[today.getDay()];
+        document.getElementsByClassName('tziht-one')[0].innerHTML = today.getFullYear() + '年' + month  + '月' + today.getDate() + '日 ' + h + ":" + m + ":" + s + ' ' + day[today.getDay()];
         t = setTimeout('startTime()', 500)
       }
       // 时间添加0
@@ -72,7 +73,8 @@
             <span class="tziht-two-wind"></span>
           </div>
           <div class="tziht-three fr">
-            <a class="tziht-app-download" href="#">APP下载</a>
+            <a class="tziht-app-download" target="_blank" href="<CMSPRO_CHANNEL CODE='indexAPP' FIELD='url' >栏目名称</CMSPRO_CHANNEL>"><CMSPRO_CHANNEL CODE="indexAPP" FIELD="displayName"  NUM="15">栏目名称</CMSPRO_CHANNEL></a>
+            
             <div class="dropdown" id="search" onclick="search.changeValue(this);search.searchKeyword()">
               <input type="text" class="dropdown-selected" id="search-input" placeholder="市委统战学习传达市委十三届四次全会精神" onkeyup="search.searchKeyword();">
               <ul>
@@ -122,7 +124,7 @@
 
               <li class="tzih-nav-one-more">
                 <CMSPRO_CHANNELS CODE="publicHeader" CHILDLEVEL="1" STARTPOS="1" NUM="1" CHILDTYPE="3">
-                  <CMSPRO_CHANNEL FIELD="displayName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
+                  <a href="#"><CMSPRO_CHANNEL FIELD="displayName" NUM="15">栏目名称</CMSPRO_CHANNEL></a>
                 </CMSPRO_CHANNELS>
                 <ul class="tzih-nav-two">
                   <li>

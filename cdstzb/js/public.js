@@ -15,7 +15,7 @@ function createPageHTML(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageEx
   var con_text = "";
   var active = "";
   var pagination_num = [];
-  var num = 5; //页数展示个数，只能为奇数
+  var num = 7; //页数展示个数，只能为奇数
   if(_nPageCount == null || _nPageCount < 1) return;
 
   con_text += "<span class=\"pagination-first\"><a class=\"pagination-index\" href=\"" + _sPageName + "." + _sPageExt + "\">首页</a>";
@@ -63,9 +63,9 @@ function createPageHTML(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageEx
   }
 
   con_text += "<span class=\"pagination-last\">\
-  <span>共 " + _nPageSum + " 条</span>\
-  <span>共 " + _nPageCount + " 页</span>\
-  <span>当前第 " + _nCurrIndex + " 页</span>\
+//  <span>共 " + _nPageSum + " 条</span>\
+//  <span>共 " + _nPageCount + " 页</span>\
+//  <span>当前第 " + _nCurrIndex + " 页</span>\
   <span>跳转至</span>\
   <input id=\"pagination-input\" type=\"text\" onkeyup=\"if(event.keyCode == 13 ) pagination_go('" + _sPageName + "','" + _sPageExt + "','" + _nPageCount + "') \"  >\
   <span>页</span>\
@@ -73,6 +73,7 @@ function createPageHTML(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageEx
   </span>";
 
   document.getElementById(_divName).innerHTML = con_text;
+  document.getElementById("now_all_page").innerHTML = "共<span>"+  _nPageSum + "</span>条记录  第" + _nCurrIndex + "页" ;
 }
 
 function pagination_go(sPageName, sPageExt, nPageCount) { //跳转

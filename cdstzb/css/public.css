@@ -567,87 +567,28 @@ a:hover,
   line-height: 20px;
   color: #000;
 }
-
-#pagination_input {
-  width: 20px;
-  height: 16px;
-  line-height: 16px;
-  margin: 0 8px;
-  padding: 0;
-  overflow: hidden;
-  border: 1px solid #ccc;
-}
-
-#page_div .pagination_index,
-#page_div .pagination_curr,
-#page_div .pagination_index_num,
-#page_div .pagination_totalCount{
-  background: #FFFFFF;
-  border: 1px solid #bfbfbf;
-  padding: 2px 8px;
-  margin-right: 8px;
+.pagination-first a{
   display: inline-block;
-  line-height: 22px;
+  border: 1px solid #666666;
+  padding: 2px 8px;
+}
+.pagination-first a:hover
+,.pagination-first .active{
+  border: 1px solid #d00000;
+  color: #D00000;
+}
+.pagination-index{
+  margin:0 6px;
+}
+.pagination-num{
+  margin: 0 3px;
+}
+#pagination-input{
+  width: 50px;
+  line-height: 24px;
   text-align: center;
-  
+  padding: 0 8px;
 }
-#page_div  .pagination_totalCount{
-  display: none;
-  border: none;
-}
-#page_div .pagination_curr{
-	color: #d00000;
-	border:1px solid #d00000;
-}
-#page_div .pagination_curr a{
-	color: #d00000;
-}
-#page_div .pagination_index a,
-#page_div .pagination_index_num a {
-  padding: 0px;
-  margin: 0px;
+.pagination-last{
   text-align: center;
-  color: #8b8b8b;
-}
-
-#page_div .pagination_index a:hover,
-#page_div .pagination_index_num a:hover {
-  padding: 0px;
-  margin: 0px;
-  text-align: center;
-  color: #8b8b8b;
-}
-
-#page_div .pagination_index_last {
-  width: 320px;
-  float: right;
-  text-align: right;
-  color: #8b8b8b;
-}
-
-#page_div .pagination_index_num {
-  margin-right: 2px;
-  padding: 0px;
-  width: 20px;
-}
-
-#page_div .currentIndex {
-  background: #bfbfbf;
-  border: 1px solid #bfbfbf;
-  width: 20px;
-  height: 22px;
-  line-height: 20px;
-  color: #8b8b8b;
-  text-align: center;
-  font-weight: bold;
-}
-
-.pagination_index_last a {
-  color: #8b8b8b;
-}
-
-#now_all_page span{
-	display: inline-block;
-	padding: 0 4px;
-	color: #2626ac;
 }
