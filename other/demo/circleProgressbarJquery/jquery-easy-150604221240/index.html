@@ -1,0 +1,178 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<title>EASY饼图数据统计Jquery插件</title>
+
+<script src="http://www.jq22.com/jquery/1.7.2/jquery.min.js"></script>
+
+<!--<script type="text/javascript" src="js/html5.js"></script>-->
+
+<script type="text/javascript" src="js/excanvas.js"></script>
+
+<script type="text/javascript" src="js/jquery.easy-pie-chart.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">
+
+<link rel="stylesheet" type="text/css" href="css/jquery.easy-pie-chart.css" media="screen">
+
+
+
+<script type="text/javascript">
+
+	var initPieChart = function() {
+
+		$('.percentage').easyPieChart({
+
+			animate: 1000
+
+		});
+
+		$('.percentage-light').easyPieChart({
+
+			barColor: function(percent) {
+
+				percent /= 100;
+
+				return "rgb(" + Math.round(255 * (1-percent)) + ", " + Math.round(255 * percent) + ", 0)";
+
+			},
+
+			trackColor: '#666',
+
+			scaleColor: false,
+
+			lineCap: 'butt',
+
+			lineWidth: 15,
+
+			animate: 1000
+
+		});
+
+
+
+		$('.updateEasyPieChart').on('click', function(e) {
+
+		  e.preventDefault();
+
+		  $('.percentage, .percentage-light').each(function() {
+
+			var newValue = Math.round(100*Math.random());
+
+			$(this).data('easyPieChart').update(newValue);
+
+			$('span', this).text(newValue);
+
+		  });
+
+		});
+
+	};
+
+</script>
+
+
+
+</head>
+
+<body onLoad="initPieChart();">
+
+
+
+        <div class="container">
+
+            <h1>EASY饼图</h1>
+
+            <div class="chart">
+
+                <div class="percentage" data-percent="55"><span>55</span>%</div>
+
+                <div class="label">新的访问</div>
+
+            </div>
+
+            <div class="chart">
+
+                <div class="percentage" data-percent="46"><span>46</span>%</div>
+
+                <div class="label">跳出率</div>
+
+            </div>
+
+            <div class="chart">
+
+                <div class="percentage" data-percent="92"><span>92</span>%</div>
+
+                <div class="label">服务器负载</div>
+
+            </div>
+
+            <div class="chart">
+
+                <div class="percentage" data-percent="84"><span>752</span>MB</div>
+
+                <div class="label">使用的RAM</div>
+
+            </div>
+
+            <div style="clear:both;"></div>
+
+            <div class="dark">
+
+                <div class="chart">
+
+                    <div class="percentage-light" data-percent="55"><span>55</span>%</div>
+
+                    <div class="label">新的访问</div>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="percentage-light" data-percent="46"><span>46</span>%</div>
+
+                    <div class="label">跳出率</div>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="percentage-light" data-percent="92"><span>92</span>%</div>
+
+                    <div class="label">服务器负载</div>
+
+                </div>
+
+                <div class="chart">
+
+                    <div class="percentage-light" data-percent="84"><span>752</span>MB</div>
+
+                    <div class="label">使用的RAM</div>
+
+                </div>
+
+                <div style="clear:both;"></div>
+
+            </div>
+
+
+
+            <p><a href="#" class="button updateEasyPieChart">更新饼图</a></p>
+
+
+
+        </div>
+
+
+
+</div>
+
+</body>
+
+</html>
+

@@ -18,6 +18,9 @@
     <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
+      .BMapLabel{
+        display: none !important;
+      }
     </style>
     <script type="text/javascript">
     </script>
@@ -31,7 +34,7 @@
       <!-- 公共头部 end -->
 
       <!--主要内容-->
-      <div class="tzi-body public-body">
+      <div class="tzi-body">
         <!--要闻-->
         <div class="tzib-one">
           <div class="tzib-one-left fl">
@@ -76,7 +79,7 @@
             </CMSPRO_DOCUMENTS>
             <div class="tziz-one-ul-div">
               <ul>
-                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="0" PAGESIZE="0">
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="1" PAGESIZE="0">
                   <li>
                     <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                   </li>
@@ -86,7 +89,7 @@
 
             <div class="tziz-one-ul-div border_no ">
               <ul>
-                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="3" PAGESIZE="0">
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="4" PAGESIZE="0">
                   <li>
                     <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                   </li>
@@ -136,7 +139,7 @@
                   <ul>
                     <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="5" STARTPOS="0">
                       <li>
-                        <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                        <CMSPRO_DOCUMENT FIELD="title" NUM="21" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                       </li>
                     </CMSPRO_DOCUMENTS>
                   </ul>
@@ -197,7 +200,7 @@
                     <ul class="infoList">
                       <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
                         <li>
-                          <CMSPRO_DOCUMENT FIELD="title" NUM="28" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                          <CMSPRO_DOCUMENT FIELD="title" NUM="999" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                         </li>
                       </CMSPRO_DOCUMENTS>
                     </ul>
@@ -326,11 +329,13 @@
       jQuery(".slideBox").slide({
         mainCell: ".bd ul",
         effect: "left",
+        interTime: 5000,
         autoPlay: true
       });
       jQuery(".slideBox-02").slide({
         mainCell: ".bd ul",
         effect: "top",
+        interTime: 5000,
         autoPlay: true
       });
       jQuery(".topLoop").slide({
@@ -343,8 +348,9 @@
       jQuery(".leftLoop").slide({
         mainCell: ".bd ul",
         effect: "leftLoop",
+        interTime: 5000,
         vis: 5,
-        scroll: 5,
+        scroll: 1,
         autoPlay: true
       });
       // 点击切换图片新闻和视频新闻
@@ -375,7 +381,8 @@
 
     function createMap() {
       map = new BMap.Map("map");
-      map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 11);
+      // map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 11);
+      map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 9);
     }
 
     function setMapEvent() {
@@ -393,87 +400,111 @@
 
     function addMapOverlay() {
       var markers = [{
-          content: "我的备注",
-          title: "",
+          content: "四川省成都市郫都区展望东路131号",
+          title: "郫都区菁荣镇",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.672276,
-            lng: 104.078206
+            lat: 30.786983,
+            lng: 103.867633
           }
         },
         {
-          content: "我的备注",
-          title: "",
+          content: "四川省成都市武侯区天府大道中段588号",
+          title: "成都高新区通威国际中心",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.674761,
-            lng: 104.098903
+            lat: 30.556513,
+            lng: 104.07439
           }
         },
         {
-          content: "我的备注",
-          title: "",
+          content: "成都市天府大道天府新区南段2039号",
+          title: "成都天府新区天府菁蓉大厦",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.694141,
-            lng: 104.005191
+            lat: 30.49791,
+            lng: 104.078553
           }
         },
         {
-          content: "我的备注",
-          title: "",
+          content: "斌升街28号附1-2",
+          title: "青羊区成都新民社会组织发展中心",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.698116,
-            lng: 104.128223
+            lat: 30.66811,
+            lng: 104.06445
           }
         },
         {
-          content: "我的备注",
-          title: "",
+          content: "建设南街23号",
+          title: "成华区“培华社区",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.668301,
-            lng: 104.050035
+            lat: 30.670271,
+            lng: 104.109377
           }
         },
         {
-          content: "我的备注",
-          title: "",
+          content: "成都市新都区新达路与永兴街交叉口东北50米",
+          title: "新都区“金东公益中心”",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.714013,
-            lng: 104.077631
+            lat: 30.840485,
+            lng: 104.23463
           }
         },
         {
-          content: "我的备注",
-          title: "",
+          content: "成都市蒲江县",
+          title: "蒲江县“明月村”",
           imageOffset: {
             width: -46,
             height: -21
           },
           position: {
-            lat: 30.659354,
-            lng: 104.01554
+            lat: 30.263621,
+            lng: 103.329295
+          }
+        },
+        {
+          content: "四川省成都市武侯区创瑞街6号",
+          title: "成都高新区芳草“同心家园”",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.62038,
+            lng: 104.049513
+          }
+        },
+        {
+          content: "崇州“心联汇”新的社会阶层人士创新实践基地",
+          title: "崇州市白头镇天竺3组28号（土而奇农场乐园）",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.616295,
+            lng: 103.611455
           }
         }
       ];

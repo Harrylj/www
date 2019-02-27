@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>添加新房屋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+
+  </head>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-01-16
+    	描述：hab-li-click：.hab-li添加表示选中
+    -->
+    <div class="house-add public-div">
+      <div class="ha-header">成都市</div>
+      <div class="ha-body">
+        <h5>选择小区</h5>
+        <ul class="hab-ul">
+        	<li class="hab-li hab-li-click"><a href="#">龙湖世纪风景</a></li>
+        	<li class="hab-li"><a href="#">龙湖世纪风景</a></li>
+        	<li class="hab-li"><a href="#">龙湖世纪风景</a></li>
+        	<li class="hab-li"><a href="#">龙湖世纪风景</a></li>
+          <li class="hab-li"><a href="#">龙湖世纪风景</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function(){
+        // 点击选择小区
+        $('.hab-li').on('click',function(){
+          var classHover = 'hab-li-click';
+          $(this).addClass(classHover).siblings().removeClass(classHover)
+          
+        })
+      })
+    </script>
+
+  </body>
+
+</html>

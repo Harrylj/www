@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>账单</title>
+     <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bill.css"/>
+
+  </head>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-01-10
+    	描述：bill-header-ok： .bill-header添加 表示全部账单已清
+    	     bill-pay-ok : .bill-pay-li添加 表示该月账单已清
+    -->
+    <div class="bill public-div">
+      <div class="bill-header">
+        <p>12月账单</p>
+        <h1>284.90</h1>
+        <h3><span class="bh-span-01">物业费</span><span class="bh-span-01">辣鸡处理费</span><span class="bh-span-01">其他</span></h3>
+        <div class="bill-btn-div">
+          <a href="billPay.html">
+          <button class="bill-btn-01 bill-btn-zjjf">直接缴费</button>
+          </a>
+        </div>
+      </div>
+      <div class="bill-body">
+        <h2>2018年</h2>
+        <ul>
+          <li class="bill-pay-li bill-pay-ok">
+            <a href="billDetail.html"><div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div></a>
+          </li>
+          
+        </ul>
+        <h2>2018年</h2>
+        <ul>
+          <li class="bill-pay-li bill-pay-ok">
+            <a href="billDetail.html"><div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div></a>
+          </li>
+          <li class="bill-pay-li bill-pay-ok">
+            <a href="billDetail.html"><div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div></a>
+          </li>
+          <li class="bill-pay-li">
+            <a href="billDetail.html"><div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div></a>
+          </li>
+          <li class="bill-pay-li bill-pay-ok">
+            <a href="billDetail.html"><div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div></a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <!--<script src="js/mui.min.js"></script>-->
+    <script>
+//    mui.init({
+//      swipeBack: true //启用右滑关闭功能
+//    });
+    </script>
+
+  </body>
+
+</html>

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
     <title>
-      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+      <CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
     </title>
     <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
     <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
@@ -32,7 +32,7 @@
       <div class="tzi-body public-body">
         <div class="ab-one">
           <!--      <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>-->
-          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
+          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="false" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
         </div>
         
         
@@ -44,7 +44,7 @@
                 <span><PUBLISHTIME><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="yyyy-MM-dd">2014-12-12</CMSPRO_DOCUMENT></PUBLISHTIME></span>&nbsp;&nbsp;&nbsp;&nbsp;<span><CMSPRO_DOCUMENT FIELD='source'>来源</CMSPRO_DOCUMENT></span>
               </div>
               <div class="abcch-right fr">
-                <a class="abc-a-fzlj" href="#" onclick="copyUrl()">复制链接</a>
+                <a class="abc-a-fzlj" href="#">复制链接</a>
                 <a class="abc-a-dywb" href="#" onclick="window.print();" style="cursor: hand">打印文本</a>
               </div>
               <div class="clear"></div>
@@ -79,7 +79,25 @@
     </div>
   </body>
   <script type="text/javascript">
-    
+    $(document).ready(function() {
+      /* 定义所有class为copy标签，点击后可复制被点击对象的文本 */
+      var now_url = this.location.href;
+      $(".abc-a-fzlj").zclip({
+        path: "ZeroClipboard.swf",
+        copy: function() {
+          return now_url
+        },
+        beforeCopy: function() { /* 按住鼠标时的操作 */
+          $(this).css("color", "orange");
+        },
+        afterCopy: function() { /* 复制成功后的操作 */
+          var $copysuc = $("<div class='copy-tips'><div class='copy-tips-wrap'>☺ 复制成功</div></div>");
+          $("body").find(".copy-tips").remove().end().append($copysuc);
+          $(".copy-tips").fadeOut(3000);
+        }
+      });
+
+    });
 
   </script>
 

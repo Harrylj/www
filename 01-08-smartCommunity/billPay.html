@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>账单缴费</title>
+     <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bill.css"/>
+
+  </head>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-01-10
+    	描述：bill-header-ok： .bill-header添加 表示全部账单已清
+           bill-pay-li-click: .bill-pay-li添加表示选中
+    -->
+    <div class="bill-pay public-div">
+      <div class="bp-header">
+        <h4>总额</h4>
+        <h1>441.77</h1>
+        <h3>12月账单: 284.90</h3>
+      </div>
+      <div class="bd-content">
+        <ul class="bd-body-ul">
+          <li><p>物业管理费</p><span>234.90</span></li>
+          <li><p>辣鸡处理费</p><span>234.90</span></li>
+          <li><p>停车费</p><span>234.90</span></li>
+          <li><p>送水费</p><span>234.90</span></li>
+        </ul>
+      </div>
+      <div class="line-bg-height-15"></div>
+      <div class="bp-body">
+        <h2>其他未缴账单</h2>
+        <ul>
+          <li class="bill-pay-li">
+            <div class="pill-pay-li-div"><p>11月账单</p><span class="bill-list-right">234.90</span></div>
+          </li>
+          <li class="bill-pay-li bill-pay-li-click">
+            <div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div>
+          </li>
+        </ul>
+        <div class="bd-btn-div">
+          <button class="bd-btn-01 bd-btn-zjjn">直接缴纳</button>
+        </div>
+      </div>
+      
+    </div>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function(){
+        // 点击选中缴费
+        $('.bill-pay-li').on('click',function(){
+          var class_hover = 'bill-pay-li-click';
+          if($(this).hasClass(class_hover)){
+            $(this).removeClass(class_hover)
+          }
+          else{
+            $(this).addClass(class_hover)
+          }
+        })
+      })
+    </script>
+
+  </body>
+
+</html>

@@ -5,7 +5,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
     <title>
-      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+      <CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
     </title>
     <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
     <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
@@ -18,28 +18,41 @@
     <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <style type="text/css">
-      html,
-      body {
-        background-color: white;
-      }
     </style>
     <script type="text/javascript">
     </script>
   </head>
 
   <body>
-    <div class="index-gzh">
-      <div class="index-gzh-div">
-        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="publicEWM">
-          <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
-          <p><CMSPRO_DOCUMENT FIELD="title" NUM="12">稿件标题</CMSPRO_DOCUMENT></p>
-        </CMSPRO_DOCUMENTS>
+    <!--调用公用二维码-->
+      <div class="index-fixed-father">
+        <div class="index-fixed-list">
+          <ul class="index-fixed-ul">
+            <li class="index-fixed-wx">
+              <p>微信</p>
+              <div class="index-gzh index-fixed-li-more">
+                <div class="index-gzh-div">
+                  <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="publicEWM">
+                    <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                    <p><CMSPRO_DOCUMENT FIELD="title" NUM="12">稿件标题</CMSPRO_DOCUMENT></p>
+                  </CMSPRO_DOCUMENTS>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
 
   </body>
   <script type="text/javascript">
-
+    $(function(){
+      $('.index-fixed-ul').children('li').on('mouseover', function() {
+        $(this).children('.index-fixed-li-more').show();
+      })
+      $('.index-fixed-ul').children('li').on('mouseout', function() {
+        $(this).children('.index-fixed-li-more').hide();
+      })
+    })
   </script>
 
 </html>

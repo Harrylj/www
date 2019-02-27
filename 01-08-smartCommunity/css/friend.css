@@ -1,0 +1,440 @@
+.friend-index {
+  min-height: 100%;
+  padding: 60px 20px 0 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.friend-index .fi-body img {
+  width: 100%;
+}
+.friend-index .fi-body h1 {
+  font-size: 18px;
+  line-height: 60px;
+  color: #969696;
+  text-align: center;
+}
+.friend-index .fi-footer {
+  padding-bottom: 30px;
+}
+.easyPieChart {
+  overflow: hidden;
+}
+.friend-to-me {
+  padding: 20px;
+}
+.friend-to-me .ftm-content {
+  padding: 20px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 0 8px #DEDEDE;
+}
+.friend-to-me .ftm-content h5 {
+  font-size: 12px;
+  color: #969696;
+  line-height: 36px;
+  text-align: center;
+}
+.friend-to-me .ftm-content h1 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #303030;
+  line-height: 28px;
+  text-align: center;
+}
+.friend-to-me .ftm-content p {
+  font-size: 14px;
+  color: #444444;
+  line-height: 36px;
+  text-align: center;
+}
+.friend-to-me .ftm-content .ftmc-div-01 {
+  text-align: center;
+  padding: 0;
+  color: #7a849e;
+  font-size: 17px;
+  background-color: #F8F8F8;
+  line-height: 40px;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+.friend-to-me .ftm-content .ftmc-ul li {
+  padding: 6px 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #646464;
+  font-size: 16px;
+  line-height: 32px;
+}
+.friend-to-me .ftm-content .ftmc-ul p {
+  color: #202020;
+  font-size: 16px;
+  line-height: 32px;
+}
+.friend-to-me .ftmc-line {
+  position: relative;
+  margin: 25px -5%;
+  height: 1px;
+  background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
+  background-size: 12px 1px;
+  background-repeat: repeat-x;
+}
+.friend-to-me .ftmc-line:before,
+.friend-to-me .ftmc-line:after {
+  position: absolute;
+  top: -15px;
+  content: " ";
+  font-size: 1px;
+  color: transparent;
+  width: 30px;
+  height: 30px;
+  background-color: #F5F5F5;
+  border-radius: 15px;
+}
+.friend-to-me .ftmc-line:before {
+  left: -20px;
+}
+.friend-to-me .ftmc-line:after {
+  right: -20px;
+}
+.friend-to-me .ftmc-body .ftmc-ewm {
+  background-color: #E2E2E2;
+  border-radius: 8px;
+  width: 80px;
+  height: 80px;
+  margin: 10px auto;
+}
+.friend-to-me .ftmc-body p {
+  font-size: 15px;
+  line-height: 24px;
+  padding: 10px 0;
+  text-align: center;
+  color: #646464;
+}
+.friend-to-me .ftm-share {
+  padding: 20px 0;
+  text-align: center;
+}
+.friend-to-me .ftm-share .ftm-btn-share {
+  background-color: #27396A;
+  border: none;
+  height: 42px;
+  line-height: 42px;
+  font-size: 18px;
+  color: white;
+  padding: 0 20px;
+  border-radius: 21px;
+}
+.friend-to-me .ftm-share p {
+  font-size: 12px;
+  line-height: 36px;
+  text-align: center;
+  color: #646464;
+}
+.friend-index-list {
+  padding: 10px 20px;
+}
+.friend-index-list .fil-body:before {
+  content: "世界那么大，朋友那么多";
+  background-image: url(../images/friend-img@2x.png);
+  background-repeat: no-repeat;
+  opacity: 0.2;
+  z-index: 1;
+  background-size: 100% auto;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  padding-top: 240px;
+  border-radius: 40px;
+  font-size: 18px;
+  line-height: 60px;
+  color: #969696;
+  text-align: center;
+}
+.friend-index-list .fil-body {
+  position: relative;
+  min-height: 450px;
+  overflow: hidden;
+}
+.friend-index-list .fil-body h3 {
+  font-size: 16px;
+  color: #363636;
+  line-height: 36px;
+}
+.friend-index-list .fil-body .filb-list-div {
+  position: relative;
+}
+.friend-index-list .fil-body .fibl-item {
+  position: relative;
+  box-shadow: 0 0 5px #F5F5F5;
+  border-radius: 8px;
+  padding-left: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 15px;
+  z-index: 99;
+  background-color: white;
+}
+.friend-index-list .fil-body .fibl-item h2 {
+  font-size: 17px;
+  line-height: 28px;
+  font-weight: bold;
+  color: #101010;
+}
+.friend-index-list .fil-body .fibl-item p {
+  font-size: 15px;
+  line-height: 24px;
+  color: #A3A3A3;
+}
+.friend-index-list .fil-body .fibl-item .fibl-item-btn-delete {
+  display: none;
+}
+.friend-index-list .fil-body .fibl-item .fibl-item-btn-over {
+  display: block;
+}
+.friend-index-list .fil-body .fibl-item-over .fibl-item-btn-delete {
+  display: block;
+}
+.friend-index-list .fil-body .fibl-item-over .fibl-item-btn-over {
+  display: none;
+}
+.friend-index-list .fil-body .fibl-item-over h2 {
+  color: #969696;
+}
+.friend-index-list .fil-body .filb-item-percentage {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -30px;
+}
+.friend-index-list .fil-body .filb-item-percentage span {
+  font-size: 16px;
+  color: #676671;
+}
+.friend-index-list .fil-body .fibl-item-right {
+  position: absolute;
+  display: flex;
+  justify-content: flex-end;
+  right: 10px;
+  top: 50%;
+  margin-top: -14px;
+  text-align: right;
+}
+.friend-index-list .fil-body .fibl-item-right-img {
+  width: 28px;
+  height: 28px;
+  background-image: url(../images/friend-round2@2x.png);
+  background-repeat: no-repeat;
+  background-size: 12px 12px;
+  background-position: center center;
+}
+.friend-index-list .fil-body .fibl-item-btn-over,
+.friend-index-list .fil-body .fibl-item-btn-delete {
+  color: #DB7A74;
+  border-radius: 14px;
+  height: 28px;
+  border: none;
+  font-size: 15px;
+  text-align: center;
+  padding: 0 10px;
+  line-height: 28px;
+  background-color: transparent;
+}
+.friend-index-list .fil-body .fibl-item-btn-delete {
+  color: transparent!important;
+  background-image: url(../images/friend-detele-button@2x.png);
+  background-size: 30px 23px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.friend-index-list #select_type_over,
+.friend-index-list #select_type_delete {
+  margin-left: -20px;
+}
+.friend-index-list .mui-popover.mui-popover-action .mui-table-view {
+  color: #010101;
+  font-size: 16px;
+}
+.friend-index-list .mui-popover.mui-popover-action .mui-table-view .mui-table-view-cell:after {
+  top: 0;
+  bottom: auto;
+}
+.friend-index-list .mui-popover.mui-popover-action .mui-table-view-01 li:first-child {
+  line-height: 40px;
+  color: #999;
+  font-size: 12px;
+}
+.friend-index-list .mui-popover.mui-popover-action .mui-table-view .mui-table-view-cell a:hover {
+  color: #ff6974;
+}
+.friend-info-input {
+  padding-bottom: 240px;
+  background-color: #F5F5F5;
+}
+.friend-info-input .fii-header,
+.friend-info-input .fiib-ul li {
+  border-bottom: 1px solid #E0E0E0;
+}
+.friend-info-input .fii-header,
+.friend-info-input .fiib-li-left,
+.friend-info-input .fiib-li-right {
+  line-height: 50px;
+}
+.friend-info-input select {
+  margin: 0;
+}
+.friend-info-input input {
+  margin: 0;
+}
+.friend-info-input .fii-btn-start,
+.friend-info-input .fii-btn-end {
+  vertical-align: middle;
+  border: none;
+  background-color: #F5F5F5;
+  color: #646464;
+  font-size: 14px;
+  padding: 0 10px;
+  line-height: 32px;
+  border-radius: 16px;
+}
+.friend-info-input .fiib-li-left-date {
+  width: 60px;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+}
+.friend-info-input .fiib-li-right-date {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+.friend-info-input .fii-header,
+.friend-info-input .fii-body {
+  background-color: white;
+}
+.friend-info-input .fii-line-01 {
+  height: 15px;
+  background-color: #F5F5F5;
+  margin: 0 -20px;
+}
+.friend-info-input .fii-header {
+  background-image: url(../images/friend-ip-icon@2x.png);
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  padding-left: 40px;
+  font-size: 14px;
+  color: #646464;
+}
+.friend-info-input .fii-body {
+  padding: 0 20px;
+}
+.friend-info-input .fii-body .fiib-ul li {
+  display: flex;
+  justify-content: space-between;
+}
+.friend-info-input .fii-body .fiib-ul li:last-child {
+  border: none;
+}
+.friend-info-input .fii-body .fiib-ul .fiib-li-left {
+  font-size: 16px;
+  color: #101010;
+}
+.friend-info-input .fii-body .fiib-ul .fiib-li-right {
+  font-size: 16px;
+  color: #646464;
+}
+.friend-info-input .fii-body .fiib-ul .fiib-li-right-more {
+  padding-right: 20px;
+  background-image: url(../images/arrow@2x.png);
+  background-size: 10px 18px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.friend-info-input .fiib-input {
+  border: none;
+  text-align: right;
+  color: #646464;
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+.friend-info-input .fcn-input {
+  height: 36px;
+  width: 36px;
+  background-color: #F5F5F5;
+  border: none;
+  border-radius: 6px;
+  line-height: 36px;
+  text-align: center;
+  color: #646464;
+  font-size: 16x;
+  padding: 0 5px;
+  margin: 0;
+}
+.friend-info-input .fiib-car-number {
+  padding-top: 15px;
+}
+.friend-info-input .fiib-car-type-title {
+  font-size: 12px;
+  color: #BABABA;
+  line-height: 32px;
+}
+.friend-info-input .fiib-car-type {
+  background-color: #F8F8F8;
+  height: 40px;
+  border-radius: 20px;
+  display: inline-block;
+  padding: 0 20px;
+}
+.friend-info-input .ffib-car-btn {
+  position: relative;
+  border: none;
+  color: #969696;
+  background-color: transparent;
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 10px;
+  font-size: 14px;
+}
+.friend-info-input .ffib-car-btn:before {
+  position: absolute;
+  top: 50%;
+  left: -1px;
+  margin-top: -6px;
+  background-color: #D5D5D5;
+  content: " ";
+  font-size: 1px;
+  color: transparent;
+  width: 1px;
+  height: 12px;
+}
+.friend-info-input .ffib-car-btn:first-child:before {
+  display: none;
+}
+.friend-info-input .ffib-car-btn-click {
+  color: #1e7ff9;
+}
+.friend-info-input .fiib-li-right-car {
+  background-image: url(../images/friend-change-button1@3x.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  width: 60px;
+  height: 50px;
+  background-position: center center;
+}
+.friend-info-input .fiib-li-right-car-hover {
+  background-image: url(../images/friend-change-button1@3x-hover.png);
+}
+.friend-info-input .fiib-car-more-div {
+  border-top: 1px solid #E0E0E0;
+  display: none;
+  padding-bottom: 20px;
+}
+.friend-info-input .fiib-list-div:nth-child(2) .fiib-ul li {
+  border-color: transparent;
+}
+.friend-info-input .fii-footer {
+  padding-top: 80px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>修改手机号码</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/me.css" />
+
+  </head>
+  <style type="text/css">
+
+  </style>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-02-25
+    	描述：.set_downtime_div: 添加.set_downtime 表示正在倒计时
+    -->
+    <div class="me-phone-old  public-div">
+      <div class="mpo-body">
+        <div class="mpo-phone-div">
+          <h2>手机号码</h2>
+          <p class="mpo-input-phone">182****6593</p>
+        </div>
+        <div class="mpo-number-div">
+          <input class="mpo-input-yzm" type="text" placeholder="请输入验证码" />
+          <div class="mpo-btn-hqyz set_downtime_div">获取验证<span></span></div>
+        </div>
+        <p class="mpo-warning"></p>
+        <a class="mpo-btn-qdxg" href="mePhoneModify.html">确定修改</a>
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        // !(/^1[34578]\d{9}$/.test(phone))
+        
+        //.set_downtime_div: 添加.set_downtime 表示正在倒计时
+        // 倒计时函数
+        function set_downtime(num) {
+          var timesRun = num;
+          var interval = setInterval(function() {
+            timesRun = timesRun - 1;
+            $('.set_downtime_div').addClass('set_downtime').html(timesRun + '<span>S</span>')
+            if(timesRun === 0) {
+              clearInterval(interval);
+              $('.set_downtime_div').removeClass('set_downtime').html('获取验证')
+            }
+            console.log(timesRun)
+          }, 1000);
+        }
+        
+        // 重制提示
+        $('.mpo-warning').html('');
+        
+        // 点击获取验证码
+        $('.mpo-btn-hqyz').on('click', function() {
+          var class_down = 'set_downtime';
+          if(!$(this).hasClass(class_down)) {
+            set_downtime(10);
+            console.log('验证码默认1234')
+          } else {
+            console.log('别急，等倒计时完')
+          }
+
+        })
+        
+        
+        // 点击确定修改
+        $('.mpo-btn-qdxg').on('click', function() {
+            var input_yzm = $('.mpo-input-yzm'),
+                ts_div = $('.mpo-warning'),
+                ts_01 = '验证码不正确';
+            // 验证码默认1234
+            if(input_yzm.val() == '1234'){
+              ts_div.html('')
+            }
+            // 验证码不正确
+            else{
+              ts_div.html(ts_01)
+              return false;
+            }
+        })
+      })
+    </script>
+
+  </body>
+
+</html>
