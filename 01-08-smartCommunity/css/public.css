@@ -9,7 +9,7 @@
   outline: none;
   box-sizing: border-box;
   letter-spacing: 1px;
-  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  /*font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;*/
 }
 h1,h2,h3,h4,h5,h6,p{
   margin: 0;
@@ -505,4 +505,14 @@ a.fontcolor1 {
     font-size: 18px;
     background-color: #223a6e;
     /* font-weight: bold; */
+}
+.public-btn-04{
+            display: block;
+            margin: 20px;
+            background-color: #2EBC6E;
+            color: white;
+            font-size: 17px;
+            line-height: 48px;
+            text-align: center;
+            border-radius: 4px;
 }

@@ -113,8 +113,10 @@
       }
       
       .hb-list{
-          min-height: 280px;
+          min-height: 120px;
           border-bottom: 20px;
+          max-height: 344px;
+          overflow-y: scroll;
       }
       .house-user-list:after{
         position: absolute;
@@ -127,6 +129,7 @@
         font-size: 1px;
       }
       .hbl-item-btn{
+          display: none;
           position: absolute;
           right: 10px;
           bottom: 20px;
@@ -269,8 +272,8 @@
         }
         .hdb-item-more{
             background-position: right center;
-            padding-right: 16px;
-            background-image: url(../images/arrow@2x.png);
+//          padding-right: 16px;
+//          background-image: url(../images/arrow@2x.png);
             background-size: 8px 15px;
             background-repeat: no-repeat;
         }

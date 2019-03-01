@@ -13,6 +13,8 @@
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/plateNumber.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/me.css"/>
  
@@ -50,7 +52,7 @@
           <a href="#">
           <div class="mibl-item msi-item msi-item-03">
             <h2>生日</h2>
-            <div class="msi-item-right">1999.09.20</div>
+            <div class="msi-item-right"><button  class="fii-btn-start fii-btn-start_01 ">录入生日</button></div>
           </div>
           </a>
           <a href="#">
@@ -71,6 +73,51 @@
       
       </div>
     </div>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      (function($) {
+        $.init();
+        var btns_friend_start = $('.fii-btn-start_01');
+        // 到访时间
+        btns_friend_start.each(function(i, btn) {
+          btn.addEventListener('tap', function() {
+//          var optionsJson = this.getAttribute('data-options') || '{}';
+//          var options = JSON.parse(optionsJson);
+            var id = this.getAttribute('id');
+            /*
+             * 首次显示时实例化组件
+             * 示例为了简洁，将 options 放在了按钮的 dom 上
+             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+           */
+            // var picker = new $.DtPicker(options);
+            var year=new Date().getFullYear() ;
+                            var  month=new Date().getMonth();
+                            var day=new Date().getDate();
+                            console.log(year,month,day)
+           
+           var picker_01 = new $.DtPicker({"type":"date","beginYear":1900,"endYear":year})
+            
+            picker_01.show(function(rs) {
+              /*
+               * rs.value 拼合后的 value
+               * rs.text 拼合后的 text
+               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+               * rs.m 月，用法同年
+               * rs.d 日，用法同年
+               * rs.h 时，用法同年
+               * rs.i 分（minutes 的第二个字母），用法同年
+               */
+              btns_friend_start[0].innerText = rs.text;
+              picker_01.dispose();
+             
+            });
+          }, false);
+        });
+
+        
+      })(mui);
+    </script>
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(function(){
@@ -87,6 +134,8 @@
           }
           
         })
+        
+
       })
     </script>
 
