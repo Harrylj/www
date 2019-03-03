@@ -124,7 +124,6 @@ html {
   background-repeat: no-repeat;
 }
 .ihr-close {
-  cursor: pointer;
   width: 40px;
   height: 80px;
   background-image: url(../images/closed-icon@2x.png);
@@ -141,7 +140,7 @@ html {
 }
 .ib-middle {
   background-color: white;
-  width: 66%;
+  width: 56%;
   border: 1px solid red;
 }
 .ib-right {
@@ -165,7 +164,6 @@ html {
   padding: 10px 20px;
 }
 .ibl-item-more {
-  cursor: pointer;
   position: absolute;
   right: 0;
   top: 0;
@@ -455,7 +453,6 @@ html {
   background-image: url(../images/arrow@2x-hover.png);
 }
 .ibri-one-item {
-  cursor: pointer;
   position: relative;
   background-color: #292e33;
   padding: 20px 20px 10px 70px;
@@ -535,7 +532,7 @@ html {
   cursor: pointer;
 }
 .ibri-list {
-  height: 600px;
+  height: 660px;
   overflow: scroll;
 }
 .ibri-one-item:nth-child(n+5) {
@@ -543,201 +540,4 @@ html {
 }
 .ibri-list::-webkit-scrollbar {
   display: none;
-}
-.ibri-list-more .ibri-one-item:nth-child(n) {
-  display: block;
-}
-.ibri-list-more .ibr-btn-more {
-  display: none;
-}
-#map {
-  height: 100%;
-  width: 100%;
-}
-.index-layer .modal {
-  top: 60px;
-}
-.index-layer .modal-dialog {
-  max-width: 1920px!important;
-  width: 98%;
-}
-.index-layer .modal-content {
-  height: 800px;
-}
-.index-layer .close {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  z-index: 9999;
-}
-.ibl-item-progress-div .progress {
-  margin: 8px 0;
-  height: 6px;
-  background-color: #363C43;
-}
-.ibl-item-progress-etc {
-  background-color: #4EE5BE;
-}
-.ibl-item-progress-mtc {
-  background-color: #55C3FC;
-}
-.ibl-item-progress-num {
-  background-color: #5B67EA;
-}
-.ibl-four-car-01-div {
-  width: 135px;
-  background-color: #262b2e;
-  padding-bottom: 10px;
-}
-#ibl-four-car-01,
-#ibl-four-car-02,
-#ibl-four-car-03 {
-  width: 100%;
-  height: 70px;
-}
-.ibl-four-car {
-  display: flex;
-  justify-content: space-between;
-}
-.ibl-four-car h2 {
-  color: white;
-  font-size: 28px;
-  line-height: 38px;
-  height: 38px;
-  overflow: hidden;
-  padding: 0 8px;
-}
-.ibl-four-car p {
-  font-size: 14px;
-  line-height: 20px;
-  color: #7a8189;
-  padding: 0 8px;
-  font-weight: bold;
-}
-.modal-body-sfz .sfz-left {
-  width: 68%;
-  background-color: #FCFCFC;
-}
-.modal-body-sfz .sfz-right {
-  width: 30%;
-}
-.ibr-item-two {
-  position: relative;
-}
-.ibri-list {
-  position: relative;
-}
-.ibrit-nav,
-.ibrit-nav-three {
-  display: flex;
-}
-.ibrit-nav li,
-.ibrit-nav-three li {
-  cursor: pointer;
-  position: relative;
-  line-height: 34px;
-  padding: 0 10px;
-  color: white;
-  font-size: 14px;
-  background-color: #292e33;
-}
-.ibrit-nav li:first-child,
-.ibrit-nav-three li:first-child {
-  border-radius: 17px 0 0 17px;
-  padding-left: 20px;
-}
-.ibrit-nav li:last-child,
-.ibrit-nav-three li:last-child {
-  border-radius: 0 17px 17px 0;
-  padding-right: 20px;
-}
-.ibrit-nav li:last-child:after,
-.ibrit-nav-three li:last-child:after {
-  display: none;
-}
-.ibrit-nav li:after,
-.ibrit-nav-three li:after {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  margin-top: -6px;
-  content: " ";
-  width: 1px;
-  height: 12px;
-  font-size: 1px;
-  color: transparent;
-  background-color: black;
-}
-.ibrit-nav .ibrit-nav-hover,
-.ibrit-nav-three .ibrit-nav-hover,
-.ibrit-nav .ibrit-nav-three-hover,
-.ibrit-nav-three .ibrit-nav-three-hover {
-  color: #55C3FC;
-}
-.ibrit-item,
-.ibrit-item-three {
-  margin-top: 10px;
-  background-color: #292e33;
-  padding: 10px 20px;
-  margin-bottom: 10px;
-}
-.ibrit-item h4,
-.ibrit-item-three h4 {
-  padding-left: 80px;
-  position: relative;
-  text-align: right;
-  color: #616A73;
-  height: 40px;
-  line-height: 40px;
-  overflow: hidden;
-}
-.ibrit-item h4:before,
-.ibrit-item-three h4:before {
-  position: absolute;
-  left: 0;
-  top: 50%;
-  margin-top: -10px;
-  width: 80px;
-  height: 20px;
-  content: "待处理";
-  font-size: 16px;
-  color: "#30A789";
-  line-height: 20px;
-  background-image: url(../images/no-button@2x.png);
-  background-size: 20px 20px;
-  background-position: left center;
-  background-repeat: no-repeat;
-}
-.ibrit-item h5,
-.ibrit-item-three h5 {
-  flex-wrap: wrap;
-  font-size: 14px;
-  padding: 5px 0 5px 30px;
-  line-height: 24px;
-  color: #919598;
-}
-.ibrit-item h5 span:first-child,
-.ibrit-item-three h5 span:first-child {
-  display: inline-block;
-  margin-right: 5px;
-  color: #55C3FC;
-}
-.ibrit-item h3,
-.ibrit-item-three h3 {
-  padding-left: 30px;
-  font-size: 14px;
-  color: white;
-  line-height: 28px;
-}
-.ibrit-item-ok h4:before,
-.ibrit-item-three-ok h4:before {
-  content: "已处理";
-  color: #D6D6D6;
-  background-image: url(../images/ok-button@2x.png);
-}
-.ibri-four-viedo {
-  margin-bottom: 20px;
-}
-.ibri-four-viedo img {
-  width: 100%;
 }

@@ -1,5 +1,6 @@
 body,html{
     background-color: #181b1d;
+    overflow-x: hidden;
 }
 .index{
     width: 1920px;
@@ -126,6 +127,7 @@ body,html{
     background-repeat: no-repeat;
 }
 .ihr-close{
+    cursor: pointer;
     width: 40px;
     height: 80px;
     background-image: url(../images/closed-icon@2x.png);
@@ -135,18 +137,30 @@ body,html{
 }
 .index-body{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
 }
 .ib-left{
     padding: 10px 20px;
 }
 .ib-middle{
-    height: 400px;
-    width: 59%;
+    background-color: white;
+    width: 66%;
     border: 1px solid red;
 }
 .ib-right{
-    width: 15%;
+    z-index: 99;
+//  width: 15%;
+    .ib-span-bg-hover{
+        background-color: #FF2A68;
+        color: white;
+    }
+
+}
+.ib-left
+,.ib-middle
+,.ib-right{
+    position: relative;
+    min-height: 800px;
 }
 .ibl-item{
     position: relative;
@@ -156,6 +170,7 @@ body,html{
     padding: 10px 20px;
 }
 .ibl-item-more{
+    cursor: pointer;
     position: absolute;
     right: 0;
     top: 0;
@@ -168,6 +183,7 @@ body,html{
     
 }
 .ib-item-title{
+    cursor: pointer;
    color: #4EE5BE;
    font-size: 18px; 
    line-height: 40px;
@@ -363,4 +379,384 @@ body,html{
     img{
         width: 32%;
     }
+}
+.ib-right-one{
+    display: none;
+    padding-top: 20px;
+}
+
+.ibro-list-item {
+  cursor: pointer;
+  width: 110px;
+  position: relative;
+  padding-top: 70px;
+  line-height: 24px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  background-repeat: no-repeat;
+  background-size: 40px 40px;
+  background-position: center 20px;
+  text-align: center;
+  color: white;
+}
+.ibro-list-item:nth-child(1) {
+  background-image: url(../images/work-icon@2x.png);
+}
+.ibro-list-item:nth-child(2) {
+  background-image: url(../images/task@2x.png);
+}
+.ibro-list-item:nth-child(3) {
+  background-image: url(../images/abnormal@2x.png);
+}
+.ibro-list-item:nth-child(4) {
+  background-image: url(../images/Live_situation@2x.png);
+}
+.ibro-list-item-num {
+  position: absolute;
+  left: 70%;
+  top: 0;
+  background-color: #FF2A68;
+  color: white;
+  padding: 0 6px;
+  font-size: 14px;
+  line-height: 20px;
+  border-radius: 2px;
+}
+.ib-right-more {
+  cursor: pointer;
+  position: absolute;
+  top: 70%;
+  left: -10px;
+  width: 32px;
+  height: 32px;
+  background-image: url(../images/stretch@2x.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% 100%;
+  z-index: 999;
+}
+.ib-right-two {
+  display: none;
+  width: 320px;
+  padding: 10px 0;
+}
+.ib-right-content-hover {
+  display: block!important;
+}
+.ibr-item {
+  position: relative;
+  margin-bottom: 5px;
+  padding: 10px 20px;
+  background-color: #1f2427;
+}
+.ibr-item-more {
+  position: absolute;
+  right: 0;
+  top: 32px;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  background-position: center  center;
+  background-repeat: no-repeat;
+  background-image: url(../images/arrow@2x.png);
+  background-size: 16px 16px;
+}
+.ibri-list {
+  padding: 10px 0px;
+  display: none;
+}
+.ibr-item-hover .ibri-list {
+  display: block;
+}
+.ibr-item-hover .ibr-item-more {
+  background-image: url(../images/arrow@2x-hover.png);
+}
+.ibri-one-item {
+  cursor: pointer;
+  position: relative;
+  background-color: #292e33;
+  padding: 20px 20px 10px 70px;
+  margin-bottom: 10px;
+}
+.ibri-one-item img {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 40px;
+  height: 40px;
+}
+.ibri-one-item h2 {
+  color: #FFFFFF;
+  font-size: 14px;
+  font-weight: bold;
+  height: 18px;
+  line-height: 18px;
+  overflow: hidden;
+}
+.ibri-one-item h4 {
+  color: #FFFFFF;
+  font-size: 11px;
+  line-height: 28px;
+  height: 28px;
+  overflow: hidden;
+}
+.ibri-one-item h3 {
+  position: relative;
+  font-size: 14px;
+  line-height: 32px;
+  height: 32px;
+  overflow: hidden;
+  padding-left: 50px;
+}
+.ibri-one-item h3 span:nth-child(1) {
+  color: #55C3FC;
+}
+.ibri-one-item h3 span:nth-child(2) {
+  color: #919598;
+}
+.ibri-one-item h3:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  line-height: 32px;
+  content: "[未读]";
+  font-size: 14px;
+  color: #FF2A68;
+}
+.ibri-one-item-unread h3:before {
+  content: "[未读]";
+  color: #FF2A68;
+}
+.ibri-one-item-read h3:before {
+  content: "[已读]";
+  color: #209073;
+}
+.ibri-one-item-ok h3 {
+  padding-left: 70px;
+}
+.ibri-one-item-ok h3:before {
+  content: "[未处理]";
+  color: #CB9A68;
+}
+.ibri-one-item-no h3 {
+  padding-left: 70px;
+}
+.ibri-one-item-no h3:before {
+  content: "[已处理]";
+  color: #868686;
+}
+.ibr-btn-more {
+  text-align: center;
+  color: #656E78;
+  line-height: 50px;
+  cursor: pointer;
+}
+.ibri-list {
+  height: 600px;
+  overflow: scroll;
+}
+.ibri-one-item:nth-child(n+5) {
+  display: none;
+}
+.ibri-list::-webkit-scrollbar {
+  display: none;
+}
+.ibri-list-more{
+    .ibri-one-item:nth-child(n){
+        display: block;
+    }
+    .ibr-btn-more{
+        display: none;
+    }
+}
+#map{
+    height: 100%;
+    width: 100%;
+}
+.index-layer{
+    .modal{
+        top: 60px;
+    }
+    .modal-dialog{
+        max-width: 1920px!important;
+        width: 98%;
+    }
+    .modal-content{
+        height: 800px;
+    }
+    .close{
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+    }
+}
+.ibl-item-progress-div{
+    .progress{
+        margin: 8px 0;
+        height: 6px;
+        background-color: #363C43;
+    }
+}
+.ibl-item-progress-etc{
+    background-color: #4EE5BE;
+}
+.ibl-item-progress-mtc{
+    background-color: #55C3FC;
+}
+.ibl-item-progress-num{
+    background-color: #5B67EA;
+}
+.ibl-four-car-01-div{
+    width: 135px;
+    background-color: #262b2e;
+    padding-bottom: 10px;
+}
+#ibl-four-car-01
+,#ibl-four-car-02
+,#ibl-four-car-03{
+    width: 100%;
+    height: 70px;
+}
+
+.ibl-four-car{
+    display: flex;
+    justify-content: space-between;
+    h2{
+        color: white;
+        font-size: 28px;
+        line-height: 38px;
+        height: 38px;
+        overflow: hidden;
+        padding: 0 8px;
+    }
+    p{
+        font-size: 14px;
+        line-height: 20px;
+        color: #7a8189;
+        padding: 0 8px;
+        font-weight: bold;
+    }
+    
+}
+.modal-body-sfz{
+    .sfz-left{
+        width: 68%;
+        background-color: #FCFCFC;
+    }
+    .sfz-right{
+        width: 30%;
+    }
+    
+}
+.ibr-item-two{
+    position: relative;
+}
+.ibri-list{
+    position: relative;
+}
+.ibrit-nav
+,.ibrit-nav-three{
+    display: flex;
+    li{
+        cursor: pointer;
+        position: relative;
+        line-height: 34px;
+        padding: 0 10px;
+        color: white;
+        font-size: 14px;
+        background-color: #292e33;
+    }
+    li:first-child{
+        border-radius: 17px 0 0 17px;
+        padding-left: 20px;
+    }
+    li:last-child{
+        border-radius:0 17px 17px 0;
+        padding-right: 20px;
+    }
+    li:last-child:after{
+        display: none;
+    }
+    li:after{
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -6px;
+        content: " ";
+        width: 1px;
+        height: 12px;
+        font-size: 1px;
+        color: transparent;
+        background-color: black;
+    }
+    .ibrit-nav-hover
+    ,.ibrit-nav-three-hover{
+        color: #55C3FC;
+    }
+    
+}
+.ibrit-item
+,.ibrit-item-three{
+    margin-top: 10px;
+    background-color: #292e33;
+    padding: 10px 20px;
+    margin-bottom: 10px;
+    h4{
+        padding-left: 80px;
+        position: relative;
+        text-align: right;
+        color: #616A73;
+        height: 40px;
+        line-height: 40px;
+        overflow: hidden;
+    }
+    h4:before{
+        position: absolute;
+        left: 0;
+        top: 50%;
+        margin-top: -10px;
+        width: 80px;
+        height: 20px;
+        content: "待处理";
+        font-size: 16px;
+        color: "#30A789";
+        line-height: 20px;
+        background-image: url(../images/no-button@2x.png);
+        background-size: 20px 20px;
+        background-position: left center;
+        background-repeat: no-repeat;
+    }
+    h5{
+        flex-wrap: wrap;
+        font-size: 14px;
+        padding: 5px 0 5px 30px;
+        line-height: 24px;
+        color: #919598;
+        span:first-child{
+            display: inline-block;
+            margin-right: 5px;
+            color: #55C3FC;
+        }
+    }
+    h3{
+        padding-left: 30px;
+        font-size: 14px;
+        color: white;
+        line-height: 28px;
+    }
+}
+.ibrit-item-ok
+,.ibrit-item-three-ok{
+    h4:before{
+        content: "已处理";
+        color: #D6D6D6;
+        background-image: url(../images/ok-button@2x.png);
+    }
+}
+.ibri-four-viedo{
+    margin-bottom: 20px;
+  img{
+      width: 100%;
+  }  
 }

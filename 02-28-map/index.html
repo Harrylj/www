@@ -1,59 +1,68 @@
 <!DOCTYPE html>
 <html>
 
-  <head lang="en">
-    <meta charset="UTF-8">
-    <!-- 使用最新的ie内核渲染 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备优先, 禁止缩放 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
-    <!-- 国产浏览器(360)使用webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止识别为手机号码 -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/public.css" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
-    <title>四川成渝</title>
-    <style type="text/css">
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4"></script>
+		<title>四川成渝</title>
+		<style type="text/css">
 
-    </style>
-  </head>
+		</style>
+	</head>
 
-  <body>
-  <div class="index public-body-div">
-    <!--
+	<body>
+		<div class="index public-body-div">
+			<!--
     	作者：648267773@qq.com
     	时间：2019-02-28
     	描述：.ib-header:首页顶部内容
     -->
-    <div class="index-header">
-      <div class="ih-left"><img src="images/logo@2x.png"/></div>
-      <div class="ih-right">
-        <div class="ihr-nav">
-          <ul>
-          	<li><a href="#">收费站管理</a></li>
-          	<li><a href="#">服务区管理</a></li>
-          	<li><a href="#">巡逻车管理</a></li>
-          	<li><a href="#">异常报告</a></li>
-          </ul>
-        </div>
-        <div class="ihr-right">
-          <div class="ihr-warning"></div>
-          <div class="ihr-msg"></div>
-          <div class="ihr-userinfo">
-            <img src="images/profile_image@2x.png"/>
-            <p>MDJFKIGOJLKL</p>
-          </div>
-          <div class="ihr-date">2019.09.20</div>
-          <div class="ihr-close"></div>
-        </div>
-      </div>
-    </div>
-    <div class="index-body">
-      <!--
+			<div class="index-header">
+				<div class="ih-left"><img src="images/logo@2x.png" /></div>
+				<div class="ih-right">
+					<div class="ihr-nav">
+						<ul>
+							<li>
+								<a href="#">收费站管理</a>
+							</li>
+							<li>
+								<a href="#">服务区管理</a>
+							</li>
+							<li>
+								<a href="#">巡逻车管理</a>
+							</li>
+							<li>
+								<a href="#">异常报告</a>
+							</li>
+						</ul>
+					</div>
+					<div class="ihr-right">
+						<div class="ihr-warning"></div>
+						<div class="ihr-msg"></div>
+						<div class="ihr-userinfo">
+							<img src="images/profile_image@2x.png" />
+							<p>MDJFKIGOJLKL</p>
+						</div>
+						<div class="ihr-date">2019.09.20</div>
+						<div class="ihr-close"></div>
+					</div>
+				</div>
+			</div>
+			<div class="index-body">
+				<!--
       	作者：648267773@qq.com
       	时间：2019-02-28
       	描述：.ib-left:首页左侧内容
@@ -63,19 +72,19 @@
       	   .ibl-four:巡逻车统计
       	   .ibl-item-more:每个模块的设置按钮
       -->
-      <div class="ib-left">
-        <div class="ibl-item ibl-one">
-          <div class="ibl-item-more"></div>
-          <h1 class="ib-item-title">收费站实时收入</h1>
-          <div class="ibl-one-sr">
-            <h2>今日收入</h2>
-            <p>历史累计:&yen;<span>123,9808,8000</span></p>
-          </div>
-          <div class="ibl-one-number">
-            <div class="ibl-one-number-div"><span>3</span><span>3</span><span>3</span><span>3</span><span>3</span></div>
-            <h4>32.9%</h4>
-          </div>
-          <!--
+				<div class="ib-left">
+					<div class="ibl-item ibl-one">
+						<div class="ibl-item-more" data-toggle="modal" data-target="#myModalOne"></div>
+						<h1 class="ib-item-title">收费站实时收入</h1>
+						<div class="ibl-one-sr">
+							<h2>今日收入</h2>
+							<p>历史累计:&yen;<span>123,9808,8000</span></p>
+						</div>
+						<div class="ibl-one-number">
+							<div class="ibl-one-number-div"><span>3</span><span>3</span><span>3</span><span>3</span><span>3</span></div>
+							<h4>32.9%</h4>
+						</div>
+						<!--
           	作者：648267773@qq.com
           	时间：2019-03-01
           	描述： .ibl-one-ul的li 添加.ibl-one-ul-add:增加车辆 --今日收入
@@ -83,69 +92,99 @@
                   .ibl-three-ul的li 添加.ibl-three-ul-add: 流量增多--服务区
                   .ibl-three-ul的li 添加.ibl-three-ul-reduce: 流量减少--服务区
           -->
-          <ul class="ibl-one-ul">
-          	<li class="ibl-one-ul-add"><h3>出口车辆 2,63243辆</h3><h5>&yen;<span>239,0987,678</span></h5></li>
-          	<li class="ibl-one-ul-reduce"><h3>入口车辆 2,63243辆</h3><h5>&yen;<span>239,0987,678</span></h5></li>
-          </ul>
-        </div>
-        <div class="ibl-item ibl-two">
-          <div class="ibl-item-more"></div>
-           <h1 class="ib-item-title">车道开通数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-          <div class="ibl-item-progress-div">
-            <div class="ibl-item-progress-etc-div">
-              <div class="ibl-item-progress-etc"></div>
-              <div class="ibl-item-progress-content">
-                <h3>ETC</h3>
-                <h2><span class="ibl-item-progress-num">6</span>/<span>23</span></h2>
-              </div>
-            </div>
-            <div class="ibl-item-progress-mtc-div">
-              <div class="ibl-item-progress-mtc"></div>
-              <div class="ibl-item-progress-content">
-                <h3>MTC</h3>
-                <h2><span class="ibl-item-progress-num">6</span>/<span>23</span></h2>
-              </div>
-            </div>
-            <div class="ibl-item-progress-num-div">
-              <div class="ibl-item-progress-num"></div>
-              <div class="ibl-item-progress-content">
-                <h3>行车道开通总数</h3>
-                <h2><span class="ibl-item-progress-num">6</span>/<span>23</span></h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="ibl-item ibl-three">
-          <div class="ibl-item-more"></div>
-          <h1 class="ib-item-title">服务区开通数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-          <ul class="ibl-three-ul">
-          	<li class="ibl-three-person ibl-three-ul-add">
-          	  <h5>车流量</h5>
-          	  <h2>89,7655</h2>
-          	</li>
-          	<li class="ibl-three-car ibl-three-ul-reduce">
-          	  <h5>人流量</h5>
-          	  <h2>189,7655</h2>
-          	</li>
-          </ul>
-        </div>
-        <div class="ibl-item ibl-four">
-          <div class="ibl-item-more"></div>
-          <h1 class="ib-item-title">巡逻车统计<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-          <div class="ibl-four-map">
-            <img src="images/1@2x.png"/>
-            <img src="images/2@2x.png"/>
-            <img src="images/3@2x.png"/>
-          </div>
-        </div>
-      </div>
-      <!--
+						<ul class="ibl-one-ul">
+							<li class="ibl-one-ul-add">
+								<h3>出口车辆 2,63243辆</h3>
+								<h5>&yen;<span>239,0987,678</span></h5></li>
+							<li class="ibl-one-ul-reduce">
+								<h3>入口车辆 2,63243辆</h3>
+								<h5>&yen;<span>239,0987,678</span></h5></li>
+						</ul>
+					</div>
+					<div class="ibl-item ibl-two">
+						<div class="ibl-item-more" data-toggle="modal" data-target="#myModalTwo"></div>
+						<h1 class="ib-item-title">车道开通数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
+						<div class="ibl-item-progress-div">
+							<div class="ibl-item-progress-etc-div">
+								<div class="progress">
+									<div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+								</div>
+								<div class="ibl-item-progress-content">
+									<h3>ETC</h3>
+									<h2><span class="iblip-num">6</span>/<span>23</span></h2>
+								</div>
+							</div>
+							<div class="ibl-item-progress-mtc-div">
+								<div class="progress">
+									<div class="ibl-item-progress-mtc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+								</div>
+								<div class="ibl-item-progress-content">
+									<h3>MTC</h3>
+									<h2><span class="iblip-num">6</span>/<span>23</span></h2>
+								</div>
+							</div>
+							<div class="ibl-item-progress-num-div">
+								<div class="progress">
+									<div class="ibl-item-progress-num progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+								</div>
+								<div class="ibl-item-progress-content">
+									<h3>行车道开通总数</h3>
+									<h2><span class="iblip-num">6</span>/<span>23</span></h2>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="ibl-item ibl-three">
+						<div class="ibl-item-more" data-toggle="modal" data-target="#myModalThree"></div>
+						<h1 class="ib-item-title">服务区开通数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
+						<ul class="ibl-three-ul">
+							<li class="ibl-three-person ibl-three-ul-add">
+								<h5>人流量</h5>
+								<h2>89,7655</h2>
+							</li>
+							<li class="ibl-three-car ibl-three-ul-reduce">
+								<h5>车流量</h5>
+								<h2>189,7655</h2>
+							</li>
+						</ul>
+					</div>
+					<div class="ibl-item ibl-four">
+						<div class="ibl-item-more" data-toggle="modal" data-target="#myModalFour"></div>
+						<h1 class="ib-item-title">巡逻车统计<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
+						<!--<div class="ibl-four-map">
+							<img src="images/1@2x.png" />
+							<img src="images/2@2x.png" />
+							<img src="images/3@2x.png" />
+						</div>-->
+						<div class="ibl-four-car">
+							<div class="ibl-four-car-01-div">
+								<div id="ibl-four-car-01"></div>
+								<h2>2323222</h2>
+								<p>总耗油 L</p>
+							</div>
+							<div class="ibl-four-car-01-div">
+								<div id="ibl-four-car-02"></div>
+								<h2>2323</h2>
+								<p>总里程 km</p>
+							</div>
+							<div class="ibl-four-car-01-div">
+								<div id="ibl-four-car-03"></div>
+								<h2>222</h2>
+								<p>总时长 th</p>
+							</div>
+						</div>
+								
+					</div>
+				</div>
+				<!--
       	作者：648267773@qq.com
       	时间：2019-02-28
       	描述：.ib-middle:首页中部地图内容
       -->
-      <div class="ib-middle">地图</div>
-      <!--
+				<div class="ib-middle">
+					<div id="map"></div>
+				</div>
+				<!--
       	作者：648267773@qq.com
       	时间：2019-02-28
       	描述：.ib-right:首页右侧内容
@@ -153,63 +192,661 @@
       	     .ibr-item-two:今日巡检任务
       	     .ibr-item-three:异常告警
       	     .ibr-item-four:道路实况
+      	     .ib-right-more:右侧展开1级菜单
+      	     .ibr-item-more：右侧展开2级菜单
+      	     .ibro-list-item:添加 .ibro-list-item-no表示没有待办事项
+      	     .ibr-item ：添加.ibr-item-hover 表示展开
       	     
-      	     .ibri-one-item:添加 .ibri-one-item-no 表示未读（默认表示未读）
-      	                   添加. ibri-one-item-read 表示已读
+      	     .ibri-list :添加.ibri-list-more 表示二级展开
+      	     
+      	     .ibri-one-item:添加 .ibri-one-item-unread 表示未读（默认表示未读）
+      	                   添加.ibri-one-item-read 表示已读
       	           添加 .ibri-one-item-ok 表示已处理
+      	           .ibri-one-item-no 表示未处理
+      	           
+      	      .ib-right-content ：添加.ib-right-content-hover表示当前1级菜单为激活状态
       -->
-      <div class="ib-right">
-        <div class="ibr-item ibr-item-one">
-          <div class="ibr-item-more"></div>
-          <h1>待办工作<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-          <div class="ibri-one-list">
-            <div class="ibri-one-item">
-              <img src="images/user-01.jpg"/>
-              <div class="ibri-one-item-header">
-                <h2>灵风风</h2>
-                <h4>2019.09.20</h4>
-              </div>
-              <h3>刘总监给出指令，请。。。</h3>
-            </div>
-            <div class="ibri-one-item">
-              <img src="images/user-01.jpg"/>
-              <div class="ibri-one-item-header">
-                <h2>灵风风</h2>
-                <h4>2019.09.20</h4>
-              </div>
-              <h3>刘总监给出指令，请。。。</h3>
-            </div>
-            <div class="ibri-one-item">
-              <img src="images/user-01.jpg"/>
-              <div class="ibri-one-item-header">
-                <h2>灵风风</h2>
-                <h4>2019.09.20</h4>
-              </div>
-              <h3>刘总监给出指令，请。。。</h3>
-            </div>
-          </div>
-          <div class="ibr-btn-more"></div>
-        </div>
-        <div class="ibr-item ibr-item-two">
-          <div class="ibr-item-more"></div>
-          <h1>今日巡检任务<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-        </div>
-        <div class="ibr-item ibr-item-three">
-          <div class="ibr-item-more"></div>
-          <h1>异常告警<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-        </div>
-        <div class="ibr-item ibr-item-four">
-          <div class="ibr-item-more"></div>
-          <h1>道路实况<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-  <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
-  <script type="text/javascript">
+				<div class="ib-right">
+					<div class="ib-right-more"></div>
+					<div class="ib-right-content ib-right-one ib-right-content-hover">
+						<div class="ibro-list">
+							<div class="ibro-list-item">
+								待办工作
+								<span class="ibro-list-item-num">6</span>
+							</div>
+							<div class="ibro-list-item">
+								巡检任务
+								<span class="ibro-list-item-num">3</span>
+							</div>
+							<div class="ibro-list-item">
+								异常告警
+								<span class="ibro-list-item-num">2</span>
+							</div>
+							<div class="ibro-list-item ibro-list-item-no">
+								道路实况
+								<span class="ibro-list-item-num">0</span>
+							</div>
+						</div>
+					</div>
+					<div class="ib-right-content ib-right-two">
+						<div class="ibr-item ibr-item-hover ibr-item-one">
+							<div class="ibr-item-more"></div>
+							<h1 class="ib-item-title">待办工作<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">6</span></h1>
 
-  </script>  
-  </body>
+							<div class="ibri-list ibri-one-list">
+								<div class="ibri-one-item ibri-one-item-unread">
+									<img src="images/profile_image@2x.png" />
+									<div class="ibri-one-item-header">
+										<h2>张集  ．  总工程师</h2>
+										<h4>2019.09.20</h4>
+									</div>
+									<h3><span>K12-08</span><span> 有新的时间...</span></h3>
+								</div>
+								<div class="ibri-one-item ibri-one-item-read">
+									<img src="images/profile_image@2x.png" />
+									<div class="ibri-one-item-header">
+										<h2>刘总工  ．  总工程师</h2>
+										<h4>2019.09.20</h4>
+									</div>
+									<h3><span>K12-08</span><span> 有新的时间...</span></h3>
+								</div>
+								<div class="ibri-one-item ibri-one-item-ok">
+									<img src="images/profile_image@2x.png" />
+									<div class="ibri-one-item-header">
+										<h2>刘总工  ．  总工程师</h2>
+										<h4>2019.09.20</h4>
+									</div>
+									<h3><span>K12-08</span><span> 有新的时间...</span></h3>
+								</div>
+								<div class="ibri-one-item ibri-one-item-no">
+									<img src="images/profile_image@2x.png" />
+									<div class="ibri-one-item-header">
+										<h2>刘总工  ．  总工程师</h2>
+										<h4>2019.09.20</h4>
+									</div>
+									<h3><span>K12-09</span><span> 有新的时间...</span></h3>
+								</div>
+
+								<div class="ibri-one-item ibri-one-item-no">
+									<img src="images/profile_image@2x.png" />
+									<div class="ibri-one-item-header">
+										<h2>刘总工  ．  总工程师</h2>
+										<h4>2019.09.20</h4>
+									</div>
+									<h3><span>K12-09</span><span> 有新的时间...</span></h3>
+								</div>
+								<div class="ibri-one-item ibri-one-item-no">
+									<img src="images/profile_image@2x.png" />
+									<div class="ibri-one-item-header">
+										<h2>刘总工  ．  总工程师</h2>
+										<h4>2019.09.20</h4>
+									</div>
+									<h3><span>K12-09</span><span> 有新的时间...</span></h3>
+								</div>
+								<div class="ibr-btn-more">--- 余下<span>2</span>条全部展开 ---</div>
+							</div>
+
+						</div>
+						<!--
+                        	作者：648267773@qq.com
+                        	时间：2019-03-03
+                        	描述：.ibrit-nav的子级li: 添加.ibrit-nav-hover表示当前选中的
+                        			.ibrit-item: 添加.ibrit-item-no表示未处理,默认未处理
+                        							添加.ibrit-item-ok表示已处理
+                        							添加.ibrit-item-sfz表示收费站
+                        							添加.ibrit-item-fwq表示服务站
+                        -->
+						<div class="ibr-item ibr-item-two">
+							<div class="ibr-item-more"></div>
+							<h1 class="ib-item-title">今日巡检任务<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">6</span></h1>
+							<div class="ibri-list">
+								<ul class="ibrit-nav">
+									<li class="ibrit-nav-hover">收费站</li>
+									<li>服务区</li>
+								</ul>
+								<div class="ibrit-list-div">
+									<div class="ibrit-list">
+										<div class="ibrit-item ibrit-item-sfz ibrit-item-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+										</div>
+										<div class="ibrit-item ibrit-item-sfz ibrit-item-ok">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+										</div>
+										<div class="ibrit-item ibrit-item-fwq ibrit-item-ok">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+										</div>
+										<div class="ibrit-item ibrit-item-fwq ibrit-item-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+										</div>
+										<div class="ibrit-item ibrit-item-fwq ibrit-item-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="ibr-item ibr-item-three">
+							<div class="ibr-item-more"></div>
+							<h1 class="ib-item-title">异常告警<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">11</span></h1>
+							<div class="ibri-list">
+								<ul class="ibrit-nav-three">
+									<li class="ibrit-nav-three-hover">全部</li>
+									<li>服务区</li>
+									<li>收费站</li>
+									<li>路段</li>
+								</ul>
+								<div class="ibrit-list-div">
+									<div class="ibrit-list-three">
+										<div class="ibrit-item-three ibrit-item-three-fwz ibrit-item-three-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+											<h3>来源: <span>人工上报</span></h3>
+										</div>
+										<div class="ibrit-item-three ibrit-item-three-fwz ibrit-item-three-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+											<h3>来源: <span>人工上报</span></h3>
+										</div>
+										<div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-ok">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+											<h3>来源: <span>人工上报</span></h3>
+										</div>
+										<div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+											<h3>来源: <span>人工上报</span></h3>
+										</div>
+										<div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-ok">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+											<h3>来源: <span>人工上报</span></h3>
+										</div>
+										<div class="ibrit-item-three ibrit-item-three-ld ibrit-item-three-no">
+											<h4>2019.09.20 00:00:00</h4>
+											<h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+											<h3>来源: <span>人工上报</span></h3>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="ibr-item ibr-item-four">
+							<div class="ibr-item-more"></div>
+							<h1 class="ib-item-title">道路实况<span class="ib-span-bg ib-span-bg-hover">1</span><span class="ib-span-bg">3</span></h1>
+							<div class="ibri-list">
+								<div class="ibri-four-viedo-div">
+									<a href="https://www.baidu.com/"><div class="ibri-four-viedo"><img src="images/video-default.png"/></div></a>
+									<a href="https://www.baidu.com/"><div class="ibri-four-viedo"><img src="images/video-default.png"/></div></a>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--
+            	作者：648267773@qq.com
+            	时间：2019-03-02
+            	描述：.index-layer:弹层存放处
+            	#myModalOne:收费站实时收入
+            	#myModalTwo：车道开通数
+            	#myModalThree：服务区开通数
+            	#myModalFour：巡逻车统计
+            -->
+			<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalOne">
+			    Launch demo modal
+			</button>-->
+			<div class="index-layer">
+				<div class="modal fade" id="myModalOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<div class="modal-body modal-body-sfz">
+								<div class="sfz-left">
+									<h1>成仁高速收费统计汇总</h1>
+									<div class="sfz-left-body">
+										<h2>收费金额统计</h2>
+										<div class="sfz-left-01">
+											<div class="sfz-left-01-left">
+												<h3>&nbsp;267.0909.9000</h3>
+												<h4>32.9%</h4>
+											</div>
+											<div class="sfz-left-01-right">
+												<div class="sfz-btn-jrtj">今日统计</div>
+												<select class="sfz-select-01" name="">
+													<option value="">2019.02.10</option>
+													<option value="">2019.02.11</option>
+												</select>
+												<div class="sfz-btn-dcbg">导出报告</div>
+											</div>
+										</div>
+										
+										<div class="sfz-left-02">
+											<div class="sfzl-02-btn sfzl-02-btn-01">今天</div>
+											<div class="sfzl-02-btn sfzl-02-btn-02">历史</div>
+											<div class="sfzl-02-btn sfzl-02-btn-03">开始</div>
+											<div class="sfzl-02-btn sfzl-02-btn-04">结束</div>
+										</div>
+										<div class="sfz-left-03">地图</div>
+									</div>
+									<div class="sfz-left-footer">
+										<div class="sfz-left-04">
+											<h2>车道总数 <span>234.9870</span></h2>
+											<h2>收费广场开通总数<span>890</span></h2>
+										</div>
+										<div class="sfz-left-footer-list">
+											<div class="sfzlf-item">
+												<h3>ETC</h3>
+												<div class="progress">
+													<div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												</div>
+												<div class="sfz-left-05-footer">
+													<h4>2309</h4>
+													<h5>2929</h5>
+												</div>
+											</div>
+											<div class="sfzlf-item">
+												<h3>MTC</h3>
+												<div class="progress">
+													<div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												</div>
+												<div class="sfz-left-05-footer">
+													<h4>2309</h4>
+													<h5>2929</h5>
+												</div>
+											</div>
+											<div class="sfzlf-item">
+												<h3>行车道</h3>
+												<div class="progress">
+													<div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												</div>
+												<div class="sfz-left-05-footer">
+													<h4>2309</h4>
+													<h5>2929</h5>
+												</div>
+											</div>
+											<div class="sfzlf-item">
+												<h3>出口</h3>
+												<div class="progress">
+													<div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												</div>
+												<div class="sfz-left-05-footer">
+													<h4>2309</h4>
+													<h5>2929</h5>
+												</div>
+											</div>
+											<div class="sfzlf-item">
+												<h3>入口</h3>
+												<div class="progress">
+													<div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+												</div>
+												<div class="sfz-left-05-footer">
+													<h4>2309</h4>
+													<h5>2929</h5>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="sfz-right">
+									<div class="sfz-right-header">
+										<h1>其他分站对比图</h1>
+										<select class="sfzr-select-02" name="">
+											<option value="2019.02.10"></option>
+											<option value="2019.02.10"></option>
+										</select>
+									</div>
+								</div>
+								<table border="0" cellspacing="0" cellpadding="0">
+										<tr>
+											<th>桩号</th>
+											<th>站名</th>
+											<th>开通车数</th>
+											<th>车辆数</th>
+											<th>收入</th>
+											<th>操作</th>
+										</tr>
+										<tr>
+											<td>K12+02</td>
+											<td>S成自泸成都站</td>
+											<td>123456</td>
+											<td>8976.08</td>
+											<td>8888,9898,9000</td>
+											<td><button>更多</button></td>
+										</tr>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<div class="modal-header">
+								<h4 class="modal-title">车道开通数</h4>
+							</div>
+							<div class="modal-body">
+								...
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="myModalThree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<div class="modal-header">
+								<h4 class="modal-title">巡逻车统计</h4>
+							</div>
+							<div class="modal-body">
+								...
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal fade" id="myModalFour" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<div class="modal-header">
+								<h4 class="modal-title">收费站实时收入</h4>
+							</div>
+							<div class="modal-body">
+								...
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/my_echaets.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			
+
+		</script>
+		<script type="text/javascript">
+			$(function() {
+				// 右侧点击标题展开2级内容
+				$('.ibr-item').children('.ib-item-title').on('click', function() {
+					var father_hover = 'ibr-item-hover';
+
+					if($(this).parent().hasClass(father_hover)) {
+						$(this).parent().removeClass(father_hover)
+					} else {
+						$(this).parent().addClass(father_hover).siblings().removeClass(father_hover)
+					}
+				})
+
+				// 右侧点击图标展开1级内容
+				$('.ib-right-more').on('click', function() {
+					var click_hover = 'ib-right-content-hover';
+					var click_one = $('.ib-right-one');
+					var click_two = $('.ib-right-two');
+					var click_father = $('.ib-middle');
+					// 展开2(含内容)
+					if(click_one.hasClass(click_hover)) {
+						click_one.removeClass(click_hover);
+						click_two.addClass(click_hover);
+						click_father.css('width', '56%');
+					}
+					// 展开1(不含内容)
+					else {
+						click_one.addClass(click_hover)
+						click_two.removeClass(click_hover)
+						click_father.css('width', '66%')
+					}
+					// 二级的内容也对应的点击下
+					$('.ibrit-nav').children().eq(0).click();
+					$('.ibrit-nav-three').children().eq(0).click();
+
+				})
+
+				// 点击展开余下更多
+				$('.ibr-btn-more').on('click', function() {
+					$(this).parent().addClass('ibri-list-more');
+					
+				})
+
+				// 点击右侧顶部的退出按钮
+				$('.ihr-close').on('click', function() {
+					// 点击1级菜单展开图标
+					$('.ib-right-more').click();
+				})
+
+				// 点击右侧一级菜单列表
+				$('.ibro-list').children('.ibro-list-item').on('click', function() {
+					var this_index = $(this).index();
+					var father_two = $('.ib-right-two');
+					var class_hover = 'ibr-item-hover';
+					father_two.children('.ibr-item').eq(this_index).addClass(class_hover).siblings().removeClass(class_hover)
+					// 点击1级菜单展开图标
+					$('.ib-right-more').click();
+				})
+				
+				// 点击右侧今日巡检任务 --筛选收费站和服务区
+				$('.ibrit-nav').children('li').on('click',function(){
+					var this_index = $(this).index(),
+						class_hover = 'ibrit-nav-hover',
+						e_all = $('.ibrit-item'),
+						e_sfz = $('.ibrit-item-sfz'),
+						e_fwz = $('.ibrit-item-fwq');
+					$(this).addClass(class_hover).siblings().removeClass(class_hover);
+					// 收费站
+					if(this_index== 0){
+						e_fwz.hide()
+						e_sfz.show();
+					}
+					// 服务区
+					else if( this_index== 1){
+						e_sfz.hide()
+						e_fwz.show();
+					}
+					else{
+						alert('数据错误01，请重新加载')
+					}
+					
+				})
+				// 点击右侧异常告警 --筛选收费站和服务区
+				$('.ibrit-nav-three').children('li').on('click',function(){
+					var this_index = $(this).index(),
+						class_hover = 'ibrit-nav-three-hover',
+						e_all = $('.ibrit-item-three'),
+						e_sfz = $('.ibrit-item-three-sfz'),
+						e_ld = $('.ibrit-item-three-ld'),
+						e_fwz = $('.ibrit-item-three-fwz');
+					$(this).addClass(class_hover).siblings().removeClass(class_hover);
+					// 全部
+					if(this_index == 0){
+						e_all.show();
+					}
+					// 收费站
+					else if(this_index == 1){
+						e_all.hide();
+						e_sfz.show();
+					}
+					// 服务区
+					else if( this_index == 2){
+						e_all.hide();
+						e_fwz.show();
+					}
+					// 路段
+					else if (this_index == 3){
+						e_all.hide();
+						e_ld.show();
+					}
+					else{
+						alert('数据错误02，请重新加载')
+					}
+					
+				})
+			})
+		</script>
+
+		<script type="text/javascript ">
+			//创建和初始化地图函数：
+			function initMap() {
+				createMap(); //创建地图
+				setMapEvent(); //设置地图事件
+				addMapControl(); //向地图添加控件
+				addMapOverlay(); //向地图添加覆盖物
+			}
+
+			function createMap() {
+				map = new BMap.Map("map");
+				map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 11);
+			}
+
+			function setMapEvent() {
+				map.enableScrollWheelZoom();
+				map.enableKeyboard();
+				map.enableDragging();
+				map.enableDoubleClickZoom()
+			}
+
+			function addClickHandler(target, window) {
+				target.addEventListener("click ", function() {
+					target.openInfoWindow(window);
+				});
+			}
+
+			function addMapOverlay() {
+				var markers = [{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.672276,
+							lng: 104.078206
+						}
+					},
+					{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.674761,
+							lng: 104.098903
+						}
+					},
+					{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.694141,
+							lng: 104.005191
+						}
+					},
+					{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.698116,
+							lng: 104.128223
+						}
+					},
+					{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.668301,
+							lng: 104.050035
+						}
+					},
+					{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.714013,
+							lng: 104.077631
+						}
+					},
+					{
+						content: "我的备注 ",
+						title: " ",
+						imageOffset: {
+							width: -46,
+							height: -21
+						},
+						position: {
+							lat: 30.659354,
+							lng: 104.01554
+						}
+					}
+				];
+				for(var index = 0; index < markers.length; index++) {
+					var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+					var marker = new BMap.Marker(point, {
+						icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png ", new BMap.Size(20, 25), {
+							imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+						})
+					});
+					var label = new BMap.Label(markers[index].title, {
+						offset: new BMap.Size(25, 5)
+					});
+					var opts = {
+						width: 200,
+						title: markers[index].title,
+						enableMessage: false
+					};
+					var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+					marker.setLabel(label);
+					addClickHandler(marker, infoWindow);
+					map.addOverlay(marker);
+				};
+			}
+			//向地图添加控件
+			function addMapControl() {
+				var scaleControl = new BMap.ScaleControl({
+					anchor: BMAP_ANCHOR_BOTTOM_LEFT
+				});
+				scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+				map.addControl(scaleControl);
+				var navControl = new BMap.NavigationControl({
+					anchor: BMAP_ANCHOR_TOP_LEFT,
+					type: BMAP_NAVIGATION_CONTROL_LARGE
+				});
+				map.addControl(navControl);
+			}
+			var map;
+			initMap();
+		</script>
+	</body>
 
 </html>
