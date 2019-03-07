@@ -1488,3 +1488,42 @@ html {
   height: 3px;
   background-color: #2FC69F;
 }
+.ib-middle-input-div {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+.ib-middle-input {
+  position: relative;
+}
+.ibm-input {
+  position: relative;
+  line-height: 48px;
+  width: 330px;
+  font-size: 14px;
+  color: white;
+  padding: 0 30px;
+  background-image: url(../images/Shape.png);
+  background-size: 14px 14px;
+  background-repeat: no-repeat;
+  background-position: 8px center;
+  border: 1px solid #636B70;
+  background-color: #111315;
+  letter-spacing: 2px;
+  border-radius: 4px;
+}
+.ib-middle-input-div-search {
+  position: absolute;
+  z-index: 10;
+  right: 10px;
+  top: 50%;
+  margin-top: -7px;
+  width: 14px;
+  height: 14px;
+  content: " ";
+  font-size: 1px;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+  background-image: url(../images/Shape_02@2x.png);
+}
