@@ -29,6 +29,8 @@ meSettingInfoName.html  我的-设置信息-昵称修改
 
 meError.html  错误提示页面
 
+communityIndexr.html  社区首页
+
 
 JS---// 房屋详情的房屋性质内容修改
 

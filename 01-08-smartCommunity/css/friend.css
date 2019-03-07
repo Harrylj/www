@@ -98,6 +98,7 @@
   right: -20px;
 }
 .friend-to-me .ftmc-body .ftmc-ewm {
+  display: block;
   background-color: #E2E2E2;
   border-radius: 8px;
   width: 80px;
@@ -156,7 +157,6 @@
 .friend-index-list .fil-body {
   position: relative;
   min-height: 450px;
-  overflow: hidden;
 }
 .friend-index-list .fil-body h3 {
   font-size: 16px;
@@ -168,7 +168,7 @@
 }
 .friend-index-list .fil-body .fibl-item {
   position: relative;
-  box-shadow: 0 0 5px #F5F5F5;
+  box-shadow: 0 0 5px #CCCCCC;
   border-radius: 8px;
   padding-left: 80px;
   padding-top: 20px;

@@ -102,7 +102,7 @@
 						</ul>
 					</div>
 					<div class="ibl-item ibl-two">
-						<div class="ibl-item-more" data-toggle="modal" data-target="#myModalTwo"></div>
+						<div class="ibl-item-more" data-toggle="modal" data-target="#myModalOne"></div>
 						<h1 class="ib-item-title">车道开通数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
 						<div class="ibl-item-progress-div">
 							<div class="ibl-item-progress-etc-div">
@@ -183,6 +183,34 @@
       -->
 				<div class="ib-middle">
 					<div id="map"></div>
+					<div class="ib-middle-car-div">
+					  <div class="ib-middle-car">
+					     <div class="ib-middle-car-close">×</div>
+					     <div class="ib-middle-car-content">
+                <h1>详细信息</h1>
+                <table class="ib-middle-car-table" border="0" cellspacing="0" cellpadding="0">
+                	<tr>
+                	  <td>车辆牌照:<span>川A14241</span></td>
+                	  <td colspan="2">所属中队:<span>3中队</span></td>
+                	</tr>
+                	<tr>
+                	  <td>本次里程:<span>123</span>Km</td>
+                	  <td colspan="2">本月里程:<span>123456</span>Km</td>
+                	</tr>
+                	<tr>
+                    <td>本次油耗:<span>123</span>l</td>
+                    <td>本月油耗:<span>123</span>l</td>
+                    <td>瞬时油耗:<span>123</span>l</td>
+                  </tr>
+                  <tr>
+                    <td>本次车速:<span>122</span>Km/h</td>
+                    <td colspan="2">瞬时车速:<span>121</span>Km/h</td>
+                  </tr>
+                </table>
+              </div>
+					  </div>
+					  
+					</div>
 				</div>
 				<!--
       	作者：648267773@qq.com
@@ -399,10 +427,10 @@
             	作者：648267773@qq.com
             	时间：2019-03-02
             	描述：.index-layer:弹层存放处
-            	#myModalOne:收费站实时收入
-            	#myModalTwo：车道开通数
+            	#myModalOne:收费站实时收入,车道开通数
             	#myModalThree：服务区开通数
             	#myModalFour：巡逻车统计
+            	#myModalFive: 服务区详情
             -->
 			<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalOne">
 			    Launch demo modal
@@ -428,7 +456,7 @@
 													<option value="">2019.02.10</option>
 													<option value="">2019.02.11</option>
 												</select>
-												<div class="sfz-btn-dcbg">导出报告</div>
+												<div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
 											</div>
 										</div>
 										
@@ -438,7 +466,7 @@
 											<div class="sfzl-02-btn sfzl-02-btn-03">开始</div>
 											<div class="sfzl-02-btn sfzl-02-btn-04">结束</div>
 										</div>
-										<div class="sfz-left-03"><img src="images/data_01.png"/></div>
+										<div class="sfz-left-03"><img class="img-100"  src="images/data_01.png"/></div>
 									</div>
 									<div class="sfz-left-footer">
 										<div class="sfz-left-04">
@@ -533,6 +561,14 @@
                         <td><div class="sfz-table-btn"></div></td>
                       </tr>
                   </table>
+								  
+								  <ul class="sfz-right-footer">
+								  	<li>总计</li>
+								  	<li>12345</li>
+								  	<li>84451.0</li>
+								  	<li>15545545445.54</li>
+								  </ul>
+								  
 								</div>
 								
 							</div>
@@ -547,21 +583,124 @@
 								<h4 class="modal-title">车道开通数</h4>
 							</div>
 							<div class="modal-body">
-								...
+							  
 							</div>
 						</div>
 					</div>
 				</div>
+				
 				<div class="modal fade" id="myModalThree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 					<div class="modal-dialog" role="document">
-						<div class="modal-content">
+						<div class="modal-content modal-content-fwq">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-							<div class="modal-header">
-								<h4 class="modal-title">巡逻车统计</h4>
-							</div>
-							<div class="modal-body">
-								...
-							</div>
+							<div class="modal-body modal-body-fwq">
+                  <div class="fwq-left">
+                    <h4 class="modal-title">服务区统计</h4>
+                    <div class="fwq-body">
+                      <div class="fwqb-title">
+                        <h1 class="ib-item-title">服务器开通总数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
+                        <h2>实时数据   2019.09.20 12:02:25</h2>
+                      </div>
+                      <!--
+                      	作者：648267773@qq.com
+                      	时间：2019-03-07
+                      	描述：.fwqb-ul: 的子集li添加.fwqb-ul-click表示选中服务区
+                      	      .fwqb-item:添加 .fwqb-item-click 表示对应选中
+                      	     .fwqb-btn-01: 添加 .fwqb-btn-01-click表示选中按钮
+                      -->
+                      <div class="fwqb-content">
+                        <ul class="fwqb-ul">
+                        	<li class="fwqb-ul-click">永宁服务区</li>
+                        	<li>汪洋服务区</li>
+                        	<li>仁寿服务区</li>
+                        	<li>文宫服务区</li>
+                        </ul>
+                        <div class="fwqb-list">
+                           <div class="fwqb-item fwqb-item-click">
+                             <div class="fwqb-item-header">
+                               <div class="fwqb-item-header-left">
+                                 <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到永宁</div>
+                                 <div class="fwqb-btn-01 fwqb-btn-01-down">永宁到成都</div>
+                               </div>
+                               <div class="fwqb-item-header-right">
+                                  <select class="sfz-select-01" name="">
+                                      <option value="">定车位统计</option>
+                                      <option value="">定车位统计</option>
+                                  </select>
+                                  <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                               </div>
+                             </div>
+                             <div class="fwqb-item-body">
+                                  <img class="img-100" src="images/table_fwq_01.png"/>
+                             </div>
+                           </div>
+                           <div class="fwqb-item">
+                             <div class="fwqb-item-header">
+                               <div class="fwqb-item-header-left">
+                                 <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到汪洋</div>
+                                 <div class="fwqb-btn-01 fwqb-btn-01-down">汪洋到成都</div>
+                               </div>
+                               <div class="fwqb-item-header-right">
+                                  <select class="sfz-select-01" name="">
+                                      <option value="">定车位统计</option>
+                                      <option value="">定车位统计</option>
+                                  </select>
+                                  <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                               </div>
+                             </div>
+                             <div class="fwqb-item-body">
+                                  <img class="img-100" src="images/table_fwq_01.png"/>
+                             </div>
+                           </div>
+                           <div class="fwqb-item">
+                             <div class="fwqb-item-header">
+                               <div class="fwqb-item-header-left">
+                                 <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到仁寿</div>
+                                 <div class="fwqb-btn-01 fwqb-btn-01-down">仁寿到成都</div>
+                               </div>
+                               <div class="fwqb-item-header-right">
+                                  <select class="sfz-select-01" name="">
+                                      <option value="">定车位统计</option>
+                                      <option value="">定车位统计</option>
+                                  </select>
+                                  <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                               </div>
+                             </div>
+                             <div class="fwqb-item-body">
+                                  <img class="img-100" src="images/table_fwq_01.png"/>
+                             </div>
+                           </div>
+                           <div class="fwqb-item ">
+                             <div class="fwqb-item-header">
+                               <div class="fwqb-item-header-left">
+                                 <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到文宫</div>
+                                 <div class="fwqb-btn-01 fwqb-btn-01-down">文宫到成都</div>
+                               </div>
+                               <div class="fwqb-item-header-right">
+                                  <select class="sfz-select-01" name="">
+                                      <option value="">定车位统计</option>
+                                      <option value="">定车位统计</option>
+                                  </select>
+                                  <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                               </div>
+                             </div>
+                             <div class="fwqb-item-body">
+                                  <img class="img-100" src="images/table_fwq_01.png"/>
+                             </div>
+                           </div>
+                        
+                        </div>
+                        <h4 class="fwqb-more" data-toggle="modal" data-target="#myModalFive" data-dismiss="modal" aria-label="Close">服务区详情</h4>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="fwq-right">
+                    <img class="img-100" src="images/table_fwq_02.png"/>
+                  </div>
+              </div>
+							
+  							
 						</div>
 					</div>
 				</div>
@@ -570,14 +709,313 @@
 						<div class="modal-content">
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 							<div class="modal-header">
-								<h4 class="modal-title">收费站实时收入</h4>
+								<h4 class="modal-title">巡逻车统计</h4>
 							</div>
+							<div class="mfour-header">
+                  <div class="sfz-btn-jrtj">今日统计</div>
+                  <div class="mfour-header-right">
+                    <select class="sfz-select-01" name="">
+                          <option value="">2019.02.10</option>
+                          <option value="">2019.02.11</option>
+                    </select>
+                    <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                  </div>
+                        
+                </div>
 							<div class="modal-body">
-								...
+								<!--
+                                	作者：648267773@qq.com
+                                	时间：2019-03-05
+                                	描述：.mfour-car-status:状态默认表示灰色，正常
+                                	      添加.mfour-car-status-warning:绿色-表示警告
+                                	   .mfour-car-lk:路况默认表示打钩，绿色，正常
+                                	   .mfour-car-lk-warning: 红色-表示警告
+                                	   .mfour-car-blue: 表示蓝色
+                                	   .mfour-car-red: 表示红色
+                                	   
+                                -->
+								<div class="mfour-table-div">
+								  <table class="mfour-table" border="0" cellspacing="0" cellpadding="0">
+								  	<tr>
+								  	  <th>状态</th>
+								  	  <th>车牌号</th>
+								  	  <th>路况</th>
+								  	  <th>路产数</th>
+								  	  <th>巡逻里程</th>
+								  	  <th>巡逻时长</th>
+								  	  <th>停留时长</th>
+								  	  <th>油耗</th>
+								  	  <th>平均车速</th>
+								  	  <th>最快车速</th>
+								  	  <th>最慢车速</th>
+								  	  <th>瞬时车速</th>
+								  	</tr>
+								  	<tr>
+								  	  <td class="mfour-car-status"><span></span></td>
+								  	  <td>川A844544</td>
+								  	  <td class="mfour-car-lk"><span></span></td>
+								  	  <td class="mfour-car-blue">2</td>
+								  	  <td>987.093km</td>
+								  	  <td>7608 th</td>
+								  	  <td>760 th</td>
+								  	  <td>7652.0536 l</td>
+								  	  <td>100km/h</td>
+								  	  <td>100km/h</td>
+								  	  <td>100km/h</td>
+								  	  <td>100km/h</td>
+								  	</tr>
+								  	<tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-blue">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-blue">100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-red">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-red">100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td>760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-blue">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-blue">100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-red">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-red">100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td>760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-blue">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-blue">100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-red">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-red">100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td>760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-blue">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-blue">100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+                    <tr>
+                      <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                      <td>川A844544</td>
+                      <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                      <td class="mfour-car-blue">2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td class="mfour-car-red">760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td class="mfour-car-red">100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+								  </table>
+								</div>
+								
 							</div>
+						
+						  <div class="four-footer-table-div">
+						     <table class="four-footer-table" border="0" cellspacing="0" cellpadding="0">
+						       	<tr>
+                      <td class="four-footer-table-td-01"><span>18</span>/<span>100</span></td>
+                      <td class="four-footer-table-td-02"><span>202</span><span>222</span></td>
+                      <td>2</td>
+                      <td>987.093km</td>
+                      <td>7608 th</td>
+                      <td>760 th</td>
+                      <td>7652.0536 l</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                      <td>100km/h</td>
+                    </tr>
+						     </table>
+						  </div>
 						</div>
 					</div>
 				</div>
+			
+			  <div class="modal fade" id="myModalFive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content modal-content-five">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="five-rentrn-three" data-toggle="modal" data-target="#myModalThree" data-dismiss="modal" aria-label="Close"></div>
+              <div class="modal-header">
+                <h4 class="modal-title">永兴服务区详情</h4>
+              </div>
+              <!--
+              	作者：648267773@qq.com
+              	时间：2019-03-07
+              	描述：.mcf-ul:的子集添加.mcf-ul-click表示点击
+              -->
+              <div class="modal-body">
+                <ul class="mcf-ul">
+                  <li class="mcf-ul-click">基础消息</li>
+                  <li>经营信息</li>
+                  <li>厕所信息</li>
+                  <li>环保信息</li>
+                  <li>物业信息</li>
+                  <li>通讯录</li>
+                </ul>
+                <div class="mcf-list">
+                  <div class="mcf-item">
+                    <img class="img-100" src="images/table_fwq_03.png"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="myModalSix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="modal-header">
+                <h4 class="modal-title">收费站详情</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="myModalSeven" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="modal-header">
+                <h4 class="modal-title">服务详情</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="myModalTen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <div class="modal-header">
+                <h4 class="modal-title">更多</h4>
+              </div>
+              <div class="modal-body">
+                ...
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        
 			</div>
 		</div>
 		<script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
@@ -590,6 +1028,30 @@
 		</script>
 		<script type="text/javascript">
 			$(function() {
+			  $('.fwqb-more').click();
+			  
+			  // 点击服务区详情
+			  $('.mcf-ul').children('li').on('click',function(){
+			    var class_click = 'mcf-ul-click'
+			    $(this).addClass(class_click).siblings().removeClass(class_click)
+			  })
+			  
+			  // 点击弹窗服务区的XX到XX按钮
+        $('.fwqb-btn-01').on('click',function(){
+          var class_click = "fwqb-btn-01-click";
+          $(this).addClass(class_click).siblings().removeClass(class_click)
+        })
+        // 点击弹窗服务区的服务区导航按钮
+        $('.fwqb-ul').children('li').on('click',function(){
+          var class_click_01 = 'fwqb-ul-click',
+              class_children_click = 'fwqb-item-click',
+              class_children = 'fwqb-item',
+              e_father = $('.fwqb-list'),
+              this_index = $(this).index();
+          $(this).addClass(class_click_01).siblings().removeClass(class_click_01);
+          e_father.children('.'+class_children).eq(this_index).addClass(class_children_click).siblings().removeClass(class_children_click)
+        })
+        
 				// 右侧点击标题展开2级内容
 				$('.ibr-item').children('.ib-item-title').on('click', function() {
 					var father_hover = 'ibr-item-hover';

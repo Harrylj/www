@@ -1,6 +1,26 @@
 .house {
   padding: 20px;
 }
+.house .house-more {
+  padding-top: 40px;
+}
+.house .house-more p {
+  line-height: 24px;
+  font-size: 14px;
+  color: #666666;
+  text-align: center;
+}
+.house .house-more .hm-btn-rhyq {
+  display: block;
+  width: 140px;
+  text-align: center;
+  margin: 20px auto;
+  font-size: 16px;
+  color: #e91a0e;
+  line-height: 40px;
+  border-radius: 20px;
+  border: 1px solid #CCCCCC;
+}
 .house .house-header {
   padding: 10px 20px;
   border-radius: 8px;
@@ -115,6 +135,9 @@
   border-bottom: 20px;
   max-height: 344px;
   overflow-y: scroll;
+}
+.house .house-body .hb-list::-webkit-scrollbar {
+  display: none;
 }
 .house .house-body .house-user-list:after {
   position: absolute;
@@ -340,16 +363,22 @@
 }
 .house-detail .hdb-item-footer .hudn-user-type {
   position: absolute;
-  background-color: #E91A0E;
-  color: white;
-  width: 32px;
-  margin-left: -16px;
+  width: 100px;
+  margin-left: -50px;
   text-align: center;
-  font-size: 12px;
-  height: 16px;
-  line-height: 16px;
   top: 45px;
   left: 50%;
+  height: 20px;
+  overflow: hidden;
+}
+.house-detail .hdb-item-footer .hudn-user-type span {
+  color: white;
+  padding: 1px 6px;
+  display: inline-block;
+  background-color: #E91A0E;
+  font-size: 12px;
+  line-height: 16px;
+  border-radius: 2px;
 }
 .house-detail .hdb-item-footer .hdb-user-div {
   display: flex;

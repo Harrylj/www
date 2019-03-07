@@ -1,0 +1,61 @@
+.conmmunity-index {
+  padding: 20px;
+}
+.conmmunity-index .cm-header h1 {
+  color: #010101;
+  font-size: 18px;
+  line-height: 40px;
+}
+.conmmunity-index .cm-header h4 {
+  font-size: 12px;
+  line-height: 28px;
+  color: #969696;
+}
+.conmmunity-index .cm-header-one {
+  position: relative;
+  display: flex;
+}
+.cmh-btn-more {
+  width: 40px;
+  height: 40px;
+  background-size: 13px 13px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images/cm-arrow@2x.png);
+}
+.cmh-btn-search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center center;
+  background-image: url(../images/search-icon@2x.png);
+}
+.cmb-ul {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+.cmb-ul li {
+  font-size: 16px;
+  color: #323232;
+  line-height: 24px;
+  padding: 10px 0;
+  border-bottom: 1px solid #F8F8F8;
+}
+.cmb-ul .cmb-ul-click:before {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -10px;
+  content: " ";
+  font-size: 1px;
+  color: transparent;
+  height: 3px;
+  border-bottom: 3px solid #E91A0E;
+  width: 20px;
+}

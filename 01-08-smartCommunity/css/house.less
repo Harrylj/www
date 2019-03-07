@@ -1,5 +1,26 @@
 .house{
     padding: 20px;
+  .house-more{
+      padding-top: 40px;
+      p{
+          line-height: 24px;
+          font-size: 14px;
+          color: #666666;
+          text-align: center;
+      }
+      .hm-btn-rhyq{
+          display: block;
+          width: 140px;
+          text-align: center;
+          margin: 20px auto;
+          font-size: 16px;
+          color: #e91a0e;
+          line-height: 40px;
+          border-radius: 20px;
+          border: 1px solid #CCCCCC;
+          
+      }
+  }
   .house-header{
       padding: 10px 20px;
       border-radius: 8px;
@@ -118,6 +139,9 @@
           max-height: 344px;
           overflow-y: scroll;
       }
+      .hb-list::-webkit-scrollbar {
+            display:none;
+        }
       .house-user-list:after{
         position: absolute;
         right: 0;
@@ -357,16 +381,22 @@
         }
         .hudn-user-type{
             position: absolute;
-            background-color: #E91A0E;
-            color: white;
-            width: 32px;
-            margin-left: -16px;
+            width:100px;
+            margin-left: -50px;
             text-align: center;
-            font-size: 12px;
-            height: 16px;
-            line-height: 16px;
             top: 45px;
             left: 50%;
+            height: 20px;
+            overflow: hidden;
+            span{
+                color: white;
+                padding: 1px 6px;
+                display: inline-block;
+                background-color: #E91A0E;
+                font-size: 12px;
+                line-height: 16px;
+                border-radius: 2px;
+            }
         }
         .hdb-user-div{
             display: flex;

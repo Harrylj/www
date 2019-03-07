@@ -1,0 +1,141 @@
+.conmmunity-index {
+  padding: 20px 0;
+}
+.cm-header{
+  padding: 0 20px;
+}
+.conmmunity-index .cm-header h1 {
+  color: #010101;
+  font-size: 18px;
+  line-height: 40px;
+}
+
+.conmmunity-index .cm-header h4 {
+  font-size: 12px;
+  line-height: 28px;
+  color: #969696;
+}
+
+.conmmunity-index .cm-header-one {
+  position: relative;
+  display: flex;
+}
+
+.cmh-btn-more {
+  width: 40px;
+  height: 40px;
+  background-size: 13px 13px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-image: url(../images/cm-arrow@2x.png);
+}
+
+.cmh-btn-search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  margin-top: -20px;
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: 18px 18px;
+  background-position: center center;
+  background-image: url(../images/search-icon@2x.png);
+}
+
+.cmb-ul {
+  width: 100%;
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+}
+
+.cmb-ul li {
+  position: relative;
+  font-size: 16px;
+  color: #323232;
+  line-height: 24px;
+  padding: 10px 0;
+  border-bottom: 1px solid #F8F8F8;
+  text-align: center;
+}
+
+.cmb-ul .cmb-ul-click:before {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -10px;
+  content: " ";
+  font-size: 1px;
+  color: transparent;
+  height: 3px;
+  border-bottom: 3px solid #E91A0E;
+  width: 20px;
+}
+.cmb-item-footer{
+  padding-left: 60px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.cmb-item-footer-div{
+  display: flex;
+  position: absolute;
+  left: 0;
+  height: 18px;
+  margin-top: -9px;
+  top:50%;
+  
+}
+.cmb-item-footer-div-one,
+.cmb-item-footer-div-two,
+.cmb-item-footer-div-three {
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+}
+
+.cmb-item-footer-div-one {
+  background-color: #EB8AA8;
+}
+
+.cmb-item-footer-div-two {
+  position: relative;
+  left: -4px;
+  background-color: #79F0E1;
+}
+
+.cmb-item-footer-div-three {
+  position: relative;
+  left: -8px;
+  background-color: #8A9AEB;
+}
+.cmb-item{
+  margin-bottom: 10px;
+}
+
+.cmb-item img {
+  display: block;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.cmb-item h2 {
+  font-size: 17px;
+  color: #000000;
+  line-height: 28px;
+}
+
+.cmb-item h3 {
+  color: #989898;
+  font-size: 13px;
+  line-height: 24px;
+}
+.cmb-list{
+  
+  padding: 20px;
+  border-top: 1px solid #F8F8F8;
+}
