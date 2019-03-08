@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta name=”renderer” content=”webkit|ie-comp|ie-stand” />
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="keywords" content="快速开发平台,Web快速开发平台,ASP.NET快速开发平台,工作流,快速开发框架,软件可视化开发平台,快速开发 开源,快速开发平台 开源,APP快速开发,敏捷开发框架,快速开发" />
+    <meta name="description" content="时代敏捷开发框架，是一个Web可视化开发平台，是一个集PC快速开发、组织架构、工作流、表单设计、自定义报表、APP快速开发等全方位功能于一体的高效、稳定的快速开发平台。" />
+    <link rel="icon" href="~/favicon.ico">
+
+    <title>成渝交通智能系统|@ViewBag.Title</title>
+    <link href="~/Content/pace/pace-theme-minimal.css" rel="stylesheet" />
+    <link href="~/Content/font/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/jquery/plugin/scrollbar/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+    @Html.AppendCssFile("/Views/SD_Content/style/sd-common.css", "/Views/Home/AdminDesktop/index.css", "/Views/SD_Content/plugin/layerselect/sd-layerselect.css")
+
+    <!--[if lt IE 9]>
+      <script src="~/Content/bootstrap/html5shiv.min.js"></script>
+      <script src="~/Content/bootstrap/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+        .baidu-maps label {
+            max-width: none;
+        }
+    </style>
+</head>
+<body class="@SDTZ.Util.Net.Browser @SDTZ.Util.WebHelper.GetUITheme()">
+    <div class="sd-desktop-panel">
+        <div class="col-xs-12">
+            @*<div class="portal-panel-title">
+                    <i class="fa fa-balance-scale"></i>&nbsp;&nbsp;统计指标
+                </div>*@
+            <div class="portal-panel-content" style="padding:5px">
+                <div class="sd-item-20">
+                    <div class="task-stat" style="background-color: #578ebe;">
+                        <div class="visual">
+                            <i class="fa fa-pie-chart"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                4
+                            </div>
+                            <div class="desc">
+                                监控设备数
+                            </div>
+                        </div>
+                        <a class="more" style="background-color: #4884b8;" href="javascript:;" data-id="2cd8999a-3d61-47c1-b3b2-8717e6dc074c">
+                            查看更多 <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="sd-item-20">
+                    <div class="task-stat" style="background-color: #e35b5a;">
+                        <div class="visual">
+                            <i class="fa fa-bar-chart-o"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                14
+                            </div>
+                            <div class="desc">
+                                采集模块数
+                            </div>
+                        </div>
+                        <a class="more" style="background-color: #e04a49;" href="javascript:;" data-id="2cd8999a-3d61-47c1-b3b2-8717e6dc074c">
+                            查看更多 <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="sd-item-20">
+                    <div class="task-stat" style="background-color: #44b6ae;">
+                        <div class="visual">
+                            <i class="fa fa-windows"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                8
+                            </div>
+                            <div class="desc">
+                                区域线路
+                            </div>
+                        </div>
+                        <a class="more" style="background-color: #3ea7a0;" href="javascript:;" data-id="7ae94059-9aa5-48eb-8330-4e2a6565b193">
+                            查看更多 <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="sd-item-20">
+                    <div class="task-stat" style="background-color: #8775a7;">
+                        <div class="visual">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                0
+                            </div>
+                            <div class="desc">
+                                未处理告警数
+                            </div>
+                        </div>
+                        <a class="more" style="background-color: #7c699f ;" href="javascript:;" data-id="60ed3103-9c0f-4a25-8a64-cf95a60e78a4">
+                            查看更多 <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="sd-item-20">
+                    <div class="task-stat" style="background-color: #3598dc;">
+                        <div class="visual">
+                            <i class="fa fa-globe"></i>
+                        </div>
+                        <div class="details">
+                            <div class="number">
+                                83
+                            </div>
+                            <div class="desc">
+                                本月告警次数
+                            </div>
+                        </div>
+                        <a class="more" style="background-color: #258fd7;" href="javascript:;" data-id="60ed3103-9c0f-4a25-8a64-cf95a60e78a4">
+                            查看更多 <i class="fa fa-arrow-circle-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="portal-panel-title">
+                <i class="fa fa-map"></i>&nbsp;&nbsp;电子地图
+            </div>
+            <div class="portal-panel-content" style="padding:10px 5px 5px 5px">
+                <div class="col-xs-12">
+                    <div class="col-xs-3" style="margin-bottom:10px;">
+                        <div id="AreaSelect"></div>
+                    </div>
+                    <div class="col-xs-3" style="margin-bottom:10px;margin-left:5px;">
+                        <a id="sd_flag" class="btn btn-default" style="padding:3px 10px"><i class="fa fa-flag-o"></i></a>
+                        <a id="sd_server" class="btn btn-default" style="padding:3px 10px"><i class="fa fa-user-circle"></i></a>
+                        <a id="sd_toll" class="btn btn-default" style="padding:3px 10px"><i class="fa fa-cny"></i></a>
+                    </div>
+                </div>
+                <div id="mapcontainer" class="sd-chart-container baidu-maps" style="height:480px"></div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="portal-panel-title">
+                <i class="fa fa-bar-chart"></i>&nbsp;&nbsp;设备实时视频
+            </div>
+            <div class="portal-panel-content" style="text-align:center">
+                <div id="a1" style="height:510px">
+                    <video class="drivingPlayer" controls="controls" src="" style="width: 100%; height: 100%;">
+                        <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-xs-6">
+            <div class="portal-panel-title">
+                <i class="fa fa-coffee"></i>&nbsp;&nbsp;待办任务（Top 3）
+            </div>
+            <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[巡检]&nbsp;&nbsp;&nbsp;成仁段巡检任务</a>
+                    <label>2018-05-25</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[巡检]&nbsp;&nbsp;&nbsp;泸州段巡检任务</a>
+                    <label>2018-04-01</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[工作]&nbsp;&nbsp;&nbsp;东区三段1号干式变压器告警核查</a>
+                    <label>2018-09-11</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[工作]&nbsp;&nbsp;&nbsp;文宫服务区告警核查</a>
+                    <label>2018-02-19</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[巡检]&nbsp;&nbsp;&nbsp;S4成自泸文宫站告警核查</a>
+                    <label>2018-02-26</label>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <div class="portal-panel-title">
+                <i class="fa fa-bullhorn"></i>&nbsp;&nbsp;公告/通知（Top 3）
+            </div>
+            <div class="portal-panel-content" style="overflow: hidden; padding-top: 20px; padding-left: 30px; padding-right: 50px;">
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[公告]&nbsp;&nbsp;&nbsp;平台使用通知</a>
+                    <label>2018-06-01</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[通知]&nbsp;&nbsp;&nbsp;成仁段线路设备入网</a>
+                    <label>2018-05-28</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[通知]&nbsp;&nbsp;&nbsp;内自段线路设备入网</a>
+                    <label>2018-05-23</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[工作]&nbsp;&nbsp;&nbsp;汪洋服务器告警核查</a>
+                    <label>2018-02-19</label>
+                </div>
+                <div class="sd-msg-line">
+                    <a href="#" style="text-decoration: none;">[巡检]&nbsp;&nbsp;&nbsp;成仁段巡检任务</a>
+                    <label>2018-02-26</label>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Content/pace/pace.min.js"></script>
+    <script src="~/Content/jquery/jquery-1.10.2.min.js"></script>
+    <script src="~/Content/jquery/plugin/scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="~/Content/echarts/echarts.js"></script>
+    <script src="~/Content/echarts/charts_comm.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=eKxG1xgHYeDke4VEQ8VzfHd5sh0G2lqR"></script>
+    @Html.AppendJsFile("/Views/SD_Content/script/sd-dynamicchartshelper.js", "/Views/SD_Content/plugin/layerselect/sd-layerselect.js", "/Views/Home/AdminDesktop/index.js")
+</body>
+</html>

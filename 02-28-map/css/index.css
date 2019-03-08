@@ -140,10 +140,11 @@ html {
   padding: 10px 20px;
 }
 .ib-middle {
+  margin-top: 10px;
   position: relative;
   background-color: white;
   width: 66%;
-  border: 1px solid red;
+  height: 925px;
 }
 .ib-right {
   z-index: 99;
@@ -220,15 +221,20 @@ html {
   height: 20px;
   position: relative;
   top: 30px;
-  color: #992661;
+  color: #4072ee;
   line-height: 20px;
   font-size: 14px;
   margin-left: 10px;
   padding-left: 30px;
   background-repeat: no-repeat;
   background-position: left center;
-  background-image: url(../images/decline_icon@2x.png);
+  background-image: url(../images/Rise_icon.png);
   background-size: 22px 10px;
+}
+.ibl-one-number-div {
+  font-size: 40px;
+  line-height: 56px;
+  color: white;
 }
 .ibl-one-number-div span {
   position: relative;
@@ -537,7 +543,7 @@ html {
   cursor: pointer;
 }
 .ibri-list {
-  height: 600px;
+  height: 625px;
   overflow: scroll;
 }
 .ibri-one-item:nth-child(n+5) {
@@ -828,6 +834,7 @@ html {
   color: #787878;
   font-size: 20px;
   line-height: 28px;
+  margin-bottom: 15px;
 }
 .sfz-left-01 {
   display: flex;
@@ -842,6 +849,8 @@ html {
   line-height: 50px;
 }
 .sfz-left-01-left h4 {
+  position: relative;
+  top: 13px;
   color: #992661;
   line-height: 34px;
   height: 34px;
@@ -937,6 +946,7 @@ html {
   padding-left: 22px;
   height: 40px;
   line-height: 40px;
+  margin-right: 10px;
   color: #989898;
 }
 .sfzl-02-btn:before {
@@ -962,6 +972,7 @@ html {
   background-color: #E54E6A;
 }
 .sfz-left-04 {
+  margin-bottom: 20px;
   display: flex;
 }
 .sfz-left-04 h2 {
@@ -1284,7 +1295,9 @@ html {
   color: #4EE5BE;
   background-image: url(../images/bill_safe.png);
 }
-.ib-middle-car-div {
+.ib-middle-car-div,
+.ib-middle-sfz-div {
+  display: none;
   position: absolute;
   bottom: 100px;
   left: 50%;
@@ -1292,12 +1305,23 @@ html {
   margin-left: -450px;
   background-color: #292e33;
 }
-.ib-middle-car {
+.ib-middle-sfz-div {
+  width: 800px;
+  margin-left: -400px;
+}
+.video-sfz-div {
+  position: absolute;
+  left: 50%;
+  top: 45px;
+}
+.ib-middle-car,
+.ib-sfz-car {
   position: relative;
   width: 100%;
   height: 100%;
 }
-.ib-middle-car-close {
+.ib-middle-car-close,
+.ib-middle-sfz-close {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -1312,15 +1336,20 @@ html {
   opacity: .5;
   cursor: pointer;
 }
-.ib-middle-car-content {
+.ib-middle-car-content,
+.ib-middle-sfz-content {
   width: 100%;
   padding: 10px 20px 20px 20px;
-  border: 1px solid blue;
+  box-shadow: 0 0 5px #CCCCCC;
 }
-.ib-middle-car-content h1 {
+.ib-middle-car-content h1,
+.ib-middle-sfz-content h1 {
   color: #4EE5BE;
   font-size: 18px;
   line-height: 40px;
+}
+.ib-middle-sfz-content {
+  min-height: 240px;
 }
 .ib-middle-car-table {
   width: 100%;
@@ -1339,6 +1368,32 @@ html {
   margin-left: 5px;
 }
 .ib-middle-car-table td:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -2px;
+  background-color: #4EE5BE;
+  content: " ";
+  font-size: 1px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+}
+.ib-middle-sfz-table {
+  width: 100%;
+}
+.ib-middle-sfz-table td {
+  width: 50%;
+  position: relative;
+  color: white;
+  font-size: 16px;
+  padding: 15px 10px 10px 15px;
+}
+.ib-middle-sfz-table span {
+  display: inline-block;
+  margin-left: 5px;
+}
+.ib-middle-sfz-table td:before {
   position: absolute;
   top: 50%;
   left: 0;
@@ -1491,7 +1546,14 @@ html {
 .ib-middle-input-div {
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 70px;
+  z-index: 99;
+}
+.ib-middle-select-div {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 99;
 }
 .ib-middle-input {
   position: relative;
@@ -1503,7 +1565,7 @@ html {
   font-size: 14px;
   color: white;
   padding: 0 30px;
-  background-image: url(../images/Shape.png);
+  background-image: url(../images/search_Shape@2x.png);
   background-size: 14px 14px;
   background-repeat: no-repeat;
   background-position: 8px center;
@@ -1526,4 +1588,52 @@ html {
   background-size: 100% 100%;
   background-position: center center;
   background-image: url(../images/Shape_02@2x.png);
+}
+#sd_server,
+#sd_toll {
+  display: none;
+}
+#myModalSix .modal-content {
+  overflow: hidden;
+}
+.all-more-detail {
+  display: none;
+}
+.filter-text {
+  background-color: #292E33;
+  color: white;
+  height: 50px;
+}
+.filter-list {
+  top: 50px;
+}
+.filter-text .filter-title {
+  color: white;
+  line-height: 50px;
+  height: 50px;
+}
+.filter-list li.filter-selected {
+  background-color: #4EE5BE;
+}
+.filter-text {
+  padding-left: 40px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 10px center;
+  background-image: url(../images/all-icon@2x.png);
+}
+.filter-list li {
+  padding-left: 30px;
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+  background-position: 10px center;
+}
+.filter-list li:nth-child(1) {
+  background-image: url(../images/all-icon@2x.png);
+}
+.filter-list li:nth-child(3) {
+  background-image: url(../images/one_Toll_Gate_icon_11@2x.png);
+}
+.filter-list li:nth-child(2) {
+  background-image: url(../images/service_station_icon@2x.png);
 }

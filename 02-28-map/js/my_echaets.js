@@ -44,7 +44,7 @@ var option_car_01 = {
 			// name: '1',
 			type: 'line',
 			stack: '总量',
-			data: [120, 132, 101, 134, 90, 230, 210],
+			data: [120, 132, 141, 154, 290, 230, 240],
 			itemStyle: { //自定义线条颜色
 				normal: {
 					color: 'transparent',
@@ -59,7 +59,7 @@ var option_car_01 = {
 			// name: '2',
 			type: 'line',
 			stack: '总量',
-			data: [-100, -62, 191, 234, 290, 330, 410],
+			data: [-100, -62, 211, 211, 290, 330, 410],
 			itemStyle: { //自定义线条颜色
 				normal: {
 					color: '#4EE5BE',
@@ -180,7 +180,7 @@ var option_car_03 = {
 			// name: '1',
 			type: 'line',
 			stack: '总量',
-			data: [120, 132, 101, 134, 90, 230, 210],
+			data: [120, 132, 101, 134, 190, 230, 210],
 			itemStyle: { //自定义线条颜色
 				normal: {
 					color: 'transparent',
@@ -195,7 +195,7 @@ var option_car_03 = {
 			// name: '2',
 			type: 'line',
 			stack: '总量',
-			data: [-100, -62, 191, 234, 290, 330, 410],
+			data: [-100, -62, 191, 334, 490, 530, 610],
 			itemStyle: { //自定义线条颜色
 				normal: {
 					color: '#6b76cb',
