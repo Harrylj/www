@@ -1,22 +1,22 @@
-.conmmunity-index {
+.community-index {
   padding: 20px 0;
 }
 .cm-header{
   padding: 0 20px;
 }
-.conmmunity-index .cm-header h1 {
+.community-index .cm-header h1 {
   color: #010101;
   font-size: 18px;
   line-height: 40px;
 }
 
-.conmmunity-index .cm-header h4 {
+.community-index .cm-header h4 {
   font-size: 12px;
   line-height: 28px;
   color: #969696;
 }
 
-.conmmunity-index .cm-header-one {
+.community-index .cm-header-one {
   position: relative;
   display: flex;
 }
@@ -48,6 +48,7 @@
   display: flex;
   position: relative;
   justify-content: space-between;
+  padding: 0 20px;
 }
 
 .cmb-ul li {
@@ -138,4 +139,225 @@
   
   padding: 20px;
   border-top: 1px solid #F8F8F8;
+}
+
+.community-detail{
+  position: relative;
+}
+.cd-header{
+  position: relative;
+}
+.cd-header img{
+  display: block;
+  width: 100%;
+}
+.cdh-return
+,.cdh-share{
+  position: absolute;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  z-index: 99;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center center;
+}
+.cdh-return{
+  left: 10px;
+  background-image: url(../images/Return_arrow_butoon@2x.png);
+}
+.cdh-share{
+  right: 10px;
+  background-image: url(../images/share-icon-current_button@2x.png);
+}
+.cd-body{
+  position: relative;
+  padding-bottom: 100px;
+}
+.cd-body h2{
+  font-size: 19px;
+  color: black;
+  line-height: 32px;
+}
+.cd-body h4{
+  color: #989898;
+  font-size: 13px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+.cd-body p{
+  color: #363636;
+  line-height: 32px;
+}
+.cd-body h3{
+  font-size: 18px;
+  line-height: 32px;
+  color: #010101;
+  margin: 10px 0;
+}
+.cdb-content{
+  padding: 10px 20px;
+  border-bottom: 10px solid #F5F5F5;
+}
+.cdb-table{
+  width: 100%;
+}
+.cdb-table td{
+  padding: 8px 0;
+  line-height: 24px;
+  vertical-align: top;
+}
+.cdb-table td:first-child{
+  color: #969696;
+  font-size: 16px;
+  min-width: 80px;
+}
+.cdb-table td:last-child{
+  color: #363636;
+  font-size: 16px;
+}
+.cd-footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 70px;
+  line-height: 40px;
+  padding: 15px 20px;
+  background-color: white;
+}
+.cd-footer-left{
+  display: flex;
+  
+}
+.cd-footer-left img{
+  position: relative;
+  top: 7px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+}
+.cdfl-02{
+  margin-left: -3px;
+}
+.cdfl-03{
+  margin-left: -6px;
+}
+.cd-footer-left p{
+  color: #989898;
+  font-size: 16px;
+}
+.cd-footer-left span{
+  display: inline-block;
+  margin:0 5px;
+}
+.cd-footer-right{
+  display: inline-block;
+  line-height: 40px;
+  height: 40px;
+  border-radius: 20px;
+  color: white;
+  background-color: #6A87D6;
+  padding: 0 20px;
+}
+.cdb-comment{
+  
+}
+.cdbc-header{
+  position: relative;
+  line-height: 40px;
+  color: #484848;
+  font-size: 18px;
+  background-repeat: no-repeat;
+  background-size: 14px 14px;
+  background-position: right center;
+  background-image: url(../images/bill_05.png);
+}
+.cdbc-list{
+  position: relative;
+}
+.cdbc-item{
+  position: relative;
+  padding-left: 55px;
+  padding-top: 10px;
+}
+.cdbc-item img{
+  position: absolute;
+  top: 15px;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.cdbc-item h1{
+  color: black;
+  font-size: 17px;
+  line-height: 28px;
+}
+.cdbc-item h4{
+  color: #989898;
+  font-size: 12px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.cdbc-item p{
+  line-height: 24px;
+  padding: 4px 0;
+  color: #363636;
+  font-size: 15px;
+}
+.community-comment{
+  padding-top: 10px;
+}
+.cc-header{
+  position: relative;
+  
+}
+.cc-header h1{
+  line-height: 44px;
+  text-align: center;
+  font-size: 18px;
+  color: black;
+}
+.cch-return{
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  height: 44px;
+  width: 44px;
+  background-image: url(../images/cc-return.png);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: center center;
+}
+.community-comment .cd-footer{
+  padding: 10px 20px;
+}
+.community-comment  .cc-footer-div{
+  position: relative;
+  padding-left: 50px;
+  width: 100%;
+  background-color: #F6F6F6;
+  height: 44px;
+}
+.cc-footer-div img{
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  margin-top: -15px;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+}
+.ccf-input{
+  color: #969696;
+  line-height: 44px;
+  border: none;
+  width: 100%;
+  background-color: transparent;
+  padding-right: 10px;
 }

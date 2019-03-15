@@ -1,0 +1,2121 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4"></script>
+    <script type="text/javascript" src="http://developer.baidu.com/map/custom/stylelist.js"></script>
+    <title>四川成渝</title>
+    <style type="text/css">
+    </style>
+</head>
+
+<body>
+    <h4 class="all-more-detail" data-toggle="modal" data-target="#myModalSix" data-dismiss="modal" aria-label="Close">详情页面</h4>
+    <h4 class="sfz-zd" data-toggle="modal" data-target="#myModalTwo" data-dismiss="modal" aria-label="Close">详情页面</h4>
+    <div class="index public-body-div">
+        <!--
+            作者：648267773@qq.com
+            时间：2019-02-28
+            描述：.ib-header:首页顶部内容
+        -->
+        <div class="index-header">
+            <div class="ih-left"><img src="images/logo@2x.png" /></div>
+            <div class="ih-right">
+                <div class="ihr-nav">
+                    <ul>
+                        <li>
+                            <a href="#">收费站管理</a>
+                        </li>
+                        <li>
+                            <a href="#">服务区管理</a>
+                        </li>
+                        <li>
+                            <a href="#">巡逻车管理</a>
+                        </li>
+                        <li>
+                            <a href="#">异常报告</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ihr-right">
+                    <div class="ihr-warning"></div>
+                    <div class="ihr-msg"></div>
+                    <div class="ihr-userinfo">
+                        <img src="images/profile_image@2x.png" />
+                        <p>成仁段管理员</p>
+                    </div>
+                    <div class="ihr-date">2019.03.11</div>
+                    <div class="ihr-close"></div>
+                </div>
+            </div>
+        </div>
+        <div class="index-body">
+            <!--
+              作者：648267773@qq.com
+              时间：2019-02-28
+              描述：.ib-left:首页左侧内容
+                 .ibl-one:收费站实时收入
+                 .ibl-two:车道开通数
+                 .ibl-three:服务区开通数
+                 .ibl-four:巡逻车统计
+                 .ibl-item-more:每个模块的设置按钮
+            -->
+            <div class="ib-left">
+                <div class="ibl-item ibl-one">
+                    <div class="ibl-item-more" data-toggle="modal" data-target="#myModalOne"></div>
+                    <h1 class="ib-item-title">收费站实时收入</h1>
+                    <div class="ibl-one-sr">
+                        <h2>今日收入</h2>
+                        <p>历史累计:&yen;<span class="lj_03" val="123908800">123,908,800</span></p>
+                    </div>
+                    <div class="ibl-one-number">
+                        <!--<div class="ibl-one-number-div" val="12345"><span>3</span><span>3</span><span>3</span><span>3</span><span>3</span></div>-->
+                        <div class="ibl-one-number-div" val="2120006">2,120,006</div>
+                        <h4>32.9%</h4>
+                    </div>
+                    <!--
+                      作者：648267773@qq.com
+                      时间：2019-03-01
+                      描述： .ibl-one-ul的li 添加.ibl-one-ul-add:增加车辆 --今日收入
+                            .ibl-one-ul的li 添加 .ibl-one-ul-reduce:减少车辆 --今日收入
+                            .ibl-three-ul的li 添加.ibl-three-ul-add: 流量增多--服务区
+                            .ibl-three-ul的li 添加.ibl-three-ul-reduce: 流量减少--服务区
+                    -->
+                    <ul class="ibl-one-ul">
+                        <li class="ibl-one-ul-add">
+                            <h3>出口车辆 <span class="lj_07" val="3243">3,243</span> 辆</h3>
+                            <h5>&yen;<span class="lj_08" val="987678">987,678</span></h5>
+                        </li>
+                        <li class="ibl-one-ul-add">
+                            <h3>入口车辆 <span class="lj_09" val="3687">3,687</span> 辆</h3>
+                            <h5>&yen;<span class="lj_10" val="124678">124,678</span></h5>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibl-item ibl-two">
+                    <div class="ibl-item-more" data-toggle="modal" data-target="#myModalOne"></div>
+                    <h1 class="ib-item-title">车道开通数<span class="ib-span-bg ib-span-bg-hover">64</span><span class="ib-span-bg">104</span></h1>
+                    <div class="ibl-item-progress-div">
+                        <div class="ibl-item-progress-etc-div">
+                            <div class="progress">
+                                <div class="ibl-item-progress-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+                            </div>
+                            <div class="ibl-item-progress-content">
+                                <h3>ETC</h3>
+                                <h2><span class="iblip-num">6</span>/<span>24</span></h2>
+                            </div>
+                        </div>
+                        <div class="ibl-item-progress-mtc-div">
+                            <div class="progress">
+                                <div class="ibl-item-progress-mtc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 60%"></div>
+                            </div>
+                            <div class="ibl-item-progress-content">
+                                <h3>MTC</h3>
+                                <h2><span class="iblip-num"></span>18/<span>30</span></h2>
+                            </div>
+                        </div>
+                        <div class="ibl-item-progress-num-div">
+                            <div class="progress">
+                                <div class="ibl-item-progress-num progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                            </div>
+                            <div class="ibl-item-progress-content">
+                                <h3>行车道开通总数</h3>
+                                <h2><span class="iblip-num">40</span>/<span>50</span></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ibl-item ibl-three">
+                    <div class="ibl-item-more" data-toggle="modal" data-target="#myModalThree"></div>
+                    <h1 class="ib-item-title">服务区开通数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
+                    <ul class="ibl-three-ul">
+                        <li class="ibl-three-person ibl-three-ul-add">
+                            <h5>人流量</h5>
+                            <h2 class="lj_01" val="633156">633,156</h2>
+                        </li>
+                        <li class="ibl-three-car ibl-three-ul-add">
+                            <h5>车流量</h5>
+                            <h2 class="lj_02" val="114223">114,223</h2>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ibl-item ibl-four">
+                    <div class="ibl-item-more" data-toggle="modal" data-target="#myModalFour"></div>
+                    <h1 class="ib-item-title">巡逻车统计<span class="ib-span-bg ib-span-bg-hover">88</span><span class="ib-span-bg">104</span></h1>
+                    <!--<div class="ibl-four-map">
+                        <img src="images/1@2x.png" />
+                        <img src="images/2@2x.png" />
+                        <img src="images/3@2x.png" />
+                    </div>-->
+                    <div class="ibl-four-car">
+                        <div class="ibl-four-car-01-div">
+                            <div id="ibl-four-car-01"></div>
+                            <h2 class="lj_04">2341</h2>
+                            <p>总耗油 L</p>
+                        </div>
+                        <div class="ibl-four-car-01-div">
+                            <div id="ibl-four-car-02"></div>
+                            <h2 class="lj_05">62323</h2>
+                            <p>总里程 km</p>
+                        </div>
+                        <div class="ibl-four-car-01-div">
+                            <div id="ibl-four-car-03"></div>
+                            <h2 class="lj_06">1322</h2>
+                            <p>总时长 th</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--
+              作者：648267773@qq.com
+              时间：2019-02-28
+              描述：.ib-middle:首页中部地图内容
+                  .b-middle-car-div:车油耗
+            -->
+            <div class="ib-middle">
+                <button id="sd_server">服务区</button>
+                <button id="sd_toll">收费站</button>
+                <div id="map"></div>
+                <div class="modal fade" id="myModalTwo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <div class="modal-header">
+                                <h4 class="modal-title modal-title-sfz">请确定操作</h4>
+                            </div>
+                            <div class="modal-body">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                <button type="button" class="btn ibmi-img-btn btn-primary" data-dismiss="modal">确定</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ib-middle-car-div">
+                    <div class="ib-middle-car">
+                        <div class="ib-middle-car-close">×</div>
+                        <div class="ib-middle-car-content">
+                            <h1>详细信息</h1>
+                            <table class="ib-middle-car-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>行驶车速:<span class="speed">0</span>Km/h</td>
+                                    <td>本次行驶里程:<span class="frange">0</span>Km</td>
+                                    <td>总里程:<span class="total_range">0</span>Km</td>
+                                </tr>
+                                <tr>
+                                    <td>发动机转速:<span class="h_speed">0</span>rpm</td>
+                                    <td>电瓶电压:<span class="voltage">0</span>V</td>
+                                    <td>瞬时油耗:<span class="fgaspick">0</span>L</td>
+                                </tr>
+                                <tr>
+                                    <td>平均油耗:<span class="fgasavg">0</span>L/100km</td>
+                                    <td>本次耗油量:<span class="fgastimes">0</span>L</td>
+                                    <td>累计耗油量:<span class="fgaskeep">0</span>L</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        本次急加速次数:<span class="emgad">0</span>
+                                    </td>
+                                    <td colspan="2">
+                                        本次急减速次数:<span class="emgbre">0</span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="ib-middle-sfz-div">
+                    <div class="ib-middle-car">
+                        <div class="ib-middle-sfz-close">×</div>
+                        <div class="ib-middle-sfz-content">
+                            <h1>汪洋服务区</h1>
+                            <table class="ib-middle-sfz-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>客流时段：14:00点</td>
+                                </tr>
+                                <tr>
+                                    <td>进客流：187</td>
+                                </tr>
+                                <tr>
+                                    <td>出客流：198</td>
+                                </tr>
+                                <tr>
+                                    <td>停留数：-11</td>
+                                </tr>
+                            </table>
+                            <div class="video-sfz-div">
+                                <!--https://s3.cn-northwest-1.amazonaws.com.cn/dev-source-video/merge/898602D10118F0049339/F194050AB.MP4-->
+                                <!--https://s3.cn-northwest-1.amazonaws.com.cn/dev-source-video/video/89860617070011185591/083932AB.MP4-->
+                                <video class="video-sfz" controls  autoplay="autoplay" loop="loop" src="images/Service_01.mp4" style="width: 280px; height: 175px;">
+                                    <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                </video>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+                
+                
+                <!--
+                	作者：648267773@qq.com
+                	时间：2019-03-11
+                	描述：.ib-middle-dm-div:断面查看
+                	.ib-middle-qj-div:全景查看
+                	.ib-middle-bs-div:标识查看
+                	
+                -->
+                <div class="ib-middle-dm-div">
+                    <div class="ib-middle-dm">
+                        <div class="ib-middle-dm-close">×</div>
+                        <div class="ib-middle-dm-content">
+                            <h1>断面查看</h1>
+                            <div class="ib-dm-div">
+                              <video class="video-dm drivingPlayer" controls="controls" autoplay="autoplay" loop="loop"  style="width: 280px; height: 175px;">
+                                    <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                              </video>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ib-middle-qj-div">
+                    <div class="ib-middle-qj">
+                        <div class="ib-middle-qj-close">×</div>
+                        <div class="ib-middle-qj-content">
+                            <h1 class="ib-qj-titile">详细情况</h1>
+                            <div class="ib-qj-div">
+                              <img class="mapimg" src="https://s3.cn-northwest-1.amazonaws.com.cn/dev-source-video/capture/898602D10118F0049339/898602D10118F0049339_144157AB_02.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="ib-middle-img-div">
+                    <div class="ib-middle-img">
+                        <div class="ib-middle-img-close">×</div>
+                        <div class="ib-middle-img-content">
+                            <h1>车道开关</h1>
+                            <div class="ibmi-img-div">
+                                <img class="img-100" src="images/sfz_zd.png" />
+                                <div class="ibmi-img-cd ibmi-img-cd-01"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-02"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-close ibmi-img-cd-03"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-04"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-05"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-close ibmi-img-cd-06"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-07"></div>
+                                <div class="ibmi-img-cd ibmi-img-cd-08"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <div class="ib-middle-input-div">
+                    <div class="ib-middle-input">
+                        <div class="ib-middle-input-div-search"></div>
+                        <input class="ibm-input" type="text" name="" id="" value="" placeholder="输入搜索内容" />
+                    </div>
+                </div>
+                <div class="ib-middle-select-div">
+                    <div class="filter-box filter-box-01">
+                        <div class="filter-text">
+                            <input class="filter-title" type="text" readonly placeholder="pleace select" />
+                            <i class="icon icon-filter-arrow"></i>
+                        </div>
+                        <select name="filter">
+                            <option value="new" selected>选择查看类型</option>
+                            <option value="select_01">服务区</option>
+                            <option value="select_02">收费站</option>
+                            <option value="select_03">标识标牌</option>
+                            <option value="select_04">断面查看</option>
+                            <option value="select_05">全景路况</option>
+                        </select>
+                    </div>
+                </div>
+
+            </div>
+            <!--
+              作者：648267773@qq.com
+              时间：2019-02-28
+              描述：.ib-right:首页右侧内容
+                   .ibr-item-one:待办工作
+                   .ibr-item-two:今日巡检任务
+                   .ibr-item-three:异常告警
+                   .ibr-item-four:道路实况
+                   .ib-right-more:右侧展开1级菜单
+                   .ibr-item-more：右侧展开2级菜单
+                   .ibro-list-item:添加 .ibro-list-item-no表示没有待办事项
+                   .ibr-item ：添加.ibr-item-hover 表示展开
+
+                   .ibri-list :添加.ibri-list-more 表示二级展开
+
+                   .ibri-one-item:添加 .ibri-one-item-unread 表示未读（默认表示未读）
+                                 添加.ibri-one-item-read 表示已读
+                         添加 .ibri-one-item-ok 表示已处理
+                         .ibri-one-item-no 表示未处理
+
+                    .ib-right-content ：添加.ib-right-content-hover表示当前1级菜单为激活状态
+            -->
+            <div class="ib-right">
+                <div class="ib-right-more"></div>
+                <div class="ib-right-content ib-right-one ib-right-content-hover">
+                    <div class="ibro-list">
+                        <div class="ibro-list-item">
+                            待办工作
+                            <span class="ibro-list-item-num">6</span>
+                        </div>
+                        <div class="ibro-list-item">
+                            巡检任务
+                            <span class="ibro-list-item-num">3</span>
+                        </div>
+                        <div class="ibro-list-item">
+                            异常告警
+                            <span class="ibro-list-item-num">2</span>
+                        </div>
+                        <div class="ibro-list-item ibro-list-item-no">
+                            道路实况
+                            <span class="ibro-list-item-num">0</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ib-right-content ib-right-two">
+                    <div class="ibr-item ibr-item-hover ibr-item-one">
+                        <div class="ibr-item-more"></div>
+                        <h1 class="ib-item-title">待办工作<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">6</span></h1>
+
+                        <div class="ibri-list ibri-one-list">
+                            <div class="ibri-one-item ibri-one-item-unread">
+                                <img src="images/profile_image@2x.png" />
+                                <div class="ibri-one-item-header">
+                                    <h2>张集  ．  总工程师</h2>
+                                    <h4>2019.02.20</h4>
+                                </div>
+                                <h3><span>K12-08</span><span> 有新的时间...</span></h3>
+                            </div>
+                            <div class="ibri-one-item ibri-one-item-read">
+                                <img src="images/profile_image@2x.png" />
+                                <div class="ibri-one-item-header">
+                                    <h2>李总工  ．  总工程师</h2>
+                                    <h4>2019.02.21</h4>
+                                </div>
+                                <h3><span>K12-08</span><span> 有新的时间...</span></h3>
+                            </div>
+                            <div class="ibri-one-item ibri-one-item-ok">
+                                <img src="images/profile_image@2x.png" />
+                                <div class="ibri-one-item-header">
+                                    <h2>刘总工  ．  总工程师</h2>
+                                    <h4>2019.01.25</h4>
+                                </div>
+                                <h3><span>K12-08</span><span> 有新的时间...</span></h3>
+                            </div>
+                            <div class="ibri-one-item ibri-one-item-no">
+                                <img src="images/profile_image@2x.png" />
+                                <div class="ibri-one-item-header">
+                                    <h2>刘总工  ．  总工程师</h2>
+                                    <h4>2019.02.20</h4>
+                                </div>
+                                <h3><span>K12-09</span><span> 有新的时间...</span></h3>
+                            </div>
+
+                            <div class="ibri-one-item ibri-one-item-no">
+                                <img src="images/profile_image@2x.png" />
+                                <div class="ibri-one-item-header">
+                                    <h2>刘总工  ．  总工程师</h2>
+                                    <h4>2019.01.26</h4>
+                                </div>
+                                <h3><span>K12-09</span><span> 有新的时间...</span></h3>
+                            </div>
+                            <div class="ibri-one-item ibri-one-item-no">
+                                <img src="images/profile_image@2x.png" />
+                                <div class="ibri-one-item-header">
+                                    <h2>王总工  ．  总工程师</h2>
+                                    <h4>2019.01.10</h4>
+                                </div>
+                                <h3><span>K12-09</span><span> 有新的时间...</span></h3>
+                            </div>
+                            <div class="ibr-btn-more">--- 余下<span>2</span>条全部展开 ---</div>
+                        </div>
+
+                    </div>
+                    <!--
+                        作者：648267773@qq.com
+                        时间：2019-03-03
+                        描述：.ibrit-nav的子级li: 添加.ibrit-nav-hover表示当前选中的
+                                .ibrit-item: 添加.ibrit-item-no表示未处理,默认未处理
+                                                添加.ibrit-item-ok表示已处理
+                                                添加.ibrit-item-sfz表示收费站
+                                                添加.ibrit-item-fwq表示服务站
+                    -->
+                    <div class="ibr-item ibr-item-two">
+                        <div class="ibr-item-more"></div>
+                        <h1 class="ib-item-title">今日巡检任务<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">6</span></h1>
+                        <div class="ibri-list">
+                            <ul class="ibrit-nav">
+                                <li class="ibrit-nav-hover">收费站</li>
+                                <li>服务站</li>
+                            </ul>
+                            <div class="ibrit-list-div">
+                                <div class="ibrit-list">
+                                    <div class="ibrit-item ibrit-item-sfz ibrit-item-no">
+                                        <h4>2019.03.02 04:02:40</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                    </div>
+                                    <div class="ibrit-item ibrit-item-sfz ibrit-item-ok">
+                                        <h4>2019.03.01 00:00:00</h4>
+                                        <h5><span>K12-097</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                    </div>
+                                    <div class="ibrit-item ibrit-item-fwq ibrit-item-ok">
+                                        <h4>2019.02.22 05:20:20</h4>
+                                        <h5><span>K12-096</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                    </div>
+                                    <div class="ibrit-item ibrit-item-fwq ibrit-item-no">
+                                        <h4>2019.01.20 00:00:00</h4>
+                                        <h5><span>K12-095</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                    </div>
+                                    <div class="ibrit-item ibrit-item-fwq ibrit-item-no">
+                                        <h4>2019.01.22 00:00:00</h4>
+                                        <h5><span>K12-094</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ibr-item ibr-item-three">
+                        <div class="ibr-item-more"></div>
+                        <h1 class="ib-item-title">异常告警<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">11</span></h1>
+                        <div class="ibri-list">
+                            <ul class="ibrit-nav-three">
+                                <li class="ibrit-nav-three-hover">全部</li>
+                                <li>服务区</li>
+                                <li>收费站</li>
+                                <li>路段</li>
+                            </ul>
+                            <div class="ibrit-list-div">
+                                <div class="ibrit-list-three">
+                                    <div class="ibrit-item-three ibrit-item-three-fwz ibrit-item-three-no">
+                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                        <h3>来源: <span>人工上报</span></h3>
+                                    </div>
+                                    <div class="ibrit-item-three ibrit-item-three-fwz ibrit-item-three-no">
+                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                        <h3>来源: <span>人工上报</span></h3>
+                                    </div>
+                                    <div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-ok">
+                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                        <h3>来源: <span>人工上报</span></h3>
+                                    </div>
+                                    <div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-no">
+                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                        <h3>来源: <span>人工上报</span></h3>
+                                    </div>
+                                    <div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-ok">
+                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                        <h3>来源: <span>人工上报</span></h3>
+                                    </div>
+                                    <div class="ibrit-item-three ibrit-item-three-ld ibrit-item-three-no">
+                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
+                                        <h3>来源: <span>人工上报</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="ibr-item ibr-item-four">
+                        <div class="ibr-item-more"></div>
+                        <h1 class="ib-item-title">道路实况<span class="ib-span-bg ib-span-bg-hover">1</span><span class="ib-span-bg">3</span></h1>
+                        <div class="ibri-list">
+                            <div class="ibri-four-viedo-div">
+                                <div class="ibri-four-viedo">
+                                    <video class="drivingPlayer" controls controlsList='nofullscreen nodownload noremote footbar' src="" style="width: 100%; height: 100%;">
+                                        <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="ibri-four-viedo-div">
+                                <div class="ibri-four-viedo">
+                                    <!--<img class="mapimg" src="https://s3.cn-northwest-1.amazonaws.com.cn/dev-source-video/capture/898602D10118F0049339/898602D10118F0049339_144157AB_02.png" />-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!--
+            作者：648267773@qq.com
+            时间：2019-03-02
+            描述：.index-layer:弹层存放处
+            #myModalOne:收费站实时收入,车道开通数
+            #myModalThree：服务区开通数
+            #myModalFour：巡逻车统计
+            #myModalFive: 服务区详情
+            #myModalTwo: 收费站开启确定
+        -->
+        <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalOne">
+            Launch demo modal
+        </button>-->
+        <div class="index-layer">
+            <div class="modal fade" id="myModalOne" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-body modal-body-sfz">
+                            <div class="sfz-left">
+                                <h1>成仁高速收费统计汇总</h1>
+                                <div class="sfz-left-body">
+                                    <h2>收费金额统计</h2>
+                                    <div class="sfz-left-01">
+                                        <div class="sfz-left-01-left">
+                                            <h3>&nbsp;1,667,099,9100</h3>
+                                            <h4>32.9%</h4>
+                                        </div>
+                                        <div class="sfz-left-01-right">
+                                            <div class="sfz-btn-jrtj">今日统计</div>
+                                            <select class="sfz-select-01" name="">
+                                                <option value="">2019.02.10</option>
+                                                <option value="">2019.02.11</option>
+                                            </select>
+                                            <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="sfz-left-02">
+                                        <div class="sfzl-02-btn sfzl-02-btn-01">今天</div>
+                                        <div class="sfzl-02-btn sfzl-02-btn-02">历史</div>
+                                        <div class="sfzl-02-btn sfzl-02-btn-03">开始</div>
+                                        <div class="sfzl-02-btn sfzl-02-btn-04">结束</div>
+                                    </div>
+                                    <div class="sfz-left-03"><img class="img-100" src="images/data_01.png" /></div>
+                                </div>
+                                <div class="sfz-left-footer">
+                                    <div class="sfz-left-04">
+                                        <h2>车道总数 <span>3739</span></h2>
+                                        <h2>收费广场开通总数<span>890</span></h2>
+                                    </div>
+                                    <div class="sfz-left-footer-list">
+                                        <div class="sfzlf-item">
+                                            <h3>ETC</h3>
+                                            <div class="progress">
+                                                <div class="sfz-footer-etc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                            </div>
+                                            <div class="sfz-left-05-footer">
+                                                <h4>105</h4>
+                                                <h5>125</h5>
+                                            </div>
+                                        </div>
+                                        <div class="sfzlf-item">
+                                            <h3>MTC</h3>
+                                            <div class="progress">
+                                                <div class="sfz-footer-mtc progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 80%"></div>
+                                            </div>
+                                            <div class="sfz-left-05-footer">
+                                                <h4>118</h4>
+                                                <h5>130</h5>
+                                            </div>
+                                        </div>
+                                        <div class="sfzlf-item">
+                                            <h3>行车道</h3>
+                                            <div class="progress">
+                                                <div class="sfz-footer-xcd progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+                                            </div>
+                                            <div class="sfz-left-05-footer">
+                                                <h4>2240</h4>
+                                                <h5>2929</h5>
+                                            </div>
+                                        </div>
+                                        <div class="sfzlf-item">
+                                            <h3>出口</h3>
+                                            <div class="progress">
+                                                <div class="sfz-footer-ck progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 85%"></div>
+                                            </div>
+                                            <div class="sfz-left-05-footer">
+                                                <h4>241</h4>
+                                                <h5>260</h5>
+                                            </div>
+                                        </div>
+                                        <div class="sfzlf-item">
+                                            <h3>入口</h3>
+                                            <div class="progress">
+                                                <div class="sfz-footer-rk progress-bar  progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 90%"></div>
+                                            </div>
+                                            <div class="sfz-left-05-footer">
+                                                <h4>270</h4>
+                                                <h5>295</h5>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sfz-right">
+                                <div class="sfz-right-header">
+                                    <h1>其他分站对比图</h1>
+                                    <select class="sfzr-select-02" name="">
+                                        <option value="">2019.02.10</option>
+                                        <option value="">2019.02.11</option>
+                                    </select>
+                                </div>
+                                <table class="sfz-right-table" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th>桩号</th>
+                                        <th>站名</th>
+                                        <th>开通车道</th>
+                                        <th>车辆数</th>
+                                        <th>收入</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    <tr>
+                                        <td>K12+02</td>
+                                        <td>S成自泸成都站</td>
+                                        <td>24</td>
+                                        <td>8912</td>
+                                        <td>819,898,9100</td>
+                                        <td>
+                                            <div class="sfz-table-btn"></div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>K12+03</td>
+                                        <td>S成自泸简阳站</td>
+                                        <td>36</td>
+                                        <td>9878</td>
+                                        <td>986,918,1060</td>
+                                        <td>
+                                            <div class="sfz-table-btn"></div>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <ul class="sfz-right-footer">
+                                    <li>总计</li>
+                                    <li>60</li>
+                                    <li>18789</li>
+                                    <li>1,745,545,460</li>
+                                </ul>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="myModalThree" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-content-fwq">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-body modal-body-fwq">
+                            <div class="fwq-left">
+                                <h4 class="modal-title">服务区统计</h4>
+                                <div class="fwq-body">
+                                    <div class="fwqb-title">
+                                        <h1 class="ib-item-title">服务区开通总数<span class="ib-span-bg ib-span-bg-hover">176</span><span class="ib-span-bg">224</span></h1>
+                                        <h2>实时数据   2019.09.20 12:02:25</h2>
+                                    </div>
+                                    <!--
+                                      作者：648267773@qq.com
+                                      时间：2019-03-07
+                                      描述：.fwqb-ul: 的子集li添加.fwqb-ul-click表示选中服务区
+                                            .fwqb-item:添加 .fwqb-item-click 表示对应选中
+                                           .fwqb-btn-01: 添加 .fwqb-btn-01-click表示选中按钮
+                                    -->
+                                    <div class="fwqb-content">
+                                        <ul class="fwqb-ul">
+                                            <li class="fwqb-ul-click">永宁服务区</li>
+                                            <li>汪洋服务区</li>
+                                            <li>仁寿服务区</li>
+                                            <li>文宫服务区</li>
+                                        </ul>
+                                        <div class="fwqb-list">
+                                            <div class="fwqb-item fwqb-item-click">
+                                                <div class="fwqb-item-header">
+                                                    <div class="fwqb-item-header-left">
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到永宁</div>
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-down">永宁到成都</div>
+                                                    </div>
+                                                    <div class="fwqb-item-header-right">
+                                                        <select class="sfz-select-01" name="">
+                                                            <option value="">定车位统计</option>
+                                                            <option value="">定车位统计</option>
+                                                        </select>
+                                                        <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                                    </div>
+                                                </div>
+                                                <div class="fwqb-item-body">
+                                                    <img class="img-100" src="images/table_fwq_01.png" />
+                                                </div>
+                                            </div>
+                                            <div class="fwqb-item">
+                                                <div class="fwqb-item-header">
+                                                    <div class="fwqb-item-header-left">
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到汪洋</div>
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-down">汪洋到成都</div>
+                                                    </div>
+                                                    <div class="fwqb-item-header-right">
+                                                        <select class="sfz-select-01" name="">
+                                                            <option value="">定车位统计</option>
+                                                            <option value="">定车位统计</option>
+                                                        </select>
+                                                        <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                                    </div>
+                                                </div>
+                                                <div class="fwqb-item-body">
+                                                    <img class="img-100" src="images/table_fwq_01.png" />
+                                                </div>
+                                            </div>
+                                            <div class="fwqb-item">
+                                                <div class="fwqb-item-header">
+                                                    <div class="fwqb-item-header-left">
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到仁寿</div>
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-down">仁寿到成都</div>
+                                                    </div>
+                                                    <div class="fwqb-item-header-right">
+                                                        <select class="sfz-select-01" name="">
+                                                            <option value="">定车位统计</option>
+                                                            <option value="">定车位统计</option>
+                                                        </select>
+                                                        <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                                    </div>
+                                                </div>
+                                                <div class="fwqb-item-body">
+                                                    <img class="img-100" src="images/table_fwq_01.png" />
+                                                </div>
+                                            </div>
+                                            <div class="fwqb-item ">
+                                                <div class="fwqb-item-header">
+                                                    <div class="fwqb-item-header-left">
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-click fwqb-btn-01-up">成都到文宫</div>
+                                                        <div class="fwqb-btn-01 fwqb-btn-01-down">文宫到成都</div>
+                                                    </div>
+                                                    <div class="fwqb-item-header-right">
+                                                        <select class="sfz-select-01" name="">
+                                                            <option value="">定车位统计</option>
+                                                            <option value="">定车位统计</option>
+                                                        </select>
+                                                        <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                                    </div>
+                                                </div>
+                                                <div class="fwqb-item-body">
+                                                    <img class="img-100" src="images/table_fwq_01.png" />
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <h4 class="fwqb-more" data-toggle="modal" data-target="#myModalFive" data-dismiss="modal" aria-label="Close">服务区详情</h4>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="fwq-right">
+                                <img class="img-100" src="images/table_fwq_02.png" />
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModalFour" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">巡逻车统计</h4>
+                        </div>
+                        <div class="mfour-header">
+                            <div class="sfz-btn-jrtj">今日统计</div>
+                            <div class="mfour-header-right">
+                                <select class="sfz-select-01" name="">
+                                    <option value="">2019.02.10</option>
+                                    <option value="">2019.02.11</option>
+                                </select>
+                                <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                            </div>
+
+                        </div>
+                        <div class="modal-body">
+                            <!--
+                                作者：648267773@qq.com
+                                时间：2019-03-05
+                                描述：.mfour-car-status:状态默认表示灰色，正常
+                                      添加.mfour-car-status-warning:绿色-表示警告
+                                   .mfour-car-lk:路况默认表示打钩，绿色，正常
+                                   .mfour-car-lk-warning: 红色-表示警告
+                                   .mfour-car-blue: 表示蓝色
+                                   .mfour-car-red: 表示红色
+
+                            -->
+                            <div class="mfour-table-div">
+                                <table class="mfour-table" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <th>状态</th>
+                                        <th>车牌号</th>
+                                        <th>路况</th>
+                                        <th>路产数</th>
+                                        <th>巡逻里程</th>
+                                        <th>巡逻时长</th>
+                                        <th>停留时长</th>
+                                        <th>油耗</th>
+                                        <th>平均车速</th>
+                                        <th>最快车速</th>
+                                        <th>最慢车速</th>
+                                        <th>瞬时车速</th>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td>760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-blue">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-blue">100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-red">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-red">100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td>760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-blue">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-blue">100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-red">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-red">100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td>760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-blue">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-blue">100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-red">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-red">100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td>760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-blue">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-blue">100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="mfour-car-status mfour-car-status-warning"><span></span></td>
+                                        <td>川A844544</td>
+                                        <td class="mfour-car-lk mfour-car-lk-warning"><span></span></td>
+                                        <td class="mfour-car-blue">2</td>
+                                        <td>987.093km</td>
+                                        <td>7608 th</td>
+                                        <td class="mfour-car-red">760 th</td>
+                                        <td>7652.0536 l</td>
+                                        <td>100km/h</td>
+                                        <td class="mfour-car-red">100km/h</td>
+                                        <td>100km/h</td>
+                                        <td>100km/h</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                        </div>
+
+                        <div class="four-footer-table-div">
+                            <table class="four-footer-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td class="four-footer-table-td-01"><span>18</span>/<span>100</span></td>
+                                    <td class="four-footer-table-td-02"><span>202</span><span>222</span></td>
+                                    <td>2</td>
+                                    <td>987.093km</td>
+                                    <td>7608 th</td>
+                                    <td>760 th</td>
+                                    <td>7652.0536 l</td>
+                                    <td>100km/h</td>
+                                    <td>100km/h</td>
+                                    <td>100km/h</td>
+                                    <td>100km/h</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="myModalFive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-content-five">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="five-rentrn-three" data-toggle="modal" data-target="#myModalThree" data-dismiss="modal" aria-label="Close"></div>
+                        <div class="modal-header">
+                            <h4 class="modal-title">永兴服务区详情</h4>
+                        </div>
+                        <!--
+                          作者：648267773@qq.com
+                          时间：2019-03-07
+                          描述：.mcf-ul:的子集添加.mcf-ul-click表示点击
+                        -->
+                        <div class="modal-body">
+                            <ul class="mcf-ul">
+                                <li class="mcf-ul-click">基础消息</li>
+                                <li>经营信息</li>
+                                <li>厕所信息</li>
+                                <li>环保信息</li>
+                                <li>物业信息</li>
+                                <li>通讯录</li>
+                            </ul>
+                            <div class="mcf-list">
+                                <div class="mcf-item">
+                                    <img class="img-100" src="images/table_fwq_03.png" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModalSix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">详情页面</h4>
+                        </div>
+                        <div class="modal-body">
+                            <img class="img-100" src="images/pic_01.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="myModalTen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">更多</h4>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/my_echaets.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      $('.fwqb-more').click();
+      
+        $(function () {
+            // 取一个随机区间的整数
+            function rnd(n, m) {
+                var random = Math.floor(Math.random() * (m - n + 1) + n);
+                return random;
+            }
+
+            function add10() {
+                return rnd(1, 10)
+            }
+
+            function add100() {
+                return rnd(10, 100)
+            }
+
+            function add1000() {
+                return rnd(100, 1000)
+            }
+
+            function add10000() {
+                return rnd(100, 10000)
+            }
+
+            var addNumber = setInterval(function () {
+                //parseInt($('.ibl-one-number-div').html())+add100()
+                // $('.ibl-one-number-div').html(parseInt($('.ibl-one-number-div').html())+add100())
+
+                // 收入
+                $('.ibl-one-number-div').attr('val', parseInt($('.ibl-one-number-div').attr('val')) + add10000())
+                $('.ibl-one-number-div').html(splitNum($('.ibl-one-number-div').attr('val')))
+
+                // 人流量
+                $('.lj_01').attr('val', parseInt($('.lj_01').attr('val')) + add100())
+                $('.lj_01').html(splitNum($('.lj_01').attr('val')))
+                // 车流量
+                $('.lj_02').attr('val', parseInt($('.lj_02').attr('val')) + add100())
+                $('.lj_02').html(splitNum($('.lj_02').attr('val')))
+
+                // 历史累计
+                $('.lj_03').attr('val', parseInt($('.lj_03').attr('val')) + add10000())
+                $('.lj_03').html(splitNum($('.lj_03').attr('val')))
+
+                // 巡逻车
+                $('.lj_04').html(parseInt($('.lj_04').html()) + add10())
+                $('.lj_05').html(parseInt($('.lj_05').html()) + add100())
+                $('.lj_06').html(parseInt($('.lj_06').html()) + add10())
+
+                // 今日收入下面的车辆和收入
+                $('.lj_07').attr('val', parseInt($('.lj_07').attr('val')) + add100())
+                $('.lj_07').html(splitNum($('.lj_07').attr('val')))
+                $('.lj_08').attr('val', parseInt($('.lj_08').attr('val')) + add1000())
+                $('.lj_08').html(splitNum($('.lj_08').attr('val')))
+                $('.lj_09').attr('val', parseInt($('.lj_09').attr('val')) + add100())
+                $('.lj_09').html(splitNum($('.lj_09').attr('val')))
+                $('.lj_10').attr('val', parseInt($('.lj_10').attr('val')) + add1000())
+                $('.lj_10').html(splitNum($('.lj_10').attr('val')))
+
+                //splitNum
+
+                //  console.log($('.ibl-one-number-div').attr())
+            }, 1000);
+
+            // 数字改成金额
+            function splitNum(evt) {
+                // var value = this.value
+                var value = evt;
+                //先替换到所有的除了小数点以外的非数值数值
+                value = value.replace(/[^(\d.)]*/g, '');
+                //字符串没有反转方法，故需要先转成数组
+                value = value.split('').reverse().join('');
+                //可以尝试不加正则后面的(?=\d),在输入的数字刚好是3的整数倍时就会出现问题
+                value = value.replace(/(\d{3})(?=\d)/g, '$1,');
+                // this.value = value.split('').reverse().join('');
+                var abc = value.split('').reverse().join('');
+                return abc;
+            };
+            // alert(splitNum('145451111'))
+            //
+
+            // 点击输入框弹出消息
+            $('.ibm-input').on('input', function () {
+                var this_index = $(this).val();
+                // 如果输出1，则弹窗
+            })
+
+            // 点击右侧的都弹窗这个
+            $('.ibri-one-item,.ibrit-item,.ibrit-item-three').on('click', function () {
+                $('.all-more-detail').click()
+            })
+
+            //这里是初始化地图选择框
+            $('.filter-box-01').selectFilter({
+                callBack: function (val) {
+                    showmapimg = false;
+                    $('.ib-middle-car-close').click()
+                    focustrainid = null;
+                    //返回选择的值
+                    console.log(val + ' - 是返回的值')
+                    // 服务
+                    if (val == 'select_01') {
+                        $('#sd_server').click();
+                    }
+                    // 收费
+                    else if (val == 'select_02') {
+                        $('#sd_toll').click();
+                    }
+                    // 标识标牌
+                    else if (val == 'select_03') {
+                        $.post("http://xinmu-dev-elb-0951bf7cbc3bf987.elb.cn-northwest-1.amazonaws.com.cn:8990/v1/stream/reco_sign", { type: "gs", lon: "106", lat: "30.1" }
+                        ).success(function (data) {
+                          
+                            var signdatalst = $.parseJSON(data);
+                            if (signdatalst.status_code == 0) {
+                               
+                                map.centerAndZoom(new BMap.Point(104.11545, 30.449569), 14);
+                                map.clearOverlays();
+                                var signdata = signdatalst.data;
+                                for (var i = 0; i < signdata.length; i++) {
+                                    var esim_id = signdata[i].esim_id;
+                                    var file_name = signdata[i].file_name.replace('.MP4', '');
+                                    var frame = signdata[i].frame;
+                                    var signsrc = "https://s3.cn-northwest-1.amazonaws.com.cn/obufp/" + esim_id + "_" + file_name + "_" + frame + ".jpg";
+                                    var c = new Convertor();
+                                    var bdloc = c.WGS2BD09({
+                                        lng: parseFloat(signdata[i].lon),
+                                        lat: parseFloat(signdata[i].lat)
+                                    });
+                                    
+
+                                  // var marker = new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat));
+                                  
+                                                            var myIcon = new BMap.Icon("images/Signage.png", new BMap.Size(20, 20));
+                          var marker = new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                              icon: myIcon
+                          });
+                                  
+                                  
+                                  addClickHandler(signsrc, marker);
+                                  map.addOverlay(marker);
+
+                                    
+                                }
+                            }
+                        });
+                    }
+                    // 断面查看
+                    else if (val == 'select_04') {
+                        map.clearOverlays();
+                        var ponit = new BMap.Point(104.115019, 30.550264)
+                        map.centerAndZoom(ponit, 14);
+                        // var marker = new BMap.Marker(ponit)
+                        
+                         var myIcon = new BMap.Icon("images/one_Section_icon@2x.png", new BMap.Size(26, 26));
+                         var marker = new BMap.Marker(ponit, {
+                              icon: myIcon
+                         });
+                        
+                        marker.addEventListener('click', function () {
+                            //点击 弹层放视频
+                            $('.ib-middle-dm-div').show();
+                            $(".drivingPlayer").attr("src", "images/section.mp4");
+                            $(".drivingPlayer").attr("autoplay", "true");
+                        });
+                        map.addOverlay(marker);
+                    }
+                    // 全景路况
+                    else if (val == 'select_05') {
+                        $('.ib-middle-qj-div').show();
+                        // 打开右侧的第四个页面
+                        
+                        $('.ib-right-one').removeClass('ib-right-content-hover')
+                        $('.ibr-item').removeClass('ibr-item-hover')
+                        $('.ib-right-two').addClass('ib-right-content-hover')
+                        $('.ibr-item-four').addClass('ibr-item-hover')
+                        map.centerAndZoom(new BMap.Point(104.296836, 29.863374), 15);
+                        showmapimg = true;
+                        map.clearOverlays();
+                        var c = new Convertor();
+                        var bdloc = c.WGS2BD09({
+                            lng: parseFloat("104.331895"),
+                            lat: parseFloat("29.81787167")
+                        });
+                        map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat)));
+                        bdloc = c.WGS2BD09({
+                            lng: parseFloat("104.2831183"),
+                            lat: parseFloat("29.89785333")
+                        });
+                        map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat)));
+                    }
+                    // 隐藏
+                    else {
+                        map.centerAndZoom(new BMap.Point(104.120624, 30.079), 10);
+                        map.clearOverlays();
+                        console.log('隐藏其他的')
+                    }
+                    /*
+                    // 标识标牌
+                    else if (val == 'select_03') {
+                        $.post("http://xinmu-dev-elb-0951bf7cbc3bf987.elb.cn-northwest-1.amazonaws.com.cn:8990/v1/stream/reco_sign", { type: "gs", lon: "106", lat: "30.1" }
+                        ).success(function (data) {
+                            var signdatalst = $.parseJSON(data);
+                            if (signdatalst.status_code == 0) {
+                                map.centerAndZoom(new BMap.Point(104.11545, 30.449569), 14);
+                                map.clearOverlays();
+                                var signdata = signdatalst.data;
+                                for (var i = 0; i < signdata.length; i++) {
+                                    var esim_id = signdata[i].esim_id;
+                                    var file_name = signdata[i].file_name.replace('.MP4', '');
+                                    var frame = signdata[i].frame;
+                                    var signsrc = "https://s3.cn-northwest-1.amazonaws.com.cn/obufp/" + esim_id + "_" + file_name + "_" + frame + ".jpg";
+                                    var c = new Convertor();
+                                    var bdloc = c.WGS2BD09({
+                                        lng: parseFloat(signdata[i].lon),
+                                        lat: parseFloat(signdata[i].lat)
+                                    });
+                                    var marker = new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat));
+                                    addClickHandler(signsrc, marker);
+                                    map.addOverlay(marker);
+                                    
+                                }
+                            }
+                        });
+                    }
+                    // 断面查看
+                    else if (val == 'select_04') {
+                        var ponit = new BMap.Point(104.115019, 30.550264)
+                        map.centerAndZoom(ponit, 14);
+                        var marker = new BMap.Marker(ponit)
+                        marker.addEventListener('click', function () {
+                            //点击 弹层放视频
+                            $(".drivingPlayer").attr("src", "images/section.mp4");
+                            $(".drivingPlayer").attr("autoplay", "true");
+                        });
+                        map.addOverlay(marker);
+                    }
+                    // 全景路况
+                    else if (val == 'select_05') {
+                        // 打开右侧的第四个页面
+                        $('.ib-right-one').removeClass('ib-right-content-hover')
+                        $('.ibr-item').removeClass('ibr-item-hover')
+                        $('.ib-right-two').addClass('ib-right-content-hover')
+                        $('.ibr-item-four').addClass('ibr-item-hover')
+                        map.centerAndZoom(new BMap.Point(104.296836, 29.863374), 15);
+                        showmapimg = true;
+                        map.clearOverlays();
+                        var c = new Convertor();
+                        var bdloc = c.WGS2BD09({
+                            lng: parseFloat("104.331895"),
+                            lat: parseFloat("29.81787167")
+                        });
+                        map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat)));
+                        bdloc = c.WGS2BD09({
+                            lng: parseFloat("104.2831183"),
+                            lat: parseFloat("29.89785333")
+                        });
+                        map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat)));
+                    }
+                    // 隐藏
+                    else {
+                        map.centerAndZoom(new BMap.Point(104.120624, 30.079), 10);
+                        map.clearOverlays();
+                        console.log('隐藏其他的')
+                    }
+                    
+                    */
+                }
+            });
+
+            function addClickHandler(mapsrc, marker) {
+                marker.addEventListener("click", function (e) { ShowSignImage(mapsrc, e) });
+            }
+            function ShowSignImage(mapsrc, e) {
+                //点击 弹层显示图片
+                $('.ib-middle-qj-div').show();
+                $(".mapimg").attr("src", mapsrc)
+            }
+
+            // 点击车辆详细信息关闭按钮
+            $('.ib-middle-car-close').on('click', function () {
+                $('.ib-middle-car-div').hide();
+            })
+
+            // 点击收费站详细信息关闭按钮
+            $('.ib-middle-sfz-close').on('click', function () {
+                $('.ib-middle-sfz-div').hide();
+            })
+            
+            // 点击全景详细信息关闭按钮
+            $('.ib-middle-qj-close').on('click', function () {
+                $('.ib-middle-qj-div').hide();
+            })
+            // 点击断面详细信息关闭按钮
+            $('.ib-middle-dm-close').on('click', function () {
+                $('.ib-middle-dm-div').hide();
+            })
+            // 点击标识详细信息关闭按钮
+            $('.ib-middle-bs-close').on('click', function () {
+                $('.ib-middle-bs-div').hide();
+            })
+
+            // 点击收费站车道详情关闭按钮
+            $('.ib-middle-img-close').on('click', function () {
+                $('.ib-middle-img-div').hide();
+            })
+
+            // 点击服务区详情
+            $('.mcf-ul').children('li').on('click', function () {
+                var class_click = 'mcf-ul-click'
+                $(this).addClass(class_click).siblings().removeClass(class_click)
+            })
+
+            // 点击弹窗服务区的XX到XX按钮
+            $('.fwqb-btn-01').on('click', function () {
+                var class_click = "fwqb-btn-01-click";
+                $(this).addClass(class_click).siblings().removeClass(class_click)
+            })
+            // 点击弹窗服务区的服务区导航按钮
+            $('.fwqb-ul').children('li').on('click', function () {
+                var class_click_01 = 'fwqb-ul-click',
+                    class_children_click = 'fwqb-item-click',
+                    class_children = 'fwqb-item',
+                    e_father = $('.fwqb-list'),
+                    this_index = $(this).index();
+                $(this).addClass(class_click_01).siblings().removeClass(class_click_01);
+                e_father.children('.' + class_children).eq(this_index).addClass(class_children_click).siblings().removeClass(class_children_click)
+            })
+
+            // 右侧点击标题展开2级内容
+            $('.ibr-item').children('.ib-item-title').on('click', function () {
+                var father_hover = 'ibr-item-hover';
+
+                if ($(this).parent().hasClass(father_hover)) {
+                    $(this).parent().removeClass(father_hover)
+                } else {
+                    $(this).parent().addClass(father_hover).siblings().removeClass(father_hover)
+                }
+            })
+
+            // 点击收费站开关
+            $('.ibmi-img-cd').on('click', function () {
+                var click_class = 'ibmi-img-cd-click';
+                $(this).addClass(click_class).siblings().removeClass(click_class);
+                $('.sfz-zd').click();
+
+                var class_close = 'ibmi-img-cd-close';
+                var e_click = $('.ibmi-img-cd-click');
+                var e_ts = $('.modal-title-sfz');
+                // 开
+                if (e_click.hasClass(class_close)) {
+                    e_ts.html('请确认是否打开车道')
+                }
+                // 关
+                else {
+                    e_ts.html('请确认是否关闭车道')
+                }
+            })
+
+            // 点击收费站开关确定操作
+            $('.ibmi-img-btn').on('click', function () {
+                var class_close = 'ibmi-img-cd-close';
+                var e_click = $('.ibmi-img-cd-click');
+                // 开
+                if (e_click.hasClass(class_close)) {
+                    e_click.removeClass(class_close)
+                }
+                // 关
+                else {
+                    e_click.addClass(class_close)
+                }
+            })
+
+            // 右侧点击图标展开1级内容
+            $('.ib-right-more').on('click', function () {
+                var click_hover = 'ib-right-content-hover';
+                var click_one = $('.ib-right-one');
+                var click_two = $('.ib-right-two');
+                var click_father = $('.ib-middle');
+                // 展开2(含内容)
+                if (click_one.hasClass(click_hover)) {
+                    click_one.removeClass(click_hover);
+                    click_two.addClass(click_hover);
+                    click_father.css('width', '56%');
+                }
+                // 展开1(不含内容)
+                else {
+                    click_one.addClass(click_hover)
+                    click_two.removeClass(click_hover)
+                    click_father.css('width', '66%')
+                }
+                // 二级的内容也对应的点击下
+                $('.ibrit-nav').children().eq(0).click();
+                $('.ibrit-nav-three').children().eq(0).click();
+
+            })
+
+            // 点击展开余下更多
+            $('.ibr-btn-more').on('click', function () {
+                $(this).parent().addClass('ibri-list-more');
+
+            })
+
+            // 点击右侧顶部的退出按钮
+            $('.ihr-close').on('click', function () {
+                // 点击1级菜单展开图标
+                $('.ib-right-more').click();
+            })
+
+            // 点击右侧一级菜单列表
+            $('.ibro-list').children('.ibro-list-item').on('click', function () {
+                var this_index = $(this).index();
+                var father_two = $('.ib-right-two');
+                var class_hover = 'ibr-item-hover';
+                father_two.children('.ibr-item').eq(this_index).addClass(class_hover).siblings().removeClass(class_hover)
+                // 点击1级菜单展开图标
+                $('.ib-right-more').click();
+            })
+
+            // 点击右侧今日巡检任务 --筛选收费站和服务区
+            $('.ibrit-nav').children('li').on('click', function () {
+                var this_index = $(this).index(),
+                    class_hover = 'ibrit-nav-hover',
+                    e_all = $('.ibrit-item'),
+                    e_sfz = $('.ibrit-item-sfz'),
+                    e_fwz = $('.ibrit-item-fwq');
+                $(this).addClass(class_hover).siblings().removeClass(class_hover);
+                // 收费站
+                if (this_index == 0) {
+                    e_fwz.hide()
+                    e_sfz.show();
+                }
+                // 服务区
+                else if (this_index == 1) {
+                    e_sfz.hide()
+                    e_fwz.show();
+                } else {
+                    alert('数据错误01，请重新加载')
+                }
+
+            })
+            // 点击右侧异常告警 --筛选收费站和服务区
+            $('.ibrit-nav-three').children('li').on('click', function () {
+                var this_index = $(this).index(),
+                    class_hover = 'ibrit-nav-three-hover',
+                    e_all = $('.ibrit-item-three'),
+                    e_sfz = $('.ibrit-item-three-sfz'),
+                    e_ld = $('.ibrit-item-three-ld'),
+                    e_fwz = $('.ibrit-item-three-fwz');
+                $(this).addClass(class_hover).siblings().removeClass(class_hover);
+                // 全部
+                if (this_index == 0) {
+                    e_all.show();
+                }
+                // 收费站
+                else if (this_index == 1) {
+                    e_all.hide();
+                    e_sfz.show();
+                }
+                // 服务区
+                else if (this_index == 2) {
+                    e_all.hide();
+                    e_fwz.show();
+                }
+                // 路段
+                else if (this_index == 3) {
+                    e_all.hide();
+                    e_ld.show();
+                } else {
+                    alert('数据错误02，请重新加载')
+                }
+
+            })
+        })
+
+        //创建和初始化地图函数：
+        function initMap() {
+            createMap(); //创建地图
+            setMapEvent(); //设置地图事件
+            addMapControl(); //向地图添加控件
+            function changeMapStyle(style) {
+                var mapStyle = {
+                    features: ["road", "building", "water", "land"], //隐藏地图上的"poi",
+                    style: style,
+                };
+                map.setMapStyle(mapStyle);
+            }
+            changeMapStyle('grayscale')
+        }
+        var showmapimg = false;
+        var intervalTimer = 5000;
+        var focustrainid = null;
+        var traindic = new Dictionary();
+        var trainMonitor = function (trainid) {
+            // 显示车辆详情提示框
+            $('.ib-middle-car-div').show();
+            // $('.ib-middle-car-close').click();
+            $('.ib-middle-sfz-close').click();
+            // 打开右侧的第四个页面
+            $('.ib-right-one').removeClass('ib-right-content-hover')
+            $('.ibr-item').removeClass('ibr-item-hover')
+            $('.ib-right-two').addClass('ib-right-content-hover')
+            $('.ibr-item-four').addClass('ibr-item-hover')
+
+            focustrainid = trainid;
+            var focustrainmarker = traindic.get(trainid);
+            if (focustrainmarker != null) {
+                map.centerAndZoom(focustrainmarker.getPosition(), 17);
+            }
+        }
+        var loadHistorydata = function (trainid) {
+            // 隐藏车辆详情提示框
+            $('.ib-middle-car-close').click()
+            focustrainid = null;
+        }
+        var dealAlarm = function (trainid, e, ee, marker) {
+
+        }
+        var temporary = [];//定义中间新取出的值放到一个新的数组里
+
+        function LoadLastTrainData() {
+            $.ajax({
+                url: "http://211.149.234.57:930/sdtz/equ/gettraindata",
+                success: function (res) {
+                    if (res.code == 200) {
+                        var traindatas = res.data.lastreportlist;
+                        for (var i = 0; i < traindatas.length; i++) {
+                            var train = traindatas[i];
+                            SetTrainLocation(train.plateNumber, train, focustrainid == train.plateNumber);
+                            if (focustrainid != null && focustrainid == train.plateNumber) {
+                                $('.speed').html(train.speed);
+                                $('.frange').html(train.frange);
+                                $('.total_range').html(train.total_range);
+                                $('.h_speed').html(train.h_speed);
+                                $('.voltage').html(train.voltage);
+                                $('.fgaspick').html(train.fgaspick);
+                                $('.fgasavg').html(train.fgasavg);
+                                $('.fgastimes').html(train.fgastimes);
+                                $('.fgaskeep').html(train.fgaskeep);
+                                $('.emgad').html(train.emgad);
+                                $('.emgbre').html(train.emgbre);
+                                if (train.file != null) {
+                                    $(".drivingPlayer").attr("src", train.file);
+                                    $(".drivingPlayer").attr("autoplay", "true");
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function addCarClickHandler(train, marker) {
+            marker.addEventListener("click", function (e) { ShowCarVideo(train, e) });
+        }
+        function ShowCarVideo(train, e) {
+            //点击 弹层放视频
+            if (train.file != null) {
+                console.log(train.file);
+            }
+        }
+
+        function createMap() {
+            map = new BMap.Map("map", {
+                enableMapClick: false
+            });
+            var point = new BMap.Point(104.120624, 30.079);
+            map.centerAndZoom(point, 10);
+            map.setCurrentCity("成都");
+            map.addEventListener("click", function (e) {
+                if (showmapimg) {
+                    $.ajax({
+                        url: "http://211.149.234.57:930/sdtz/equ/getmapdata?data={\"lat\":\"" + e.point.lat + "\",\"lng\":\"" + e.point.lng + "\"}",
+                        success: function (res) {
+                            if (res.code == 200) {
+                                //点击 弹层显示图片
+                                $(".mapimg").attr("src", res.data.F_MapSrc)
+                            }
+                        }
+                    });
+                }
+            });
+            LoadLastTrainData();
+            setInterval(LoadLastTrainData, intervalTimer);
+        }
+
+        function setMapEvent() {
+            map.enableScrollWheelZoom();
+            map.enableKeyboard();
+            map.enableDragging();
+            map.enableDoubleClickZoom()
+        }
+
+        function addClickHandler(target, window) {
+            target.addEventListener("click ", function () {
+                target.openInfoWindow(window);
+            });
+        }
+
+        //向地图添加控件
+        function addMapControl() {
+            var scaleControl = new BMap.ScaleControl({
+                anchor: BMAP_ANCHOR_BOTTOM_LEFT
+            });
+            scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+            map.addControl(scaleControl);
+            var navControl = new BMap.NavigationControl({
+                anchor: BMAP_ANCHOR_TOP_LEFT,
+                type: BMAP_NAVIGATION_CONTROL_LARGE
+            });
+            map.addControl(navControl);
+        }
+        var map;
+
+        // add
+        function moveCar(prvePoint, newPoint, marker, trainid, isfocus, train) {
+            if (map.getDistance(prvePoint, newPoint) < 20 && prvePoint != newPoint)
+                return;
+
+            var pointmarker = new BMap.Marker(newPoint);
+            pointmarker.disableMassClear();
+            addCarClickHandler(train, pointmarker)
+            map.addOverlay(pointmarker);
+
+            if (isfocus) {
+                var currentCount = 0;
+                var projection = new BMap.MercatorProjection();
+                var _prvePoint = projection.lngLatToPoint(prvePoint);
+                var _newPoint = projection.lngLatToPoint(newPoint);
+                //两点之间要循环定位的次数
+                var count = 50;
+                //两点之间匀速移动
+                var intervalFlag = setInterval(function () {
+                    //两点之间当前帧数大于总帧数的时候，则说明已经完成移动
+                    if (currentCount >= count) {
+                        clearInterval(intervalFlag);
+                    } else {
+                        //动画移动
+                        currentCount++; //计数
+                        var x = linear(_prvePoint.x, _newPoint.x, currentCount, count);
+                        var y = linear(_prvePoint.y, _newPoint.y, currentCount, count);
+                        //根据平面坐标转化为球面坐标
+                        var pos = projection.pointToLngLat(new BMap.Pixel(x, y));
+                        if (currentCount == 1) {
+                            //调整方向
+                            setRotation(prvePoint, newPoint, marker);
+                        }
+                        marker.setPosition(pos);
+                        map.centerAndZoom(pos, 17);
+                    }
+                }, 100);
+            } else {
+                setRotation(prvePoint, newPoint, marker);
+                marker.setPosition(newPoint);
+            }
+        }
+
+        function linear(initPos, targetPos, currentCount, count) {
+            var b = initPos,
+                c = targetPos - initPos,
+                t = currentCount,
+                d = count;
+            return c * t / d + b;
+        }
+
+        function setRotation(curPos, targetPos, marker) {
+            var me = this;
+            var deg = 0;
+            curPos = map.pointToPixel(curPos);
+            targetPos = map.pointToPixel(targetPos);
+            if (targetPos.x != curPos.x) {
+                var tan = (targetPos.y - curPos.y) / (targetPos.x - curPos.x),
+                    atan = Math.atan(tan);
+                deg = atan * 360 / (2 * Math.PI);
+                if (targetPos.x < curPos.x) {
+                    deg = -deg + 90 + 90;
+                } else {
+                    deg = -deg;
+                }
+                marker.setRotation(-deg);
+
+            } else {
+                var disy = targetPos.y - curPos.y;
+                var bias = 0;
+                if (disy > 0)
+                    bias = -1
+                else
+                    bias = 1
+                marker.setRotation(-bias * 90);
+            }
+            return;
+        }
+
+        function SetTrainMarker(trainid, point, data, isfocus) {
+            var oldmarketpoint = point;
+            var oldmarker = traindic.get(trainid);
+            if (oldmarker != null) {
+                oldmarketpoint = oldmarker.getPosition();
+                var c = data.speed.toString().length == 1 ? "00" : data.speed.toString().length == 2 ? "0" : "";
+                var label = new BMap.Label(trainid + " - " + c + data.speed + " km/h", {
+                    offset: new BMap.Size(40, -25)
+                });
+                oldmarker.setLabel(label);
+                moveCar(oldmarketpoint, point, oldmarker, trainid, isfocus, data);
+            } else {
+                var myIcon = new BMap.Icon("images/car.png", new BMap.Size(45, 20));
+                var marker = new BMap.Marker(point, {
+                    icon: myIcon
+                });
+                marker.disableMassClear();
+                map.addOverlay(marker);
+                var opts = {
+                    iconUrl: BMAP_CONTEXT_MENU_ICON_ZOOMIN
+                };
+                var markerMenu = new BMap.ContextMenu();
+                markerMenu.addItem(new BMap.MenuItem('跟踪目标', trainMonitor.bind(marker, trainid), opts));
+                markerMenu.addSeparator();
+                markerMenu.addItem(new BMap.MenuItem('取消跟踪', loadHistorydata.bind(marker, trainid), opts));
+                marker.addContextMenu(markerMenu);
+                markerMenu.addSeparator();
+                markerMenu.addItem(new BMap.MenuItem('报警处理', dealAlarm.bind(marker, trainid), opts));
+                marker.addContextMenu(markerMenu);
+                traindic.set(trainid, marker);
+            }
+        }
+
+        function SetTrainLocation(Num, data, isfocus) {
+            var c = new Convertor();
+            if (parseInt(data.flongitude) == 0 || parseInt(data.flatitude) == 0)
+                return;
+            var bdloc = c.WGS2BD09({
+                lng: parseFloat(data.flongitude),
+                lat: parseFloat(data.flatitude)
+            });
+            var point = new BMap.Point(bdloc.lng, bdloc.lat);
+            SetTrainMarker(Num, point, data, isfocus);
+        }
+
+        function Dictionary() { //字典类
+            var items = {}; //存储在一个Object的实例中
+            this.has = function (key) { //验证一个key是否是items对象的一个属性
+                return key in items;
+            };
+            this.set = function (key, value) { //设置属性
+                items[key] = value;
+            };
+            this.remove = function (key) { //移除key属性
+                if (this.has(key)) {
+                    delete items[key];
+                    return true;
+                }
+                return false;
+            };
+            this.get = function (key) { //查找特定属性
+                return this.has(key) ? items[key] : undefined;
+            };
+            this.values = function () { //返回所有value实例的值
+                var values = new Array(); //存到数组中返回
+                for (var k in items) {
+                    if (this.has(k)) {
+                        values.push(items[k]);
+                    }
+                }
+                return values;
+            };
+            this.getItems = function () { //获取
+                return items;
+            };
+            this.clear = function () { //清除
+                items = {};
+            };
+            this.size = function () { //获取属性的多少
+                return Object.keys(items).length;
+            };
+        }
+        /**
+         * 坐标系转换函数
+         * WGS->GCJ
+         * WGS->BD09
+         * GCJ->BD09
+         **/
+        function Convertor(ak) {
+            this.stepCount = 100;
+            this.pointCount = [];
+            this.Result = [];
+            this.NoisIndex = [];
+            this.Time = new Date();
+            this.AK = ak;
+            this.M_PI = 3.14159265358979324;
+            this.A = 6378245.0;
+            this.EE = 0.00669342162296594323;
+            this.X_PI = this.M_PI * 3000.0 / 180.0;
+        }
+        Convertor.prototype.outofChine = function (p) {
+            if (p.lng < 72.004 || p.lng > 137.8347) {
+                return true;
+            }
+            if (p.lat < 0.8293 || p.lat > 55.8271) {
+                return true;
+            }
+            return false;
+        };
+        Convertor.prototype.WGS2GCJ_lat = function (x, y) {
+            var ret1 = -100.0 + 2.0 * x + 3.0 * y + 0.2 * y * y + 0.1 * x * y + 0.2 * Math.sqrt(Math.abs(x));
+            ret1 += (20.0 * Math.sin(6.0 * x * this.M_PI) + 20.0 * Math.sin(2.0 * x * this.M_PI)) * 2.0 / 3.0;
+            ret1 += (20.0 * Math.sin(y * this.M_PI) + 40.0 * Math.sin(y / 3.0 * this.M_PI)) * 2.0 / 3.0;
+            ret1 += (160.0 * Math.sin(y / 12.0 * this.M_PI) + 320 * Math.sin(y * this.M_PI / 30.0)) * 2.0 / 3.0;
+            return ret1;
+        };
+        Convertor.prototype.WGS2GCJ_lng = function (x, y) {
+            var ret2 = 300.0 + x + 2.0 * y + 0.1 * x * x + 0.1 * x * y + 0.1 * Math.sqrt(Math.abs(x));
+            ret2 += (20.0 * Math.sin(6.0 * x * this.M_PI) + 20.0 * Math.sin(2.0 * x * this.M_PI)) * 2.0 / 3.0;
+            ret2 += (20.0 * Math.sin(x * this.M_PI) + 40.0 * Math.sin(x / 3.0 * this.M_PI)) * 2.0 / 3.0;
+            ret2 += (150.0 * Math.sin(x / 12.0 * this.M_PI) + 300.0 * Math.sin(x / 30.0 * this.M_PI)) * 2.0 / 3.0;
+            return ret2;
+        };
+        Convertor.prototype.WGS2GCJ = function (poi) {
+            if (this.outofChine(poi)) {
+                return;
+            }
+            var poi2 = {};
+            var dLat = this.WGS2GCJ_lat(poi.lng - 105.0, poi.lat - 35.0);
+            var dLon = this.WGS2GCJ_lng(poi.lng - 105.0, poi.lat - 35.0);
+            var radLat = poi.lat / 180.0 * this.M_PI;
+            var magic = Math.sin(radLat);
+            magic = 1 - this.EE * magic * magic;
+            var sqrtMagic = Math.sqrt(magic);
+            dLat = (dLat * 180.0) / ((this.A * (1 - this.EE)) / (magic * sqrtMagic) * this.M_PI);
+            dLon = (dLon * 180.0) / (this.A / sqrtMagic * Math.cos(radLat) * this.M_PI);
+            poi2.lat = poi.lat + dLat;
+            poi2.lng = poi.lng + dLon;
+            return poi2;
+        };
+        Convertor.prototype.GCJ2BD09 = function (poi) {
+            var poi2 = {};
+            var x = poi.lng,
+                y = poi.lat;
+            var z = Math.sqrt(x * x + y * y) + 0.00002 * Math.sin(y * this.X_PI);
+            var theta = Math.atan2(y, x) + 0.000003 * Math.cos(x * this.X_PI);
+            poi2.lng = z * Math.cos(theta) + 0.0065;
+            poi2.lat = z * Math.sin(theta) + 0.006;
+            return poi2;
+        };
+        Convertor.prototype.WGS2BD09 = function (poi) {
+            //WGS->GCJ
+            var poi2 = this.WGS2GCJ(poi);
+            if (typeof poi2 === "undefined") {
+                return;
+            }
+            //GCJ->百度坐标系
+            return this.GCJ2BD09(poi2);
+        }
+
+        // 服务区
+        $('#sd_server').on('click', function () {
+            map.clearOverlays();
+
+           var myIcon = new BMap.Icon("images/service_station_icon@2x.png", new BMap.Size(26, 26));
+            
+            var marker = new BMap.Marker(new BMap.Point(104.36241760870722, 29.795201659603105), {
+                    icon: myIcon
+                });
+            
+            marker.addEventListener('click', function () {
+                $('.ib-middle-sfz-div').show();
+                $('.ib-middle-car-close').click();
+                $('.ib-middle-img-close').click()
+            });
+            map.addOverlay(marker);
+            
+
+            map.addOverlay(new BMap.Marker(new BMap.Point(104.12499957665844, 30.37553124006486), {
+                    icon: myIcon
+                }));
+            map.addOverlay(new BMap.Marker(new BMap.Point(104.23295403655305, 29.998060443441165), {
+                    icon: myIcon
+                }));
+            map.addOverlay(new BMap.Marker(new BMap.Point(104.2054944070381, 30.15310045159083), {
+                    icon: myIcon
+                }));
+        });
+        // 收费站
+        $('#sd_toll').on('click', function () {
+            map.clearOverlays();
+            var c = new Convertor();
+            var bdloc = c.WGS2BD09({
+                lng: parseFloat("104.1233517"),
+                lat: parseFloat("30.29626833")
+            });
+             var myIcon = new BMap.Icon("images/one_Toll_Gate_icon_11@2x.png", new BMap.Size(26, 26));
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.108725"),
+                lat: parseFloat("30.56945")
+            });
+            marker = new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                })
+            marker.addEventListener('click', function () {
+                $('.ib-middle-img-div').show();
+                $('.ib-middle-sfz-close').click();
+                $('.ib-middle-car-close').click();
+            });
+            map.addOverlay(marker);
+
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.126575"),
+                lat: parseFloat("30.41889333")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.1135333"),
+                lat: parseFloat("30.48061")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.1849583"),
+                lat: parseFloat("30.16494833")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.2635567"),
+                lat: parseFloat("29.93502333")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.314595"),
+                lat: parseFloat("29.84446167")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.2145667"),
+                lat: parseFloat("30.02485167")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+            bdloc = c.WGS2BD09({
+                lng: parseFloat("104.3707467"),
+                lat: parseFloat("29.769185")
+            });
+            map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat), {
+                    icon: myIcon
+                }));
+        });
+
+        initMap();
+    </script>
+
+</body>
+
+</html>

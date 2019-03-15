@@ -10,6 +10,7 @@
   box-sizing: border-box;
   letter-spacing: 1px;
   /*font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;*/
+  font-family:'Helvetica Neue',Helvetica,sans-serif;
 }
 h1,h2,h3,h4,h5,h6,p{
   margin: 0;

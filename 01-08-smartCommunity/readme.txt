@@ -30,7 +30,13 @@ meSettingInfoName.html  我的-设置信息-昵称修改
 meError.html  错误提示页面
 
 communityIndexr.html  社区首页
+communityDetail.html  社区内容详情页
+communityComment.html  社区内容详情评论页
 
+bodyBuilding.html 我的健身房
+bodyBuildingReserve.html 预定健身房
+bodyBuildingReserveMe.html 我的预约
+bodyBuildingRun.html 跑步倒计时
 
 JS---// 房屋详情的房屋性质内容修改
 
