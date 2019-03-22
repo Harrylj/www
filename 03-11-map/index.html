@@ -27,6 +27,7 @@
 <body>
     <h4 class="all-more-detail" data-toggle="modal" data-target="#myModalSix" data-dismiss="modal" aria-label="Close">详情页面</h4>
     <h4 class="sfz-zd" data-toggle="modal" data-target="#myModalTwo" data-dismiss="modal" aria-label="Close">详情页面</h4>
+    <h4 class="sfz-btn-detail" data-toggle="modal" data-target="#myModalSeven" data-dismiss="modal" aria-label="Close">收费站详情页面</h4>
     <div class="index public-body-div">
         <!--
             作者：648267773@qq.com
@@ -211,7 +212,7 @@
                         <div class="ib-middle-car-close">×</div>
                         <div class="ib-middle-car-content">
                             <h1>详细信息</h1>
-                            <table class="ib-middle-car-table" border="0" cellspacing="0" cellpadding="0">
+                            <!--<table class="ib-middle-car-table" border="0" cellspacing="0" cellpadding="0">
                                 <tr>
                                     <td>行驶车速:<span class="speed">0</span>Km/h</td>
                                     <td>本次行驶里程:<span class="frange">0</span>Km</td>
@@ -235,7 +236,42 @@
                                         本次急减速次数:<span class="emgbre">0</span>
                                     </td>
                                 </tr>
+                            </table>-->
+                            <table class="ib-middle-car-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>行驶车速:<span class="speed">0</span>Km/h</td>
+                                    <td>本次行驶里程:<span class="frange">0</span>Km</td>
+                                </tr>
+                                <tr>
+                                    <td>总里程:<span class="total_range">0</span>Km</td>
+                                    <td>发动机转速:<span class="h_speed">0</span>rpm</td>
+                                    
+                                </tr>
+                                <tr>
+                                    <td>电瓶电压:<span class="voltage">0</span>V</td>
+                                    <td>瞬时油耗:<span class="fgaspick">0</span>L</td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        本次急加速次数:<span class="emgad">0</span>
+                                    </td>
+                                    <td>
+                                        本次急减速次数:<span class="emgbre">0</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>平均油耗:<span class="fgasavg">0</span>L/100km</td>
+                                    <td>本次耗油量:<span class="fgastimes">0</span>L</td>
+                                </tr>
+                                <tr>
+                                  <td colspan="2">累计耗油量:<span class="fgaskeep">0</span>L</td>
+                                </tr>
                             </table>
+                            <div class="ib-middle-car-video">
+                              <video class="drivingPlayer" controls controlsList='nofullscreen nodownload noremote footbar' src="" style="width: 100%; height: 100%;">
+                                        <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                              </video>
+                            </div>
                         </div>
 
                     </div>
@@ -288,6 +324,18 @@
                         <div class="ib-middle-dm-close">×</div>
                         <div class="ib-middle-dm-content">
                             <h1>断面查看</h1>
+                            <table class="ib-middle-sfz-table ib-middle-dm-table" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>天气：?</td>
+                                    <td>路况：？</td>
+                                    <td>车辆数：？</td>
+                                </tr>
+                                <tr>
+                                    <td>车型：？</td>
+                                    <td>车速：？</td>
+                                    <td>告警消息：X条</td>
+                                </tr>
+                            </table>
                             <div class="ib-dm-div">
                               <video class="video-dm drivingPlayer" controls="controls" autoplay="autoplay" loop="loop"  style="width: 280px; height: 175px;">
                                     <source src="" type="video/mp4" style="width: 100%; height: 100%;">
@@ -312,8 +360,15 @@
                     <div class="ib-middle-img">
                         <div class="ib-middle-img-close">×</div>
                         <div class="ib-middle-img-content">
-                            <h1>车道开关</h1>
+                            <h1>车道控制</h1>
                             <div class="ibmi-img-div">
+                                <div class="ibmi-img-video">
+                                  <video class="video-sfz" controls  autoplay="autoplay" loop="loop" src="images/Service_01.mp4" style="width: 100%; height: 100%;">
+                                          <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                  </video>
+                                </div>
+                                <div class="ibmi-img-map"><img class="img-100" src="images/sfz_img.png"/></div>
+                                <div class="ibmi-img-title">成自泸成都站</div>
                                 <img class="img-100" src="images/sfz_zd.png" />
                                 <div class="ibmi-img-cd ibmi-img-cd-01"></div>
                                 <div class="ibmi-img-cd ibmi-img-cd-02"></div>
@@ -545,7 +600,8 @@
                                 </div>
                             </div>
                         </div>
-
+                        
+                        <div class="ycgj-btn-more" data-toggle="modal" data-target="#myModalEight" data-dismiss="modal" aria-label="Close">异常告警填写</div>
                     </div>
                     <div class="ibr-item ibr-item-four">
                         <div class="ibr-item-more"></div>
@@ -553,7 +609,7 @@
                         <div class="ibri-list">
                             <div class="ibri-four-viedo-div">
                                 <div class="ibri-four-viedo">
-                                    <video class="drivingPlayer" controls controlsList='nofullscreen nodownload noremote footbar' src="" style="width: 100%; height: 100%;">
+                                    <video class="drivingPlayer" autoplay="autoplay" loop="loop" controlsList='nofullscreen nodownload noremote footbar' src="images/section.mp4" style="width: 100%; height: 100%;">
                                         <source src="" type="video/mp4" style="width: 100%; height: 100%;">
                                     </video>
                                 </div>
@@ -581,6 +637,9 @@
             #myModalFour：巡逻车统计
             #myModalFive: 服务区详情
             #myModalTwo: 收费站开启确定
+            #myModalSix:右侧详情页面
+            #myModalSeven: 收费站详情页
+            #myModalEight: 异常告警填写
         -->
         <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalOne">
             Launch demo modal
@@ -701,7 +760,7 @@
                                         <td>8912</td>
                                         <td>819,898,9100</td>
                                         <td>
-                                            <div class="sfz-table-btn"></div>
+                                            <div class="sfz-table-btn" data-toggle="modal" data-target="#myModalSeven"></div>
                                         </td>
                                     </tr>
                                     <tr>
@@ -711,7 +770,7 @@
                                         <td>9878</td>
                                         <td>986,918,1060</td>
                                         <td>
-                                            <div class="sfz-table-btn"></div>
+                                            <div class="sfz-table-btn" data-toggle="modal" data-target="#myModalSeven"></div>
                                         </td>
                                     </tr>
                                 </table>
@@ -1106,10 +1165,22 @@
                                 <li>环保信息</li>
                                 <li>物业信息</li>
                                 <li>通讯录</li>
+                                <li>所在位置</li>
+                                <li>实时视频</li>
                             </ul>
                             <div class="mcf-list">
                                 <div class="mcf-item">
-                                    <img class="img-100" src="images/table_fwq_03.png" />
+                                    <div class="mcf-item-div mcf-item-div-hover">
+                                      <img style="width: 98%;" src="images/table_fwq_03.png" />
+                                    </div>
+                                    <div class="mcf-item-div mcf-item-div-other">
+                                                                      所在位置
+                                    </div>
+                                    <div class="mcf-item-div mcf-item-div-other">
+                                      <video class="video-sfz" controls  autoplay="autoplay" loop="loop" src="images/Service_01.mp4" style="width: 100%; height: 700px;">
+                                          <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                      </video>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1129,7 +1200,96 @@
                     </div>
                 </div>
             </div>
-
+            <div class="modal fade" id="myModalSeven" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">成仁高速K0（S4成自泸成都站）收费站详情 <button type="button" class="sfz-cdkz">车道控制<img src="images/arrow_more_button@2x.png"/></button></h4>
+                        </div>
+                        <div class="modal-body">
+                            <img class="img-100" src="images/sfz-detail.png" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModalEight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">异常情况填写</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="ycgj-table" border="0" cellspacing="0" cellpadding="0">
+                            	<tr>
+                            	  <td colspan="2">发生地点：</td>
+                            	</tr>
+                            	<tr>
+                            		<td>路段：</td>
+                            		<td><input class="ycgj-table-input" type="" placeholder="如：成都至仁寿方向"/></td>
+                            	</tr>
+                            	<tr>
+                                <td>收费站：</td>
+                                <td><textarea class="ycgj-input-sfz" name=""  placeholder="路段编号及收费站名称、方向（出口方向/入口方向/往成都方向/往仁寿方向）、车道编号（可选）"></textarea></td>
+                              </tr>
+                              <tr>
+                                <td>事件时间：</td>
+                                <td><input class="ycgj-table-input" type="date" placeholder="如：成都至仁寿方向"/></td>
+                              </tr>
+                              <tr>
+                                <td>事件原因：</td>
+                                <td>
+                                  <label><input type="checkbox" name="ycgj-yy" />交通事故（涉车数量（数量/待核查）、死亡人数（人数/待核查）、受伤人数（人数/待核查））</label>
+                                   <br/><label><input type="checkbox" name="ycgj-yy" />异常天气（雾/雨/雪/冰/其它），填写其它时，填写具体天气。摄像头自动识别时，自动检测能见度。</label>
+                                   <br/><label><input type="checkbox" name="ycgj-yy" />自然灾害（地震/滑坡/泥石流/路基沉降/其它），填写其它时，填写具体原因</label>
+                                   <br/><label><input type="checkbox" name="ycgj-yy" />涉路施工，可填写具体原因</label>
+                                   <br/><label><input type="checkbox" name="ycgj-yy" />车流量大</label>
+                                   <br/><label><input type="checkbox" name="ycgj-yy" />行人上路/车辆违停/车辆逆行/抛洒物（自动识别）</label>
+                                   <br/><label><input type="checkbox" name="ycgj-yy" />其它，具体原因<input class="ycgj-table-input" type="text"  placeholder="具体原因" /></label>
+                                   
+                                  
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>事件影响：</td>
+                                <td>
+                                  <label><input type="checkbox" name="ycgj-yx" />拥堵；</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />断道;</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />收费站（名称）封站/入口关闭/出口关闭/入口往成都方向关闭/入口往泸州方向关闭/对货车关闭；</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />占道（超车道/主车道/应急车道/收费站（名称）出站匝道/收费站（名称）入站匝道）；</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />路产损坏（护栏/防眩板/收费亭/栏杆机/收费岛/其它）；</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />无影响；</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />其它。填写其它时，填写具体影响<input class="ycgj-table-input" type="text"  placeholder="具体影响" /></label>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>事件描述及处置措施：</td>
+                                <td>
+                                  <label><input type="radio" name="ycgj-cs" />涉及运输危化品车辆</label>
+                                  <label><input type="radio" name="ycgj-cs" />涉及营运客车</label>
+                                  <label><input type="radio" name="ycgj-cs" />追尾</label>
+                                  <label><input type="radio" name="ycgj-cs" />擦挂</label>
+                                  <label><input type="radio" name="ycgj-cs" />自燃</label>
+                                  <label><input type="radio" name="ycgj-cs" />侧翻</label>
+                                  <label><input type="radio" name="ycgj-cs" />其它</label>
+                                </td>
+                              </tr>
+                              <tr>
+                                <td>上报时间:</td>
+                                <td><span class="ycgj-input-date"></span></td>
+                              </tr>
+                              <tr>
+                                <td></td>
+                                <td><button class="ycgj-btn-tj" data-dismiss="modal" aria-label="Close">提交</button></td>
+                              </tr>
+                            </table>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
             <div class="modal fade" id="myModalTen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -1145,18 +1305,42 @@
             </div>
 
         </div>
+        <div class="index-big-video">
+          <div class="index-big-video-div">
+            <div class="index-big-video-close">X</div>
+            <div class="index-big-video-content"></div>
+          </div>
+        </div>
     </div>
     <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/Tdrag.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/selectFilter.js" type="text/javascript"></script>
     <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/my_echaets.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     </script>
     <script type="text/javascript">
-      $('.fwqb-more').click();
-      
+      // $('.fwqb-more').click();
+      //$('.ycgj-btn-detail').click();
+          
+        
+
         $(function () {
+            
+            // 点击右侧视频
+            $('.ibri-four-viedo').on('click',function(){
+              var e_video = $(".index-big-video-content");
+              $(".index-big-video").show();
+              e_video.html($(this).html())
+            })
+            // 点击拖拽关闭按钮
+            $('.index-big-video-close').on('click',function(){
+              $(".index-big-video").hide();
+            })
+            // 可拖拽
+            $(".index-big-video").Tdrag();
+          
             // 取一个随机区间的整数
             function rnd(n, m) {
                 var random = Math.floor(Math.random() * (m - n + 1) + n);
@@ -1351,76 +1535,6 @@
                         map.clearOverlays();
                         console.log('隐藏其他的')
                     }
-                    /*
-                    // 标识标牌
-                    else if (val == 'select_03') {
-                        $.post("http://xinmu-dev-elb-0951bf7cbc3bf987.elb.cn-northwest-1.amazonaws.com.cn:8990/v1/stream/reco_sign", { type: "gs", lon: "106", lat: "30.1" }
-                        ).success(function (data) {
-                            var signdatalst = $.parseJSON(data);
-                            if (signdatalst.status_code == 0) {
-                                map.centerAndZoom(new BMap.Point(104.11545, 30.449569), 14);
-                                map.clearOverlays();
-                                var signdata = signdatalst.data;
-                                for (var i = 0; i < signdata.length; i++) {
-                                    var esim_id = signdata[i].esim_id;
-                                    var file_name = signdata[i].file_name.replace('.MP4', '');
-                                    var frame = signdata[i].frame;
-                                    var signsrc = "https://s3.cn-northwest-1.amazonaws.com.cn/obufp/" + esim_id + "_" + file_name + "_" + frame + ".jpg";
-                                    var c = new Convertor();
-                                    var bdloc = c.WGS2BD09({
-                                        lng: parseFloat(signdata[i].lon),
-                                        lat: parseFloat(signdata[i].lat)
-                                    });
-                                    var marker = new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat));
-                                    addClickHandler(signsrc, marker);
-                                    map.addOverlay(marker);
-                                    
-                                }
-                            }
-                        });
-                    }
-                    // 断面查看
-                    else if (val == 'select_04') {
-                        var ponit = new BMap.Point(104.115019, 30.550264)
-                        map.centerAndZoom(ponit, 14);
-                        var marker = new BMap.Marker(ponit)
-                        marker.addEventListener('click', function () {
-                            //点击 弹层放视频
-                            $(".drivingPlayer").attr("src", "images/section.mp4");
-                            $(".drivingPlayer").attr("autoplay", "true");
-                        });
-                        map.addOverlay(marker);
-                    }
-                    // 全景路况
-                    else if (val == 'select_05') {
-                        // 打开右侧的第四个页面
-                        $('.ib-right-one').removeClass('ib-right-content-hover')
-                        $('.ibr-item').removeClass('ibr-item-hover')
-                        $('.ib-right-two').addClass('ib-right-content-hover')
-                        $('.ibr-item-four').addClass('ibr-item-hover')
-                        map.centerAndZoom(new BMap.Point(104.296836, 29.863374), 15);
-                        showmapimg = true;
-                        map.clearOverlays();
-                        var c = new Convertor();
-                        var bdloc = c.WGS2BD09({
-                            lng: parseFloat("104.331895"),
-                            lat: parseFloat("29.81787167")
-                        });
-                        map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat)));
-                        bdloc = c.WGS2BD09({
-                            lng: parseFloat("104.2831183"),
-                            lat: parseFloat("29.89785333")
-                        });
-                        map.addOverlay(new BMap.Marker(new BMap.Point(bdloc.lng, bdloc.lat)));
-                    }
-                    // 隐藏
-                    else {
-                        map.centerAndZoom(new BMap.Point(104.120624, 30.079), 10);
-                        map.clearOverlays();
-                        console.log('隐藏其他的')
-                    }
-                    
-                    */
                 }
             });
 
@@ -1460,11 +1574,32 @@
             $('.ib-middle-img-close').on('click', function () {
                 $('.ib-middle-img-div').hide();
             })
-
+            
+            // 点击车道控制
+            $('.sfz-cdkz').on('click',function(){
+              $('.ib-middle-img-div').show();
+            })
+            
             // 点击服务区详情
             $('.mcf-ul').children('li').on('click', function () {
                 var class_click = 'mcf-ul-click'
+                var this_index = $(this).index();
+                var class_hover_click = 'mcf-item-div-hover';
+                var e_hover = $('.mcf-item-div');
                 $(this).addClass(class_click).siblings().removeClass(class_click)
+                
+                //所在位置
+                if(this_index == 6){
+                  e_hover.eq(1).addClass(class_hover_click).siblings().removeClass(class_hover_click)
+                }
+                //实时视频
+                else if(this_index == 7){
+                  e_hover.eq(2).addClass(class_hover_click).siblings().removeClass(class_hover_click)
+                }
+                //其他默认
+                else{
+                  e_hover.eq(0).addClass(class_hover_click).siblings().removeClass(class_hover_click)
+                }
             })
 
             // 点击弹窗服务区的XX到XX按钮
@@ -1512,7 +1647,12 @@
                     e_ts.html('请确认是否关闭车道')
                 }
             })
-
+            
+            // 点击异常告警填写按钮
+            $('.ycgj-btn-tj').on('click',function(){
+              alert('提交成功')
+            })
+            
             // 点击收费站开关确定操作
             $('.ibmi-img-btn').on('click', function () {
                 var class_close = 'ibmi-img-cd-close';
@@ -1627,6 +1767,25 @@
                 }
 
             })
+            
+            
+            
+            
+            var myDate = new Date();
+            myDate.getYear(); //获取当前年份(2位)
+            myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+            myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+            myDate.getDate(); //获取当前日(1-31)
+            myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+            myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+            myDate.getHours(); //获取当前小时数(0-23)
+            myDate.getMinutes(); //获取当前分钟数(0-59)
+            myDate.getSeconds(); //获取当前秒数(0-59)
+            myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+            myDate.toLocaleDateString(); //获取当前日期
+            var mytime=myDate.toLocaleTimeString(); //获取当前时间
+            myDate.toLocaleString(); //获取日期与时间
+            $('.ycgj-input-date').html(myDate.toLocaleString())
         })
 
         //创建和初始化地图函数：
@@ -2018,7 +2177,8 @@
                 });
             
             marker.addEventListener('click', function () {
-                $('.ib-middle-sfz-div').show();
+                // $('.ib-middle-sfz-div').show();
+                $('.fwqb-more').click();
                 $('.ib-middle-car-close').click();
                 $('.ib-middle-img-close').click()
             });
@@ -2056,7 +2216,7 @@
                     icon: myIcon
                 })
             marker.addEventListener('click', function () {
-                $('.ib-middle-img-div').show();
+                $('.sfz-btn-detail').click();
                 $('.ib-middle-sfz-close').click();
                 $('.ib-middle-car-close').click();
             });
