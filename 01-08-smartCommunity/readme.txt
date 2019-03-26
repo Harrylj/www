@@ -33,8 +33,10 @@ communityIndexr.html  社区首页
 communityDetail.html  社区内容详情页
 communityComment.html  社区内容详情评论页
 
+bodyBuildingFirst.html 无人健身房
 bodyBuilding.html 我的健身房
 bodyBuildingReserve.html 预定健身房
+bodyBuildingReserveOrder.html 选择预定信息
 bodyBuildingReserveMe.html 我的预约
 bodyBuildingRun.html 跑步倒计时
 

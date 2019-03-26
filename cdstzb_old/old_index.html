@@ -1,0 +1,903 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+
+    </style>
+    <script type="text/javascript">
+      $.ajax({
+        url: 'http://wthrcdn.etouch.cn/weather_mini?city=成都',
+        data: "",
+        dataType: "jsonp",
+        success: function(data) {
+          console.log(data, data.data.city, data.data.wendu, data.data.forecast[0].fengxiang);
+        }
+      })
+    </script>
+  </head>
+
+  <body>
+
+    <div class="tz-index center">
+      <!--公用顶部-->
+      <div class="tzi-header">
+        <div class="tzih-top">
+          <div class="tziht-one fl">
+            2018年8月29日 16:07:20 星期三
+          </div>
+          <div class="tziht-two fl">
+            成都 温度 无风
+          </div>
+          <div class="tziht-three fr">
+            <a class="tziht-app-download" href="#">APP下载</a>
+            <div class="dropdown" id="search" onclick="search.changeValue(this);search.searchKeyword()">
+              <input type="text" class="dropdown-selected" id="search-input" placeholder="市委统战学习传达市委十三届四次全会精神" onkeyup="search.searchKeyword();">
+              <ul>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委十三届四次全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委十二届四次全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委十一届四次全</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委三届四次</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委四届四次全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">统战学习传达市委六届四次全会精神</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="tzih-center">
+          <img src="images/tz-index-09.jpg" />
+        </div>
+        <!--导航栏-->
+        <!--.tzih-nav-one-hover:.tzih-nav-one表示激活-->
+        <div class="tzih-bottom">
+          <div class="tzih-bottom-nav">
+            <ul class="tzih-nav-one">
+              <li>
+                <a class="tzh-nav-one-first tzih-bottom tzih-nav-one-hover" href="#">首页</a>
+              </li>
+              <li class="tzih-nav-one-more">
+                <a class="tzih-bottom" href="#">本部介绍</a>
+                <ul class="tzih-nav-two">
+                  <li>
+                    <a class="tzih-bottom" href="#">多党合作22</a>
+                  </li>
+                  <li>
+                    <a class="tzih-bottom" href="#">多党22合作333</a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">多党合作</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">民族宗教</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">港澳台海外</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">非公经济</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">党外知识分子</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">新的社会阶层</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">对口援藏</a>
+              </li>
+              <li>
+                <a class="tzih-bottom " href="# ">机关党建</a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--主要内容-->
+      <div class="tzi-body public-body ">
+        <div class="tzib-one ">
+          <div class="tzib-one-left fl ">
+            <!--轮播1，左右-->
+            <div class="tzib-swiper-01 ">
+              <div class="index-slide-01 ">
+                <div class="slideBox ">
+                  <div class="hd ">
+                    <ul>
+                      <li class=" on "></li>
+                      <li class=" "></li>
+                      <li class=" "></li>
+                    </ul>
+                  </div>
+                  <div class="bd ">
+                    <div class="tempWrap ">
+                      <ul>
+                        <li><img src="images/index-slide-01.jpg "></li>
+
+                        <li><img src="images/index-slide-01.jpg "></li>
+
+                        <li><img src="images/index-slide-01.jpg "></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="tzib-one-right fr ">
+            <a href="# ">
+              <h2>要闻</h2></a>
+            <a href="# ">
+              <h1 class="fontht ">市委统战部学习传达市委十三届四次全会精神</h1></a>
+            <div class="tziz-one-ul-div ">
+              <ul>
+                <li>
+                  <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                </li>
+                <li>
+                  <a href="# ">中共中央印发 中国共产党纪律处分条例</a>
+                </li>
+                <li>
+                  <a href="# ">中国伊斯兰教协会在京举行古尔邦节招待会</a>
+                </li>
+              </ul>
+            </div>
+            <div class="tziz-one-ul-div border_no ">
+              <ul>
+                <li>
+                  <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                </li>
+                <li>
+                  <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                </li>
+                <li>
+                  <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                </li>
+              </ul>
+            </div>
+            <p>
+              <a class="tz-index-more-01 " href="# ">更多资讯</a>
+            </p>
+          </div>
+          <div class="clear "></div>
+        </div>
+        <div class="tzib-two ">
+          <!--轮播2,上下-->
+          <div class="tzib-swiper-02 ">
+            <div class="index-slide-02 ">
+              <div class="slideBox-02 ">
+                <div class="bd ">
+                  <div class="tempWrap tempWrap-02 " style="width: 100%; ">
+                    <ul>
+                      <li><img src="images/1_15.jpg " width="1030 " height="102 " alt=" "></li>
+                      <li><img src="images/1_15.jpg " width="1030 " height="102 " alt=" "></li>
+                      <li><img src="images/1_15.jpg " width="1030 " height="102 " alt=" "></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tzib-three ">
+          <!--主要列表内容-->
+          <div class="tzib-three-left fl ">
+            <div class="tizb-three-list-div ">
+              <div class="tizb-three-list fl ">
+                <h3>多党合作</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>民族宗教</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>港澳台海外</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>非公经济</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>党外知识分子</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>新的社会阶层</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>对口援藏</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="tizb-three-list fl ">
+                <h3>机关党建</h3>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+                <ul>
+                  <li>
+                    <a href="# ">成都市管43座下穿隧道平安度过汛期</a>
+                  </li>
+                  <li>
+                    <a href="# ">成都市民盟举办德惠市新联系人培训</a>
+                  </li>
+                  <li>
+                    <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                  </li>
+                  <li>
+                    <a href="# ">第四届中国（四川）国际旅游投资大会今日开幕</a>
+                  </li>
+                  <li>
+                    <a href="# ">中欧班列（成都）再“升级”提升开行数量</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="clear "></div>
+            </div>
+
+          </div>
+          <!--列表右侧内容-->
+          <div class="tzib-three-right fr ">
+            <!--右侧导航2-->
+            <div class="tzib-nav-02 ">
+              <ul>
+                <li class="margright10 ">
+                  <a href="# ">统战春秋</a>
+                </li>
+                <li>
+                  <a href="# ">政策指南</a>
+                </li>
+                <li class="margright10 ">
+                  <a href="# ">理论研究</a>
+                </li>
+                <li>
+                  <a href="# ">教育培训</a>
+                </li>
+                <li class="margright10 ">
+                  <a href="# ">非公评论</a>
+                </li>
+                <li>
+                  <a href="# ">填报系统</a>
+                </li>
+              </ul>
+              <div class="clear "></div>
+            </div>
+            <!--右侧滚动公告-->
+            <div class="tzib-loop-div ">
+              <div class="tzib-loop-div-header ">
+                <h1>通知公告</h1>
+                <a class="tz-index-more-01 " href="# ">更多资讯</a>
+              </div>
+              <div class="topLoop ">
+                <div class="bd ">
+                  <ul class="infoList ">
+                    <li>
+                      <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                    </li>
+                    <li>
+                      <a href="# ">会议精神和解答</a>
+                    </li>
+                    <li>
+                      <a href="# ">2018年各党派团体重点考察调研巡礼</a>
+                    </li>
+                    <li>
+                      <a href="# ">中央统战工作会议精神和解答</a>
+                    </li>
+                    <li>
+                      <a href="# ">2018年团结报</a>
+                    </li>
+                    <li>
+                      <a href="# ">2018年各党派团体重点考察调研巡礼018年各党派团体重点考察调研巡礼</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--右侧导航3-->
+            <div class="tzib-nav-03 ">
+              <ul>
+                <li class="margright10 ">
+                  <a href="# ">人物风采</a>
+                </li>
+                <li>
+                  <a href="# ">建言献策</a>
+                </li>
+              </ul>
+              <div class="clear "></div>
+            </div>
+            <!--右侧地图-->
+            <div class="tzib-map ">
+              <div style="width:280px;height:180px;border:#ccc solid 1px;font-size:12px " id="map "></div>
+            </div>
+            <!--右侧导航4-->
+            <div class="tzib-nav-04 ">
+              <ul>
+                <li>
+                  <a href="# ">成都市台联</a>
+                </li>
+                <li>
+                  <a href="# ">成都欧美同学会丶成都留学人员联谊会</a>
+                </li>
+                <li>
+                  <a href="# ">成都市党外知识政治联谊会</a>
+                </li>
+                <li>
+                  <a href="# ">成都海外联谊会</a>
+                </li>
+                <li>
+                  <a href="# ">成都市光彩事业促进会</a>
+                </li>
+                <li>
+                  <a href="# ">成都市互联网从业人员联谊会</a>
+                </li>
+                <li>
+                  <a href="# ">成都市新的社会阶层人士联谊会</a>
+                </li>
+                <li>
+                  <a href="# ">成都统一战线"同心智库 "</a>
+                </li>
+                <li>
+                  <a href="# ">回音壁</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="clear "></div>
+        </div>
+        <!--底部轮播图-->
+        <div class="tzib-four ">
+          <div class="d1-61-div ">
+            <div class="slide-click slide-click-hover slide-click-01 ">图片新闻</div>
+            <div class="slide-click slide-click-02 ">视频新闻</div>
+            <a class="tz-index-more-01 " href="# ">更多资讯</a>
+          </div>
+          <div class="slide-two-all ">
+            <div class="slide-04 slide-two-hover ">
+              <div class="leftLoop ">
+                <a class="next "></a>
+                <a class="prev "></a>
+                <div class="bd ">
+                  <ul class="picList ">
+                    <li>
+                      <div class="pic "><img src="images/slide-04-01.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-02.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-03.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-04.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-05.png " /></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+            <div class="slide-04 ">
+              <div class="leftLoop ">
+                <a class="next "></a>
+                <a class="prev "></a>
+                <div class="bd ">
+                  <ul class="picList ">
+                    <li>
+                      <div class="pic "><img src="images/slide-04-05.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-03.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-02.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-01.png " /></div>
+                    </li>
+                    <li>
+                      <div class="pic "><img src="images/slide-04-04.png " /></div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!--公用底部-->
+      <div class="tzi-footer ">
+        <div class="tzif-top ">
+          <div class="filter-box select-02 ">
+            <div class="filter-box filter-box-02 ">
+              <div class="filter-text ">
+                <input class="filter-title " type="text " readonly placeholder="pleace select " />
+                <i class="icon icon-filter-arrow "></i>
+              </div>
+              <select name="filter ">
+                <option value="nothrough " selected>上级统战机关</option>
+                <option value="audit "> 副省级城市统战部</option>
+                <option value="audited ">市级统战系统</option>
+                <option value="passed ">区市县</option>
+                <option value="1 ">其他链接</option>
+              </select>
+            </div>
+          </div>
+          <div class="filter-box filter-box-03 ">
+            <div class="filter-text ">
+              <input class="filter-title " type="text " readonly placeholder="pleace select " />
+              <i class="icon icon-filter-arrow "></i>
+            </div>
+            <select name="filter ">
+              <option value="nothrough ">上级统战机关</option>
+              <option value="audit " selected> 副省级城市统战部</option>
+              <option value="audited ">市级统战系统</option>
+              <option value="passed ">区市县</option>
+              <option value="1 ">其他链接</option>
+            </select>
+          </div>
+          <div class="filter-box filter-box-04 ">
+            <div class="filter-text ">
+              <input class="filter-title " type="text " readonly placeholder="pleace select " />
+              <i class="icon icon-filter-arrow "></i>
+            </div>
+            <select name="filter ">
+              <option value="nothrough ">上级统战机关</option>
+              <option value="audit "> 副省级城市统战部</option>
+              <option value="audited " selected>市级统战系统</option>
+              <option value="passed ">区市县</option>
+              <option value="1 ">其他链接</option>
+            </select>
+          </div>
+          <div class="filter-box filter-box-05 ">
+            <div class="filter-text ">
+              <input class="filter-title " type="text " readonly placeholder="pleace select " />
+              <i class="icon icon-filter-arrow "></i>
+            </div>
+            <select name="filter ">
+              <option value="nothrough ">上级统战机关</option>
+              <option value="audit "> 副省级城市统战部</option>
+              <option value="audited ">市级统战系统</option>
+              <option value="passed " selected>区市县</option>
+              <option value="1 ">其他链接</option>
+            </select>
+          </div>
+          <div class="filter-box filter-box-06 ">
+            <div class="filter-text ">
+              <input class="filter-title " type="text " readonly placeholder="pleace select " />
+              <i class="icon icon-filter-arrow "></i>
+            </div>
+            <select name="filter ">
+              <option value="nothrough ">上级统战机关</option>
+              <option value="audit "> 副省级城市统战部</option>
+              <option value="audited ">市级统战系统</option>
+              <option value="passed ">区市县</option>
+              <option value="1 " selected>其他链接</option>
+            </select>
+          </div>
+
+          <div class="clear "></div>
+        </div>
+        <div class="tzif-body index-footer ">
+          <div class="title-img "></div>
+          <h2> 中共成都市委统战部</h2>
+          <h2>Copyright 2018 中共成都市委统战部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;地址：四川省成都市蜀锦路59号第三办公区</h2>
+        </div>
+      </div>
+
+      <!--调用公用二维码-->
+      <div class="index-fixed-father">
+        <div class="index-fixed-list">
+          <ul class="index-fixed-ul">
+            <li class="index-fixed-wx">
+              <p>微信</p>
+              <div class="index-gzh index-fixed-li-more">
+                <div class="index-gzh-div"><img src="images/exam-ewm.png" alt="">
+                  <p>"统战新语 "公众号</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      
+      
+
+    </div>
+
+  </body>
+  <script type="text/javascript ">
+    $(function() {
+      $('.index-fixed-ul').children('li').on('mouseover', function() {
+        $(this).children('.index-fixed-li-more').show();
+        // parent.$(".iframe-top-header").addClass('z-index-more');
+      })
+      $('.index-fixed-ul').children('li').on('mouseout', function() {
+        $(this).children('.index-fixed-li-more').hide();
+        // parent.$(".iframe-top-header").removeClass('z-index-more');
+      })
+      
+      // 点击导航栏
+      $('.tzih-nav-one').children('li').on('mouseover', function() {
+        $(this).children('.tzih-nav-two').show();
+      })
+      $('.tzih-nav-one').children('li').on('mouseout', function() {
+        $(this).children('.tzih-nav-two').hide();
+      })
+
+      jQuery(".slideBox ").slide({
+        mainCell: ".bd ul ",
+        effect: "left ",
+        autoPlay: true
+      });
+      jQuery(".slideBox-02 ").slide({
+        mainCell: ".bd ul ",
+        effect: "top ",
+        autoPlay: true
+      });
+      jQuery(".topLoop ").slide({
+        mainCell: ".bd ul ",
+        effect: "topMarquee ",
+        vis: 6,
+        interTime: 40,
+        autoPlay: true
+      });
+      jQuery(".leftLoop ").slide({
+        mainCell: ".bd ul ",
+        effect: "leftLoop ",
+        vis: 5,
+        scroll: 5,
+        autoPlay: true
+      });
+      $('.filter-box-02').selectFilter({
+        callBack: function(val) {
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-03').selectFilter({
+        callBack: function(val) {
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-04').selectFilter({
+        callBack: function(val) {
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-05').selectFilter({
+        callBack: function(val) {
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.filter-box-06').selectFilter({
+        callBack: function(val) {
+          //返回选择的值
+          console.log(val + '-是返回的值')
+        }
+      });
+      $('.slide-click').on('click', function() {
+        $(this).addClass('slide-click-hover').siblings().removeClass('slide-click-hover')
+        if($(this).hasClass('slide-click-01')) {
+          $('.slide-two-all').children('.slide-04').eq(0).addClass('slide-two-hover').siblings().removeClass('slide-two-hover')
+        }
+        if($(this).hasClass('slide-click-02')) {
+          $('.slide-two-all').children('.slide-04').eq(1).addClass('slide-two-hover').siblings().removeClass('slide-two-hover')
+        }
+      })
+    })
+  </script>
+
+  <script type="text/javascript ">
+    //创建和初始化地图函数：
+    function initMap() {
+      createMap(); //创建地图
+      setMapEvent(); //设置地图事件
+      addMapControl(); //向地图添加控件
+      addMapOverlay(); //向地图添加覆盖物
+    }
+
+    function createMap() {
+      map = new BMap.Map("map ");
+      map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 11);
+    }
+
+    function setMapEvent() {
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+
+    function addClickHandler(target, window) {
+      target.addEventListener("click ", function() {
+        target.openInfoWindow(window);
+      });
+    }
+
+    function addMapOverlay() {
+      var markers = [{
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.672276,
+            lng: 104.078206
+          }
+        },
+        {
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.674761,
+            lng: 104.098903
+          }
+        },
+        {
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.694141,
+            lng: 104.005191
+          }
+        },
+        {
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.698116,
+            lng: 104.128223
+          }
+        },
+        {
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.668301,
+            lng: 104.050035
+          }
+        },
+        {
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.714013,
+            lng: 104.077631
+          }
+        },
+        {
+          content: "我的备注 ",
+          title: " ",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.659354,
+            lng: 104.01554
+          }
+        }
+      ];
+      for(var index = 0; index < markers.length; index++) {
+        var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+        var marker = new BMap.Marker(point, {
+          icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png ", new BMap.Size(20, 25), {
+            imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+          })
+        });
+        var label = new BMap.Label(markers[index].title, {
+          offset: new BMap.Size(25, 5)
+        });
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+        marker.setLabel(label);
+        addClickHandler(marker, infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl() {
+      var scaleControl = new BMap.ScaleControl({
+        anchor: BMAP_ANCHOR_BOTTOM_LEFT
+      });
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        type: BMAP_NAVIGATION_CONTROL_LARGE
+      });
+      map.addControl(navControl);
+    }
+    var map;
+    initMap();
+  </script>
+
+</html>

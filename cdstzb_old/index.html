@@ -1,0 +1,549 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+      .BMapLabel{
+        display: none !important;
+      }
+    </style>
+    <script type="text/javascript">
+    </script>
+  </head>
+
+  <body>
+
+    <div class="tz-index center">
+      <!-- 公共头部 begin -->
+      <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!-- 公共头部 end -->
+
+      <!--主要内容-->
+      <div class="tzi-body">
+        <!--要闻-->
+        <div class="tzib-one">
+          <div class="tzib-one-left fl">
+            <!--轮播1，左右-->
+            <div class="tzib-swiper-01">
+              <div class="index-slide-01">
+                <div class="slideBox">
+                  <div class="hd">
+                    <ul>
+                      <li class=" on"></li>
+                      <li class=" "></li>
+                      <li class=" "></li>
+                      <li class=" "></li>
+                    </ul>
+                  </div>
+                  <div class="bd">
+                    <div class="tempWrap">
+                      <ul>
+                        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="4" STARTPOS="0" CHANNELCODE="yaowenpic">
+                          <li>
+                            <a href="<CMSPRO_DOCUMENT FIELD='url'></CMSPRO_DOCUMENT>" target="_blank">
+                              <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                            </a>
+                            <h3> <CMSPRO_DOCUMENT FIELD="title" NUM="20" >稿件标题</CMSPRO_DOCUMENT></h3>
+                          </li>
+                        </CMSPRO_DOCUMENTS>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tzib-one-right fr">
+            <a href="<CMSPRO_CHANNEL CODE='yaowenTitle'  FIELD='url' ></CMSPRO_CHANNEL>">
+              <h2><CMSPRO_CHANNEL CODE='yaowen'  FIELD='displayName' ></CMSPRO_CHANNEL></h2>
+            </a>
+            <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="1" STARTPOS="0" PAGESIZE="0">
+              <a href="<CMSPRO_DOCUMENT FIELD='url' NUM=''></CMSPRO_DOCUMENT>" target="_blank">
+                <h1 class="fontht"><CMSPRO_DOCUMENT FIELD="title" NUM=""></CMSPRO_DOCUMENT></h1>
+              </a>
+            </CMSPRO_DOCUMENTS>
+            <div class="tziz-one-ul-div">
+              <ul>
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="1" PAGESIZE="0">
+                  <li>
+                    <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                  </li>
+                </CMSPRO_DOCUMENTS>
+              </ul>
+            </div>
+
+            <div class="tziz-one-ul-div border_no ">
+              <ul>
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="4" PAGESIZE="0">
+                  <li>
+                    <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                  </li>
+                </CMSPRO_DOCUMENTS>
+              </ul>
+            </div>
+
+            <p>
+              <a class="tz-index-more-01" href="<CMSPRO_CHANNEL CODE='yaowen'  FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+            </p>
+
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--轮播2,上下-->
+        <div class="tzib-two">
+          <div class="tzib-swiper-02">
+            <div class="index-slide-02">
+              <div class="slideBox-02">
+                <div class="bd">
+                  <div class="tempWrap tempWrap-02" style="width: 100%;">
+                    <ul>
+                      <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="4" STARTPOS="0" CHANNELCODE="indexTopSlide">
+                        <li>
+                          <a href="<CMSPRO_DOCUMENT FIELD='url'></CMSPRO_DOCUMENT>" target="_blank">
+                            <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                          </a>
+                        </li>
+                      </CMSPRO_DOCUMENTS>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--中间内容-->
+        <div class="tzib-three">
+          <!--主要列表内容-->
+
+          <div class="tzib-three-left fl">
+            <div class="tizb-three-list-div">
+              <CMSPRO_CHANNELS CODE="_SITE" STARTPOS='3' NUM="8" CHILDTYPE="3" >
+                <div class="tizb-three-list fl">
+                  <h3><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h3>
+                  <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+                  <ul>
+                    <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="5" STARTPOS="0">
+                      <li>
+                        <CMSPRO_DOCUMENT FIELD="title" NUM="21" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                      </li>
+                    </CMSPRO_DOCUMENTS>
+                  </ul>
+                </div>
+              </CMSPRO_CHANNELS>
+              <div class="clear"></div>
+            </div>
+
+          </div>
+          <!--列表右侧内容-->
+          <div class="tzib-three-right fr">
+            <!--右侧导航2-->
+            <div class="tzib-nav-02">
+              <ul>
+                <li>
+                  <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexTZCQ' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexTZCQ" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+                <li class="margleft10">
+                  <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexZCZN' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexZCZN" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexLLYJ' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexLLYJ" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+                <li class="margleft10">
+                  <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexJYPX' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexJYPX" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+                <li>
+                  <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexFGPJ' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexFGPJ" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+                <li class="margleft10">
+                  <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexTBXT' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexTBXT" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+
+              </ul>
+              <div class="clear"></div>
+            </div>
+            <!--右侧滚动公告-->
+            <div class="tzib-loop-div">
+              <CMSPRO_CHANNELS CODE="_SITE" STARTPOS='17' NUM="1" CHILDTYPE="3">
+                <div class="tzib-loop-div-header">
+                  <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+                  <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+                </div>
+                <div class="topLoop">
+                  <div class="bd">
+                    <ul class="infoList">
+                      <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
+                        <li>
+                          <CMSPRO_DOCUMENT FIELD="title" NUM="999" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
+                        </li>
+                      </CMSPRO_DOCUMENTS>
+                    </ul>
+                  </div>
+                </div>
+              </CMSPRO_CHANNELS>
+            </div>
+
+            <!--右侧导航3-->
+            <div class="tzib-nav-03">
+              <ul>
+                <li>
+                  <a href="<CMSPRO_CHANNEL CODE='indexRWFC' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexRWFC" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+                <li class="margleft10">
+                  <a href="<CMSPRO_CHANNEL CODE='indexJYXC' FIELD='url' ></CMSPRO_CHANNEL>">
+                    <CMSPRO_CHANNEL CODE="indexJYXC" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                  </a>
+                </li>
+              </ul>
+              <div class="clear"></div>
+            </div>
+            <!--右侧地图-->
+            <div class="tzib-map">
+              <div class="tzib-map-div">统一战线工作基地</div>
+              <div id="map"></div>
+            </div>
+            <!--右侧导航4-->
+            <div class="tzib-nav-04">
+              <ul>
+                <CMSPRO_CHANNELS CODE="indexRight" STARTPOS='0' NUM="9" CHILDTYPE="3">
+                  <li>
+                    <a href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>" target="_blank">
+                      <CMSPRO_CHANNEL FIELD="displayName" NUM="20">栏目名称</CMSPRO_CHANNEL>
+                    </a>
+                  </li>
+                </CMSPRO_CHANNELS>
+              </ul>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+        <!--底部轮播图-->
+        <div class="tzib-four">
+          <div class="d1-61-div">
+            <div class="slide-click slide-click-hover slide-click-01">
+              <CMSPRO_CHANNEL CODE="indexTPXW" FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
+            </div>
+            <div class="slide-click slide-click-02">
+              <CMSPRO_CHANNEL CODE="indexSPXW" FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
+            </div>
+            <a class="tz-index-more-01 tz-index-more-img" href="<CMSPRO_CHANNEL  CODE='indexTPXW' FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+            <a class="tz-index-more-01 tz-index-more-video" href="<CMSPRO_CHANNEL   CODE='indexSPXW'  FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+          </div>
+          <div class="slide-two-all">
+            <div class="slide-04 slide-two-hover">
+              <div class="leftLoop">
+                <a class="next"></a>
+                <a class="prev"></a>
+                <div class="bd">
+                  <ul class="picList">
+                    <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|8" NUM="10" STARTPOS="0" CHANNELCODE="indexTPXW">
+                      <li>
+                        <div class="pic">
+                          <a href="<CMSPRO_DOCUMENT FIELD='url'></CMSPRO_DOCUMENT>" target="_blank">
+                            <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                          </a>
+                          <h3> <CMSPRO_DOCUMENT FIELD="title" NUM="20" >稿件标题</CMSPRO_DOCUMENT></h3>
+                        </div>
+                      </li>
+                    </CMSPRO_DOCUMENTS>
+                    <!--<li>
+												<div class="pic">
+													<img src="images/slide-04-01.png" />
+													<h3>中国天放假放假放假解放军</h3>
+												</div>
+											</li>-->
+                  </ul>
+                </div>
+              </div>
+
+            </div>
+            <div class="slide-04">
+              <div class="leftLoop">
+                <a class="next"></a>
+                <a class="prev"></a>
+                <div class="bd">
+                  <ul class="picList">
+                    <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|8" NUM="10" STARTPOS="0" CHANNELCODE="indexSPXW">
+                      <li>
+                        <div class="pic">
+                          <a href="<CMSPRO_DOCUMENT FIELD='url'></CMSPRO_DOCUMENT>" target="_blank">
+                            <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                          </a>
+                          <h3> <CMSPRO_DOCUMENT FIELD="title" NUM="20" >稿件标题</CMSPRO_DOCUMENT></h3>
+                        </div>
+                      </li>
+                    </CMSPRO_DOCUMENTS>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+      <!-- 公共底部 begin -->
+      <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!-- 公共底部 end -->
+      
+      <!-- 公共二维码 begin -->
+      <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!-- 公共二维码 end -->
+
+    </div>
+  </body>
+  <script type="text/javascript">
+    $(function() {
+
+      jQuery(".slideBox").slide({
+        mainCell: ".bd ul",
+        effect: "left",
+        interTime: 5000,
+        autoPlay: true
+      });
+      jQuery(".slideBox-02").slide({
+        mainCell: ".bd ul",
+        effect: "top",
+        interTime: 5000,
+        autoPlay: true
+      });
+      jQuery(".topLoop").slide({
+        mainCell: ".bd ul",
+        effect: "topMarquee",
+        vis: 6,
+        interTime: 40,
+        autoPlay: true
+      });
+      jQuery(".leftLoop").slide({
+        mainCell: ".bd ul",
+        effect: "leftLoop",
+        interTime: 5000,
+        vis: 5,
+        scroll: 1,
+        autoPlay: true
+      });
+      // 点击切换图片新闻和视频新闻
+      $('.slide-click').on('click', function() {
+        $(this).addClass('slide-click-hover').siblings().removeClass('slide-click-hover')
+        if($(this).hasClass('slide-click-01')) {
+          $('.slide-two-all').children('.slide-04').eq(0).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
+          $('.tz-index-more-img').show();
+          $('.tz-index-more-video').hide();
+        }
+        if($(this).hasClass('slide-click-02')) {
+          $('.slide-two-all').children('.slide-04').eq(1).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
+          $('.tz-index-more-img').hide();
+          $('.tz-index-more-video').show();
+        }
+      })
+    })
+  </script>
+
+  <script type="text/javascript">
+    //创建和初始化地图函数：
+    function initMap() {
+      createMap(); //创建地图
+      setMapEvent(); //设置地图事件
+      addMapControl(); //向地图添加控件
+      addMapOverlay(); //向地图添加覆盖物
+    }
+
+    function createMap() {
+      map = new BMap.Map("map");
+      // map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 11);
+      map.centerAndZoom(new BMap.Point(104.053484, 30.660348), 9);
+    }
+
+    function setMapEvent() {
+      map.enableScrollWheelZoom();
+      map.enableKeyboard();
+      map.enableDragging();
+      map.enableDoubleClickZoom()
+    }
+
+    function addClickHandler(target, window) {
+      target.addEventListener("click", function() {
+        target.openInfoWindow(window);
+      });
+    }
+
+    function addMapOverlay() {
+      var markers = [{
+          content: "四川省成都市郫都区展望东路131号",
+          title: "郫都区菁荣镇",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.786983,
+            lng: 103.867633
+          }
+        },
+        {
+          content: "四川省成都市武侯区天府大道中段588号",
+          title: "成都高新区通威国际中心",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.556513,
+            lng: 104.07439
+          }
+        },
+        {
+          content: "成都市天府大道天府新区南段2039号",
+          title: "成都天府新区天府菁蓉大厦",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.49791,
+            lng: 104.078553
+          }
+        },
+        {
+          content: "斌升街28号附1-2",
+          title: "青羊区成都新民社会组织发展中心",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.66811,
+            lng: 104.06445
+          }
+        },
+        {
+          content: "建设南街23号",
+          title: "成华区“培华社区",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.670271,
+            lng: 104.109377
+          }
+        },
+        {
+          content: "成都市新都区新达路与永兴街交叉口东北50米",
+          title: "新都区“金东公益中心”",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.840485,
+            lng: 104.23463
+          }
+        },
+        {
+          content: "成都市蒲江县",
+          title: "蒲江县“明月村”",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.263621,
+            lng: 103.329295
+          }
+        },
+        {
+          content: "四川省成都市武侯区创瑞街6号",
+          title: "成都高新区芳草“同心家园”",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.62038,
+            lng: 104.049513
+          }
+        },
+        {
+          content: "崇州“心联汇”新的社会阶层人士创新实践基地",
+          title: "崇州市白头镇天竺3组28号（土而奇农场乐园）",
+          imageOffset: {
+            width: -46,
+            height: -21
+          },
+          position: {
+            lat: 30.616295,
+            lng: 103.611455
+          }
+        }
+      ];
+      for(var index = 0; index < markers.length; index++) {
+        var point = new BMap.Point(markers[index].position.lng, markers[index].position.lat);
+        var marker = new BMap.Marker(point, {
+          icon: new BMap.Icon("http://api.map.baidu.com/lbsapi/createmap/images/icon.png", new BMap.Size(20, 25), {
+            imageOffset: new BMap.Size(markers[index].imageOffset.width, markers[index].imageOffset.height)
+          })
+        });
+        var label = new BMap.Label(markers[index].title, {
+          offset: new BMap.Size(25, 5)
+        });
+        var opts = {
+          width: 200,
+          title: markers[index].title,
+          enableMessage: false
+        };
+        var infoWindow = new BMap.InfoWindow(markers[index].content, opts);
+        marker.setLabel(label);
+        addClickHandler(marker, infoWindow);
+        map.addOverlay(marker);
+      };
+    }
+    //向地图添加控件
+    function addMapControl() {
+      var scaleControl = new BMap.ScaleControl({
+        anchor: BMAP_ANCHOR_BOTTOM_LEFT
+      });
+      scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
+      map.addControl(scaleControl);
+      var navControl = new BMap.NavigationControl({
+        anchor: BMAP_ANCHOR_TOP_LEFT,
+        type: BMAP_NAVIGATION_CONTROL_LARGE
+      });
+      map.addControl(navControl);
+    }
+    var map;
+    initMap();
+  </script>
+
+</html>

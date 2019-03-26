@@ -1,0 +1,163 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+      // 更新时间
+      function startTime() {
+        var today = new Date()
+        var h = today.getHours()
+        var m = today.getMinutes()
+        var s = today.getSeconds()
+        var day = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        var month = today.getMonth() + 1;
+        // add a zero in front of numbers<10
+        m = checkTime(m)
+        s = checkTime(s)
+        // document.getElementById('txt').innerHTML = h + ":" + m + ":" + s
+        document.getElementsByClassName('tziht-one')[0].innerHTML = today.getFullYear() + '年' + month  + '月' + today.getDate() + '日 ' + h + ":" + m + ":" + s + ' ' + day[today.getDay()];
+        t = setTimeout('startTime()', 500)
+      }
+      // 时间添加0
+      function checkTime(i) {
+        if(i < 10) {
+          i = "0" + i
+        }
+        return i
+      }
+      $.ajax({
+        url: 'http://wthrcdn.etouch.cn/weather_mini?city=成都',
+        data: "",
+        dataType: "jsonp",
+        success: function(data) {
+          document.getElementsByClassName('tziht-two-city')[0].innerHTML = data.data.city;
+          document.getElementsByClassName('tziht-two-num')[0].innerHTML = data.data.wendu;
+          document.getElementsByClassName('tziht-two-wind')[0].innerHTML = data.data.forecast[0].fengxiang;
+          console.log(data, data.data.city, data.data.wendu, data.data.forecast[0].fengxiang);
+        }
+      })
+    </script>
+  </head>
+
+  <body onload="startTime()">
+    <div class="iframe-top-header">
+      <!--公用顶部-->
+      <div class="tzi-header">
+        <div class="tzih-top">
+          <div class="tziht-one fl">
+            2018年8月29日 16:07:20 星期三
+          </div>
+          <div class="tziht-two fl">
+            <span class="tziht-two-city"></span>
+            <span class="tziht-two-num"></span>℃
+            <span class="tziht-two-wind"></span>
+          </div>
+          <div class="tziht-three fr">
+            <a class="tziht-app-download" target="_blank" href="<CMSPRO_CHANNEL CODE='indexAPP' FIELD='url' >栏目名称</CMSPRO_CHANNEL>"><CMSPRO_CHANNEL CODE="indexAPP" FIELD="displayName"  NUM="15">栏目名称</CMSPRO_CHANNEL></a>
+            
+            <div class="dropdown" id="search" onclick="search.changeValue(this);search.searchKeyword()">
+              <input type="text" class="dropdown-selected" id="search-input" placeholder="市委统战学习传达市委十三届四次全会精神" onkeyup="search.searchKeyword();">
+              <ul>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委十三届四次全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委十二届四次全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委十一届四次全</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学习传达市委三届四次</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委四届四次全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">市委统战学全会精神</a>
+                </li>
+                <li>
+                  <a href="javaScript:">统战学习传达市委六届四次全会精神</a>
+                </li>
+              </ul>
+            </div>
+
+          </div>
+          <div class="clear"></div>
+        </div>
+        <!--公用头部图片-->
+        <div class="tzih-center">
+          <!--<img src="images/tz-index-09.jpg" />-->
+          <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="indexTopImg">
+            <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+          </CMSPRO_DOCUMENTS>
+        </div>
+        <!--导航栏-->
+        <!--.tzih-nav-one-hover:.tzih-nav-one表示激活-->
+        <div class="tzih-bottom">
+          <div class="tzih-bottom-nav">
+            <!--导航，最大数为10-->
+            <ul class="tzih-nav-one">
+              <li>
+                <a class="tzh-nav-one-first" href="<CMSPRO_WEBSITE FIELD='url'></CMSPRO_WEBSITE>" target="_parent">首页</a>
+              </li>
+
+              <li class="tzih-nav-one-more">
+                <CMSPRO_CHANNELS CODE="publicHeader" CHILDLEVEL="1" STARTPOS="1" NUM="1" CHILDTYPE="3">
+                  <a href="#"><CMSPRO_CHANNEL FIELD="displayName" NUM="15">栏目名称</CMSPRO_CHANNEL></a>
+                </CMSPRO_CHANNELS>
+                <ul class="tzih-nav-two">
+                  <li>
+                    <CMSPRO_CHANNELS CODE="bbjs" CHILDLEVEL="1" STARTPOS="0" NUM="" CHILDTYPE="3">
+                      <CMSPRO_CHANNEL FIELD="displayName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
+                    </CMSPRO_CHANNELS>
+                  </li>
+                </ul>
+              </li>
+              <CMSPRO_CHANNELS CODE="publicHeader" CHILDLEVEL="1" STARTPOS='2' NUM="" CHILDTYPE="3">
+                <li>
+                  <CMSPRO_CHANNEL FIELD="displayName" TARGET="_blank" LINKALT="true" AUTOLINK="true" NUM="15">栏目名称</CMSPRO_CHANNEL>
+                </li>
+              </CMSPRO_CHANNELS>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    $(function() {
+      // 点击导航栏
+      // 点击导航栏
+      $('.tzih-nav-one').children('li').on('mouseover', function() {
+        $(this).children('.tzih-nav-two').show();
+        parent.$(".iframe-top-header").addClass('z-index-more');
+      })
+      $('.tzih-nav-one').children('li').on('mouseout', function() {
+        $(this).children('.tzih-nav-two').hide();
+        parent.$(".iframe-top-header").removeClass('z-index-more');
+      })
+
+    })
+  </script>
+
+</html>

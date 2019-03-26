@@ -517,3 +517,41 @@ a.fontcolor1 {
             text-align: center;
             border-radius: 4px;
 }
+.ftmc-line{
+       position: relative;
+       margin: 25px -15px;
+       height: 1px;
+       background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
+       background-size: 12px 1px;
+       background-repeat: repeat-x;
+   }
+.ftmc-line:before
+,.ftmc-line:after{
+       position: absolute;
+       top: -15px;
+       content: " ";
+       font-size: 1px;
+       color: transparent;
+       width: 30px;
+       height: 30px;
+       background-color: #F5F5F5;
+       border-radius: 15px;
+}
+.ftmc-line:before{
+       left: -20px;
+}
+.ftmc-line:after{
+       right: -20px;
+}
+@-webkit-keyframes rotation{
+from {-webkit-transform: rotate(0deg);}
+to {-webkit-transform: rotate(360deg);}
+}
+
+.Rotation{
+-webkit-transform: rotate(360deg);
+animation: rotation 3s linear infinite;
+-moz-animation: rotation 3s linear infinite;
+-webkit-animation: rotation 3s linear infinite;
+-o-animation: rotation 3s linear infinite;
+}

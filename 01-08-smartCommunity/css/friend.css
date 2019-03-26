@@ -71,32 +71,6 @@
   font-size: 16px;
   line-height: 32px;
 }
-.friend-to-me .ftmc-line {
-  position: relative;
-  margin: 25px -5%;
-  height: 1px;
-  background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
-  background-size: 12px 1px;
-  background-repeat: repeat-x;
-}
-.friend-to-me .ftmc-line:before,
-.friend-to-me .ftmc-line:after {
-  position: absolute;
-  top: -15px;
-  content: " ";
-  font-size: 1px;
-  color: transparent;
-  width: 30px;
-  height: 30px;
-  background-color: #F5F5F5;
-  border-radius: 15px;
-}
-.friend-to-me .ftmc-line:before {
-  left: -20px;
-}
-.friend-to-me .ftmc-line:after {
-  right: -20px;
-}
 .friend-to-me .ftmc-body .ftmc-ewm {
   display: block;
   background-color: #E2E2E2;

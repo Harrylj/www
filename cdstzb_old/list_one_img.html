@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+      
+    </script>
+  
+  </head>
+
+  <body>
+
+    <div class="list-three center">
+      <!-- 公共头部 begin -->
+      <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!-- 公共头部 end -->
+
+      <div class="tzi-body public-body">
+        <div class="ab-one">
+          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="false" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
+        </div>
+        <div class="index-img-list">
+          <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+          <div class="iil-div">
+            <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|5|7|8|9"  NUM="60000" STARTPOS="0" PAGESIZE="16" PAGENAVIGATIONID="page_div" PAGENAVIGATIONCLASS="page_div" INCLUDETYPE="INTERNAL" >
+              <a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>">
+               <div class="iil-item">
+                 <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                  <p><CMSPRO_DOCUMENT FIELD="title" NUM="14" >稿件标题</CMSPRO_DOCUMENT></p>
+               </div>
+              </a>
+            </CMSPRO_DOCUMENTS>
+            <div class="clear"></div>
+          </div>
+          <div class="page_num">
+              <div id="page_div"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 公共底部 begin -->
+      <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!-- 公共底部 end -->
+      <!-- 公共二维码 begin -->
+      <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!-- 公共二维码 end -->
+    </div>
+  </body>
+  <script type="text/javascript">
+
+  </script>
+
+</html>
