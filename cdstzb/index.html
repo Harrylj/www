@@ -89,7 +89,7 @@
 
             <div class="tziz-one-ul-div border_no ">
               <ul>
-                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="4" PAGESIZE="0">
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="4" STARTPOS="4" PAGESIZE="0">
                   <li>
                     <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                   </li>
@@ -181,7 +181,7 @@
                 </li>
                 <li class="margleft10">
                   <a target="_blank" href="<CMSPRO_CHANNEL CODE='indexTBXT' FIELD='url' ></CMSPRO_CHANNEL>">
-                    <CMSPRO_CHANNEL CODE="indexTBXT" FIELD="displayName" NUM="4">栏目名称</CMSPRO_CHANNEL>
+                    <CMSPRO_CHANNEL CODE="indexTBXT" FIELD="displayName" NUM="6">栏目名称</CMSPRO_CHANNEL>
                   </a>
                 </li>
 
@@ -193,7 +193,7 @@
               <CMSPRO_CHANNELS CODE="_SITE" STARTPOS='19' NUM="1" CHILDTYPE="3">
                 <div class="tzib-loop-div-header">
                   <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
-                  <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多资讯</a>
+                  <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
                 </div>
                 <div class="topLoop">
                   <div class="bd">
@@ -232,15 +232,27 @@
             </div>
             <!--右侧导航4-->
             <div class="tzib-nav-04">
-              <ul>
-                <CMSPRO_CHANNELS CODE="indexRight" STARTPOS='0' NUM="" CHILDTYPE="3">
-                  <li>
-                    <a href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>" target="_blank">
-                      <CMSPRO_CHANNEL FIELD="displayName" NUM="20">栏目名称</CMSPRO_CHANNEL>
-                    </a>
-                  </li>
-                </CMSPRO_CHANNELS>
-              </ul>
+              <div class="tzib-nav-04-title">统战团体</div>
+              <div class="tzib-nav-04-content">
+                <ul>
+                  <CMSPRO_CHANNELS CODE="indexRight" STARTPOS='0' NUM="11" CHILDTYPE="3">
+                    <li>
+                      <a href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>" target="_blank">
+                        <CMSPRO_CHANNEL FIELD="displayName" NUM="20">栏目名称</CMSPRO_CHANNEL>
+                      </a>
+                    </li>
+                  </CMSPRO_CHANNELS>
+                </ul>
+                
+              </div>
+              <div class="tzib-nav-04-footer">
+                  <CMSPRO_CHANNELS CODE="indexRight" STARTPOS='11' NUM="1" CHILDTYPE="3">
+                      <a href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>" target="_blank">
+                        <CMSPRO_CHANNEL FIELD="displayName" NUM="20">栏目名称</CMSPRO_CHANNEL>
+                      </a>
+                  </CMSPRO_CHANNELS>
+              </div>
+                  
             </div>
           </div>
           <div class="clear"></div>

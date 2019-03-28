@@ -16,6 +16,7 @@
   color: #d00000;
   background-color: #F5F5F5;
   font-size: 14px;
+  font-weight: bold;
 }
 #map{
   width:280px;
@@ -60,8 +61,8 @@
   display: inline-block;
   font-size: 16px;
   color: #222222;
-  line-height: 32px;
-  height: 32px;
+  line-height: 35px;
+  height: 35px;
   overflow: hidden;
   background-image: url(../images/tz-index-11.png);
   background-position: 0 center;
@@ -123,6 +124,8 @@
 }
 .tzib-three-right{
   width: 280px;
+}
+.tz-index .tzib-three-right{
   margin-right: 17px;
 }
 .tzib-nav-02{
@@ -146,7 +149,7 @@
   color: white;
   line-height: 40px;
   height: 40px;
-  font-size: 14px;
+  font-size: 12px;
   background-image: url(../images/tz-index-21.png);
   background-repeat: no-repeat;
   background-position: 15px center;
@@ -211,7 +214,7 @@
   background-image: url(../images/tz-index-32.png);
 }
 .tzib-nav-03 a{
-  font-size: 16px;
+  font-size: 12px;
   font-weight: bold;
 }
 
@@ -284,22 +287,9 @@
   background-image: url(../images/tz-index-62.png);
 }
 .tzib-nav-04 li:nth-child(13) a{
-  padding-left: 32px;
-  height: 63px;
-  line-height: 63px;
   background-image: url(../images/tz-index-63.png);
 }
-.tzib-nav-04 li:nth-child(13) a:before{
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  margin-top: -7px;
-  width: 16px;
-  height: 14px;
-  background-color: transparent;
-  background-repeat: no-repeat;
-  background-image: url(../images/_s-mail.png);
-}
+
 /* 《左上角滚动 */
 
 .slideBox {
@@ -1330,7 +1320,7 @@
     .ly_div_bbb{
       position: absolute;
       width: 310px;
-      height: 100%;
+      height: 360px;
       background-color: white;
     }
     .ly_div_bbb li{
@@ -1342,4 +1332,47 @@
 
     .ly_div_li{
       margin-bottom: 122px;
+}
+
+.tzib-nav-04-content{
+  border: 1px solid #ECECEC;
+  border-top: none;
+  padding: 10px 10px 0 10px;
+}
+
+.tzib-nav-04-title
+,.tzib-nav-04-footer{
+  background-color: #F5F5F5;
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  font-size: 14px;
+  line-height: 38px;
+  height: 38px;
+  padding-left: 36px;
+  font-weight: bold;
+  color: #202020;
+}
+.tzib-nav-04-title{
+  background-image: url(../images/new-index-group.png);
+  background-size: 18px 14px;
+}
+.tzib-nav-04-footer{
+  margin-top: 15px;
+  background-image: url(../images/white-mail.png);
+  background-size: 16px 14px;
+  background-color: #D00000;
+}
+.tzib-nav-04-footer a{
+  font-size: 14px;
+  line-height: 38px;
+  color: white;
+  font-weight: bold;
+  padding: 0;
+  background-image: none;
+}
+.tzib-nav-04-footer a:hover{
+  color: white!important;
+}
+.tzib-nav-04-footer a:before{
+  display: none;
 }

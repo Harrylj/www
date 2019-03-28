@@ -46,3 +46,9 @@ JS---// 房屋详情的房屋性质内容修改
 friendIndex.html 访客邀请
 friendIndexList.html 访客邀请列表 ---
 friendToMe.html 我的邀请
+
+healthHutFirst.html 健康小屋-开启
+healthHut.html 健康小屋
+healthHutSofaStart.html 健康检测按摩椅子-开启器
+healthHutSofa.html 健康检测按摩椅子
+healthResulftSofa.html 检查报告
