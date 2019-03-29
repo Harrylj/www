@@ -1195,6 +1195,12 @@
                             <h4 class="modal-title">详情页面</h4>
                         </div>
                         <div class="modal-body">
+                            <ul class="xqym-ul">
+                            	<li></li>
+                            	<li></li>
+                            	<li></li>
+                            	<li></li>
+                            </ul>
                             <img class="img-100" src="images/pic_01.png" />
                         </div>
                     </div>
@@ -1215,7 +1221,7 @@
             </div>
             <div class="modal fade" id="myModalEight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content modal-content-ycgj">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <div class="modal-header">
                             <h4 class="modal-title">异常情况填写</h4>
@@ -1223,67 +1229,158 @@
                         <div class="modal-body">
                             <table class="ycgj-table" border="0" cellspacing="0" cellpadding="0">
                             	<tr>
-                            	  <td colspan="2">发生地点：</td>
-                            	</tr>
-                            	<tr>
-                            		<td>路段：</td>
-                            		<td><input class="ycgj-table-input" type="" placeholder="如：成都至仁寿方向"/></td>
-                            	</tr>
-                            	<tr>
-                                <td>收费站：</td>
-                                <td><textarea class="ycgj-input-sfz" name=""  placeholder="路段编号及收费站名称、方向（出口方向/入口方向/往成都方向/往仁寿方向）、车道编号（可选）"></textarea></td>
+                                <td>事件时间：</td>
+                                <td><input class="ycgj-table-input" type="date" placeholder="如：成都至仁寿方向"/> &nbsp;&nbsp;&nbsp;&nbsp;<input class="ycgj-input-01" placeholder="00" type="text" />时<input class="ycgj-input-01" placeholder="00" type="text" />分<input class="ycgj-input-01" placeholder="00" type="text" />秒</td>
                               </tr>
                               <tr>
-                                <td>事件时间：</td>
-                                <td><input class="ycgj-table-input" type="date" placeholder="如：成都至仁寿方向"/></td>
+                                <td>发生地点：</td>
+                                <td>
+                                  <select class="ycgj-fsld">
+                                	   <option selected="selected">故障类型选择</option>
+                                	   <option value="路段">路段</option>
+                                	   <option value="收费站">收费站</option>
+                                  </select>
+                                  <div class="ycgj-fsld-div">
+                                    <div class="ycgj-fadd-div-item ycgj-fadd-div-one">
+                                      <select name="ycgj-fsld-ld-01">
+                                        <option selected="selected">路段编号选择</option>
+                                      	<option value="">编号1</option>
+                                      	<option value="">编号2</option>
+                                      </select>
+                                      <select name="ycgj-fsld-ld-02">
+                                        <option selected="selected">路段名称选择</option>
+                                        <option value="">成仁路</option>
+                                      </select>
+                                      <input type="text" placeholder="请输入桩号" />
+                                      <select name="ycgj-fsld-ld-03">
+                                        <option selected="selected">方向选择</option>
+                                        <option value="">成都至仁寿方向</option>
+                                      </select>
+                                    </div>
+                                    
+                                    <div class="ycgj-fadd-div-item ycgj-fadd-div-two">
+                                      <select name="ycgj-fsld-sfz-01">
+                                        <option selected="selected">收费站编号选择</option>
+                                        <option value="">编号1</option>
+                                        <option value="">编号2</option>
+                                      </select>
+                                      <select name="ycgj-fsld-sfz-02">
+                                        <option selected="selected">收费站名称选择</option>
+                                        <option value="">成仁路</option>
+                                        <option value="">成仁路</option>
+                                      </select>
+                                      <select name="ycgj-fsld-sfz-03">
+                                        <option selected="selected">方向选择</option>
+                                        <option value="">成都至仁寿方向</option>
+                                      </select>
+                                      <input type="text" placeholder="请输入车道编号" />
+                                    </div>
+                                  </div>
+                                </td>
                               </tr>
                               <tr>
                                 <td>事件原因：</td>
                                 <td>
-                                  <label><input type="checkbox" name="ycgj-yy" />交通事故（涉车数量（数量/待核查）、死亡人数（人数/待核查）、受伤人数（人数/待核查））</label>
-                                   <br/><label><input type="checkbox" name="ycgj-yy" />异常天气（雾/雨/雪/冰/其它），填写其它时，填写具体天气。摄像头自动识别时，自动检测能见度。</label>
-                                   <br/><label><input type="checkbox" name="ycgj-yy" />自然灾害（地震/滑坡/泥石流/路基沉降/其它），填写其它时，填写具体原因</label>
-                                   <br/><label><input type="checkbox" name="ycgj-yy" />涉路施工，可填写具体原因</label>
-                                   <br/><label><input type="checkbox" name="ycgj-yy" />车流量大</label>
-                                   <br/><label><input type="checkbox" name="ycgj-yy" />行人上路/车辆违停/车辆逆行/抛洒物（自动识别）</label>
-                                   <br/><label><input type="checkbox" name="ycgj-yy" />其它，具体原因<input class="ycgj-table-input" type="text"  placeholder="具体原因" /></label>
-                                   
+                                  
+                                  <label><input type="checkbox" name="ycgj-yy" />交通事故</label>
+                                  <div>涉车数量<input class="ycgj-input-01" type="text" placeholder="待核查" />  死亡人数<input class="ycgj-input-01" type="text" placeholder="待核查" /> 受伤人数<input class="ycgj-input-01" type="text" placeholder="待核查" /></div>
+                                  <br/><label><input type="checkbox" name="ycgj-yy" />异常天气</label>
+                                  <div class="ycgj-select-father">
+                                    <select class="ycgj-select ycgj-select-yctq" name="">
+                                      <option value="" selected="selected">天气选择</option>
+                                      <option value="">雨</option>
+                                      <option value="">雾</option>
+                                      <option value="">雪</option>
+                                      <option value="">冰</option>
+                                      <option value="其他">其他</option>
+                                    </select>
+                                    <br /><textarea class="ycgj-textarea-qt ycgj-textarea-qt-none" name="" rows="" cols="" placeholder="填写具体天气情况"></textarea>
+                                  </div>
+                                  <br/><label><input type="checkbox" name="ycgj-yy" />自然灾害</label>
+                                  <div class="ycgj-select-father">
+                                    <select class="ycgj-select ycgj-select-zrzh" name="">
+                                      <option value="" selected="selected">灾害选择</option>
+                                      <option value="">地震</option>
+                                      <option value="">滑坡</option>
+                                      <option value="">泥石流</option>
+                                      <option value="">路基沉降</option>
+                                      <option value="其他">其他</option>
+                                    </select>
+                                    <br /><textarea class="ycgj-textarea-qt ycgj-textarea-qt-none" name="" rows="" cols="" placeholder="填写具体灾害情况"></textarea>
+                                  </div>
+                                  <br/><label><input type="checkbox" name="ycgj-yy" />路泥施工</label>
+                                  <br /><textarea class="ycgj-textarea-qt ycgj-textarea-qt-block" name="" rows="" cols="" placeholder="填写具体原因"></textarea>
+                                  
+                                  <br/><label><input type="checkbox" name="ycgj-yy" />车流量大</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yy" />行人</label>
+                                  
+                                  <br/><label><input type="checkbox" name="ycgj-yy" />其他</label>
+                                  <br /><textarea class="ycgj-textarea-qt ycgj-textarea-qt-block" name="" rows="" cols="" placeholder="填写具体原因"></textarea>
                                   
                                 </td>
                               </tr>
                               <tr>
                                 <td>事件影响：</td>
                                 <td>
-                                  <label><input type="checkbox" name="ycgj-yx" />拥堵；</label>
-                                  <br/><label><input type="checkbox" name="ycgj-yx" />断道;</label>
-                                  <br/><label><input type="checkbox" name="ycgj-yx" />收费站（名称）封站/入口关闭/出口关闭/入口往成都方向关闭/入口往泸州方向关闭/对货车关闭；</label>
-                                  <br/><label><input type="checkbox" name="ycgj-yx" />占道（超车道/主车道/应急车道/收费站（名称）出站匝道/收费站（名称）入站匝道）；</label>
-                                  <br/><label><input type="checkbox" name="ycgj-yx" />路产损坏（护栏/防眩板/收费亭/栏杆机/收费岛/其它）；</label>
-                                  <br/><label><input type="checkbox" name="ycgj-yx" />无影响；</label>
-                                  <br/><label><input type="checkbox" name="ycgj-yx" />其它。填写其它时，填写具体影响<input class="ycgj-table-input" type="text"  placeholder="具体影响" /></label>
+                                  <label><input type="checkbox" name="ycgj-yx" />拥堵</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />断道</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />收费站</label>
+                                  <input type="text" placeholder="输入收费站名称" />收费站 
+                                  <select class="ycgj-select" name="">
+                                  	<option value="" selected="selected">影响程度选择</option>
+                                  	<option>封站</option>
+                                  	<option>入口关闭</option>
+                                  	<option>出口关闭</option>
+                                  	<option>入口往成都方向关闭</option>
+                                  	<option>入口往泸州方向关闭</option>
+                                  	<option>对货车关闭</option>
+                                  </select>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />占道</label>
+                                  <select class="ycgj-select" name="">
+                                    <option value="" selected="selected">车道选择</option>
+                                    <option>超车道</option>
+                                    <option>主车道</option>
+                                    <option>应急车道</option>
+                                    <option>收费站（名称）出站匝道</option>
+                                    <option>收费站（名称）入站匝道</option>
+                                  </select>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />路产损坏</label>
+                                  <div class="ycgj-select-father">
+                                    <select class="ycgj-select" name="">
+                                      <option value="" selected="selected">路产选择</option>
+                                      <option value="">护栏</option>
+                                      <option value="">防眩板</option>
+                                      <option value="">收费亭</option>
+                                      <option value="">栏杆机</option>
+                                      <option value="">收费岛</option>
+                                      <option value="其他">其他</option>
+                                    </select>
+                                    <br /><textarea class="ycgj-textarea-qt ycgj-textarea-qt-none" name="" rows="" cols="" placeholder="填写具体原因"></textarea>
+                                  </div>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />无影响</label>
+                                  <br/><label><input type="checkbox" name="ycgj-yx" />其他</label>
+                                  <br /><textarea class="ycgj-textarea-qt ycgj-textarea-qt-block" name="" rows="" cols="" placeholder="填写具体原因"></textarea>
                                 </td>
                               </tr>
                               <tr>
-                                <td>事件描述及处置措施：</td>
-                                <td>
-                                  <label><input type="radio" name="ycgj-cs" />涉及运输危化品车辆</label>
-                                  <label><input type="radio" name="ycgj-cs" />涉及营运客车</label>
-                                  <label><input type="radio" name="ycgj-cs" />追尾</label>
-                                  <label><input type="radio" name="ycgj-cs" />擦挂</label>
-                                  <label><input type="radio" name="ycgj-cs" />自燃</label>
-                                  <label><input type="radio" name="ycgj-cs" />侧翻</label>
-                                  <label><input type="radio" name="ycgj-cs" />其它</label>
+                                <td colspan="2">处置措施：</td>
+                              </tr>
+                              <tr>
+                                <td colspan="2">
+                                  <textarea class="ycgj-textarea-czcs" name="" rows="" cols="" placeholder="请填写具体处理措施方案"></textarea>
                                 </td>
                               </tr>
                               <tr>
                                 <td>上报时间:</td>
                                 <td><span class="ycgj-input-date"></span></td>
                               </tr>
+                              
                               <tr>
-                                <td></td>
-                                <td><button class="ycgj-btn-tj" data-dismiss="modal" aria-label="Close">提交</button></td>
+                                <td colspan="2"><button class="ycgj-btn-tj" data-dismiss="modal" aria-label="Close">提交</button></td>
                               </tr>
                             </table>
+                           
+
                             
                         </div>
                     </div>
@@ -1322,11 +1419,48 @@
     </script>
     <script type="text/javascript">
       // $('.fwqb-more').click();
-      //$('.ycgj-btn-detail').click();
-          
-        
+      $('.all-more-detail').click();
 
         $(function () {
+            // 右侧的弹出详情页面--点击右侧4个按钮关闭弹出页
+            $('.xqym-ul').children('li').on('click',function(){
+              $('.close').click()
+            })
+          
+          
+            // 异常告警 -- 选择其他显示输入框
+            $(".ycgj-select").change(function(){
+              var select_val = $(this).children('option:selected').val();
+              var more_input = $(this).siblings('.ycgj-textarea-qt');
+              // 显示输入框
+              if(select_val == '其他'){
+                 more_input.show();
+              }
+              // 隐藏输入框
+              else{
+                more_input.hide();
+              }
+            });
+            
+            // 异常告警 -- 发生地点
+            $(".ycgj-fsld").change(function(){
+              var select_val = $(this).children('option:selected').val();
+              var more_ld = $('.ycgj-fadd-div-one'),
+                  more_sfz = $('.ycgj-fadd-div-two');
+              if(select_val == '路段'){
+                 more_ld.show();
+                 more_sfz.hide();
+              }
+              else if(select_val == '收费站'){
+                 more_ld.hide();
+                 more_sfz.show();
+              }
+              else{
+                more_ld.hide();
+                more_sfz.hide();
+              }
+            });
+            
             
             // 点击右侧视频
             $('.ibri-four-viedo').on('click',function(){
@@ -1340,7 +1474,9 @@
             })
             // 可拖拽
             $(".index-big-video").Tdrag();
-          
+            $('.ib-middle-qj-div').Tdrag();
+            $(".ib-middle-dm-div").Tdrag();
+            $('.ib-middle-car-div').Tdrag();
             // 取一个随机区间的整数
             function rnd(n, m) {
                 var random = Math.floor(Math.random() * (m - n + 1) + n);
@@ -1416,8 +1552,7 @@
                 var abc = value.split('').reverse().join('');
                 return abc;
             };
-            // alert(splitNum('145451111'))
-            //
+
 
             // 点击输入框弹出消息
             $('.ibm-input').on('input', function () {
@@ -1650,7 +1785,7 @@
             
             // 点击异常告警填写按钮
             $('.ycgj-btn-tj').on('click',function(){
-              alert('提交成功')
+              alert('已提交')
             })
             
             // 点击收费站开关确定操作
