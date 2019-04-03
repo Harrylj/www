@@ -92,7 +92,7 @@
   border: 1px solid #E0E0E0;
   margin-right: 15px;
   margin-bottom: 20px;
-  height: 240px;
+  height: 310px;
   overflow: hidden;
 }
 .tizb-three-list h3{
@@ -128,11 +128,14 @@
 .tz-index .tzib-three-right{
   margin-right: 17px;
 }
-.tzib-nav-02{
+.tzib-nav-02
+,.tzib-nav-01{
   padding-bottom: 1px;
 }
-.tzib-nav-02 li
-,.tzib-nav-03 li{
+.tzib-nav-01 li
+,.tzib-nav-02 li
+,.tzib-nav-03 li
+{
   float: left;
   margin-bottom: 10px;
 }
@@ -140,7 +143,8 @@
 ,.tzib-nav-03 li:nth-child(2n){
 	margin-left: 10px;
 }*/
-.tzib-nav-02 a
+.tzib-nav-01 a
+,.tzib-nav-02 a
 ,.tzib-nav-03 a{
   display: inline-block;
   width: 135px;
@@ -153,20 +157,37 @@
   background-image: url(../images/tz-index-21.png);
   background-repeat: no-repeat;
   background-position: 15px center;
+  background-size: 20px 20px;
 }
-.tzib-nav-02 li:nth-child(2) a{
+.tzib-nav-01-li-01 a{
+  background-image: url(../images/first_index_01.png);
+}
+.tzib-nav-01-li-02 a{
+  background-image: url(../images/first_index_02.png);
+}
+.tzib-nav-01-li-03 a{
+  background-image: url(../images/first_index_03.png);
+}
+.tzib-nav-01-li-04 a{
+  background-image: url(../images/first_index_04.png);
+}
+
+.tzib-nav-02-li-01 a{
+  background-image: url(../images/tz-index-21.png);
+}
+.tzib-nav-02-li-02 a{
   background-image: url(../images/tz-index-22.png);
 }
-.tzib-nav-02 li:nth-child(3) a{
+.tzib-nav-02-li-03 a{
   background-image: url(../images/tz-index-23.png);
 }
-.tzib-nav-02 li:nth-child(4) a{
+.tzib-nav-02-li-04 a{
   background-image: url(../images/tz-index-24.png);
 }
-.tzib-nav-02 li:nth-child(5) a{
+.tzib-nav-02-li-05 a{
   background-image: url(../images/tz-index-25.png);
 }
-.tzib-nav-02 li:nth-child(6) a{
+.tzib-nav-02-li-06 a{
   background-image: url(../images/tz-index-26.png);
 }
 .tzib-loop-div{
@@ -207,10 +228,10 @@
 .tzib-nav-03{
   padding-bottom: 10px;
 }
-.tzib-nav-03 li:nth-child(1) a{
+.tzib-nav-03-01 a{
   background-image: url(../images/tz-index-31.png);
 }
-.tzib-nav-03 li:nth-child(2) a{
+.tzib-nav-03-02 a{
   background-image: url(../images/tz-index-32.png);
 }
 .tzib-nav-03 a{
@@ -236,7 +257,7 @@
   height: 40px;
   line-height: 40px;
   overflow: hidden;
-  margin-bottom: 6.2px;
+  margin-bottom: 5.6px;
   color: #d00000; 
 }
 .tzib-nav-04 a:before{
@@ -373,10 +394,10 @@
   background-color: #e60012;
   color: white;
   font-size: 16px;
-  padding: 0 9px;
+  padding: 0 25px;
 }
 .tzih-nav-one .tzh-nav-one-first{
-  padding: 0 28px;
+  padding: 0 32px;
 }
 
 .tzih-nav-one a:hover
@@ -411,7 +432,7 @@
 	height: 50px;
 	line-height: 50px;
 	overflow: hidden;
-	background-color: transparent;
+	background: rgba(0,0,0,.3);
 	color: white;
 	font-size: 20px;
 	bottom: 0;
@@ -423,7 +444,7 @@
 .topLoop {
   overflow: hidden;
   position: relative;
-  height: 190px;
+  height: 170px;
   width: 100%;
   border: 1px solid #E0E0E0;
 }

@@ -469,6 +469,7 @@ a:hover,
 }
 
 .tzih-bottom a:hover,
+.tzib-nav-01 a:hover,
 .tzib-nav-02 a:hover,
 .tzib-nav-03 a:hover {
   color: white!important;
@@ -587,12 +588,12 @@ a:hover,
   background-color: #5F5F5F;
 }
 
-.tzih-nav-one .tzih-nav-one-more>a {
+/*.tzih-nav-one .tzih-nav-one-more>a {
   padding-right: 20px;
   background-image: url(../images/tz-index-71.png);
   background-repeat: no-repeat;
   background-position: 92% center;
-}
+}*/
 
 
 /* 导航栏 */

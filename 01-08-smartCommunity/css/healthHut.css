@@ -130,3 +130,10 @@
   line-height: 32px;
   text-align: center;
 }
+.hhrb-header {
+  position: relative;
+}
+.hhrb-header img {
+  width: 28px;
+  border-radius: 50%;
+}

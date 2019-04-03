@@ -2,7 +2,16 @@
   width: 100%;
   overflow-x: hidden;
 }
-
+div.body-building
+,div.body-building-reserve
+,div.body-building-reserve-order
+,div.body-building-reserve-me
+,div.body-building-run
+,div.body-building-first
+,div.health-hut-Result{
+    position: relative;
+    padding-top: 44px;
+}
 * {
   padding: 0;
   margin: 0;

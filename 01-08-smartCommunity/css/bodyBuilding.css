@@ -1,12 +1,3 @@
-div.body-building,
-div.body-building-reserve,
-div.body-building-reserve-order,
-div.body-building-reserve-me,
-div.body-building-run,
-div.body-building-first {
-  position: relative;
-  padding-top: 44px;
-}
 .public-header-div {
   position: fixed;
   left: 0;
