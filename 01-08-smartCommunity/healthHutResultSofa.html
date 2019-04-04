@@ -11,6 +11,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/mui.min.css">
     <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
     <!--App自定义的css-->
@@ -24,11 +25,7 @@
   </style>
 
   <body>
-  <!--
-  	作者：648267773@qq.com
-  	时间：2019-04-03
-  	描述：.hhrbc-item:添加.hhrbc-item-
-  -->
+  
 
     <div class="health-hut-Result public-div">
       <div class="public-header-div">
@@ -47,16 +44,39 @@
         <div class="hhrb-header">
           <img src="images/user-01.jpg"/>
           <h2>张嘉佳</h2>
-          <a href="#">历史报告</a>
+          <a class="hhrb-more" href="#">历史报告</a>
         </div>
-        <div class="hhrb-progess-div">
+        <div class="hhrb-progress-div">
           <h1>测量结果综合评论</h1>
-          <div class="hhrb-progess"></div>
+          <!--
+          	作者：648267773@qq.com
+          	时间：2019-04-04
+          	描述：.progress-bar：这里的进度是倒读条。比如显示60%的进度,宽度 40% = (100%-60%) 
+          -->
+          <div class="hhrb-progress">
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+            <div class="hhrb-progress-content">
+              <span>健康</span><span>亚健康</span><span>严重</span>
+            </div>
+          </div>
           <h5>此检测为基础检测，如有疑问请前往医院确认</h5>
         </div>
+        <!--
+            作者：648267773@qq.com
+            时间：2019-04-03
+            描述：.hhrbc-item:添加.hhrbc-item-ok : 表示健康----默认是健康
+                          .hhrbc-item-no: 表示不健康
+                          .hhrbc-item-warning：表示亚健康
+                                            添加.hhrbc-item-more： 表示展开更多
+             
+             tr：添加 tr-no:表示不健康 --最后一行字变红
+                     tr-warning:亚健康 --最后一行字变黄
+          -->
         <div class="hhrb-content">
           <div class="hhrbc-list">
-            <div class="hhrbc-item">
+            <div class="hhrbc-item hhrbc-item-more hhrbc-item-ok">
               <div class="hhrbc-item-header">
                 <h2>一般检查</h2>
                 <h3><span>5</span>项</h3>
@@ -69,99 +89,99 @@
                 	  <td></td>
                 	</tr>
                 	<tr>
-                	  <tr>体重</tr>
-                	  <tr>50.4kg</tr>
-                	  <tr>偏瘦</tr>
+                	  <td>体重</td>
+                	  <td>50.4kg</td>
+                	  <td>偏瘦</td>
                 	</tr>
                 	<tr>
-                    <tr>腰围</tr>
-                    <tr>20.6cm</tr>
-                    <tr>正常</tr>
+                    <td>腰围</td>
+                    <td>20.6cm</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>BMI</tr>
-                    <tr>21.80kg/m2</tr>
-                    <tr>正常</tr>
+                    <td>BMI</td>
+                    <td>21.80kg/m2</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>体温</tr>
-                    <tr>36.8c</tr>
-                    <tr>偏高</tr>
+                    <td>体温</td>
+                    <td>36.8c</td>
+                    <td>偏高</td>
                   </tr>
                 </table>
               </div>
             </div>
-            <div class="hhrbc-item">
+            <div class="hhrbc-item hhrbc-item-no">
               <div class="hhrbc-item-header">
                 <h2>血液检查</h2>
                 <h3><span>5</span>项</h3>
               </div>
               <div class="hhrbc-item-content">
                 <table border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td>身高</td>
-                    <td>160cm</td>
-                    <td></td>
+                	<tr>
+                	  <td>身高</td>
+                	  <td>160cm</td>
+                	  <td></td>
+                	</tr>
+                	<tr>
+                	  <td>体重</td>
+                	  <td>50.4kg</td>
+                	  <td>偏瘦</td>
+                	</tr>
+                	<tr>
+                    <td>腰围</td>
+                    <td>20.6cm</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>体重</tr>
-                    <tr>50.4kg</tr>
-                    <tr>偏瘦</tr>
+                    <td>BMI</td>
+                    <td>21.80kg/m2</td>
+                    <td>正常</td>
                   </tr>
-                  <tr>
-                    <tr>腰围</tr>
-                    <tr>20.6cm</tr>
-                    <tr>正常</tr>
-                  </tr>
-                  <tr>
-                    <tr>BMI</tr>
-                    <tr>21.80kg/m2</tr>
-                    <tr>正常</tr>
-                  </tr>
-                  <tr>
-                    <tr>体温</tr>
-                    <tr>36.8c</tr>
-                    <tr>偏高</tr>
+                  <tr class="tr-no">
+                    <td>体温</td>
+                    <td>36.8c</td>
+                    <td>偏高</td>
                   </tr>
                 </table>
               </div>
             </div>
-          	<div class="hhrbc-item">
+          	<div class="hhrbc-item hhrbc-item-warning">
               <div class="hhrbc-item-header">
                 <h2>血脂检查</h2>
                 <h3><span>5</span>项</h3>
               </div>
               <div class="hhrbc-item-content">
                 <table border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td>身高</td>
-                    <td>160cm</td>
-                    <td></td>
+                	<tr>
+                	  <td>身高</td>
+                	  <td>160cm</td>
+                	  <td></td>
+                	</tr>
+                	<tr>
+                	  <td>体重</td>
+                	  <td>50.4kg</td>
+                	  <td>偏瘦</td>
+                	</tr>
+                	<tr>
+                    <td>腰围</td>
+                    <td>20.6cm</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>体重</tr>
-                    <tr>50.4kg</tr>
-                    <tr>偏瘦</tr>
+                    <td>BMI</td>
+                    <td>21.80kg/m2</td>
+                    <td>正常</td>
                   </tr>
-                  <tr>
-                    <tr>腰围</tr>
-                    <tr>20.6cm</tr>
-                    <tr>正常</tr>
-                  </tr>
-                  <tr>
-                    <tr>BMI</tr>
-                    <tr>21.80kg/m2</tr>
-                    <tr>正常</tr>
-                  </tr>
-                  <tr>
-                    <tr>体温</tr>
-                    <tr>36.8c</tr>
-                    <tr>偏高</tr>
+                  <tr class="tr-warning">
+                    <td>体温</td>
+                    <td>36.8c</td>
+                    <td>偏高</td>
                   </tr>
                 </table>
               </div>
             </div>
-          	<div class="hhrbc-item">
+          	<div class="hhrbc-item hhrbc-item-ok">
               <div class="hhrbc-item-header">
                 <h2>尿液检查</h2>
                 <h3><span>5</span>项</h3>
@@ -174,61 +194,67 @@
                     <td></td>
                   </tr>
                   <tr>
-                    <tr>体重</tr>
-                    <tr>50.4kg</tr>
-                    <tr>偏瘦</tr>
+                    <td>体重</td>
+                    <td>50.4kg</td>
+                    <td>偏瘦</td>
                   </tr>
                   <tr>
-                    <tr>腰围</tr>
-                    <tr>20.6cm</tr>
-                    <tr>正常</tr>
+                    <td>腰围</td>
+                    <td>20.6cm</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>BMI</tr>
-                    <tr>21.80kg/m2</tr>
-                    <tr>正常</tr>
+                    <td>BMI</td>
+                    <td>21.80kg/m2</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>体温</tr>
-                    <tr>36.8c</tr>
-                    <tr>偏高</tr>
+                    <td>体温</td>
+                    <td>36.8c</td>
+                    <td>偏高</td>
                   </tr>
                 </table>
               </div>
             </div>
-          	<div class="hhrbc-item">
+          	<div class="hhrbc-item hhrbc-item-ok">
               <div class="hhrbc-item-header">
                 <h2>心脏检查</h2>
                 <h3><span>5</span>项</h3>
               </div>
               <div class="hhrbc-item-content">
                 <table border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                    <td>心率</td>
-                    <td>36.8g/l</td>
+                	<tr>
+                	  <td>身高</td>
+                	  <td>160cm</td>
+                	  <td></td>
+                	</tr>
+                	<tr>
+                	  <td>体重</td>
+                	  <td>50.4kg</td>
+                	  <td>偏瘦</td>
+                	</tr>
+                	<tr>
+                    <td>腰围</td>
+                    <td>20.6cm</td>
                     <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>脉率</tr>
-                    <tr>70g/l</tr>
-                    <tr>正常</tr>
+                    <td>BMI</td>
+                    <td>21.80kg/m2</td>
+                    <td>正常</td>
                   </tr>
                   <tr>
-                    <tr>尿酮体</tr>
-                    <tr>20.6g/l</tr>
-                    <tr>正常</tr>
-                  </tr>
-                  <tr>
-                    <tr>心电图</tr>
-                    <tr></tr>
-                    <tr>正常</tr>
+                    <td>体温</td>
+                    <td>36.8c</td>
+                    <td>偏高</td>
                   </tr>
                 </table>
+                <div class="hhrbc-item-content-footer">
+                  <img class="img-100" src="images/xdt-img.png"/>
+                  <a class="hhrb-download-xdt" href="#">下载心电图</a>
+                </div>
               </div>
-              <div class="hhrbc-item-footer">
-                <img class="img-100" src="images/xdt-img.png"/>
-                <div class="hhrb-download-xdt">下载心电图</div>
-              </div>
+              
             </div>
           
           
@@ -238,10 +264,24 @@
       </div>
     </div>
 
-    <!--<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>-->
-    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-      
+      $(function(){
+        // 点击展现更多内容
+        $('.hhrbc-item-header').on('click',function(){
+          var class_father = 'hhrbc-item',
+              class_father_more = 'hhrbc-item-more';
+          // 展开
+          if(!$(this).parents('.'+class_father).hasClass(class_father_more)){
+            $(this).parents('.'+class_father).addClass(class_father_more)
+          }
+          // 收起
+          else{
+            $(this).parents('.'+class_father).removeClass(class_father_more)
+          }
+        })
+        
+      })
 
     </script>
 
