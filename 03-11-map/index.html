@@ -39,7 +39,7 @@
         <div class="index-header">
             <div class="ih-left"><img src="images/logo@2x.png" /></div>
             <div class="ih-right">
-                <div class="ihr-nav">
+                <!--<div class="ihr-nav">
                     <ul>
                         <li>
                             <a href="#">收费站管理</a>
@@ -54,7 +54,7 @@
                             <a href="#">异常报告</a>
                         </li>
                     </ul>
-                </div>
+                </div>-->
                 <div class="ihr-right">
                     <div class="ihr-warning"></div>
                     <div class="ihr-msg"></div>
@@ -437,7 +437,7 @@
             <div class="ib-right">
                 <div class="ib-right-more"></div>
                 
-                <div class="ib-right-content ib-right-one ib-right-content-hover">
+                <!--<div class="ib-right-content ib-right-one ib-right-content-hover">
                     <div class="ibro-list">
                         <div class="ibro-list-item">
                             待办工作
@@ -456,9 +456,14 @@
                             <span class="ibro-list-item-num">0</span>
                         </div>
                     </div>
-                    <div class="ycgj-btn-more">异常告警填写</div>
+                    
                 </div>
-                <div class="ib-right-content ib-right-two">
+                -->
+                <div class="ib-right-content ib-right-two ib-right-content-hover">
+                    <div class="ycgj-more-div">
+                      <div class="ycgj-btn-more">异常告警填写</div>
+                    </div>
+                    
                     <div class="ibr-item ibr-item-hover ibr-item-one">
                         <div class="ibr-item-more"></div>
                         <h1 class="ib-item-title">待办工作<span class="ib-span-bg ib-span-bg-hover">3</span><span class="ib-span-bg">6</span></h1>
@@ -2047,6 +2052,7 @@
 
             // 右侧点击图标展开1级内容
             $('.ib-right-more').on('click', function () {
+              /*
                 var click_hover = 'ib-right-content-hover';
                 var click_one = $('.ib-right-one');
                 var click_two = $('.ib-right-two');
@@ -2055,18 +2061,18 @@
                 if (click_one.hasClass(click_hover)) {
                     click_one.removeClass(click_hover);
                     click_two.addClass(click_hover);
-                    click_father.css('width', '56%');
+                    // click_father.css('width', '56%');
                 }
                 // 展开1(不含内容)
                 else {
                     click_one.addClass(click_hover)
                     click_two.removeClass(click_hover)
-                    click_father.css('width', '66%')
+                    // click_father.css('width', '66%')
                 }
                 // 二级的内容也对应的点击下
                 $('.ibrit-nav').children().eq(0).click();
                 $('.ibrit-nav-three').children().eq(0).click();
-
+              */
             })
 
             // 点击展开余下更多

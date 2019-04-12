@@ -277,6 +277,9 @@
   background-image: url(../images/sr_close.png);
   background-size: 100% 100%;
 }
+.hhrbc-item .hhrbc-item-content {
+  display: none;
+}
 .hhrbc-item h2 {
   color: #020202;
   font-size: 16px;
@@ -355,4 +358,145 @@
 }
 .hhrbc-item-content-footer {
   margin-top: 10px;
+}
+.public-header-right img {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+}
+.health-hut-report .public-header-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+}
+.health-hut-report .public-header-right img:last-child {
+  position: relative;
+  margin-left: -5px;
+  z-index: -1;
+}
+.hhr-header {
+  position: relative;
+}
+.hhr-header-one {
+  position: relative;
+  display: flex;
+  padding-left: 40px;
+  justify-content: space-between;
+}
+.hhr-header-one img {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  margin-top: -14px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+}
+.hhr-header-one h2 {
+  color: #020202;
+  font-size: 14px;
+  line-height: 40px;
+}
+.hhr-header-one h3 {
+  font-size: 13px;
+  color: #646464;
+  line-height: 40px;
+}
+.hhr-header-one h3 span {
+  margin: 0 5px;
+}
+.hhr-header-more:after {
+  position: absolute;
+  top: 50%;
+  left: 94%;
+  content: " ";
+  font-size: 1px;
+  color: transparent;
+  width: 18px;
+  height: 12px;
+  margin-left: -9px;
+  margin-top: -6px;
+  background-image: url(../images/hh-arrow-right@2x.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.hhr-header-more {
+  position: relative;
+  margin-top: 10px;
+  box-shadow: 0 0 4px #CCCCCC;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.hhr-header-more h2 {
+  font-size: 17px;
+  color: #000000;
+  line-height: 32px;
+}
+.hhr-header-more p {
+  font-size: 13px;
+  color: #646464;
+  line-height: 32px;
+}
+.hhr-header-more h3 {
+  background-image: url(../images/sr_01.png);
+  background-size: 18px 18px;
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  color: #666666;
+  line-height: 28px;
+  margin-top: 10px;
+  padding-left: 30px;
+}
+.hhr-header-more-ok h3 {
+  background-image: url(../images/sr_01.png);
+}
+.hhr-header-more-warning h3 {
+  background-image: url(../images/sr_02.png);
+}
+.hhr-header-more-no h3 {
+  background-image: url(../images/sr_03.png);
+}
+.health-hut-report .hhr-body {
+  background-color: white;
+  padding-top: 0;
+}
+.health-hut-report .hhr-body h1 {
+  font-size: 17px;
+  color: #000000;
+  line-height: 40px;
+  font-weight: bold;
+}
+.health-hut-report .swiper-container-hh {
+  height: auto;
+  margin-bottom: 20px;
+}
+.health-hut-report .swiper-container-hh .swiper-slide {
+  background-image: none;
+  background-color: #E0E8EA;
+}
+.hhr-header-more-unread,
+.hhr-header-more {
+  background: linear-gradient(to right, white 88%, #0073FA 88.1%, #0073FA 100%);
+}
+.hhr-header-more-read {
+  background: linear-gradient(to right, white 88%, #C0C0C0 88.1%, #C0C0C0 100%);
+}
+.hhr-a-more {
+  display: inline-block;
+  color: #868686;
+  font-size: 14px;
+  line-height: 50px;
+  padding-right: 16px;
+  background-image: url(../images/arrow@2x.png);
+  background-size: 7px 10px;
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+.hhr-a-more span {
+  margin: 0 5px;
+}
+.hhr-header-father .hhr-header {
+  padding-bottom: 0;
 }

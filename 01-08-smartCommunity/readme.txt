@@ -50,5 +50,15 @@ friendToMe.html 我的邀请
 healthHutFirst.html 健康小屋-开启
 healthHut.html 健康小屋
 healthHutSofaStart.html 健康检测按摩椅子-开启器
-healthHutSofa.html 健康检测按摩椅子
-healthResulftSofa.html 检查报告
+healthHutSofa.html 健康检测按摩椅子-使用
+healthResulftSofa.html 检查结果报告
+healthHutReport.html 健康小屋-带检查报告
+healthReport.html 我的检查报告
+healthReportMore.html 我的检查报告-更多
+healthReportFamily·html 家人的检查报告
+
+electricity.html  家庭能源管理
+electricityStatistics.html 电量统计
+electricityRates.html 用电收费标准
+electricityAdministration.hmtl  用户管理
+electricityAdministrationAdd.hmtl  用户管理-添加新目标

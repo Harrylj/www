@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>家庭能源管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/electricity.css"/>
+ 
+  </head>
+  <style type="text/css">
+    html,body{
+        background-color: #F7F7FB;
+    }
+  </style>
+  <body>
+
+    <div class="electricity public-div">
+      <div class="public-header-div bb-header-div">
+        <div class="public-header">
+          <a class="public-header-return bbh-return" href="#"></a>
+          <h1>家庭能源管理</h1>
+          <h2>5栋3单元1204</h2>
+          <div class="public-header-right"></div>
+        </div>
+      </div>
+      <div class="e-header">
+        <div class="e-header-one">
+          <h2>29087</h2>
+          <p>今日电量kw/h</p>
+        </div>
+        <div class="e-header-img">
+          <img src="images/e_01.png"/>
+        </div>
+      </div>
+      <div class="e-body">
+        <div class="e-body-top">
+          <h2>家庭用电设备</h2>
+          <a class="ebt-admin" href="#">管理</a>
+        </div>
+        <div class="e-body-list">
+          <!--
+          	作者：648267773@qq.com
+          	时间：2019-04-11
+          	描述：.e-body-item :添加 .e-body-item-xyj:表示洗衣机
+          	                   添加 .e-body-item-dbx:表示电冰箱
+          	                   添加 .e-body-item-wbl:表示微波炉
+          	                   添加 .e-body-item-decline: 表示电量下降
+          	                   添加 .e-body-item-rise：  表示电量上升
+          -->
+          <div class="e-body-item e-body-item-rise e-body-item-dbx">
+            <h2>电冰箱</h2>
+            <p>电量过高 建议调高温度1-2℃</p>
+            <div class="ebi-num">79kw</div>
+          </div>
+          <div class="e-body-item e-body-item-decline e-body-item-xyj ">
+            <h2>洗衣机</h2>
+            <p>节能小能手</p>
+            <div class="ebi-num">64kw</div>
+          </div>
+          <div class="e-body-item e-body-item-wbl">
+            <h2>微波炉</h2>
+            <p>用电持平 可以维持</p>
+            <div class="ebi-num">36kw</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+
+  </body>
+
+</html>

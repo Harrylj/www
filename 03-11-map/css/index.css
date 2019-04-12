@@ -10,11 +10,12 @@ html {
 }
 .index-header {
   display: flex;
+  justify-content: space-between;
   height: 80px;
 }
 .ih-left,
 .ib-left {
-  width: 500px;
+  width: 420px;
 }
 .ih-left {
   padding: 20px;
@@ -143,7 +144,7 @@ html {
   margin-top: 10px;
   position: relative;
   background-color: white;
-  width: 66%;
+  width: 1050px!important;
   height: 925px;
 }
 .ib-right {
@@ -428,7 +429,7 @@ html {
 }
 .ib-right-two {
   display: none;
-  width: 320px;
+  width: 460px;
   padding: 10px 0;
 }
 .ib-right-content-hover {
@@ -486,31 +487,30 @@ html {
   overflow: hidden;
 }
 .ibri-one-item h4 {
-  color: #FFFFFF;
-  font-size: 11px;
+  color: #616A73;
+  font-size: 14px;
   line-height: 28px;
   height: 28px;
   overflow: hidden;
 }
 .ibri-one-item h3 {
   position: relative;
+  margin-top: 5px;
   font-size: 14px;
-  line-height: 32px;
-  height: 64px;
-  overflow: hidden;
+  line-height: 24px;
+  padding: 4px 10px;
+  background-color: #22262A;
 }
 .ibri-one-item h3 span:nth-child(1) {
   color: #55C3FC;
-  margin-left: 50px;
 }
 .ibri-one-item h3 span:nth-child(2) {
-  display: block;
   color: #919598;
 }
 .ibri-one-item h3:before {
   position: absolute;
-  left: 0;
-  top: 0;
+  right: 0;
+  top: -55px;
   line-height: 32px;
   content: "[未读]";
   font-size: 14px;
@@ -523,10 +523,6 @@ html {
 .ibri-one-item-read h3:before {
   content: "[已读]";
   color: #209073;
-}
-.ibri-one-item-ok h3 span:nth-child(1),
-.ibri-one-item-no h3 span:nth-child(1) {
-  margin-left: 70px;
 }
 .ibri-one-item-ok h3:before {
   content: "[未处理]";
@@ -1928,9 +1924,6 @@ html {
   display: block;
 }
 .ycgj-btn-more {
-  position: absolute;
-  bottom: 30px;
-  left: 0;
   width: 100%;
   color: #4EE5BE;
   line-height: 40px;
