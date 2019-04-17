@@ -30,6 +30,9 @@
     <h4 class="sfz-btn-detail" data-toggle="modal" data-target="#myModalSeven" data-dismiss="modal" aria-label="Close">收费站详情页面</h4>
     <div class="ycgj-01" data-toggle="modal" data-target="#myModalEight" data-dismiss="modal" aria-label="Close">异常告警第一次</div>
     <div class="ycgj-02" data-toggle="modal" data-target="#myModalNine" data-dismiss="modal" aria-label="Close">异常告警第二次</div>
+    
+    <div class="btn-one-car hide" data-toggle="modal" data-target="#myModalCar" data-dismiss="modal" aria-label="Close">巡逻车详情</div>
+    <div class="btn-one-dm hide" data-toggle="modal" data-target="#myModalDM" data-dismiss="modal" aria-label="Close">断面详情</div>
     <div class="index public-body-div">
         <!--
             作者：648267773@qq.com
@@ -435,7 +438,7 @@
                     .ib-right-content ：添加.ib-right-content-hover表示当前1级菜单为激活状态
             -->
             <div class="ib-right">
-                <div class="ib-right-more"></div>
+                <!--<div class="ib-right-more"></div>-->
                 
                 <!--<div class="ib-right-content ib-right-one ib-right-content-hover">
                     <div class="ibro-list">
@@ -461,7 +464,8 @@
                 -->
                 <div class="ib-right-content ib-right-two ib-right-content-hover">
                     <div class="ycgj-more-div">
-                      <div class="ycgj-btn-more">异常告警填写</div>
+                      <div class="ycgj-btn-more">异常情况填报</div>
+                      <div class="ycgj-btn-right">今日已报 <span>12</span></div>
                     </div>
                     
                     <div class="ibr-item ibr-item-hover ibr-item-one">
@@ -470,31 +474,31 @@
 
                         <div class="ibri-list ibri-one-list">
                             <div class="ibri-one-item ibri-one-item-unread">
-                                <img src="images/user_01.jpg" />
+                                <img src="images/user-pic-01.png" />
                                 <div class="ibri-one-item-header">
                                     <h2>张集</h2>
                                     <h4>2019.02.20-19:18</h4>
                                 </div>
-                                <h3><span>K18+12</span><span>行车通道发生拥堵</span></h3>
+                                <h3><span>K18+12</span><span>有新的检查任务出现了</span></h3>
                             </div>
                             <div class="ibri-one-item ibri-one-item-read">
-                                <img src="images/user_02.jpg" />
+                                <img src="images/user-pic-02.png" />
                                 <div class="ibri-one-item-header">
                                     <h2>李峰</h2>
                                     <h4>2019.02.22-18:48</h4>
                                 </div>
-                                <h3><span>K12+08</span><span>行车通道发生拥堵</span></h3>
+                                <h3><span>K12-S098成都到泸州断面</span><span>喜庆服务站发现煤气泄露事件，波及范围广，破坏性大，请立马处理。</span></h3>
                             </div>
                             <div class="ibri-one-item ibri-one-item-ok">
-                                <img src="images/user_03.jpg" />
+                                <img src="images/user-pic-01.png" />
                                 <div class="ibri-one-item-header">
                                     <h2>陈伟</h2>
                                     <h4>2019.02.25-18:30</h4>
                                 </div>
-                                <h3><span>K21+35</span><span>行车通道发生拥堵</span></h3>
+                                <h3><span>K21+35</span><span>有新的检查任务需要执行</span></h3>
                             </div>
                             <div class="ibri-one-item ibri-one-item-no">
-                                <img src="images/user_04.jpg" />
+                                <img src="images/user-pic-04.png" />
                                 <div class="ibri-one-item-header">
                                     <h2>李丹</h2>
                                     <h4>2019.02.26-19:30</h4>
@@ -503,7 +507,7 @@
                             </div>
 
                             <div class="ibri-one-item ibri-one-item-no">
-                                <img src="images/user_05.jpg" />
+                                <img src="images/user-pic-02.png" />
                                 <div class="ibri-one-item-header">
                                     <h2>刘雪</h2>
                                     <h4>2019.02.28-19:50</h4>
@@ -511,7 +515,7 @@
                                 <h3><span>K12-09</span><span> 行车通道发生拥堵</span></h3>
                             </div>
                             <div class="ibri-one-item ibri-one-item-no">
-                                <img src="images/user_06.jpg" />
+                                <img src="images/user-pic-01.png" />
                                 <div class="ibri-one-item-header">
                                     <h2>王清</h2>
                                     <h4>2019.02.29-20:30</h4>
@@ -539,22 +543,28 @@
                                 <li class="ibrit-nav-hover">收费站</li>
                                 <li>服务站</li>
                             </ul>-->
-                            <div class="ibrit-list-div">
+                            <div class="ibrit-list-div ibrit-list-div-03">
                                 <div class="ibrit-list">
-                                    <div class="ibrit-item ibrit-item-sfz ibrit-item-no">
-                                        <h4></h4>
-                                        <p>09:50:32-11:50:57</p>
-                                        <h5><span>[巡逻车川A 123456]</span><span>K17-K21 巡检</span></h5>
+                                    <div class="ibrit-item ibrit-item-sfz ibrit-item-ok">
+                                        <h4>巡检中</h4>
+                                        <p class="ibrit-item-p-01">09.20 19:50</p>
+                                        <h5><span>K17-K21 [巡逻车川A 123456]</span><span> 成都到绵阳</span>
+                                          <p>循环线还没有检修，完整会上报</p>
+                                        </h5>
                                     </div>
                                     <div class="ibrit-item ibrit-item-sfz ibrit-item-ok">
-                                        <h4></h4>
-                                        <p>13:50:32-16:50:57</p>
-                                        <h5><span>[巡逻车川A 223344]</span><span>K36-K41 巡检</span></h5>
+                                        <h4>巡检中</h4>
+                                        <p class="ibrit-item-p-01">09.20 19:50</p>
+                                        <h5><span>K36-K41 [巡逻车川A 223344]</span><span> 绵阳到成都</span>
+                                          <p>循环线还没有检修，完整会上报</p>
+                                        </h5>
                                     </div>
-                                    <div class="ibrit-item ibrit-item-fwq ibrit-item-ok">
-                                        <h4></h4>
-                                        <p>15:50:32-18:50:57</p>
-                                        <h5><span>[巡逻车川A 456923]</span><span>K22-K26 巡检</span></h5>
+                                    <div class="ibrit-item ibrit-item-fwq ibrit-item-no">
+                                        <h4>路边停靠</h4>
+                                        <p class="ibrit-item-p-01">09.20 15:50:32 - 09.20 18:50:57</p>
+                                        <h5><span>K22-K26 [巡逻车川A 456923]</span><span> 成都到绵阳</span>
+                                          <p>循环线还没有检修，完整会上报</p>
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
@@ -574,40 +584,39 @@
                             <div class="ibrit-list-div">
                                 <div class="ibrit-list-three">
                                     <div class="ibrit-item-three ibrit-item-three-fwz ibrit-item-three-no">
-                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h4>09.20 00:00:00</h4>
                                         <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
                                         <h3>来源: <span>人工上报</span></h3>
                                     </div>
                                     <div class="ibrit-item-three ibrit-item-three-fwz ibrit-item-three-no">
-                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h4>09.20 00:00:00</h4>
                                         <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
                                         <h3>来源: <span>人工上报</span></h3>
                                     </div>
                                     <div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-ok">
-                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h4>09.20 00:00:00</h4>
                                         <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
                                         <h3>来源: <span>人工上报</span></h3>
                                     </div>
                                     <div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-no">
-                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h4>09.20 00:00:00</h4>
                                         <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
                                         <h3>来源: <span>人工上报</span></h3>
                                     </div>
                                     <div class="ibrit-item-three ibrit-item-three-sfz ibrit-item-three-ok">
-                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h4>09.20 00:00:00</h4>
                                         <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
                                         <h3>来源: <span>人工上报</span></h3>
                                     </div>
                                     <div class="ibrit-item-three ibrit-item-three-ld ibrit-item-three-no">
-                                        <h4>2019.09.20 00:00:00</h4>
+                                        <h4>09.20 00:00:00</h4>
                                         <h5><span>K12-098</span><span>循环线还没有检修，完整 会上报...</span></h5>
                                         <h3>来源: <span>人工上报</span></h3>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
-                        <div class="ycgj-btn-more-02">异常告警填写</div>
+
                     </div>
                     <div class="ibr-item ibr-item-four">
                         <div class="ibr-item-more"></div>
@@ -646,6 +655,8 @@
             #myModalSix:右侧详情页面
             #myModalSeven: 收费站详情页
             #myModalEight: 异常告警填写
+            #myModalCar: 巡逻车详情
+            #myModalDM: 断面详情
         -->
         <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModalOne">
             Launch demo modal
@@ -903,7 +914,8 @@
 
                             </div>
                             <div class="fwq-right">
-                                <img class="img-100" src="images/table_fwq_02.png" />
+                                <!--<img class="img-100" src="images/table_fwq_02.png" />-->
+                                <img style="width: 95%;margin-top: 40px;" src="images/one/one-fwq-11.png" />
                             </div>
                         </div>
 
@@ -1152,67 +1164,116 @@
 
             <div class="modal fade" id="myModalFive" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content modal-content-five">
+                    <div class="modal-content modal-content-five mb-modal-content">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <div class="five-rentrn-three" data-toggle="modal" data-target="#myModalThree" data-dismiss="modal" aria-label="Close"></div>
                         <div class="modal-header">
-                            <h4 class="modal-title">永兴服务区 K22 详情</h4>
+                            <h4 class="modal-title">S4成仁高速--K22--永兴服务区--成都至仁寿方向</h4>
                         </div>
                         <!--
                           作者：648267773@qq.com
                           时间：2019-03-07
                           描述：.mcf-ul:的子集添加.mcf-ul-click表示点击
                         -->
-                        <div class="modal-body">
-                            <ul class="mcf-ul">
-                                <li class="mcf-ul-click">基础消息</li>
-                                <li>经营信息</li>
-                                <li>厕所信息</li>
-                                <li>环保信息</li>
-                                <li>物业信息</li>
-                                <li>通讯录</li>
-                                <li>所在位置</li>
-                                <li>实时视频</li>
-                            </ul>
-                            <div class="mcf-list">
+                        <div class="modal-body mb-one">
+                            <div class="mb-one-left">
+                              <div class="mbol-item mbol-01">
+                                <div class="mb-one-left-header">
+                                  <ul class="mcf-ul">
+                                    <li class="mcf-ul-click">实时信息</li>
+                                    <li>基础消息</li>
+                                    <li>经营信息</li>
+                                    <li>厕所信息</li>
+                                    <li>环保信息</li>
+                                    <li>物业信息</li>
+                                    <li>通讯录</li>
+                                </ul>
+                                  <div class="mb-one-left-header-right" style="padding-top: 20px;">
+                                     <select class="sfz-select-01" name="">
+                                        <option value="">2019.02.10</option>
+                                        <option value="">2019.02.11</option>
+                                     </select>
+                                     <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                  </div>
+                                </div>
+                              </div>
+                              
+                              <div class="mcf-list">
                                 <div class="mcf-item">
                                     <div class="mcf-item-div mcf-item-div-hover">
-                                      <img style="width: 98%;" src="images/table_fwq_03.png" />
+                                        <div class="mbol-item mbol-02">
+                                          <h2>今日收入情况</h2>
+                                          <div class="sfz-cdgl">
+                                            <div class="img-toggle-div">
+                                              <img class="img-toggle-div-hover" src="images/one/one-fwq-03-hover.png"/>
+                                              <img src="images/one/one-fwq-03.png"/>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="mbol-item mbol-03">
+                                          <h2>今日资源汇总</h2>
+                                          <img src="images/one/one-fwq-04.png"/>
+                                        </div>
+                                        <div class="mbol-item mbol-03">
+                                          <h2>异常告警 1/<span>10</span></h2>
+                                          <img src="images/one/one-fwq-05.png"/>
+                                        </div>
                                     </div>
-                                    <div class="mcf-item-div mcf-item-div-other" style="text-align: center;">
-                                        <img src="images/fwq_yx.png"/>
-                                    </div>
-                                    <div class="mcf-item-div mcf-item-div-other">
-                                      <video class="video-sfz" controls  muted autoplay="autoplay" loop="loop" src="images/Service_01.mp4" style="width: 100%; height: 700px;">
-                                          <source src="" type="video/mp4" style="width: 100%; height: 100%;">
-                                      </video>
+                                    <div class="mcf-item-div">
+                                      <img style="width: 98%;" src="images/one/one-fwq-01.png" />
                                     </div>
                                 </div>
                             </div>
+                            
+                              
+                              
+                            </div>
+                            <div class="mb-one-right">
+                              <div class="mbor-item">
+                                <select class="map-header-select map-header-select-01" name="">
+                                  <option value="" selected="selected">高速路选择</option>
+                                  <option value="" selected="selected">成仁高速</option>
+                                </select>
+                                <select class="map-header-select map-header-select-02" name="">
+                                  <option value="" selected="selected">收费站选择</option>
+                                  <option value="" selected="selected">成都收费站</option>
+                                  <option value="" selected="selected">资阳收费站</option>
+                                </select>
+                                <div class="sfz-map">
+                                  <img src="images/one/one-map.png"/>
+                                </div>
+                                <!--<img src="images/one/one-sfz-04.png"/>-->
+                              </div>
+                              <div class="mbor-item">
+                                <video class="mb-video" controls  autoplay="autoplay" loop="loop" src="images/Service_01.mp4" style="width:330px; height: 180px;">
+                                    <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                </video>
+                                
+                              </div>
+                              <div class="mbor-item">
+                                <img src="images/one/one-sfz-06.png"/>
+                              </div>
+                            </div>
                         </div>
+                    
                     </div>
                 </div>
             </div>
             <div class="modal fade" id="myModalSix" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
-                    <div class="modal-content">
+                    <div class="modal-content mb-modal-content mb-modal-content-white">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <div class="modal-header">
-                            <h4 class="modal-title">K0+86成仁收费站</h4>
+                            <h4 class="modal-title">K0--S4成自泸成都收费站告警报告</h4>
                         </div>
-                        <div class="modal-body">
-                            <ul class="xqym-ul">
-                            	<li></li>
-                            	<li></li>
-                            	<li></li>
-                            	<li></li>
-                            </ul>
-                            <img class="img-100" src="images/pic_01.png" />
+                        <div class="modal-body mb-one">
+                            <img class="img-100" src="images/one/one-bg-01.png" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="myModalSeven" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+            <!--<div class="modal fade" id="myModalSeven" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -1224,7 +1285,216 @@
                         </div>
                     </div>
                 </div>
+            </div>-->
+            <div class="modal fade" id="myModalSeven" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content mb-modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">K0--S4成自泸成都站 <!--<button type="button" class="sfz-cdkz">车道控制<img src="images/arrow_more_button@2x.png"/></button>--></h4>
+                        </div>
+               
+                        <div class="modal-body mb-one">
+                            <div class="mb-one-left">
+                              <div class="mbol-item mbol-01">
+                                <div class="mb-one-left-header">
+                                  <h2>收入情况</h2>
+                                  <div class="mb-one-left-header-right">
+                                     <div class="sfz-btn-jrtj">今日统计</div>
+                                     <select class="sfz-select-01" name="">
+                                        <option value="">2019.02.10</option>
+                                        <option value="">2019.02.11</option>
+                                     </select>
+                                     <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                  </div>
+                                </div>
+                                <div class="img-toggle-div">
+                                  <img class="img-toggle-div-hover" src="images/one/one-sfz-01.png"/>
+                                  <img src="images/one/one-sfz-01-hover.png"/>
+                                </div>
+                                
+                              </div>
+                              <div class="mbol-item mbol-02">
+                                <h2>车道管理 18/<span>22</span></h2>
+                                <div class="sfz-cdgl">
+                                  <div class="img-toggle-div">
+                                    <img class="img-toggle-div-hover" src="images/one/one-sfz-02.png"/>
+                                    <img src="images/one/one-sfz-02-hover.png"/>
+                                  </div>
+                                  <div class="sfz-cdgl-header">
+                                    <img src="images/one/one-sfz-02-header.png"/>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="mbol-item mbol-03">
+                                <h2>异常告警 12/<span>34</span></h2>
+                                <img class="img-100" src="images/one/one-sfz-03.png"/>
+                              </div>
+                              
+                            </div>
+                            <div class="mb-one-right">
+                              <div class="mbor-item">
+                                <select class="map-header-select map-header-select-01" name="">
+                                	<option value="" selected="selected">高速路选择</option>
+                                	<option value="" selected="selected">成仁高速</option>
+                                </select>
+                                <select class="map-header-select map-header-select-02" name="">
+                                  <option value="" selected="selected">收费站选择</option>
+                                  <option value="" selected="selected">成都收费站</option>
+                                  <option value="" selected="selected">资阳收费站</option>
+                                </select>
+                                <div class="sfz-map">
+                                  <img src="images/one/one-map.png"/>
+                                </div>
+                                <!--<img src="images/one/one-sfz-04.png"/>-->
+                              </div>
+                              <div class="mbor-item">
+                                <video class="mb-video" controls  autoplay="autoplay" loop="loop" src="images/Service_01.mp4" style="width:330px; height: 180px;">
+                                    <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                </video>
+                                
+                              </div>
+                              <div class="mbor-item">
+                                <img src="images/one/one-sfz-06.png"/>
+                              </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
             </div>
+            
+            <div class="modal fade" id="myModalCar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content mb-modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">S4成仁高速巡逻车--川A-Q9R31<!--<button type="button" class="sfz-cdkz">车道控制<img src="images/arrow_more_button@2x.png"/></button>--></h4>
+                        </div>
+               
+                        <div class="modal-body mb-one">
+                            <div class="mb-one-left">
+                              <div class="mbol-item mbol-01">
+                                <div class="mb-one-left-header">
+                                  <h2>今日巡检汇总</h2>
+                                  <div class="mb-one-left-header-right">
+                                     <select class="sfz-select-01" name="">
+                                        <option value="">2019.02.10</option>
+                                        <option value="">2019.02.11</option>
+                                     </select>
+                                     <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                  </div>
+                                </div>
+                                 <img class="img-100" src="images/one/one-car-21.png"/>
+                                
+                              </div>
+                              <div class="mbol-item mbol-02">
+                                <h2>分时情况</h2>
+                                <div class="img-toggle-div">
+                                    <img class="img-toggle-div-hover" src="images/one/one-car-22.png"/>
+                                    <img src="images/one/one-car-22-hover.png"/>
+                                </div>
+                              </div>
+                              <div class="mbol-item mbol-03">
+                                <h2>异常告警 3/<span>12</span></h2>
+                                <img class="img-100" src="images/one/one-car-23.png"/>
+                              </div>
+                              
+                            </div>
+                            <div class="mb-one-right">
+                              <div class="mbor-item">
+                                <select class="map-header-select map-header-select-01" name="">
+                                  <option value="" selected="selected">高速路选择</option>
+                                  <option value="" selected="selected">成仁高速</option>
+                                </select>
+                                <select class="map-header-select map-header-select-02" name="">
+                                  <option value="" selected="selected">收费站选择</option>
+                                  <option value="" selected="selected">成都收费站</option>
+                                  <option value="" selected="selected">资阳收费站</option>
+                                </select>
+                                <div class="sfz-map">
+                                  <img src="images/one/one-map.png"/>
+                                </div>
+                              </div>
+                              <div class="mbor-item">
+                                <video class="drivingPlayer" muted controls controlsList='nofullscreen nodownload noremote footbar' src="" style="width:330px; height: 180px;">
+                                        <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                </video>
+                              </div>
+                              <div class="mbor-item">
+                                <img src="images/one/one-sfz-06.png"/>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModalDM" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content mb-modal-content">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <div class="modal-header">
+                            <h4 class="modal-title">成仁高速K0----K22----马家堰断面<!--<button type="button" class="sfz-cdkz">车道控制<img src="images/arrow_more_button@2x.png"/></button>--></h4>
+                        </div>
+               
+                        <div class="modal-body mb-one">
+                            <div class="mb-one-left">
+                              <div class="mbol-item mbol-01">
+                                <div class="mb-one-left-header">
+                                  <h2>断面实时情况</h2>
+                                  <div class="mb-one-left-header-right">
+                                     <select class="sfz-select-01" name="">
+                                        <option value="">2019.02.10</option>
+                                        <option value="">2019.02.11</option>
+                                     </select>
+                                     <div class="public-btn-02-dc sfz-btn-dcbg">导出报告</div>
+                                  </div>
+                                </div>
+                                <div class="img-toggle-div">
+                                    <img class="img-toggle-div-hover" src="images/one/one-dm-01-hover.png"/>
+                                    <img src="images/one/one-dm-01.png"/>
+                                </div>
+                                
+                              </div>
+                              <div class="mbol-item mbol-03">
+                                <h2>异常告警 3/<span>12</span></h2>
+                                <img class="img-100" src="images/one/one-dm-02.png"/>
+                              </div>
+                              
+                            </div>
+                            <div class="mb-one-right">
+                              <div class="mbor-item">
+                                <select class="map-header-select map-header-select-01" name="">
+                                  <option value="" selected="selected">高速路选择</option>
+                                  <option value="" selected="selected">成仁高速</option>
+                                </select>
+                                <select class="map-header-select map-header-select-02" name="">
+                                  <option value="" selected="selected">收费站选择</option>
+                                  <option value="" selected="selected">成都收费站</option>
+                                  <option value="" selected="selected">资阳收费站</option>
+                                </select>
+                                <div class="sfz-map">
+                                  <img src="images/one/one-map.png"/>
+                                </div>
+                              </div>
+                              <div class="mbor-item">
+                                <video class="drivingPlayer" muted controls controlsList='nofullscreen nodownload noremote footbar' src="" style="width:330px; height: 180px;">
+                                        <source src="" type="video/mp4" style="width: 100%; height: 100%;">
+                                </video>
+                              </div>
+                              <div class="mbor-item">
+                                <img src="images/one/one-dm-03.png"/>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+            
+            
             <div class="modal fade" id="myModalEight" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content modal-content-ycgj">
@@ -1628,10 +1898,17 @@
     <script type="text/javascript">
     </script>
     <script type="text/javascript">
-      // $('.fwqb-more').click();
+       // $('.btn-one-dm').click();
        //  $('.ycgj-02').click();
          
         $(function () {
+          
+            // 04-16
+            // 点击切换图片状态
+            $('.img-toggle-div').on('click',function(){
+              var class_hover = 'img-toggle-div-hover';
+              $(this).children('.'+class_hover).removeClass(class_hover).siblings('img').addClass(class_hover)
+            })
           
             // 异常事故
             $('.ycgj-two-title').children('.modal-title').on('click',function(){
@@ -1668,9 +1945,9 @@
             })
             
             // 右侧的弹出详情页面--点击右侧4个按钮关闭弹出页
-            $('.xqym-ul').children('li').on('click',function(){
-              $('.close').click()
-            })
+//          $('.xqym-ul').children('li').on('click',function(){
+//            $('.close').click()
+//          })
           
           
             // 异常告警 -- 选择其他显示输入框
@@ -1882,7 +2159,9 @@
                         
                         marker.addEventListener('click', function () {
                             //点击 弹层放视频
-                            $('.ib-middle-dm-div').show();
+                            // 显示断面弹层
+                            // $('.ib-middle-dm-div').show();
+                            $('.btn-one-dm').click();
                             $(".drivingPlayer").attr("src", "images/section.mp4");
                             $(".drivingPlayer").attr("autoplay", "true");
                         });
@@ -1971,9 +2250,9 @@
                 var e_hover = $('.mcf-item-div');
                 $(this).addClass(class_click).siblings().removeClass(class_click)
                 
-                //所在位置
-                if(this_index == 6){
-                  e_hover.eq(1).addClass(class_hover_click).siblings().removeClass(class_hover_click)
+                //基础信息
+                if(this_index == 0){
+                  e_hover.eq(0).addClass(class_hover_click).siblings().removeClass(class_hover_click)
                 }
                 //实时视频
                 else if(this_index == 7){
@@ -1981,7 +2260,7 @@
                 }
                 //其他默认
                 else{
-                  e_hover.eq(0).addClass(class_hover_click).siblings().removeClass(class_hover_click)
+                  e_hover.eq(1).addClass(class_hover_click).siblings().removeClass(class_hover_click)
                 }
             })
 
@@ -2049,10 +2328,10 @@
                     e_click.addClass(class_close)
                 }
             })
-
+            /*
             // 右侧点击图标展开1级内容
             $('.ib-right-more').on('click', function () {
-              /*
+              
                 var click_hover = 'ib-right-content-hover';
                 var click_one = $('.ib-right-one');
                 var click_two = $('.ib-right-two');
@@ -2072,9 +2351,9 @@
                 // 二级的内容也对应的点击下
                 $('.ibrit-nav').children().eq(0).click();
                 $('.ibrit-nav-three').children().eq(0).click();
-              */
+              
             })
-
+            */
             // 点击展开余下更多
             $('.ibr-btn-more').on('click', function () {
                 $(this).parent().addClass('ibri-list-more');
@@ -2084,7 +2363,7 @@
             // 点击右侧顶部的退出按钮
             $('.ihr-close').on('click', function () {
                 // 点击1级菜单展开图标
-                $('.ib-right-more').click();
+                // $('.ib-right-more').click();
             })
 
             // 点击右侧一级菜单列表
@@ -2094,7 +2373,7 @@
                 var class_hover = 'ibr-item-hover';
                 father_two.children('.ibr-item').eq(this_index).addClass(class_hover).siblings().removeClass(class_hover)
                 // 点击1级菜单展开图标
-                $('.ib-right-more').click();
+                // $('.ib-right-more').click();
             })
 
             // 点击右侧今日巡检任务 --筛选收费站和服务区
@@ -2192,7 +2471,9 @@
         var traindic = new Dictionary();
         var trainMonitor = function (trainid) {
             // 显示车辆详情提示框
-            $('.ib-middle-car-div').show();
+            // $('.ib-middle-car-div').show();
+            // 显示新的车辆详情弹层
+            $('.btn-one-car').click();
             // $('.ib-middle-car-close').click();
             $('.ib-middle-sfz-close').click();
             // 打开右侧的第四个页面
@@ -2258,7 +2539,8 @@
                 console.log(train.file);
             }
         }
-
+        
+        // 创建地图
         function createMap() {
             map = new BMap.Map("map", {
                 enableMapClick: false
@@ -2266,6 +2548,11 @@
             var point = new BMap.Point(104.120624, 30.079);
             map.centerAndZoom(point, 10);
             map.setCurrentCity("成都");
+            // 更改缩放按钮位置
+            // var mapType2 = new BMap.MapTypeControl({anchor: BMAP_ANCHOR_BOTTOM_RIGHT});
+            // map.addControl(mapType2);
+            
+            
             map.addEventListener("click", function (e) {
                 if (showmapimg) {
                     $.ajax({
@@ -2298,6 +2585,8 @@
                 target.openInfoWindow(window);
             });
         }
+        
+        
 
         //向地图添加控件
         function addMapControl() {
@@ -2306,12 +2595,23 @@
             });
             scaleControl.setUnit(BMAP_UNIT_IMPERIAL);
             map.addControl(scaleControl);
-            var navControl = new BMap.NavigationControl({
-                anchor: BMAP_ANCHOR_TOP_LEFT,
-                type: BMAP_NAVIGATION_CONTROL_LARGE
-            });
+//          var navControl = new BMap.NavigationControl({
+//              anchor: BMAP_ANCHOR_TOP_LEFT,
+//              type: BMAP_NAVIGATION_CONTROL_LARGE
+//          });
+            var navControl = new BMap.NavigationControl(
+                {
+                    type : BMAP_NAVIGATION_CONTROL_LARGE, // 表示显示完整的平移缩放控件。
+                    anchor : BMAP_ANCHOR_BOTTOM_RIGHT, //右下角
+                    // offset : new BMap.Size(1,1) //进一步控制缩放按钮的水平竖直偏移量
+                }
+            );
             map.addControl(navControl);
         }
+        
+        
+
+        
         var map;
 
         // add
