@@ -1,6 +1,6 @@
 <div class="admin-class">
   <h1 class="public-h1-01">班级信息</h1>
-  <div class="ac-body">
+  <div class="ac-body ac-body-hover ac-body-01">
     <div class="ac-top">
       <!-- 新建班级 -->
       <button class="ac-btn-tjbj">添加班级</button>
@@ -87,7 +87,9 @@
       </div>
 
     </div>
-    <div class="ac-content">
+
+  </div>
+  <div class="ac-content">
       <!-- 主要内容 -->
       <div class="ac-content-list-div">
         <!-- .ac-content-list:这是一个列表 -->
@@ -321,12 +323,18 @@
         </div>
       </div>
     </div>
-  </div>
-
+  
+  <!-- 修改班级 -->
+  <div id="adminClassModify" class="ac-body"></div>
+  
 </div>
 
 <script type="text/javascript">
   $(function () {
+    
+    // 加载修改班级
+    $('#adminClassModify').load('adminClassModify.html');
+    
     // 点击删除课程
     $('.admin-class').on('click', '.adc-btn-delete', function () {
       $(this).parents('.abc-div-bg-02').remove();
@@ -337,8 +345,13 @@
     })
     // 点击修改班级
     $('.admin-class').on('click', '.ac-btn-xgbj', function () {
-      $(this).hide().parents('.acc-list-header').siblings('.acc-list-body').children('.acc-list-look').hide().siblings('.acc-list-modify').show();
+      // $(this).hide().parents('.acc-list-header').siblings('.acc-list-body').children('.acc-list-look').hide().siblings('.acc-list-modify').show();
+      var class_hover = 'ac-body-hover';
+      $('.admin-class').addClass('admin-class-modify').children('.ac-body').eq(1).addClass(class_hover).siblings().removeClass(class_hover)
+
     })
+
+    
     // 点击增加课程,添加课程就是把选择的select的用DIV复制过去
     $('.admin-class').on('click', '.acc-btn-tjkc', function () {
       var htmlSelectOne = $(this).siblings('.acc-btn-tjkc-div').children('.abc-div-bg-left').find("option:selected").val(),
@@ -347,12 +360,14 @@
       $(this).siblings('.acc-tjbj-div').append(htmldiv);
       console.log(htmlSelectOne, htmlSelectTwo)
     })
+    
     // 点击添加班级
     $('.ac-btn-tjbj').on('click', function () {
       $(this).hide();
       $('.ac-content-list').show();
       $('.ac-content').addClass('ac-content-disable')
     })
+    
     // 点击确定新增
     $('.acc-btn-qdxz').on('click', function () {
       $('.acc-btn-qxxz').click();
@@ -364,9 +379,6 @@
       $('.ac-btn-tjbj').show();
       $('.ac-content').removeClass('ac-content-disable')
     })
-    // 点击完成修改
-    $('.admin-class').on('click', '.acc-btn-wcxg', function () {
-      $(this).parents('.acc-list-modify').hide().siblings('.acc-list-look').show().parent('.acc-list-body').siblings('.acc-list-header').find('.ac-btn-xgbj').show();
-    })
+    
   })
 </script>

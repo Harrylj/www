@@ -9,9 +9,17 @@ div.body-building
 ,div.body-building-run
 ,div.body-building-first
 ,div.health-hut-Result
-,div.health-hut-report{
+,div.health-hut-report
+,div.electricity-statistics
+,div.electricity-administration
+,div.electricity-administration-add
+,div.electricity-rates{
     position: relative;
     padding-top: 44px;
+}
+div.electricity{
+    position: relative;
+    padding-top: 52px;
 }
 * {
   padding: 0;

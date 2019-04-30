@@ -1,0 +1,150 @@
+http://cdtv.sdtzcd.com/CDTV/index.aspx
+
+1.index.html-----------------------------------------
+.div-img-mian
+内容替换
+<div class="div-img-mian">
+        <img src="images/new/new-01.png"/>
+        <img src="images/new/new-02.png"/>
+        <img src="images/new/new-03.png"/>
+      </div>
+      
+2.“活动执行策划”（暂定名）模块增加“MORE”，链接到案例展示；
+.i-main-03 .index-content-box内容的最后
+
+<a href="#"><img src="images/new/new-43.png" alt=""></a>
+
+3.JS .swiper-container-02添加内容
+
+autoplay: {
+            delay: 3000,//3秒切换一次
+          },
+
+
+4.④新媒体模块三个滚动图片的规格参数调整，确保图片无裁减不完整；
+规格是220*300
+
+12.更改首页的分享图片
+.footer-more内容替换为 
+<div class="bshare-custom-div fr">
+          <div class="bshare-custom icon-medium">
+            <div class="bshare-custom icon-medium">
+              <div class="bsPromo bsPromo2"></div>
+              <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+              <a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a>
+              <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+            </div>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+          </div>
+          <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+          <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+13.首页底部
+诚聘英才和关于我们去掉。
+
+5.能量节目------------------------------------------
+能量节目顺序调整：能量房产、能量家居、能量健康；
+
+6.公用导航栏添加---关于我们内容
+
+<div class="nav-a nav-img-02-one ">关于我们
+          <div class="nav-02-hover-div">
+                <div class="nav-02-hover">
+                      <a href="contactUs.html">关于我们</a>
+                      <a href="servicesThree.html">团队风采</a>
+                      <a href="#"></a>
+                </div>
+          </div>
+        </div>
+        
+7.刊列编排，这里导航栏的二级菜单没显示，
+应该是没添加JS
+
+//激活二级导航栏
+    $('.nav-img-02-one').on("mouseover mouseout",function(event){
+                var navTwo = $(this).children('.nav-02-hover-div');
+                if(event.type == "mouseover"){
+                    navTwo.show();
+                //鼠标悬浮
+                }else if(event.type == "mouseout"){
+                    navTwo.hide();
+                //鼠标离开
+                }
+    })
+
+
+8.分享
+.bshare-custom-div内容替换
+
+<div class="bshare-custom-div">
+          <div class="bshare-custom icon-medium">
+            <div class="bshare-custom icon-medium">
+              <div class="bsPromo bsPromo2"></div>
+              <a title="分享到微信" class="bshare-weixin" href="javascript:void(0);"></a>
+              <a title="分享到新浪微博" class="bshare-sinaminiblog" href="javascript:void(0);"></a>
+              <a title="更多平台" class="bshare-more bshare-more-icon more-style-addthis"></a>
+            </div>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+            <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+          </div>
+          <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/buttonLite.js#style=-1&amp;uuid=&amp;pophcol=2&amp;lang=zh"></script>
+          <script type="text/javascript" charset="utf-8" src="http://static.bshare.cn/b/bshareC0.js"></script>
+        </div>
+        
+9.团队风采，功能添加。
+按钮
+
+添加btn-left-arrow和btn-right-arrow图片
+HTML
+.team-style内添加
+<button class="btn-left"></button>
+<button class="btn-right"></button>
+
+JS
+$(function(){
+        $('.btn-left').on('click',function(){
+          $('.swiper-button-prev').click();
+        })
+        $('.btn-right').on('click',function(){
+          $('.swiper-button-next').click();
+        })
+      })
+      
+      
+HMTL
+.swiper-slide内添加（图片后面）
+图片限定规格：1100px*720px
+
+<h1>广告中心跑团1</h1>
+            <p>2017年5月8日---初夏，暖风，我们再此见证历史的一刻</p>
+            <p>2017年5月8日---初夏，暖风，我们再此见证历史的一刻2017年5月8日---初夏，暖风，我们再此见证历史的一刻2017年5月8日---初夏，暖风，我们再此见证历史的一刻2017年5月8日---初夏，暖风，我们再此见证历史的一刻</p>
+           
+10.案例展示置顶。
+只能置顶一个，
+如果添加没置顶，说明置顶的超过2个，
+如果第一个空着，说明没置顶
+.sc-item 添加 .sc-item-hover表示置顶
+
+
+11.能量节目
+.sf-content内添加
+
+HTML
+<div class="sf-content-choice-div">
+          <div class="sf-content-choice">
+            <div class="choice-time">
+              <button class="sf-btn btn-time-start">开始时间</button><button class="sf-btn btn-time-end">结束时间</button>
+            </div>
+            <div class="choice-search-div">
+              <input type="text" class="choice-search-input" placeholder="居家生活" />
+              <button class="btn-choice-search">搜索</button>
+            </div>
+          </div>
+        </div>
+
+14.新媒体查询
+.st-item-02内添加
+
+<h3 class="st-btn-more">价格刊列查询</h3>
+

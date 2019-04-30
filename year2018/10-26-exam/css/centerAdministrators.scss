@@ -109,7 +109,6 @@ $public-fontColor-01: #333333;
     opacity: 0.5;
   }
 }
-
 .acc-btn-tjkc-div{
   .abc-div-bg-left
   ,.abc-div-bg-right{
@@ -122,4 +121,31 @@ $public-fontColor-01: #333333;
 }
 .abc-div-bg-02{
   margin-bottom: 10px;
+}
+.ac-body{
+    display: none;
+}
+
+.ac-body-hover{
+    display: block;
+}
+.ac-content-list-modify{
+    .acc-list-look
+    ,.ac-btn-xgbj
+    ,.ac-btn-scbj{
+    display: none;
+    }
+    .acc-list-modify{
+        display: block;
+    }
+}
+
+.admin-class-modify{
+    .ac-content{
+        display: none;
+    }
+    .ac-content-list-modify
+    ,.ac-content-modify{
+        display: block;
+    }
 }

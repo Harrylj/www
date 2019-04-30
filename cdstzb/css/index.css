@@ -92,7 +92,7 @@
   border: 1px solid #E0E0E0;
   margin-right: 15px;
   margin-bottom: 20px;
-  height: 310px;
+  height: 287px;
   overflow: hidden;
 }
 .tizb-three-list h3{
@@ -105,15 +105,15 @@
 }
 
 .tizb-three-list ul{
-  padding: 15px 10px;
+  padding: 10px;
 }
 .tizb-three-list li{
   font-size: 0;
 }
 .tizb-three-list a{
   font-size: 14px;
-  height: 36px;
-  line-height: 36px;
+  height: 39px;
+  line-height: 39px;
 }
 .tizb-three-list .tz-index-more-01{
   position: absolute;
@@ -167,6 +167,7 @@
 }
 .tzib-nav-01-li-03 a{
   background-image: url(../images/first_index_03.png);
+  background-size: 20px 22px;
 }
 .tzib-nav-01-li-04 a{
   background-image: url(../images/first_index_04.png);
@@ -248,7 +249,7 @@
 .tzib-nav-04 a{
   position: relative;
   display: inline-block;
-  font-size: 14px;
+  font-size: 13px;
   background-image: url(../images/tz-index-51.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
@@ -1396,4 +1397,10 @@
 }
 .tzib-nav-04-footer a:before{
   display: none;
+}
+.ldzc-div-01{
+  padding-top: 15px;
+}
+.ldzc-div-01 *{
+  font-family: 微软雅黑, 黑体, 宋体!important;
 }

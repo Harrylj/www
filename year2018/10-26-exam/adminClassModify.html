@@ -1,0 +1,133 @@
+    <div class="ac-content ac-content-modify">
+      <!-- 主要内容 -->
+      <div class="ac-content-list-div">
+        <!-- .ac-content-list:这是一个列表 -->
+        <div class="ac-content-list ac-content-list-modify">
+          <div class="acc-list-header">
+            <span>18届01班</span>
+          </div>
+          <div class="acc-list-body">
+            <!-- 显示的内容 -->
+            <div class="acc-list-look">
+              <table class="acc-table">
+                <tr>
+                  <td>班级人数</td>
+                  <td>
+                    <div class="abc-div-bg-01">34人</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>任课老师</td>
+                  <td>
+                    <div class="abc-div-bg-01">张家集</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>课程</td>
+                  <td>
+                    <div class="abc-div-bg-02">
+                      <div class="abc-div-bg-left">《大恒科技跌点点滴滴》</div>
+                      <div class="abc-div-bg-right">张家集</div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="abc-div-bg-02">
+                      <div class="abc-div-bg-left">《大恒科技跌点点滴滴》</div>
+                      <div class="abc-div-bg-right">张家集</div>
+                      <div class="clear"></div>
+                    </div>
+                    <div class="abc-div-bg-02">
+                      <div class="abc-div-bg-left">《大恒科技跌点点滴滴》</div>
+                      <div class="abc-div-bg-right">张家集</div>
+                      <div class="clear"></div>
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </div>
+            <!-- 修改的内容 -->
+            <div class="acc-list-modify">
+              <table class="acc-table">
+                <tr>
+                  <td>班级人数</td>
+                  <td>
+                    <p class="abc-div-bg-01">34人</p>
+                    <button class="acc-btn-drxs">导入学生</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>任课老师</td>
+                  <td>
+                    <div class="abc-div-bg-01">
+                      <label>
+                        <select>
+                          <option value="1">项目1</option>
+                          <option value="2">项目1</option>
+                          <option value="3">项目2</option>
+                        </select>
+                      </label>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>课程</td>
+                  <td>
+                    <div class="acc-tjbj-div">
+                      <div class="abc-div-bg-02">
+                        <div class="abc-div-bg-left">《大恒科技跌点点滴滴》</div>
+                        <div class="abc-div-bg-right">李雪</div>
+                        <button class="adc-btn-delete">删除</button>
+                        <div class="clear"></div>
+                      </div>
+                    </div>
+                    <p>
+
+                      <!-- 添加课程就是把这里的内容复制过去 -->
+                      <div class="acc-btn-tjkc-div abc-div-bg-02">
+                        <div class="abc-div-bg-left">
+                          <label>
+                            <select>
+                              <option value="项目1">项目1</option>
+                              <option value="项目2">项目2</option>
+                              <option value="项目3">项目3</option>
+                            </select>
+                          </label>
+                        </div>
+                        <div class="abc-div-bg-right">
+                          <label>
+                            <select>
+                              <option value="项目1">项目1</option>
+                              <option value="项目2">项目2</option>
+                              <option value="项目3">项目3</option>
+                            </select>
+                          </label>
+                        </div>
+                        <div class="clear"></div>
+                      </div>
+                      <button class="acc-btn-tjkc">添加课程</button>
+                    </p>
+                    <p>
+                      <button class="acc-btn-wcxg">完成修改</button>
+                    </p>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+
+
+<script type="text/javascript">
+  $(function() {
+    
+    // 点击完成修改
+    $('.admin-class').on('click', '.acc-btn-wcxg', function () {
+      var class_hover = 'ac-body-hover';
+      $('.admin-class').removeClass('admin-class-modify').children('.ac-body').eq(0).addClass(class_hover).siblings().removeClass(class_hover)
+    })
+
+  })
+</script>

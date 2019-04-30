@@ -36,78 +36,92 @@
 </head>
 <body>
     <a href="swiper.html#slider2" target="_blank">调到第二个页面</a>
-    <div class="swiper-container">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide slide1 " data-hash="slider1">
-                Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1
-                Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1 Slide 1
-            </div>
-            <div class="swiper-slide slide2 " data-hash="slider2">
-                Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2
-                Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2Slide 2
-            </div>
-            <div class="swiper-slide slide3 " data-hash="slider3">
-                Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3
-                Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3Slide 3
-            </div>
-        </div>
-        <!-- 如果需要分页器 -->
-        <div class="swiper-pagination"></div>
+  <div class="swiper-container swiper-container-initialized swiper-container-horizontal">
+    <div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-3900px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="9" style="width: 1920px; margin-right: 30px;">Slide 10</div>
+      <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="width: 1920px; margin-right: 30px;">Slide 1</div>
+      <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 1920px; margin-right: 30px;">Slide 2</div>
+      <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="width: 1920px; margin-right: 30px;">Slide 3</div>
+      <div class="swiper-slide" data-swiper-slide-index="3" style="width: 1920px; margin-right: 30px;">Slide 4</div>
+      <div class="swiper-slide" data-swiper-slide-index="4" style="width: 1920px; margin-right: 30px;">Slide 5</div>
+      <div class="swiper-slide" data-swiper-slide-index="5" style="width: 1920px; margin-right: 30px;">Slide 6</div>
+      <div class="swiper-slide" data-swiper-slide-index="6" style="width: 1920px; margin-right: 30px;">Slide 7</div>
+      <div class="swiper-slide" data-swiper-slide-index="7" style="width: 1920px; margin-right: 30px;">Slide 8</div>
+      <div class="swiper-slide" data-swiper-slide-index="8" style="width: 1920px; margin-right: 30px;">Slide 9</div>
+      <div class="swiper-slide" data-swiper-slide-index="9" style="width: 1920px; margin-right: 30px;">Slide 10</div>
+    <div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="width: 1920px; margin-right: 30px;">Slide 1</div></div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Go to slide 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 3"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 4"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 5"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 6"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 7"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 8"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 9"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Go to slide 10"></span></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next" tabindex="0" role="button" aria-label="Next slide"></div>
+    <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Previous slide"></div>
+  <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
 
-        <!-- 如果需要导航按钮 -->
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
 
-        <!-- 如果需要滚动条 -->
-        <div class="swiper-scrollbar"></div>
-    </div>
-<script src="basic/js/swiper.min.js"></script>
+<script src="swiper3.min.js"></script>
     <script>
-        var mySwiper = new Swiper ('.swiper-container', {
-             direction: 'horizontal',
-             //direction: 'vertical',
-            
-            //布局分栏
-            slidesPerView : 1,
-            
-            centeredSlides : true,
-            
-            autoplay: 22500,     ///2.5S
-            //跳到指定位置
-            //hashnav:true,
-            //视差效果
-            //parallax:true,
-            //是否循环拖动
-            //loop: true,
-            //需要指针手抓效果
-            grabCursor : true,
-
-            // 如果需要分页器
-            pagination: '.swiper-pagination',
-
-            // 如果需要前进后退按钮
-            nextButton: '.swiper-button-next',
-            prevButton: '.swiper-button-prev',
-
-            // 如果需要滚动条
-            scrollbar: '.swiper-scrollbar',
-            
-            /*
-            //切换方块效果
-            effect: 'cube',
-            //方块效果定义
-            cube: {
-                slideShadows: true,
-                shadow: true,
-                shadowOffset: 100,
-                shadowScale: 0.6
-            }
-            */
-           onSlideChangeStart: function(swiper){
-		      alert('事件触发了;');
-		    }
-
-        })
+      
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  
+//      var mySwiper = new Swiper ('.swiper-container', {
+//           direction: 'horizontal',
+//           //direction: 'vertical',
+//          
+//          //布局分栏
+//          slidesPerView : 1,
+//          
+//          centeredSlides : true,
+//          
+//          autoplay: 22500,     ///2.5S
+//          //跳到指定位置
+//          //hashnav:true,
+//          //视差效果
+//          //parallax:true,
+//          //是否循环拖动
+//          //loop: true,
+//          //需要指针手抓效果
+//          grabCursor : true,
+//
+//          // 如果需要分页器
+//          pagination: '.swiper-pagination',
+//
+//          // 如果需要前进后退按钮
+//          nextButton: '.swiper-button-next',
+//          prevButton: '.swiper-button-prev',
+//
+//          // 如果需要滚动条
+//          scrollbar: '.swiper-scrollbar',
+//          
+//          /*
+//          //切换方块效果
+//          effect: 'cube',
+//          //方块效果定义
+//          cube: {
+//              slideShadows: true,
+//              shadow: true,
+//              shadowOffset: 100,
+//              shadowScale: 0.6
+//          }
+//          */
+//         onSlideChangeStart: function(swiper){
+//		      alert('事件触发了;');
+//		    }
+//
+//      })
+//  
+    
+    
     </script>
 </body>
 </html>

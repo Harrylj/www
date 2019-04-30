@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>用电管理</title>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/friend.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.easy-pie-chart.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="css/electricity.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/excanvas.js"></script>
+
+    <script type="text/javascript" src="js/jquery.easy-pie-chart.js"></script>
+
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <style type="text/css">
+
+  </style>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-02-13
+    	描述： .percentage: data-percent属性值表示进度，取值为0~100
+    	      #fibl-item-click: 表示当前点击的弹窗元素
+    	      #select_type_delete: 表示删除的弹层
+    -->
+    <div class="electricity-administration friend-index-list  public-div">
+      <div class="public-header-div bb-header-div">
+        <div class="public-header">
+          <a class="public-header-return bbh-return" href="#"></a>
+          <h1>用电管理</h1>
+          <h2>5栋3单元1204</h2>
+          <div class="public-header-right"></div>
+        </div>
+      </div>
+      <div class="fil-body">
+        <div class="filb-list-div-father">
+          <div class="filb-list-div">
+
+            <div class="fibl-item">
+              <div class="filb-item-percentage">
+                <div class="percentage" data-percent="25"><span>25%</span></div>
+              </div>
+              <h2>电冰箱</h2>
+              <h3>本月电量不超过  400  kw</h3>
+              <p>提示：时间还没过半，电费已经快要超标了</p>
+              <div class="fibl-item-right">
+               
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+            <div class="fibl-item">
+              <div class="filb-item-percentage">
+                <div class="percentage" data-percent="25"><span>25%</span></div>
+              </div>
+              <h2>电冰箱</h2>
+              <h3>本月电量不超过  400  kw</h3>
+              <p>提示：时间还没过半，电费已经快要超标了</p>
+              <div class="fibl-item-right">
+               
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+            <div class="fibl-item">
+              <div class="filb-item-percentage">
+                <div class="percentage" data-percent="25"><span>25%</span></div>
+              </div>
+              <h2>电冰箱</h2>
+              <h3>本月电量不超过  400  kw</h3>
+              <p>提示：时间还没过半，电费已经快要超标了</p>
+              <div class="fibl-item-right">
+               
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+            <div class="fibl-item">
+              <div class="filb-item-percentage">
+                <div class="percentage" data-percent="25"><span>25%</span></div>
+              </div>
+              <h2>电冰箱</h2>
+              <h3>本月电量不超过  400  kw</h3>
+              <p>提示：时间还没过半，电费已经快要超标了</p>
+              <div class="fibl-item-right">
+               
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+
+            
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--
+        作者：648267773@qq.com
+        时间：2019-01-17
+        描述：弹出层
+      -->
+
+      <div id="select_type_delete" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-01">
+          <li class="select_type_over_li">是否删除，删除后不可恢复</li>
+          <li class="mui-table-view-cell">
+            <a href="#select_type_delete"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_delete"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </body>
+  <script type="text/javascript">
+    mui.init({
+      swipeBack: true //启用右滑关闭功能
+    });
+    //事件绑定 对象 方法 子元素 回调函数 - 标识点击的元素
+    mui('body').on('tap', '.fibl-item-btn', function(e) {
+      // 重置所有的按钮id
+      $('.fibl-item-btn').attr('id', '');
+      // 给点击的元素添加标识 detail为当前popover元素
+      e.detail.target.id = "fibl-item-click";
+      // console.log('shown', e.detail.target.id="fibl-item-click");
+    });
+
+    // 响应获取的点击事件
+    mui('.friend-index-list').on('tap', '.mui-table-view-01 li>a', function() {
+      var a = this,
+        parent;
+      //根据点击按钮，反推当前是哪个actionsheet
+      for(parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+        if(parent.classList.contains('mui-popover-action')) {
+          break;
+        }
+      }
+      //关闭actionsheet
+      mui('#' + parent.id).popover('toggle');
+
+      var click_btn = $('#fibl-item-click'), // 触发弹窗的按钮 --- 有且只存在一个
+        click_html_01 = $('.fibl-item-btn-over').eq(0), // 结束邀请
+        click_html_02 = $('.fibl-item-btn-delete').eq(0), // 删除
+        class_father = 'fibl-item', // 祖父元素的class
+        class_father_over = 'fibl-item-over', // 祖父元素失效class
+        class_sibling_round = 'fibl-item-right-img'; // 圆
+      // a.children[0].innerHTML --- 当前选择的内容
+      
+      //var abc = $('#fibl-item-click').parents('.fibl-item').index();  // 索引，第几个
+      // console.log(abc)
+      
+      // 在这里判断点击的是结束邀请还是删除
+      // 结束邀请  ---  结束邀请后，按钮变为默认按钮
+      if(click_btn.html() == click_html_01.html()) {
+        // 隐藏自身，显示默认按钮
+        click_btn.hide().siblings('.' + class_sibling_round).show();
+        // 改变父元素状态,取消进度
+        click_btn.parents('.' + class_father).addClass(class_father_over)
+          .children('.filb-item-percentage').children('.percentage').data('easyPieChart').update(100);
+        // 重置进度条时间
+        //$('.percentage').data('easyPieChart').update(100);
+
+      }
+      // 删除
+      else if(click_btn.html() == click_html_02.html()) {
+        // 删除父元素
+        click_btn.parents('.' + class_father).remove();
+      } else {
+        alert('BUG了')
+      }
+
+    })
+    // 委托跳转
+    mui('.friend-index-list').on('tap', 'a', function() {
+      window.top.location.href = this.href;
+    });
+
+    $(function() {
+      //初始化标题
+
+
+      // document.title="123"
+
+//    // 进度条时间
+//    $('.percentage').easyPieChart({
+//      animate: 1000
+//    });
+      // 进度条
+//    $('.percentage').easyPieChart({
+//      barColor: function(percent) {
+//        percent /= 100;
+//        return "rgb(" + Math.round(255 * (1 - percent)) + ", " + Math.round(255 * percent) + ", 0)";
+//      },
+//      trackColor: 'red',
+//      scaleColor: false,
+//      lineCap: 'butt',
+//      lineWidth: 15,
+//      animate: 1000
+//    });
+
+
+      // 给进度条上色，按照顺序来上色。这里先定义一个数组，超过这些颜色则使用补充色
+      $('.fibl-item').each(function(){
+        var this_index = $(this).index(),
+            e_jdt = $(this).children('.filb-item-percentage').children('.percentage');
+        var color_array = ['#EC6785','#5F86F7','#1DD7CC'],  // 环的颜色
+            color_array_more = '#5F86F7',  // 环的颜色,补充色，上面数组不够时补充
+            color_trackColor = '#f0f0f0', // 环的底色
+            color_scaleColor = 'transparent',   // 外环边缘色
+            this_width = 6,  // 环的宽度
+            this_size = 67,  // 环的大小
+            this_time = 1000; // 环的动画时间
+            
+        // 使用数组里的颜色
+        if(this_index < color_array.length  )
+        {
+          e_jdt.easyPieChart({
+              barColor: function(percent) {
+                percent /= 100;
+                return "rgb(" + Math.round(255 * (1 - percent)) + ", " + Math.round(255 * percent) + ", 0)";
+              },
+              barColor: color_array[this_index],  // 环的颜色
+              trackColor:  color_trackColor, // 环的底色
+              scaleColor: color_scaleColor,   // 外环边缘色
+              animate: this_time,
+              size: this_size,
+              lineWidth: this_width,
+          });
+        }
+        // 使用补充色
+        else{
+          e_jdt.easyPieChart({
+              barColor: function(percent) {
+                percent /= 100;
+                return "rgb(" + Math.round(255 * (1 - percent)) + ", " + Math.round(255 * percent) + ", 0)";
+              },
+              barColor: color_array_more,  // 环的颜色
+              trackColor:  color_trackColor, // 环的底色
+              scaleColor: color_scaleColor,   // 外环边缘色
+              animate: this_time,
+              size: this_size,
+              lineWidth: this_width,
+          });
+        }
+        
+        
+        
+      })
+
+
+      // 点击邀请列表右侧的圆点
+      $('.fibl-item-right-img').on('click', function() {
+        var this_over = $(this).siblings('.fibl-item-btn-delete'), //同级删除按钮
+          this_delete = $(this).siblings('.fibl-item-btn-over'); //同级结束邀请按钮
+        // 自身隐藏
+        $(this).hide();
+        // 判断是现实结束邀请还是删除按钮
+        // 显示删除
+        if(!$(this).parents('.fibl-item').hasClass('fibl-item-over')) {
+          this_delete.show();
+          this_over.hide();
+        }
+        // 显示结束邀请
+        else {
+          this_delete.hide();
+          this_over.show();
+        }
+      })
+    })
+  </script>
+
+</html>

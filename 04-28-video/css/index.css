@@ -1,0 +1,195 @@
+html,
+body {
+  background-color: #EBEBEB;
+}
+.vi-header {
+  position: relative;
+  background-color: #4a5c70;
+}
+.vi-header ul {
+  display: flex;
+  margin-left: 400px;
+}
+.vi-header li {
+  margin-right: 10px;
+}
+.vi-header li a {
+  line-height: 100px;
+  font-size: 36px;
+  color: white;
+  letter-spacing: 2px;
+  padding: 0 30px;
+}
+.vi-header .vi-logo {
+  position: absolute;
+  top: 50% ;
+  left: 30px;
+  height: 70px;
+  margin-top: -35px;
+}
+.vi-header .vi-search {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  margin-top: -25px;
+  width: 50px;
+  height: 50px;
+  background-image: url(../images/video-02.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.vi-body {
+  position: relative;
+  padding-bottom: 50px;
+}
+.vib-one {
+  padding-top: 80px;
+  padding-bottom: 50px;
+  position: relative;
+  background-image: url(../images/video-07.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom left;
+}
+.vib-one h2 {
+  padding-top: 30px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.vib-one h3 {
+  font-size: 30px;
+}
+.vib-one h2,
+.vib-one h3 {
+  line-height: 50px;
+  color: white;
+  text-align: center;
+}
+.vib-two {
+  margin: 30px 0;
+  padding: 20px 30px;
+}
+.vib-two h1 {
+  color: #515151;
+  font-size: 40px;
+  line-height: 70px;
+}
+.vib-two-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0 30px 0;
+}
+.vib-two-list a {
+  width: 31%;
+}
+.vib-two-item {
+  margin: auto;
+  background-color: white;
+  padding-bottom: 10px;
+}
+.vib-two-item h3,
+.vib-two-item h4 {
+  color: #515151;
+  font-size: 22px;
+  line-height: 40px;
+  padding: 0 15px;
+}
+.vib-two-item h3 {
+  font-weight: bold;
+  padding-top: 10px;
+}
+.vib-three {
+  position: relative;
+  display: flex;
+  padding: 20px 30px;
+  background-color: white;
+  justify-content: space-between;
+}
+.vib-three-left {
+  width: 35%;
+}
+.vib-three-left,
+.vib-three-right {
+  position: relative;
+  height: 300px;
+}
+.vib-three-left ul {
+  position: absolute;
+  display: flex;
+  left: 0;
+  bottom: 40px;
+}
+.vib-three-left ul li {
+  margin-right: 10px;
+}
+.vib-three-left ul li a {
+  font-size: 24px;
+  line-height: 36px;
+  color: #828282;
+}
+.vib-three-left .vib-three-gy {
+  position: absolute;
+  left: 0;
+  bottom: 70px;
+  color: #515151;
+  font-size: 24px;
+  line-height: 36px;
+}
+.vib-three-right {
+  width: 55%;
+}
+.vib-three-right p {
+  position: absolute;
+  right: 10%;
+  bottom: 40px;
+  color: #515151;
+  font-size: 22px;
+  line-height: 36px;
+  text-indent: 2em;
+}
+.vib-swiper {
+  position: relative;
+  text-align: center;
+  width: 1400px;
+  height: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.vib-swiper .swiper-container {
+  height: 100%;
+  width: 100%;
+}
+.vib-swiper .swiper-container img {
+  display: block;
+  width: 100%;
+}
+.vib-swiper .swiper-container .swiper-slide {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+.vib-swiper .swiper-container .swiper-pagination-clickable .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  border: 1px solid white;
+  margin: 20px 0;
+}
+.vib-swiper .swiper-container .swiper-pagination-bullet-active {
+  background-color: white;
+}
+.vib-one-bg {
+  display: block;
+  width: 100%;
+}
+.vib-three {
+  display: flex;
+  background-color: white;
+}
+.vi-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 40px;
+}
+.vi-footer a {
+  margin-right: 30px;
+}

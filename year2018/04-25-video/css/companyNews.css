@@ -1,0 +1,100 @@
+.index {
+  padding-top: 0;
+  background: none !important;
+  padding-bottom: 0;
+}
+<<<<<<< HEAD
+body {
+  background-color: white;
+}
+.company-news {
+=======
+body,
+html {
+  height: auto;
+}
+body {
+  overflow-x: hidden;
+  background-color: white;
+}
+.company-news {
+  position: relative;
+  padding-top: 13px;
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
+  display: flex;
+  justify-content: space-between;
+}
+.company-news .cn-left {
+  width: 780px;
+}
+.company-news .cn-left h1 {
+  font-size: 28px;
+  line-height: 50px;
+  color: black;
+}
+.company-news .cn-left h5 {
+  font-size: 14px;
+  line-height: 24px;
+  padding: 5px 0;
+  color: #c8c8c8;
+}
+.company-news .cn-left h4 {
+  font-size: 16px;
+  color: #696969;
+  line-height: 32px;
+<<<<<<< HEAD
+  padding: 15px 0;
+}
+.company-news .cn-left img {
+  margin: 10px 0;
+=======
+  padding: 10px 0;
+}
+.company-news .cn-left img {
+  margin: 10px 0;
+  width: 100%!important;
+>>>>>>> 214275f83e3bbb34e480b496b55c0fb1dc343785
+}
+.company-news .cn-left h2 {
+  color: #f32424;
+  line-height: 50px;
+  font-size: 22px;
+}
+.company-news .cn-left h3 {
+  color: #303030;
+  line-height: 28px;
+  font-size: 16px;
+}
+.company-news .cn-left p {
+  line-height: 24px;
+  font-size: 16px;
+  color: #303030;
+}
+.company-news .cn-right {
+  position: relative;
+  top: 120px;
+  width: 290px;
+}
+.company-news .cn-right h1 {
+  padding-left: 30px;
+  font-size: 18px;
+  line-height: 32px;
+  background-image: url(../images/cu-right-logo.png);
+  background-repeat: no-repeat;
+  background-size: 26px 26px;
+  background-position: 0 center;
+}
+.company-news .cn-right .cnr-nav {
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+.company-news .cn-right .cnr-nav img {
+  margin: 5px 0;
+}
+.company-news .cn-right .cnr-nav p {
+  color: #303030;
+  line-height: 24px;
+  padding: 5px 0;
+  font-size: 14px;
+}

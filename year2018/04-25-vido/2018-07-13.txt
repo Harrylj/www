@@ -1,8 +1,0 @@
-1.
-index-arrow.png添加
-
-images/new/new-43.png
-替换成
-<span class="index-span-more">查看更多</span>
-
-2.css替换

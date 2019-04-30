@@ -2,23 +2,19 @@
 .ca-two-div, body .ca-two-div {
   display: none;
 }
-
 .center-administrators
 .ca-add-div, body .ca-add-div {
   display: none;
 }
-
 .center-administrators
 .ca-add-div-hover, body .ca-add-div-hover {
   display: block;
 }
-
 .center-administrators
 .abc-div-bg-left, body .abc-div-bg-left {
   float: left;
   width: 240px;
 }
-
 .center-administrators
 .abc-div-bg-right, body .abc-div-bg-right {
   float: left;
@@ -26,7 +22,6 @@
   margin-left: 10px;
   width: 90px;
 }
-
 .center-administrators
 .abc-div-bg-left
 , .center-administrators
@@ -37,34 +32,28 @@
   padding: 0 10px;
   background-color: #f5f5f5;
 }
-
 .center-administrators
 .acc-list-modify, body .acc-list-modify {
   display: none;
 }
-
 .center-administrators
 .ac-top, body .ac-top {
   position: relative;
   min-height: 120px;
   background-color: white;
 }
-
 .center-administrators
 .ac-top .ac-content-list, body .ac-top .ac-content-list {
   display: none;
 }
-
 .center-administrators
 .ac-top .acc-list-modify, body .ac-top .acc-list-modify {
   display: block;
 }
-
 .center-administrators
 .ac-top .acc-list-look, body .ac-top .acc-list-look {
   display: none;
 }
-
 .center-administrators
 .ca-xtxx-textatea
 , .center-administrators
@@ -76,7 +65,6 @@
   height: 100px;
   resize: none;
 }
-
 .center-administrators
 .xtxx-table-01
 , .center-administrators
@@ -88,7 +76,6 @@
   width: 100%;
   background-color: white;
 }
-
 .center-administrators
 .xtxx-table-01
 td:first-child, .center-administrators
@@ -102,7 +89,6 @@ td:first-child, body .acc-table td:first-child {
   padding-right: 12px;
   text-align: right;
 }
-
 .center-administrators
 .xtxx-table-01
 td, .center-administrators
@@ -115,7 +101,6 @@ td, body .acc-table td {
   padding-left: 8px;
   padding-bottom: 8px;
 }
-
 .center-administrators
 .ca-xtxx-setting
 , .center-administrators
@@ -124,49 +109,40 @@ td, body .acc-table td {
   background-color: #f7f7f7;
   margin-bottom: 10px;
 }
-
 .center-administrators
 .csbr-body-xxgl, body .csbr-body-xxgl {
   padding: 15px;
 }
-
 .center-administrators
 .ca-xtxx-lsxx, body .ca-xtxx-lsxx {
   padding: 15px;
 }
-
 .center-administrators
 .ca-xtxx-lsxx .info-footer, body .ca-xtxx-lsxx .info-footer {
   margin: 0 -15px;
 }
-
 .center-administrators
 .ca-xjkc-ts, body .ca-xjkc-ts {
   color: red;
 }
-
 .center-administrators
 .ca-xjkc-content, body .ca-xjkc-content {
   padding: 15px;
   background-color: #f7f7f7;
 }
-
 .center-administrators
 .ca-xjkc-ts, body .ca-xjkc-ts {
   display: none;
 }
-
 .center-administrators
 .xjkc-table, body .xjkc-table {
   margin-bottom: 10px;
 }
-
 .center-administrators
 .tcn-tmxq-number, body .tcn-tmxq-number {
   display: inline-block;
   color: #e60012;
 }
-
 .center-administrators
 .ac-content-disable, body .ac-content-disable {
   opacity: 0.5;
@@ -176,7 +152,6 @@ td, body .acc-table td {
 , .acc-btn-tjkc-div .abc-div-bg-right {
   padding: 0;
 }
-
 .acc-btn-tjkc-div .abc-div-bg-left select
 , .acc-btn-tjkc-div .abc-div-bg-left option {
   width: 240px;
@@ -185,3 +160,30 @@ td, body .acc-table td {
 .abc-div-bg-02 {
   margin-bottom: 10px;
 }
+
+.ac-body {
+  display: none;
+}
+
+.ac-body-hover {
+  display: block;
+}
+
+.ac-content-list-modify .acc-list-look
+, .ac-content-list-modify .ac-btn-xgbj
+, .ac-content-list-modify .ac-btn-scbj {
+  display: none;
+}
+.ac-content-list-modify .acc-list-modify {
+  display: block;
+}
+
+.admin-class-modify .ac-content {
+  display: none;
+}
+.admin-class-modify .ac-content-list-modify
+, .admin-class-modify .ac-content-modify {
+  display: block;
+}
+
+/*# sourceMappingURL=centerAdministrators.css.map */
