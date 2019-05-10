@@ -49,7 +49,10 @@
         	描述：.esb-list 添加 .esb-list-hover:表示当前对应显示的内容
         -->
         <div class="esb-list esb-list-hover">
-          <div class="esb-img"><img class="img-100" src="images/e_02.png" /></div>
+          <div class="esb-img">
+            <!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_01"></div>
+          </div>
           <div class="swiper-container esb-swiper esb-swiper-01">
             <div class="swiper-wrapper">
               <div class="swiper-slide" data-hash="slider1">
@@ -97,7 +100,10 @@
           </div>
         </div>
         <div class="esb-list">
-          <div class="esb-img"><img class="img-100" src="images/e_02.png" /></div>
+          <div class="esb-img">   
+          <!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_02"></div>
+          </div>
           <div class="swiper-container esb-swiper esb-swiper-02">
             <div class="swiper-wrapper">
               <div class="swiper-slide" data-hash="slider1">
@@ -145,7 +151,9 @@
           </div>
         </div>
         <div class="esb-list">
-          <div class="esb-img"><img class="img-100" src="images/e_02.png" /></div>
+          <div class="esb-img"><!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_03"></div>
+          </div>
           <div class="swiper-container esb-swiper esb-swiper-03">
             <div class="swiper-wrapper">
               <div class="swiper-slide" data-hash="slider1">
@@ -193,7 +201,9 @@
           </div>
         </div>
         <div class="esb-list">
-          <div class="esb-img"><img class="img-100" src="images/e_02.png" /></div>
+          <div class="esb-img"><!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_04"></div>
+          </div>
           <div class="swiper-container esb-swiper esb-swiper-04">
             <div class="swiper-wrapper">
               <div class="swiper-slide" data-hash="slider1">
@@ -244,7 +254,8 @@
       </div>
 
     </div>
-
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts_es.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
@@ -258,6 +269,10 @@
         observer:true,//修改swiper自己或子元素时，自动初始化swiper
         observeParents:true//
       })
+     
+     
+     
+     
      
       $(function() {
         // 点击顶部的时段筛选按钮

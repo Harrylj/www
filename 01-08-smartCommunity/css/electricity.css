@@ -399,3 +399,15 @@
   background-color: #F5F5F5;
   margin-bottom: 5px;
 }
+#echarts-e-01 {
+  width: 320px
+      height: 300px;
+}
+#echarts_es_01,
+#echarts_es_02,
+#echarts_es_03,
+#echarts_es_04 {
+  width: 320px;
+  height: 300px;
+  margin: auto;
+}

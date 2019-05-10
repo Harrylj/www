@@ -2,6 +2,14 @@ html,
 body {
   background-color: #EBEBEB;
 }
+@font-face {
+  font-family: fontHY;
+  src: url('../font/HYCuHeiJ.ttf');
+}
+@font-face {
+  font-family: fontFZ;
+  src: url('../font/方正粗黑宋简体.ttf');
+}
 .vi-header {
   position: relative;
   background-color: #4a5c70;
@@ -95,8 +103,11 @@ body {
   padding: 0 15px;
 }
 .vib-two-item h3 {
-  font-weight: bold;
+  font-family: fontFZ;
   padding-top: 10px;
+}
+.vib-two-item h4 {
+  font-family: "微软雅黑";
 }
 .vib-three {
   position: relative;
@@ -123,6 +134,7 @@ body {
   margin-right: 10px;
 }
 .vib-three-left ul li a {
+  font-family: fontHY;
   font-size: 24px;
   line-height: 36px;
   color: #828282;
@@ -134,6 +146,7 @@ body {
   color: #515151;
   font-size: 24px;
   line-height: 36px;
+  font-family: fontHY;
 }
 .vib-three-right {
   width: 55%;
@@ -146,6 +159,7 @@ body {
   font-size: 22px;
   line-height: 36px;
   text-indent: 2em;
+  font-family: "微软雅黑";
 }
 .vib-swiper {
   position: relative;

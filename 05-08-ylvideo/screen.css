@@ -1,0 +1,69 @@
+body,html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+.index{
+  position: relative;
+  height: 100%;
+  
+  
+}
+.clear{
+  clear: both;
+}
+.a-div{
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  border: 1px solid #CCCCCC;
+}
+#a1
+,#a2
+,#a3
+,#a4{
+  top: 0;
+}
+#a5
+,#a6
+,#a7
+,#a8{
+  top: 25%;
+}
+#a9
+,#a10
+,#a11
+,#a12{
+  top: 50%;
+}
+#a13
+,#a14
+,#a15
+,#a16{
+  top: 75%;
+}
+
+#a1
+,#a5
+,#a9
+,#a13{
+  left: 0;
+}
+#a2
+,#a6
+,#a10
+,#a14{
+  left: 25%;
+}
+#a3
+,#a7
+,#a11
+,#a15{
+  left: 50%;
+}
+#a4
+,#a8
+,#a12
+,#a116{
+  left: 75%;
+}

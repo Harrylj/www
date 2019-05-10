@@ -2384,7 +2384,12 @@
         //  $('.ycgj-02').click();
 
         $(function () {
-
+            
+            // 弹窗关闭按钮随着滚动条滚动发生变化
+            $('.modal-content').scroll(function(){
+              $(this).children('.close').css('top',$(this).scrollTop()-12)
+            })
+            
             // 04-16
             // 点击地图选项弹出选中的内容
             $('.map-header-select-02').change(function(){
