@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://www.swiper.com.cn/demo/300-thumbs-gallery.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="./Swiper demo_files/swiper.min.css">
+
+  <!-- Demo styles -->
+  <style>
+    html, body {
+      position: relative;
+      height: 100%;
+    }
+    body {
+      background: #000;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color:#000;
+      margin: 0;
+      padding: 0;
+    }
+    .two-swiper-fahter{
+      width: 600px;
+      height: 400px;
+    }
+    .swiper-container {
+      width: 100%;
+      height: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .swiper-slide {
+      background-size: cover;
+      background-position: center;
+    }
+    .gallery-top {
+      height: 80%;
+      width: 100%;
+    }
+    .gallery-thumbs {
+      height: 20%;
+      box-sizing: border-box;
+      padding: 10px 0;
+    }
+    .gallery-thumbs .swiper-slide {
+      width: 25%;
+      height: 100%;
+      opacity: 0.4;
+    }
+    .gallery-thumbs .swiper-slide-thumb-active {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- Swiper -->
+  <div class="two-swiper-fahter">
+    <div class="swiper-container gallery-top swiper-container-initialized swiper-container-horizontal">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-active"></div>
+        <div class="swiper-slide swiper-slide-next"></div>
+        <div class="swiper-slide" ></div>
+        <div class="swiper-slide" ></div>
+      </div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next swiper-button-white" tabindex="0" role="button" aria-label="Next slide" aria-disabled="false"></div>
+      <div class="swiper-button-prev swiper-button-white swiper-button-disabled" tabindex="0" role="button" aria-label="Previous slide" aria-disabled="true"></div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+    <div class="swiper-container gallery-thumbs swiper-container-initialized swiper-container-horizontal swiper-container-free-mode swiper-container-thumbs">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide swiper-slide-visible swiper-slide-active swiper-slide-thumb-active" style="background-image: url(images/two/swiper_01.png);   "></div>
+        <div class="swiper-slide swiper-slide-visible swiper-slide-next" style="background-image: url(images/two/swiper_02.png); );   "></div>
+        <div class="swiper-slide swiper-slide-visible" style="background-image: url(images/two/swiper_03.png); );   "></div>
+        <div class="swiper-slide swiper-slide-visible" style="background-image: url(images/two/swiper_04.png); );   "></div>
+      </div>
+    <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+  </div>
+  
+
+  <!-- Swiper JS -->
+  <script src="./Swiper demo_files/swiper.min.js.下载"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+      observer:true, //修改swiper自己或子元素时，自动初始化swiper
+      observeParents:true, //修改swiper的父元素时，自动初始化swiper
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
+  </script>
+
+
+</body></html>

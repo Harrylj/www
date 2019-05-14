@@ -5,6 +5,7 @@ html {
   width: 100%;
   height: 100%;
   position: relative;
+  min-height: 1080px;
 }
 .index {
   width: 1920px;
@@ -168,7 +169,7 @@ html {
   background-color: #292e33;
   border-radius: 4px;
   margin-bottom: 20px;
-  padding: 10px 20px;
+  padding: 18.5px 20px;
 }
 .ibl-item-more {
   cursor: pointer;
@@ -570,9 +571,6 @@ html {
   max-width: 1920px!important;
   width: 98%;
 }
-.index-layer .modal-content {
-  height: 980px;
-}
 .index-layer .close {
   position: absolute;
   top: -12px;
@@ -580,7 +578,7 @@ html {
   z-index: 9999;
 }
 .ibl-item-progress-div .progress {
-  margin: 8px 0;
+  margin: 15px 0;
   height: 6px;
   background-color: #363C43;
 }
@@ -758,6 +756,7 @@ html {
   height: 40px;
   line-height: 40px;
   overflow: hidden;
+  cursor: pointer;
 }
 .ibrit-item h4:before,
 .ibrit-item-three h4:before {
@@ -2049,6 +2048,7 @@ html {
   z-index: 999999999;
 }
 .modal-content-ycgj {
+  height: 980px;
   overflow-y: scroll;
 }
 .modal-content-ycgj select {
@@ -2250,6 +2250,7 @@ html {
   z-index: 99;
   width: 325;
   height: 300px;
+  border: 1px solid #CCCCCC;
 }
 .map-header-select {
   position: absolute;
@@ -2341,14 +2342,21 @@ html {
   cursor: pointer;
   position: relative;
   top: -150%;
-  left: -10%;
+  left: -15%;
   width: 2000px;
+  transform: rotate(11.9deg);
 }
-.two-sfz-cdgl-left {
+.two-sfz-cdgl-left,
+.two-sfz-cdgl-right {
   position: absolute;
-  left: 0;
   top: 0;
   z-index: 999999999;
+}
+.two-sfz-cdgl-left {
+  left: 0;
+}
+.two-sfz-cdgl-right {
+  right: 0;
 }
 .two-fwq-img-more {
   position: relative;
@@ -2367,11 +2375,10 @@ html {
 }
 .two-dm-more {
   position: absolute;
-  left: 66%;
-  top: 55%;
+  left: 46%;
+  top: 40%;
   width: 80px;
   height: 80px;
-  border: 1px solid red;
 }
 #myModalDM_Warn .mb-modal-content {
   background-color: white;
@@ -2386,4 +2393,56 @@ html {
   color: #6b6b6b;
   width: 100%;
   padding-left: 20px;
+}
+.two-fwq-hover {
+  position: absolute;
+  left: 40%;
+  top: 20%;
+  width: 600px;
+  height: 200px;
+  z-index: 99;
+}
+.two-ycgj-content {
+  margin-top: 30px;
+  margin-left: 20px;
+}
+.two-swiper-fahter {
+  width: 100%;
+  height: 260px;
+  border: 1px solid #CCCCCC;
+}
+.two-swiper-fahter .swiper-container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.two-swiper-fahter .swiper-slide {
+  background-size: cover;
+  background-position: center;
+}
+.two-swiper-fahter .gallery-top {
+  height: 75%;
+  width: 100%;
+}
+.two-swiper-fahter .gallery-thumbs {
+  height: 25%;
+  box-sizing: border-box;
+  padding: 10px 0;
+}
+.two-swiper-fahter .gallery-thumbs .swiper-slide {
+  width: 25%;
+  height: 100%;
+  opacity: 0.4;
+}
+.two-swiper-fahter .gallery-thumbs .swiper-slide-thumb-active {
+  opacity: 1;
+}
+.two-swiper-fahter .swiper-button-next,
+.two-swiper-fahter .swiper-button-prev {
+  background-color: rgba(0, 0, 0, 0.4);
+  background-size: 13.5px 22px;
+}
+.two-swiper-fahter .drivingPlayer {
+  width: 100%;
+  height: 100%;
 }
