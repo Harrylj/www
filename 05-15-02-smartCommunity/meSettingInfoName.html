@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>昵称设置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+  </head>
+  <style type="text/css">
+  	html,body{
+  	  background-color: #F5F5F5;
+  	}
+  </style>
+  <body>
+    <div class="house-detail-address-modify public-div">
+      <div class="hdam-body">
+        <div class="hdam-body-modify">
+          <input class="hdam-input-address" type="text" placeholder="请输入昵称" />
+          <div class="hdam-btn-clear"></div>
+        </div>
+        <div class="public-btn-04">确定</div>
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+     
+      $(function(){
+        // 点击清空
+        $('.hdam-btn-clear').on('click',function(){
+           $('.hdam-input-address').val('');
+           alert('删除成功')
+        })
+        
+        
+      })
+    </script>
+
+  </body>
+
+</html>

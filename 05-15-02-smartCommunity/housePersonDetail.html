@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>房屋成员详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+
+  </head>
+  <body>
+    <!--
+      作者：648267773@qq.com
+      时间：2019-01-16
+      描述：
+        #hudn-btn-delete-click: 表示点击删除的按钮
+    -->
+    <div class="house-person-detail house-detail public-div">
+      <div class="hpd-body">
+        <div class="hpd-info">
+          <img class="hpd-img"  src="images/user-01.jpg"/>
+          <div class="hpd-type-user">家人</div>
+          <h1>jdjdhhsh哈哈</h1>
+          <h2>九龙湖史诗级5栋三单元223</h2>
+          <h3>18200166593</h3>
+        </div>
+        <div class="hpd-more">
+          <div class="hpd-btn hpd-btn-modify">修改</div>
+          <a href="#select_type_delete" class="hpd-btn hpd-btn-delete">删除</a>
+          <div class="hpd-btn hpd-btn-chat">聊天</div>
+        </div>
+      </div>
+      
+      
+      
+      <div id="select_type_delete" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-02">
+          <li class="select_type_li">是否删除用户</li>
+          <li class="mui-table-view-cell">
+            <a href="#"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_delete"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    
+
+  
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      
+      //事件绑定 对象 方法 子元素 回调函数 - 标识点击的元素
+      mui('body').on('tap', '.hudn-btn-delete', function(e) {
+          // 给点击的元素添加标识 detail为当前popover元素
+          e.detail.target.id="hudn-btn-delete-click";
+          // console.log('shown', e.detail.target.id="fibl-item-click");
+      });
+      // 删除住户
+      mui('.house-detail').on('tap', '.mui-table-view-02 li>a', function() {
+        var a = this,
+          parent;
+        //根据点击按钮，反推当前是哪个actionsheet
+        for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+          if (parent.classList.contains('mui-popover-action')) {
+            break;
+          }
+        }
+        //关闭actionsheet
+        mui('#' + parent.id).popover('toggle');
+        // 改变房屋类型--
+        // $('#hudn-btn-delete-click').parents('.hudn-user-item').remove();
+        alert('这里删除的')
+      })
+      
+    </script>
+
+  </body>
+
+</html>

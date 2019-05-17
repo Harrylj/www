@@ -1,0 +1,413 @@
+.electricity .public-header-div {
+  overflow: initial ;
+  height: inherit;
+  padding: 5px;
+  background-color: #F7F7FB;
+}
+.electricity .public-header-div h1 {
+  line-height: 24px;
+}
+.electricity .public-header-div h2 {
+  color: #686868;
+  font-size: 13px;
+  text-align: center;
+  line-height: 18px;
+}
+.electricity .public-header-right {
+  background-image: url(../images/e_Statistics_icon@2x.png);
+  background-size: 21px 21px;
+}
+.e-header {
+  position: relative;
+}
+.e-header .e-header-one {
+  margin: 15px 20px;
+  padding: 15px 20px;
+  background-color: white;
+  border-radius: 6px;
+  background-image: url(../images/e_Rise_button@2x.png);
+  background-size: 34px 34px;
+  background-position: 92% center;
+  background-repeat: no-repeat;
+}
+.e-header .e-header-one h2 {
+  color: #1DD7CC;
+  font-size: 26px;
+  line-height: 32px;
+}
+.e-header .e-header-one p {
+  color: #686868;
+  font-size: 13px;
+  line-height: 24px;
+}
+.e-body {
+  position: relative;
+  padding: 10px 20px;
+  background-color: white;
+}
+.e-body-top {
+  display: flex;
+  justify-content: space-between;
+}
+.e-body-top h2 {
+  font-size: 18px;
+  color: #020202;
+  font-weight: bold;
+}
+.e-body-top h2,
+.e-body-top .ebt-admin {
+  line-height: 60px;
+}
+.ebt-admin {
+  display: inline-block;
+  padding-right: 15px;
+  background-image: url(../images/arrow@2x.png);
+  background-size: 6px 10px;
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: 13px;
+  color: #A4A4A4;
+}
+.e-body-list {
+  position: relative;
+}
+.e-body-item {
+  position: relative;
+  padding: 15px  60px  15px 80px ;
+}
+.e-body-item h2 {
+  display: inline-block;
+  padding-right: 26px;
+  color: #020202;
+  font-size: 17px;
+  background-repeat: no-repeat;
+  background-size: 10px 10px;
+  background-position: right center;
+  font-weight: bold;
+}
+.e-body-item p {
+  color: #686868;
+  font-size: 13px;
+}
+.e-body-item h2,
+.e-body-item p {
+  line-height: 28px;
+}
+.e-body-item:before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -34px;
+  height: 68px;
+  width: 68px;
+  z-index: 1;
+  content: " ";
+  color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.esb-item:before {
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  margin-top: -21px;
+  height: 42px;
+  width: 42px;
+  z-index: 1;
+  content: " ";
+  color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.e-body-item:before,
+.esb-item:before {
+  background-image: url(../images/e_ice_box@2x.png);
+}
+.e-body-item-dbx:before,
+.esb-item-dbx:before {
+  background-image: url(../images/e_ice_box@2x.png);
+}
+.e-body-item-xyj:before,
+.esb-item-xyj:before {
+  background-image: url(../images/e_Washing_machine@2x.png);
+}
+.e-body-item-wbl:before,
+.esb-item-wbl:before {
+  background-image: url(../images/e_Microwave_Oven@2x.png);
+}
+.e-body-item:nth-child(1):before {
+  background-color: #fff6f6;
+}
+.e-body-item:nth-child(2):before {
+  background-color: #f2fdfd;
+}
+.e-body-item:nth-child(3):before {
+  background-color: #f9f9f9;
+}
+.ebi-num {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  color: #818181;
+  margin-top: -20px;
+  line-height: 40px;
+  width: 60px;
+  height: 40px;
+  font-size: 15px;
+  text-align: right;
+}
+.e-body-item-rise .ebi-num {
+  color: #EB4F4F;
+}
+.e-body-item-rise h2 {
+  background-image: url(../images/e_Rise_button_s@2x.png);
+}
+.e-body-item-decline .ebi-num {
+  color: #1DD7CC;
+}
+.e-body-item-decline h2 {
+  background-image: url(../images/e_decline_button_s@2x.png);
+}
+.electricity-statistics .public-header-div {
+  background-color: #F7F7FB;
+}
+.esh-ul {
+  display: flex;
+  width: 86%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.esh-ul li {
+  background-color: #F0F0F0;
+  line-height: 34px;
+  font-size: 15px;
+  border-radius: 17px;
+  padding: 0 20px;
+  text-align: center;
+  color: #303030;
+}
+.esh-ul .esh-li-hover {
+  background-color: #1DD7CC;
+  color: white;
+}
+.esb-swiper {
+  padding-left: 20px;
+}
+.esb-swiper .swiper-slide {
+  background-color: #F0F0F0;
+  padding: 10px 20px;
+  border-radius: 6px;
+}
+.esb-swiper h2 {
+  color: #020202;
+  font-size: 20px;
+  line-height: 28px;
+}
+.esb-swiper p {
+  font-size: 15px;
+  color: #939393;
+  line-height: 28px;
+}
+.esb-warning {
+  background-image: url(../images/bill_04.png);
+  background-size: 17px 17px;
+  background-position: 20px center;
+  line-height: 50px;
+  font-size: 13px;
+  color: #989898;
+  background-repeat: no-repeat;
+  padding-left: 44px;
+}
+.esb-h2 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+  color: #020202;
+  font-size: 16px;
+  line-height: 28px;
+  padding: 0 20px;
+  font-weight: bold;
+}
+.es-body {
+  position: relative;
+}
+.esb-list {
+  display: none;
+}
+.esb-list-hover {
+  display: block;
+}
+.esb-list-div {
+  padding: 0 20px;
+}
+.esb-list-div .esb-item {
+  position: relative;
+  border-radius: 6px;
+  box-shadow: 0 0 4px #CCCCCC;
+  padding: 20px 100px 20px 116px;
+  margin-bottom: 15px;
+}
+.esb-list-div .esb-item h3 {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  margin-top: -12px;
+  font-size: 14px;
+  line-height: 24px;
+  color: #989898;
+}
+.esb-list-div .esb-item h2 {
+  font-weight: bold;
+  font-size: 15px;
+  color: #020202;
+}
+.esb-list-div .esb-item p {
+  color: #989898;
+  font-size: 13px;
+}
+.esb-list-div .esb-item h2,
+.esb-list-div .esb-item p {
+  line-height: 24px;
+}
+.esb-list-div .esb-item .esbi-right {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  margin-top: -20px;
+  line-height: 40px;
+  color: #989898;
+  font-size: 13px;
+}
+.esb-list-div .esb-item .esbi-right span {
+  font-weight: bold;
+  color: #020202;
+  font-size: 16px;
+  display: inline-block;
+  margin: 0 5px;
+}
+.esb-list-div .esb-item:nth-child(1) h3 {
+  color: #E1426B;
+}
+.esb-list-div .esb-item:nth-child(2) h3 {
+  color: #CBB864;
+}
+.esb-list-div .esb-item:nth-child(3) h3 {
+  color: #5676E1;
+}
+.electricity-administration {
+  padding-left: 0;
+  padding-right: 0;
+}
+.electricity-administration .fil-body .fibl-item {
+  box-shadow: none;
+  border-bottom: 1px solid #E0E0E0;
+  padding-left: 90px;
+}
+.electricity-administration .fil-body .fibl-item h2,
+.electricity-administration .fil-body .fibl-item h3,
+.electricity-administration .fil-body .fibl-item p {
+  line-height: 24px;
+}
+.electricity-administration .fil-body .fibl-item h3 {
+  color: #303030;
+  font-size: 15px;
+}
+.electricity-administration .fil-body .fibl-item p {
+  color: #909090;
+  font-size: 13px;
+}
+.electricity-administration .fil-body .fibl-item .fibl-item-btn-delete {
+  display: block;
+}
+.electricity-administration .fil-body .filb-item-percentage {
+  top: 20px;
+  margin-top: 0;
+}
+.electricity-administration .fil-body .fibl-item-right {
+  top: 18px;
+  margin-top: 0;
+}
+.electricity-administration .fil-body:before {
+  display: none;
+}
+.electricity-administration #select_type_delete {
+  margin-left: 0;
+}
+.electricity-administration .public-header-right {
+  background-image: url(../images/friend-l-add-to@2x.png);
+}
+.electricity-administration-add {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.eaa-body h3 {
+  font-size: 13px;
+  color: #686868;
+  line-height: 40px;
+}
+.eaa-body .eea-select {
+  background-color: #F5F5F5;
+  line-height: 44px;
+  padding: 0 15px;
+  border-radius: 4px;
+}
+.eaa-body .eea-div {
+  display: flex;
+  justify-content: space-between;
+}
+.eaa-body .eea-select-div {
+  width: 48%;
+}
+.eaa-body .eaa-warning {
+  line-height: 24px;
+  color: red;
+  font-size: 12px;
+  text-align: center;
+  min-height: 24px;
+  margin-top: 15px;
+}
+.eea-btn-qdtj {
+  background-color: #2A71F1;
+  color: #FFFFFF;
+  font-size: 17px;
+  line-height: 46px;
+  border-radius: 4px;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+.er-body {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.erb-div {
+  position: relative;
+}
+.erb-div h2 {
+  font-size: 16px;
+  line-height: 28px;
+  padding: 5px 0;
+  color: #020202;
+}
+.erb-div ul {
+  padding: 10px 20px;
+}
+.erb-div li {
+  color: #F84343;
+  line-height: 36px;
+  padding: 0 12px;
+  font-size: 16px;
+  background-color: #F5F5F5;
+  margin-bottom: 5px;
+}
+#echarts-e-01 {
+  width: 320px
+      height: 300px;
+}
+#echarts_es_01,
+#echarts_es_02,
+#echarts_es_03,
+#echarts_es_04 {
+  width: 320px;
+  height: 300px;
+  margin: auto;
+}

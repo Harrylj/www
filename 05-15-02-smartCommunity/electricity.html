@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>家庭能源管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/electricity.css" />
+
+  </head>
+  <style type="text/css">
+    html,
+    body {
+      background-color: #F7F7FB;
+    }
+  </style>
+
+  <body>
+
+    <div class="electricity public-div">
+      <div class="public-header-div bb-header-div">
+        <div class="public-header">
+          <a class="public-header-return bbh-return" href="#"></a>
+          <h1>家庭能源管理</h1>
+          <h2>5栋3单元1204</h2>
+          <div class="public-header-right"></div>
+        </div>
+      </div>
+      <div class="e-header">
+        <div class="e-header-one">
+          <h2>29087</h2>
+          <p>今日电量kw/h</p>
+        </div>
+        <div class="e-header-img">
+          <!--
+          	作者：648267773@qq.com
+          	时间：2019-05-06
+          	描述：#echarts-01：图表
+          -->
+          <div id="echarts-e-01"></div>
+          <!--<img src="images/e_01.png" />-->
+        </div>
+      </div>
+      <div class="e-body">
+        <div class="e-body-top">
+          <h2>家庭用电设备</h2>
+          <a class="ebt-admin" href="#">管理</a>
+        </div>
+        <div class="e-body-list">
+          <!--
+          	作者：648267773@qq.com
+          	时间：2019-04-11
+          	描述：.e-body-item :添加 .e-body-item-xyj:表示洗衣机图标
+          	                   添加 .e-body-item-dbx:表示电冰箱图标
+          	                   添加 .e-body-item-wbl:表示微波炉图标
+          	                   添加 .e-body-item-decline: 表示电量下降
+          	                   添加 .e-body-item-rise：  表示电量上升
+          -->
+          <div class="e-body-item e-body-item-rise e-body-item-dbx">
+            <h2>电冰箱</h2>
+            <p>电量过高 建议调高温度1-2℃</p>
+            <div class="ebi-num">79kw</div>
+          </div>
+          <div class="e-body-item e-body-item-decline e-body-item-xyj ">
+            <h2>洗衣机</h2>
+            <p>节能小能手</p>
+            <div class="ebi-num">64kw</div>
+          </div>
+          <div class="e-body-item e-body-item-wbl">
+            <h2>微波炉</h2>
+            <p>用电持平 可以维持</p>
+            <div class="ebi-num">36kw</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart_e_01 = echarts.init(document.getElementById('echarts-e-01'));
+      // 指定图表的配置项和数据
+      var option_e_01 = {
+        // 添加左侧顶部标题
+        title: {
+          // text: '单位(KW)'
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        grid: {
+          left: '10px',
+          containLabel: true
+        },
+        // X轴数据
+        xAxis: {
+          show: true,
+          type: 'category',
+          boundaryGap: false,
+          data: ['11', '12', '13', '14', '15', '16', '17'],
+          axisLine: {
+            lineStyle: {
+              color: "#686868" // 更改坐标轴颜色
+            }
+          }
+        },
+        yAxis: {
+          show: true,
+          type: 'value',
+          splitLine: {
+            show: false
+          }, //去掉网格线
+          axisLabel: {
+            formatter: '{value} kw' // 右侧添加单位ml
+          },
+          axisLine: {
+            lineStyle: {
+              color: "#C2C2C2" // 更改坐标轴颜色
+            }
+          }
+        },
+        // 生成数据
+        series: [{
+            type: 'line',
+            stack: '总量',
+            //symbol:'star',//拐点样式
+            //symbolSize: 8,//拐点大小
+            smooth: true, // 是否为曲线
+            data: [120, 132, 141, 154, 290, 230, 240],
+            itemStyle: { //自定义线条颜色
+              normal: {
+                color: 'transparent',
+                lineStyle: {
+                  width: 3, //折线宽度
+                  color: 'rgb(8,220,206)' // 折线颜色
+                }
+              }
+            }
+          }
+
+        ]
+      };
+      myChart_e_01.setOption(option_e_01);
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>设置中心</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/plateNumber.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/me.css"/>
+ 
+  </head>
+  <style type="text/css">
+
+  </style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-02-26
+    	描述：.msi-face-img： 默认为人脸识别不激活
+    	               添加.msi-face-img-hover表示激活
+    -->
+    <div class="me-index me-setting-info public-div">
+      <div class="msi-header">
+        <img class="msi-img" src="images/user-01.jpg" />
+        <h1>tititiTfdd试试</h1>
+      </div>
+      <div class="mi-body msi-body">
+        <div class="msi-div">基本信息</div>
+        <div class="mib-list msi-list">
+          <a href="#">
+          <div class="mibl-item msi-item  msi-item-01">
+            <h2>昵称</h2>
+            <a href="meSettingInfoName.html"><div class="msi-item-right">灵凤凤</div></a>
+          </div>
+          </a>
+          <a href="#">
+          <div class="mibl-item msi-item msi-item-02">
+            <h2>账号</h2>
+            <div class="msi-item-right">KHIUH8976</div>
+          </div>
+          </a>
+          <a href="#">
+          <div class="mibl-item msi-item msi-item-03">
+            <h2>生日</h2>
+            <div class="msi-item-right"><button  class="fii-btn-start fii-btn-start_01 ">录入生日</button></div>
+          </div>
+          </a>
+          <a href="#">
+          <div class="mibl-item msi-item msi-item-04">
+            <h2>所在地区</h2>
+            <div class="msi-item-right">中国成都</div>
+          </div>
+          </a>
+          <a href="#">
+          <div class="mibl-item msi-item msi-item-05">
+            <h2>开通人脸识别</h2>
+            <div class="msi-item-right msi-face-img"></div>
+          </div>
+          </a>
+        </div>
+      
+        <a href="#"><div class="msi-btn-tcdl">退出登录</div></a>
+      
+      </div>
+    </div>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      (function($) {
+        $.init();
+        var btns_friend_start = $('.fii-btn-start_01');
+        // 到访时间
+        btns_friend_start.each(function(i, btn) {
+          btn.addEventListener('tap', function() {
+//          var optionsJson = this.getAttribute('data-options') || '{}';
+//          var options = JSON.parse(optionsJson);
+            var id = this.getAttribute('id');
+            /*
+             * 首次显示时实例化组件
+             * 示例为了简洁，将 options 放在了按钮的 dom 上
+             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+           */
+            // var picker = new $.DtPicker(options);
+            var year=new Date().getFullYear() ;
+                            var  month=new Date().getMonth();
+                            var day=new Date().getDate();
+                            console.log(year,month,day)
+           
+           var picker_01 = new $.DtPicker({"type":"date","beginYear":1900,"endYear":year})
+            
+            picker_01.show(function(rs) {
+              /*
+               * rs.value 拼合后的 value
+               * rs.text 拼合后的 text
+               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+               * rs.m 月，用法同年
+               * rs.d 日，用法同年
+               * rs.h 时，用法同年
+               * rs.i 分（minutes 的第二个字母），用法同年
+               */
+              btns_friend_start[0].innerText = rs.text;
+              picker_01.dispose();
+             
+            });
+          }, false);
+        });
+
+        
+      })(mui);
+    </script>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function(){
+        // 点击开通人脸识别
+        $('.msi-face-img').on('click',function(){
+          var class_hover = 'msi-face-img-hover';
+          if($(this).hasClass(class_hover)){
+            $(this).removeClass(class_hover);
+            console.log('关闭')
+          }
+          else{
+            $(this).addClass(class_hover);
+            console.log('开启')
+          }
+          
+        })
+        
+
+      })
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>房屋成员详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+
+  </head>
+  <body>
+
+    <div class="house-person-phone public-div">
+      <div class="hpp-header">
+        <h1>邀请用户</h1>
+        <h3>成都龙湖就3栋3单元222</h3>
+        <input class="hpp-input-phone" type="tel" placeholder="请输入邀请人手机号码" />
+        <p class="hpp-warn"></p>
+      </div>
+      <div class="hpp-body">
+        <a href="housePersonType.html"><button class="hpp-btn-next">下一步</button></a>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function(){
+        // 清空提示
+        $('.hpp-warn').html('')
+        // 点击下一步
+        $('.hpp-btn-next').on('click',function(){
+          var input_phone = $('.hpp-input-phone'),
+              ts_warn = $('.hpp-warn'),
+              ts_01 = '电话号码格式不正确';
+            $('.hpp-warn').html('')
+            if(!(/^1[34578]\d{9}$/.test(input_phone.val()))){ 
+              ts_warn.html(ts_01)
+              return false; 
+            }
+            else{
+              ts_warn.html('')
+            }
+        })
+        
+      })
+    </script>
+
+  </body>
+
+</html>

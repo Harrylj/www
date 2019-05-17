@@ -1,0 +1,300 @@
+.bill-header{
+  position: relative;
+  padding: 15px;
+  box-shadow: 0 0 10px #CCCCCC ;
+}
+.bill-header p{
+  font-size: 14px;
+  line-height: 36px;
+  color: #969696;
+}
+.bill-header h1{
+  font-size: 36px;
+  line-height: 60px;
+  color: black;
+}
+.bill-header h3{
+  color: #969696;
+  font-size: 12px;
+  line-height: 30px;;
+}
+.bh-span-01{
+  display: inline-block;
+  position: relative;
+  padding-left: 10px;
+  margin-right: 10px;
+}
+.bh-span-01:before{
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -3px;
+  display: block;
+  content: " ";
+  font-size: 1px;
+  color: transparent;
+  background-color: #00ddf0;
+  width: 6px;
+  height: 6px;
+  background-size: 100% 100%;
+  border-radius: 50%;
+}
+.bill-btn-01
+,.bd-btn-01{
+  width: 130px;
+  height: 42px;
+  border-radius: 22px;
+  text-align: center;
+  color: white;
+  border: none;
+  line-height: 42px;
+  padding: 0;
+  font-size: 18px;
+/*  font-weight: bold;*/
+}
+.bill-btn-01:hover{
+  z-index: 99;
+}
+.bill-btn-div{
+  margin: 10px;
+  text-align: center;
+  
+}
+.bill-btn-jfyc{
+  display: none;
+  background-color: #6d7beb;
+  margin-right: -8px;
+}
+.bill-btn-zjjf
+,.bd-btn-zjjn{
+  background-color: #223a6e;
+}
+.bill .bd-btn-zjjn{
+  padding-right: 10px
+}
+
+.bill-btn-zjjf{
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  margin-top: -22px;
+}
+.bill .bill-btn-zjjf{
+  padding-right: 10PX;
+}
+.bill-header h4{
+  text-align: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #969696;
+  line-height: 4 0px;
+}
+.bill-body{
+  padding-top: 5px;
+}
+.bill-body h2{
+  background-color: #F6F6F6;
+  line-height: 40px;
+  font-size: 16px;
+  padding: 0 15px;
+  color: #969696;
+}
+.bill-body h2:first-child{
+  background-color: transparent;
+  border-bottom: 1px solid #F5F5F5;
+}
+.pill-pay-li-div{
+  line-height: 60px;
+  margin: 0 15px;
+  border-bottom: 1px solid #F5F5F5;
+  background-image: url(../images/bill_04.png);
+  background-position: 0 center;
+  background-repeat: no-repeat;
+  padding-left: 30px;
+  background-size: 22px 22px;
+}
+.pill-pay-li-div p{
+  display: inline-block;
+  font-size: 16px;
+  color: #FF0000;
+  line-height: 60px;
+}
+.bill-list-right{
+  font-size: 16px;
+  display: inline-block;
+  color: #FF0000;
+  line-height: 60px;
+  float: right;
+  background-image: url(../images/bill_05.png);
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  padding-right: 20px;
+  background-position: right center;
+}
+.bill-pay-ok .pill-pay-li-div{
+  background-image: url(../images/bill_06.png);
+}
+.bill-pay-ok p{
+  color: #646464;
+}
+.bill-pay-ok .bill-list-right{
+  color: #969696;
+}
+
+.bill-body li:last-child .pill-pay-li-div{
+  border: none;
+}
+.bill-header-ok h1{
+  color: #969696;
+}
+.bill-header-ok .bh-span-01:before{
+  background-color: #969696;
+}
+.bill-header-ok .bill-btn-zjjf{
+  color: #969696;
+  background-color: #F5F5F5;
+}
+.bill-pay-li:hover{
+  background-color: #F5F5F5;
+}
+.bill-pay-li:hover .pill-pay-li-div{
+   border-bottom: 1px solid transparent;
+}
+/*账单详情*/
+
+.bill-detail{
+  padding-top: 40px;
+}
+.bd-header{
+  position: relative;
+  padding-top: 30px;
+  background-image: url(../images/bill_04.png);
+  background-size: 22px 22px;
+  background-position: center 0 ;
+  background-repeat: no-repeat;
+}
+.bd-header h1{
+  font-size: 32px;
+  color: #202020;
+  text-align: center;
+  line-height: 40px;
+}
+.bd-header p{
+  color: #969696;
+  text-align: center;
+  font-size: 14px;
+  line-height: 32px;
+}
+.bd-body-ul li{
+  line-height: 28px;
+  font-size: 16px;
+  color: #202020;
+  padding: 8px 30px;
+}
+.bd-body-ul p{
+  font-size: 16px;
+  color: #646464;
+  display: inline-block;
+}
+.bd-body-ul span{
+  float: right;
+}
+.bd-body{
+  padding-top: 25px;
+}
+.bd-btn-div{
+  text-align: center;
+  padding-top: 100px;
+}
+.bd-btn-div p{
+  font-size: 14px;
+  color: #9E9E9E;
+  line-height: 40px;
+}
+.bd-btn-qd{
+  background-color: #F5F5F5;
+  color: #646464;
+  display: none;
+}
+.bill-detail-ok{
+  
+}
+.bill-detail-ok .bd-header{
+  background-image: url(../images/bill_06.png);
+}
+.bill-detail-ok .bd-btn-zjjn{
+  display: none;
+}
+.bill-detail-ok .bd-btn-qd{
+  display: block;
+  margin: auto;
+}
+.bp-header{
+  padding: 20px 20px 0 20px;
+}
+.bd-content{
+  padding:15px 0;
+}
+.bp-header h4{
+  font-size: 14px;
+  line-height: 32px;
+  color: #969696;
+}
+.bp-header h1{
+  font-size: 36px;
+  line-height: 56px;
+  color: black;
+}
+.bp-header p{
+  color: #FF0000;
+  font-size: 16px;
+  line-height: 40px;
+}
+.bp-header h3{
+  border-radius: 6px;
+  background-color: #F5F5F5;
+  line-height: 28px;
+  padding: 10px; 
+  font-size: 16px;
+  color: black;
+}
+.bp-body h2{
+  color: black;
+  line-height: 40px;
+  font-size: 16px;
+}
+.bp-body{
+  padding:0 15px;
+}
+.bp-body .pill-pay-li-div{
+  background: none;
+  padding: 0;
+  margin: 0 0 0 40px;
+}
+.bill-detail .bd-btn-zjjn{
+  padding: 0;
+}
+.bp-body .bill-pay-li:hover{
+  background-color: transparent;
+}
+.bill-pay .bill-pay-li{
+  background-image: url(../images/bill_01.png);
+  background-repeat: no-repeat;
+  background-size: 22px 22px;
+  background-position: 5px center;
+}
+.bill-pay .bill-pay-li-click{
+  background-image: url(../images/bill_03.png);
+}
+.bill-pay .pill-pay-li-div p{
+  color: #969696;
+}
+.bill-pay  .bill-list-right{
+  color: #101010;
+}
+.bill-pay .bd-btn-div{
+  padding-top: 20px;
+}
+.bill-pay{
+  padding-bottom: 20px;
+}

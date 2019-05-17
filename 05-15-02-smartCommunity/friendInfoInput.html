@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>访客邀请</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    
+    <link rel="stylesheet" type="text/css" href="css/plateNumber.css"/>
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/friend.css"/>
+    
+  </head>
+    <style type="text/css">
+
+    </style>
+  <body>
+  <!--
+  	作者：648267773@qq.com
+  	时间：2019-02-15
+  	描述：.ffib-car-btn:添加.ffib-car-btn-click表示选中
+  	      .fiib-li-right-car: 添加.fiib-li-right-car-hover填写到访车辆
+  -->
+
+    <div class="friend-info-input public-div">
+      <div class="fii-header">龙湖世纪风景</div>
+      <div class="fii-body">
+        <div class="fiib-list-div">
+          <ul class="fiib-ul">
+          	<li>
+          	  <div class="fiib-li-left">访客名字</div>
+          	  <div class="fiib-li-right"><input class="fiib-input" type="text" placeholder="请输入访客姓名" /></div>
+          	</li>
+          	<li>
+              <div class="fiib-li-left">性别</div>
+              <div class="fiib-li-right fiib-li-right-more">
+                <select name="fiib-select-sex">
+                	<option value="男" selected="selected">男</option>
+                	<option value="女">女</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div class="fiib-li-left">人数</div>
+              <div class="fiib-li-right fiib-li-right-more">
+                <select name="fiil-select-person-number">
+                	<option value="1" selected="selected">1人</option>
+                	<option value="2">2人</option>
+                	<option value="3">3人</option>
+                	<option value="4">4人</option>
+                	<option value="5">5人</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div class="fiib-li-left fiib-li-left-date">时间</div>
+              <div class="fiib-li-right fiib-li-right-date">
+                <button data-options="{&quot;value&quot;:&quot;2019&quot;,&quot;beginYear&quot;:2019,&quot;endYear&quot;:2025}" class="fii-btn-start ">到访时间</button> - <button data-options="{&quot;value&quot;:&quot;2019-02-18 10:10&quot;,&quot;beginYear&quot;:2019,&quot;endYear&quot;:2025}" class="fii-btn-end ">离开时间</button></div>
+            </li>
+            <li>
+              <div class="fiib-li-left">使用限制</div>
+              <div class="fiib-li-right fiib-li-right-more">
+                <select name="fiil-select-limit">
+                	<option value="" selected="selected">时间范围内</option>
+                	<option value="">时间范围内</option>
+                </select>
+              </div>
+            </li>
+            <li>
+              <div class="fiib-li-left">事由</div>
+              <div class="fiib-li-right">
+                <input class="fiib-input" type="text" name="" id="" placeholder="简要说明事由，限12字" />
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="fii-line-01"></div>
+        <div class="fiib-list-div">
+          <ul class="fiib-ul">
+            <li>
+              <div class="fiib-li-left">是否到访车辆</div>
+              <div class="fiib-li-right"><div class="fiib-li-right-car"></div></div>
+            </li>
+          </ul>
+          <div class="fiib-car-more-div">
+            
+            <div class="fiib-car-number">
+              <!--<input class="fcn-input" type="text" placeholder="川" />
+              <input class="fcn-input" type="text" placeholder="0" />
+              <input class="fcn-input" type="text" placeholder="0" />
+              <input class="fcn-input" type="text" placeholder="0" />
+              <input class="fcn-input" type="text" placeholder="0" />
+              <input class="fcn-input" type="text" placeholder="0" />-->
+              <div class="fiib-car-type-title">点击方框录入车牌号</div>
+              <div class="car_input">
+                  <ul class="clearfix ul_input"><li class="input_pro"><span></span></li><li class="input_pp input_zim"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li></ul>
+                </div>
+            </div>
+            <div class="fiib-car-type-title">到访车辆自动识别</div>
+            <div class="fiib-car-type">
+              <div class="ffib-car-btn ffib-car-btn-click">新能源车</div>
+              <div class="ffib-car-btn">一般车辆</div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>    
+      <div class="fii-footer">
+        <a href="#"><div class="public-friend-btn-01 fii-btn-qdyq">确定邀请</div></a>
+      </div>
+    </div>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	(function($) {
+        $.init();
+        var btns_friend_start = $('.fii-btn-start');
+        var btns_friend_end = $('.fii-btn-end');
+        // 到访时间
+        btns_friend_start.each(function(i, btn) {
+          btn.addEventListener('tap', function() {
+            var optionsJson = this.getAttribute('data-options') || '{}';
+            var options = JSON.parse(optionsJson);
+            var id = this.getAttribute('id');
+            /*
+             * 首次显示时实例化组件
+             * 示例为了简洁，将 options 放在了按钮的 dom 上
+             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+             */
+            var picker = new $.DtPicker(options);
+            picker.show(function(rs) {
+              /*
+               * rs.value 拼合后的 value
+               * rs.text 拼合后的 text
+               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+               * rs.m 月，用法同年
+               * rs.d 日，用法同年
+               * rs.h 时，用法同年
+               * rs.i 分（minutes 的第二个字母），用法同年
+               */
+              btns_friend_start[0].innerText = rs.text;
+              picker.dispose();
+            });
+          }, false);
+        });
+        // 离开时间
+        btns_friend_end.each(function(i, btn) {
+          btn.addEventListener('tap', function() {
+            
+            var optionsJson = this.getAttribute('data-options') || '{}';
+            var options = JSON.parse(optionsJson);
+            var id = this.getAttribute('id');
+            var picker = new $.DtPicker(options);
+            picker.show(function(rs) {
+              btns_friend_end[0].innerText = rs.text;
+
+              picker.dispose();
+            });
+          }, false);
+        });
+        
+      })(mui);
+    </script>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/layer.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/plateNumber.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function(){
+        // 选择车辆类型
+        $('.ffib-car-btn ').on('click',function(){
+          var class_click = 'ffib-car-btn-click';
+          $(this).addClass(class_click).siblings().removeClass(class_click);
+        })
+        // 显示到访车辆
+        $('.fiib-li-right-car').on('click',function(){
+          var class_click = 'fiib-li-right-car-hover',   // 显示到访车辆
+              class_other_div = 'fiib-car-more-div';  // 到访车辆信息
+          // 显示填写信息
+          if(!$(this).hasClass(class_click)){
+            $(this).addClass(class_click)
+            $('.' + class_other_div).show();
+          }
+          // 不显示填写信息
+          else{
+            $(this).removeClass(class_click)
+            $('.' + class_other_div).hide();
+          }
+        })
+        
+        // 点击确定邀请
+        $('.fii-btn-qdyq').on('click',function(){
+          alert('哦哦哦')
+        })
+        
+        
+        
+        
+        
+      })
+      
+      
+      
+    </script>
+
+  </body>
+
+</html>

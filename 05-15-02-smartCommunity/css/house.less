@@ -1,0 +1,845 @@
+.house{
+    padding: 20px;
+  .house-more{
+      padding-top: 40px;
+      p{
+          line-height: 24px;
+          font-size: 14px;
+          color: #666666;
+          text-align: center;
+      }
+      .hm-btn-rhyq{
+          display: block;
+          width: 140px;
+          text-align: center;
+          margin: 20px auto;
+          font-size: 16px;
+          color: #e91a0e;
+          line-height: 40px;
+          border-radius: 20px;
+          border: 1px solid #CCCCCC;
+          
+      }
+  }
+  .house-header{
+      padding: 10px 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px #CCCCCC;
+     h2{
+      line-height: 20px;
+      color: #727272;
+      font-size: 14px;
+     }
+     .house-header-bottom{
+         margin-top: 10px;
+         border-top: 1px solid #F0F0F0;
+     }
+  }
+  .house-header-top{
+    position: relative;
+    padding: 20px 0px 10px 0px;
+    h1{
+        display: inline-block;
+        font-size: 20px;
+        color: #010101;
+        line-height: 20px;
+        float: left;
+    }
+    p{
+        display: inline-block;
+        color: #303030;
+        font-size: 12px;
+        padding: 0 10px;
+        margin-left: 10px;
+        background-color: #F5F5F5;
+        line-height: 20px;
+        border-radius: 4px;
+        float: left;
+    }
+    h5{
+        position: absolute;
+        right: 0;
+        top: 60%;
+        float: right;
+        color: #e91a0e;
+        font-size: 16px;
+        line-height: 20px;
+    }
+  }
+  .house-footer-click{
+      padding: 0 12px;
+      height: 32px;
+      margin-top: -16px;
+      position: absolute;
+      top: 50%;
+      right: 30px;
+      border: none;
+      font-size: 14px;
+      color: transparent;
+      background-image: url(../images/change-icon@2x.png);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-position: right center;
+      
+  }
+  .house-footer-click-now{
+      z-index: 99;
+      right: 20px;
+      color: black;
+      margin-top: -16px;
+      line-height: 32px;
+      border: 1px solid #CCCCCC;
+      border-radius: 16px;
+      font-size: 1px;
+      background: none;
+  }
+  .house-user-list{
+      padding: 20px 20px 20px 60px;
+      position: relative;
+      img{
+        position: absolute;
+        top: 50%;
+        left: 0;
+        margin-top: -23px;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #CCCCCC;
+      }
+      h3{
+          font-size: 17px;
+          line-height: 22px;
+          color: #27396a;
+      }
+      h4{
+          font-size: 15px;
+          line-height: 24px;
+          color: #646464;
+      }
+  }
+  .house-body{
+      .hb-top{
+          display: flex;
+          justify-content: space-between;
+          h1{
+              font-size: 15px;
+              line-height: 40px;
+              color: #363636;
+          }
+          .hbt-btn-rhyq{
+              color: #27396A;
+              font-size: 15px;
+              line-height: 40px;
+          }
+      }
+      
+      .hb-list{
+          min-height: 120px;
+          border-bottom: 20px;
+          max-height: 344px;
+          overflow-y: scroll;
+      }
+      .hb-list::-webkit-scrollbar {
+            display:none;
+        }
+      .house-user-list:after{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        border-bottom: 1px solid #F5F5F5;
+        width: 82%;
+        height: 1px;
+        content: " ";
+        font-size: 1px;
+      }
+      .hbl-item-btn{
+          display: none;
+          position: absolute;
+          right: 10px;
+          bottom: 20px;
+          background-image: url(../images/more@2x.png);
+          background-size: 6px 16px;
+          background-repeat: no-repeat;
+          width: 30px;
+          height: 30px;
+          background-position: center center;
+      }
+  }
+  .house-footer{
+    text-align: center;
+    margin:0 -20px;
+    .house-footer-list{
+        background-color: #F8F8F8;
+//      padding: 0 20px;
+        h2{
+            line-height: 20px;
+            color: #727272;
+            font-size: 14px;
+            text-align: left;
+        }
+    }
+    .house-footer-item{
+        position: relative;
+        padding-bottom: 10px;
+        padding: 0 20px 10px 20px;
+    }
+    .house-footer-item:after{
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 4px;
+        content: " ";
+        color: transparent;
+        font-size: 1px;
+        background: linear-gradient(transparent, rgba(0,0,0,0.05));
+    }
+    .house-footer-item:last-child:after{
+        display: none;
+    }
+    .house-header-top p{
+        background-color: #E0E0E0;
+    }
+  }
+  .house-body{
+      padding-top: 10px;
+  }
+  .hbl-item-btn-div{
+      position: relative;
+      left: -180px;
+      top: -6px;
+      padding: 0 10px;
+      display: none;
+      z-index: 99999;
+      background-color: #191919;
+      border-radius: 6px;
+      width: 180px;
+      text-align: center;
+      img{
+          width: 44px;
+          height: 44px;
+      }
+  }
+  .hbl-item-btn-delte
+  ,.hbl-item-btn-chat{
+     display: inline-block;
+     padding-left: 24px;
+     padding-right: 8px;
+     line-height: 40px;
+     background-repeat: no-repeat;
+     background-size: 16px 16px;
+     background-position: 2px center;
+     color: white;
+     font-size: 14px;
+     width: 70px;
+     text-align: center;
+  }
+  .hbl-item-btn-delte{
+     background-image: url(../images/delete-icon@2x.png);
+     border-right: 1px solid #3D3D3D;
+  }
+  .hbl-item-btn-chat{
+     background-image: url(../images/chat-icon@2x.png);
+  }
+}
+
+.house-add{
+    .ha-header{
+        background-image: url(../images/map@2x.png);
+        background-size: 20px 20px;
+        background-position: 20px center;
+        background-repeat: no-repeat;
+        padding-left: 50px;
+        color: #27396A;
+        font-size: 16px;
+        line-height: 60px;
+    }
+    .ha-body{
+        h5{
+            padding-left: 20px;
+            color: #969696;
+            line-height: 30px;
+            font-size: 14px;
+        }
+    }
+    .hab-ul{
+        li{
+            line-height: 48px;
+            padding-left: 50px;
+            color: black;
+            font-size: 16px;
+            background-color: white;
+        }
+        .hab-li-click{
+            background-color: #F5F5F5;
+        }
+    }    
+}
+.house-detail{
+    padding: 0 20px;
+    .hdb-list{
+           
+    }
+    .hdb-item{
+        display: flex;
+        justify-content: space-between;
+        line-height: 52px;
+        h3{
+            line-height: 52px;
+            font-size: 16px;
+            color: #010101;
+            font-weight: bold;
+        }
+        a{
+            font-size: 16px;
+            color: #686868;
+        }
+        .hdb-item-more{
+            background-position: right center;
+//          padding-right: 16px;
+//          background-image: url(../images/arrow@2x.png);
+            background-size: 8px 15px;
+            background-repeat: no-repeat;
+        }
+    }
+    .hdb-item
+    ,.hdb-item-footer{
+        border-bottom: 1px solid #F5F5F5;
+    }
+    .hdb-item-footer{
+        padding-bottom: 10px;
+        h3{
+            line-height: 60px;
+            font-size: 16px;
+            color: #010101;
+            font-weight: bold;
+        }
+        .hdb-user-div-new{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            
+        }
+        .hudn-btn-add
+        ,.hudn-user-item{
+            width: 100px;
+            height: 150px;
+            margin: 0px 0px 15px 0px;
+            padding: 0 8px;
+        }
+        .hudn-btn-add{
+            background-image: url(../images/add-to-button@2x.png);
+            background-position: center 40%;
+            background-repeat: no-repeat;
+            background-size: 50px 50px;
+            line-height: 28px;
+            font-size: 11px;
+            color: #8F8F8F;
+            text-align: center;
+            padding-top: 90px;
+        }
+        .hudn-user-item{
+            box-shadow: 0 0 4px #999999;
+            border-radius: 6px;
+            position: relative;
+            padding-top: 8px;
+            img{
+                display: block;
+                width: 46px;
+                height: 46px;
+                margin: auto;
+                border-radius: 50%;
+            }
+            h2{
+                height: 20px;
+                overflow: hidden;
+                margin-top: 10px;
+                font-size: 16px;
+                color: #020202;
+                line-height: 20px;
+                text-align: center;
+                font-weight: bold;
+            }
+            h4{
+                height: 28px;
+                overflow: hidden;
+                font-size: 12px;
+                line-height: 28px;
+                color: #646464;
+                text-align: center;
+            }
+            
+        }
+        .hudn-btn-delete{
+            display: block;
+            margin: auto;
+            width: 39px;
+            height: 26px;
+            background-repeat: no-repeat;
+            background-image: url(../images/friend-detele-button@2x.png);
+            background-size: 100% 100%;
+        }
+        .hudn-user-type{
+            position: absolute;
+            width:100px;
+            margin-left: -50px;
+            text-align: center;
+            top: 45px;
+            left: 50%;
+            height: 20px;
+            overflow: hidden;
+            span{
+                color: white;
+                padding: 1px 6px;
+                display: inline-block;
+                background-color: #E91A0E;
+                font-size: 12px;
+                line-height: 16px;
+                border-radius: 2px;
+            }
+        }
+        .hdb-user-div{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .hdb-user-img-all{
+            display: flex;
+            justify-content: flex-start;
+        }
+        .hdb-user-img{
+            position: relative;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #F5F5F5;
+            img{
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            .hdb-user-delete{
+                position: absolute;
+                display: none;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 99;
+                background-color: rgba(0,0,0,0.3);
+                background-image: url(../images/houst-delete-icon@2x.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-size: 18px 18px;
+            }
+        } 
+        .hdb-user-img-delete{
+            .hdb-user-delete{
+                display: block;
+            }
+        }
+        .hdb-user-btn-add{
+            width: 44px;
+            height: 44px;
+            background-size: 100% 100%;
+            background-image: url(../images/add-to-button@2x.png);
+            background-repeat: no-repeat;
+        }
+    }
+    .hd-footer{
+        text-align: center;
+        padding-top: 20px;
+        .hdf-delete-house{
+            font-size: 16px;
+            padding: 0 25px;
+            border: 1px solid #E4E4E4;
+            border-radius: 20px;
+            line-height: 40px;
+            color: #303030;
+        }
+    }
+    .hdf-btn-fwcz{
+        display: block;
+        margin: 10px auto;
+        color: #8F8F8F;
+        font-size: 13px;
+        line-height: 24px;
+    }
+    .hd-body{
+        min-height: 420px;
+    }
+    .mui-popover{
+        margin-left: -20px;
+        
+    }
+    .mui-popover.mui-popover-action .mui-table-view{
+        color: #010101;
+        font-size: 16px;
+    }
+    .mui-popover.mui-popover-action .mui-table-view .mui-table-view-cell a:hover{
+        color: #ff6974;
+    }
+    .select_type_li{
+        position: relative;
+        line-height: 24px;
+        font-size: 14px;
+        padding: 11px 15px;
+    }
+    .select_type_li:after{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 1px;
+        content: '';
+        -webkit-transform: scaleY(.5);
+        transform: scaleY(.5);
+        background-color: #c8c7cc;
+    }
+    
+}
+.house-detail-address-modify{
+    position: relative;
+    background-color: white;
+    .hdam-body-modify{
+        position: relative;
+    }
+    .hdam-input-address{
+        height: 60px;
+        width: 100%;
+        display: block;
+        border: none;
+        background-color: transparent;
+        line-height: 40px;
+        padding: 10px 60px 10px 20px;
+        color: #010101;
+        font-size: 18px;
+        margin: 0;
+        text-decoration: 2px;
+    }
+    .hdam-btn-clear{
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        margin-top: -12px;
+        z-index: 999;
+        width: 24px;
+        height: 24px;
+        background-image: url(../images/edit-delete@2x.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    
+}
+.house-card{
+    background-color: #2f3740;
+    padding:100px 20px 40px 20px;
+    .hc-body{
+        position: relative;
+        border-radius: 10px;
+        background-color: white;
+        padding-top: 80px;
+        padding-bottom: 30px;
+        .hcbc-header{
+            position: absolute;
+            top: -54px;
+            left: 50%;
+            margin-left: -60px;
+            width: 120px;
+            text-align: center;
+            img{
+                display: block;
+                width: 120px;
+                height: 120px;
+                border-radius: 50%;
+            }
+            h5{
+                position: relative;
+                top: -16px;
+                display: inline-block;
+                background-color: #ece3bd;
+                line-height: 28px;
+                width: 70px;
+                letter-spacing: 2px;
+                text-align: center;
+                border-radius: 14px;
+                font-size: 14px;
+                color: #010101;
+            }
+        }
+        .hcb-card{
+            h1{
+                line-height: 42px;
+                font-size: 22px;
+                color: #010101;
+                text-align: center;
+            }
+            h3{
+                font-size: 14px;
+                color: #303030;
+                font-weight: 500;
+                text-align: center;
+            }
+            p{
+                color: #969696;
+                line-height: 24px;
+                text-align: center;
+                text-align: center;
+            }
+            .hcbc-ewm{
+                background-color: #DBDBDB;
+                border-radius: 8px;
+                width: 200px;
+                height: 200px;
+                display: block;
+                margin: 20px auto;
+            }
+            
+        }
+    }
+    .hc-footer{
+        padding-top: 20px;
+        background-color: transparent;
+        p{
+            text-align: center;
+            font-size: 14px;
+            color: #adafb1;
+        }
+        .hcf-btn-close{
+            margin: 20px auto;
+            height: 44px;
+            width: 44px;
+            background-size: 100% 100%;
+            background-image: url(../images/edit-delete@2x.png);
+            background-color: transparent;
+            background-repeat: no-repeat;
+        }
+    }
+}
+.house-person-detail{
+    position: relative;
+    .hpd-body{
+        padding-top: 50px;
+    }
+    .hpd-info{
+        position: relative;
+        .hpd-img{
+            display: block;
+            border-radius: 50%;
+            width: 86px;
+            height: 86px;
+            margin: 0 auto 15px auto;
+        }
+        .hpd-type-user{
+            position: absolute;
+            top: 80px;
+            left: 50%;
+            margin-left: -18px;
+            color: white;
+            background-color: #E91A0E;
+            font-size: 10px;
+            width: 36px;
+            height: 16px;
+            line-height: 16px;
+            text-align: center;
+            border-radius: 2px;
+        }
+        h1,h2,h3{
+            line-height: 30px;
+            height: 30px;
+            overflow: hidden;
+            text-align: center;
+        }
+        h1{
+            font-size: 23px;
+            color: #E91A0E;
+            font-weight: bold;
+        }
+        h2{
+            margin: -3px 0;
+            font-size: 14px;
+            color: #020202;
+            font-weight: bold;
+        }
+        h3{
+            font-size: 14px;
+            color: #646464;
+        }
+        
+    }
+    .hpd-more{
+        padding: 20px;
+    }
+    .hpd-btn{
+        display: block;
+        width: 140px;
+        margin: 0 auto 20px auto;
+        padding: 0 20px 0 75px;
+        background-repeat: no-repeat;
+        background-size: 23px 23px;
+        background-position: 35px center;
+        background-color: #F5F5F5;
+        line-height: 54px;
+        border-radius: 27px;
+        font-size: 15px;
+        color: #020202;
+    }
+    .hpd-btn-modify{
+        background-image: url(../images/house-edit@2x.png);
+    }
+    .hpd-btn-delete{
+        background-image: url(../images/house-delete@2x.png);
+    }
+    .hpd-btn-chat{
+        background-image: url(../images/house-chat@2x.png);
+    }
+    
+}
+.house-person-phone{
+    position: relative;
+    padding: 20px 20px;
+    .hpp-header{
+        min-height: 300px;
+        h1{
+            color: #000000;
+            font-weight: bold;
+            font-size: 23px;
+            line-height: 40px;
+        }
+        h3{
+            font-size: 13px;
+            color: #969696;
+            line-height: 32px;
+            height: 32px;
+            overflow: hidden;
+        }
+        .hpp-input-phone{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            font-size: 19px;
+            line-height: 50px;
+            color: black;
+            border: none;
+            border-bottom: 1px solid #E0E0E0;
+            text-align: left;
+            padding: 0;
+        }
+        .hpp-warn{
+            color: red;
+            font-size: 12px;
+            line-height: 28px;
+            text-align: center;
+        }
+        
+    }
+    .hpp-btn-next{
+        display: block;
+        margin: auto;
+        background-color: #223A6E;
+        text-align: center;
+        color: white;
+        width: 90%;
+        border-radius: 6px;
+        line-height: 48px;
+        border: none;
+        font-size: 17px;
+    }
+}
+.house-person-type{
+    padding: 20px;
+    .hpt-header{
+        display: flex;
+        justify-content: space-between;
+        h2{
+            color: #646464;
+            font-size: 17px;
+            line-height: 40px;
+        }
+        .hpt-a-01{
+            color:#E91A0E;
+            line-height: 40px;
+            font-size: 15px;
+        }
+    }
+    .hpt-body{
+        padding-top: 100px;
+    }
+    .hpt-btn{
+        display: block;
+        border-radius: 50%;
+        width: 110px;
+        height: 110px;
+        background-color: #F5F5F5;
+        color: #010101;
+        text-align: center;
+        line-height: 110px;
+        margin:0 auto 30px auto;
+        font-size: 19px;
+        font-weight: bold;
+    }
+}
+.house-person-share{
+    padding: 20px;
+    .hps-body{
+        position: relative;
+        padding-top: 20px;
+        *{
+            text-align: center;
+        }
+        h1{
+            line-height: 50px;
+            color: #000000;
+            font-size: 23px;
+        }
+        h5{
+            color: #686868;
+            line-height: 24px;
+            font-size: 13px;
+        }
+        h4{
+            color: #27396A;
+            padding: 0 8px;
+            line-height: 40px;
+            font-size: 16px;
+        }
+        .hps-ewm{
+            display: block;
+            margin: 20px auto;
+            width: 200px;
+            height: 200px;
+            background-color: #C4C4C4;
+            border-radius: 6px;
+        }
+        p{
+            line-height: 24px;
+            color: #686868;
+            font-size: 15px;   
+        }
+        h3{
+            color: #989898;
+            line-height: 24px;
+            font-size: 15px;
+        }
+    }
+    .hps-footer{
+        padding:  50px 20px;
+    }
+    .hps-btn-share{
+        display: block;
+        margin: auto;
+        width: 130px;
+        height: 42px;
+        border-radius: 22px;
+        text-align: center;
+        color: white;
+        border: none;
+        line-height: 42px;
+        padding: 0;
+        font-size: 18px;
+        background-color: #223a6e;
+        /* font-weight: bold; */
+    }
+}
+
