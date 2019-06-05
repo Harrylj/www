@@ -2198,6 +2198,7 @@ html {
   margin-top: 0;
 }
 .img-toggle-div {
+  position: relative;
   cursor: pointer;
 }
 .img-toggle-div img {
@@ -2341,10 +2342,9 @@ html {
 .two-sfz-cdgl-img {
   cursor: pointer;
   position: relative;
-  top: -150%;
-  left: -15%;
+  top: -490%;
+  left: 0;
   width: 2000px;
-  transform: rotate(11.9deg);
 }
 .two-sfz-cdgl-left,
 .two-sfz-cdgl-right {
@@ -2445,4 +2445,58 @@ html {
 .two-swiper-fahter .drivingPlayer {
   width: 100%;
   height: 100%;
+}
+.thrre-tc-click {
+  position: absolute;
+  right: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-bottom: -100px;
+  width: 200px;
+  height: 200px;
+  z-index: 99;
+}
+.img-toggle-div-dm .thrre-tc-click {
+  left: 60%;
+}
+.thrre-tc-div {
+  position: absolute;
+  top: 0%;
+  left: 57.8%;
+  margin-left: -25%;
+  width: 50%;
+  z-index: 9999;
+  box-shadow: 0 0 10px #CCCCCC;
+  background-color: white;
+}
+.thrre-tc-div h1 {
+  line-height: 32px;
+  border-bottom: 1px  solid #CCCCCC;
+  font-size: 14px;
+  color: #3e6fe9;
+  text-align: center;
+}
+.thrre-tc-div table td {
+  line-height: 40px;
+  padding: 0 20px;
+  font-size: 16px;
+  color: #666666;
+}
+.thrre-tc-div .thrre-tc-div-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 15px;
+}
+.thrre-tc-div .thrre-tc-div-content:after {
+  position: absolute;
+  content: " ";
+  left: 50%;
+  bottom: -20px;
+  margin-left: -5px;
+  border: 10px solid transparent;
+  border-top: 10px solid #C6C8CC;
+}
+.img-toggle-div-sfz .thrre-tc-click {
+  width: 400px;
 }

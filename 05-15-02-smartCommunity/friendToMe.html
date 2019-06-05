@@ -15,6 +15,7 @@
       
 
     <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
@@ -47,20 +48,64 @@
         </div>
         <div class="ftmc-line"></div>
         <div class="ftmc-body">
-          <img class="ftmc-ewm"src="images/user-01.jpg" >
+          <div class="ftmc-ewm-div">
+            <img class="ftmc-ewm"src="images/user-01.jpg" >
+            <h3>邀请码</h3>
+            <h4>355001</h4>
+          </div>
+          
           <p>访客在门岗出示此邀请函，门岗管理人员需要扫码验证，即可进入该小区。</p>
         </div>
       </div>
       <div class="ftm-share">
-        <button class="ftm-btn-share">分享给访客</button>
+        <button class="ftm-btn-share" data-toggle="modal" data-target="#myModalShare">分享给好友</button>
         <p>妥善保存&nbsp;&nbsp;谨慎分享</p>
       </div>
     </div>
-    
-    <script>
-      
+    <!-- Modal -->
+    <div class="modal two-modal-share fade" id="myModalShare" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content two-share-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>分享至</h4>
+          <ul class="two-share-list">
+            <li class="two-share-wx">微信好友</li>
+            <li class="two-share-qq">QQ好友</li>
+            <li class="two-share-message">发送短信</li>
+          </ul>
+          <div class="two-share-btn-qx" data-dismiss="modal">取消</div>
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$(function(){
+    	  $('.two-share-list').children('li').on('click',function(){
+    	    var class_wx = 'two-share-wx',   // 微信好友
+    	        class_qq = 'two-share-qq',   // QQ好友
+    	        class_message = 'two-share-message';  // 发送短信
+    	    // 微信好友
+    	    if($(this).hasClass(class_wx)){
+    	       console.log('微信')  
+    	    }
+    	    // QQ好友
+    	    else if($(this).hasClass(class_qq)){
+    	       console.log('QQ')
+    	    }
+    	    // 发送短信
+    	    else if($(this).hasClass(class_message)){
+    	      console.log('短信')
+    	    }
+    	    else{
+    	      console.log('其他')
+    	    }
+    	    
+    	    // 点击隐藏
+    	    $('.two-share-btn-qx').click();
+    	  })
+    	})
     </script>
-
   </body>
 
 </html>

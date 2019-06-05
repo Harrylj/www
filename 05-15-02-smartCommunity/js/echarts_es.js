@@ -1,9 +1,17 @@
 // 基于准备好的dom，初始化echarts实例
+var width_auto = document.body.clientWidth + 'px';;
+document.getElementById('echarts_es_01').style.width = width_auto;
+document.getElementById('echarts_es_02').style.width = width_auto;
+document.getElementById('echarts_es_03').style.width = width_auto;
+document.getElementById('echarts_es_04').style.width = width_auto;
 var myChart_es_01 = echarts.init(document.getElementById('echarts_es_01'));
 var myChart_es_02 = echarts.init(document.getElementById('echarts_es_02'));
 var myChart_es_03 = echarts.init(document.getElementById('echarts_es_03'));
 var myChart_es_04 = echarts.init(document.getElementById('echarts_es_04'));
-
+/*
+alert(document.body.clientWidth)
+        $('#echarts_es_01').css({'width': document.body.clientWidth});
+  */      
 
 var my_data_x_01 = ['04:00', '08:00', '12:00', '16:00','20:00', '24:00'];  // 日，x轴数据
 var my_data_01 = ['120', '132', '141', '154', '290', '230'];  // 日, 生成数据

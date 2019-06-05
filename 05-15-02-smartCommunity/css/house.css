@@ -1,5 +1,5 @@
 .house {
-  padding: 20px;
+  padding: 0px;
 }
 .house .house-more {
   padding-top: 40px;
@@ -10,61 +10,69 @@
   color: #666666;
   text-align: center;
 }
-.house .house-more .hm-btn-rhyq {
-  display: block;
-  width: 140px;
-  text-align: center;
-  margin: 20px auto;
-  font-size: 16px;
-  color: #e91a0e;
-  line-height: 40px;
-  border-radius: 20px;
-  border: 1px solid #CCCCCC;
-}
 .house .house-header {
+  position: relative;
   padding: 10px 20px;
   border-radius: 8px;
-  box-shadow: 0 0 6px #CCCCCC;
 }
 .house .house-header h2 {
   line-height: 20px;
   color: #727272;
   font-size: 14px;
 }
+.house .house-header h5 {
+  position: absolute;
+  right: 15px;
+  top: 40px;
+  float: right;
+  color: #323232;
+  font-size: 16px;
+  line-height: 32px;
+  border-radius: 16px;
+  border: 1px solid #E0E0E0;
+  padding: 0 10px;
+}
+.house .house-header h3 {
+  color: #999999;
+  font-size: 16px;
+  line-height: 32px;
+}
 .house .house-header .house-header-bottom {
   margin-top: 10px;
   border-top: 1px solid #F0F0F0;
 }
+.house .house-header .house-header-other {
+  color: #FF8F29;
+  font-size: 14px;
+  line-height: 40px;
+  background-image: url(../images/arrow@2x.png);
+  background-size: 7.5px 13.5px;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
 .house .house-header-top {
   position: relative;
-  padding: 20px 0px 10px 0px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
 }
 .house .house-header-top h1 {
   display: inline-block;
-  font-size: 20px;
+  font-size: 17px;
   color: #010101;
-  line-height: 20px;
-  float: left;
+  line-height: 32px;
+  font-weight: bold;
 }
 .house .house-header-top p {
   display: inline-block;
   color: #303030;
   font-size: 12px;
   padding: 0 10px;
-  margin-left: 10px;
   background-color: #F5F5F5;
   line-height: 20px;
+  height: 20px;
   border-radius: 4px;
-  float: left;
-}
-.house .house-header-top h5 {
-  position: absolute;
-  right: 0;
-  top: 60%;
-  float: right;
-  color: #e91a0e;
-  font-size: 16px;
-  line-height: 20px;
+  margin: 6px 0 6px 10px;
 }
 .house .house-footer-click {
   padding: 0 12px;
@@ -104,26 +112,29 @@
   width: 46px;
   height: 46px;
   border-radius: 50%;
-  border: 2px solid #CCCCCC;
 }
 .house .house-user-list h3 {
-  font-size: 17px;
+  font-size: 14px;
   line-height: 22px;
-  color: #27396a;
+  color: #666666;
 }
 .house .house-user-list h4 {
-  font-size: 15px;
+  font-size: 13px;
   line-height: 24px;
-  color: #646464;
+  color: #979797;
+}
+.house .house-body {
+  padding: 20px;
 }
 .house .house-body .hb-top {
   display: flex;
   justify-content: space-between;
 }
 .house .house-body .hb-top h1 {
-  font-size: 15px;
+  font-size: 17px;
   line-height: 40px;
   color: #363636;
+  font-weight: bold;
 }
 .house .house-body .hb-top .hbt-btn-rhyq {
   color: #27396A;
@@ -150,16 +161,16 @@
   font-size: 1px;
 }
 .house .house-body .hbl-item-btn {
-  display: none;
   position: absolute;
-  right: 10px;
-  bottom: 20px;
+  right: 0;
+  top: 50%;
   background-image: url(../images/more@2x.png);
-  background-size: 6px 16px;
+  background-size: 5px 14px;
   background-repeat: no-repeat;
-  width: 30px;
-  height: 30px;
-  background-position: center center;
+  width: 80px;
+  height: 60px;
+  margin-top: -30px;
+  background-position: right center;
 }
 .house .house-footer {
   text-align: center;
@@ -200,15 +211,12 @@
   padding-top: 10px;
 }
 .house .hbl-item-btn-div {
-  position: relative;
-  left: -180px;
-  top: -6px;
-  padding: 0 10px;
   display: none;
-  z-index: 99999;
-  background-color: #191919;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 9;
   border-radius: 6px;
-  width: 180px;
   text-align: center;
 }
 .house .hbl-item-btn-div img {
@@ -218,23 +226,25 @@
 .house .hbl-item-btn-delte,
 .house .hbl-item-btn-chat {
   display: inline-block;
-  padding-left: 24px;
-  padding-right: 8px;
-  line-height: 40px;
+  width: 80px;
+  line-height: 60px;
   background-repeat: no-repeat;
   background-size: 16px 16px;
   background-position: 2px center;
   color: white;
   font-size: 14px;
-  width: 70px;
   text-align: center;
 }
 .house .hbl-item-btn-delte {
-  background-image: url(../images/delete-icon@2x.png);
-  border-right: 1px solid #3D3D3D;
+  background-color: #F95133;
+  font-size: 17px;
+  color: white;
 }
 .house .hbl-item-btn-chat {
   background-image: url(../images/chat-icon@2x.png);
+}
+.hbl-item-btn-hover .hbl-item-btn-div {
+  display: block;
 }
 .house-add .ha-header {
   background-image: url(../images/map@2x.png);
@@ -614,7 +624,6 @@
   background-color: #E91A0E;
   font-size: 10px;
   width: 36px;
-  height: 16px;
   line-height: 16px;
   text-align: center;
   border-radius: 2px;
@@ -675,6 +684,12 @@
 .house-person-phone .hpp-header {
   min-height: 300px;
 }
+.house-person-phone .hpp-header .fims-list {
+  margin: 30px 0;
+}
+.house-person-phone .hpp-header .fims-list h3 {
+  font-size: 16px;
+}
 .house-person-phone .hpp-header h1 {
   color: #000000;
   font-weight: bold;
@@ -688,14 +703,20 @@
   height: 32px;
   overflow: hidden;
 }
+.house-person-phone .hpp-header h2 {
+  color: #000000;
+  font-size: 19px;
+  line-height: 40px;
+  font-weight: bold;
+}
 .house-person-phone .hpp-header .hpp-input-phone {
   margin-top: 20px;
   margin-bottom: 20px;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 50px;
   color: black;
   border: none;
-  border-bottom: 1px solid #E0E0E0;
+  border-bottom: 1px solid #DCDCDC;
   text-align: left;
   padding: 0;
 }
@@ -704,18 +725,8 @@
   font-size: 12px;
   line-height: 28px;
   text-align: center;
-}
-.house-person-phone .hpp-btn-next {
-  display: block;
-  margin: auto;
-  background-color: #223A6E;
-  text-align: center;
-  color: white;
-  width: 90%;
-  border-radius: 6px;
-  line-height: 48px;
-  border: none;
-  font-size: 17px;
+  height: 28px;
+  margin: 30px 0 50px 0;
 }
 .house-person-type {
   padding: 20px;

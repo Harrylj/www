@@ -9,24 +9,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
-      
 
     <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
-    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
     <link rel="stylesheet" type="text/css" href="css/app.css">
-    
-    <link rel="stylesheet" type="text/css" href="css/plateNumber.css"/>
-    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css"/>
-    <link rel="stylesheet" type="text/css" href="css/friend.css"/>
-    
-  </head>
-    <style type="text/css">
 
-    </style>
+    <link rel="stylesheet" type="text/css" href="css/plateNumber.css" />
+    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/friend.css" />
+
+  </head>
+  <style type="text/css">
+
+  </style>
+
   <body>
-  <!--
+    <!--
   	作者：648267773@qq.com
   	时间：2019-02-15
   	描述：.ffib-car-btn:添加.ffib-car-btn-click表示选中
@@ -38,42 +39,46 @@
       <div class="fii-body">
         <div class="fiib-list-div">
           <ul class="fiib-ul">
-          	<li>
-          	  <div class="fiib-li-left">访客名字</div>
-          	  <div class="fiib-li-right"><input class="fiib-input" type="text" placeholder="请输入访客姓名" /></div>
-          	</li>
-          	<li>
+            <li>
+              <div class="fiib-li-left">访客名字</div>
+              <div class="fiib-li-right"><input class="fiib-input" type="text" placeholder="请输入访客姓名" /></div>
+            </li>
+            <li data-toggle="modal" data-target="#myModalSex">
               <div class="fiib-li-left">性别</div>
-              <div class="fiib-li-right fiib-li-right-more">
-                <select name="fiib-select-sex">
-                	<option value="男" selected="selected">男</option>
-                	<option value="女">女</option>
-                </select>
+              <div class="fiib-li-right fiib-li-right-more ">
+                <div class="fiib-select-sex">男</div>
               </div>
             </li>
             <li>
               <div class="fiib-li-left">人数</div>
               <div class="fiib-li-right fiib-li-right-more">
                 <select name="fiil-select-person-number">
-                	<option value="1" selected="selected">1人</option>
-                	<option value="2">2人</option>
-                	<option value="3">3人</option>
-                	<option value="4">4人</option>
-                	<option value="5">5人</option>
+                  <option value="1" selected="selected">1人</option>
+                  <option value="2">2人</option>
+                  <option value="3">3人</option>
+                  <option value="4">4人</option>
+                  <option value="5">5人</option>
                 </select>
               </div>
             </li>
             <li>
-              <div class="fiib-li-left fiib-li-left-date">时间</div>
+              <div class="fiib-li-left fiib-li-left-date">到访时间</div>
               <div class="fiib-li-right fiib-li-right-date">
-                <button data-options="{&quot;value&quot;:&quot;2019&quot;,&quot;beginYear&quot;:2019,&quot;endYear&quot;:2025}" class="fii-btn-start ">到访时间</button> - <button data-options="{&quot;value&quot;:&quot;2019-02-18 10:10&quot;,&quot;beginYear&quot;:2019,&quot;endYear&quot;:2025}" class="fii-btn-end ">离开时间</button></div>
+                <button data-options="{&quot;value&quot;:&quot;2019&quot;,&quot;beginYear&quot;:2019,&quot;endYear&quot;:2025}" class="fii-btn-start ">到访时间</button>
+              </div>
+            </li>
+            <li>
+              <div class="fiib-li-left fiib-li-left-date">离开时间</div>
+              <div class="fiib-li-right fiib-li-right-date">
+                <button data-options="{&quot;value&quot;:&quot;2019-02-18 10:10&quot;,&quot;beginYear&quot;:2019,&quot;endYear&quot;:2025}" class="fii-btn-end ">离开时间</button>
+              </div>
             </li>
             <li>
               <div class="fiib-li-left">使用限制</div>
               <div class="fiib-li-right fiib-li-right-more">
                 <select name="fiil-select-limit">
-                	<option value="" selected="selected">时间范围内</option>
-                	<option value="">时间范围内</option>
+                  <option value="" selected="selected">时间范围内</option>
+                  <option value="">时间范围内</option>
                 </select>
               </div>
             </li>
@@ -90,41 +95,68 @@
           <ul class="fiib-ul">
             <li>
               <div class="fiib-li-left">是否到访车辆</div>
-              <div class="fiib-li-right"><div class="fiib-li-right-car"></div></div>
+              <div class="fiib-li-right">
+                <div class="fiib-li-right-car"></div>
+              </div>
             </li>
           </ul>
           <div class="fiib-car-more-div">
-            
+
             <div class="fiib-car-number">
-              <!--<input class="fcn-input" type="text" placeholder="川" />
-              <input class="fcn-input" type="text" placeholder="0" />
-              <input class="fcn-input" type="text" placeholder="0" />
-              <input class="fcn-input" type="text" placeholder="0" />
-              <input class="fcn-input" type="text" placeholder="0" />
-              <input class="fcn-input" type="text" placeholder="0" />-->
               <div class="fiib-car-type-title">点击方框录入车牌号</div>
               <div class="car_input">
-                  <ul class="clearfix ul_input"><li class="input_pro"><span></span></li><li class="input_pp input_zim"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li><li class="input_pp"><span></span></li></ul>
-                </div>
+                <ul class="clearfix ul_input">
+                  <li class="input_pro"><span></span></li>
+                  <li class="input_pp input_zim"><span></span></li>
+                  <li class="input_pp"><span></span></li>
+                  <li class="input_pp"><span></span></li>
+                  <li class="input_pp"><span></span></li>
+                  <li class="input_pp"><span></span></li>
+                  <li class="input_pp"><span></span></li>
+                </ul>
+              </div>
             </div>
             <div class="fiib-car-type-title">到访车辆自动识别</div>
             <div class="fiib-car-type">
               <div class="ffib-car-btn ffib-car-btn-click">新能源车</div>
               <div class="ffib-car-btn">一般车辆</div>
             </div>
-            
+
           </div>
         </div>
-        
-      </div>    
+
+      </div>
       <div class="fii-footer">
-        <a href="#"><div class="public-friend-btn-01 fii-btn-qdyq">确定邀请</div></a>
+        <a href="#">
+          <div class="public-friend-btn-01 fii-btn-qdyq">确定邀请</div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fi-modal-sex fade" id="myModalSex" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content fi-modal-sex-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>请选择性别</h4>
+          <div class="fims-list">
+            <div class="fims-img fims-img-select">
+              <img src="images/two/two-fi-woman@3x.png" />
+              <h3>她是女生</h3>
+            </div>
+            <div class="fims-img">
+              <img src="images/two/two-fi-man@3x.png" />
+              <h3>他是男生</h3>
+            </div>
+          </div>
+          <div class="fims-btn-qd" data-dismiss="modal">确定</div>
+        </div>
       </div>
     </div>
     <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-    	(function($) {
+      (function($) {
         $.init();
         var btns_friend_start = $('.fii-btn-start');
         var btns_friend_end = $('.fii-btn-end');
@@ -158,7 +190,7 @@
         // 离开时间
         btns_friend_end.each(function(i, btn) {
           btn.addEventListener('tap', function() {
-            
+
             var optionsJson = this.getAttribute('data-options') || '{}';
             var options = JSON.parse(optionsJson);
             var id = this.getAttribute('id');
@@ -170,49 +202,77 @@
             });
           }, false);
         });
-        
+
       })(mui);
     </script>
-    
+
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/layer.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/plateNumber.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-      $(function(){
+      $(function() {
+        // $('.btn-primary').click();
+
+        // 点击选择性别
+        $('.fims-img').on('click', function() {
+          var class_hover = 'fims-img-select';
+
+          $(this).addClass(class_hover).siblings().removeClass(class_hover);
+
+        })
+        // 点击选择性别弹窗的 "确定" 按钮
+        $('.fims-btn-qd').on('click', function() {
+          var this_index = $('.fims-img-select').index(),
+            e_other = $('.fiib-select-sex'),
+            sex_man = '男',
+            sex_woman = '女';
+          // 女生
+          if(this_index == '0') {
+            e_other.html(sex_woman)
+          }
+          // 男生
+          else if(this_index == '1') {
+            e_other.html(sex_man)
+          }
+          // 错误
+          else {
+            alert('错误！请重新加载')
+          }
+        })
+
+        // 点击蒙层区域关闭
+        $('body').on('click', '.modal-backdrop', function() {
+          $('.close').click();
+        });
+
         // 选择车辆类型
-        $('.ffib-car-btn ').on('click',function(){
+        $('.ffib-car-btn ').on('click', function() {
           var class_click = 'ffib-car-btn-click';
           $(this).addClass(class_click).siblings().removeClass(class_click);
         })
         // 显示到访车辆
-        $('.fiib-li-right-car').on('click',function(){
-          var class_click = 'fiib-li-right-car-hover',   // 显示到访车辆
-              class_other_div = 'fiib-car-more-div';  // 到访车辆信息
+        $('.fiib-li-right-car').on('click', function() {
+          var class_click = 'fiib-li-right-car-hover', // 显示到访车辆
+            class_other_div = 'fiib-car-more-div'; // 到访车辆信息
           // 显示填写信息
-          if(!$(this).hasClass(class_click)){
+          if(!$(this).hasClass(class_click)) {
             $(this).addClass(class_click)
             $('.' + class_other_div).show();
           }
           // 不显示填写信息
-          else{
+          else {
             $(this).removeClass(class_click)
             $('.' + class_other_div).hide();
           }
         })
-        
+
         // 点击确定邀请
-        $('.fii-btn-qdyq').on('click',function(){
+        $('.fii-btn-qdyq').on('click', function() {
           alert('哦哦哦')
         })
-        
-        
-        
-        
-        
+
       })
-      
-      
-      
     </script>
 
   </body>

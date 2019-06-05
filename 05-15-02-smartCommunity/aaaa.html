@@ -11,7 +11,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
     <!--标准mui.css-->
-    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
@@ -22,10 +23,32 @@
   </style>
   <body>
 
-    <div class="conmmunity-index public-div">
-      
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
     </div>
-    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+</div>
+
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       $(function(){
 

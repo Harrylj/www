@@ -1,10 +1,18 @@
 .me-index{
-    padding: 10px 20px 0 20px;
+    padding: 0px 20px 0 20px;
     background-color: white;
     .mi-top{
+        height: 90px;
         display: flex;
         justify-content: flex-end;
         flex-direction: row;
+        padding: 10px 20px 0 20px;
+        margin: 0 -20px;
+        background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd933d), to(#fe6026));
+    background: -webkit-linear-gradient(90deg, #fd933d, #fe6026);
+    background: -moz-linear-gradient(90deg, #fd933d, #fe6026);
+    background: -o-linear-gradient(90deg, #fd933d, #fe6026);
+    background: linear-gradient(90deg, #fd933d, #fe6026); /* 标准的语法 */
         .mit-news
         ,.mit-setting{
             display: block;
@@ -15,25 +23,25 @@
             background-position: center center;
         }
         .mit-news{
-            background-image: url(../images/me-face-notice-icon@2x.png);
+            background-image: url(../images/two/notice@3x.png);
         }
         .mit-setting{
             margin: 0 -5px 0 5px;
-            background-image: url(../images/me-face-settiing-icon@2x.png);
+            background-image: url(../images/two/settiing-icon@3x.png);
         }
     }
     .mi-header{
         position: relative;
-        padding-left: 75px;
-        padding-top: 10px;
+        padding-left: 0;
+        padding-top: 35px;
         min-height: 70px;
         .mih-img{
             position: absolute;
             left: 0;
-            top: 50%;
+            top: 0;
             margin-top: -30px;
-            width: 61px;
-            height: 61px;
+            width: 60px;
+            height: 60px;
             border: 1px solid #F5F5F5;
             border-radius: 50%;
         }
@@ -55,20 +63,25 @@
     }
     .mi-body{
         position: relative;
-        padding-top: 25px;
+        padding-top: 10px;
         .mib-btn-face{
-            margin-bottom: 10px;
-            background-color: #91A8E8;
-            height: 46px;
-            line-height: 46px;
+            width: 150px;
+            height: 25px;
+            margin-bottom: 15px;
+            background-color: transparent;
+            line-height: 25px;
             display: flex;
             justify-content: center;
             font-size: 15px;
             color: white;
             border-radius: 6px 6px 0 0;
             letter-spacing: 2px;
+            background-image: url(../images/two/Face_btn@3x.png);
+            background-size: 100% 100%;
+            color: transparent;
             img{
                 position: relative;
+                display: none;
                 top: 5px;
                 height: 29px;
                 width: 29px;
@@ -111,8 +124,22 @@
             width: 25px;
             height: 25px;
             border-radius: 50%;
-            background-color: #F5F5F5;
-            
+            background-color: transparent;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+       
+        }
+        .mibl-item-02:before{
+            background-image: url(../images/two/me-Mobile-icon@3x.png);
+        }
+        .mibl-item-03:before{
+            background-image: url(../images/two/me-Face-icon@3x.png);
+        }
+        .mibl-item-04:before{
+            background-image: url(../images/two/me-privacy-icon@3x.png);
+        }
+        .mibl-item-05:before{
+            background-image: url(../images/two/me-about-icon@3x.png);
         }
     }
     .mi-line-15{

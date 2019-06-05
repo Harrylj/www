@@ -5,10 +5,8 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>账单缴费</title>
-     <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
-     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
-    -->
+    <title>支付订单</title>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -22,59 +20,109 @@
     <link rel="stylesheet" type="text/css" href="css/bill.css"/>
 
   </head>
+  <style type="text/css">
+  	html,body{
+  	  height: 100%;
+  	  width: 100%;
+  	}
+  </style>
 
   <body>
     <!--
     	作者：648267773@qq.com
-    	时间：2019-01-10
-    	描述：bill-header-ok： .bill-header添加 表示全部账单已清
-           bill-pay-li-click: .bill-pay-li添加表示选中
+    	时间：2019-06-04
+    	描述：.bpp-li-click：表示选中的支付方式
     -->
-    <div class="bill-pay public-div">
-      <div class="bp-header">
-        <h4>总额</h4>
-        <h1>441.77</h1>
-        <h3>12月账单: 284.90</h3>
-      </div>
-      <div class="bd-content">
-        <ul class="bd-body-ul">
-          <li><p>物业管理费</p><span>234.90</span></li>
-          <li><p>辣鸡处理费</p><span>234.90</span></li>
-          <li><p>停车费</p><span>234.90</span></li>
-          <li><p>送水费</p><span>234.90</span></li>
-        </ul>
-      </div>
-      <div class="line-bg-height-15"></div>
-      <div class="bp-body">
-        <h2>其他未缴账单</h2>
-        <ul>
-          <li class="bill-pay-li">
-            <div class="pill-pay-li-div"><p>11月账单</p><span class="bill-list-right">234.90</span></div>
-          </li>
-          <li class="bill-pay-li bill-pay-li-click">
-            <div class="pill-pay-li-div"><p>01月账单</p><span class="bill-list-right">234.90</span></div>
-          </li>
-        </ul>
-        <div class="bd-btn-div">
-          <button class="bd-btn-01 bd-btn-zjjn">直接缴纳</button>
+    <div class="bill-pay-pay public-div">
+      <div class="bpp-header">
+        <div class="bpp-header-top">
+          <p>订单编号2102311599</p>
+          <p id="countdown"></p>
         </div>
+        <h3> &yen;<span>280.00</span></h3>
       </div>
-      
+      <div class="bpp-body">
+        <ul class="bpp-ul">
+        	<li class="bpp-li-click">
+        	  <h3>账户余额支付</h3>
+        	  <p>余额剩余180元</p>
+        	</li>
+        	<li>
+        	  <h4>微信支付</h4>
+        	</li>
+        	<li>
+            <h4>支付宝支付</h4>
+          </li>
+          <li>
+            <h4>银联支付</h4>
+          </li>
+        </ul>
+        <h5 class="bpp-error">错误提示</h5>
+      </div>
+      <div class="public-two-btn-01 bpp-btn-qdzf">确定支付</div>
     </div>
     
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/countdown.js" type="text/javascript" charset="utf-8"></script>
     <script>
       $(function(){
+        // 清空错误提示
+        $('.bpp-error').html('')
+        
         // 点击选中缴费
-        $('.bill-pay-li').on('click',function(){
-          var class_hover = 'bill-pay-li-click';
-          if($(this).hasClass(class_hover)){
-            $(this).removeClass(class_hover)
+        $('.bpp-ul li').on('click',function(){
+          var class_hover = 'bpp-li-click';
+          $(this).addClass(class_hover).siblings().removeClass(class_hover);
+          $('.bpp-error').html('');
+        })
+        
+        // 点击确定支付
+        $('.bpp-btn-qdzf').on('click',function(){
+          var class_hover = 'bpp-li-click',
+              this_index = $('.bpp-li-click').index(),
+              ts_01 = '账户余额支付',
+              ts_02 = '微信支付',
+              ts_03 = '支付宝支付',
+              ts_04 = '银联支付',
+              ts_05 = '你操作错了吧！'
+              ts_error = $('.bpp-error');
+          ts_error.html('');
+          if(this_index == 0){
+            ts_error.html(ts_01);
+          }
+          else if(this_index == 1){
+            ts_error.html(ts_02);
+          }
+          else if(this_index == 2){
+            ts_error.html(ts_03);
+          }
+          else if(this_index == 3){
+            ts_error.html(ts_04);
           }
           else{
-            $(this).addClass(class_hover)
+            ts_error.html(ts_05);
           }
         })
+        
+        // 支付时间倒计时
+        $('#countdown').countdown({
+          //支付开始时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+          //优先采取元素的data-etime值(该值只能为时间戳格式)
+          endTime: '2019/11/7 16:30:00',
+          //支付进行中倒计时的修饰 
+          //可自定义元素,例如"<span>距离支付截止还有:</span>"  
+          beforeEnd: '支付剩余时间:',
+          //支付结束后的修饰
+          //可自定义元素,例如"<span>支付已结束</span>"             
+          afterEnd: '亲，支付时间已过期',
+          //时间格式化(可采用"ddd:hh:mm:ss、 dd:hh:mm:ss、  hh:mm:ss、 mm:ss、 ss"等)                   
+          //format: 'dd:hh:mm:ss',
+          format: 'hh:mm:ss',
+          //支付结束后的回调函数                    
+          callback: function() {
+           console.log('亲，支付结束啦，请重新选择哦!');
+          }
+         });
       })
     </script>
 

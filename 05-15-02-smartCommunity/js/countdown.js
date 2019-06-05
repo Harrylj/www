@@ -52,7 +52,7 @@
         return $this.html(desc + '<span class="countdown-hour">' + timeArr[0] + '</span>:' + '<span class="countdown-minute">' + timeArr[1] + '</span>:' + '<span class="countdown-second">' + timeArr[2] + '</span>');
        },
        "2": function($this, timeArr, desc) {
-        return $this.html(desc + '<span class="countdown-minute">' + timeArr[0] + '</span>分' + '<span class="countdown-second">' + timeArr[1] + '</span>秒');
+        return $this.html(desc + '<span class="countdown-minute">' + timeArr[0] + '</span>:' + '<span class="countdown-second">' + timeArr[1] + '</span>');
        },
        "1": function($this, timeArr, desc) {
         return $this.html(desc + '<span class="countdown-second">' + timeArr[0] + '</span>秒');

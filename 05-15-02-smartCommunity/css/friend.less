@@ -76,16 +76,44 @@
    }
    
    .ftmc-body{
+       .ftmc-ewm-div{
+           display: flex;
+           justify-content: center;
+           flex-direction: column;
+           position: relative;
+           border: 1px solid #F1F1F1;
+           border-radius: 4px;
+           width: 240px;
+           height: 80px;
+           margin: 10px auto;
+           padding-left: 80px;
+       }
        .ftmc-ewm{
+           position: absolute;
+           left: 0;
+           top: 0;
            display: block;
            background-color: #E2E2E2;
            border-radius: 8px;
            width: 80px;
            height: 80px;
-           margin: 10px auto;
+           
+       }
+       h3,h4{
+           margin-left: 30%;
+           line-height: 26px;
+           font-weight: bold;
+       }
+       h3{
+           color: #323232;
+           font-size: 16px;
+       }
+       h4{
+           color: #FF9645;
+           font-size: 18px;
        }
        p{
-           font-size: 15px;
+           font-size: 13px;
            line-height: 24px;
            padding: 10px 0;
            text-align: center;
@@ -96,14 +124,16 @@
        padding: 20px 0;
        text-align: center;
        .ftm-btn-share{
-           background-color: #27396A;
+           background-color: #FF9645;
            border: none;
            height: 42px;
            line-height: 42px;
            font-size: 18px;
            color: white;
-           padding: 0 20px;
+           width: 96%;
+           margin: auto;
            border-radius: 21px;
+           padding: 0;
        }
        p{
            font-size: 12px;
@@ -115,8 +145,8 @@
 }
 .friend-index-list{
     padding: 10px 20px;
-    
     .fil-body:before{
+        display: none;
         content:"世界那么大，朋友那么多";
             background-image: url(../images/friend-img@2x.png);
             background-repeat: no-repeat;
@@ -150,24 +180,46 @@
             position: relative;
             box-shadow: 0 0 5px #CCCCCC;
             border-radius: 8px;  
-            padding-left: 80px;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            margin-bottom: 15px;
             z-index: 99;
             background-color: white;
+            margin-bottom: 15px;
+            .fibl-item-body{
+                position: relative;
+                padding-left: 80px;
+                padding-top: 20px;
+                padding-right: 102px;
+                padding-bottom: 20px;
+                border-bottom: 1px solid #F1F1F1;
+                img{
+                    position: absolute;
+                    left: 10px;
+                    top: 18px;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                }
+            }
+            .fibl-item-footer{
+                line-height: 24px;
+                padding: 6px 15px;
+                color: #323232;
+                font-size: 14px;
+            }
             h2{
                 font-size: 17px;
-                line-height: 28px;
+                line-height: 22px;
+                padding: 3px 0;
                 font-weight: bold;
                 color: #101010;
             }
             p{
-                font-size: 15px;
-                line-height: 24px;
+                font-size: 13px;
+                line-height: 20px;
+                padding: 2px 0;
                 color: #A3A3A3;
             }
-            .fibl-item-btn-delete{
+            .fibl-item-btn-delete
+            ,.fibl-item-btn-again{
                 display: none;
             }
             .fibl-item-btn-over{
@@ -175,7 +227,8 @@
             }    
         }
         .fibl-item-over{
-            .fibl-item-btn-delete{
+            .fibl-item-btn-delete
+            ,.fibl-item-btn-again{
                 display: block;
             }
             .fibl-item-btn-over{
@@ -183,6 +236,9 @@
             }
             h2{
                 color: #969696;
+            }
+            .fibl-item-footer{
+                color: #A3A3A3;
             }
         }
         .filb-item-percentage{
@@ -197,12 +253,12 @@
         }
         .fibl-item-right{
             position: absolute;
-            display: flex;
-            justify-content: flex-end;
+//          display: flex;
+//          justify-content: flex-start;
             right: 10px;
-            top: 50%;
+            top: 28px;
             margin-top: -14px;
-            text-align: right;
+            text-align: left;
         }
         .fibl-item-right-img{
             width: 28px;
@@ -212,19 +268,39 @@
             background-size: 12px 12px;
             background-position: center center;
         }
+        .filb-item-type{
+            font-size: 12px;
+            color: #A3A3A3;
+            line-height: 32px;
+            padding-left: 5px;
+        }
         .fibl-item-btn-over
-        ,.fibl-item-btn-delete{
+        ,.fibl-item-btn-delete
+        ,.fibl-item-btn-again{
+            display: block;
             color: #DB7A74;
             border-radius: 14px;
-            height: 28px;
+            height: 30px;
             border: none;
             font-size: 15px;
             text-align: center;
             padding: 0 10px;
-            line-height: 28px;
+            line-height: 30px;
             background-color: transparent;
         }
+        .fibl-item-btn-over{
+            border: 1px solid #FF9645;
+            color: #FF9645;
+        }
+        .fibl-item-btn-again{
+            border: 1px solid #DCDCDC;
+            color: #959595;
+        }
         .fibl-item-btn-delete{
+            
+            position: relative;
+            top: -62px;
+            right: -25px;
             color: transparent!important;
             background-image: url(../images/friend-detele-button@2x.png);
             background-size: 30px 23px;
@@ -232,8 +308,9 @@
             background-position: center center;
         }  
     }
-    #select_type_over,
-    #select_type_delete{
+    #select_type_over
+    ,#select_type_delete
+    ,#select_type_again{
         margin-left: -20px;
     }
     .mui-popover.mui-popover-action .mui-table-view{
@@ -255,7 +332,6 @@
 }
 .friend-info-input{
     padding-bottom: 240px;
-    background-color: #F5F5F5;
     .fii-header
     ,.fiib-ul li{
         border-bottom: 1px solid #E0E0E0;
@@ -283,7 +359,7 @@
         border-radius: 16px;
     }
     .fiib-li-left-date{
-        width: 60px;
+        width: 80px;
         display: flex;
         justify-content: space-around;
         flex-direction: column;
@@ -324,6 +400,7 @@
             .fiib-li-left{
                 font-size: 16px;
                 color: #101010;
+                min-width: 70px;
             }
             .fiib-li-right{
                 font-size: 16px;
@@ -424,5 +501,81 @@
     }
     .fii-footer{
         padding-top: 80px;
+        padding: 80px 20px 20px 20px;
     }
 }
+.fil-btn-msyq{
+    background-color: #FF9645;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    margin: 30px 0;
+    border-radius: 23px;
+    line-height: 46px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+.modal{
+ top: initial;
+ bottom: 0;
+ border: 1px solid transparent;
+ background-color: white; 
+ .close{
+     display: none;
+ }
+}
+.modal.in .modal-dialog{
+    margin: 0;
+}
+.modal-content{
+  border: 1px solid transparent;
+  box-shadow: none;  
+}
+.fi-modal-sex-content{
+    h4{
+        font-size: 18px;
+        color: #313131;
+        line-height: 60px;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 3px;
+    }  
+}
+.fims-list{
+    display: flex;
+    justify-content: space-around;
+    h3{
+        color: #969696;
+        line-height: 40px;
+        font-size: 16px;
+        text-align: center;
+    }
+    img{
+        width: 110px;
+        height: 110px;
+        border-radius: 50%;
+    }
+    .fims-img{
+        position: relative;
+    }
+    .fims-img:after{
+        position: absolute;
+        right: 5px;
+        top: 5px;
+        z-index: 99;
+        content: " ";
+        width: 21px;
+        height: 21px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-image: url(../images/two/two-fi-bg@3x.png);
+    }
+    .fims-img-select:after{
+        background-image: url(../images/two/two-fi-icon-selected@3x.png);
+    }
+}
+.fims-btn-qd{
+    width: 80%;
+    margin: 30px auto;
+}
+

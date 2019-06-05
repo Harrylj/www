@@ -1,8 +1,0 @@
-1.houseIndex.html修改。
-添加入户邀请按钮
-.house-body内添加
-
-<div class="hb-top">
-          <h1>房屋住户</h1>
-          <a class="hbt-btn-rhyq" href="#">入户邀请</a>
-        </div>

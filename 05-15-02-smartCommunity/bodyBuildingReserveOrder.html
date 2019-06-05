@@ -62,7 +62,7 @@
           <tr>
             <td>开始时间</td>
             <td class="bbro-td-04">20日
-              <button data-options="" class="bbro-btn-start ">开始时间</button>
+              <button data-options="" class="bbro-btn-start " data-h="" data-i="">开始时间</button>
             </td>
           </tr>
           <tr>
@@ -83,8 +83,8 @@
           <tr>
             <td>结束时间</td>
             <td class="bbro-td-04">
-              20日 
-              <button data-options="" class="bbro-btn-end ">结束时间</button>
+              20日 <span class="bbro-end-time"></span>
+              <!--<button data-options="" class="bbro-btn-end ">结束时间</button>-->
             </td>
           </tr>
           <tr>
@@ -98,6 +98,7 @@
       <div class="bbro-ts">错误提示</div>
       <a href="#"><div class="bbro-btn-qdyy">确定预约</div></a>
     </div>
+     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
@@ -116,30 +117,35 @@
              * 示例为了简洁，将 options 放在了按钮的 dom 上
              * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
              */
+            var a = new Date();
+            console.log(a.getMinutes())
             var picker = new $.DtPicker({
-              "type": "time",
-              　　　　"customData": {
-                "i": [{
-                  "value": "0",
-                  "text": "00"
-                }, {
-                  "value": "10",
-                  "text": "10"
-                }, {
-                  "value": "20",
-                  "text": "20"
-                }, {
-                  "value": "30",
-                  "text": "30"
-                }, {
-                  "value": "40",
-                  "text": "40"
-                }, {
-                  "value": "50",
-                  "text": "50"
-                }]
-              }
-            });
+                        "type": "time",
+                        "beginDate": new Date(2016, 04, 20),
+                        "endDate": new Date(),
+                        // "value": "(a.AddMinutes(10).ToString('yyyy-MM-dd HH:mm'))",
+                        "customData": {
+                            "i": [{
+                                "value": "0",
+                                "text": "00"
+                            }, {
+                                "value": "10",
+                                "text": "10"
+                            }, {
+                                "value": "20",
+                                "text": "20"
+                            }, {
+                                "value": "30",
+                                "text": "30"
+                            }, {
+                                "value": "40",
+                                "text": "40"
+                            }, {
+                                "value": "50",
+                                "text": "50"
+                            }]
+                        }
+                    });
             picker.show(function(rs) {
               /*
                * rs.value 拼合后的 value
@@ -151,22 +157,44 @@
                * rs.i 分（minutes 的第二个字母），用法同年
                */
               btns_bbro_start[0].innerText = rs.text;
+              btns_bbro_start[0].setAttribute('data-h',rs.h.text);
+              btns_bbro_start[0].setAttribute('data-i',rs.i.text);
               picker.dispose();
+              
+              var time_btn_start = jQuery('.bbro-btn-start'); // 开始时间按钮
+              var time_end = jQuery('.bbro-end-time');
+              // 判断是否已选开始时间
+              // 未选
+              if(time_btn_start.attr('data-h') == ''){
+                time_end.html('');
+              }
+              //已选
+              else{
+                var time_end_i = parseInt(time_btn_start.attr('data-i')) + parseInt(jQuery('.bbro-time-m').html());
+                var time_end_h = parseInt(time_btn_start.attr('data-h')) + parseInt(time_end_i/60 )
+                var time_end_i_0 = time_end_i%60;
+                // 加0
+                if(time_end_i_0 < 10){
+                  time_end_i_0 = '0' + time_end_i_0;
+                }
+                // 判断小时是否超过24
+                if(time_end_h >= 24){
+                  time_end_h = '0' + (time_end_h - 24)
+                }
+                time_end.html(time_end_h + ':' + time_end_i_0)
+                console.log(time_end_i,time_end_h)
+              }
+              
             });
           }, false);
         });
-        
-        // 开始时间
+        /*
+        // 结束时间
         btns_bbro_end.each(function(i, btn) {
           btn.addEventListener('tap', function() {
             var optionsJson = this.getAttribute('data-options') || '{}';
             var options = JSON.parse(optionsJson);
             var id = this.getAttribute('id');
-            /*
-             * 首次显示时实例化组件
-             * 示例为了简洁，将 options 放在了按钮的 dom 上
-             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
-             */
             var picker = new $.DtPicker({
               "type": "time",
               　　　　"customData": {
@@ -198,6 +226,7 @@
           }, false);
         });
 
+        */
         document.getElementById("toastBtn").addEventListener('click', function() {
           mui.toast('<div class="bbro-toast">预约成功</div>');
         });
@@ -206,7 +235,7 @@
       })(mui);
     </script>
 
-    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+   
     <script type="text/javascript">
       $(function() {
         // 点击选择运动时长
@@ -214,12 +243,39 @@
           var class_click = 'bbro-li-hover',
             this_index = $(this).index(),
             e_num = $('.bbro-time-m'); // 运动时长
+         
           $(this).addClass(class_click).siblings().removeClass(class_click);
           // 循环为前面的元素添加class
           for(var i = 0; i < this_index; i++) {
             $(this).parent().children('li').eq(i).addClass(class_click)
           }
           e_num.html($(this).html())
+          
+          
+          
+          var time_btn_start = jQuery('.bbro-btn-start'); // 开始时间按钮
+          var time_end = jQuery('.bbro-end-time');
+          // 判断是否已选开始时间
+          // 未选
+          if(time_btn_start.attr('data-h') == ''){
+            time_end.html('');
+          }
+          //已选
+          else{
+            var time_end_i = parseInt(time_btn_start.attr('data-i')) + parseInt(jQuery('.bbro-time-m').html());
+            var time_end_h = parseInt(time_btn_start.attr('data-h')) + parseInt(time_end_i/60 )
+            var time_end_i_0 = time_end_i%60;
+            // 加0
+            if(time_end_i_0 < 10){
+              time_end_i_0 = '0' + time_end_i_0;
+            }
+            // 判断小时是否超过24
+            if(time_end_h >= 24){
+              time_end_h = '0' + (time_end_h - 24)
+            }
+            time_end.html(time_end_h + ':' + time_end_i_0)
+            console.log(time_end_i,time_end_h)
+          }
         })
         
         // 点击确定预约

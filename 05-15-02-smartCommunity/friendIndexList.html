@@ -32,7 +32,9 @@
     <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <style type="text/css">
-
+    html,body{
+      background-color: #F5F5F5;
+    }
   </style>
 
   <body>
@@ -44,6 +46,7 @@
     	      #fibl-item-click: 表示当前点击的弹窗元素
     	      #select_type_over: 表示结束邀请的弹层
     	      #select_type_delete: 表示删除的弹层
+    	      #select_type_again: 表示再次邀请的弹层
     -->
     <div class="friend-index-list public-div">
       <div class="fil-body">
@@ -51,120 +54,43 @@
         <div class="filb-list-div-father">
           <div class="filb-list-div">
 
+            
             <div class="fibl-item">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="25"><span>装修</span></div>
+              <div class="fibl-item-body">
+                <img src="images/user-01.jpg"/>
+                <h2>村里的小芳</h2>
+                <p>今天过来吃饭，小住几天</p>
               </div>
-              <h2>村里的小芳·3</h2>
-              <p>09.09 00 -- 09.12 00</p>
+              <div class="fibl-item-footer">预约到访时间:2019年6月12日 11:00</div>
               <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
+                <div class="filb-item-type">已到访</div>
                 <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
-            <div class="fibl-item">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="25"><span>装修</span></div>
-              </div>
-              <h2>村里的小芳·3</h2>
-              <p>09.09 00 <br />-- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-again" href="#select_type_again">再次邀请</a>
                 <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
               </div>
             </div>
             <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
+              <div class="fibl-item-body">
+                <img src="images/user-01.jpg"/>
+                <h2>村里的小芳</h2>
+                <p>今天过来吃饭，小住几天今天过来吃饭，小住几天</p>
               </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
+              <div class="fibl-item-footer">预约到访时间:2019年6月12日 11:00</div>
               <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
+                <div class="filb-item-type">未到访</div>
                 <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-again" href="#select_type_again">再次邀请</a>
                 <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
               </div>
             </div>
-            <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
-              </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
-            <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
-              </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
-            <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
-              </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
-            <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
-              </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
-            <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
-              </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
-            <div class="fibl-item fibl-item-over">
-              <div class="filb-item-percentage">
-                <div class="percentage" data-percent="100"><span>访客</span></div>
-              </div>
-              <h2>村里的小芳·1</h2>
-              <p>09.09 00 -- 09.12 00</p>
-              <div class="fibl-item-right">
-                <!--<div class="fibl-item-right-img"></div>-->
-                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
-                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
-              </div>
-            </div>
+            
+
           </div>
 
         </div>
 
       </div>
-
+      <div class="fil-btn-msyq">马上邀请</div>
       <!--
         作者：648267773@qq.com
         时间：2019-01-17
@@ -197,6 +123,22 @@
           </li>
         </ul>
       </div>
+      <div id="select_type_again" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-01">
+          <li class="select_type_over_li">是否再次邀请，需填写更新邀请信息</li>
+          <li class="mui-table-view-cell">
+            <a href="#select_type_again"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_again"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+  
+    
+    
     </div>
 
   </body>
@@ -229,6 +171,7 @@
       var click_btn = $('#fibl-item-click'), // 触发弹窗的按钮 --- 有且只存在一个
         click_html_01 = $('.fibl-item-btn-over').eq(0), // 结束邀请
         click_html_02 = $('.fibl-item-btn-delete').eq(0), // 删除
+        click_html_03 = $('.fibl-item-btn-again').eq(0), // 再次邀请
         class_father = 'fibl-item', // 祖父元素的class
         class_father_over = 'fibl-item-over', // 祖父元素失效class
         class_sibling_round = 'fibl-item-right-img'; // 圆
@@ -240,8 +183,8 @@
         // 隐藏自身，显示默认按钮
         click_btn.hide().siblings('.' + class_sibling_round).show();
         // 改变父元素状态,取消进度
-        click_btn.parents('.' + class_father).addClass(class_father_over)
-          .children('.filb-item-percentage').children('.percentage').data('easyPieChart').update(100);
+        click_btn.parents('.' + class_father).addClass(class_father_over);
+        //  .children('.filb-item-percentage').children('.percentage').data('easyPieChart').update(100);
         // 重置进度条时间
         //$('.percentage').data('easyPieChart').update(100);
 
@@ -250,7 +193,13 @@
       else if(click_btn.html() == click_html_02.html()) {
         // 删除父元素
         click_btn.parents('.' + class_father).remove();
-      } else {
+      }
+      // 再次邀请
+      else if(click_btn.html() == click_html_03.html()) {
+        // 再次邀请
+        console.log('点击了再次邀请')
+      }
+      else {
         alert('BUG了')
       }
 
