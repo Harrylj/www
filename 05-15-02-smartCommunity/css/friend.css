@@ -195,6 +195,22 @@
   height: 60px;
   border-radius: 50%;
 }
+.friend-index-list .fil-body .fibl-item .fibl-item-body:before,
+.friend-index-list .fil-body .fibl-item .fibl-item-body:after {
+  position: absolute;
+  bottom: -5px;
+  height: 10px;
+  width: 15px;
+  background-color: white;
+  content: " ";
+  color: transparent;
+}
+.friend-index-list .fil-body .fibl-item .fibl-item-body:before {
+  left: 0;
+}
+.friend-index-list .fil-body .fibl-item .fibl-item-body:after {
+  right: 0;
+}
 .friend-index-list .fil-body .fibl-item .fibl-item-footer {
   line-height: 24px;
   padding: 6px 15px;

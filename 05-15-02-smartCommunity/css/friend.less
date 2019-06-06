@@ -199,6 +199,22 @@
                     border-radius: 50%;
                 }
             }
+            .fibl-item-body:before
+            ,.fibl-item-body:after{
+                position: absolute;
+                bottom: -5px;
+                height: 10px;
+                width: 15px;
+                background-color: white;
+                content: " ";
+                color: transparent;
+            }
+            .fibl-item-body:before{
+                left: 0;
+            }
+            .fibl-item-body:after{
+                right: 0;
+            }
             .fibl-item-footer{
                 line-height: 24px;
                 padding: 6px 15px;
