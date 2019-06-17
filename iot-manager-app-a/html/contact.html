@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>联系人列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/mui.indexedlist.css" />
+		<style>
+			* {
+				touch-action: pan-y;
+			}
+			html,body {
+				height: 100%;
+			}
+			.titleBar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #FFFFFF;
+				border: none;
+				box-shadow: none;
+				padding-left: 16px;
+				padding-right: 15px;
+			}
+			.titleName {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.titleRightButton {
+				width: 17px;
+				height: auto;
+				float: right;
+			}
+			.mui-content {
+				height: 100%;
+				background-color: #F8F8F8;
+			}
+			.msg-bar {
+				background-color: #F8F8F8;
+				position: fixed;
+				z-index: 10;
+				right: 0;
+				left: 0;
+				border-bottom: 0;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+			.msg-search {
+				padding: 6px 15px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: auto;
+				background-color: #F8F8F8;
+				border-radius: 56px;
+				color: #646464;
+				font-size: 15px;
+			}
+			.custom-menu {
+				margin-top: 27px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: auto;
+				color: #969696;
+				font-size: 12px;
+				padding-left: 14px;
+				padding-bottom: 24px;
+			}
+			.custom-menu-cell {
+				text-align: center;
+			}
+			.custom-menu-cell:not(:first-child) {
+				margin-left: 49px;
+			}
+			.custom-menu img {
+				width: 23px;
+				height: auto;
+			}
+			.list-title {
+				background-color: #FFFFFF;
+				font-size: 17px;
+				font-weight: bold;
+				margin-top: 11px;
+				padding-left: 16px;
+				padding-top: 20px;
+			}
+			.list-container {
+				margin-top: 191px;
+				height: 100%;
+				background-color: #FFFFFF;
+				padding-top: 16px;
+			}
+			.mui-table-view:before {
+				display: none;
+			}
+			.mui-table-view-cell:after {
+				right: 15px;
+			}
+			.list-text-title {
+				color: #202020;
+				font-size: 16px;
+			}
+			.list-content {
+				color: #969696;
+				font-size: 13px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="titleBar mui-bar mui-bar-nav">
+			<div class="titleName">通讯录</div>
+			<div>
+				<img id="add" class="titleRightButton" src="../images/contact/add_to.png" />
+			</div>
+		</header>
+		<div class="mui-content" id="app">
+			<div class="msg-bar">
+				<div style="background-color: #FFFFFF; padding: 4px 15px 0px;">
+					<div class="msg-search">
+						<img style="width: 17px; height: 17px;" src="../images/search-icon.png" />
+						<div style="margin-left: 10px;">搜索</div>
+					</div>
+					<div class="custom-menu">
+						<div class="custom-menu-cell" id="owner">
+							<img src="../images/contact/owner_icon.png" />
+							<div>业主通讯录</div>
+						</div>
+						<div class="custom-menu-cell" id="company">
+							<img src="../images/contact/company_icon.png" />
+							<div>企业通讯录</div>
+						</div>
+					</div>
+				</div>
+				<div class="list-title">常用联系人</div>
+			</div>
+			
+			<div class="list-container">
+				<div id="pullrefresh">
+					<div class="mui-table-view">
+						<div v-for="contact in frequentContacts" class="mui-table-view-cell mui-indexed-list-item" @tap="navigateTo(contact.userId, contact.userNick)">
+							<image class="mui-media-object mui-pull-left" :src="contact.avatarUrl"></image>
+							<div class="mui-media-body">
+								<div class="mui-ellipsis list-text-title">{{contact.userNick}} {{contact.userPhone}}</div>
+								<div class="mui-ellipsis list-content">{{contact.userJob}}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.indexedlist.js"></script>
+		<script src="../js/bean/contactBean.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			mui.ready(function () {
+				initData();
+			})
+			mui.plusReady(function() {
+				mui(".custom-menu").on('tap','.custom-menu-cell', function(){
+					var id = this.getAttribute("id");
+					var param = {};
+					if(id == "owner") {
+						param.type = 1;
+						param.typeName = "业主通讯录";
+					} else if(id == "company") {
+						param.type = 2;
+						param.typeName = "企业通讯录";
+					}
+					mui.openWindow({
+						url: 'contact-list.html',
+						id: 'contact-list',
+						styles: {
+							scrollIndicator: "none"
+						},
+						extras: {
+							queryType: param
+						}
+					});
+				});
+			});
+
+			var app = new Vue({
+				el: '#app',
+				data: {
+					frequentContacts: []
+				},
+				methods: {
+					navigateTo(id, name) {
+						mui.openWindow({
+							url: 'contact-details.html',
+							id: 'contact-details',
+							styles: {
+								scrollIndicator: "none"
+							},
+							extras: {
+								userId: id,
+								userName: name
+							}
+						});
+					}
+				}
+			});
+			function initData() {
+				for (var i = 0; i < 4; i++) {
+					var item1 = new ContactBean();
+					item1.userNick = "李四";
+					item1.avatarUrl = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90";
+					item1.userPhone = "13800138000";
+					item1.userJob = "锦城峰荟/客服中心/经理";
+					app.frequentContacts.push(item1);
+					
+					var item2 = new ContactBean();
+					item2.userNick = "徐汇";
+					item2.avatarUrl = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90";
+					item2.userPhone = "13800138000";
+					item2.userJob = "锦城峰荟/客服中心/经理";
+					app.frequentContacts.push(item2);
+					
+					var item3 = new ContactBean();
+					item3.userNick = "王五";
+					item3.avatarUrl = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90";
+					item3.userPhone = "13800138000";
+					item3.userJob = "锦城峰荟/客服中心/经理";
+					app.frequentContacts.push(item3);
+					
+					var item4 = new ContactBean();
+					item4.userNick = "张三";
+					item4.avatarUrl = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90";
+					item4.userPhone = "13888888888";
+					item4.userJob = "锦城峰荟/客服中心/经理";
+					app.frequentContacts.push(item4);
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

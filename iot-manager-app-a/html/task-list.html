@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>任务列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<style>
+			html,
+			body {
+				height: 100%;
+			}
+			.mui-content {
+				background-color: #FFFFFF;
+				height: 100%;
+			}
+			.mui-control-content {
+				height: 200px;
+				font-size: 14px;
+			}
+			
+			.mui-table-view-cell {
+				padding: 0px;
+			}
+			.mui-table-view-cell:after,
+			.mui-table-view:before,
+			.mui-table-view:after {
+				display: none;
+			}
+			.control-bar {
+				margin: 10px 10px;
+				padding-bottom: 10px;
+				border-bottom: 1px solid #bababa;
+			}
+			.center-vertical {
+				 display: flex;
+				 align-items:center;
+			}
+			.task-cell-body {
+				padding: 8px 16px;
+				margin-top: 8px;
+			}
+			.task-cell-title {
+				font-size: 19px;
+				font-weight: bold;
+			}
+			.task-cell-content {
+				font-size: 15px;
+				margin-top: 16px;
+				filter:alpha(Opacity=60);
+				-moz-opacity:0.6;
+				opacity: 0.6;
+			}
+			.task-cell-time {
+				font-size: 15px;
+				padding: 16px;
+			}
+			
+			/* 待执行 */
+			.task-cell-1 {
+				background-color: #b67ed3;
+				border-radius: 4px;
+				margin: 10px;
+				color: #ffffff;
+			}
+			.task-cell-time-1 {
+				display: flex;
+				justify-content: space-between;
+			}
+			.task-btn-accept {
+				background-color: #ffffff;
+				border-radius: 30px;
+				border: 1px solid #8d52ab ;
+				width: 80px;
+				height: 36px;
+				color: #b67ed3;
+			}
+			.divider-1 {
+				width: 100%;
+				height: 1px;
+				background-color: #ffffff;
+				filter:alpha(Opacity=20);
+				-moz-opacity:0.2;
+				opacity: 0.2;
+			}
+			
+			/* 执行中 */
+			.task-cell-2-1 {
+				background-color: #67a4bd;
+				border-radius: 4px;
+				margin: 10px;
+				color: #ffffff;
+			}
+			.task-cell-2-2 {
+				background-color: #45b27b;
+				border-radius: 4px;
+				margin: 10px;
+				color: #ffffff;
+			}
+			.task-cell-time-2 {
+				font-size: 20px;
+				margin-left: 8px;
+			}
+			.task-icon-time {
+				width: 20px;
+				height: auto;
+			}
+			
+			/* 已完成 */
+			.divider-2 {
+				width: 100%;
+				height: 1px;
+				background-color: #e0e0e0;
+			}
+			.task-cell-finish {
+				background-color: #FFFFFF;
+				border-radius: 4px;
+				border: 1px solid #bababa;
+				margin: 10px;
+				color: #646464;
+			}
+			.task-cell-content-finish {
+				color: #9a9a9a;
+			}
+			.task-cell-time-finish-1 {
+				color: #45b27b;
+				font-size: 20px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">任务</h1>
+		</header>
+		<div class="mui-content">
+			<div class="control-bar">
+				<div id="segmentedControl" class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">待执行</a>
+					<a class="mui-control-item" href="#item2">执行中</a>
+					<a class="mui-control-item" href="#item3">已完成</a>
+				</div>
+			</div>
+			<div>
+				<div id="item1" class="mui-control-content mui-active">
+					<div id="scroll1" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<div class="mui-table-view">
+								<div class="mui-table-view-cell mui-collapse-content task-cell-1" id="task-1">
+									<div class="task-cell-time center-vertical task-cell-time-1">
+										<div>起止时间  08:09:00—08:12:00</div> 
+										<button type="button" class="task-btn-accept" id="acceptBtn">接受</button>
+									</div>
+									<div class="divider-1"></div>
+									<div class="task-cell-body">
+										<div class="task-cell-title">楼道楼梯、楼宇大堂保洁任务</div>
+										<div class="task-cell-content">
+											1、打扫楼栋电梯<br>
+											2、打扫每层入户门厅<br>
+											3、打扫楼梯扶手<br>
+											4、清洁每层电梯门<br>
+											5、清理门厅垃圾
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="item2" class="mui-control-content">
+					<div id="scroll2" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<div class="mui-table-view">
+								<div class="mui-table-view-cell mui-collapse-content task-cell-2-1" id="task-2">
+									<div class="task-cell-body">
+										<div class="task-cell-title">公区每日巡检任务</div>
+										<div class="task-cell-content">检查公共设施是否有损坏以及公区安全情况</div>
+									</div>
+									<div class="divider-1"></div>
+									<div class="task-cell-time center-vertical">
+										<img class="task-icon-time" src="../images/ic_time.png"/>
+										<span class="task-cell-time-2">01:46:20</span>
+									</div>
+								</div>
+								
+								<div class="mui-table-view-cell mui-collapse-content task-cell-2-2" id="task-2-1">
+									<div class="task-cell-body">
+										<div class="task-cell-title">绿化带日常巡检任务</div>
+										<div class="task-cell-content">检查绿化带环境卫生</div>
+									</div>
+									<div class="divider-1"></div>
+									<div class="task-cell-time center-vertical">
+										<img class="task-icon-time" src="../images/ic_time.png"/>
+										<span class="task-cell-time-2">01:46:20</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="item3" class="mui-control-content">
+					<div id="scroll3" class="mui-scroll-wrapper">
+						<div class="mui-scroll">
+							<div class="mui-table-view">
+								<div class="mui-table-view-cell mui-collapse-content task-cell-finish" id="task-3">
+									<div class="task-cell-body">
+										<div class="task-cell-title">消防设施例行检查</div>
+										<div class="task-cell-content task-cell-content-finish">检查公共区域消防设施损坏及使用情况，及时补充更换已使用或者已损坏的设备</div>
+									</div>
+									<div class="divider-2"></div>
+									<div class="task-cell-time">
+										<span>任务时间</span> 
+										<span class="task-cell-time-finish-1">01:46:20</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script>
+			mui.init({
+				preloadPages:[{
+					id:'task-finish',
+					url:'task-finish.html',
+				},{
+					id:'task-executing',
+					url:'task-executing.html',
+				},{
+					id:'task-finish',
+					url:'task-finish.html',
+				}]
+			});
+			mui('#scroll1').scroll({
+				indicators: false, //是否显示滚动条
+			});
+			mui('#scroll2').scroll({
+				indicators: false, //是否显示滚动条
+			});
+			mui('#scroll3').scroll({
+				indicators: false, //是否显示滚动条
+			});
+			mui.plusReady(function() {
+				var header = document.querySelector('header.mui-bar');
+				var control = document.querySelector('#segmentedControl');
+				var resolutionHeight = plus.display.resolutionHeight - header.offsetHeight - control.offsetHeight - 20;
+
+				document.getElementById("scroll1").setAttribute("style", "height:" + resolutionHeight + "px;");
+				document.getElementById("scroll2").setAttribute("style", "height:" + resolutionHeight + "px;");
+				document.getElementById("scroll3").setAttribute("style", "height:" + resolutionHeight + "px;");
+				
+				document.getElementById("task-1").addEventListener("tap", function(e){
+					mui.openWindow({
+						url: 'task-pre.html', 
+						id: 'task-pre',
+						styles: {
+							scrollIndicator: "none"
+						},
+						extras: {
+							task: {
+								taskId: "12345",
+								name: "楼道楼梯、楼宇大堂保洁任务",
+								description: "1、打扫楼栋电梯<br>2、打扫每层入户门厅<br>3、打扫楼梯扶手<br>4、清洁每层电梯门<br>5、清理门厅垃圾",
+								time: "19年03月31日——9月04日",
+								address: "锦城峰荟"
+							}
+						}
+					});
+				});
+				document.getElementById("task-2").addEventListener("tap", function(e){
+					var detailsPage = plus.webview.getWebviewById('task-executing');
+					mui.fire(detailsPage, 'show', {
+						task: {
+							taskId: "12345",
+							name: "公区每日巡检任务",
+							description: "检查公共设施是否有损坏以及公区安全情况",
+							time: "19年03月31日——9月04日",
+							address: "锦城峰荟",
+						}
+					});
+					mui.openWindow({
+						id: 'task-executing',
+						styles: {
+							scrollIndicator: "none"
+						}
+					});
+				});
+				document.getElementById("task-2-1").addEventListener("tap", function(e){
+					var detailsPage = plus.webview.getWebviewById('task-executing');
+					mui.fire(detailsPage, 'show', {
+							task: {
+								taskId: "12345",
+								name: "绿化带日常巡检任务",
+								description: "检查绿化带环境卫生",
+								time: "19年03月31日——9月04日",
+								address: "锦城峰荟"
+							}
+						});
+					mui.openWindow({
+						id: 'task-executing',
+						styles: {
+							scrollIndicator: "none"
+						}
+					});
+				});
+				document.getElementById("task-3").addEventListener("tap", function(e){
+					var detailsPage = plus.webview.getWebviewById('task-finish');
+					mui.fire(detailsPage, 'show', {
+							task: {
+								taskId: "12345",
+								name: "消防设施例行检查",
+								description: "检查公共区域消防设施损坏及使用情况，及时补充更换已使用或者已损坏的设备",
+								time: "19年03月31日——9月04日",
+								address: "锦城峰荟"
+							}
+						});
+					mui.openWindow({ 
+						id: 'task-finish',
+						styles: {
+							scrollIndicator: "none"
+						},
+					});
+				});
+				
+				document.getElementById("acceptBtn").addEventListener("tap", function(e){
+					var detailsPage = plus.webview.getWebviewById('task-executing');
+					mui.fire(detailsPage, 'show', {
+						task: {
+							taskId: "12345",
+							name: "楼道楼梯、楼宇大堂保洁任务",
+							description: "1、打扫楼栋电梯<br>2、打扫每层入户门厅<br>3、打扫楼梯扶手<br>4、清洁每层电梯门<br>5、清理门厅垃圾",
+							time: "19年03月31日——9月04日",
+							address: "锦城峰荟"
+						}
+					});
+					mui.openWindow({
+						id: 'task-executing',
+						styles: {
+							scrollIndicator: "none"
+						}
+					});
+					e.stopPropagation()
+				});
+			});
+		</script>
+
+	</body>
+
+</html>

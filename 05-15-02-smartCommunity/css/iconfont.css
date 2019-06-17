@@ -1,0 +1,37 @@
+@font-face {font-family: "iconfont";
+  src: url('iconfont.eot?t=1560499686068'); /* IE9 */
+  src: url('iconfont.eot?t=1560499686068#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAANMAAsAAAAAB5wAAAL+AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDQAqCEIFrATYCJAMYCw4ABCAFhG0HYBuhBsiemjwpEWYDCgAARNANFkE1VvYsPYICBSgREkmgoqNSUcQSwckYHWHYiPvfNetvs0AQu8Cg0A7+pFNKXyZdxrtTrNbesTIoDIEC1FML3P0FTh7P5//e6V9ZFsi89qxc1qaxBhZt6gQYBxTQ3vipKVwgiXrD2AUt8TKBXjPqxJ2emFuEZIU5KxA3HW5AciauKKzULbSKjUV8gKo7vfQ9B/A++H78h5ZIJqmZufDCjXEbhn5Vfmsje94eXPco0E7nBdtGxipQiNuV+VuIYCKi9/p4J0Cvbkn6Vfn14Ov1b22eR8K06sxg6LX+8iiSkFWigUr94IxC5VelQyj8OiAkfl0nBL9bCZnfbXUqaBNOqNgBLkDCVfaw3pjbaDmxWE6Y8SUb3b18++bFw/0izm7vP7oswFub6eTFw4v7kPq/3N97UJDh+/rg8lERyfj+qOyAIGZ7V7tX4Fvm9RvXr4+OTqNFM/BuN/3e7u694tbie34HaUJVdhFsXXxtjGaNVY1ljeq/Rv2Bv/TtrNaq0axt/f0Y8IHHJI7HTF75uW8IoHNKMumYPhAK0Ck/JF1NNuNf/MZb+SZXy+r7n6yAn9UrX4N4xwLdC90STPvmtR3biqY3Ha0orZ0qgWaqczDxmhveeHjU26lsE7iS0G1iQLDLdIKs2yxdBKuo+qyh6XaIXismt/cZIxFRerDsGCAMe4Zk0A9kw17QRfAG1aTvaIaDoNe1yDuwz3w4qaMSDYU2NdepY4kIs10qNSyfRx4LGTKtD8TLKF0nRZsbmvKlSYygnGKJu8JblGKUSRGmE+A6DIUEjUoRQEs1+JWK9jQ2sqobNVgiDKlOkZBBQTbKtI5yWIQI5nVXUgufn4e4mBCDbGipKi5Dksvpn2rWoKkDPWmJdGq5FT6uFVwLRWEoRhLCqAngRSErL1DR6nEByKI08A/IRvVoRJ1YV0vD8rbwW+6BXuYJLVLkKFGjRZfee2ie/yktze2JzIj4Y04Sxwi3YyKlrFSv0FXNufbmFgAAAA==') format('woff2'),
+  url('iconfont.woff?t=1560499686068') format('woff'),
+  url('iconfont.ttf?t=1560499686068') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('iconfont.svg?t=1560499686068#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-webicon215:before {
+  content: "\e68d";
+}
+
+.icon-fanhui:before {
+  content: "\e682";
+}
+
+.icon-gengduo:before {
+  content: "\e733";
+}
+
+.icon-icon-test:before {
+  content: "\e61e";
+}
+
+.icon-webicon512:before {
+  content: "\e734";
+}
+

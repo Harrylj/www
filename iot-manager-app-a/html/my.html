@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<style>
+			.mui-content {
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #F5F5F5;
+			}
+
+			.mui-table-view {
+				color: #000000;
+				font-size: 17px;
+			}
+
+			.mui-table-view-cell {
+				padding: 12px 15px;
+			}
+
+			.mui-table-view .mui-pull-right {
+				color: #6D6E8D;
+				font-style: normal;
+				margin-right: -25px;
+				font-size: 17px
+			}
+
+			.mui-table-view:before,
+			.mui-table-view:after {
+				display: none;
+			}
+
+			.msi-header {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				background-color: #FFFFFF;
+				padding-left: 15px;
+				padding-bottom: 17px;
+				padding-top: 40px;
+			}
+
+			.msi-header .msi-img {
+				width: 63px;
+				height: 63px;
+				background-color: #BABABA;
+				border-radius: 50%;
+			}
+
+			#my-logout {
+				color: #E91A0E;
+				text-align: center;
+			}
+			.my-info {
+				margin-left: 21px;
+				padding-top: 8px;
+				padding-bottom: 8px;
+			}
+			.mui-table-view-cell:after {
+				right: 15px;
+			}
+			.my-password .mui-table-view-cell:before {
+				position: absolute;
+				right: 15px;
+				top: 0;
+				left: 15px;
+				height: 1px;
+				content: '';
+				-webkit-transform: scaleY(.5);
+				transform: scaleY(.5);
+				background-color: #E0E0E0;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="mui-scroll-wrapper">
+				<div class="mui-scroll">
+					<div class="msi-header">
+						<img class="msi-img" id="head-img" />
+						<div class="my-info">
+							<div style="color: #020202; font-size: 21px; font-weight: bold;">张三</div>
+							<div style="color: #BABABA; font-size: 15px; margin-top: 8px;">锦城峰荟/客服中心/经理</div>
+						</div>
+					</div>
+					<ul class="mui-table-view mui-table-view-chevron my-password" style="margin-top: 0px;">
+						<li class="mui-table-view-cell" id="password-modify">
+							<a class="mui-navigate-right">修改密码</a>
+						</li>
+					</ul>
+					<ul class="mui-table-view mui-table-view-chevron" style="margin-top: 11px;">
+						<li class="mui-table-view-cell" id="update">
+							<a class="mui-navigate-right">更新版本 <i class="mui-pull-right" id="appVersion">V3.1.0</i></a>
+						</li>
+						<li class="mui-table-view-cell" id="cache">
+							<a class="mui-navigate-right">清空缓存 <i class="mui-pull-right">
+									<span class='mui-badge' id="cacheSize">0B</span>
+								</i>
+							</a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right">小区信息<i class="mui-pull-right">锦城峰荟</i></a>
+						</li>
+						<li class="mui-table-view-cell">
+							<a class="mui-navigate-right">关于人居<i class="mui-pull-right">人居物业很好</i></a>
+						</li>
+					</ul>
+					<ul class="mui-table-view" style="margin-top: 40px;">
+						<li class="mui-table-view-cell" id="my-logout">
+							<a>退出登录</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="../js/mui.min.js"></script>
+	<script src="../js/cache.js"></script>
+	<script src="../js/account.js"></script>
+	<script>
+		mui.init();
+		mui(".mui-scroll-wrapper").scroll();
+		var cacheCaleState = false;
+		var cacheUtils = null;
+		mui.plusReady(function() {
+			cacheUtils = new CacheUtils(plus.os.name);
+			initCacheSize();
+
+			document.querySelector("#appVersion").innerHTML = "V" + plus.runtime.version;
+			document.getElementById("cache").addEventListener('tap', function() {
+				plus.nativeUI.confirm("确定清除缓存？ 清除后App中的数据将会被清理，用户需重新登录", function(e) {
+					if (e.index == 0) {
+						cacheUtils.clearCache(function() {
+							//再次计算缓存大小
+							initCacheSize();
+						});
+					}
+				}, "温馨提示", ["确定", "取消"]);
+			}, false);
+		})
+		setTimeout(function() {
+			defaultImg();
+		}, 500);
+
+		document.getElementById("my-logout").addEventListener('tap', function() {
+			plus.nativeUI.confirm("确认退出当前帐号？", function(result) {
+				if (result.index == 0) {
+					//注销账号
+					accountManager.setUser({});
+					mui.openWindow({
+						url: '../login.html',
+						id: 'login',
+						show: {
+							aniShow: 'pop-in'
+						},
+						waiting: {
+							autoShow: false
+						}
+					});
+				}
+			}, "", ["确认退出", "取消"]);
+		});
+		// 修改密码
+		document.getElementById("password-modify").addEventListener('tap', function() {
+			mui.openWindow({
+				url: 'password-modify.html',
+				id: 'password-modify',
+				styles: {
+					scrollIndicator: "none"
+				},
+			});
+		});
+
+		//检查更新
+		document.getElementById("update").addEventListener('tap', function() {
+			var server = "http://www.dcloud.io/check/update"; //获取升级描述文件服务器地址
+			mui.getJSON(server, {
+				"appid": plus.runtime.appid,
+				"version": plus.runtime.version,
+				"imei": plus.device.imei
+			}, function(data) {
+				if (data.status) {
+					plus.ui.confirm(data.note, function(i) {
+						if (0 == i) {
+							plus.runtime.openURL(data.url);
+						}
+					}, data.title, ["立即更新", "取　　消"]);
+				} else {
+					mui.toast('已是最新版本~')
+				}
+			});
+		});
+
+		//更换头像
+		document.getElementById("head-img").addEventListener("tap", function() {
+			if (mui.os.plus) {
+				var a = [{
+					title: "拍照"
+				}, {
+					title: "从手机相册选择"
+				}];
+				plus.nativeUI.actionSheet({
+					title: "修改头像",
+					cancel: "取消",
+					buttons: a
+				}, function(b) {
+					switch (b.index) {
+						case 0:
+							break;
+						case 1:
+							getImage();
+							break;
+						case 2:
+							galleryImg();
+							break;
+						default:
+							break
+					}
+				})
+			}
+		});
+
+		function getImage() {
+			var c = plus.camera.getCamera();
+			c.captureImage(function(e) {
+				plus.io.resolveLocalFileSystemURL(e, function(entry) {
+					var s = entry.toLocalURL() + "?version=" + new Date().getTime();
+					document.getElementById("head-img").src = s;
+					//变更大图预览的src
+					//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+					document.querySelector("#__mui-imageview__group .mui-slider-item img").src = s + "?version=" + new Date().getTime();
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(s) {
+				console.log("error" + s);
+			}, {
+				filename: "_doc/head.jpg"
+			})
+		}
+
+		function galleryImg() {
+			plus.gallery.pick(function(a) {
+				plus.io.resolveLocalFileSystemURL(a, function(entry) {
+					plus.io.resolveLocalFileSystemURL("_doc/", function(root) {
+						root.getFile("head.jpg", {}, function(file) {
+							//文件已存在
+							file.remove(function() {
+								console.log("file remove success");
+								entry.copyTo(root, 'head.jpg', function(e) {
+										var e = e.fullPath + "?version=" + new Date().getTime();
+										document.getElementById("head-img").src = e;
+										//变更大图预览的src
+										//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+										document.querySelector("#__mui-imageview__group .mui-slider-item img").src = e + "?version=" + new Date()
+											.getTime();;
+									},
+									function(e) {
+										console.log('copy image fail:' + e.message);
+									});
+							}, function() {
+								console.log("delete image fail:" + e.message);
+							});
+						}, function() {
+							//文件不存在
+							entry.copyTo(root, 'head.jpg', function(e) {
+									var path = e.fullPath + "?version=" + new Date().getTime();
+									document.getElementById("head-img").src = path;
+									//变更大图预览的src
+									//目前仅有一张图片，暂时如此处理，后续需要通过标准组件实现
+									document.querySelector("#__mui-imageview__group .mui-slider-item img").src = path;
+								},
+								function(e) {
+									console.log('copy image fail:' + e.message);
+								});
+						});
+					}, function(e) {
+						console.log("get _www folder fail");
+					})
+				}, function(e) {
+					console.log("读取拍照文件错误：" + e.message);
+				});
+			}, function(a) {}, {
+				filter: "image"
+			})
+		};
+
+		function defaultImg() {
+			if (mui.os.plus) {
+				plus.io.resolveLocalFileSystemURL("_doc/head.jpg", function(entry) {
+					var s = entry.fullPath + "?version=" + new Date().getTime();;
+					document.getElementById("head-img").src = s;
+				}, function(e) {
+					document.getElementById("head-img").src = '../images/photo_default_male.png';
+				})
+			} else {
+				document.getElementById("head-img").src = '../images/photo_default_male.png';
+			}
+		}
+
+		// 缓存相关
+		function initCacheSize() {
+			var cacheDomChild = document.getElementById("cacheSize");
+			cacheUtils.calcCache(function(size) {
+				if (size == -1) {
+					mui.toast("未知的设备类型,无法计算缓存");
+					cacheCaleState = false;
+				} else {
+					cacheCaleState = true;
+					cacheDomChild.innerHTML = formatSize(size);
+				}
+			});
+		}
+
+		function formatSize(size) {
+			var fileSizeString;
+			if (size == 0) {
+				fileSizeString = "0B";
+			} else if (size < 1024) {
+				fileSizeString = size + "B";
+			} else if (size < 1048576) {
+				fileSizeString = (size / 1024).toFixed(2) + "KB";
+			} else if (size < 1073741824) {
+				fileSizeString = (size / 1048576).toFixed(2) + "MB";
+			} else {
+				fileSizeString = (size / 1073741824).toFixed(2) + "GB";
+			}
+			return fileSizeString;
+		}
+	</script>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>健康监测按摩椅</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css" />
+    <link rel="stylesheet" type="text/css" href="css/healthHut.css" />
+  </head>
+  <style type="text/css">
+
+  </style>
+
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="health-hut-input public-div">
+      <div class="hhi-body">
+        <h2>用户昵称</h2>
+        <input class="hhi-input-01" type="text" name="" id="" placeholder="系统自动读取用户信息" />
+        <h2>手机号码</h2>
+        <input class="hhi-input-01" type="text" name="" id="" placeholder="系统自动读取用户信息" />
+        <div class="hhi-content">
+          <div class="hhi-item">
+            <h2>年龄</h2>
+            <select class="hhi-select-01">
+            	<option value="" selected="selected">25岁</option>
+            	<option value="">26岁</option>
+            </select>
+          </div>
+          <div class="hhi-item">
+            <h2>性别</h2>
+            <select class="hhi-select-01">
+              <option value="" selected="selected">男</option>
+              <option value="">女</option>
+            </select>
+          </div>
+          <div class="hhi-item">
+            <h2>左眼视力</h2>
+            <select class="hhi-select-01">
+              <option value="" selected="selected">4.6</option>
+              <option value="">4.7</option>
+            </select>
+          </div>
+          <div class="hhi-item">
+            <h2>右眼视力</h2>
+            <select class="hhi-select-01">
+              <option value="" selected="selected">4.8</option>
+              <option value="">4.7</option>
+            </select>
+          </div>
+        </div>
+        <h2>身份证号码</h2>
+        <input class="hhi-input-01" type="text" name="" id="" placeholder="请输入身份证号码" />
+        <h2>相关病史</h2>
+        <textarea class="hhi-input-02" placeholder="请输入相关病史"></textarea>
+        <p class="hhi-errer">错误提示</p>
+        <div class="public-two-btn-01 hhi-btn-start">开始眼部检测</div>
+      </div>
+      
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#010101',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '眼底检测仪',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+        });
+        
+      })
+    </script>
+
+  </body>
+
+</html>

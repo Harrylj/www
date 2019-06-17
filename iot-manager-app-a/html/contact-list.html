@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>联系人列表</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/mui.indexedlist.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+		<style>
+			* { touch-action: pan-y; }
+			.titleBar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #FFFFFF;
+				border: none;
+				box-shadow: none;
+				padding-left: 16px;
+				padding-right: 15px;
+			}
+			.titleName {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.titleRightButton {
+				width: 17px;
+				height: auto;
+				float: right;
+			}
+			.mui-content {
+				width: 100%;
+				height: 100%;
+				background-color: #FFFFFF;
+			}
+			.contact-list {
+				background-color: white;
+				min-height: 100%;
+				font-size: 14px;
+			}
+			.mui-indexed-list {
+				border-bottom: none;
+			}
+			#mobile1 {
+				border-right: 1px solid #c8c7cc;
+			}
+			
+			.list-text-title {
+				margin-right: 8px;
+				color: #101010;
+				float: left;
+			}
+			.list-content {
+				color: #8f8f94;
+			}
+			.mui-icon {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="app">
+			<header class="titleBar mui-bar mui-bar-nav">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title" id="title">{{queryType.typeName}}</h1>
+				<img id="add" class="titleRightButton" src="../images/contact/add_to.png" />
+			</header>
+			<div class="mui-content">
+				<div id="item1mobile" class="contact-list">
+					<div id='list' class="mui-indexed-list">
+						<div class="mui-indexed-list-search mui-input-row mui-search">
+							<input type="search" class="mui-input-clear mui-indexed-list-search-input" placeholder="搜索">
+						</div>
+						<div class="mui-indexed-list-bar">
+							<a>A</a>
+							<a>B</a>
+							<a>C</a>
+							<a>D</a>
+							<a>E</a>
+							<a>F</a>
+							<a>G</a>
+							<a>H</a>
+							<a>I</a>
+							<a>J</a>
+							<a>K</a>
+							<a>L</a>
+							<a>M</a>
+							<a>N</a>
+							<a>O</a>
+							<a>P</a>
+							<a>Q</a>
+							<a>R</a>
+							<a>S</a>
+							<a>T</a>
+							<a>U</a>
+							<a>V</a>
+							<a>W</a>
+							<a>X</a>
+							<a>Y</a>
+							<a>Z</a>
+						</div>
+						<div class="mui-indexed-list-alert"></div>
+						<div class="mui-indexed-list-inner">
+							<div class="mui-indexed-list-empty-alert">没有数据</div>
+							<ul class="mui-table-view">
+								<template v-for="item in list">
+									<li :data-group="item.group" class="mui-table-view-divider mui-indexed-list-group">{{item.group}}</li>
+									<li v-for="contact in item.contacts" class="mui-table-view-cell mui-indexed-list-item" @tap="navigateTo(contact.userId, contact.userNick)">
+										<image class="mui-media-object mui-pull-left" :src="contact.avatarUrl"></image>
+										<div class="mui-media-body">
+											<div class="mui-ellipsis">{{contact.userNick}} {{contact.userPhone}}</div>
+											<div class="mui-ellipsis list-content">{{contact.userJob}}</div>
+										</div>
+									</li>
+								</template>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/mui.indexedlist.js"></script>
+		<script>
+			mui.init({
+				swipeBack: false
+			});
+			mui.plusReady(function() {
+				var header = document.querySelector('header.mui-bar');
+				var list = document.getElementById('list');
+				var resolutionHeight = plus.display.resolutionHeight - header.offsetHeight;
+				document.getElementById("item1mobile").setAttribute("style", "min-height:" + resolutionHeight + "px;");
+				list.style.height = resolutionHeight + 'px';
+				window.indexedList = new mui.IndexedList(list);
+				
+				var self = plus.webview.currentWebview();
+				if(self.queryType) {
+					app.queryType = self.queryType;
+				}
+				
+				if(app.queryType.type == 2) {
+					getList("1");
+				} else {
+					getList("");
+				}
+
+				function getList(suffix) {
+					var list = [{
+							group: "L",
+							contacts: [{
+									userId: "",
+									userNick: "李四" + suffix,
+									avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+									userPhone: "13800138000",
+									userJob: "锦城峰荟/客服中心/经理"
+								},
+								{
+									userId: "",
+									userNick: "李四" + suffix,
+									avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+									userPhone: "13800138000",
+									userJob: "锦城峰荟/客服中心/经理"
+								},
+								{
+									userId: "",
+									userNick: "李四" + suffix,
+									avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+									userPhone: "13800138000",
+									userJob: "锦城峰荟/客服中心/经理"
+								},
+								{
+									userId: "",
+									userNick: "李四" + suffix,
+									avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+									userPhone: "13800138000",
+									userJob: "锦城峰荟/客服中心/经理"
+								},
+								{
+									userId: "",
+									userNick: "李四" + suffix,
+									avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+									userPhone: "13800138000",
+									userJob: "锦城峰荟/客服中心/经理"
+								}
+							]
+						},
+						{
+							group: "W",
+							contacts: [{
+								userId: "",
+								userNick: "王五" + suffix,
+								avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+								userPhone: "13800138000",
+								userJob: "锦城峰荟/客服中心/经理"
+							}]
+						},
+						{
+							group: "X",
+							contacts: [{
+								userId: "",
+								userNick: "徐汇" + suffix,
+								avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+								userPhone: "13800138000",
+								userJob: "锦城峰荟/客服中心/经理"
+							}]
+						},
+						{
+							group: "Z",
+							contacts: [{
+								userId: "",
+								userNick: "张三" + suffix,
+								avatarUrl: "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90",
+								userPhone: "13888888888",
+								userJob: "锦城峰荟/客服中心/杂役"
+							}]
+						}
+					];
+					app.list.splice(0, app.list.length);
+					list.forEach(item => {
+						app.list.push(item);
+					});
+				}
+			});
+
+			var app = new Vue({
+				el: '#app',
+				data: {
+					queryType: {
+						type: 0,
+						typeName: "通讯录"
+					},
+					list: []
+				},
+				methods: {
+					navigateTo(id, name) {
+						mui.openWindow({
+							url: 'chat.html',
+							id: 'chat',
+							styles: {
+								scrollIndicator: "none"
+							},
+							extras: {
+								userId: id,
+								userName: name
+							}
+						});
+					}
+				}
+			})
+		</script>
+
+	</body>
+
+</html>

@@ -1,0 +1,19 @@
+header {
+	background-color: #FFFFFF !important;
+	box-shadow: none !important;
+}
+
+.mui-icon-back:before,
+.mui-icon-left-nav:before {
+	color: #000000;
+}
+
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+	color: #d9d9d9;
+}
+input:-moz-placeholder, textarea:-moz-placeholder {
+	color:#d9d9d9;
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+	color:#d9d9d9;
+}

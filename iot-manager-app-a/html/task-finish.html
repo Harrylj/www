@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>已完成任务</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="../css/app.css" />
+		<link rel="stylesheet" type="text/css" href="../css/feedback.css" />
+		<style>
+			html,
+			body {
+				background-color: #FFFFFF;
+			}
+			img {
+				display: block;
+			}
+			.mui-bar.mui-bar-nav {
+				border-bottom: 1px solid #E0E0E0;
+			}
+			.mui-content {
+				background-color: #FFFFFF;
+			}
+			.task-table {
+				margin: 0px 16px 0px;
+				border-left: 1px solid #BABABA;
+				border-right: 1px solid #BABABA;
+			}
+			.task-table-1 {
+				border-radius: 0px 0px 4px 4px;
+				border-left: 1px solid #BABABA;
+				border-right: 1px solid #BABABA;
+				border-bottom: 1px solid #BABABA;
+				margin: 0 16px 16px;
+				background-color: #45b27b;
+			}
+			.task-table-divider {
+				margin: -1px 16px -1px;
+			}
+			.task-table-cell {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				background-color: #FFFFFF;
+			}
+			.task-table-cell-1 {
+				background-color: #45b27b;
+				display: flex;
+				flex-direction: row;
+			}
+			.task-table-cell:not(:first-child) {
+				border-top: 1px solid #cbcbcb;
+			}
+			.task-table-cell-1:not(:first-child) {
+				border-top: 1px solid #FFFFFF;
+			}
+			.task-table-name {
+				background-color: #FFFFFF;
+				color: #101010;
+				padding: 10px;
+				height: 100%;
+				white-space: nowrap;
+				font-size: 15px;
+			}
+			.task-table-name-1 {
+				color: #ffffff;
+				background-color: #45b27b;
+			}
+			.task-table-content-1 {
+				background-color: #45b27b;
+				color: #ffffff;
+				padding: 10px;
+				margin-left: 2px;
+				width: 100%;
+				font-size: 15px;
+			}
+			.task-table-content {
+				background-color: #FFFFFF;
+				color: #646464;
+				padding: 10px;
+				margin-left: 2px;
+				width: 100%;
+				font-size: 15px;
+			}
+			.image-item .file {
+				opacity: 100;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">任务详情</h1>
+		</header>
+		<div class="mui-content" id="taskPage">
+			<div class="task-table">
+				<div class="task-table-cell">
+					<div class="task-table-name">任务编号</div>
+					<div class="task-table-content">NO:{{task.taskId}}</div>
+				</div>
+				<div class="task-table-cell">
+					<div class="task-table-name">任务名称</div>
+					<div class="task-table-content">{{task.name}}</div>
+				</div>
+				<div class="task-table-cell">
+					<div class="task-table-name">任务描述</div>
+					<div class="task-table-content" v-html="task.description"></div>
+				</div>
+				<div class="task-table-cell">
+					<div class="task-table-name">任务时间</div>
+					<div class="task-table-content">{{task.time}}</div>
+				</div>
+				<div class="task-table-cell">
+					<div class="task-table-name">任务地址</div>
+					<div class="task-table-content">{{task.address}}</div>
+				</div>
+			</div>
+			<div class="task-table-divider">
+				<img style="width: 100%;" src="../images/task-divider.png" />
+			</div>
+			<div class="task-table-1">
+				<div class="task-table-cell-1">
+					<div class="task-table-name task-table-name-1">地点签到</div>
+					<div class="task-table-content-1">{{task.address}}</div>
+				</div>
+				<div class="task-table-cell-1">
+					<div class="task-table-name task-table-name-1">设备状态</div>
+					<div class="task-table-content-1">正常</div>
+				</div>
+				<div class="task-table-cell-1">
+					<div class="task-table-name task-table-name-1">问题描述</div>
+					<div class="task-table-content-1">一切正常</div>
+				</div>
+				<div class="task-table-cell-1">
+					<div class="task-table-name task-table-name-1">完成时间</div>
+					<div class="task-table-content-1">2019-03-28 20:17:43</div>
+				</div>
+				<div class="task-table-cell-1">
+					<div class="task-table-name task-table-name-1">设备照片</div>
+					<div class="task-table-content-1" style="padding-top: 0px;">
+						<div id='image-list' class="image-list">
+							<div class="image-item">
+								<img class="file" src="../images/test-1.png"/>
+							</div>
+							<div class="image-item">
+								<img class="file" src="../images/test-1.png"/>
+							</div>
+							<div class="image-item">
+								<img class="file" src="../images/test-1.png"/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+		<script>
+			mui.init();
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				if(self.isClose) {
+					var opener = plus.webview.currentWebview().opener();
+					if(opener != null) {
+						var id = setInterval(function () {
+							clearInterval(id);
+							opener.close("none");
+						},200);
+					}
+				}
+				window.addEventListener("show", function(e){
+					if(e.detail.task) {
+						taskPage.task = e.detail.task;
+					}
+					if(e.detail.isClose) {
+						var opener = plus.webview.currentWebview().opener();
+						if(opener != null) {
+							var id = setInterval(function () {
+								clearInterval(id);
+								opener.close("none");
+							},200);
+						}
+					}
+				}, false);
+			});
+			
+			var taskPage = new Vue({
+				el: '#taskPage',
+				data: {
+					task: {
+						taskId: "",
+						name: "",
+						description: "",
+						time: "",
+						address: ""
+					}
+				}
+			});
+		</script>
+
+	</body>
+
+</html>

@@ -60,18 +60,10 @@
     <!-- Swiper -->
     <div class="swiper-container">
       <div class="swiper-wrapper">
-        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="9">Slide 10</div>
-        <div class="swiper-slide" data-swiper-slide-index="0">Slide 1</div>
-        <div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="1">Slide 2</div>
-        <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="2">Slide 3</div>
-        <div class="swiper-slide swiper-slide-next" data-swiper-slide-index="3">Slide 4</div>
-        <div class="swiper-slide" data-swiper-slide-index="4">Slide 5</div>
-        <div class="swiper-slide" data-swiper-slide-index="5">Slide 6</div>
-        <div class="swiper-slide" data-swiper-slide-index="6">Slide 7</div>
-        <div class="swiper-slide" data-swiper-slide-index="7">Slide 8</div>
-        <div class="swiper-slide" data-swiper-slide-index="8">Slide 9</div>
-        <div class="swiper-slide" data-swiper-slide-index="9">Slide 10</div>
-        <div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0">Slide 1</div>
+        <div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide" >Slide 2</div>
+        <div class="swiper-slide" >Slide 3</div>
+        <div class="swiper-slide" >Slide 4</div>
       </div>
       <!-- Add Pagination -->
       <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
@@ -87,8 +79,8 @@
     <!-- Initialize Swiper -->
     <script>
       var swiper = new Swiper('.swiper-container', {
-        //direction: 'horizontal',
-        direction: 'vertical',
+        direction: 'horizontal',
+        //direction: 'vertical',
         slidesPerView: 1,
         spaceBetween: 30,
         loop: true,

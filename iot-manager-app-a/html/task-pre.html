@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>待领取任务</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" href="../css/app.css" />
+		<style>
+			.mui-content {
+				background-color: #FFFFFF;
+			}
+			.task-table {
+				background-color: #e0e0e0;
+				border-radius: 4px;
+				margin: 16px;
+				padding: 8px;
+				color: #e0e0e0;
+			}
+			.task-table-cell {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				background-color: #FFFFFF;
+			}
+			.task-table-cell:not(:first-child) {
+				margin-top: 2px;
+			}
+			.task-table-name {
+				background-color: #FFFFFF;
+				color: #45b27b;
+				padding: 10px;
+				height: 100%;
+				white-space: nowrap;
+				font-size: 15px;
+			}
+			.task-table-content {
+				background-color: #FFFFFF;
+				color: #646464;
+				padding: 10px;
+				margin-left: 2px;
+				width: 100%;
+				height: auto;
+				border-left: 2px solid #e0e0e0;
+				font-size: 15px;
+			}
+			.task-btns {
+				margin: 32px 16px 16px;
+				padding: 15px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+			}
+			.task-btn {
+				width: 50%;
+				border-radius: 30px;
+				font-size: 17px;
+				padding: 10px;
+				text-align: center;
+				display: block;
+			}
+			.task-btn-1 {
+				border: 1px solid #45b27b;
+				color: #45b27b;
+			}
+			.task-btn-2 {
+				background-color: #45b27b;
+				border: none;
+				margin-left: 16px;
+				color: #FFFFFF;
+			}
+			.divider {
+				width: 100%;
+				height: 1px;
+				background-color: #e0e0e0;
+			}
+			.task-no {
+				background-color: #FFFFFF;
+				color: #45b27b;
+				padding: 10px;
+				height: 100%;
+				white-space: nowrap;
+				font-size: 17px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">任务详情</h1>
+		</header>
+		<div class="mui-content mui-scroll-wrapper" id="taskPage">
+			<div class="mui-scroll" id="scroll">
+				<div class="task-table-cell">
+					<div class="divider"></div>
+					<div class="task-no">NO:{{taskDetails.taskId}}</div>
+					<div class="divider"></div>
+				</div>
+				<div class="task-table">
+					<div class="task-table-cell">
+						<div class="task-table-name">任务名称</div>
+						<div class="task-table-content">{{taskDetails.name}}</div>
+					</div>
+					<div class="task-table-cell">
+						<div class="task-table-name">任务描述</div>
+						<div class="task-table-content" v-html="taskDetails.description"></div>
+					</div>
+					<div class="task-table-cell">
+						<div class="task-table-name">任务时间</div>
+						<div class="task-table-content">{{taskDetails.time}}</div>
+					</div>
+					<div class="task-table-cell">
+						<div class="task-table-name">任务地址</div>
+						<div class="task-table-content">{{taskDetails.address}}</div>
+					</div>
+				</div>
+				
+				<div class="task-btns">
+					<div class="task-btn task-btn-1" id="mapBtn">查看地图</div>
+					<div class="task-btn task-btn-2" id="acceptBtn">接受任务</div>
+				</div>
+			</div>
+		</div>
+		<script src="../js/mui.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+		<script>
+			var doc = document;
+			mui.init();
+			mui.plusReady(function() {
+				var header = document.querySelector('header.mui-bar');
+				var resolutionHeight = plus.display.resolutionHeight - header.offsetHeight;
+				document.getElementById("scroll").setAttribute("style", "height:" + resolutionHeight + "px;");
+				
+				var self = plus.webview.currentWebview();
+				if(self.task) {
+					taskPage.taskDetails = self.task;
+				}
+				doc.getElementById("mapBtn").addEventListener("tap", function(e){
+					mui.openWindow({
+						url: 'map.html', 
+						id: 'map',
+						styles: {
+							scrollIndicator: "none"
+						},
+						extras: {
+							isClose: true
+						}
+					});
+				});
+				doc.getElementById("acceptBtn").addEventListener("tap", function(e){
+					var detailsPage = plus.webview.getWebviewById('task-executing');
+					mui.fire(detailsPage, 'show', {
+						isClose: true,
+						task: taskPage.taskDetails
+					});
+					mui.openWindow({
+						id: 'task-executing',
+						styles: {
+							scrollIndicator: "none"
+						}
+					});
+				});
+			});
+			
+			var taskPage = new Vue({
+				el: '#taskPage',
+				data: {
+					taskDetails: {
+						taskId: "",
+						name: "",
+						description: "",
+						time: "",
+						address: ""
+					}
+				}
+			});
+			
+		</script>
+
+	</body>
+
+</html>

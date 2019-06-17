@@ -1,0 +1,181 @@
+<html class="ui-page-login">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>登录</title>
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link href="css/app.css" rel="stylesheet"/>
+		<style>
+			body, .mui-content {
+				background-color: #FFFFFF;
+			}
+			.mui-bar.mui-bar-nav {
+				border-bottom: 1px solid #E0E0E0;
+			}
+			.mui-content {
+				padding: 0px 15px;
+			}
+			.mui-input-group {
+				margin-top: 40px;
+			}
+			
+			.mui-input-group:first-child {
+				margin-top: 20px;
+			}
+			
+			.login-log {
+				margin-top: 44px;
+				font-size: 23px;
+				font-weight: bold;
+			}
+			.mui-input-group:before,
+			.mui-input-group:after {
+				display: none;
+			}
+			#login-form {
+				margin-top: 74px;
+			}
+			#login-form div:not(:first-child) {
+				margin-top: 16px;
+			}
+			#login {
+				margin-top: 40px;
+				color: #FFFFFF;
+				border: 1px solid #2ebc6e;
+				background-color: #2ebc6e;
+				width: 100%;
+				font-size: 18px;
+				height: 47px;
+			}
+			.task-table-cell {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				background-color: #FFFFFF;
+				border-bottom: 1px solid #c8c7cc;
+			}
+			.task-table-cell:not(:first-child) {
+				margin-top: 2px;
+			}
+			.task-table-cell label {
+				white-space: nowrap;
+			}
+			.task-table-cell label~input {
+				margin-bottom: 0;
+				margin-left: 8px;
+				padding-left: 0;
+				border: 0;
+			}
+			.mui-btn .mui-spinner {
+				vertical-align: middle;
+			}
+		</style>
+
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<h1 class="mui-title">用户登录</h1>
+		</header>
+		<div class="mui-content">
+			<div class="login-log" >请输入帐号密码</div>
+			<form id='login-form' class="task-table">
+				<div class="task-table-cell">
+					<label>账号</label>
+					<input id='account' type="text" class="mui-input-clear mui-input" placeholder="帐号或者手机号">
+				</div>
+				<div class="task-table-cell">
+					<label>密码</label>
+					<input id='password' type="password" class="mui-input-clear mui-input" placeholder="请输入登录密码">
+				</div>
+			</form>
+			<button id='login' class="mui-btn" data-loading-icon-position="right" data-loading-text="登录中">登录</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/md5.js"></script>
+		<script src="js/account.js"></script>
+		<script>
+			(function($, doc) {
+				$.init();
+				$.plusReady(function() {
+					plus.navigator.setStatusBarBackground('#FFFFFF');
+					plus.screen.lockOrientation("portrait-primary");
+					
+					var mainPage = plus.webview.getWebviewById("main");
+					var main_loaded_flag = false;
+					if(!mainPage) {
+						mainPage = $.preload({
+							"id": 'main',
+							"url": 'html/main.html'
+						});
+					} else {
+						main_loaded_flag = true;
+					}
+					
+					mainPage.addEventListener("loaded",function () {
+						main_loaded_flag = true;
+					});
+					var toMain = function() {
+						//使用定时器的原因：
+						//可能执行太快，main页面loaded事件尚未触发就执行自定义事件，此时必然会失败
+						var id = setInterval(function () {
+							if(main_loaded_flag){
+								clearInterval(id);
+								$.fire(mainPage, 'show', null);
+								mainPage.show("pop-in");
+							}
+						},20);
+					};
+					//检查 "登录状态" 开始
+					var user = accountManager.getUser();
+					if (user.token && user.loginMark) {
+						toMain();
+					} else {
+						accountManager.setUser(null);
+					}
+					// close splash
+					setTimeout(function() {
+						//关闭 splash
+						plus.navigator.closeSplashscreen();
+					}, 600);
+					//检查 "登录状态/锁屏状态" 结束
+					var loginButton = doc.getElementById('login');
+					var accountBox = doc.getElementById('account');
+					var passwordBox = doc.getElementById('password');
+					loginButton.addEventListener('tap', function(event) {
+						doc.activeElement.blur();
+						mui(loginButton).button('loading');
+						var loginInfo = {
+							account: accountBox.value,
+							password: passwordBox.value
+						};
+						accountManager.login(loginInfo, function(err) {
+							mui(loginButton).button('reset');
+							if (err) {
+								plus.nativeUI.toast(err);
+								return;
+							}
+							toMain();
+						});
+					});
+					
+					var backButtonPress = 0;
+					$.back = function(event) {
+						backButtonPress++;
+						if (backButtonPress > 1) {
+							plus.runtime.quit();
+						} else {
+							plus.nativeUI.toast('再按一次退出应用');
+						}
+						setTimeout(function() {
+							backButtonPress = 0;
+						}, 1000);
+						return false;
+					};
+				});
+			}(mui, document));
+		</script>
+	</body>
+
+</html>

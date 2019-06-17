@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css" />
+		<link rel="stylesheet" href="../css/app.css" />
+		<style>
+			html, body, .mui-content {
+				background-color: #FFFFFF;
+			}
+			.mui-table-view {
+				margin-top: 24px;
+			}
+			.mui-table-view-cell {
+				padding: 12px 15px;
+			}
+			.mui-table-view-cell:after {
+				right: 15px;
+			}
+			.mui-table-view-cell:last-child:after {
+				height: 1px;
+			}
+
+			.mui-table-view:before,
+			.mui-table-view:after {
+				display: none;
+			}
+
+			.msi-header {
+				background-color: #FFFFFF;
+				margin-top: 64px;
+			}
+
+			.msi-header .msi-img {
+				display: block;
+				width: 106px;
+				height: 106px;
+				background-color: #BABABA;
+				border-radius: 50%;
+				margin: auto;
+			}
+
+			.msi-header h1 {
+				margin-top: 13px;
+				color: #020202;
+				font-weight: bold;
+				font-size: 19px;
+				line-height: 40px;
+				text-align: center;
+				height: 40px;
+				overflow: hidden;
+			}
+			.mui-bar .mui-pull-right {
+				font-size: 15px;
+				color: #223A6E;
+				margin-right: 0px !important;
+			}
+			.list-cell-title {
+				color: #000000;
+				font-size: 15px;
+			}
+			.list-cell-content {
+				margin-top: 10px;
+				color: #223A6E;
+				font-size: 17px;
+			}
+			.list-cell-func {
+				color: #FF0000;
+				font-size: 17px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<a class="mui-icon mui-pull-right">编辑</a>
+		</header>
+		<div class="mui-content" id="app">
+			<div class="msi-header">
+				<img class="msi-img" id="head-img" src="../images/photo_default_male.png" />
+				<h1>{{userName}}</h1>
+			</div>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell">
+					<div class="list-cell-title">手机</div>
+					<div class="list-cell-content">138 9090 8800</div>
+				</li>
+				<li class="mui-table-view-cell">
+					<div class="list-cell-title">备注</div>
+					<div class="list-cell-content">业务能力不错，负责人</div>
+				</li>
+				<li class="mui-table-view-cell list-cell-func" id="chat">
+					<a class="list-cell-func">发送信息</a>
+				</li>
+				<li class="mui-table-view-cell list-cell-func">
+					<a class="list-cell-func" href="#delete">删除联系人</a>
+					
+				</li>
+			</ul>
+		</div>
+		<div id="delete" class="mui-popover mui-popover-action mui-popover-bottom">
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="deleteSure">
+					<a style="color: #FF3B30;">删除信息</a>
+				</li>
+			</ul>
+			<ul class="mui-table-view">
+				<li class="mui-table-view-cell" id="cancel">
+					<a href="#delete"><b>取消</b></a>
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+	<script src="../js/mui.min.js"></script>
+	<script>
+		mui.init();
+		mui.plusReady(function() {
+			var self = plus.webview.currentWebview();
+			if(self.userName) {
+				app.userName = self.userName
+			}
+			mui(".mui-table-view").on('tap','.mui-table-view-cell', function(){
+				var id = this.getAttribute("id");
+				if(id == "chat") {
+					mui.openWindow({
+						url: 'chat.html',
+						id: 'chat',
+						styles: {
+							scrollIndicator: "none"
+						},
+						extras: {
+							userId: id,
+							userName: app.userName
+						}
+					});
+				} else if(id == "deleteSure") {
+					mui('#delete').popover('toggle');
+					mui.toast("删除成功");
+					mui.back();
+				}
+			});
+		});
+		var app = new Vue({
+			el: '#app',
+			data: {
+				userName: ""
+			},
+			methods: {
+				navigateTo(id, name) {
+					mui.openWindow({
+						id: 'contact-details',
+						styles: {
+							scrollIndicator: "none"
+						},
+						extras: {
+							userId: id,
+							userName: name
+						}
+					});
+				}
+			}
+		});
+	</script>
+
+</html>

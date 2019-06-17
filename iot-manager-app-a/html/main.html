@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>主页</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" href="../css/mui.min.css">
+		<style>
+			html,
+			body {
+				background-color: white;
+			}
+			.mui-bar-tab {
+				background-color: white;
+			}
+			.mui-tab-item span {
+				font-weight: bold;
+				color: #A3A3A3;
+			}
+			.mui-active span{
+				color: #FF0000;
+			}
+			.mui-icon {
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+			.icon-message {
+				background-image: url(../images/tab/news.png); 
+			}
+			
+			.icon-contact {
+				background-image: url(../images/tab/contacts.png);
+			}
+			
+			.icon-my {
+				background-image: url(../images/tab/me.png);
+			}
+			
+			.mui-active .icon-message {
+				background-image: url(../images/tab/news_checked.png);
+			}
+			.mui-active .icon-contact {
+				background-image: url(../images/tab/contacts_checked.png);
+			}
+			.mui-active .icon-my {
+				background-image: url(../images/tab/me_checked.png);
+			}
+			
+			* { touch-action: pan-y; }
+		</style>
+	</head>
+
+	<body>
+		<nav class="mui-bar mui-bar-tab" id="bottomx">
+			<a id="defaultTab" class="mui-tab-item mui-active" href="message-list.html">
+				<span class="mui-icon icon-message">
+					<span class="mui-badge" id="unRead" style="display: none;"></span>
+				</span>
+				<span class="mui-tab-label">消息</span>
+			</a>
+			<a class="mui-tab-item" href="contact.html">
+				<span class="mui-icon icon-contact"></span>
+				<span class="mui-tab-label">通讯录</span>
+			</a>
+			<a class="mui-tab-item" href="my.html">
+				<span class="mui-icon icon-my"></span>
+				<span class="mui-tab-label">我的</span>
+			</a>
+		</nav>
+		<script src="../js/mui.min.js"></script>
+		<script src="../js/account.js"></script>
+		<script src="../libs/jquery-1.6.4.min.js"></script>
+		<script src="../libs/jquery.signalR-2.2.0.js"></script>
+		<script src="../js/chat.js"></script>
+		<script type="text/javascript" charset="utf-8">
+			 //mui初始化
+			mui.init();
+			var unReadEle = document.getElementById("unRead");
+			var subpages = ['message-list.html', 'contact.html', 'my.html'];
+			var subpage_style = {
+				top: '0px',
+				bottom: '51px',
+				scrollIndicator: "none"
+			};
+			
+			var aniShow = {};
+			
+			 //创建子页面，首个选项卡页面显示，其它均隐藏；
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				for (var i = 0; i < 4; i++) {
+					var temp = {};
+					var sub = plus.webview.create(subpages[i], subpages[i], subpage_style);
+					if (i > 0) {
+						sub.hide();
+					}else{
+						temp[subpages[i]] = "true";
+						mui.extend(aniShow,temp);
+					}
+					self.append(sub);
+				}
+				var user = accountManager.getUser();
+				//5259c910-ac3f-448c-9db2-d2799ed9e7e4
+				chatManager.im.init("cdsdtz", function(userId, msg, dateTime, isSystem){
+					var chatPage = plus.webview.getWebviewById("chat");
+					if(chatPage != null) {
+						mui.fire(chatPage, 'revMsg', {
+							sender: userId,
+							type: 'text',
+							content: msg,
+							sendTime: dateTime,
+							isSystem: isSystem
+						});
+					}
+				});
+				
+				window.addEventListener('sendMsg', function(event) {
+					if (!chatManager.im.connected) {
+						mui.toast("没有开启连接");
+						return false;
+					}
+					chatManager.im.sendMsg(event.detail.revId, event.detail.msg, event.detail.isSystem);
+				}, false);
+				
+				window.addEventListener('msgCountChange', function(event) {
+					var count = event.detail.count;
+					unReadEle.innerHTML = count;
+					if(count > 0) {
+						unReadEle.setAttribute("style", "display:inline-block;");
+					} else {
+						unReadEle.setAttribute("style", "display:none;");
+					}
+				}, false);
+			});
+			 //当前激活选项
+			var activeTab = subpages[0];
+			 //选项卡点击事件
+			mui('.mui-bar-tab').on('tap', 'a', function(e) {
+				var targetTab = this.getAttribute('href');
+				if (targetTab == activeTab) {
+					return;
+				}
+				//显示目标选项卡
+				//若为iOS平台或非首次显示，则直接显示
+				if(mui.os.ios||aniShow[targetTab]){
+					plus.webview.show(targetTab);
+				}else{
+					//否则，使用fade-in动画，且保存变量
+					var temp = {};
+					temp[targetTab] = "true";
+					mui.extend(aniShow,temp);
+					plus.webview.show(targetTab,"fade-in",300);
+				}
+				//隐藏当前;
+				plus.webview.hide(activeTab);
+				//更改当前活跃的选项卡
+				activeTab = targetTab;
+			});
+			 //自定义事件，模拟点击“首页选项卡”
+			document.addEventListener('gohome', function() {
+				var defaultTab = document.getElementById("defaultTab");
+				//模拟首页点击
+				mui.trigger(defaultTab, 'tap');
+				//切换选项卡高亮
+				var current = document.querySelector(".mui-bar-tab>.mui-tab-item.mui-active");
+				if (defaultTab !== current) {
+					current.classList.remove('mui-active');
+					defaultTab.classList.add('mui-active');
+				}
+			});
+			
+			var backButtonPress = 0;
+			mui.back = function(event) {
+				backButtonPress++;
+				if (backButtonPress > 1) {
+					plus.runtime.quit();
+				} else {
+					plus.nativeUI.toast('再按一次退出应用');
+				}
+				setTimeout(function() {
+					backButtonPress = 0;
+				}, 1000);
+				return false;
+			};
+		</script>
+	</body>
+
+</html>

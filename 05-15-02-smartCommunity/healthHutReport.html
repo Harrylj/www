@@ -13,87 +13,136 @@
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/healthHut.css"/>
+
  
   </head>
   <style type="text/css">
 
   </style>
   <body>
-    <!--
-      作者：648267773@qq.com
-      时间：2019-03-15
-      描述：.hhr-header-more: 默认状态为健康，未看过
-                                              添加.hhr-header-more-ok:健康，默认为健康
-                                               添加 .hhr-header-more-no : 不健康
-                                               添加 .hhr-header-more-warning: 警告
-                             添加.hhr-header-more-unread:表示未看过,默认为未看过
-                             添加.hhr-header-more-read:表示看过
-                        
-    -->
+
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>   
     <div class="health-hut-report public-div">
-      <div class="public-header-div bb-header-div">
-        <div class="public-header">
-          <a class="public-header-return bbh-return" href="#"></a>
-          <h1>健康小屋</h1>
-          <div class="public-header-right">
-            <img src="images/user-01.jpg"/>
-            <img src="images/user-01.jpg"/>
+
+      <div class="hhr-header">
+        <div class="hhr-swiper">
+          <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <h2>关注健康</h2>
+                <p>随时检测报告马上出</p>
+              </div>
+              <div class="swiper-slide">
+                <h2>关注健康</h2>
+                <p>随时检测报告马上出</p>
+              </div>
+              <div class="swiper-slide">
+                <h2>关注健康</h2>
+                <p>随时检测报告马上出</p>
+              </div>
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
           </div>
         </div>
       </div>
-      <div class="hhr-header">
-        <div class="hhr-header-one">
-          <img src="images/user-01.jpg"/>
-          <h2>灵风风</h2>
-          <h3>使用<span>3</span>款设备</h3>
-        </div>
-        <a href="healthReport.html">
-        <div class="hhr-header-more hhr-header-more-read hhr-header-more-ok ">
-          <h2>健康监测按摩椅</h2>
-          <p>2019.09.20 20:23:12</p>
-          <h3>检测结果：健康</h3>
-        </div>
-        </a>
-      </div>
+
       <div class="hhr-body">
+        
+        <div class="hhrb-report box-shadow-01">
+          <div class="hhrb-report-header">
+            <h1>我的健康报告</h1>
+            <a class="hhrb-report-family" href="#">查看家人的报告</a>
+          </div>
+          <div class="hhrb-report-content">
+            <img src="images/two/hhr-sofaimg@3x.png"/>
+            <h2>健康检测沙发</h2>
+            <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+            <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+            <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+          </div>
+        </div>
+        
         <h1>健康监测设备</h1>
         <div class="hhr-body-list">
           <div class="swiper-container-hh">
-            <div class="swiper-slide slide1" >
+            <div class="swiper-slide swiper-slide-sofa " >
                    <h3>健康监测按摩椅</h3>
-                   <ul class="hhb-ul-01">
-                      <li>血糖</li>
-                      <li>尿酸</li>
-                      <li>胆固醇</li>
-                      <li>血红蛋白</li>
-                   </ul>
-                   <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测，为持续的健康提供良好的保障。</p>
-                    <a class="hhb-btn-qsy" href="healthHutSofaStart.html">去使用</a>
+                   <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测。</p>
+                    <a class="hhb-btn-qsy" href="healthHutSofaStart.html">马上使用</a>
               </div>
-          </div>
-          <div class="swiper-container-hh">
-          <div class="swiper-slide slide1" >
+              <div class="swiper-slide swiper-slide-eye" >
                  <h3>健康监测按摩椅</h3>
-                 <ul class="hhb-ul-01">
-                    <li>血糖</li>
-                    <li>尿酸</li>
-                    <li>胆固醇</li>
-                    <li>血红蛋白</li>
-                 </ul>
-                 <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测，为持续的健康提供良好的保障。</p>
-                  <a class="hhb-btn-qsy" href="healthHutSofaStart.html">去使用</a>
+                 <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测。</p>
+                  <a class="hhb-btn-qsy" href="healthHutSofaStart.html">马上使用</a>
             </div>
-        </div>
+          </div>
         </div>
         
       </div>
+    
     </div>
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-   
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
       
+      var swiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        //direction: 'vertical',
+        slidesPerView: 1,
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
+        },
+      });
+      
+      $(function(){
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '健康小屋',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            
+          },
+
+        });
+        
+      })
     </script>
 
   </body>

@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>任务地图</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="../css/mui.min.css" rel="stylesheet" />
+		<link href="../css/app.css" rel="stylesheet"/>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title" id="title">地图</h1>
+		</header>
+		<div class="mui-content">
+			<div id="map"></div>
+		</div>
+		<script src="../js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function() {
+				var map = plus.maps.create('map', {
+					center: new plus.maps.Point(125.2980710000, 43.8380450000),
+					top: '45px',
+					left: '0px',
+					width: '100%',
+					height: '100%',
+					position: 'static'
+				});
+				plus.webview.currentWebview().append(map);
+				
+				var marker = new plus.maps.Marker(new plus.maps.Point(125.2980710000, 43.8380450000)); //标注点对象
+				marker.setIcon("../images/icon_marka.png");
+				marker.setLabel("任务地点"); //设置标注点标题
+				var bubble = new plus.maps.Bubble("阳光大厦"); //设置气泡标题
+				marker.setBubble(bubble); //添加起泡
+				map.addOverlay(marker); //添加标注到地图上
+				
+				
+				var points = new Array(new plus.maps.Point(125.2916660000, 43.8318090000), 
+					new plus.maps.Point(125.2883340000, 43.8314920000), 
+					new plus.maps.Point(125.2912290000, 43.8303850000)); //添加坐标点
+				var polylineObj = new plus.maps.Polyline(points); //创建折线对象
+				polylineObj.setLineWidth(10); //设置折线宽度
+				polylineObj.setPath(points); //设置折线定点坐标
+				map.addOverlay(polylineObj); //添加折线到地图上
+			});
+		</script>
+	</body>
+
+</html>
