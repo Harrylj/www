@@ -43,22 +43,26 @@
        // activity,images/two/two-nav-activity@3x.png
        // namv: 菜单名, href:链接地址,imgSrc:图标地址,
        navList: {
-         home:{
-           name: '首页',
-           href: 'www',
-           imgSrc: 'images/two/two-nav-home@3x.png',
-           clickE: function(){
-             alert('1111')
-           }
-         },
          help:{
            name: '帮助',
            href: 'www',
+           //imgSrc: '/Content/Mobile/images/two/two-nav-help@3x.png',
            imgSrc: 'images/two/two-nav-help@3x.png',
            clickE: function(){
              alert('1111')
+             return false;
            }
-         }
+         },
+         home:{
+           name: '首页',
+           href: 'www',
+           imgSrc: '/Content/Mobile/images/two/two-nav-home@3x.png',
+           //imgSrc: 'images/two/two-nav-home@3x.png',
+           clickE: function(){
+             alert('1111')
+             return false;
+           }
+         },
        },
        
        //活动结束后的回调函数                    
@@ -79,9 +83,10 @@
        * @param  {[String]} format [时间格式]
        * @return {[Function]} strategies [根据格式渲染对应结构]
        */
-
+      
       // 覆盖默认配置
-      var opts = $.extend(true, defaults, options);
+      var opts = $.extend(true,defaults, options);
+      
       // 合并后的父级元素
       var this_father_e = $(opts.fatherE);
       
@@ -102,6 +107,7 @@
       // 菜单栏命名前缀
       var public_nav_a = 'public-nav-a-';
       
+      /*
       // 循环生成右侧菜单栏
       function navList(){
         var aa = ''
@@ -115,7 +121,30 @@
         }
         return aa
       }
-      
+      */
+     // 循环生成右侧菜单栏
+      function navList(){
+        var aa = '',
+            bb = '';
+        // 获取菜单栏对象长度
+        var navList_length = Object.keys(opts.navList).length;
+        for(var i in opts.navList){
+          // 手动判断改成菜单栏的生成顺序
+          if( i == 'help' || i == 'home'){
+            bb = bb + '<li><a class="' + public_nav_a + i +'" href="' + opts.navList[i].href +'"><img src="'+ opts.navList[i].imgSrc +'"/><span>'+ opts.navList[i].name +'</span></a></li>'
+          }
+          else{
+            
+            aa = aa + '<li><a class="' + public_nav_a + i +'" href="' + opts.navList[i].href +'"><img src="'+ opts.navList[i].imgSrc +'"/><span>'+ opts.navList[i].name +'</span></a></li>'
+            console.log(i,opts.navList[i])
+          }
+          
+          // 给a标签绑定事件
+          this_father_e.on('click','.'+ public_nav_a + i,opts.navList[i].clickE)
+        }
+        // 返回改变后的顺序
+        return (aa + bb)
+      }
       // 导航栏内容
       var this_content = `
       <div class="two-public-header-div" style="background-color:${opts.bgColor}">

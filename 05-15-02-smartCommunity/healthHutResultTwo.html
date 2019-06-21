@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>健康报告</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <!--App自定义的css-->
+
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css" />
+    <link rel="stylesheet" type="text/css" href="css/healthHut.css" />
+  </head>
+  <style type="text/css">
+    body,html{
+      background-color: #F8F8F8;
+    }
+  </style>
+
+  <body>
+
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="health-hut-Result-two public-div">
+      <div class="hhrt-body">
+        <div class="hhrt-div hhrt-div-user ">
+          <div class="hhrt-div-01">
+            <img src="images/user-01.jpg" />
+            <h3>张宇丽</h3>
+            <h5>
+              <p><span>175.0</span>身高cm</p>
+              <p><span>60.0</span>体重kg</p>
+            </h5>
+          </div>
+          <div class="hhrb-progress-div hhrt-progress-div">
+            <h1>身体质量指数BMI</h1>
+            <!--
+            作者：648267773@qq.com
+            时间：2019-04-04
+            描述： .progress-bar：这里的进度是倒读条。比如显示60%的进度,宽度 40% = (100%-60%) 
+             .progress-body:添加 .progress-body-01:表示偏轻
+                                                  添加 .progress-body-02:表示标准,默认是标准
+                                                  添加 .progress-body-03:表示超重
+                                                  添加 .progress-body-04:表示肥胖
+          -->
+            <div class="hhrb-progress progress-body progress-body-01">
+              <div class="progress-title">标准</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span>偏轻</span><span>标准</span><span>超重</span><span>肥胖</span>
+              </div>
+            </div>
+            <div class="hhrb-progress progress-body progress-body-02">
+              <div class="progress-title">标准</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span>偏轻</span><span>标准</span><span>超重</span><span>肥胖</span>
+              </div>
+            </div>
+            <div class="hhrb-progress progress-body progress-body-03">
+              <div class="progress-title">标准</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span>偏轻</span><span>标准</span><span>超重</span><span>肥胖</span>
+              </div>
+            </div>
+            <div class="hhrb-progress progress-body progress-body-04">
+              <div class="progress-title">标准</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span>偏轻</span><span>标准</span><span>超重</span><span>肥胖</span>
+              </div>
+            </div>
+          </div>
+          <div class="hhrt-div-fat">
+            <h1>体质分率</h1>
+            <!--
+            	作者：648267773@qq.com
+            	时间：2019-06-21
+            	描述：.progress-fat:添加 .progress-fat-01:表示偏低
+            	                        .progress-fat-02:表示健康：默认健康
+            	                        .progress-fat-03:表示微胖
+            	                        .progress-fat-04:表示肥胖
+            -->
+            <div class="hhrb-progress progress-fat progress-fat-01">
+              <div class="progress-title">健康</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-content">
+                  <span>偏低</span><span>健康</span><span>微胖</span><span>肥胖</span>
+                </div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span><b>20</b>%</span><span><b>25</b>%</span><span><b>30</b>%</span><span><b>35</b>%</span>
+              </div>
+            </div>
+            <div class="hhrb-progress progress-fat progress-fat-02">
+              <div class="progress-title">健康</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-content">
+                  <span>偏低</span><span>健康</span><span>微胖</span><span>肥胖</span>
+                </div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span><b>20</b>%</span><span><b>25</b>%</span><span><b>30</b>%</span><span><b>35</b>%</span>
+              </div>
+            </div>
+            <div class="hhrb-progress progress-fat progress-fat-03">
+              <div class="progress-title">健康</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-content">
+                  <span>偏低</span><span>健康</span><span>微胖</span><span>肥胖</span>
+                </div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span><b>20</b>%</span><span><b>25</b>%</span><span><b>30</b>%</span><span><b>35</b>%</span>
+              </div>
+            </div>
+            <div class="hhrb-progress progress-fat progress-fat-04">
+              <div class="progress-title">健康</div>
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 0%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-content">
+                  <span>偏低</span><span>健康</span><span>微胖</span><span>肥胖</span>
+                </div>
+              </div>
+              <div class="hhrb-progress-content">
+                <span><b>20</b>%</span><span><b>25</b>%</span><span><b>30</b>%</span><span><b>35</b>%</span>
+              </div>
+            </div>
+            <h4>根据身体指数，您的身材属于偏瘦型，主要特征元气不足，以疲乏、气短、自汗等气虚表现为主要特征。</h4>
+          </div>
+          
+        </div>
+
+        <div class="hhrt-div hhrt-div-body">
+          <!--
+            .hhrt-ul-body：子元素li添加.hhrt-li-body-up:表示上升
+                            .hhrt-li-body-down:表示下降
+            
+          -->
+          <ul class="hhrt-ul-body">
+          	<li class="hhrt-li-body-up">
+          	  <h3>左眼</h3>
+          	  <p><span>3.2</span></p>
+          	</li>
+          	<li class="hhrt-li-body-down">
+              <h3>左眼</h3>
+              <p><span>3.2</span></p>
+            </li>
+            <li>
+              <h3>腰围</h3>
+              <p><span>20</span>cm</p>
+            </li>
+            <li>
+              <h3>内脏脂肪</h3>
+              <p>偏高</p>
+            </li>
+            <li class="hhrt-li-body-down">
+              <h3>腰围</h3>
+              <p><span>20</span>cm</p>
+            </li>
+            <li>
+              <h3>内脏脂肪</h3>
+              <p>偏高</p>
+            </li>
+            <li class="hhrt-li-body-up">
+              <h3>腰围</h3>
+              <p><span>20</span>cm</p>
+            </li>
+            <li>
+              <h3>腰围</h3>
+              <p><span>20</span>cm</p>
+            </li>
+            <li>
+              <h3>内脏脂肪</h3>
+              <p>偏高</p>
+            </li>
+            <li>
+              <h3>腰围</h3>
+              <p><span>20</span>cm</p>
+            </li>
+            <li>
+              <h3>内脏脂肪</h3>
+              <p>偏高</p>
+            </li>
+            <li>
+              <h3>腰围</h3>
+              <p><span>20</span>cm</p>
+            </li>
+            <li>
+              <h3>内脏脂肪</h3>
+              <p>偏高</p>
+            </li>
+            <li>
+              <h3>内脏脂肪</h3>
+              <p>偏高</p>
+            </li>
+          </ul>
+        </div>
+        
+        <h1>身体数据</h1>
+        <div class="hhrt-div hhrt-div-history">
+          <div class="hhrt-swiper-div">
+            <div class="swiper-container">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide" data-hash="slider1">
+                  <h3>1脂肪6月17日-6月23日</h3>
+                  <div class="echarts_hhrt" id="echarts_hhrt_01"></div>
+                </div>
+                <div class="swiper-slide" data-hash="slider2">
+                  <h3>2脂肪6月17日-6月23日</h3>
+                  <div class="echarts_hhrt" id="echarts_hhrt_02"></div>
+                </div>
+                <div class="swiper-slide" data-hash="slider3">
+                  <h3>3脂肪6月17日-6月23日</h3>
+                  <div class="echarts_hhrt" id="echarts_hhrt_03"></div>
+                </div>
+                <div class="swiper-slide" data-hash="slider4">
+                  <h3>4脂肪6月17日-6月23日</h3>
+                  <div class="echarts_hhrt" id="echarts_hhrt_04"></div>
+                </div>
+              </div>
+              <!-- Add Pagination -->
+              <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+          </div>
+          </div>
+        </div>
+        <h1>血</h1>
+        <div class="hhrt-div-blood">
+          <div class="hhrt-div-body">
+          <!--
+            .hhrt-ul-blood：子元素li添加.hhrt-li-blood-up:表示上升
+                            .hhrt-li-blood-down:表示下降
+            
+          -->
+          <ul class="hhrt-ul-blood">
+            <li class="hhrt-li-blood-down">
+              <h3>血氧 </h3>
+              <p><span>36.8</span>%</p>
+            </li>
+            <li class="hhrt-li-blood-up">
+              <h3>高密度脂...</h3>
+              <p><span>36.8</span>mmol/L</p>
+            </li>
+            <li>
+              <h3>低密度脂...</h3>
+              <p><span>36.8</span>mmol/L</p>
+            </li>
+            <li>
+              <h3>TC/HDL</h3>
+              <p>正常</p>
+            </li>
+            <li>
+              <h3>低密度脂...</h3>
+              <p><span>36.8</span>mmol/L</p>
+            </li>
+            <li class="hhrt-li-blood-down">
+              <h3>TC/HDL</h3>
+              <p>正常</p>
+            </li>
+            <li>
+              <h3>低密度脂...</h3>
+              <p><span>36.8</span>mmol/L</p>
+            </li>
+            <li>
+              <h3>TC/HDL</h3>
+              <p>正常</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts_hhrt.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        //布局分栏
+        slidesPerView: 1,
+        // centeredSlides : true,
+        spaceBetween: 20,
+        // grabCursor: true
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper
+        observeParents:true,//
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      })
+     
+      $(function() {
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '健康报告',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+        
+        // 进度条循环改变标题,根据排列的span内容修改
+        $('.hhrb-progress').each(function(){
+          var class_body_01 = 'progress-body-01',
+            class_body_02 = 'progress-body-02',
+            class_body_03 = 'progress-body-03',
+            class_body_04 = 'progress-body-04',
+            class_fat_01 = 'progress-fat-01',
+            class_fat_02 = 'progress-fat-02',
+            class_fat_03 = 'progress-fat-03',
+            class_fat_04 = 'progress-fat-04',
+            e_title = $(this).children('.progress-title'),
+            e_body_span = $(this).children('.hhrb-progress-content').children('span'),
+            e_fat_span = $(this).children('.progress').children('.progress-content').children('span');
+            
+            if($(this).hasClass(class_body_01)){
+              e_title.html(e_body_span.eq(0).html())
+            }
+            else if($(this).hasClass(class_body_02)){
+              e_title.html(e_body_span.eq(1).html())
+            }
+            else if($(this).hasClass(class_body_03)){
+              e_title.html(e_body_span.eq(2).html())
+            }
+            else if($(this).hasClass(class_body_04)){
+              e_title.html(e_body_span.eq(3).html())
+            }
+            if($(this).hasClass(class_fat_01)){
+              e_title.html(e_fat_span.eq(0).html())
+            }
+            else if($(this).hasClass(class_fat_02)){
+              e_title.html(e_fat_span.eq(1).html())
+            }
+            else if($(this).hasClass(class_fat_03)){
+              e_title.html(e_fat_span.eq(2).html())
+            }
+            else if($(this).hasClass(class_fat_04)){
+              e_title.html(e_fat_span.eq(3).html())
+            }
+            else{
+              console.log('标题错了')
+            }
+        })
+      })
+    </script>
+
+  </body>
+
+</html>

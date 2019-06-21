@@ -271,6 +271,7 @@
     }
 }
 .hhrb-progress {
+    position: relative;
     margin-top: 10px;
     .progress{
          display: flex;
@@ -292,16 +293,19 @@
     justify-content: space-between;
     span{
         font-size: 13px;
-        color: #51E88E;
+        color: #666666!important;
     }
     span:nth-child(1){
-        color: #51E88E;
+        color: #1394D0;
     }
     span:nth-child(2){
-        color: #D3A835;
+        color: #18D09A;
     }
     span:nth-child(3){
-        color: #F22A2A;
+        color: #FC8B2F;
+    }
+    span:nth-child(4){
+        color: #FF6666;
     }
 }
 .hhrbc-list
@@ -530,8 +534,8 @@
         }
         .hhrb-down{
             p{
-               color: #62D5A4;
-               background-image: url(../images/two/hhr-fall@3x.png);
+               color: #0B7EFF;
+               background-image: url(../images/two/hhr-low@3x.png);
             }
         }
         .hhrb-up{
@@ -855,4 +859,376 @@ input.hhi-input-01
 }
 .hhi-btn-start{
     margin: 15px 0;
+}
+.echarts_hhrt{
+   height: 200px;
+}
+.health-hut-Result-two{
+    padding: 20px;
+}
+.hhrt-body{
+    padding: 12px 0;
+    h1{
+        font-size: 17px;
+        line-height: 40px;
+        font-weight: bold;
+        color: #323232;
+    }
+}
+.hhrt-div{
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 0 10px #EFEFEF;
+    h4{
+        color: #323232;
+        line-height: 22px;
+        padding: 10px;
+        font-size: 13px;
+    }
+    .hhrb-progress{
+        padding-top: 20px;
+    }
+
+}
+.hhrt-div-01{
+    position: relative;
+    padding-left: 75px;
+    img{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 62px;
+        height: 62px;
+        border-radius: 50%;
+    }
+    h3{
+        color: #323232;
+        font-size: 17px;
+        line-height: 32px;
+    }
+    h5{
+        display: flex;
+        p{
+            color: #999999;
+            line-height: 30px;
+            font-size: 12px;
+            margin-right: 8px;
+            span{
+                color: #323232;
+                font-size: 18px;
+                margin-right: 3px;
+                display: inline-block;
+            }
+        }
+    }
+}
+.hhrt-progress-div{
+    padding: 12px 0;
+}
+div.progress-body{
+    margin-top: 10px;
+    .progress{
+         display: flex;
+         height: 11px;
+         margin-bottom: 8px;
+    }
+    .progress-bar{
+        background-color: #F5F5F5;
+    }
+}
+
+div.progress-fat{
+    .progress{
+         display: flex;
+         height: 20px;
+         border-radius: 10px;
+         margin-bottom: 8px;
+         justify-content: flex-end;
+         background: -webkit-gradient(linear, 0 0, 100% 0, from(#1394D0), color-stop(0.33, #18D09A), color-stop(0.66, #FC8B2F), to(#FF6666));
+         background: -webkit-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+         background: -moz-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+         background: -o-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+         background: linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666); 
+    }
+    .progress-bar{
+        background-color: #F5F5F5;
+    }
+    .hhrb-progress-content{
+        span{
+            color: #999999;
+            b{
+                font-size: 18px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+.progress-content{
+    line-height: 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 0 10px;
+    span{
+        color: white;
+    }
+}
+.progress-title{
+    position: absolute;
+    top: -6px;
+    left: 20%;
+    font-size: 12px;
+    line-height: 16px;
+    padding:1px 2px;
+    border-radius: 8px 8px 8px 0;
+    color: white;
+    background-color: #18D09A;
+    
+}
+.progress-body-01{
+    .progress-bar{
+        width: 95%;
+    }
+    .progress-title{
+        left: 5%;
+    }
+    .progress
+    ,.progress-title{
+      background: #1394D0;  
+    }
+}
+.progress-body-02{
+    .progress-bar{
+        width: 65%;
+    }
+    .progress-title{
+        left: 35%;
+    }
+    .progress
+    ,.progress-title{
+      background: #18D09A;  
+    }
+}
+.progress-body-03{
+    .progress-bar{
+        width: 35%;
+    }
+    .progress-title{
+        left: 65%;
+    }
+    .progress
+    ,.progress-title{
+      background: #FC8B2F;  
+    }
+}
+.progress-body-04{
+    .progress-bar{
+        width: 5%;
+    }
+    .progress-title{
+        left: 85%;
+    }
+    .progress
+    ,.progress-title{
+      background: #FF6666;  
+    }
+}
+.progress-fat-01{
+    .progress-title{
+        left: 5%;
+        background-color: #1394D0;
+    }
+    .hhrb-progress-content{
+        span:nth-child(1){
+            color: #323232;
+        }
+    }
+}
+.progress-fat-02{
+    .progress-title{
+        left: 35%;
+        background-color: #18D09A;
+    }
+    .hhrb-progress-content{
+        span:nth-child(2){
+            color: #323232;
+        }
+    }
+}
+.progress-fat-03{
+    .progress-title{
+        left: 65%;
+        background-color: #FC8B2F;
+    }
+    .hhrb-progress-content{
+        span:nth-child(3){
+            color: #323232;
+        }
+    }
+}
+.progress-fat-04{
+    .progress-title{
+        left: 85%;
+        background-color: #FF6666;
+    }
+    .hhrb-progress-content{
+        span:nth-child(4){
+            color: #323232;
+        }
+    }
+}
+.hhrt-ul-body{
+    background-image: url(../images/two/hhrt-humanbody@3x.png);
+    background-size: 150px auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: flex;
+    flex-wrap: wrap;
+    li{
+        width: 50%;
+        margin-bottom: 10px;
+    }
+    li:nth-child(odd){
+        
+    }
+    li:nth-child(even){
+        text-align: right;
+    }
+    h3{
+        color: #666666;
+        font-size: 16px;
+        
+    }
+    p{
+        display: inline-block;
+        color: #323232;
+        font-size: 12px;
+        span{
+            font-size: 18px;
+        }
+    }
+    h3,p{
+        line-height: 24px;
+    }
+}
+.hhrt-li-body-down
+,.hhrt-li-blood-down{
+    h3,p{
+        color: #137DFF;
+    }
+}
+.hhrt-li-body-up
+,.hhrt-li-blood-up{
+    h3,p{
+        color: #FF6666;
+    }
+}
+
+.hhrt-li-body-down{
+    p{
+        background-image: url(../images/two/hhrt-low@3x.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: right 2px;
+        padding-right: 24px;
+    }
+}
+
+.hhrt-li-body-up{
+    p{
+        background-image: url(../images/two/hhrt-on@3x.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: right 2px;
+        padding-right: 24px;
+    }
+}
+.hhrt-li-blood-down{
+    text-align: center;
+    h3{
+        display: inline-block;
+        background-image: url(../images/two/hhrt-low@3x.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: right 2px;
+        padding-right: 24px;
+    }
+}
+.hhrt-li-blood-up{
+    text-align: center;
+    h3{
+        display: inline-block;
+        background-image: url(../images/two/hhrt-on@3x.png);
+        background-repeat: no-repeat;
+        background-size: 18px;
+        background-position: right 2px;
+        padding-right: 24px;
+    }
+}
+
+
+.hhrt-ul-blood{
+    display: flex;
+    flex-wrap: wrap;
+    li{
+        padding: 10px 5px;
+        width: 31%;
+        margin-right: 3.4%;
+        margin-bottom: 3.4%;
+        background-color: white;
+        box-shadow: 0 0 10px #EFEFEF;
+        min-width: 100px;
+        border-radius: 6px;
+    }
+    li:nth-child(3n){
+        margin-right: 0;
+    }
+    h3{
+        color: #666666;
+        font-size: 16px;
+        overflow: hidden;
+    }
+    h3,p{
+        line-height: 28px;
+        height: 28px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+  .hhrt-ul-blood{
+      li{
+          width: 48%!important;
+          margin-right: 3.8%;
+          margin-bottom: 3.8%;
+      }
+      li:nth-child(3n){
+        margin-right: 3.8%;
+      }
+      li:nth-child(2n){
+        margin-right: 0%;
+     }
+
+  }
+}
+.hhrt-swiper-div{
+    h3{
+        color: #323232;
+        line-height: 40px;
+        font-size: 16px;
+        text-align: center;
+    }
+}
+.echarts_hhrt{
+    height: 300px;
+    margin: -20px 0;
+}
+.hhrt-swiper-div .swiper-pagination-bullet-active{
+   background-color: #FE7265;
+   width: 12px;
+}
+.hhrt-swiper-div .swiper-container-horizontal>.swiper-pagination-bullets{
+    bottom: 0;
 }

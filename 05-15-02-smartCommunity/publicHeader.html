@@ -130,13 +130,19 @@
           },
 
         });
-        var optsss = $.extend({}, {
+        var optsss = $.extend(true, {
           aaa: { aa: '111'
           },
           bbb: '222'
         }, {
+          aa: '22',
+          ccc: '555',
           bbb: '333',
-          ccc: '555'
+        },
+        {
+          aa: '22222222',
+          ccc: '555',
+          bbb: '3333333',
         });
         console.log(optsss)
       })

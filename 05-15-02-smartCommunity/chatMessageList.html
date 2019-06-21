@@ -5,15 +5,15 @@
 		<title>消息列表</title>
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<!--标准mui.css-->
-		<link rel="stylesheet" href="../css/mui.min.css">
+		<link rel="stylesheet" href="css/mui.min.css">
 	</head>
 
 	<body>
 		<header class="titleBar mui-bar mui-bar-nav">
 			<div class="titleName">人居管家</div>
 			<div>
-				<img id="scan" class="titleRightButton" style="margin-right: 4px;" src="../images/scan-icon.png" />
-				<img id="patrol" class="titleRightButton" style="margin-right: 34px;" src="../images/Visitor_icon.png" />
+				<img id="scan" class="titleRightButton" style="margin-right: 4px;" src="images/scan-icon.png" />
+				<img id="patrol" class="titleRightButton" style="margin-right: 34px;" src="images/Visitor_icon.png" />
 			</div>
 		</header>
 		<div class="mui-content" id="app">
@@ -25,7 +25,7 @@
 				<div class="list-title">
 					<div style="font-weight: bold; font-size: 17px;">消息</div>
 					<div style="font-size: 14px; color: #969696; margin-left: 10px;">共{{unReadTotal}}条消息</div>
-					<img style="width: 20px; height: 20px; margin-left: 6px;" src="../images/clear-icon.png" id="clean"/>
+					<img style="width: 20px; height: 20px; margin-left: 6px;" src="images/clear-icon.png" id="clean"/>
 					<div style="font-size: 12px; color: #BABABA; margin-left: 4px;" v-if="isCleaning">清除中...</div>
 				</div>
 			</div>
@@ -150,8 +150,8 @@
 		</style>
 		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
 		<script src="./js/mui.min.js"></script>
-		<script src="./js/account.js"></script>
-		<script src="./js/bean/messageItem.js"></script>
+		<script src="./js/chat/account.js"></script>
+		<script src="./js/chat/messageItem.js"></script>
 		<script type="text/javascript">
 			mui.init({
 				pullRefresh: {
@@ -267,10 +267,12 @@
 				mui.each(app.list, function(index, item) {
 					count += item.unReadCount;
 				});
+				/*
 				var mainPage = plus.webview.getWebviewById("main");
 				mui.fire(mainPage, 'msgCountChange', {
 					count: count
 				});
+				*/
 				app.unReadTotal = count;
 			}
 			

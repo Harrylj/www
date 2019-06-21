@@ -29,6 +29,7 @@
 		},
 		sendMsg: function(revId, msg, isSystem) {
 			proxy.invoke("sendMsg", revId, msg, isSystem);
+			console.log(revId,msg,isSystem)
 		}
 	};
 }(window.jQuery, window.chatManager = {}));

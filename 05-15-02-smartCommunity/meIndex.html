@@ -13,6 +13,7 @@
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/me.css"/>
  
@@ -23,14 +24,10 @@
       }
   </style>
   <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
     <div class="me-index public-div">
-      <div class="two-public-header-div">
-        <div class="two-public-header">
-          <div class="two-public-header-return">返回</div>
-          <div class="two-public-header-title">标题</div>
-          <div class="two-public-header-more">更多</div>
-        </div>
-      </div>
+      
       <div class="mi-top">
         <a class="mit-news" href="#"></a>
         <a class="mit-setting" href="#"></a>
@@ -44,10 +41,10 @@
         <div class="mib-btn-face"></div>
         <div class="mib-list">
           <a href="#">
-          <!--<div class="mibl-item mibl-item-01">
+          <div class="mibl-item mibl-item-01">
             <h2>参与的活动</h2>
             <div class="mi-active-number">9</div>
-          </div>-->
+          </div>
           </a>
           <a href="#">
           <div class="mibl-item mibl-item-02">
@@ -74,11 +71,87 @@
       </div>
     </div>
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     	$(function(){
     	  $('.mib-btn-face').on('click',function(){
     	    alert('人脸识别咯')
     	  })
+    	  
+    	  
+    	  // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'transparent',
+          // 文字和左右菜单栏颜色
+          fontColor: 'white',
+          // 是否显示返回按钮 Boolean
+          returnShow: false,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            activity: {
+              name: '我参加的',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-activity@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            message: {
+              name: '消息',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-message@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            setting: {
+              name: '设置',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-setting@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+        
+        
+        // 强行改变头部的背景颜色
+        $('.two-public-header-div').css('background',$('.mi-top').css("background"));
+    	  // 强行使公用头部样式正确
+    	  $('.public-div').css('padding-top','0');
     	})
     </script>
 

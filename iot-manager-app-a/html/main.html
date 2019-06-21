@@ -105,6 +105,7 @@
 				}
 				var user = accountManager.getUser();
 				//5259c910-ac3f-448c-9db2-d2799ed9e7e4
+				// chat_初始化 链接服务器    -回调是收消息的方法
 				chatManager.im.init("cdsdtz", function(userId, msg, dateTime, isSystem){
 					var chatPage = plus.webview.getWebviewById("chat");
 					if(chatPage != null) {
@@ -123,6 +124,8 @@
 						mui.toast("没有开启连接");
 						return false;
 					}
+					
+					// chat_发送消息
 					chatManager.im.sendMsg(event.detail.revId, event.detail.msg, event.detail.isSystem);
 				}, false);
 				
