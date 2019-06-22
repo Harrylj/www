@@ -359,6 +359,7 @@
     overflow: hidden;
 }
 .clearfloat .chat-avatars>img{
+	border-radius: 50%;
     width: 30px;
     height: 30px;
 }
@@ -792,3 +793,35 @@ html,
         padding-top: 0;
         padding-bottom: 0;
       }
+      .ch-ul{
+      	display: flex;
+      	justify-content: space-between;
+      }
+      .ch-ul li{
+      	padding-top: 40px;
+      	background-size: 36px 36px;
+      	background-repeat: no-repeat;
+      	background-position: top center;
+      	text-align: center;
+      	line-height: 24px;
+      	color: #646464;
+      	min-width: 50px;
+      }
+      .chat-header{
+      	padding: 5px 10px;
+      }
+.ch-li-repair{
+	background-image: url(../images/chat/chat-Repair@3x.png);
+}
+.ch-li-water{
+	background-image: url(../images/chat/chat-water@3x.png);
+}
+.ch-li-money{
+	background-image: url(../images/chat/chat-money@3x.png);
+}
+.ch-li-call{
+	background-image: url(../images/chat/chat-Complaint-ivon@3x.png);
+}
+.ch-li-complaint{
+	background-image: url(../images/chat/chat-Complaint@3x.png);
+}
