@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>我的健身房</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css"/>
+ 
+  </head>
+  <style type="text/css">
+
+  </style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-03-15
+    	描述：.body-building 添加.body-building-first表示第一次进入
+    	     .bbbt-item： 添加 .bbbt-item-waiting: 表示等待中
+    	                             添加 .bbbt-item-old: 表示已经过期
+    	                             添加 .bbbt-item-ok: 表示已健身,显示健身数据
+    -->
+    <div class="body-building public-div">
+      <div class="public-header-div bb-header-div">
+        <div class="public-header bb-header">
+          <a class="public-header-return bbh-return" href="#"></a>
+          <h1>我的健身房</h1>
+          <div class="bbh-toggle"></div>
+        </div>
+      </div>
+      <div class="bb-body">
+        <!--
+        	作者：648267773@qq.com
+        	时间：2019-03-15
+        	描述：.bbb-one: 第一次进来的显示的页面
+        	      .bbb-two：第二次及有预约后进来显示的页面
+        -->
+        <div class="bbb-div bbb-one">
+          <h2>成都九龙湖晴川游泳池</h2>
+          <div class="bbbo-list">
+            <a href="#">
+            <div class="bbbo-item">
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>跑步机</h3>
+                <h4>30元60分钟</h4>
+              </div>
+            </div>
+            </a>
+            <a href="#">
+            <div class="bbbo-item">
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>自行车</h3>
+                <h4>30元60分钟</h4>
+              </div>
+            </div>
+            </a>
+            <a href="#">
+            <div class="bbbo-item">
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>划船机</h3>
+                <h4>30元60分钟</h4>
+              </div>
+            </div>
+            </a>
+          </div>
+        </div>
+        <div class="bbb-two bbb-div">
+          <div class="swiper-container">
+              <div class="swiper-wrapper">
+                  <div class="swiper-slide slide1 " data-hash="slider1">
+                      <h2>成都九龙湖晴川游泳池</h2>
+                      <a href="#">
+                      <div class="bbbo-item">
+                        <div class="bbbo-item-header">21 13 6</div>
+                        <div class="bbbo-item-footer">
+                          <h3>跑步机</h3>
+                          <h4>30元60分钟</h4>
+                        </div>
+                      </div>
+                      </a>
+                      <div class="bbbt-list">
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-waiting">
+                          <h5>3月9日 12:00 - 13:00 周四</h5>
+                          <p>等待</p>
+                        </div>
+                        </a>
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-old">
+                          <h5>3月8日 12:00 - 13:00 周四</h5>
+                          <p>已过期</p>
+                        </div>
+                        </a>
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-ok">
+                          <h5>3月7日 12:00 - 13:00 周四</h5>
+                          <p>34890 步  1小时30分钟</p>
+                        </div>
+                        </a>
+                      </div>
+                      
+                  </div>
+                  <div class="swiper-slide slide2 " data-hash="slider2">
+                      <h2>成都九龙湖晴川游泳池</h2>
+                      <a href="#">
+                      <div class="bbbo-item">
+                        <div class="bbbo-item-header">21 13 6</div>
+                        <div class="bbbo-item-footer">
+                          <h3>自行车</h3>
+                          <h4>30元60分钟</h4>
+                        </div>
+                      </div>
+                      </a>
+                      <div class="bbbt-list">
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-waiting">
+                          <h5>3月9日 12:00 - 13:00 周四</h5>
+                          <p>等待</p>
+                        </div>
+                        </a>
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-old">
+                          <h5>3月8日 12:00 - 13:00 周四</h5>
+                          <p>已过期</p>
+                        </div>
+                        </a>
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-ok">
+                          <h5>3月7日 12:00 - 13:00 周四</h5>
+                          <p>34890 步  1小时30分钟</p>
+                        </div>
+                        </a>
+                      </div>
+                  </div>
+                  <div class="swiper-slide slide3 " data-hash="slider3">
+                      <h2>成都九龙湖晴川游泳池</h2>
+                      <a href="#">
+                      <div class="bbbo-item">
+                        <div class="bbbo-item-header">21 13 6</div>
+                        <div class="bbbo-item-footer">
+                          <h3>划船机</h3>
+                          <h4>30元60分钟</h4>
+                        </div>
+                      </div>
+                      </a>
+                      <div class="bbbt-list">
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-waiting">
+                          <h5>3月9日 12:00 - 13:00 周四</h5>
+                          <p>等待</p>
+                        </div>
+                        </a>
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-old">
+                          <h5>3月8日 12:00 - 13:00 周四</h5>
+                          <p>已过期</p>
+                        </div>
+                        </a>
+                        <a href="#">
+                        <div class="bbbt-item bbbt-item-ok">
+                          <h5>3月7日 12:00 - 13:00 周四</h5>
+                          <p>34890 步  1小时30分钟</p>
+                        </div>
+                        </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      var mySwiper = new Swiper ('.swiper-container', {
+             direction: 'horizontal',
+            //布局分栏
+            slidesPerView : 1,
+            centeredSlides : true,
+            autoplay: 22500,     ///2.5S
+            //是否循环拖动
+            loop: true,
+            //需要指针手抓效果
+            grabCursor : true,
+            onSlideChangeStart: function(swiper){
+              alert('事件触发了;');
+            }
+
+        })
+      
+      $(function(){
+        
+        // 点击顶部切换按钮
+        $('.bbh-toggle').on('click',function(){
+          $('.bbb-div').toggle();
+        })
+      })
+    </script>
+
+  </body>
+
+</html>

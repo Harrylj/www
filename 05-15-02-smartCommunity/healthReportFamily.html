@@ -13,100 +13,179 @@
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" type="text/css" href="css/healthHut.css"/>
- 
+    <link rel="stylesheet" type="text/css" href="css/healthHut.css" />
+
   </head>
   <style type="text/css">
-
+  .two-health-report-family{
+    padding-top: 44px;
+  }
   </style>
+
   <body>
     <!--
-      作者：648267773@qq.com
-      时间：2019-03-15
-      描述：.hhr-header-more: 默认状态为健康，未看过
-                                              添加.hhr-header-more-ok:健康，默认为健康
-                                               添加 .hhr-header-more-no : 不健康
-                                               添加 .hhr-header-more-warning: 警告
-                             添加.hhr-header-more-unread:表示未看过,默认为未看过
-                             添加.hhr-header-more-read:表示看过
-                        
+    	作者：648267773@qq.com
+    	时间：2019-06-27
+    	描述：.thrf-ul：子元素li添加.thrf-li-click表示点击的元素
+    	     .thrf-list：添加 .thrf-list-hover表示响应显示的元素
     -->
-    <div class="health-hut-report health-report public-div">
-      <div class="public-header-div bb-header-div">
-        <div class="public-header">
-          <a class="public-header-return bbh-return" href="#"></a>
-          <h1>家人的检查报告</h1>
-        </div>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="two-health-report two-health-report-family public-div">
+      <div class="thrp-header">
+         <ul class="thrf-ul">
+         	<li class="thrf-li-click">妈妈</li>
+         	<li>爸爸</li>
+         </ul>
       </div>
-      <div class="hhr-header-father">
-        <div class="hhr-header">
-          <div class="hhr-header-one">
-            <img src="images/user-01.jpg"/>
-            <h2>灵小风</h2>
-            <h3>共<span>13</span>次</h3>
-          </div>
-          <div class="hhr-body-list">
-            <div class="hhr-header-item">
-              <a href="healthHutResultSofa.html">
-              <div class="hhr-header-more hhr-header-more-unread hhr-header-more-ok ">
-                <h2>健康监测按摩椅</h2>
-                <p>2019.09.20 20:23:12</p>
-                <h3>检测结果：健康</h3>
+      <div class="thr-body thrf-list-father">
+        <div class="thrf-list thrf-list-hover">
+          <div class="thr-report-list">
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-sofa@3x.png" />
+              <h2>健康检测沙发1</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
               </div>
-              </a>
-              <a class="hhr-a-more" href="healthReportMore.html">历史检测<span>12</span>次</a>
-            </div>
-            <div class="hhr-header-item">
-              <a href="healthHutResultSofa.html">
-              <div class="hhr-header-more hhr-header-more-read hhr-header-more-no ">
-                <h2>健康监测按摩椅</h2>
-                <p>2019.09.20 20:23:12</p>
-                <h3>检测结果：不健康</h3>
-              </div>
-              </a>
-              <a class="hhr-a-more" href="healthReportMore.html">历史检测<span>12</span>次</a>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
             </div>
           </div>
-        </div>
-        <div class="hhr-header">
-          <div class="hhr-header-one">
-            <img src="images/user-01.jpg"/>
-            <h2>灵大风</h2>
-            <h3>共<span>13</span>次</h3>
-          </div>
-          <div class="hhr-body-list">
-            <div class="hhr-header-item">
-              <a href="healthHutResultSofa.html">
-              <div class="hhr-header-more hhr-header-more-unread hhr-header-more-ok ">
-                <h2>健康监测按摩椅</h2>
-                <p>2019.09.20 20:23:12</p>
-                <h3>检测结果：健康</h3>
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-eyes@3x.png" />
+              <h2>健康检测眼动仪</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
               </div>
-              </a>
-              <a class="hhr-a-more" href="healthReportMore.html">历史检测<span>12</span>次</a>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
             </div>
-            <div class="hhr-header-item">
-              <a href="healthHutResultSofa.html">
-              <div class="hhr-header-more hhr-header-more-read hhr-header-more-no ">
-                <h2>健康监测按摩椅</h2>
-                <p>2019.09.20 20:23:12</p>
-                <h3>检测结果：不健康</h3>
+          </div>
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-allinone@3x.png" />
+              <h2>健康检测一体机</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
               </div>
-              </a>
-              <a class="hhr-a-more" href="healthReportMore.html">历史检测<span>12</span>次</a>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
             </div>
           </div>
         </div>
+
+        </div>
+        <div class="thrf-list">
+          <div class="thr-report-list">
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-sofa@3x.png" />
+              <h2>健康检测沙发2</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+              </div>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+            </div>
+          </div>
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-eyes@3x.png" />
+              <h2>健康检测眼动仪</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+              </div>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+            </div>
+          </div>
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-allinone@3x.png" />
+              <h2>健康检测一体机</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+              </div>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        
+        
       </div>
-      
-      
-    
     </div>
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-   
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
-      
+      $(function() {
+        /*
+        .thrf-ul：子元素li添加.thrf-li-click表示点击的元素
+           .thrf-list：添加 .thrf-list-hover表示响应显示的元素
+        */
+        $('.thrf-ul').children('li').on('click',function(){
+          var this_index = $(this).index(),
+              class_click = 'thrf-li-click',
+              class_hover = 'thrf-list-hover',
+              e_father = $('.thrf-list-father');
+          $(this).addClass(class_click).siblings().removeClass(class_click);
+          e_father.children().eq(this_index).addClass(class_hover).siblings().removeClass(class_hover);
+        })
+
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '家人的健康报告',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+
+      })
     </script>
 
   </body>

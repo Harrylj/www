@@ -223,7 +223,21 @@
 
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 <script>
-
+    
+    function getNowTime() {
+            function add_10(num) {
+                if (num < 10) {
+                    num = '0' + num
+                }
+                return num;
+            }
+            var myDate = new Date();
+            var abc = myDate.getFullYear() + '-' + myDate.getMonth() + '-' + myDate.getDate() + ' ' + add_10(myDate.getHours()) + ':' + add_10(myDate.getMinutes()) + ':' + add_10(myDate.getSeconds());
+            
+            return abc;
+    }
+    alert(getNowTime())
+    
     screenFuc();
     function screenFuc() {
         var topHeight = $(".chatBox-head").innerHeight();//聊天头部高度

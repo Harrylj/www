@@ -206,7 +206,7 @@
     padding: 0 20px;
 }
 .hhs-body-content{
-    padding: 120px 0 200px 0;
+    padding: 20px 0 20px 0;
     h3{
         color: #020202;
         font-size: 19px;
@@ -781,7 +781,7 @@
             line-height: 28px;
         }
         img{
-            top: 25px!important;
+            top: 20px!important;
             width: 28px!important;
             height: 28px!important;
             margin-top: 0!important;
@@ -795,6 +795,8 @@
     }
 }
 .thr-header{
+    display: flex;
+    justify-content: center;
     padding-top: 15px;
     padding-bottom: 20px;
     h5{
@@ -803,6 +805,24 @@
         color: #323232;
         span{
             font-size: 42px;
+        }
+    }
+    .percentage{
+        display: flex;
+        justify-content: center;
+        span{
+            position: relative;
+            top: 10px;
+            font-size: 14px;
+            transform: scale(0.9);
+        }
+        p{
+            font-size: 43px;
+            
+        }
+        span,p{
+            line-height: 108px;
+            color: #313131;
         }
     }
 }
@@ -923,6 +943,17 @@ input.hhi-input-01
             }
         }
     }
+}
+.hhrt-down-report{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url(../images/two/hhrt-black-download@3x.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 .hhrt-progress-div{
     padding: 12px 0;
@@ -1231,4 +1262,85 @@ div.progress-fat{
 }
 .hhrt-swiper-div .swiper-container-horizontal>.swiper-pagination-bullets{
     bottom: 0;
+}
+.thrf-list{
+    display: none;
+}
+.thrf-list-hover{
+    display: block;
+}
+.thrf-ul{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+    li{
+        line-height: 40px;
+        color: #323232;
+        font-size: 16px;
+        border-bottom: 1px solid transparent;
+    }
+    .thrf-li-click{
+        border-bottom: 1px solid #FF9645;
+    }
+}
+.hhrt-down-ecg{
+    display: inline-block;
+    margin: 15px auto;
+    line-height: 30px;
+    height: 30px;
+    width: auto;
+    font-size: 15px;
+    border-radius: 15px;
+    background-image: url(../images/two/hhrt-white-download@3x.png);
+    padding: 0 10px 0 35px;
+    background-repeat: no-repeat;
+    background-size: 15px 13px;
+    background-position: 10px center;
+}
+.hhrt-div-blood{
+    text-align: center;
+}
+.hhrt-ecg-div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.hhrt-ecg-div-left{
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h4{
+        color: #666666;
+    }
+    p{
+        color: #323232;
+    }
+    h4,p{
+        text-align: center;
+        line-height: 28px;
+    }
+}
+
+.hhrt-ecg-div-img{
+    width: 260px;
+}
+.hhrt-ecg-div-left
+,.hhrt-ecg-div-img{
+  position: relative;
+  height: 90px;  
+}
+.hhrt-ecg-div-father{
+    padding-top: 15px;
+    background-color: white;
+}
+#background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+#line{
+    position: relative;
+    z-index: 2;
 }

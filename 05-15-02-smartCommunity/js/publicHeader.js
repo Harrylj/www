@@ -1,8 +1,8 @@
 /**
- * 简单的jquery购物商城秒杀倒计时插件
- * @date 2016-06-11
- * @author TangShiwei
- * @email 591468061@qq.com
+ * 移动端APP头部插件
+ * @date 2019-07-01
+ * @author Alan
+ * @email 648267773@qq.com
  */
 ;(function(factory) {
     "use strict";
@@ -31,23 +31,32 @@
        returnShow: true,
        // 返回按钮地址
        returnHref: 'javascript:history.back(-1)',
+       /*
+       returnHref: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+       },
+       */
        // 标题名称
        titleName: '这是标题',
        // 是否显示菜单栏 Boolean
        navListShow: true,
        // 配置菜单栏
-       // home,images/two/two-nav-home@3x.png
-       // help,images/two/two-nav-help@3x.png
-       // message,images/two/two-nav-message@3x.png
-       // setting,images/two/two-nav-setting@3x.png
-       // activity,images/two/two-nav-activity@3x.png
+       // home,首页,images/two/two-nav-home@3x.png
+       // help,帮助,images/two/two-nav-help@3x.png
+       // message,消息,images/two/two-nav-message@3x.png
+       // setting,设置,images/two/two-nav-setting@3x.png
+       // activity,我参与的,images/two/two-nav-activity@3x.png
+       // reserve,添加预约,images/two/two-nav-reserve@3x.png
+       // share,分享,images/two/two-nav-share@3x.png
+       // editor,分享,images/two/two-nav-editor@3x.png
        // namv: 菜单名, href:链接地址,imgSrc:图标地址,
        navList: {
          help:{
            name: '帮助',
            href: 'www',
-           //imgSrc: '/Content/Mobile/images/two/two-nav-help@3x.png',
-           imgSrc: 'images/two/two-nav-help@3x.png',
+           imgSrc: '/Content/Mobile/images/two/two-nav-help@3x.png',
+           //imgSrc: 'images/two/two-nav-help@3x.png',
            clickE: function(){
              alert('1111')
              return false;
@@ -100,9 +109,16 @@
         $(this).hide();
       })
       //返回按钮
-      this_father_e.on('click','.two-public-header-return',function(){
+      // 如果是字符串
+      if(typeof(opts.returnHref)=='string'){
+        this_father_e.on('click','.two-public-header-return',function(){
          window.location.href= opts.returnHref;
-      })
+        })
+      }
+      // 其他则考虑为函数
+      else{
+        this_father_e.on('click','.two-public-header-return',opts.returnHref)
+      }
       
       // 菜单栏命名前缀
       var public_nav_a = 'public-nav-a-';
@@ -163,7 +179,7 @@
       `
       
       console.log(opts)
-      
+      console.log(opts.eee)
       // 返回生成内容
       return $(this).html(this_content)
       

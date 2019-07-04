@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)http://www.jq22.com/demo/autoCheck201705132329/ -->
+<html lang="en">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=9,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="./css/autoCheck.css">
+  </head>
+
+  <body style="">
+    <a class="btn" onclick="AutoCheck.run(checkConfig);">执行检测</a>
+
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/AutoCheck.js"></script>
+    <!--<script src="./js/autoCheckDemo.js"></script>-->
+    <script type="text/javascript">
+      $(function() {
+        var checkConfig = {
+          finalBtnText: '确定',
+          checkList: [{
+            'unchecked': '检测身体状况',
+            'checking': '正在检测身体状况...',
+            'checked': '身体检测状况完成'
+          }, {
+            'unchecked': '检测精神状况',
+            'checking': '正在检测精神状况...',
+            'checked': '检测精神状况完成'
+          }, {
+            'unchecked': '检测智商等级',
+            'checking': '正在检测智商等级...',
+            'checked': '检测智商等级完成'
+          }, {
+            'unchecked': '检测技术能力',
+            'checking': '正在检测技术能力...',
+            'checked': '检测技术能力完成'
+          }],
+          isShowFinalBtn: true,
+          callback: function() {
+            alert('检测完成');
+          },
+          isAutoRunCallback: false,
+          // 检测每一项的时间
+          timeGap: 500
+        };
+        AutoCheck.run(checkConfig);
+
+      })
+    </script>
+  </body>
+
+</html>

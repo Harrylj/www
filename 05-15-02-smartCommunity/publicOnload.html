@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>公用头</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mloading.css" />
+
+  </head>
+  <style type="text/css">
+    html,
+    body {
+      background-color: white;
+    }
+    #btnShow,
+    #btnHide {
+      position: fixed;
+      z-index: 99999;
+      top: 100px;
+    }
+    #btnShow {
+      left: 20px;
+    }
+    #btnHide {
+      left: 200px;
+    }
+  </style>
+
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+
+    <button type="button" id="btnShow">显示加载</button>
+    <button type="button" id="btnHide">关闭加载</button>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.mloading.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          eee: $(this),
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: 'black',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          //returnHref: 'javascript:history.back(-1)',
+          returnHref: function(i) {
+            console.log($(this).attr('class'))
+            return false;
+          },
+          // 标题名称
+          titleName: '预约跑步机',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+        $("#btnShow").on('click',function(){
+           $("body").mLoading({
+            text: "看我的", //加载文字，默认值：加载中...
+            // icon:"",//加载图标，默认值：一个小型的base64的gif图片
+            html: false, //设置加载内容是否是html格式，默认值是false
+            content: "", //忽略icon和text的值，直接在加载框中显示此值
+            mask: true //是否显示遮罩效果，默认显示
+          });
+        })
+        $("#btnHide").on('click',function(){
+          $("body").mLoading("hide"); //隐藏loading组件
+        })
+        // $(element).mLoading("show");//显示loading组件
+        // $(element).mLoading("hide");//隐藏loading组件
+      });
+    </script>
+  </body>
+
+</html>

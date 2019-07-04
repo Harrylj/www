@@ -61,8 +61,8 @@
   display: inline-block;
   font-size: 16px;
   color: #222222;
-  line-height: 35px;
-  height: 35px;
+  line-height: 30px;
+  height: 30px;
   overflow: hidden;
   background-image: url(../images/tz-index-11.png);
   background-position: 0 center;
@@ -149,7 +149,7 @@
   display: inline-block;
   width: 135px;
   padding-left: 46px;
-  background-color: #D00000;
+  background-color: #005392;
   color: white;
   line-height: 40px;
   height: 40px;
@@ -201,7 +201,7 @@
 .tzib-loop-div-header h1{
   background-color: #F5F5F5;
   line-height: 40px;;
-  color: black;
+  color: #d00000;
   padding-left: 35px;
   background-image: url(../images/tz-index-12.png);
   background-position: 10px center;
@@ -383,7 +383,7 @@
   margin-top: 2px;
   line-height: 50px;
   height: 50px;
-  background-color: #e60012;
+  background-color: #005392;
 }
 .tzih-nav-one>li{
   position: relative;
@@ -392,7 +392,7 @@
 .tzih-nav-one a{
   display: inline-block;
   text-align: center;
-  background-color: #e60012;
+  background-color: #005392;
   color: white;
   font-size: 16px;
   padding: 0 25px;
@@ -403,7 +403,7 @@
 
 .tzih-nav-one a:hover
 ,.tzih-nav-one  .tzih-nav-one-hover{
-  background-color: #BA0000;
+  background-color: #054476;
 }
 .tzih-nav-two{
   display: none;
@@ -676,7 +676,7 @@
   width: 90px;
   height: 100%;
   z-index: 99;
-  color: #d00000;
+  color: #005392;
   line-height: 36px;
   text-align: center;
   font-size: 16px;
@@ -690,7 +690,7 @@
 
 .slide-click-hover {
   color: white;
-  background-color: #d00000;
+  background-color: #005392;
 }
 
 .slide-04 {
@@ -1229,6 +1229,8 @@
 .iil-item p{
   padding:5px 10px;
   line-height: 24px;
+  height: 34px;
+  overflow: hidden;
   color: #333333;
   font-size: 14px;
   text-align: center;
@@ -1372,7 +1374,7 @@
   height: 38px;
   padding-left: 36px;
   font-weight: bold;
-  color: #202020;
+  color: #d00000;
 }
 .tzib-nav-04-title{
   background-image: url(../images/new-index-group.png);

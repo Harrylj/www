@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>我的健身房</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css"/>
+ 
+  </head>
+  <style type="text/css">
+
+  </style>
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="body-building body-building-choice public-div">
+
+      <div class="bb-body">
+        <div class="bbb-div bbb-one">
+          <div class="bbbo-list">
+            <a href="#">
+            <div class="bbbo-item">
+              <img src="images/gym/gym-choice-01.png"/>
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>跑步机</h3>
+                <h4>30元60分钟</h4>
+              </div>
+              <div class="public-two-btn-01 bbc-msyy">马上预约</div>
+            </div>
+            </a>
+            <a href="#">
+            <div class="bbbo-item">
+              <img src="images/gym/gym-choice-02.png"/>
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>自行车</h3>
+                <h4>30元60分钟</h4>
+              </div>
+              <div class="public-two-btn-01 bbc-msyy">马上预约</div>
+            </div>
+            </a>
+            <a href="#">
+            <div class="bbbo-item">
+              <img src="images/gym/gym-choice-03.png"/>
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>划船机</h3>
+                <h4>30元60分钟</h4>
+              </div>
+              <div class="public-two-btn-01 bbc-msyy">马上预约</div>
+            </div>
+            </a>
+            <a href="#">
+            <div class="bbbo-item">
+              <img src="images/gym/gym-choice-04.png"/>
+              <div class="bbbo-item-header">21 13 6</div>
+              <div class="bbbo-item-footer">
+                <h3>划船机</h3>
+                <h4>30元60分钟</h4>
+              </div>
+              <div class="public-two-btn-01 bbc-msyy">马上预约</div>
+            </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>  
+    <script type="text/javascript">
+        $(function(){
+          
+          // 点击预约
+          $('.bbc-msyy').on('click',function(){
+            alert('预约')
+          })
+          
+          // 公用头部
+          $('.two-public-header-content').publicHeader({
+            // 父级元素
+            fatherE: '.two-public-header-content',
+            // 背景颜色
+            bgColor: 'white',
+            // 文字和左右菜单栏颜色
+            fontColor: 'black',
+            // 是否显示返回按钮 Boolean
+            returnShow: true,
+            // 返回按钮地址
+            returnHref: 'javascript:history.back(-1)',
+            // 标题名称
+            titleName: '我的健身房',
+            // 是否显示菜单栏 Boolean
+            navListShow: true,
+            // 配置菜单栏home,help,message,setting,activity
+            // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+            navList: {
+  
+            },
+          });
+          
+        })
+        
+        
+    	 
+    </script>
+  </body>
+
+</html>

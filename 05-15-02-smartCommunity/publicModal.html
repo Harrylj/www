@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>切换其他房屋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+
+  </head>
+  <style type="text/css">
+  	.house-toggle-house{
+  	  padding-top: 44px;
+  	}
+  </style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-28
+    	描述：.hthb-item:添加.hthb-item-click表示选中。
+    -->
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="house-toggle-house public-div">
+      <div class="public-two-btn-01 hth-btn-qd" data-toggle="modal" data-target="#myModalSmall">确定</div>
+    </div>
+    <!--
+        作者：648267773@qq.com
+        时间：2019-05-29
+        描述：弹出层
+      -->
+    
+    <!-- Modal -->
+    <div class="modal two-modal-small fade" id="myModalSmall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4 class="two-modal-small-title"></h4>
+          </div>
+          <div class="modal-small-footer">
+            <div class="two-small-btn-qd" data-dismiss="modal">确定</div>
+            <div class="two-small-btn-qx" data-dismiss="modal">取消</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>   
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>   
+    <script>
+      $(function(){
+
+        
+        // 点击确定按钮弹出弹窗
+        $('.hth-btn-qd').on('click',function(){
+          var e_click = $('.hthb-item-click'),
+              e_ts = $('.two-modal-small-title'),
+              ts_01 = '请选择房屋',
+              ts_02 = '确认设置该房屋为当前房屋';
+          if(e_click.length < 1){
+            e_ts.html(ts_01)
+          }
+          else{
+            e_ts.html(ts_02)
+          }
+        })
+        
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: 'black',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '切换其他房屋',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+
+          },
+        });
+      })
+    </script>
+
+  </body>
+
+</html>

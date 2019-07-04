@@ -12,40 +12,149 @@
 
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
     <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/autoCheck.css"/>
     <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css" />
     <link rel="stylesheet" type="text/css" href="css/healthHut.css" />
   </head>
   <style type="text/css">
 
-
   </style>
 
   <body>
-
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
     <div class="health-hut-sofa body-building-first public-div">
-      <div class="public-header-div">
-        <div class="public-header">
-          <a class="public-header-return" href="#"></a>
-          <h1>健康监测按摩椅</h1>
-        </div>
-      </div>
       <div class="hhs-body">
+        <!--
+        	作者：648267773@qq.com
+        	时间：2019-07-04
+        	描述：.hhb-tbn-ok:若该值为1，则进行下一步
+        -->
+        <input class="hhb-tbn-ok" type="hidden"  value="0" />
         <div class="hhs-body-content">
           <h3>请根据大屏提示完成检测操作</h3>
           <p>待完成全部操作后可点击下方按钮查看健康报告</p>
+          <div class="hhs-check-content"></div>
         </div>
-        <a href="#"><div class="hhs-btn-ckbg">查看报告</div></a>
+        <a href="#">
+          <div class=" public-two-btn-01 hhs-btn-ok">当前项检测通过</div>
+        </a>
+
       </div>
     </div>
 
-    <!--<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>-->
-    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <!-- Modal -->
+    <div class="public-two-btn-01 hth-btn-qd hide" data-toggle="modal" data-target="#myModalSmall">确定</div>
+    <div class="modal two-modal-small fade" id="myModalSmall" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h4 class="two-modal-small-title"></h4>
+          </div>
+          <div class="modal-small-footer">
+            <div class="two-small-btn-qd" data-dismiss="modal">确定</div>
+            <div class="two-small-btn-qx" data-dismiss="modal">取消</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/autoCheck.js"></script>
     <script type="text/javascript">
-      
+      $(function() {
+        // 配置参数
+        var checkConfig = {
+          // 按钮名称
+          finalBtnText: '查看报告',
+          // 每一项的名称
+          checkList: [{
+            'unchecked': '检测身体状况',
+            'checking': '正在检测身体状况...',
+            'checked': '身体检测状况完成'
+            
+          }, {
+            'unchecked': '检测精神状况',
+            'checking': '正在检测精神状况...',
+            'checked': '检测精神状况完成',
+          }, {
+            'unchecked': '检测智商等级',
+            'checking': '正在检测智商等级...',
+            'checked': '检测智商等级完成'
+          }, {
+            'unchecked': '检测技术能力',
+            'checking': '正在检测技术能力...',
+            'checked': '检测技术能力完成'
+          }],
+          isShowFinalBtn: true,
+          callback: function() {
+            alert('检测完成');
+          },
+          isAutoRunCallback: false,
+          // 重复检测每一项的时间
+          timeGap: 500
+        };
+        // 加载成功运行
+        AutoCheck.run(checkConfig);
+        
+        
+        // 点击确定按钮弹出弹窗
+        $('.hth-btn-qd').on('click',function(){
+          var e_click = $('.hthb-item-click'),
+              e_ts = $('.two-modal-small-title'),
+              ts_01 = '请选择房屋',
+              ts_02 = '确认设置该房屋为当前房屋';
+          e_ts.html($('.checking').children('.check-text').html())
+        })
+        
+        // 点击查看报告
+        $('.check-btn').on('click',function(){
+          var class_ok = 'active';
+          //
+          if($(this).hasClass(class_ok)){
+            console.log('完成')
+          }
+          // 未检测完成时
+          else{
+            // 弹窗
+            $('.hth-btn-qd').click()
+          }
+        })
+        
+        // 点击当前项检测通过
+        $('.hhs-btn-ok').on('click',function(){
+          // 值为0则不通过,1则通过
+          $('.hhb-tbn-ok').val(1)
+        })
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: 'black',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '沙发按摩椅检测',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
 
+          },
+        });
+      })
     </script>
 
   </body>

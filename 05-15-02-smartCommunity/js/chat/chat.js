@@ -6,7 +6,6 @@
 			hubConnection = $.hubConnection("http://47.110.145.108:8012/signalr");
 			// 设置查询字符串
 			hubConnection.qs = {userId: userId};
-			
 			hubConnection.logging = true;
 			hubConnection.error(function (error) {
 				console.log('SignalR error: ' + error)

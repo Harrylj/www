@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mloading demo</title>
+    <link rel="stylesheet" href="src/jquery.mloading.css">
+    <style type="text/css">
+    	 #btnShow
+    	 ,#btnHide{
+    	   position: fixed;
+    	   z-index: 99999;
+    	 }
+    	 #btnShow{
+    	   left: 20px;
+    	 }
+    	 #btnHide{
+    	   left: 100px;
+    	 }
+    </style>
+</head>
+<body>
+    <button type="button" id="btnShow">显示加载</button>
+    <button type="button" id="btnHide">关闭加载</button>
+
+    <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+    <script src="src/jquery.mloading.js"></script>
+    <script>
+        $(function(){
+            $("#btnShow").click(function(){
+                $("body").mLoading(
+                  {
+                      text:"看我的",//加载文字，默认值：加载中...
+                      // icon:"",//加载图标，默认值：一个小型的base64的gif图片
+                      html:false,//设置加载内容是否是html格式，默认值是false
+                      content:"",//忽略icon和text的值，直接在加载框中显示此值
+                      mask:true//是否显示遮罩效果，默认显示
+                  }
+                );
+            });
+            $("#btnHide").click(function(){
+                $("body").mLoading("hide");//隐藏loading组件
+            });
+            
+        });
+        /*
+        $(element).mLoading({
+            text:"",//加载文字，默认值：加载中...
+            icon:"",//加载图标，默认值：一个小型的base64的gif图片
+            html:false,//设置加载内容是否是html格式，默认值是false
+            content:"",//忽略icon和text的值，直接在加载框中显示此值
+            mask:true//是否显示遮罩效果，默认显示
+        });
+        
+        $(element).mLoading("show");//显示loading组件
+        $(element).mLoading("hide");//隐藏loading组件
+        */
+    </script>
+</body>
+</html>

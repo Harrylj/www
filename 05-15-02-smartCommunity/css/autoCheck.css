@@ -1,0 +1,117 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%
+}
+
+.btn {
+  display: inline-block;
+  background: #FF9645;
+  padding: 10px 17px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 50px
+}
+
+.modal-check {
+  /*background: rgba(238, 238, 238, .5);*/
+  display: table;
+  z-index: 100;
+  width: 100%;
+}
+
+.modal-check .modal-check-content {
+  font-family: microsoft yahei, sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center
+}
+
+.modal-check .modal-check-content .check-box {
+  /*display: inline-block;*/
+  display: none;
+  width: 100%;
+  margin: auto;
+  background: #fff;
+  /*border: 1px solid #e0e0e0;
+  box-shadow: 0 2px 15px #c4c4c4;*/
+  padding: 30px 0;
+  min-width: 320px;
+  box-sizing: border-box;
+}
+
+.modal-check .modal-check-content .check-box .check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.modal-check .modal-check-content .check-box .check-list li {
+  padding: 0px 20px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 22px;
+  color: #999;
+  text-align: left
+}
+
+.modal-check .modal-check-content .check-box .check-list li .check-icon {
+  width: 22px;
+  height: 22px;
+  background: url(../images/auto-unchecked.png) no-repeat center;
+  color: #fff;
+  display: block;
+  float: left;
+  margin-right: 13px;
+  text-align: center
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checking {
+  color: #ff8c00
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checking .check-icon {
+  background: url(../images/auto-checking.png) no-repeat left center
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checked {
+  color: #666
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checked .check-icon {
+  background: url(../images/auto-checked.png) no-repeat left center
+}
+
+.modal-check .modal-check-content .check-box .check-list li .check-text {
+  max-width: 300px;
+  white-space: normal;
+  overflow: hidden;
+  display: block;
+  word-break: break-all
+}
+
+.modal-check .modal-check-content .check-box .check-bottom {
+  padding-top: 12px
+}
+
+.modal-check .modal-check-content .check-box .check-bottom .check-btn {
+  display: inline-block;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  background: #e5e5e5;
+  font-size: 16px;
+  color: #aaa;
+  text-align: center;
+  border-radius: 18px;
+  cursor: not-allowed
+}
+
+.modal-check .modal-check-content .check-box .check-bottom .check-btn.active {
+  background: #FF9645;
+  color: #fff;
+  cursor: pointer
+}
+
