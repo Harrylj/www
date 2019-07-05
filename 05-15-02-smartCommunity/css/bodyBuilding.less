@@ -491,54 +491,49 @@
     margin-top: 60px;
     padding-top: 20px;
 }
-.bbrc-music{
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url(../images/bbr-music@2x.png);
-}
 .bbrc-time{
     font-size:60px;
     line-height: 80px;
-    color: #000000;
+    color: white;
     text-align: center;
 }
 .bbrc-time-div p{
     font-size: 16px;
-    color: #979797;
+    color: white;
     text-align: center;
 }
 .bbr-table{
-    margin-top: 60px;
+    margin-top: 80px;
     width: 100%;
     td{
         text-align: center;
         padding: 4px 0;
-        color: #474747;
-        font-size: 15px;
+        color: white;
+        font-size: 14px;
     }
     tr:first-child td{
         font-size: 29px;
         line-height: 32px;
+        padding-top: 50px;
+        background-size: 32px 32px;
+        background-repeat: no-repeat;
+        background-position: top center;
+    }
+    tr:first-child td:nth-child(1){
+        background-image: url(../images/gym/gym-run-01.png);
+    }
+    tr:first-child td:nth-child(2){
+        background-image: url(../images/gym/gym-run-03.png);
+    }
+    tr:first-child td:nth-child(3){
+        background-image: url(../images/gym/gym-run-02.png);
     }
 }
-.bbrf-btn-tqjs{
-    margin: 80px 0 30px 0;
-    display: block;
-    width: 100%;
-    color: #FF0000;
-    font-size: 17px;
-    line-height: 32px;
-    text-align: center;
-}
+
 .bbrf-btn-more{
     display: block;
     font-size: 15px;
-    color: #363636;
+    color: white;
     line-height: 32px;
     text-align: center;
     
@@ -859,4 +854,51 @@ div.mui-poppicker-body{
 }
 .mui-pciker-list, .mui-pciker-rule{
     color: black;
+}
+.bbrf-ul{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    min-width: 320px;
+    li{
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+    }
+    
+}
+.bbrf-btn-tqjs{
+    background-color: #ed5866;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    h2{
+        width: 20px;
+        height: 20px;
+        border-radius: 4px;
+        background-color: white;
+        margin: 0 auto;
+    }
+    h3{
+        margin-top: 10px;
+        font-size: 16px;
+        line-height: 24px;
+        text-align: center;
+        color: white;
+    }
+}
+.bbrf-music
+,.bbrf-bad{
+    background-size: 50px 50px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.bbrf-music{
+    background-image: url(../images/gym/gym-run-04.png);
+}
+.bbrf-bad{
+    background-image: url(../images/gym/gym-run-05.png);
+}
+.bbrf-btn-tqjs{
+    
 }
