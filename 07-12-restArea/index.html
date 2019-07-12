@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>名称</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+
+  <body>
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary hide" data-toggle="modal" data-target="#warnModal">
+  Launch demo modal
+</button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="warnModal" tabindex="-1" role="dialog" aria-labelledby="warnModalLabel" aria-hidden="true">
+      <div class="modal-dialog warn-modal-dialog" role="document">
+        <div class="modal-content warn-modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="warnModalLabel">告警</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+          </div>
+          <div class="modal-body">
+            <div class="modal-big-left">
+                <video class="modal-video-big" controls="controls" autoplay="autoplay">
+                  <source src="video/movie.ogg" type="video/ogg" />
+                  <source src="video/movie.mp4" type="video/mp4" />
+                  <source src="video/movie.webm" type="video/webm" />
+                </video>
+            </div>
+            <div class="modal-big-right">
+              <table class="warn-table" border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td>告警地点:</td>
+                    <td>成都--泸州--永兴服务区--A区</td>
+                  </tr>
+                  <tr>
+                    <td>告警地点:</td>
+                    <td>成都--泸州--永兴服务区--A区</td>
+                  </tr>
+                  <tr>
+                    <td>告警地点:</td>
+                    <td>成都--泸州--永兴服务区--A区</td>
+                  </tr>
+                </table>
+                <button type="button" class="btn warn-btn-big-jcgj" data-dismiss="modal">解除告警</button>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-07-12
+    	描述：.ra-item 添加 .ra-item-warn 表示布防
+    	               添加 .ra-item-big 表示由它发起的大告警窗口，这里的大告警窗口是共用的一个
+    -->
+
+    <div class="rest-area">
+      <div class="btn-div-all">
+        <button class="bufang-btn-01">布防1</button>
+        <button class="bufang-btn-02">布防2</button>
+        <button class="bufang-btn-03">布防3</button>
+        <button class="bufang-btn-04">布防4</button>
+      </div>
+      <div class="ra-div-01">
+        <div class="ra-table-div">
+          <table class="ra-table-01" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>当前状态：</td>
+            <td>布防中</td>
+          </tr>
+          <tr>
+            <td>当前车辆：</td>
+            <td>？？辆</td>
+          </tr>
+          <tr>
+            <td>识别盗油：</td>
+            <td>？？起</td>
+          </tr>
+          </table>
+        </div>
+        
+      </div>
+      <div class="ra-div-02">
+        <div class="ra-table-div">
+          <table class="ra-table-01" border="0" cellspacing="0" cellpadding="0">
+          <tr>
+            <td>当前状态：</td>
+            <td>布防中</td>
+          </tr>
+          <tr>
+            <td>当前车辆：</td>
+            <td>？？辆</td>
+          </tr>
+          <tr>
+            <td>识别盗油：</td>
+            <td>？？起</td>
+          </tr>
+          </table>
+        </div>
+      </div>
+      <div class="ra-title-01">蓉遵高速泸州方向</div>
+      <div class="ra-title-02">蓉遵高速成都方向</div>
+      <div class="ra-content">
+        <div class="ra-item modal-item-01">
+          <div class="ra-item-content ra-item-content">
+            <div class="ra-item-cram">
+              <div class="ra-item-cram-content">
+                <div class="raic-content-header">
+                  <h3>永兴服务A区</h3>
+                  <p>(成都-泸州)</p>
+                </div>
+                <div class="raic-content-body">
+                  海康/200万/DS-IPC-B12-I服务区入口
+                </div>
+              </div>
+            </div>
+            <div class="element-move"></div>
+            <div class="ra-item-btn-div">
+              <button class="modal-btn-open modal-btn-open-01">布防1</button>
+              <button class="modal-btn-close modal-btn-close-01">撤防1</button>
+              <button class="modal-btn-start modal-btn-start-01">告警1</button>
+              <button class="modal-btn-stop modal-btn-stop-01">撤警1</button>
+            </div>
+            <div class="ra-tc-div ra-tc-div-01">
+              <div class="ra-tc-div-content">
+                <button class="ra-tc-big"></button>
+                <h2>告警</h2>
+                <div class="ratc-content-list">
+                  <video class="ratc-content-list-video" controls="controls" autoplay="autoplay">
+                    <source src="video/movie.ogg" type="video/ogg" />
+                    <source src="video/movie.mp4" type="video/mp4" />
+                    <source src="video/movie.webm" type="video/webm" />
+                  </video>
+                  <ul class="ratc-content-list-ul">
+                    <li>2012-09-20</li>
+                    <li>成都-泸州-永兴服务区A区</li>
+                    <li>面包车</li>
+                  </ul>
+                </div>
+                <button class="ratc-btn-jcgj">解除告警</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ra-item modal-item-02">
+          <div class="ra-item-content ra-item-content">
+            <div class="ra-item-cram">
+              <div class="ra-item-cram-content">
+                <div class="raic-content-header">
+                  <h3>永兴服务A区</h3>
+                  <p>(成都-泸州)</p>
+                </div>
+                <div class="raic-content-body">
+                  海康/200万/DS-IPC-B12-I服务区入口
+                </div>
+              </div>
+            </div>
+            <div class="element-move"></div>
+            <div class="ra-item-btn-div">
+              <button class="modal-btn-open modal-btn-open-02">布防2</button>
+              <button class="modal-btn-close modal-btn-close-02">撤防2</button>
+              <button class="modal-btn-start modal-btn-start-02">告警2</button>
+              <button class="modal-btn-stop modal-btn-stop-03">撤警2</button>
+            </div>
+            <div class="ra-tc-div ra-tc-div-01">
+              <div class="ra-tc-div-content">
+                <button class="ra-tc-big"></button>
+                <h2>告警</h2>
+                <div class="ratc-content-list">
+                  <video class="ratc-content-list-video" controls="controls" autoplay="autoplay">
+                    <source src="video/movie.ogg" type="video/ogg" />
+                    <source src="video/movie.mp4" type="video/mp4" />
+                    <source src="video/movie.webm" type="video/webm" />
+                  </video>
+                  <ul class="ratc-content-list-ul">
+                    <li>2012-09-20</li>
+                    <li>成都-泸州-永兴服务区A区</li>
+                    <li>面包车</li>
+                  </ul>
+                </div>
+                <button class="ratc-btn-jcgj">解除告警</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ra-item modal-item-03">
+          <div class="ra-item-content ra-item-content">
+            <div class="ra-item-cram">
+              <div class="ra-item-cram-content">
+                <div class="raic-content-header">
+                  <h3>永兴服务A区</h3>
+                  <p>(成都-泸州)</p>
+                </div>
+                <div class="raic-content-body">
+                  海康/200万/DS-IPC-B12-I服务区入口
+                </div>
+              </div>
+            </div>
+            <div class="element-move"></div>
+            <div class="ra-item-btn-div">
+              <button class="modal-btn-open modal-btn-open-03">布防3</button>
+              <button class="modal-btn-close modal-btn-close-03">撤防3</button>
+              <button class="modal-btn-start modal-btn-start-03">告警3</button>
+              <button class="modal-btn-stop modal-btn-stop-03">撤警3</button>
+            </div>
+            <div class="ra-tc-div ra-tc-div-01">
+              <div class="ra-tc-div-content">
+                <button class="ra-tc-big"></button>
+                <h2>告警</h2>
+                <div class="ratc-content-list">
+                  <video class="ratc-content-list-video" controls="controls" autoplay="autoplay">
+                    <source src="video/movie.ogg" type="video/ogg" />
+                    <source src="video/movie.mp4" type="video/mp4" />
+                    <source src="video/movie.webm" type="video/webm" />
+                  </video>
+                  <ul class="ratc-content-list-ul">
+                    <li>2012-09-20</li>
+                    <li>成都-泸州-永兴服务区A区</li>
+                    <li>面包车</li>
+                  </ul>
+                </div>
+                <button class="ratc-btn-jcgj">解除告警</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ra-item modal-item-04">
+          <div class="ra-item-content ra-item-content">
+            <div class="ra-item-cram">
+              <div class="ra-item-cram-content">
+                <div class="raic-content-header">
+                  <h3>永兴服务A区</h3>
+                  <p>(成都-泸州)</p>
+                </div>
+                <div class="raic-content-body">
+                  海康/200万/DS-IPC-B12-I服务区入口
+                </div>
+              </div>
+            </div>
+            <div class="element-move"></div>
+            <div class="ra-item-btn-div">
+              <button class="modal-btn-open modal-btn-open-04">布防4</button>
+              <button class="modal-btn-close modal-btn-close-04">撤防4</button>
+              <button class="modal-btn-start modal-btn-start-04">告警4</button>
+              <button class="modal-btn-stop modal-btn-stop-04">撤警4</button>
+            </div>
+            <div class="ra-tc-div ra-tc-div-01">
+              <div class="ra-tc-div-content">
+                <button class="ra-tc-big"></button>
+                <h2>告警</h2>
+                <div class="ratc-content-list">
+                  <video class="ratc-content-list-video" controls="controls" autoplay="autoplay">
+                    <source src="video/movie.ogg" type="video/ogg" />
+                    <source src="video/movie.mp4" type="video/mp4" />
+                    <source src="video/movie.webm" type="video/webm" />
+                  </video>
+                  <ul class="ratc-content-list-ul">
+                    <li>2012-09-20</li>
+                    <li>成都-泸州-永兴服务区A区</li>
+                    <li>面包车</li>
+                  </ul>
+                </div>
+                <button class="ratc-btn-jcgj">解除告警</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        //$('.btn-primary').click();
+        
+        // 布防响应按钮，这里弄完了可以删除
+        $('.bufang-btn-01').on('click', function() {
+          $('.modal-btn-open-01').click();
+        })
+        $('.bufang-btn-02').on('click', function() {
+          $('.modal-btn-open-02').click();
+        })
+        $('.bufang-btn-03').on('click', function() {
+          $('.modal-btn-open-03').click();
+        })
+        $('.bufang-btn-04').on('click', function() {
+          $('.modal-btn-open-04').click();
+        })
+
+        // 点击布防
+        $('.modal-btn-open').on('click', function() {
+          var this_father = $(this).parents('.ra-item');
+          this_father.show();
+        })
+
+        // 点击撤防
+        $('.modal-btn-close').on('click', function() {
+          var this_father = $(this).parents('.ra-item');
+          this_father.hide();
+        })
+
+        // 点击告警
+        $('.modal-btn-start').on('click', function() {
+          var this_father = $(this).parents('.ra-item'),
+            class_father_warn = 'ra-item-warn';
+          this_father.addClass(class_father_warn);
+          this_father.children('.ra-item-content').children('.ra-tc-div').show();
+        })
+        // 点击撤警
+        $('.modal-btn-stop').on('click', function() {
+          var this_father = $(this).parents('.ra-item'),
+            class_father_warn = 'ra-item-warn';
+          this_father.removeClass(class_father_warn);
+          this_father.children('.ra-item-content').children('.ra-tc-div').hide();
+        })
+
+        // 点击小告警框的解除告警按钮
+        $('.ratc-btn-jcgj').on('click', function() {
+          var this_father = $(this).parents('.ra-item');
+          this_father.children('.ra-item-content').children('.ra-item-btn-div').children('.modal-btn-stop').click();
+          $(this).parents('.ra-tc-div').hide();
+        })
+        // 点击大告警框的解除告警按钮
+        $('.warn-btn-big-jcgj').on('click', function() {
+          var this_father = $('.ra-item-big')
+          this_father.children('.ra-item-content').children('.ra-item-btn-div').children('.modal-btn-stop').click();
+          // this_father.parents('.ra-tc-div').hide();
+          // 移除钩子
+          $('.ra-item').removeClass('ra-item-big');
+        })
+        
+        
+        // 点击放大告警窗口按钮
+        $('.ra-tc-big').on('click', function() {
+          var this_father = $(this).parents('.ra-item'),
+              class_big = 'ra-item-big';
+          // 这里添加钩子表示由它点出的大告警框
+          this_father.addClass(class_big);
+          // 弹出大告警窗口
+          $('.btn-primary').click();
+        })
+        
+        // 定义一个全局的z-index，为了显示为当前,不能小于100，不然显示会有问题
+        var z_index = 100;
+        // 点击小告警窗口显示为当前
+        $('.ra-tc-div').on('click',function(){
+          $(this).css('z-index',z_index = z_index + 1)
+        })
+        //
+      })
+    </script>
+  </body>
+
+</html>

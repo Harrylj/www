@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <title>名称</title>
+    <style type="text/css">
+
+    </style>
+  </head>
+
+  <body>
+        <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#warnModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="warnModal" tabindex="-1" role="dialog" aria-labelledby="warnModalLabel" aria-hidden="true">
+  <div class="modal-dialog warn-modal-dialog" role="document">
+    <div class="modal-content warn-modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="warnModalLabel">告警</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <img src="images/09.jpg"/>
+        <table class="warn-table" border="0" cellspacing="0" cellpadding="0">
+        	<tr>
+        	  <td>告警地点:</td>
+        	  <td colspan="3">成都--泸州--永兴服务区--A区</td>
+        	</tr>
+        	<tr>
+            <td>告警地点:</td>
+            <td>成都--泸州--永兴服务区--A区</td>
+            <td>告警地点:</td>
+            <td>成都--泸州--永兴服务区--A区</td>
+          </tr>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">解除告警</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="rest-area">
+      <div class="btn-div-all">
+        <button class="modal-btn-start modal-btn-start-01">布防1</button>
+        <button class="modal-btn-stop modal-btn-stop-01">撤防1</button>
+        <button class="modal-btn-start modal-btn-start-02">布防2</button>
+        <button class="modal-btn-stop modal-btn-stop-02">撤防2</button>
+        <button class="modal-btn-start modal-btn-start-03">布防3</button>
+        <button class="modal-btn-stop modal-btn-stop03">撤防3</button>
+        <button class="modal-btn-start modal-btn-start-04">布防4</button>
+        <button class="modal-btn-stop modal-btn-stop-04">撤防4</button>
+      </div>
+
+      <div class="hover-content">
+        <div class="hc-item modal-item-01"></div>
+        <div class="hover-tc-div hover-tc-div-01"></div>
+        <div class="hc-item modal-item-02"></div>
+        <div class="hover-tc-div hover-tc-div-02"></div>
+        <div class="hc-item modal-item-03"></div>
+        <div class="hover-tc-div hover-tc-div-03"></div>
+        <div class="hc-item modal-item-04"></div>
+        <div class="hover-tc-div hover-tc-div-04"></div>
+      </div>
+    </div>
+
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        $('.btn-primary').click();
+        // 点击布防
+        $('.modal-btn-start').on('click', function() {
+          var this_index = $(this).index(),
+              all_length = $('.modal-btn-start').length,
+              now_num = parseInt(this_index/2 ) + 1;
+          var target_e = $('.modal-item-0' + now_num),  // 目标
+            modal_e = $('.hover-tc-div-0' + now_num),  // 遮罩层
+            width_01 = target_e.width(),
+            height_01 = target_e.height(),
+            top_01 = target_e.position().top,
+            left_01 = target_e.position().left;
+            modal_e.show().css({
+            'width': width_01 + 'px',
+            'height': height_01 + 'px',
+            'top': top_01 + 'px',
+            'left': left_01 + 'px'
+          })
+        })
+        // 点击撤防
+        $('.modal-btn-stop').on('click',function(){
+          var this_index = $(this).index(),
+              all_length = $('.modal-btn-stop').length,
+              now_num = parseInt(this_index/2 ) + 1;
+          var modal_e = $('.hover-tc-div-0' + now_num);
+          modal_e.hide();
+        })
+        
+        // 点击弹层
+        $('.hover-tc-div').on('click',function(){
+          $('.btn-primary').click();
+        })
+      })
+    </script>
+  </body>
+
+</html>
