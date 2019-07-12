@@ -23,7 +23,22 @@
 
   </head>
   <style type="text/css">
-
+    .two-fii-01{
+      min-width: 45px;
+    }
+    .two-fii-02{
+      display: flex;
+      justify-content: space-around;
+    }
+    .friend-info-input  .two-fii-03{
+      line-height: 50px;
+      height: 50px;
+      text-align: left;
+    }
+    .two-fii-04{
+      font-size: 16px;
+      color: #BABABA;
+    }
   </style>
 
   <body>
@@ -41,7 +56,7 @@
           <ul class="fiib-ul">
             <li>
               <div class="fiib-li-left">访客名字</div>
-              <div class="fiib-li-right"><input class="fiib-input" type="text" placeholder="请输入访客姓名" /></div>
+              <div class="fiib-li-right"><input class="fiib-input public-input-focus-top" type="text" placeholder="请输入访客姓名" /></div>
             </li>
             <li data-toggle="modal" data-target="#myModalSex">
               <div class="fiib-li-left">性别</div>
@@ -83,9 +98,10 @@
               </div>
             </li>
             <li>
-              <div class="fiib-li-left">事由</div>
-              <div class="fiib-li-right">
-                <input class="fiib-input" type="text" name="" id="" placeholder="简要说明事由，限12字" />
+              <div class="fiib-li-left two-fii-01" >事由</div>
+              <div class="fiib-li-right two-fii-02" >
+                <input class="fiib-input two-fii-03 public-input-focus-top"  type="text" name="" id="" placeholder="简要说明事由，限12字" />
+                <span class="two-fii-04">12</span>
               </div>
             </li>
           </ul>
@@ -184,7 +200,7 @@
                */
               btns_friend_start[0].innerText = rs.text;
               picker.dispose();
-            });
+            },10);
           }, false);
         });
         // 离开时间
@@ -207,6 +223,7 @@
     </script>
 
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/layer.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/plateNumber.js" type="text/javascript" charset="utf-8"></script>

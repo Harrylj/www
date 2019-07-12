@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+    <title>jQuery-jfade</title>
+    <!--<script src="http://www.jq22.com/jquery/1.7.2/jquery.min.js"></script>-->
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type='text/javascript' src='js/jfade.js'></script>
+    <link rel="stylesheet" href="css/jq22.css" type="text/css" />
+
+    <script type="text/javascript">
+      $().ready(function() {
+        $('.jfade_image').jfade();
+        $('.portfolio').jfade({
+          start_opacity: ".4",
+          high_opacity: "1",
+          low_opacity: ".2",
+          timing: "500"
+        });
+        $('.button').jfade({
+          start_opacity: "1",
+          high_opacity: "1",
+          low_opacity: ".4",
+          timing: "500"
+        });
+        $('.text').jfade({
+          start_opacity: "1",
+          high_opacity: "1",
+          low_opacity: ".7",
+          timing: "500"
+        });
+        $('.links').jfade({
+          start_opacity: ".9",
+          high_opacity: "1",
+          low_opacity: ".2",
+          timing: "500"
+        });
+        
+        $('.aaaa').on('click',function(){
+          $('.abc').click();
+        })
+      });
+    </script>
+
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <h1>jFade</h1>
+
+      <p>jFade is a simple jquery plug-in that lets you highlight items on your website. Not only are customizable fades possible, but easy control of surrounding elements makes your most important content stand out.</p><br />
+      <h2>Portfolio Gallery</h2><br />
+      <p>(Fade adjoining objects out)</p>
+      
+      <button class="aaaa">aaaa</button>
+      <div id="images">
+        <img src="images/card02.jpg" class="jfade_image" />
+        <img src="images/card04.jpg" class="jfade_image" />
+        <img src="images/card09.jpg" class="jfade_image abc" />
+        <img src="images/card13.jpg" class="jfade_image" />
+        <img src="images/card14.jpg" class="jfade_image" />
+        <img src="images/card15.jpg" class="jfade_image" />
+        <img src="images/card16.jpg" class="jfade_image" />
+        <img src="images/card17.jpg" class="jfade_image" />
+      </div><br /><br />
+
+      <p>To use default settings just add the function </p>
+      <code>&lt;script type=&quot;text/javascript&quot;&gt;  <br />
+	$().ready(function() {<br />
+		$('.jfade_image').jfade();<br />
+	});  <br />
+&lt;/script&gt;</code><br /><br />
+      <p>and add the class tag to each element:</p>
+      <code>&lt;img src=&quot;images/card02.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card04.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card09.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card13.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card14.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card15.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card16.jpg&quot; class=&quot;jfade_image&quot;/&gt;<br />
+			&lt;img src=&quot;images/card17.jpg&quot; class=&quot;jfade_image&quot;/&gt;</code><br /><br />
+
+      <p>Custom settings are easily set and explained in the help doc</p><br /><br />
+
+      <h2>Portfolio Gallery 2</h2><br />
+      <p>(Fade objects in)</p>
+      <div id="images">
+        <img src="images/card02.jpg" class="portfolio" />
+        <img src="images/card04.jpg" class="portfolio" />
+        <img src="images/card09.jpg" class="portfolio" />
+        <img src="images/card13.jpg" class="portfolio" />
+        <img src="images/card14.jpg" class="portfolio" />
+        <img src="images/card15.jpg" class="portfolio" />
+        <img src="images/card16.jpg" class="portfolio" />
+        <img src="images/card17.jpg" class="portfolio" />
+      </div><br /><br />
+      <h2>Call to Action Button</h2><br />
+      <p>(give buttons some flair)</p>
+      <div id="buttons">
+        <ul>
+          <li>
+            <a class="small button green">Green </a>
+            <a class="small button blue">Blue </a>
+            <a class="large button pink">Pink </a>
+            <a class="small button orange">Orange </a>
+            <a class="small button yellow">Yellow </a>
+          </li>
+        </ul>
+      </div><br /><br />
+      <h2>Text</h2><br />
+      <p>(have subtle effects)
+        <div id="paragraphs">
+          <div id="column" class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus in eleifend justo. Aenean a porttitor enim. Sed aliquet ullamcorper euismod. Morbi dapibus pretium mauris. Pellentesque consequat ante et magna gravida eleifend. Donec et lorem nulla. Integer dignissim nisi et lectus bibendum ornare venenatis odio venenatis. Aliquam dignissim iaculis neque, sed accumsan erat aliquam porttitor.</div>
+
+          <div id="column" class="text">Quisque lobortis, turpis id ornare mollis, diam magna semper libero, lacinia pharetra lectus nibh eget purus. Aenean dignissim sollicitudin gravida. Suspendisse non leo at nunc tempus elementum. Curabitur vitae commodo libero. Sed erat tortor, ornare id luctus vel, ullamcorper eget lacus. Maecenas ac placerat lectus. Sed quis nunc vitae lacus dignissim interdum. </div>
+
+          <div id="column" class="text">Nulla facilisi. In et ante tellus, quis feugiat ante. Sed et lectus id ante viverra fringilla in eget nisi. Duis sit amet augue lorem, quis luctus erat. Morbi sed diam id orci lacinia tincidunt vel auctor velit. Etiam pulvinar nibh eget ante tincidunt rhoncus. Morbi commodo eros lobortis dolor suscipit eleifend. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. </div>
+        </div><br /><br /><br /><br />
+
+    </div>
+  </body>
+
+</html>

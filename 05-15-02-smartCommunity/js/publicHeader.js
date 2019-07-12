@@ -19,6 +19,9 @@
       if (options && typeof(options) !== 'object') {
        return false;
       }
+      function aaa(aa){
+          alert(aa)
+      }
       //默认配置
       var defaults = {
        // 父级元素
@@ -30,7 +33,9 @@
        // 是否显示返回按钮 Boolean
        returnShow: true,
        // 返回按钮地址
-       returnHref: 'javascript:history.back(-1)',
+       returnHref: function(){
+         aaa('122')
+       },
        /*
        returnHref: function(i) {
                 console.log($(this).attr('class'))
@@ -108,6 +113,7 @@
       this_father_e.on('click','.two-public-header-nav-div',function(){
         $(this).hide();
       })
+      
       //返回按钮
       // 如果是字符串
       if(typeof(opts.returnHref)=='string'){

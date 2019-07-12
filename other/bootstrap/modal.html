@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!--
+    <link href="css/basic.css" type="text/css" rel="stylesheet">
+    -->
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link href="css/index.css" type="text/css" rel="stylesheet">
+    <title>bootstrap</title>
+
+</head>
+<body>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/jquery-2.1.3.min.js" type="text/javascript"></script>
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+	$(function(){
+		
+		$('.dropdown-toggle').dropdown();
+		
+		$('[data-toggle="tooltip"]').tooltip();
+		
+		$('[data-toggle="popover"]').popover();
+		
+		$('#myStateButton').on('click', function () {
+		    $(this).button('complete') // button text will be "finished!"
+		})
+		
+		$('.carousel').carousel({
+			interval: 500;
+		})
+	})
+
+</script>
+</body>
+</html>

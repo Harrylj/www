@@ -90,7 +90,7 @@
            console.log('亲，健身时间结束啦');
           }
          });
-    	  
+
     	  
     	  // 点击提前结束
     	  $('.bbrf-btn-tqjs').on('click',function(){
@@ -118,7 +118,9 @@
           // 是否显示返回按钮 Boolean
           returnShow: true,
           // 返回按钮地址
-          returnHref: 'javascript:history.back(-1)',
+          returnHref: function(){
+            alert(1)
+          },
           // 标题名称
           titleName: '跑步倒计时',
           // 是否显示菜单栏 Boolean

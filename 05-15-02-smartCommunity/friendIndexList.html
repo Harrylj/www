@@ -35,6 +35,9 @@
     html,body{
       background-color: #F5F5F5;
     }
+    /*.mui-table-view{
+     background-color: white!important; 
+    }*/
   </style>
 
   <body>
@@ -82,6 +85,20 @@
                 <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
               </div>
             </div>
+            <div class="fibl-item fibl-item-over">
+              <div class="fibl-item-body">
+                <img src="images/user-01.jpg"/>
+                <h2>村里的小芳</h2>
+                <p>今天过来吃饭，小住几天今天过来吃饭，小住几天</p>
+              </div>
+              <div class="fibl-item-footer">预约到访时间:2019年6月12日 11:00</div>
+              <div class="fibl-item-right">
+                <div class="filb-item-type">未到访</div>
+                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-again" href="#select_type_again">再次邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
             
 
           </div>
@@ -90,7 +107,11 @@
 
       </div>
       <div class="fil-btn-msyq">马上邀请</div>
-      <!--
+     
+    
+    
+    </div>
+ <!--
         作者：648267773@qq.com
         时间：2019-01-17
         描述：弹出层
@@ -136,10 +157,6 @@
         </ul>
       </div>
   
-    
-    
-    </div>
-
   </body>
   <script type="text/javascript">
     mui.init({
@@ -155,7 +172,7 @@
     });
 
     // 响应获取的点击事件
-    mui('.friend-index-list').on('tap', '.mui-table-view-01 li>a', function() {
+    mui('body').on('tap', '.mui-table-view-01 li>a', function() {
       var a = this,
         parent;
       //根据点击按钮，反推当前是哪个actionsheet
@@ -190,6 +207,7 @@
       }
       // 删除
       else if(click_btn.html() == click_html_02.html()) {
+        alert('删除')
         // 删除父元素
         click_btn.parents('.' + class_father).remove();
       }
@@ -210,13 +228,7 @@
 
     $(function() {
       //初始化标题
-
-      if(window.androidClient) {
-        androidClient.setTitle("访客邀请列表");
-      } else if(window.iosClient) {
-        iosClient.setTitle("访客邀请列表");
-      }
-
+      
       // document.title="123"
 
       // 进度条时间
