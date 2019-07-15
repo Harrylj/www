@@ -31,7 +31,9 @@
       <div class="tzi-body public-body">
         <div class="ab-one">
           <!--      <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>-->
-          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="false" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
+          <!--<CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="false" TARGET="_parent" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>-->
+          <CMSPRO_LOCATION LINK="&nbsp;&nbsp;/&nbsp;&nbsp;" SELFONLY="false" AUTOLINK="true" TARGET="_self" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
+          <p>123456</p>
         </div>
         <div class="ab-content-div">
           <h1 class="abc-title fontst"><UCAPTITLE><CMSPRO_DOCUMENT FIELD="subTitle">信息标题</CMSPRO_DOCUMENT></UCAPTITLE></h1>
@@ -79,6 +81,7 @@
   <script type="text/javascript">
     $(document).ready(function() {
       /* 定义所有class为copy标签，点击后可复制被点击对象的文本 */
+      console.log($('.ab-one').html())
       var now_url = this.location.href;
       $(".abc-a-fzlj").zclip({
         path: "/cdstzb/xhtml/ZeroClipboard.swf",
