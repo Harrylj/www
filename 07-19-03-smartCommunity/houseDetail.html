@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>房屋详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <style type="text/css">
+  	html,body{
+  	  height: 100%;
+  	  min-height: 100%;
+  	}
+  </style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-01-16
+    	描述：hab-li-click：.hab-li添加表示选中
+    	  hdb-user-img-delete: .hdb-user-img 添加比较可以删除
+    	  #hudn-btn-delete-click: 表示点击删除的按钮
+    -->
+    <div class="house-detail public-div">
+      <div class="hd-body">
+        <ul class="hdb-list">
+          <li class="hdb-item">
+          	<h3>房屋名称</h3>
+            <a class="hdb-item-more" href="wwww">千岛湖</a>
+          </li>
+          <li class="hdb-item">
+            <h3>房屋地址</h3>
+            <a class="hdb-item-more" href="#">千岛湖三单元</a>
+          </li>
+          <li class="hdb-item">
+            <h3>房屋性质</h3>
+            <a class="hdb-item-more hdb-item-house_type" href="#select_type">自住</a>
+          </li>
+          <li class="hdb-item">
+            <h3>产权人</h3>
+            <a class="hdb-item-more" href="#">灵风风</a>
+          </li>
+          <li class="hdb-item">
+            <h3>我的身份</h3>
+            <a class="hdb-item-more" href="#">产权人</a>
+          </li>
+          <li class="hdb-item-footer">
+            <h3>房屋住户</h3>
+            <div class="hdb-user-div-new">
+              <div class="hudn-user-item">
+                <img src="images/user-01.jpg" />
+                <div class="hudn-user-type">
+                  <span>家人</span>
+                </div>
+                
+                <h2>jdjdhfhf</h2>
+                <h4>尾号0000</h4>
+                <a class="hudn-btn-delete" href="#select_type_delete" ></a>
+              </div>
+              <div class="hudn-user-item">
+                <img src="images/user-01.jpg" />
+                <div class="hudn-user-type">
+                  <span>家人人</span>
+                </div>
+                <h2>jdjdhfhf</h2>
+                <h4>尾号0000</h4>
+                <a class="hudn-btn-delete" href="#select_type_delete" ></a>
+              </div>
+              <div class="hudn-user-item">
+                <img src="images/user-01.jpg" />
+                <div class="hudn-user-type">
+                  <span>家人人</span>
+                </div>
+                <h2>jdjdhfhf</h2>
+                <h4>尾号0000</h4>
+                <a class="hudn-btn-delete" href="#select_type_delete" ></a>
+              </div>
+              <div class="hudn-user-item">
+                <img src="images/user-01.jpg" />
+                <div class="hudn-user-type">
+                  <span>家人人</span>
+                </div>
+                <h2>jdjdhfhf</h2>
+                <h4>尾号0000</h4>
+                <a class="hudn-btn-delete" href="#select_type_delete" ></a>
+              </div>
+              
+              <a class="hudn-btn-add" href="aaaa">入户邀请</a>
+            </div>
+          </li>
+       
+        </ul>
+      
+      </div>
+      <div class="hd-footer">
+        <button class="hdf-delete-house">删除小区</button>
+        <a class="hdf-btn-fwcz" href="#">房屋出租</a>
+      </div>
+      
+      <!--
+      	作者：648267773@qq.com
+      	时间：2019-01-17
+      	描述：弹出层 .select_type : 房屋性质选择
+      -->
+      <div id="select_type" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-01">
+          <li class="select_type_li">房屋性质</li>
+          <li class="mui-table-view-cell">
+            <a href="#"><b>自住</b></a>
+          </li>
+          <li class="mui-table-view-cell">
+            <a href="#"><b>出租</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+      
+      <div id="select_type_delete" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-02">
+          <li class="select_type_li">是否删除用户</li>
+          <li class="mui-table-view-cell">
+            <a href="#"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_delete"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      mui.init({
+        swipeBack:true //启用右滑关闭功能
+      });
+      var info_house_type = document.getElementsByClassName("hdb-item-house_type")[0];
+      
+      // 房屋性质
+      mui('.house-detail').on('tap', '.mui-table-view-01 li>a', function() {
+        var a = this,
+          parent;
+        //根据点击按钮，反推当前是哪个actionsheet
+        for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+          if (parent.classList.contains('mui-popover-action')) {
+            break;
+          }
+        }
+        //关闭actionsheet
+        mui('#' + parent.id).popover('toggle');
+        // 改变房屋类型--
+        info_house_type.innerHTML =  a.children[0].innerHTML;
+      })
+      
+      //事件绑定 对象 方法 子元素 回调函数 - 标识点击的元素
+      mui('body').on('tap', '.hudn-btn-delete', function(e) {
+          // 给点击的元素添加标识 detail为当前popover元素
+          e.detail.target.id="hudn-btn-delete-click";
+          // console.log('shown', e.detail.target.id="fibl-item-click");
+      });
+      // 删除住户
+      mui('.house-detail').on('tap', '.mui-table-view-02 li>a', function() {
+        var a = this,
+          parent;
+        //根据点击按钮，反推当前是哪个actionsheet
+        for (parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+          if (parent.classList.contains('mui-popover-action')) {
+            break;
+          }
+        }
+        //关闭actionsheet
+        mui('#' + parent.id).popover('toggle');
+        // 改变房屋类型--
+        $('#hudn-btn-delete-click').parents('.hudn-user-item').remove();
+        alert('这里删除的')
+      })
+      // 委托跳转
+      mui('.house-detail').on('tap','a',function(){
+          window.top.location.href=this.href;
+      });
+      
+      $(function(){
+        // 点击选择小区
+        $('.hab-li').on('click',function(){
+          var classHover = 'hab-li-click';
+          $(this).addClass(classHover).siblings().removeClass(classHover)
+          
+        })
+        
+        // 点击头像显示删除
+        $('.hdb-user-img').on('click',function(){
+          var classHover = 'hdb-user-img-delete';
+          $(this).addClass(classHover).siblings().removeClass(classHover);
+        })
+        
+        // 点击删除头像
+        $('.hdb-user-delete').on('click',function(){
+           $(this).parents('.hdb-user-img').remove();
+           alert('删除成功')
+        })
+        
+        // 添加头像
+        $('.hdb-user-btn-add').on('click',function(){
+          alert('添加头像')
+        })
+        
+        // 删除小区
+        $('.hdf-delete-house').on('click',function(){
+          alert('删除小区')
+        })
+        
+//      // 删除用户
+//      $('.hudn-btn-delete').on('click',function(){
+//
+//      })
+      })
+    </script>
+
+  </body>
+
+</html>

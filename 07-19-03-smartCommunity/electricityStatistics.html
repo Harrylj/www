@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>电量统计</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/electricity.css" />
+
+  </head>
+  <style type="text/css">
+    html,
+    body {
+      background-color: #F7F7FB;
+    }
+  </style>
+
+  <body>
+
+    <div class="electricity-statistics public-div">
+      <div class="public-header-div bb-header-div">
+        <div class="public-header">
+          <a class="public-header-return bbh-return" href="#"></a>
+          <h1>电量统计</h1>
+        </div>
+      </div>
+      <div class="es-header">
+        <ul class="esh-ul">
+          <li class="esh-li-hover">日</li>
+          <li>周</li>
+          <li>月</li>
+          <li>年</li>
+        </ul>
+      </div>
+      <div class="es-body">
+        <!--
+        	作者：648267773@qq.com
+        	时间：2019-04-24
+        	描述：.esb-list 添加 .esb-list-hover:表示当前对应显示的内容
+        -->
+        <div class="esb-list esb-list-hover">
+          <div class="esb-img">
+            <!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_01"></div>
+          </div>
+          <div class="swiper-container esb-swiper esb-swiper-01">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-hash="slider1">
+                <h2>83951</h2>
+                <p>电费 <span>元</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider2">
+                <h2>9874</h2>
+                <p>电量 <span>kw/h</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider3">
+                <h2>434</h2>
+                <p>尖时刻 <span>kw/h</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="esb-warning">电费=尖峰平谷用电量 * 当地尖峰平谷电价</div>
+          <h2 class="esb-h2">消费排行</h2>
+          <!--
+          	作者：648267773@qq.com
+          	时间：2019-04-24
+          	描述：.esb-item 添加 .esb-item-dbx : 表示电冰箱图标
+          	               添加 .esb-item-xyj : 表示洗衣机图标
+          	               添加 .esb-item-wbl : 表示微波炉图标
+          -->
+          <div class="esb-list-div">
+            <div class="esb-item esb-item-dbx">
+              <h3>NO1</h3>
+              <h2>电冰箱</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-xyj">
+              <h3>NO2</h3>
+              <h2>洗衣机</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-wbl">
+              <h3>NO3</h3>
+              <h2>微波炉</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+          </div>
+        </div>
+        <div class="esb-list">
+          <div class="esb-img">   
+          <!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_02"></div>
+          </div>
+          <div class="swiper-container esb-swiper esb-swiper-02">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-hash="slider1">
+                <h2>83952</h2>
+                <p>电费 <span>元</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider2">
+                <h2>9874</h2>
+                <p>电量 <span>kw/h</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider3">
+                <h2>434</h2>
+                <p>尖时刻 <span>kw/h</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="esb-warning">电费=尖峰平谷用电量 * 当地尖峰平谷电价</div>
+          <h2 class="esb-h2">消费排行</h2>
+          <!--
+            作者：648267773@qq.com
+            时间：2019-04-24
+            描述：.esb-item 添加 .esb-item-dbx : 表示电冰箱图标
+                           添加 .esb-item-xyj : 表示洗衣机图标
+                           添加 .esb-item-wbl : 表示微波炉图标
+          -->
+          <div class="esb-list-div">
+            <div class="esb-item esb-item-dbx">
+              <h3>NO1</h3>
+              <h2>电冰箱</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-xyj">
+              <h3>NO2</h3>
+              <h2>洗衣机</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-wbl">
+              <h3>NO3</h3>
+              <h2>微波炉</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+          </div>
+        </div>
+        <div class="esb-list">
+          <div class="esb-img"><!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_03"></div>
+          </div>
+          <div class="swiper-container esb-swiper esb-swiper-03">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-hash="slider1">
+                <h2>83953</h2>
+                <p>电费 <span>元</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider2">
+                <h2>9874</h2>
+                <p>电量 <span>kw/h</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider3">
+                <h2>434</h2>
+                <p>尖时刻 <span>kw/h</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="esb-warning">电费=尖峰平谷用电量 * 当地尖峰平谷电价</div>
+          <h2 class="esb-h2">消费排行</h2>
+          <!--
+            作者：648267773@qq.com
+            时间：2019-04-24
+            描述：.esb-item 添加 .esb-item-dbx : 表示电冰箱图标
+                           添加 .esb-item-xyj : 表示洗衣机图标
+                           添加 .esb-item-wbl : 表示微波炉图标
+          -->
+          <div class="esb-list-div">
+            <div class="esb-item esb-item-dbx">
+              <h3>NO1</h3>
+              <h2>电冰箱</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-xyj">
+              <h3>NO2</h3>
+              <h2>洗衣机</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-wbl">
+              <h3>NO3</h3>
+              <h2>微波炉</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+          </div>
+        </div>
+        <div class="esb-list">
+          <div class="esb-img"><!--<img class="img-100" src="images/e_02.png" />-->
+            <div id="echarts_es_04"></div>
+          </div>
+          <div class="swiper-container esb-swiper esb-swiper-04">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide" data-hash="slider1">
+                <h2>83954</h2>
+                <p>电费 <span>元</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider2">
+                <h2>9874</h2>
+                <p>电量 <span>kw/h</span></p>
+              </div>
+              <div class="swiper-slide" data-hash="slider3">
+                <h2>434</h2>
+                <p>尖时刻 <span>kw/h</span></p>
+              </div>
+            </div>
+          </div>
+          <div class="esb-warning">电费=尖峰平谷用电量 * 当地尖峰平谷电价</div>
+          <h2 class="esb-h2">消费排行</h2>
+          <!--
+            作者：648267773@qq.com
+            时间：2019-04-24
+            描述：.esb-item 添加 .esb-item-dbx : 表示电冰箱图标
+                           添加 .esb-item-xyj : 表示洗衣机图标
+                           添加 .esb-item-wbl : 表示微波炉图标
+          -->
+          <div class="esb-list-div">
+            <div class="esb-item esb-item-dbx">
+              <h3>NO1</h3>
+              <h2>电冰箱</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-xyj">
+              <h3>NO2</h3>
+              <h2>洗衣机</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+            <div class="esb-item esb-item-wbl">
+              <h3>NO3</h3>
+              <h2>微波炉</h2>
+              <p>电量 <span>8239</span></p>
+              <div class="esbi-right">电费<span>96</span>&yen;</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts_es.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      var mySwiper = new Swiper('.swiper-container', {
+        direction: 'horizontal',
+        //布局分栏
+        slidesPerView: 2.5,
+        // centeredSlides : true,
+        spaceBetween: 20,
+        // grabCursor: true
+        observer:true,//修改swiper自己或子元素时，自动初始化swiper
+        observeParents:true//
+      })
+     
+     
+     
+     
+     
+      $(function() {
+        
+        
+        // 点击顶部的时段筛选按钮
+        $('.esh-ul').children('li').on('click', function() {
+          var class_hover_01 = 'esh-li-hover',
+              class_hover_02 = 'esb-list-hover',
+            this_index = $(this).index();
+          // 按钮状态改变
+          $(this).addClass(class_hover_01).siblings().removeClass(class_hover_01)
+          // 关联内容显示
+          $('.es-body').children('.esb-list').eq(this_index).addClass(class_hover_02).siblings().removeClass(class_hover_02);
+          
+
+          
+        })
+        
+        
+      })
+    </script>
+    
+  </body>
+
+</html>

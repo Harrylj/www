@@ -385,6 +385,10 @@
   height: 50px;
   background-color: #005392;
 }
+.tzih-nav-one{
+  height: 51px;
+  overflow: hidden;
+}
 .tzih-nav-one>li{
   position: relative;
   float: left;
@@ -774,6 +778,7 @@
 	background-color: rgba(0,0,0,.2);
 	z-index: 999;
 	height: 30px;
+	overflow: hidden;
 }
 .ltb-two{
 	position: relative;
@@ -977,14 +982,17 @@
   line-height: 16px;
   color: black;
 }
-.ab-one a{
+.ab-one a
+,.ltb-one-title a{
   padding: 0 15px;
 }
-.ab-one a:first-child{
+.ab-one a:first-child
+,.ltb-one-title a:first-child{
   padding-left: 0;
 }
 .ab-one .ab-a-hover
 ,.ab-one a span
+,.ltb-one-title a span
 ,.ab-one span
 ,.public-list-header-nav a span{
    color: #d00000;
@@ -1072,6 +1080,9 @@
   padding-top: 20px;
   font-size: 14px;
   line-height: 40px;
+}
+.ltb-one-title>span{
+  padding: 0 15px; 
 }
 .ltb-one-title span{
   color: #d00000;
@@ -1405,4 +1416,16 @@
 }
 .ldzc-div-01 *{
   font-family: 微软雅黑, 黑体, 宋体!important;
+}
+.ltbtl-list-a-div-title{
+  padding-top: 15px;
+}
+.ltbtl-list-a-div-title a{
+    font-size: 22px;
+    line-height: 38px;
+    max-height: 76px;
+    overflow: hidden;
+    /*color: #e60012;*/
+    color: black;
+    letter-spacing: 2px;
 }

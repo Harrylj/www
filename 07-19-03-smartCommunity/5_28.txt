@@ -1,0 +1,90 @@
+1. css,js,img调整
+
+2.访客邀请信息填写页面页面-friendInfoInput
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+
+html----
+
+<!-- Modal -->
+    <div class="modal fi-modal-sex fade" id="myModalSex" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content fi-modal-sex-content">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4>请选择性别</h4>
+          <div class="fims-list">
+            <div class="fims-img fims-img-select">
+              <img src="images/two/two-fi-woman@3x.png" />
+              <h3>她是女生</h3>
+            </div>
+            <div class="fims-img">
+              <img src="images/two/two-fi-man@3x.png" />
+              <h3>他是男生</h3>
+            </div>
+          </div>
+          <div class="fims-btn-qd" data-dismiss="modal">确定</div>
+        </div>
+      </div>
+    </div>
+
+js-------
+
+// 点击选择性别
+        $('.fims-img').on('click', function() {
+          var class_hover = 'fims-img-select';
+
+          $(this).addClass(class_hover).siblings().removeClass(class_hover);
+
+        })
+        // 点击选择性别弹窗的 "确定" 按钮
+        $('.fims-btn-qd').on('click', function() {
+          var this_index = $('.fims-img-select').index(),
+            e_other = $('.fiib-select-sex'),
+            sex_man = '男',
+            sex_woman = '女';
+          // 女生
+          if(this_index == '0') {
+            e_other.html(sex_woman)
+          }
+          // 男生
+          else if(this_index == '1') {
+            e_other.html(sex_man)
+          }
+          // 错误
+          else {
+            alert('错误！请重新加载')
+          }
+        })
+
+        // 点击蒙层区域关闭
+        $('body').on('click', '.modal-backdrop', function() {
+          $('.close').click();
+        });
+        
+
+
+替换内容---
+
+<li data-toggle="modal" data-target="#myModalSex">
+  <div class="fiib-li-left">性别</div>
+    <div class="fiib-li-right fiib-li-right-more ">
+    <select name="fiib-select-sex">
+                  <option value="男" selected="selected">男</option>
+                  <option value="女">女</option>
+    </select>           
+  </div>
+</li>
+
+--------
+<li data-toggle="modal" data-target="#myModalSex">
+  <div class="fiib-li-left">性别</div>
+    <div class="fiib-li-right fiib-li-right-more ">
+    <div class="fiib-select-sex">男</div>    
+  </div>
+</li>
+
+
+
+
+~~~~~~~~~
+3.

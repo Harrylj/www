@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>成都龙湖就3栋3单元222</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+   
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+    <link rel="stylesheet" type="text/css" href="css/friend.css"/>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="house-person-phone public-div" style="height: 2000px;">
+      <div class="hpp-header">
+        <h2>请选择身份</h2>
+        <div class="fims-list">
+            <div class="fims-img fims-img-select">
+              <img src="images/two/two-hpp-photo-1@3x.png" />
+              <h3>家人</h3>
+            </div>
+            <div class="fims-img">
+              <img src="images/two/two-hpp-photo-2@3x.png" />
+              <h3>租户</h3>
+            </div>
+        </div>
+        <h2>请输入被邀请人电话号码</h2>
+        <input class="hpp-input-phone" type="tel" placeholder="请输入11位手机号码" />
+        <p class="hpp-warn"></p>
+      </div>
+      <div class="hpp-body">
+        <a href="housePersonType.html"><button class="hpp-btn-next">提交</button></a>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function(){
+        // 点击选择用户类型
+        $('.fims-img').on('click', function() {
+          var class_hover = 'fims-img-select';
+
+          $(this).addClass(class_hover).siblings().removeClass(class_hover);
+
+        })
+        
+        // 清空提示
+        $('.hpp-warn').html('')
+        // 点击提交
+        $('.hpp-btn-next').on('click',function(){
+          var input_phone = $('.hpp-input-phone'),
+              ts_warn = $('.hpp-warn'),
+              ts_01 = '电话号码格式不正确';
+            $('.hpp-warn').html('')
+            if(!(/^1[34578]\d{9}$/.test(input_phone.val()))){ 
+              ts_warn.html(ts_01)
+              return false; 
+            }
+            else{
+              ts_warn.html('')
+            }
+        })
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+//        returnHref: function(){
+//          aaa()
+//        },
+          // 标题名称
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            activity: {
+              name: '我参加的',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-activity@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            message: {
+              name: '消息',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-message@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            setting: {
+              name: '设置',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-setting@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+        
+      })
+    </script>
+
+  </body>
+
+</html>

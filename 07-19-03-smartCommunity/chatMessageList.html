@@ -1,0 +1,316 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>消息列表</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+	</head>
+
+	<body>
+		<header class="titleBar mui-bar mui-bar-nav">
+			<div class="titleName">人居管家</div>
+			<div>
+				<img id="scan" class="titleRightButton" style="margin-right: 4px;" src="images/scan-icon.png" />
+				<img id="patrol" class="titleRightButton" style="margin-right: 34px;" src="images/Visitor_icon.png" />
+			</div>
+		</header>
+		<div class="mui-content" id="app">
+			<div class="msg-bar">
+				<div class="msg-search">
+					<img style="width: 17px; height: 17px;" src="../images/search-icon.png"/>
+					<div style="margin-left: 10px;">搜索</div>
+				</div>
+				<div class="list-title">
+					<div style="font-weight: bold; font-size: 17px;">消息</div>
+					<div style="font-size: 14px; color: #969696; margin-left: 10px;">共{{unReadTotal}}条消息</div>
+					<img style="width: 20px; height: 20px; margin-left: 6px;" src="images/clear-icon.png" id="clean"/>
+					<div style="font-size: 12px; color: #BABABA; margin-left: 4px;" v-if="isCleaning">清除中...</div>
+				</div>
+			</div>
+			
+			<div id="pullrefresh">
+				<div class="mui-table-view">
+					<div class="mui-table-view-cell" v-for="(value, key) in list" :key="key" 
+						@tap="navigateTo(value.senderID, value.title)">
+						<image class="mui-media-object mui-pull-left" :src="value.iconRes"></image>
+						<div class="mui-media-body">
+							<div class="list-top">
+								<div class="list-text-title mui-ellipsis">{{value.title}}</div>
+								<div class="list-text-time">{{value.getSendTime()}}</div>
+							</div>
+							<div class="list-top">
+								<div class="mui-ellipsis list-content">{{value.lastWord}}</div>
+								<span class="msg-badge" v-if="value.unReadCount > 0">{{value.unReadCount}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<style>
+			html,body {
+				height: 100%;
+			}
+			.titleBar {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				background-color: #FFFFFF;
+				border: none;
+				box-shadow: none;
+			}
+			.titleName {
+				font-size: 20px;
+				font-weight: bold;
+			}
+			.titleRightButton {
+				width: 23px;
+				height: auto;
+				float: right;
+			}
+			.mui-content {
+				background-color: #FFFFFF;
+				height: 100%;
+			}
+			.msg-bar {
+				background-color: #FFFFFF;
+				padding: 4px 15px 0px;
+				position: fixed;
+				z-index: 10;
+				right: 0;
+				left: 0;
+				border-bottom: 0;
+				-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+			}
+			.msg-search {
+				padding: 6px 15px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: auto;
+				background-color: #F8F8F8;
+				border-radius:56px;
+				color: #646464;
+				font-size: 15px;
+			}
+			.list-title {
+				margin-top: 12px;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: auto;
+			}
+			.list-container {
+				position: relative;
+				height: 100%;
+				overflow-y:scroll;
+			}
+			.list-top {
+				display: flex;
+				justify-content: space-between;
+			}
+			.list-text-title {
+				margin-right: 8px;
+				font-size: 17px;
+				color: #202020;
+				float: left;
+			}
+			.list-text-time {
+				font-size: 13px;
+				color: #969696;
+				float: right;
+			}
+			.list-content {
+				color: #8f8f94;
+				font-size: 15px;
+			}
+			.msg-badge {
+				font-size: 13px;
+				border-radius: 3px;
+				color: #FFFFFF;
+				background-color: #D63625;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				padding: 0px 6px;
+			}
+			#pullrefresh {
+				margin-top: 78px;
+			}
+			.mui-table-view:before {
+				display: none;
+			}
+			.mui-table-view-cell:after {
+				right: 15px;
+			}
+		</style>
+		<script src="https://cdn.jsdelivr.net/npm/vue@2.6.8/dist/vue.js"></script>
+		<script src="./js/mui.min.js"></script>
+		<script src="./js/chat/account.js"></script>
+		<script src="./js/chat/messageItem.js"></script>
+		<script type="text/javascript">
+			mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						style: 'circle',
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+			
+			mui.plusReady(function() {
+				document.getElementById("scan").addEventListener("tap", function(e){
+					mui.openWindow({
+						url: 'barcode.html',
+						id: 'barcode',
+						styles: {
+							scrollIndicator: "none"
+						},
+					});
+				});
+				
+				document.getElementById("patrol").addEventListener("tap", function(e){
+					mui.openWindow({
+						url: 'task-list.html',
+						id: 'task-list',
+						styles: {
+							scrollIndicator: "none"
+						},
+					});
+				});
+				
+				document.getElementById("clean").addEventListener("tap", function(e){
+					if(!app.isCleaning) {
+						app.isCleaning = true;
+						setTimeout(function() {
+							app.isCleaning = false;
+						}, 1500);
+					} else {
+						mui.toast("正在清理中，请稍候");
+					}
+				});
+				changeCount();
+			});
+
+			var app = new Vue({
+				el: '#app',
+				data: {
+					unReadTotal: 0,
+					isCleaning: false,
+					list: []
+				},
+				methods: {
+					navigateTo(id, name) {
+						mui.openWindow({
+							url: 'chat.html',
+							id: 'chat',
+							styles: {
+								scrollIndicator: "none"
+							},
+							extras: {
+								userId: id,
+								userName: name
+							}
+						});
+					}
+				}
+			});
+
+			function initData() {
+				var diff = 6 * 60 * 1000;
+				for (var i = 0; i < 1; i++) {
+					var msgItem1 = new MessageItem();
+					msgItem1.title = "送水";
+					msgItem1.lastWord = "你好，请帮我送一桶水好吗，谢谢";
+					msgItem1.iconRes = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/shuijiao.jpg?imageView2/3/w/200/h/100/q/90";
+					msgItem1.unReadCount = i > 0 ? 0 : 10;
+					msgItem1.time = new Date().getTime() - diff * i;
+					app.list.push(msgItem1);
+
+					var msgItem2 = new MessageItem();
+					msgItem2.title = "物业";
+					msgItem2.lastWord = "工作效率挺高的，点个赞！！！";
+					msgItem2.iconRes = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/muwu.jpg?imageView2/3/w/200/h/100/q/90"
+					msgItem2.unReadCount = i > 0 ? 0 : 1;
+					msgItem2.time = new Date().getTime() - diff * i;
+					app.list.push(msgItem2);
+
+					var msgItem3 = new MessageItem();
+					msgItem3.title = "通知";
+					msgItem3.lastWord = "8月5日消防演习";
+					msgItem3.iconRes = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/cbd.jpg?imageView2/3/w/200/h/100/q/90";
+					msgItem3.unReadCount = 0;
+					msgItem3.time = new Date().getTime() - diff * i;
+					app.list.push(msgItem3);
+
+					var msgItem4 = new MessageItem();
+					msgItem4.title = "系统消息";
+					msgItem4.lastWord = "关于做好春节活动安排的通知";
+					msgItem4.iconRes = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/cbd.jpg?imageView2/3/w/200/h/100/q/90";
+					msgItem4.unReadCount = 0;
+					msgItem4.time = new Date().getTime() - diff * i;
+					app.list.push(msgItem4);
+				}
+			}
+
+			function changeCount() {
+				var count = 0;
+				mui.each(app.list, function(index, item) {
+					count += item.unReadCount;
+				});
+				/*
+				var mainPage = plus.webview.getWebviewById("main");
+				mui.fire(mainPage, 'msgCountChange', {
+					count: count
+				});
+				*/
+				app.unReadTotal = count;
+			}
+			
+			function addData() {
+				var startTime = app.list[app.list.length - 1].time;
+				var msgItem1 = new MessageItem();
+				msgItem1.title = "物业";
+				msgItem1.lastWord = "工作效率挺高的，点个赞！！！";
+				msgItem1.iconRes = "https://img-cdn-qiniu.dcloud.net.cn/uniapp/images/muwu.jpg?imageView2/3/w/200/h/100/q/90";
+				msgItem1.unReadCount = 0;
+				msgItem1.time = startTime - 60 * 1000;
+				app.list.push(msgItem1);
+				changeCount();
+			}
+			/**
+			 * 下拉刷新具体业务实现
+			 */
+			function pulldownRefresh() {
+				setTimeout(function() {
+					addData();
+					mui('#pullrefresh').pullRefresh().endPulldownToRefresh();
+				}, 1500);
+			}
+			
+			/**
+			 * 上拉加载更多
+			 */
+			function pullupRefresh() {
+				setTimeout(function() {
+					for (var i = 0; i < 5; i++) {
+						addData();
+					}
+					mui('#pullrefresh').pullRefresh().endPullupToRefresh(app.list.length >= 30);
+				}, 1500);
+			}
+			
+			initData();
+		</script>
+	</body>
+
+</html>

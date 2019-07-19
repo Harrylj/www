@@ -1,0 +1,19 @@
+    html,
+    body {
+      background-color: white;
+    }
+    
+    .read-me {
+      padding: .44rem .2rem .2rem .2rem;
+    }
+    
+    .read-me-content {
+      position: relative;
+    }
+    
+    .read-me-content p {
+      font-size: .12rem;
+      color: rgba(0, 0, 0, 0.5);
+      text-indent: 2em;
+      filter: blur(0.02rem);
+    }

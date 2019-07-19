@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>健康小屋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css" />
+    <link rel="stylesheet" type="text/css" href="css/healthHut.css" />
+  </head>
+  <style type="text/css">
+
+
+  </style>
+
+  <body>
+
+    <div class="health-hut body-building-first public-div">
+      <div class="public-header-div">
+        <div class="public-header">
+          <a class="public-header-return" href="#"></a>
+          <h1>健康小屋</h1>
+        </div>
+      </div>
+      <div class="hh-header">
+        <h2>我的健康报告</h2>
+        <p>您还没有进行健康监测，请选择以下监测设备 完成后再返回此查看报告。
+        </p>
+      </div>
+      <div class="hh-body">
+        <div class="swiper-container swiper-container-hh">
+          <div class="swiper-wrapper" >
+            <div class="swiper-slide slide1 " >
+                 <h3>健康监测按摩椅</h3>
+                 <ul class="hhb-ul-01">
+                   	<li>血糖</li>
+                   	<li>尿酸</li>
+                   	<li>胆固醇</li>
+                   	<li>血红蛋白</li>
+                 </ul>
+                 <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测，为持续的健康提供良好的保障。</p>
+                  <a class="hhb-btn-qsy" href="#">去使用</a>
+            </div>
+            <div class="swiper-slide slide1 ">
+                 <h3>健康监测按摩椅</h3>
+                 <ul class="hhb-ul-01">
+                    <li>血糖</li>
+                    <li>尿酸</li>
+                    <li>胆固醇</li>
+                    <li>血红蛋白</li>
+                 </ul>
+                 <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测，为持续的健康提供良好的保障。</p>
+                 <a class="hhb-btn-qsy" href="#">去使用</a>
+            </div>
+            <div class="swiper-slide slide1 " >
+                 <h3>健康监测按摩椅</h3>
+                 <ul class="hhb-ul-01">
+                    <li>血糖</li>
+                    <li>尿酸</li>
+                    <li>胆固醇</li>
+                    <li>血红蛋白</li>
+                 </ul>
+                 <p>可在舒适按摩的同时进行血压 血氧脉搏 心率 体温等十几种健康监测，为持续的健康提供良好的保障。</p>
+                  <a class="hhb-btn-qsy" href="#">去使用</a>
+            </div>
+          </div>
+          <!-- 如果需要分页器 -->
+          <div class="swiper-pagination swiper-pagination-hh"></div>
+
+        </div>
+      </div>
+    </div>
+
+    <!--<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>-->
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      var mySwiper = new Swiper ('.swiper-container-hh', {
+            direction: 'horizontal',
+            //布局分栏
+             slidesPerView : 1.2,
+            //slidesPerView: 'auto',
+            spaceBetween : 20,
+            
+            centeredSlides : true,
+            autoplay: 22500,     ///2.5S
+            //是否循环拖动
+            // loop: true,
+            //需要指针手抓效果
+            grabCursor : true,
+            // 如果需要分页器
+            pagination: {
+              el: '.swiper-pagination-hh',
+              clickable: true,
+            },
+
+        })
+
+    </script>
+
+  </body>
+
+</html>

@@ -760,3 +760,53 @@ ZeroClipboard.Client.prototype = {
 
 };  
 
+$(function(){
+//  console.log($('.ab-one').html());
+//  console.log($('.ltb-one-title').html());
+      // 改变导航页提示字
+      $('.ab-one').children('a').each(function(){
+        var a = '首页右侧列表',
+            b = '频道',
+            c = '';
+        // 隐藏>
+        if($(this).html() == a || $(this).html() == b || $(this).html() == c ){
+          $(this).hide().parent('.ab-one').children('a').eq(0).css({'position':'relative','z-index': '10','background-color': 'white','margin-right': '-10px'})
+        }
+        // 去掉一些栏目的首页显示
+        if($(this).html() != '首页'){
+          var aaa = $(this).html().replace("首页","");
+          $(this).html(aaa)
+        }
+      })
+      // 改变导航页提示字
+      $('.ltb-one-title').children('a').each(function(){
+        var a = '首页右侧列表',
+            b = '频道',
+            c = '';
+        // 隐藏>
+        if($(this).html() == a || $(this).html() == b || $(this).html() == c ){
+          $(this).hide().parent('.ltb-one-title').children('a').eq(0).css({'position':'relative','z-index': '10','background-color': 'white','margin-right': '-10px'})
+        }
+        // 去掉一些栏目的首页显示
+        if($(this).html() != '首页'){
+          var aaa = $(this).html().replace("首页","");
+          $(this).html(aaa)
+        }
+      })
+      
+      // 去掉一些栏目的首页显示
+      $('.ab-one').children('span').each(function(){
+        if($(this).html() != '首页'){
+          var aaa = $(this).html().replace("首页","");
+          $(this).html(aaa)
+        }
+      })
+      // 去掉一些栏目的首页显示
+      $('.ltb-one-title').children('span').each(function(){
+        if($(this).html() != '首页'){
+          var aaa = $(this).html().replace("首页","");
+          $(this).html(aaa)
+        }
+      })
+      console.log('2019-07-16-15:49')
+})

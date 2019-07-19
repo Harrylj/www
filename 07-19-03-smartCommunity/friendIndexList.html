@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>访客邀请列表</title>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/friend.css" />
+
+    <!--<link rel="stylesheet" type="text/css" href="css/style.css" media="screen">-->
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.easy-pie-chart.css" media="screen">
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/excanvas.js"></script>
+    
+    <script type="text/javascript" src="js/jquery.easy-pie-chart.js"></script>
+
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <style type="text/css">
+    html,body{
+      background-color: #F5F5F5;
+    }
+    /*.mui-table-view{
+     background-color: white!important; 
+    }*/
+  </style>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-02-13
+    	描述：.fibl-item: 添加  .fibl-item-over :表示已完成邀请,进度为100%
+    	      .percentage: data-percent属性值表示进度，取值为0~100
+    	      #fibl-item-click: 表示当前点击的弹窗元素
+    	      #select_type_over: 表示结束邀请的弹层
+    	      #select_type_delete: 表示删除的弹层
+    	      #select_type_again: 表示再次邀请的弹层
+    -->
+    <div class="friend-index-list public-div">
+      <div class="fil-body">
+        <div class="filb-list-div-father">
+          <div class="filb-list-div">
+
+            
+            <div class="fibl-item">
+              <div class="fibl-item-body">
+                <img src="images/user-01.jpg"/>
+                <h2>村里的小芳</h2>
+                <p>今天过来吃饭，小住几天</p>
+              </div>
+              <div class="fibl-item-footer">预约到访时间:2019年6月12日 11:00</div>
+              <div class="fibl-item-right">
+                <div class="filb-item-type">已到访</div>
+                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-again" href="#select_type_again">再次邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+            <div class="fibl-item fibl-item-over">
+              <div class="fibl-item-body">
+                <img src="images/user-01.jpg"/>
+                <h2>村里的小芳</h2>
+                <p>今天过来吃饭，小住几天今天过来吃饭，小住几天</p>
+              </div>
+              <div class="fibl-item-footer">预约到访时间:2019年6月12日 11:00</div>
+              <div class="fibl-item-right">
+                <div class="filb-item-type">未到访</div>
+                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-again" href="#select_type_again">再次邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+            <div class="fibl-item fibl-item-over">
+              <div class="fibl-item-body">
+                <img src="images/user-01.jpg"/>
+                <h2>村里的小芳</h2>
+                <p>今天过来吃饭，小住几天今天过来吃饭，小住几天</p>
+              </div>
+              <div class="fibl-item-footer">预约到访时间:2019年6月12日 11:00</div>
+              <div class="fibl-item-right">
+                <div class="filb-item-type">未到访</div>
+                <a class="fibl-item-btn fibl-item-btn-over" href="#select_type_over">结束邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-again" href="#select_type_again">再次邀请</a>
+                <a class="fibl-item-btn fibl-item-btn-delete" href="#select_type_delete">删除</a>
+              </div>
+            </div>
+            
+
+          </div>
+
+        </div>
+
+      </div>
+      <div class="fil-btn-msyq">马上邀请</div>
+     
+    
+    
+    </div>
+ <!--
+        作者：648267773@qq.com
+        时间：2019-01-17
+        描述：弹出层
+      -->
+      <div id="select_type_over" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-01">
+          <li class="select_type_over_li">结束邀请，对方访问码将失效</li>
+          <li class="mui-table-view-cell">
+            <a href="#select_type_over"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_over"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+
+      <div id="select_type_delete" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-01">
+          <li class="select_type_over_li">是否删除，删除后不可恢复</li>
+          <li class="mui-table-view-cell">
+            <a href="#select_type_delete"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_delete"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+      <div id="select_type_again" class="mui-popover mui-popover-action mui-popover-bottom">
+        <ul class="mui-table-view mui-table-view-01">
+          <li class="select_type_over_li">是否再次邀请，需填写更新邀请信息</li>
+          <li class="mui-table-view-cell">
+            <a href="#select_type_again"><b>确定</b></a>
+          </li>
+        </ul>
+        <ul class="mui-table-view">
+          <li class="mui-table-view-cell">
+            <a href="#select_type_again"><b>取消</b></a>
+          </li>
+        </ul>
+      </div>
+  
+  </body>
+  <script type="text/javascript">
+    mui.init({
+      swipeBack: true //启用右滑关闭功能
+    });
+    //事件绑定 对象 方法 子元素 回调函数 - 标识点击的元素
+    mui('body').on('tap', '.fibl-item-btn', function(e) {
+      // 重置所有的按钮id
+      $('.fibl-item-btn').attr('id', '');
+      // 给点击的元素添加标识 detail为当前popover元素
+      e.detail.target.id = "fibl-item-click";
+      // console.log('shown', e.detail.target.id="fibl-item-click");
+    });
+
+    // 响应获取的点击事件
+    mui('body').on('tap', '.mui-table-view-01 li>a', function() {
+      var a = this,
+        parent;
+      //根据点击按钮，反推当前是哪个actionsheet
+      for(parent = a.parentNode; parent != document.body; parent = parent.parentNode) {
+        if(parent.classList.contains('mui-popover-action')) {
+          break;
+        }
+      }
+      //关闭actionsheet
+      mui('#' + parent.id).popover('toggle');
+
+      var click_btn = $('#fibl-item-click'), // 触发弹窗的按钮 --- 有且只存在一个
+        click_html_01 = $('.fibl-item-btn-over').eq(0), // 结束邀请
+        click_html_02 = $('.fibl-item-btn-delete').eq(0), // 删除
+        click_html_03 = $('.fibl-item-btn-again').eq(0), // 再次邀请
+        class_father = 'fibl-item', // 祖父元素的class
+        class_father_over = 'fibl-item-over', // 祖父元素失效class
+        class_sibling_round = 'fibl-item-right-img'; // 圆
+      // a.children[0].innerHTML --- 当前选择的内容
+
+      // 在这里判断点击的是结束邀请还是删除
+      // 结束邀请  ---  结束邀请后，按钮变为默认按钮
+      if(click_btn.html() == click_html_01.html()) {
+        // 隐藏自身，显示默认按钮
+        click_btn.hide().siblings('.' + class_sibling_round).show();
+        // 改变父元素状态,取消进度
+        click_btn.parents('.' + class_father).addClass(class_father_over);
+        //  .children('.filb-item-percentage').children('.percentage').data('easyPieChart').update(100);
+        // 重置进度条时间
+        //$('.percentage').data('easyPieChart').update(100);
+
+      }
+      // 删除
+      else if(click_btn.html() == click_html_02.html()) {
+        alert('删除')
+        // 删除父元素
+        click_btn.parents('.' + class_father).remove();
+      }
+      // 再次邀请
+      else if(click_btn.html() == click_html_03.html()) {
+        // 再次邀请
+        console.log('点击了再次邀请')
+      }
+      else {
+        alert('BUG了')
+      }
+
+    })
+    // 委托跳转
+    mui('.friend-index-list').on('tap', 'a', function() {
+      window.top.location.href = this.href;
+    });
+
+    $(function() {
+      //初始化标题
+      
+      // document.title="123"
+
+      // 进度条时间
+      $('.percentage').easyPieChart({
+        animate: 1000
+      });
+      // 进度条
+      $('.percentage-light').easyPieChart({
+        barColor: function(percent) {
+          percent /= 100;
+          return "rgb(" + Math.round(255 * (1 - percent)) + ", " + Math.round(255 * percent) + ", 0)";
+        },
+        trackColor: '#666',
+        scaleColor: false,
+        lineCap: 'butt',
+        lineWidth: 15,
+        animate: 1000
+      });
+
+      // 点击邀请列表右侧的圆点
+      $('.fibl-item-right-img').on('click', function() {
+        var this_over = $(this).siblings('.fibl-item-btn-delete'), //同级删除按钮
+          this_delete = $(this).siblings('.fibl-item-btn-over'); //同级结束邀请按钮
+        // 自身隐藏
+        $(this).hide();
+        // 判断是现实结束邀请还是删除按钮
+        // 显示删除
+        if(!$(this).parents('.fibl-item').hasClass('fibl-item-over')) {
+          this_delete.show();
+          this_over.hide();
+        }
+        // 显示结束邀请
+        else {
+          this_delete.hide();
+          this_over.show();
+        }
+      })
+    })
+  </script>
+
+</html>

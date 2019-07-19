@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>公用头</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <!--<link rel="stylesheet" type="text/css" href="css/me.css" />-->
+    <link rel="stylesheet" type="text/css" href="css/readAll.css" />
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <style type="text/css">
+
+  </style>
+
+  <body>
+
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="read-me public-div">
+      <div class="read-me-content">
+        <p>如欲进入*****平台，您须同意以下条件。如您不同意以下条件，您将不得使用本平台。</p>
+        <p>*****平台享有版权。所有在此未明确授予的权利均予以保留。未经*****事先书面许可，严禁复制、转载、传播或储存本平台之任何或全部内容，但下文允许者除外。*****平台同意您浏览*****平台并可将本平台的内容摘录进行拷贝，但仅供您个人使用且未经*****书面允许不得传播。本平台之个别文件可能另行指明了其它须予遵守的附加条件。
+        </p>
+        <p>本平台及其内容系为您的便利提供。*****平台的内容亦是以“现状”和“现存”为基础提供。*****平台不保证其内容不会中断或没有错误。*****平台保留随时修订或收回进入平台的权利。*****平台对内容的存在、准确性、可靠性不作任何明示或默示的保证，其中包括但不限于：所有权的保证、非侵权的保证或关于商业性或对某种特定目的或用途的适用性的隐含保证。*****平台对任何直接、间接、附带、特殊或后果性的损失，利润的损失或因使用或无法使用本平台提供的服务造成的业务中断，不承担任何责任，即使*****平台已被告知可能出现类似的损失。*****平台对其保证责任的排除和限制在适用法律允许的最大限度内有效。
+        </p>
+        <p>为您上网的便利，*****平台可以与因特网上其它第三方所有或运行的网站建立链接。在您通过该链接进入其它网站时，您须在阅读并同意其它网站的使用规则后方可使用。您同意*****平台对其它网站没有控制，同时也不对该其它网站发布或制作的任何内容承担责任。此外，与非*****平台的链接并不默示*****认可该网站或该网站提及的产品或服务。
+        </p>
+        <p>如欲通过电子邮件或*****平台或其它方式向我们的服务器提供任何材料，您须同意下述条件：
+        </p>
+        <p>•该材料中不包括任何非法或不宜于发布的事项
+        </p>
+        <p>•在提交材料之前，您应已尽合理努力扫描并删除病毒或其它具有感染或毁坏性的因素；
+        </p>
+        <p>•您拥有该材料或拥有将该材料提供给我们的不受限制的权利且*****平台可以将该材料免费发布和将该材料或其中描述的观念应用于我们的产品中而不负任何责任或义务；
+        </p>
+        <p>•您同意就您提交的材料不向*****平台进行任何追索，您也同意如任何第三方因您提交的材料追索*****平台，您将全部补偿我们的损失。
+        </p>
+        <p>•*****不审查用户在*****平台登载的内容且对该内容不负责任。*****平台有权在任何时候删除用户在其网站登载的任何内容。
+        </p>
+        <p>****，*****，是*****公司的注册商标。*****的产品名称亦为*****注册商标或使用商标。在此提及的其它产品和公司名称可能是其各自所有者的商标或商名。您对本平台的进入在任何情况下不得被解释为被授予使用本网站出现的任何标记的许可或权利。
+        </p>
+
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          //        returnHref: function(){
+          //          aaa()
+          //        },
+          // 标题名称
+          titleName: '法律声明',
+          // 是否显示菜单栏 Boolean
+          navListShow: false,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+
+          },
+
+        });
+
+      })
+    </script>
+
+  </body>
+
+</html>

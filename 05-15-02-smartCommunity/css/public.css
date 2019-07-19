@@ -89,7 +89,17 @@ a {
   color: #000;
   text-decoration: none;
   cursor: pointer;
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
+  }
+a,a:hover,a:active,a:visited,a:link,a:focus{
+-webkit-tap-highlight-color:rgba(0,0,0,0) !important;
+-webkit-tap-highlight-color: transparent!important;
+outline:none!important;
+text-decoration: none!important;
+-webkit-user-select: none!important;
+-moz-user-focus: none!important;
+-moz-user-select: none!important;
+
 }
 
 ul,

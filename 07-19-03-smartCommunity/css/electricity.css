@@ -1,0 +1,412 @@
+.electricity .public-header-div {
+  overflow: initial ;
+  height: inherit;
+  padding: .05rem;
+  background-color: #F7F7FB;
+}
+.electricity .public-header-div h1 {
+  line-height: .24rem;
+}
+.electricity .public-header-div h2 {
+  color: #686868;
+  font-size: .13rem;
+  text-align: center;
+  line-height: .18rem;
+}
+.electricity .public-header-right {
+  background-image: url(../images/e_Statistics_icon@2x.png);
+  background-size: .21rem .21rem;
+}
+.e-header {
+  position: relative;
+}
+.e-header .e-header-one {
+  margin: .15rem .2rem;
+  padding: .15rem .2rem;
+  background-color: white;
+  border-radius: .06rem;
+  background-image: url(../images/e_Rise_button@2x.png);
+  background-size: .34rem .34rem;
+  background-position: 92% center;
+  background-repeat: no-repeat;
+}
+.e-header .e-header-one h2 {
+  color: #1DD7CC;
+  font-size: .26rem;
+  line-height: .32rem;
+}
+.e-header .e-header-one p {
+  color: #686868;
+  font-size: .13rem;
+  line-height: .24rem;
+}
+.e-body {
+  position: relative;
+  padding: .1rem .2rem;
+  background-color: white;
+}
+.e-body-top {
+  display: flex;
+  justify-content: space-between;
+}
+.e-body-top h2 {
+  font-size: .18rem;
+  color: #020202;
+  font-weight: bold;
+}
+.e-body-top h2,
+.e-body-top .ebt-admin {
+  line-height: .6rem;
+}
+.ebt-admin {
+  display: inline-block;
+  padding-right: .15rem;
+  background-image: url(../images/arrow@2x.png);
+  background-size: .06rem .1rem;
+  background-repeat: no-repeat;
+  background-position: right center;
+  font-size: .13rem;
+  color: #A4A4A4;
+}
+.e-body-list {
+  position: relative;
+}
+.e-body-item {
+  position: relative;
+  padding: .15rem  .6rem  .15rem .8rem ;
+}
+.e-body-item h2 {
+  display: inline-block;
+  padding-right: .26rem;
+  color: #020202;
+  font-size: .17rem;
+  background-repeat: no-repeat;
+  background-size: .1rem .1rem;
+  background-position: right center;
+  font-weight: bold;
+}
+.e-body-item p {
+  color: #686868;
+  font-size: .13rem;
+}
+.e-body-item h2,
+.e-body-item p {
+  line-height: .28rem;
+}
+.e-body-item:before {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -.34rem;
+  height: .68rem;
+  width: .68rem;
+  z-index: 1;
+  content: " ";
+  color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.esb-item:before {
+  position: absolute;
+  left: .6rem;
+  top: 50%;
+  margin-top: -.21rem;
+  height: .42rem;
+  width: .42rem;
+  z-index: 1;
+  content: " ";
+  color: transparent;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+.e-body-item:before,
+.esb-item:before {
+  background-image: url(../images/e_ice_box@2x.png);
+}
+.e-body-item-dbx:before,
+.esb-item-dbx:before {
+  background-image: url(../images/e_ice_box@2x.png);
+}
+.e-body-item-xyj:before,
+.esb-item-xyj:before {
+  background-image: url(../images/e_Washing_machine@2x.png);
+}
+.e-body-item-wbl:before,
+.esb-item-wbl:before {
+  background-image: url(../images/e_Microwave_Oven@2x.png);
+}
+.e-body-item:nth-child(1):before {
+  background-color: #fff6f6;
+}
+.e-body-item:nth-child(2):before {
+  background-color: #f2fdfd;
+}
+.e-body-item:nth-child(3):before {
+  background-color: #f9f9f9;
+}
+.ebi-num {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  color: #818181;
+  margin-top: -.2rem;
+  line-height: .4rem;
+  width: .6rem;
+  height: .4rem;
+  font-size: .15rem;
+  text-align: right;
+}
+.e-body-item-rise .ebi-num {
+  color: #EB4F4F;
+}
+.e-body-item-rise h2 {
+  background-image: url(../images/e_Rise_button_s@2x.png);
+}
+.e-body-item-decline .ebi-num {
+  color: #1DD7CC;
+}
+.e-body-item-decline h2 {
+  background-image: url(../images/e_decline_button_s@2x.png);
+}
+.electricity-statistics .public-header-div {
+  background-color: #F7F7FB;
+}
+.esh-ul {
+  display: flex;
+  width: 86%;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.esh-ul li {
+  background-color: #F0F0F0;
+  line-height: .34rem;
+  font-size: .15rem;
+  border-radius: .17rem;
+  padding: 0 .2rem;
+  text-align: center;
+  color: #303030;
+}
+.esh-ul .esh-li-hover {
+  background-color: #1DD7CC;
+  color: white;
+}
+.esb-swiper {
+  padding-left: .2rem;
+}
+.esb-swiper .swiper-slide {
+  background-color: #F0F0F0;
+  padding: .1rem .2rem;
+  border-radius: .06rem;
+}
+.esb-swiper h2 {
+  color: #020202;
+  font-size: .2rem;
+  line-height: .28rem;
+}
+.esb-swiper p {
+  font-size: .15rem;
+  color: #939393;
+  line-height: .28rem;
+}
+.esb-warning {
+  background-image: url(../images/bill_04.png);
+  background-size: .17rem .17rem;
+  background-position: .2rem center;
+  line-height: .5rem;
+  font-size: .13rem;
+  color: #989898;
+  background-repeat: no-repeat;
+  padding-left: .44rem;
+}
+.esb-h2 {
+  margin-top: .15rem;
+  margin-bottom: .1rem;
+  color: #020202;
+  font-size: .16rem;
+  line-height: .28rem;
+  padding: 0 .2rem;
+  font-weight: bold;
+}
+.es-body {
+  position: relative;
+}
+.esb-list {
+  display: none;
+}
+.esb-list-hover {
+  display: block;
+}
+.esb-list-div {
+  padding: 0 .2rem;
+}
+.esb-list-div .esb-item {
+  position: relative;
+  border-radius: .06rem;
+  box-shadow: 0 0 .04rem #CCCCCC;
+  padding: .2rem 1rem .2rem 116px;
+  margin-bottom: .15rem;
+}
+.esb-list-div .esb-item h3 {
+  position: absolute;
+  left: .15rem;
+  top: 50%;
+  margin-top: -.12rem;
+  font-size: .14rem;
+  line-height: .24rem;
+  color: #989898;
+}
+.esb-list-div .esb-item h2 {
+  font-weight: bold;
+  font-size: .15rem;
+  color: #020202;
+}
+.esb-list-div .esb-item p {
+  color: #989898;
+  font-size: .13rem;
+}
+.esb-list-div .esb-item h2,
+.esb-list-div .esb-item p {
+  line-height: .24rem;
+}
+.esb-list-div .esb-item .esbi-right {
+  position: absolute;
+  top: 50%;
+  right: .15rem;
+  margin-top: -.2rem;
+  line-height: .4rem;
+  color: #989898;
+  font-size: .13rem;
+}
+.esb-list-div .esb-item .esbi-right span {
+  font-weight: bold;
+  color: #020202;
+  font-size: .16rem;
+  display: inline-block;
+  margin: 0 .05rem;
+}
+.esb-list-div .esb-item:nth-child(1) h3 {
+  color: #E1426B;
+}
+.esb-list-div .esb-item:nth-child(2) h3 {
+  color: #CBB864;
+}
+.esb-list-div .esb-item:nth-child(3) h3 {
+  color: #5676E1;
+}
+.electricity-administration {
+  padding-left: 0;
+  padding-right: 0;
+}
+.electricity-administration .fil-body .fibl-item {
+  box-shadow: none;
+  border-bottom: 1px solid #E0E0E0;
+  padding-left: .9rem;
+}
+.electricity-administration .fil-body .fibl-item h2,
+.electricity-administration .fil-body .fibl-item h3,
+.electricity-administration .fil-body .fibl-item p {
+  line-height: .24rem;
+}
+.electricity-administration .fil-body .fibl-item h3 {
+  color: #303030;
+  font-size: .15rem;
+}
+.electricity-administration .fil-body .fibl-item p {
+  color: #909090;
+  font-size: .13rem;
+}
+.electricity-administration .fil-body .fibl-item .fibl-item-btn-delete {
+  display: block;
+}
+.electricity-administration .fil-body .filb-item-percentage {
+  top: .2rem;
+  margin-top: 0;
+}
+.electricity-administration .fil-body .fibl-item-right {
+  top: .18rem;
+  margin-top: 0;
+}
+.electricity-administration .fil-body:before {
+  display: none;
+}
+.electricity-administration #select_type_delete {
+  margin-left: 0;
+}
+.electricity-administration .public-header-right {
+  background-image: url(../images/friend-l-add-to@2x.png);
+}
+.electricity-administration-add {
+  padding-left: .2rem;
+  padding-right: .2rem;
+}
+.eaa-body h3 {
+  font-size: .13rem;
+  color: #686868;
+  line-height: .4rem;
+}
+.eaa-body .eea-select {
+  background-color: #F5F5F5;
+  line-height: .44rem;
+  padding: 0 .15rem;
+  border-radius: .04rem;
+}
+.eaa-body .eea-div {
+  display: flex;
+  justify-content: space-between;
+}
+.eaa-body .eea-select-div {
+  width: 48%;
+}
+.eaa-body .eaa-warning {
+  line-height: .24rem;
+  color: red;
+  font-size: .12rem;
+  text-align: center;
+  min-height: .24rem;
+  margin-top: .15rem;
+}
+.eea-btn-qdtj {
+  background-color: #2A71F1;
+  color: #FFFFFF;
+  font-size: .17rem;
+  line-height: .46rem;
+  border-radius: .04rem;
+  width: 100%;
+  text-align: center;
+  margin-top: .3rem;
+}
+.er-body {
+  padding-left: .2rem;
+  padding-right: .2rem;
+}
+.erb-div {
+  position: relative;
+}
+.erb-div h2 {
+  font-size: .16rem;
+  line-height: .28rem;
+  padding: .05rem 0;
+  color: #020202;
+}
+.erb-div ul {
+  padding: .1rem .2rem;
+}
+.erb-div li {
+  color: #F84343;
+  line-height: .36rem;
+  padding: 0 .12rem;
+  font-size: .16rem;
+  background-color: #F5F5F5;
+  margin-bottom: .05rem;
+}
+#echarts-e-01 {
+  width: 100%;
+  height: 3rem;
+}
+#echarts_es_01,
+#echarts_es_02,
+#echarts_es_03,
+#echarts_es_04 {
+  height: 3rem;
+  margin: auto;
+}

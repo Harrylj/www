@@ -1,0 +1,149 @@
+      .clearfix:after {
+        content: ".";
+        display: block;
+        font-size: 0;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+      
+      .clearfix {
+        display: inline-table;
+      }
+      
+      *html .clearfix {
+        height: 1%;
+      }
+      
+      .clearfix {
+        display: block;
+      }
+      
+      *+html .clearfix {
+        min-height: 1%;
+      }
+      
+      .che_tit {
+        text-align: center;
+        padding: .2rem;
+      }
+      
+      .ul_pro {
+        background-color: #CED3D9;
+        text-align: center;
+        padding: .04rem .02rem;
+        font-size: .14rem;
+      }
+      
+      .ul_pro li {
+        float: left;
+        width: 11.11%;
+        padding: .02rem;
+        box-sizing: border-box;
+      }
+      
+      .ul_pro .li_close {
+        float: right;
+        width: 22.22%;
+      }
+      
+      .ul_pro .li_close span {
+        background-color: #ACB3BB;
+      }
+      
+      .ul_pro .li_clean {
+        float: right;
+        width: 22.22%;
+      }
+      
+      .ul_pro li span {
+        display: block;
+        background-color: #fff;
+        border-radius: .04rem;
+        box-shadow: .02rem .02rem .02rem #888888;
+        line-height: .32rem;
+        padding-top: .02rem;
+      }
+      
+      .ul_pro li span:active {
+        background-color: #4DA9F2;
+        color: #fff;
+      }
+      
+      .ul_input {
+        padding: .1rem 0;
+        max-width: 5rem;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+      }
+      
+      .ul_input li {
+        float: left;
+        width: 14%;
+        padding: .02rem;
+        text-align: center;
+      }
+      
+      .ul_input li span {
+        display: block;
+        background-color: #f5f5f5;
+        border: .01rem solid #ccc;
+        border-radius: .04rem;
+        width: .4rem;
+        margin: 0 auto;
+        height: .4rem;
+        line-height: .4rem;
+        color: #646464;
+        font-size: .16rem;
+      }
+      
+      .ul_keybord {
+        background-color: #CED3D9;
+        text-align: center;
+        padding: .04rem .02rem;
+        font-size: .14rem;
+      }
+      
+      .ul_keybord li {
+        float: left;
+        width: 10%;
+        padding: .02rem;
+        box-sizing: border-box;
+      }
+      
+      .ul_keybord .ikey20 {
+        margin-left: 5%;
+      }
+      
+      .ul_keybord .li_w {
+        width: 11.11%;
+      }
+      
+      .ul_keybord .li_close {
+        float: right;
+        width: 22.22%;
+      }
+      
+      .ul_keybord .li_close span {
+        background-color: #ACB3BB;
+      }
+      
+      .ul_keybord .li_clean {
+        float: right;
+        width: 22.22%;
+      }
+      
+      .ul_keybord li span {
+        display: block;
+        background-color: #fff;
+        border-radius: .04rem;
+        box-shadow: .02rem .02rem .02rem #888888;
+        line-height: .32rem;
+        padding-top: .02rem;
+      }
+      
+      .ul_keybord li span:active {
+        background-color: #4DA9F2;
+        color: #fff;
+      }

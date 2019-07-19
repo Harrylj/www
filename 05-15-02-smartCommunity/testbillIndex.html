@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>锦城峰荟1栋4单元1101</title>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <script src="js/flexible.min.js"></script>
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/rem_public.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/rem_public.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/rem_bill.css" />
+  </head>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-03
+    	描述：.bbl-item:添加 .bbl-item-ok表示选中
+    -->
+    <button class="fill-btn-center hide" data-toggle="modal" data-target="#myModalCenter">弹窗</button>
+
+    <div class="bill public-div">
+      <div class="bill-header">
+        <div class="bh-one">
+          <h2>总待缴</h2>
+          <a class="bh-one-a" href="#">查看历史账单</a>
+        </div>
+        <h1>&yen;284.90</h1>
+        <div class="bh-div-father">
+          <div id="echarts-bi-01" class="bh-div-01"></div>
+          <div class="bh-div-02">
+            <ul class="bh-div-ul">
+              <li>
+                <p>
+                  <span class="bh-span-02">&Omicron;</span>
+                  <span class="bh-span-01">物业费</span>
+                </p>
+                <p>&yen;<span class="fi-number-01">120.00</span></p>
+              </li>
+              <li>
+                <p>
+                  <span class="bh-span-02">&Omicron;</span>
+                  <span class="bh-span-01">辣鸡处理费</span>
+                </p>
+
+                <p>&yen;<span class="fi-number-02">120.00</span></p>
+              </li>
+              <li>
+                <p>
+                  <span class="bh-span-02">&Omicron;</span>
+                  <span class="bh-span-01">其他</span>
+                </p>
+                <p>&yen;<span class="fi-number-03">120.00</span></p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bill-body">
+        <div class="bb-list">
+          <h2>2019年12.1日-12.31日</h2>
+          <div class="bbl-item">
+            <div class="bbl-item-header">
+              <h3>12月物业服务费</h3>
+              <div class="bbl-item-warn"></div>
+            </div>
+            <p>物业服务费&yen; 120.00</p>
+            <p>车位管理费&yen; 10.00</p>
+          </div>
+          <div class="bbl-item bbl-item-ok">
+            <div class="bbl-item-header">
+              <h3>12月物业服务费</h3>
+              <div class="bbl-item-warn"></div>
+            </div>
+            <p>物业服务费&yen; 120.00</p>
+            <p>车位管理费&yen; 10.00</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+    <div class="bill-footer">
+      <div class="bf-left">全选</div>
+      <div class="bf-right">
+        <h1>合计:</h1>
+        <p>&yen;<span>280.00</span></p>
+        <a class="bf-btn-msjf" href="billPay.html">马上缴费</a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal two-modal-center fade" id="myModalCenter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-center" role="document">
+        <div class="modal-content two-center-content">
+          <h4>亲，不支持分开缴纳</h4>
+          <div class="two-center-btn-qd" data-dismiss="modal">确定</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/echarts.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function() {
+
+        // eachrt生成图表函数
+        function echart_fi(a_01, a_02, a_03) {
+          // 基于准备好的dom，初始化echarts实例
+          var myChart_bi_01 = echarts.init(document.getElementById('echarts-bi-01'));
+          // 指定图表的配置项和数据
+          var option_bi_name_01 = ['物业费', '车位管理费', '其他费用'];
+          var option_bi_value_01 = [a_01, a_02, a_03];
+          var option_bi_color_01 = ['#4FB2F0', '#4FDBF0', '#4F4FF0'];
+          var option_bi_01 = {
+            /*
+                     tooltip: {  // 提示弹窗
+                    trigger: 'item',
+                    formatter: "{a} <br/>{b}: {c} ({d}%)"
+                },
+            */
+            series: [{
+              name: '访问来源',
+              type: 'pie',
+              radius: ['50%', '76%'],
+              avoidLabelOverlap: false,
+              // silent: true, // 点击不触发事件（比如提示弹窗，中间的文字和hover效果）
+              label: {
+                normal: {
+                  show: false,
+                  position: 'center'
+                },
+                emphasis: {
+                  show: true,
+                  textStyle: {
+                    fontSize: '10',
+                    fontWeight: 'bold'
+                  }
+                }
+              },
+              labelLine: {
+                normal: {
+                  show: false
+                }
+              },
+              data: [{
+                  value: option_bi_value_01[0],
+                  name: option_bi_name_01[0],
+                  itemStyle: {
+                    color: option_bi_color_01[0]
+                  }
+                },
+                {
+                  value: option_bi_value_01[1],
+                  name: option_bi_name_01[1],
+                  itemStyle: {
+                    color: option_bi_color_01[1]
+                  }
+                },
+                {
+                  value: option_bi_value_01[2],
+                  name: option_bi_name_01[2],
+                  itemStyle: {
+                    color: option_bi_color_01[2]
+                  }
+                },
+              ]
+            }]
+          };
+          // 绘制图表
+          myChart_bi_01.setOption(option_bi_01);
+        }
+
+        // 数据改变函数
+        function fi_number_change() {
+          // 数据获取
+          var fi_number_array = [parseInt($('.fi-number-01').html()), parseInt($('.fi-number-02').html()), parseInt($('.fi-number-03').html())];
+          // 初始化生成图标
+          echart_fi(fi_number_array[0], fi_number_array[1], fi_number_array[2]);
+          // 这里搞个假数据，自动加一百
+          $('.fi-number-01').html(parseInt($('.fi-number-01').html()) + 100)
+        }
+
+        // 初始化生成一下
+        fi_number_change()
+
+        // 点击感叹号
+        $('.bbl-item-warn').on('click', function() {
+          $('.fill-btn-center').click();
+          return false;
+        })
+
+        // 点击选中内容
+        $('.bbl-item').on('click', function() {
+          let class_click = 'bbl-item-ok';
+          $(this).toggleClass(class_click);
+          // 调用数据改变函数
+          fi_number_change()
+        })
+
+        // 点击全选内容
+        $('.bf-left').on('click', function() {
+          let class_click = 'bf-left-ok',
+            other_e = $('.bbl-item'),
+            other_class = 'bbl-item-ok';
+          // 全选
+          if(!$(this).hasClass(class_click)) {
+            $(this).addClass(class_click)
+            $(other_e).addClass(other_class)
+          }
+          // 反选
+          else {
+            $(this).removeClass(class_click)
+            $(other_e).removeClass(other_class)
+          }
+          // 调用数据改变函数
+          fi_number_change()
+        })
+
+      })
+    </script>
+
+  </body>
+
+</html>

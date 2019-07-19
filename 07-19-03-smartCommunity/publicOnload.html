@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>公用头</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.mloading.css" />
+    <script type="text/javascript">
+      //获取浏览器页面可见高度和宽度
+      var _PageHeight = document.documentElement.clientHeight,
+        _PageWidth = document.documentElement.clientWidth;
+      //计算loading框距离顶部和左部的距离（loading框的宽度为215px，高度为61px）
+      var _LoadingTop = _PageHeight > 61 ? (_PageHeight - 61) / 2 : 0,
+        _LoadingLeft = _PageWidth > 215 ? (_PageWidth - 215) / 2 : 0;
+      //在页面未加载完毕之前显示的loading Html自定义内容
+      var _LoadingHtml = '<div id="loadingDiv" style="position:absolute;left:0;width:100%;height:' + _PageHeight + 'px;top:0;background:#f3f8ff;opacity:0.8;filter:alpha(opacity=80);z-index:10000;"><div style="position: absolute; cursor1: wait; left: ' + _LoadingLeft + 'px; top:' + _LoadingTop + 'px; width: auto; height: 57px; line-height: 57px; padding-left: 50px; padding-right: 5px; background: #fff url(/images/gif;) no-repeat scroll 5px 10px; border: 2px solid #95B8E7; color: #696969; font-family:\'Microsoft YaHei\';">页面加载中，请等待...</div></div>';
+      //呈现loading效果
+      document.write(_LoadingHtml);
+      //window.onload = function () {
+      //  var loadingMask = document.getElementById('loadingDiv');
+      //  loadingMask.parentNode.removeChild(loadingMask);
+      //};
+      //监听加载状态改变
+      document.onreadystatechange = completeLoading;
+      //加载状态为complete时移除loading效果
+      function completeLoading() {
+        if(document.readyState == "complete") {
+          var loadingMask = document.getElementById('loadingDiv');
+          loadingMask.parentNode.removeChild(loadingMask);
+        }
+      }
+    </script>
+  </head>
+  <style type="text/css">
+    .loading span {
+  text-transform: uppercase;
+  font-size: 42px;
+  font-weight: 600;
+  opacity: 0;
+  display: inline-block;
+  padding: 0px 20px;
+  animation: letterWave 2s infinite linear;
+}
+.loading span:nth-child(0) {
+  animation-delay: 0ms;
+}
+.loading span:nth-child(1) {
+  animation-delay: 250ms;
+}
+.loading span:nth-child(2) {
+  animation-delay: 500ms;
+}
+.loading span:nth-child(3) {
+  animation-delay: 750ms;
+}
+.loading span:nth-child(4) {
+  animation-delay: 1000ms;
+}
+.loading span:nth-child(5) {
+  animation-delay: 1250ms;
+}
+.loading span:nth-child(6) {
+  animation-delay: 1500ms;
+}
+.loading span:nth-child(7) {
+  animation-delay: 1750ms;
+}
+.loading span:nth-child(8) {
+  animation-delay: 2000ms;
+}
+.loading span:nth-child(9) {
+  animation-delay: 2250ms;
+}
+.loading span:nth-child(10) {
+  animation-delay: 2500ms;
+}
+
+@keyframes letterWave {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    padding: 0 20px;
+    opacity: .8;
+  }
+  25% {
+    transform: translateY(-50px) scale(0.8);
+    padding: 0 0px;
+    opacity: .6;
+  }
+  75% {
+    transform: translateY(50px) scale(1.5);
+    padding: 0px 40px;
+    opacity: 1;
+  }
+}
+
+    html,
+    body {
+      background-color: white;
+    }
+    
+    #btnShow,
+    #btnHide {
+      position: fixed;
+      z-index: 99999;
+      top: 100px;
+    }
+    
+    #btnShow {
+      left: 20px;
+    }
+    
+    #btnHide {
+      left: 200px;
+    }
+  </style>
+
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+
+    <button type="button" id="btnShow">显示加载</button>
+    <button type="button" id="btnHide">关闭加载</button>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        alert("DOM加载完了哦!1");
+      })
+    </script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.mloading.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          eee: $(this),
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: 'black',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          //returnHref: 'javascript:history.back(-1)',
+          returnHref: function(i) {
+            console.log($(this).attr('class'))
+            return false;
+          },
+          // 标题名称
+          titleName: '预约跑步机',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+
+        $("#btnShow").on('click', function() {
+          $("body").mLoading({
+            text: "看我的", //加载文字，默认值：加载中...
+            // icon:"",//加载图标，默认值：一个小型的base64的gif图片
+            html: false, //设置加载内容是否是html格式，默认值是false
+            content: "", //忽略icon和text的值，直接在加载框中显示此值
+            mask: true //是否显示遮罩效果，默认显示
+          });
+        })
+        $("#btnHide").on('click', function() {
+          $("body").mLoading("hide"); //隐藏loading组件
+        })
+
+        // $(element).mLoading("show");//显示loading组件
+        // $(element).mLoading("hide");//隐藏loading组件
+      });
+    </script>
+  </body>
+
+</html>

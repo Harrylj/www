@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>社区公告</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/me.css"/>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  </head> 
+  <style type="text/css">
+
+  </style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-02-26
+    	描述：.me-new：社区公告。默认是显示这个，没有数据
+    	     添加 .me-new-more:显示公告列表,隐藏默认显示内容
+    -->
+    <div class="two-public-header-content"></div>
+    <div class="me-new me-new-more  public-div">
+      <div class="mn-body-no">
+        <img class="mn-img" src="images/me-news-01@2x.png"/>
+        <h3>来的太早，公告还没出</h3>
+      </div>
+      <div class="mn-body-ok">
+        <div class="mnb-list-div">
+          <a href="#">
+            <div class="mnc-item">
+              <div class="mnc-item-header">
+                <h2>通知消息</h2>
+                <h4>1小时前</h4>
+              </div>
+              <p>尊敬的业主们，年会活动取消了</p>
+            </div>
+          </a>
+          <a href="#">
+            <div class="mnc-item">
+              <div class="mnc-item-header">
+                <h2>通知消息</h2>
+                <h4>2019.09.08</h4>
+              </div>
+              <p>尊敬的业主们，年会活动取消了</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$(function(){
+    	  // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: 'black',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            activity: {
+              name: '我参加的',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-activity@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            message: {
+              name: '消息',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-message@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            setting: {
+              name: '设置',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-setting@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+    	})
+    </script>
+
+  </body>
+
+</html>

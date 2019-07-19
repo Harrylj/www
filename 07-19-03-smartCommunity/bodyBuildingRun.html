@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>跑步倒计时</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css"/>
+ 
+  </head>
+  <style type="text/css">
+    html,body{
+      background-color: #373432;
+    }
+  </style>
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="body-building-run public-div">
+      <div class="bbr-body">
+        <div class="bbr-content">
+          <div class="bbrc-time-div">
+            <div class="bbrc-music Rotation"></div>
+            <div id="countdown" class="bbrc-time">01:28:10</div>
+            <p>时间</p>
+          </div>
+          <table class="bbr-table" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+              <td>78</td>
+              <td>126</td>
+              <td>24</td>
+            </tr>
+            <tr>
+              <td>步数</td>
+              <td>卡路里</td>
+              <td>脂肪</td>
+            </tr>
+          </table>
+        </div>
+        
+      </div>
+      <div class="bbr-footer">
+        <!--
+        	作者：648267773@qq.com
+        	时间：2019-07-05
+        	描述：.bbrf-music 添加.Rotation可转动
+        -->
+        <ul class="bbrf-ul">
+        	<li class="bbrf-music"></li>
+        	<li class="bbrf-btn-tqjs"><h2></h2><h3>结束</h3></li>
+        	<li class="bbrf-bad"></li>
+        </ul>
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/countdown.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$(function(){
+    	  $('#countdown').countdown({
+          //活动开始时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+          //优先采取元素的data-stime值(该值只能为时间戳格式)
+          startTime: '2019/07/04 16:30:00',//活动结束时间 (可采用时间戳 或者 标准日期时间格式 "yyyy/MM/dd HH:mm:ss")
+          //优先采取元素的data-etime值(该值只能为时间戳格式)         
+          endTime: '2019/07/05 16:54:00',
+          //活动开始前倒计时的修饰
+          //可自定义元素,例如"<span>距离活动开始倒计时还有:</span>"            
+          beforeStart: '<span style="font-size:14px;line-height:28px;">距离预约时间还有:</span><br/>',
+          //活动进行中倒计时的修饰 
+          //可自定义元素,例如"<span>距离活动截止还有:</span>"  
+          beforeEnd: '',
+          //活动结束后的修饰
+          //可自定义元素,例如"<span>活动已结束</span>"             
+          afterEnd: '<span style="font-size:28px;line-height:28px;">健身时间结束啦</span>',
+          //时间格式化(可采用"ddd:hh:mm:ss、 dd:hh:mm:ss、  hh:mm:ss、 mm:ss、 ss"等)                   
+          //format: 'dd:hh:mm:ss',
+          format: 'hh:mm:ss',
+          //活动结束后的回调函数                    
+          callback: function() {
+           console.log('亲，健身时间结束啦');
+          }
+         });
+
+    	  
+    	  // 点击提前结束
+    	  $('.bbrf-btn-tqjs').on('click',function(){
+    	    alert('提前结束')
+    	  })
+    	  
+    	  // 点击音乐 
+    	  $('.bbrf-music').on('click',function(){
+          alert('音乐')
+        })
+    	  
+    	  // 点击故障报错
+        $('.bbrf-bad').on('click',function(){
+          alert('故障报错')
+        })
+    	  
+    	  // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: '#373432',
+          // 文字和左右菜单栏颜色
+          fontColor: 'white',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: function(){
+            alert(1)
+          },
+          // 标题名称
+          titleName: '跑步倒计时',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            
+          },
+
+        });
+    	  
+    	})
+    </script>
+  </body>
+
+</html>

@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>聊天界面</title>
+    <link href="./css/mui.min.css" rel="stylesheet" />
+    <link href="./css/mui.imageviewer.css" rel="stylesheet" />
+
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/chat.css" />
+    <style>
+
+    </style>
+  </head>
+  <!-- 公用头部-->
+  <div class="two-public-header-content"></div>
+  <div class="chat-div" contextmenu="return false;">
+    <div class="chat-header">
+      <ul class="ch-ul">
+        <li class="ch-li-repair">维修</li>
+        <li class="ch-li-water">送水</li>
+        <li class="ch-li-money">缴费</li>
+        <a href="tel:10086">
+          <li class="ch-li-call">呼叫</li>
+        </a>
+        <li class="ch-li-complaint">投诉</li>
+      </ul>
+    </div>
+    <div class="mui-content">
+
+      <div class="chatBox-content">
+        <div class="chatBox-content-demo" id="chatBox-content-demo">
+          
+          <div class="clearfloat">
+            
+            <div class="author-name">
+              <div class="chat-type-div">连接中,请稍后</div>
+            </div>
+          </div>
+          <div class="clearfloat">
+            <div class="author-name">
+              <div class="chat-type-div">连接成功</div>
+            </div>
+          </div>
+          <div class="clearfloat">
+            <div class="author-name">
+              <small class="chat-date">2017-12-02 14:26:58</small>
+            </div>
+            <div class="left">
+              <div class="chat-avatars"><img src="images/chat/icon01.png" alt="头像" /></div>
+              <div class="chat-message">
+                给你看张图
+              </div>
+            </div>
+          </div>
+
+          <div class="clearfloat">
+            <div class="author-name">
+              <small class="chat-date">2017-12-02 14:26:58</small>
+            </div>
+            <div class="left">
+              <div class="chat-avatars"><img src="images/chat/icon01.png" alt="头像" /></div>
+              <div class="chat-message">
+                <img src="images/chat/1.png" alt="">
+              </div>
+            </div>
+          </div>
+
+          <div class="clearfloat">
+            <div class="author-name">
+              <small class="chat-date">2017-12-02 14:26:58</small>
+            </div>
+            <div class="right">
+              <div class="chat-message">嗯，适合做壁纸</div>
+              <div class="chat-avatars"><img src="images/chat/icon02.png" alt="头像" /></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="chat-footer" id="footer">
+      <div class="footer-center">
+        <textarea id='msg-text' type="text" class='input-text div-textarea'></textarea>
+        <button id='msg-sound' type="button" class='input-sound' style="display: none;">按住说话</button>
+      </div>
+      <label for="" class="footer-right">
+            <button class="chat-btn-fs">发送</button>
+        </label>
+    </div>
+    <script src="js/mui.min.js" type="text/javascript"></script>
+    <script src="js/mui.imageViewer.js"></script>
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/chat/jquery.signalR-2.2.0.min.js"></script>
+    <script src="js/chat/chat.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      //    window.onresize = function () {
+      //        if (document.activeElement.tagName == "INPUT" || document.activeElement.tagName == "TEXTAREA") {
+      //            setTimeout(function () {
+      //                var top = document.activeElement.getBoundingClientRect().top;
+      //                window.scrollTo(0,top);
+      //            }, 0);
+      //        }
+      //    }
+
+      //聊天框默认最底部
+      function s_bottom() {
+        var s_height = $("#chatBox-content-demo")[0].scrollHeight;
+        $('.mui-content').scrollTop(s_height);
+        console.log(s_height)
+      }
+
+      // 获得当前时间 2019-02-02 14:06:08
+      function getNowTime() {
+        // 加0
+        function add_10(num) {
+          if(num < 10) {
+            num = '0' + num
+          }
+          return num;
+        }
+        var myDate = new Date();
+        myDate.getYear(); //获取当前年份(2位)
+        myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+        myDate.getMonth(); //获取当前月份(0-11,0代表1月)
+        myDate.getDate(); //获取当前日(1-31)
+        myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+        myDate.getTime(); //获取当前时间(从1970.1.1开始的毫秒数)
+        myDate.getHours(); //获取当前小时数(0-23)
+        myDate.getMinutes(); //获取当前分钟数(0-59)
+        myDate.getSeconds(); //获取当前秒数(0-59)
+        myDate.getMilliseconds(); //获取当前毫秒数(0-999)
+        myDate.toLocaleDateString(); //获取当前日期
+        var nowTime = myDate.getFullYear() + '-' + add_10(myDate.getMonth()) + '-' + myDate.getDate() + ' ' + add_10(myDate.getHours()) + ':' + add_10(myDate.getMinutes()) + ':' + add_10(myDate.getSeconds());
+        return nowTime;
+      }
+
+      //      发送图片
+      function selectImg(pic) {
+        if(!pic.files || !pic.files[0]) {
+          return;
+        }
+        var reader = new FileReader();
+        // 用户id
+        var user_id = '3222a169-cdab-4e3a-bba9-124676f64668';
+        // 时间
+        var user_time = getNowTime();
+
+        reader.onload = function(evt) {
+          var images = evt.target.result;
+          $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+            "<div class=\"author-name\"><small class=\"chat-date\">" + user_time + "</small> </div> " +
+            "<div class=\"right\"> <div class=\"chat-message\"><img src=" + images + "></div> " +
+            "<div class=\"chat-avatars\"><img src=\"images/chat/icon01.png\" alt=\"头像\" /></div> </div> </div>");
+          //聊天框默认最底部
+          s_bottom()
+
+          chatManager.im.sendMsg(user_id, images, 0);
+        };
+        reader.readAsDataURL(pic.files[0]);
+
+      }
+
+      (function(doc) {
+        var MIN_SOUND_TIME = 800;
+        mui.init({
+          gestureConfig: {
+            tap: true, //默认为true
+            doubletap: true, //默认为false
+            longtap: true, //默认为false
+            swipe: true, //默认为true
+            drag: true, //默认为true
+            hold: true, //默认为false，不监听
+            release: true //默认为false，不监听
+          }
+        });
+        /*
+        if(mui.os.ios) {
+          // 解决在ios上fixed元素focusin时位置出现错误的问题 
+          document.addEventListener('DOMContentLoaded', function() {
+            var footerDom = document.querySelector('footer');
+
+            document.addEventListener('focusin', function() {
+              footerDom.style.position = 'absolute';
+            });
+            document.addEventListener('focusout', function() {
+              footerDom.style.position = 'fixed';
+            });
+          });
+        }
+        */
+
+        /*  初始方法
+				// 初始化 连接服务器    -回调是收消息的方法,用户id,消息,发送时间，
+				chatManager.im.init("cdsdtz", function(userId, msg, dateTime, isSystem){
+				  console.log(msg)
+				});
+        
+				// chat_发送消息
+				chatManager.im.sendMsg(event.detail.revId, event.detail.msg, event.detail.isSystem);
+				*/
+
+        /*
+        // 初始化 连接服务器    -回调是收消息的方法,用户id,消息,发送时间，
+        chatManager.im.init("cdsdtz", function(userId, msg, dateTime, isSystem) {
+          var chat_content = `<div class="clearfloat">
+                            <div class="author-name">
+                                <small class="chat-date">${dateTime}</small>
+                            </div>
+                            <div class="left">
+                                <div class="chat-avatars"><img src="images/chat/icon01.png" alt="头像"/></div>
+                                <div class="chat-message">
+                                    ${msg}
+                                </div>
+                            </div>
+                        </div>`;
+
+          $('.chatBox-content-demo').append(chat_content);
+
+          console.log(msg)
+        });
+        */
+        // 点击发送按钮
+        $('.chat-btn-fs').on('click', function() {
+          //var textContent = $(".div-textarea").html().replace(/[\n\r]/g, '<br>')
+          var textContent = $(".div-textarea").val().replace(/[\n\r]/g, '<br>');
+          // 用户id
+          var user_id = '3222a169-cdab-4e3a-bba9-124676f64668';
+          // 时间
+          var user_time = getNowTime();
+          $("#chatBox-content-demo").scrollTop(200);
+
+          // 新增状态-2019-07-02
+          function getChatType(val){
+            var ee = `
+                  <div class="clearfloat">
+                    <div class="author-name">
+                      <div class="chat-type-div">${val}</div>
+                    </div>
+                  </div>
+            $('.chatBox-content-demo').append(ee)
+          }
+          
+          
+          
+          if(textContent != "") {
+            getChatType(textContent)
+            $(".chatBox-content-demo").append("<div class=\"clearfloat\">" +
+              "<div class=\"author-name\"><small class=\"chat-date\">" + user_time + "</small> </div> " +
+              "<div class=\"right\"> <div class=\"chat-message\"> " + textContent + " </div> " +
+              "<div class=\"chat-avatars\"><img src=\"images/chat/icon02.png\" alt=\"头像\" /></div> </div> </div>");
+            //发送后清空输入框
+            $(".div-textarea").val("");
+
+            //聊天框默认最底部
+            s_bottom()
+
+            // 发送消息
+            // chatManager.im.sendMsg(user_id, textContent, 0);
+            console.log(textContent)
+            
+          }
+        })
+
+        // 点击菜单，维修，送水，缴费，呼叫，投诉
+        $('.ch-ul').children('li').on('click', function() {
+          var this_html = $(this).html()
+          alert(this_html + ' 功能正在开发中')
+        })
+
+        /*
+        dd.httpRequest({
+          url: "http://api.cdrenju.com/sdtz/adms/im/send",
+          method: "POST",
+          data: {
+            loginMark: myInfo.loginMark,
+            token: myInfo.token,
+            data: JSON.stringify({
+              userId: otherUser.userId,
+              content: message
+            })
+          },
+          success: function(res) {
+            console.log("sendMessage success:" + JSON.stringify(res));
+          },
+          fail: function(res) {
+            console.log("sendMessage fail:" + JSON.stringify(res));
+          },
+        });
+        */
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: 'black',
+          // 是否显示返回按钮 Boolean
+          returnShow: false,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '管家服务',
+          // 是否显示菜单栏 Boolean
+          navListShow: false,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+
+          },
+
+        });
+
+      }(document));
+    </script>
+
+  </div>
+
+</html>

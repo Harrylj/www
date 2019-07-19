@@ -13,14 +13,16 @@
     <!--标准mui.css-->
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css">
     <link rel="stylesheet" type="text/css" href="css/house.css"/>
     <link rel="stylesheet" type="text/css" href="css/friend.css"/>
 
   </head>
   <body>
-
-    <div class="house-person-phone public-div">
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="house-person-phone public-div" style="height: 2000px;">
       <div class="hpp-header">
         <h2>请选择身份</h2>
         <div class="fims-list">
@@ -43,6 +45,7 @@
     </div>
 
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
     <script>
       $(function(){
         // 点击选择用户类型
@@ -69,6 +72,76 @@
               ts_warn.html('')
             }
         })
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+//        returnHref: function(){
+//          aaa()
+//        },
+          // 标题名称
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            activity: {
+              name: '我参加的',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-activity@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            message: {
+              name: '消息',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-message@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            setting: {
+              name: '设置',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-setting@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
         
       })
     </script>

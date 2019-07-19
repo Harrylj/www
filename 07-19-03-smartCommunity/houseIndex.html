@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>我的房屋</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/house.css"/>
+
+  </head>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-01-17
+    	描述：.hbl-item-btn-hover: .hbl-item-btn添加则表示删除当前元素
+    -->
+    <div class="house public-div">
+      <div class="ht-img">
+        <img class="img-100" src="images/cm-01.png"/>
+      </div>
+      <div class="house-header">
+        <div class="house-header-top">
+          <h1>锦城城峰荟城峰荟 · 2栋1202</h1><p>自住</p>
+        </div>
+        <h5>当前房间</h5>
+        <h3>93.28m 12/2层</h3>
+        <a href="#"><div class="house-header-other">前往其他房屋</div></a>
+      </div>
+
+      <div class="house-body">
+        <div class="hb-top">
+          <h1>房屋住户</h1>
+        </div>
+        <div class="hb-list">
+          
+          <div class="hbl-item house-user-list">
+            <img src="images/user-01.jpg"/>
+            <h3>神神道道</h3>
+            <h4>(产权人) 18200166591</h4>
+            <div class="hbl-item-btn">
+              <div class="hbl-item-btn-div">
+                <a class="hbl-item-btn-delte" href="#user_type_delete">删除</a>
+              </div>
+            </div> 
+          </div>
+          <div class="hbl-item house-user-list">
+            <img src="images/user-01.jpg"/>
+            <h3>神神道道</h3>
+            <h4>(姐姐) 18200166591</h4>
+            <div class="hbl-item-btn">
+              <div class="hbl-item-btn-div">
+                <a class="hbl-item-btn-delte" href="#user_type_delete">删除</a>
+              </div>
+            </div> 
+          </div>
+          <div class="hbl-item house-user-list">
+            <img src="images/user-01.jpg"/>
+            <h3>神神道道</h3>
+            <h4>(弟弟) 18200166591</h4>
+            <div class="hbl-item-btn">
+              <div class="hbl-item-btn-div">
+                <a class="hbl-item-btn-delte" href="#user_type_delete">删除</a>
+              </div>
+            </div> 
+          </div>
+          
+        </div>
+              <div class="house-more">
+        <a class="hm-btn-rhyq" href="#">入户邀请</a>
+      </div>
+      </div>
+
+    </div>
+    <!--
+        作者：648267773@qq.com
+        时间：2019-05-29
+        描述：弹出层
+      -->
+    
+    <div id="user_type_delete" class="mui-popover mui-popover-action mui-popover-bottom mui-tc-01">
+        <ul class="mui-table-view mui-tc-ul-01">
+          <li>删除后，将无法在住户中找到，确认删除？</li>
+          <li class="mui-table-view-cell house-delete-true">确定</li>
+        </ul>
+        <ul class="mui-table-view mui-tc-ul-02">
+          <li class="mui-table-view-cell mui-popover-hide">取消</li>
+        </ul>
+    </div>
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function(){
+        // 点击显示删除
+        $('.hbl-item-btn').on('click',function(){
+          // 先清除所有的样式
+          $('.hbl-item-btn').removeClass('hbl-item-btn-hover');
+          // 识别删除按钮
+          $(this).addClass('hbl-item-btn-hover')
+        })
+        
+        //点击取消删除按钮
+        $('.mui-popover-hide').on('click',function(){
+          // 隐藏弹层
+          mui('#user_type_delete').popover('hide');
+          // 隐藏删除按钮
+          $('.hbl-item-btn-hover').removeClass('hbl-item-btn-hover');
+        })
+
+        // 点击确定删除按钮
+        $('.house-delete-true').on('click',function(){
+          $('.hbl-item-btn-hover').parents('.hbl-item').remove();
+          // 隐藏弹层
+          $('.mui-popover-hide').click();
+        })
+        // 点击添加新房屋
+        $('.hf-btn-tjxfw').on('click',function(){
+          alert('点击添加新房屋')
+        })
+        
+        
+        // 设置选中当前房屋
+        $('.house-footer-click').on('click',function(){
+          var classHover = 'house-footer-click-now';
+          // 设置为当前
+          if(!$(this).hasClass(classHover)){
+            $(this).addClass(classHover).html('设当前');
+            console.log('显示设当前')
+          }
+          // 不可设置为当前
+          else{
+            $('.house-footer-click').removeClass(classHover).html('')
+          }
+        })
+        
+        
+      })
+    </script>
+
+  </body>
+
+</html>

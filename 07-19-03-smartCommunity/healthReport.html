@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>我的检查报告</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/jquery.easy-pie-chart.css" media="screen">
+
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/healthHut.css" />
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+  <style type="text/css">
+
+  </style>
+
+  <body>
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="two-health-report public-div">
+      <div class="thr-header">
+        <div class="filb-item-percentage">
+          <div class="percentage" data-percent="95">
+            <p>95</p><span>分</span></div>
+        </div>
+        <!--<h5><span>98</span>分</h5>
+        <a class="thr-header-a" href="#"><span>查看最新的体检报告</span><span class="iconfont icon-gengduo"></span></a>-->
+      </div>
+      <div class="thr-body">
+        <div class="thr-report-list">
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-sofa@3x.png" />
+              <h2>健康检测沙发</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+              </div>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+            </div>
+          </div>
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-eyes@3x.png" />
+              <h2>健康检测眼动仪</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+              </div>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+            </div>
+          </div>
+          <div class="thr-report hhrb-report">
+            <div class="hhrb-report-content">
+              <img src="images/two/two-hh-icon-allinone@3x.png" />
+              <h2>健康检测一体机</h2>
+              <div class="thrr-div">
+                <h3 class="hhrb-up">心率: <p><span>150</span>次/分</p></h3>
+                <h3 class="hhrb-down">脉率:<p><span>150</span>次/分</p></h3>
+              </div>
+              <h5>一天前</h5>
+              <a class="hhrb-btn-ckbg public-two-btn-01" href="#">查看报告</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript" src="js/jquery.easy-pie-chart.js"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        // 进度条时间
+        $('.percentage').easyPieChart({
+          barColor: '#31DCD7', // 环的颜色
+          trackColor: '#DCFBF3', // 环的底色
+          scaleColor: false, // 外环边缘色
+          lineCap: 'round',
+          size: 108,
+          lineWidth: 10,
+          animate: 1000
+        });
+
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '我的健康报告',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+
+      })
+    </script>
+
+  </body>
+
+</html>

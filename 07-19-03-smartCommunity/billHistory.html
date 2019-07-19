@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>账单历史</title>
+     <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+      
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bill.css"/>
+  </head>
+<style type="text/css">
+	html,body{
+	  background-color: #F8F8F8;
+	}
+</style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-14
+    	描述：.bh-item-ul子元素li:添加.bh-item-no表示未交清
+    	     .bh-item :添加 .bh-item-less表示收起子元素
+    -->
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="bill-history public-div">
+      <div class="bh-body">
+        <div class="bh-list">
+          <div class="bh-item">
+            <div class="bh-item-header">
+              <h2>2019年</h2><span class="iconfont icon-webicon512"></span><span class="iconfont icon-webicon215"></span>
+            </div>
+            <ul class="bh-item-ul">
+              <a href="#">
+                <li class="bh-item-no" >
+                  <h2>2月账单</h2>
+                  <p>未缴清</p>
+                  <h3><span class="bh-item-num">234.90</span><span class="iconfont icon-gengduo"></span></h3>
+                </li>
+              </a>
+              <a href="#">
+                <li >
+                  <h2>1月账单</h2>
+                  <p>已缴清</p>
+                  <h3><span class="bh-item-num">234.90</span><span class="iconfont icon-gengduo"></span></h3>
+                </li>
+              </a>
+            </ul>
+          </div>
+          <div class="bh-item">
+            <div class="bh-item-header">
+              <h2>2018年</h2><span class="iconfont icon-webicon512"></span><span class="iconfont icon-webicon215"></span>
+            </div>
+            <ul class="bh-item-ul">
+              <a href="#">
+                <li >
+                  <h2>12月账单</h2>
+                  <p>已缴清</p>
+                  <h3><span class="bh-item-num">234.90</span><span class="iconfont icon-gengduo"></span></h3>
+                </li>
+              </a>
+              <a href="#">
+                <li class="bh-item-no" >
+                  <h2>11月账单</h2>
+                  <p>未缴清</p>
+                  <h3><span class="bh-item-num">234.90</span><span class="iconfont icon-gengduo"></span></h3>
+                </li>
+              </a>
+              <a href="#">
+                <li >
+                  <h2>10月账单</h2>
+                  <p>已缴清</p>
+                  <h3><span class="bh-item-num">234.90</span><span class="iconfont icon-gengduo"></span></h3>
+                </li>
+              </a>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        // 点击年份收起月份信息
+        $('.bh-item-header').on('click',function(){
+          var class_click = 'bh-item-less',
+              class_father = 'bh-item',
+              class_siblings = 'bh-item-ul';
+          $(this).siblings('.'+class_siblings).fadeToggle(300);
+          // 展开
+          if($(this).parents('.'+class_father).hasClass(class_click)){
+            $(this).parents('.'+class_father).removeClass(class_click)
+          }
+          // 收取
+          else{
+            $(this).parents('.'+class_father).addClass(class_click)
+            
+          }
+          
+        })
+
+
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+      })
+    </script>
+  </body>
+
+</html>

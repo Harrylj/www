@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>我的健身房</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <!--<meta name="viewport" data-content-max content="width=device-width,initial-scale=1,user-scalable=no">-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css"/>
+  </head>
+  <style type="text/css">
+
+  </style>
+  <body id="body">
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="body-building-two public-div">
+      <div class="bbt-header">
+        <img class="img-100" src="images/gym/gym-img@3x.png"/>
+      </div>
+      <div class="bbt-body">
+        <div class="bbtb-map">
+          <div class="bbtb-btn-position-big"></div>
+          <div class="bbtb-btn-position-small"></div>
+          <h2>成都市锦城峰荟</h2>
+          <p>场馆介绍当你第一次站到那些高高低低的器材面，或者一次站在节奏强劲的舞曲中准备跳操时，绝大部分人会感到手足无措。</p>
+        </div>
+        <div class="bbtb-equipment">
+          <h2>健身设备</h2>
+          <div class="bbt-swiper-container swiper-container swiper-container-initialized swiper-container-horizontal">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img class="img-100" src="images/gym/gym-treadmill-img@3x.png"/>
+                  <div class="bbt-swiper-content">
+                    <h3>跑步机 36<span>元/次</span></h3>
+                    <h4>健身首选之一</h4>
+                    <div class="cmb-item-footer">
+                      <div class="cmb-item-footer-div">
+                        <div class="cmb-item-footer-div-one"></div>
+                        <div class="cmb-item-footer-div-two"></div>
+                        <div class="cmb-item-footer-div-three"></div>
+                      </div>
+                      <p>345 人已预约</p>
+                    </div>
+                    <div class="public-two-btn-01 bbt-btn-msyy">马上预约</div>
+                  </div>
+                  
+                  
+                </div>
+                <div class="swiper-slide">
+                  <img class="img-100" src="images/gym/gym-bike-img@3x.png"/>
+                  <div class="bbt-swiper-content">
+                    <h3>跑步机 36<span>元/次</span></h3>
+                    <h4>健身首选之一</h4>
+                    <div class="cmb-item-footer">
+                      <div class="cmb-item-footer-div">
+                        <div class="cmb-item-footer-div-one"></div>
+                        <div class="cmb-item-footer-div-two"></div>
+                        <div class="cmb-item-footer-div-three"></div>
+                      </div>
+                      <p>345 人已预约</p>
+                    </div>
+                    <div class="public-two-btn-01 bbt-btn-msyy">马上预约</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="bbtb-order">
+          <h2>我的健身预约</h2>
+          <a class="bbtb-btn-tjyy" href="#">添加预约</a>
+          <!--
+          	作者：648267773@qq.com
+          	时间：2019-06-26
+          	描述：.bbtb-order-item:添加.bbtb-order-item-ok:表示已完成
+          	                       添加.bbtb-order-item-no:表示待完成，默认待完成
+          -->
+          <div class="bbtb-order-list">
+            <div class="bbtb-order-item bbtb-order-item-no">
+              <img src="images/gym/gym-run@3x.png"/>
+              <h2>跑步机</h2>
+              <h3>3月9日 12:00-13:00</h3>
+              <a href="#"><div class="bbtb-btn-type">待完成</div></a>
+            </div>
+            <div class="bbtb-order-item bbtb-order-item-ok">
+              <img src="images/gym/gym-run@3x.png"/>
+              <h2>跑步机</h2>
+              <h3>3月9日 12:00-13:00</h3>
+              <a href="#"><div class="bbtb-btn-type">已完成</div></a>
+            </div>
+            <div class="bbtb-order-item bbtb-order-item-ok">
+              <img src="images/gym/gym-bikeimg@3x.png"/>
+              <h2>单车</h2>
+              <h3>3月9日 12:00-13:00</h3>
+              <a href="#"><div class="bbtb-btn-type">已完成</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>   
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      var swiper = new Swiper('.bbt-swiper-container', {
+        slidesPerView: 1.2,
+        spaceBetween: 15,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
+        },
+      });
+      $(function(){
+   
+        // 获取地址
+        $('.bbtb-btn-position-big').on('click',function(){
+          alert('获取地理位置')
+        })
+        
+        // $("body,html").scrollTop(200)
+
+        
+        // 滚动条滚出第一张图给头部加底色
+        window.onscroll = function(){
+          var a = document.documentElement.scrollTop || document.body.scrollTop;//滚动条y轴上的距离
+          var b = document.documentElement.clientHeight || document.body.clientHeight;//可视区域的高度
+          var c = document.documentElement.scrollHeight || document.body.scrollHeight;//可视化的高度与溢出的距离（总高度）
+          var img_height = $('.bbt-header').height();
+          var e_header = $('.two-public-header-div');
+          var bg_color = '#FF9645'; // 头部底色
+          // 255,151,67
+          // 若滚动高度大于
+          if(a >= img_height - e_header.height()){
+            e_header.css({'background':bg_color})
+          }
+          else{
+            // e_header.css({'background':'rgba(255,155,67,'+a/img_height+')'};
+          }
+          console.log(a/img_height)
+        }
+        
+         // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'transparent',
+          // 文字和左右菜单栏颜色
+          fontColor: 'white',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '我的健身房',
+          // 是否显示菜单栏 Boolean
+          navListShow: false,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+
+          },
+        });
+        
+      })
+    </script>
+
+  </body>
+
+</html>

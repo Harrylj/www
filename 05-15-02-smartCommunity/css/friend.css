@@ -562,7 +562,7 @@
   position: absolute;
   right: 5px;
   top: 5px;
-  z-index: 99;
+  z-index: 90;
   content: " ";
   width: 21px;
   height: 21px;

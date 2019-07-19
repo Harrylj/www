@@ -1,0 +1,117 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%
+}
+
+.btn {
+  display: inline-block;
+  background: #FF9645;
+  padding: .1rem .17rem;
+  color: #fff;
+  border-radius: .05rem;
+  cursor: pointer;
+  margin: .5rem
+}
+
+.modal-check {
+  /*background: rgba(238, 238, 238, .5);*/
+  display: table;
+  z-index: 100;
+  width: 100%;
+}
+
+.modal-check .modal-check-content {
+  font-family: microsoft yahei, sans-serif;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center
+}
+
+.modal-check .modal-check-content .check-box {
+  /*display: inline-block;*/
+  display: none;
+  width: 100%;
+  margin: auto;
+  background: #fff;
+  /*border: .01rem solid #e0e0e0;
+  box-shadow: 0 .02rem .15rem #c4c4c4;*/
+  padding: .3rem 0;
+  min-width: 3.2rem;
+  box-sizing: border-box;
+}
+
+.modal-check .modal-check-content .check-box .check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+.modal-check .modal-check-content .check-box .check-list li {
+  padding: 0 .2rem;
+  margin-bottom: .2rem;
+  font-size: .14rem;
+  line-height: .22rem;
+  color: #999;
+  text-align: left
+}
+
+.modal-check .modal-check-content .check-box .check-list li .check-icon {
+  width: .22rem;
+  height: .22rem;
+  background: url(../images/auto-unchecked.png) no-repeat center;
+  color: #fff;
+  display: block;
+  float: left;
+  margin-right: .13rem;
+  text-align: center
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checking {
+  color: #ff8c00
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checking .check-icon {
+  background: url(../images/auto-checking.png) no-repeat left center
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checked {
+  color: #666
+}
+
+.modal-check .modal-check-content .check-box .check-list li.checked .check-icon {
+  background: url(../images/auto-checked.png) no-repeat left center
+}
+
+.modal-check .modal-check-content .check-box .check-list li .check-text {
+  max-width: 3rem;
+  white-space: normal;
+  overflow: hidden;
+  display: block;
+  word-break: break-all
+}
+
+.modal-check .modal-check-content .check-box .check-bottom {
+  padding-top: .12rem
+}
+
+.modal-check .modal-check-content .check-box .check-bottom .check-btn {
+  display: inline-block;
+  width: 100%;
+  height: .36rem;
+  line-height: .36rem;
+  background: #e5e5e5;
+  font-size: .16rem;
+  color: #aaa;
+  text-align: center;
+  border-radius: .18rem;
+  cursor: not-allowed
+}
+
+.modal-check .modal-check-content .check-box .check-bottom .check-btn.active {
+  background: #FF9645;
+  color: #fff;
+  cursor: pointer
+}
+
