@@ -329,13 +329,15 @@
   position: relative;
   padding: .15rem 0 .9rem 0;
   margin-bottom: 1rem;
-  background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd933d), to(#fe6026));
-  background: -webkit-linear-gradient(90deg, #fd933d, #fe6026);
-  background: -moz-linear-gradient(90deg, #fd933d, #fe6026);
-  background: -o-linear-gradient(90deg, #fd933d, #fe6026);
-  background: linear-gradient(90deg, #fd933d, #fe6026);
   /* 标准的语法 */
 }
+    .ci-header, .ci-header:before {
+        background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd933d), to(#fe6026));
+        background: -webkit-linear-gradient(90deg, #fd933d, #fe6026);
+        background: -moz-linear-gradient(90deg, #fd933d, #fe6026);
+        background: -o-linear-gradient(90deg, #fd933d, #fe6026);
+        background: linear-gradient(90deg, #fd933d, #fe6026);
+    }
 .ci-header h2 {
   font-size: .18rem;
   color: white;
@@ -355,25 +357,27 @@
   background-image: url(../images/two/icon-activity@3x.png);
   background-position: left 50%;
 }
-.ci-header:before {
-  position: absolute;
-  left: 0;
-  bottom: -.8rem;
-  content: " ";
-  background-image: url(../images/two/bg-footer@3x.png);
-  background-size: 100% auto;
-  width: 100%;
-  height: .8rem;
-  background-repeat: no-repeat;
-  border-radius: .06rem;
-}
+    .ci-header:before {
+        position: absolute;
+        left: 0;
+        bottom: -.3rem;
+        content: " ";
+        background-size: 100% auto;
+        width: 100%;
+        height: .8rem;
+        background-repeat: no-repeat;
+        border-radius: .06rem;
+        border-radius: 0 0 18% 18%;
+    }
 .cih-div {
-  position: absolute;
-  top: .6rem;
-  left: 50%;
-  width: 92%;
-  margin-left: -46%;
-  box-shadow: 0 0 .05rem #CCCCCC;
+    position: absolute;
+    top: .6rem;
+    left: 50%;
+    width: 92%;
+    margin-left: -46%;
+    box-shadow: 0 0 .05rem #CCCCCC;
+    border-radius: 0.04rem;
+    overflow: hidden;
 }
 .cih-div-bg {
   position: relative;
@@ -482,4 +486,17 @@
 }
 .cib-div-img {
   margin: .1rem 0;
+}
+.cib-div-img .swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction{
+  bottom: 0.02rem;
+}
+.cib-div-img  .swiper-pagination-bullet{
+  background-color: white;
+  opacity: 1;
+  width: .08rem;
+  height: .08rem;
+}
+.cib-div-img .swiper-pagination-bullet-active{
+  background-color: #FE7265;
+  width: .14rem;
 }

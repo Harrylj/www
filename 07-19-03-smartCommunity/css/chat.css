@@ -14,12 +14,15 @@
 ::-webkit-scrollbar {
   /*width: .5rem;*/
 }
-
+label
+,ol
+,ul {
+    margin-bottom: 0;
+}
 
 /* 滚动槽 */
-
 ::-webkit-scrollbar-track {
-  border-radius: .1rem;
+    border-radius: .1rem;
 }
 
 
@@ -347,7 +350,7 @@
 
 .author-name {
   text-align: center;
-  margin: .15rem 0 .5rem 0;
+  margin: .15rem 0 .15rem 0;
   color: #888;
 }
 
@@ -359,6 +362,7 @@
   word-wrap: break-word;
   display: inline-block;
   position: relative;
+  font-size: .14rem;
 }
 
 .clearfloat .left .chat-message {
@@ -648,7 +652,7 @@ header {
 .footer-center .input-text {
   background: #fff;
   border: solid .01rem #ddd;
-  padding: .1rem !important;
+  padding: .065rem .1rem !important;
   font-size: .16rem !important;
   line-height: .18rem !important;
   overflow: hidden;
@@ -924,6 +928,7 @@ footer .mui-icon-paperplane {
   line-height: .24rem;
   color: #646464;
   min-width: .5rem;
+  font-size: .14rem;
 }
 
 .chat-header {
@@ -931,7 +936,7 @@ footer .mui-icon-paperplane {
   width: 100%;
   left: 0;
   top: .4rem;
-  padding: .1rem .15rem .5rem .15rem;
+  padding: .1rem .15rem .15rem .15rem;
   z-index: 999;
   background-color: white;
 }
@@ -970,4 +975,5 @@ footer .mui-icon-paperplane {
   line-height: .2rem;
   border-radius: .1rem;
   padding: 0 .15rem;
+  font-size: .12rem;
 }

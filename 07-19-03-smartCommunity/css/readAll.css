@@ -17,3 +17,17 @@
       text-indent: 2em;
       filter: blur(0.02rem);
     }
+    .read-me-content:before{
+       position: fixed;
+       z-index: 99;
+       top: 50%;
+       left: 0;
+       width: 100%;
+       text-align: center;
+       content:"资料审核中...";
+       font-size: .26rem;
+       line-height: .4rem;
+       letter-spacing: .05rem;
+       color: #333333;
+       transform:rotate(45deg)
+    }

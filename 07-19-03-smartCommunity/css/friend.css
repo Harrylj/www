@@ -348,10 +348,10 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
 .friend-info-input {
   padding-bottom: 2.4rem;
 }
-.friend-info-input .fii-header,
-.friend-info-input .fiib-ul li {
-  border-bottom: .01rem solid #E0E0E0;
-}
+    .friend-info-input .fii-header,
+    .friend-info-input .fiib-ul li {
+        border-bottom: .01rem solid #F1F1F1;
+    }
 .friend-info-input .fii-header,
 .friend-info-input .fiib-li-left,
 .friend-info-input .fiib-li-right {
@@ -370,8 +370,9 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
   background-color: #F5F5F5;
   color: #646464;
   font-size: .14rem;
-  padding: 0 .1rem;
-  line-height: .32rem;
+  height: initial;
+  line-height: normal;
+  padding: .06rem .1rem;
   border-radius: .16rem;
 }
 .friend-info-input .fiib-li-left-date {
@@ -535,9 +536,9 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
 .modal .close {
   display: none;
 }
-.modal.in .modal-dialog {
-  margin: 0;
-}
+    .modal.in .modal-dialog {
+        /* margin: 0;*/
+    }
 .modal-content {
   border: .01rem solid transparent;
   box-shadow: none;
@@ -586,4 +587,15 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
 .fims-btn-qd {
   width: 80%;
   margin: .3rem auto;
+}
+.friend-info-input select {
+    font-size: .14rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    line-height: .32rem;
+    direction:rtl;
+}
+.l-btn:hover {
+    background-color: #FF9645 !important;
 }

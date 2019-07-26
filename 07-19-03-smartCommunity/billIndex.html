@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/mui.min.css">
     <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css" />
     <link rel="stylesheet" type="text/css" href="css/app.css">
@@ -44,25 +45,25 @@
             <ul class="bh-div-ul">
               <li>
                 <p>
-                  <span class="bh-span-02">&Omicron;</span>
+                  <span class='bh-span-02 iconfont icon-yuancircle46'></span>
                   <span class="bh-span-01">物业费</span>
                 </p>
-                <p>&yen;<span class="fi-number-01">120.00</span></p>
+                <p>&yen;<span class="fi-number-01">0.00</span></p>
               </li>
               <li>
                 <p>
-                  <span class="bh-span-02">&Omicron;</span>
+                  <span class="bh-span-02 iconfont icon-yuancircle46"></span>
                   <span class="bh-span-01">辣鸡处理费</span>
                 </p>
 
-                <p>&yen;<span class="fi-number-02">120.00</span></p>
+                <p>&yen;<span class="fi-number-02">0.00</span></p>
               </li>
               <li>
                 <p>
                   <span class="bh-span-02">&Omicron;</span>
                   <span class="bh-span-01">其他</span>
                 </p>
-                <p>&yen;<span class="fi-number-03">120.00</span></p>
+                <p>&yen;<span class="fi-number-03">0.00</span></p>
               </li>
             </ul>
           </div>
@@ -191,9 +192,10 @@
           // 数据获取
           var fi_number_array = [parseInt($('.fi-number-01').html()),parseInt($('.fi-number-02').html()),parseInt($('.fi-number-03').html())];
           // 初始化生成图标
+          console.log(fi_number_array)
           echart_fi(fi_number_array[0],fi_number_array[1],fi_number_array[2]);
           // 这里搞个假数据，自动加一百
-          $('.fi-number-01').html(parseInt($('.fi-number-01').html())+100)
+           $('.fi-number-01').html(parseInt($('.fi-number-01').html())+100)
         }
         
         // 初始化生成一下

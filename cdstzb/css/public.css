@@ -481,17 +481,34 @@ a:hover,
 .index-footer {
   position: relative;
   border-top: 1px solid #e0e0e0;
-  padding: 20px 15px 20px 100px;
+  padding: 20px 15px 20px 20px;
   background-color: white;
 }
 
+.index-footer img{
+  margin-right: 15px;
+  max-width: 120px;
+}
 .index-footer .title-img {
-  position: absolute;
+  /*position: absolute;
   left: 24px;
   top: 50%;
   margin-top: -29px;
   width: 50px;
   height: 58px;
+  */
+}
+.index-footer-left{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: left;
+}
+.index-footer-right{
+  width: 65%;
+}
+.index-footer-left
+,.index-footer-right{
+  margin-left: 24px;
 }
 
 .index-footer h2 {

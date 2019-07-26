@@ -114,15 +114,20 @@
         <div class="clear"></div>
       </div>
       <div class="tzif-body index-footer">
-        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="2" CHANNELCODE="publicFooter">
-          <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
-        </CMSPRO_DOCUMENTS>
-        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="publicFooter">
-          <h2><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></h2>    
-        </CMSPRO_DOCUMENTS>
-        <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="1" CHANNELCODE="publicFooter">
-          <h2><CMSPRO_DOCUMENT FIELD="title" NUM="">标题</CMSPRO_DOCUMENT></h2>    
-        </CMSPRO_DOCUMENTS>
+          <div class="fl index-footer-left">
+            <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="4" STARTPOS="1" CHANNELCODE="publicFooter">
+                <a href='<CMSPRO_DOCUMENT FIELD="subTitle" NUM="">链接地址</CMSPRO_DOCUMENT>'><CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS></a>
+            </CMSPRO_DOCUMENTS>
+            
+          </div>
+          <div class="fl index-footer-right">
+             <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="publicFooter">
+              <h2>
+                <CMSPRO_DOCUMENT FIELD="content" NUM="">内容</CMSPRO_DOCUMENT>
+              </h2>    
+            </CMSPRO_DOCUMENTS>
+          </div>
+          <div class="clear"></div>
       </div>
     </div>
 

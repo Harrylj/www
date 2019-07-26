@@ -26,7 +26,7 @@
 .house .house-header {
   position: relative;
   padding: .1rem .2rem;
-  border-radius: ..08rem;
+  border-radius: .08rem;
 }
 .house .house-header h2 {
   line-height: .2rem;
@@ -40,10 +40,10 @@
   float: right;
   color: #323232;
   font-size: .16rem;
-  line-height: .32rem;
+  line-height: normal;
   border-radius: .16rem;
   border: .01rem solid #E0E0E0;
-  padding: 0 .1rem;
+  padding: 0.06rem .1rem;
 }
 .house .house-header h3 {
   color: #999999;
@@ -72,7 +72,7 @@
 .house .house-header-top h1 {
   display: inline-block;
   font-size: .17rem;
-  color: #010101;
+  color: #333333;
   line-height: .32rem;
   font-weight: bold;
 }
@@ -296,7 +296,7 @@
 .house-detail .hdb-item h3 {
   line-height: .52rem;
   font-size: .16rem;
-  color: #010101;
+  color: #333333;
   font-weight: bold;
 }
 .house-detail .hdb-item a {
@@ -318,7 +318,7 @@
 .house-detail .hdb-item-footer h3 {
   line-height: .6rem;
   font-size: .16rem;
-  color: #010101;
+  color: #333333;
   font-weight: bold;
 }
 .house-detail .hdb-item-footer .hdb-user-div-new {
@@ -476,7 +476,7 @@
   margin-left: -.2rem;
 }
 .house-detail .mui-popover.mui-popover-action .mui-table-view {
-  color: #010101;
+  color: #333333;
   font-size: .16rem;
 }
 .house-detail .mui-popover.mui-popover-action .mui-table-view .mui-table-view-cell a:hover {
@@ -514,7 +514,7 @@
   background-color: transparent;
   line-height: .4rem;
   padding: .1rem .6rem .1rem .2rem;
-  color: #010101;
+  color: #333333;
   font-size: .18rem;
   margin: 0;
   text-decoration: .02rem;
@@ -524,7 +524,7 @@
   right: .2rem;
   top: 50%;
   margin-top: -.12rem;
-  z-index: 999;
+  z-index: 91;
   width: .24rem;
   height: .24rem;
   background-image: url(../images/edit-delete@2x.png);
@@ -567,12 +567,12 @@
   text-align: center;
   border-radius: .14rem;
   font-size: .14rem;
-  color: #010101;
+  color: #333333;
 }
 .house-card .hc-body .hcb-card h1 {
   line-height: .42rem;
   font-size: .22rem;
-  color: #010101;
+  color: #333333;
   text-align: center;
 }
 .house-card .hc-body .hcb-card h3 {
@@ -767,7 +767,7 @@
   width: 1.1rem;
   height: 1.1rem;
   background-color: #F5F5F5;
-  color: #010101;
+  color: #333333;
   text-align: center;
   line-height: 1.1rem;
   margin: 0 auto .3rem auto;

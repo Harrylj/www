@@ -25,20 +25,20 @@
       
       .che_tit {
         text-align: center;
-        padding: 20px;
+        padding: .2rem;
       }
       
       .ul_pro {
         background-color: #CED3D9;
         text-align: center;
-        padding: 4px 2px;
-        font-size: 14px;
+        padding: .04rem .02rem;
+        font-size: .14rem;
       }
       
       .ul_pro li {
         float: left;
         width: 11.11%;
-        padding: 2px;
+        padding: .02rem;
         box-sizing: border-box;
       }
       
@@ -59,11 +59,10 @@
       .ul_pro li span {
         display: block;
         background-color: #fff;
-        border-radius: 4px;
-        box-shadow: 2px 2px 2px #888888;
-        /* max-width:48px; margin:0 auto; */
-        line-height: 32px;
-        padding-top: 2px;
+        border-radius: .04rem;
+        box-shadow: .02rem .02rem .02rem #888888;
+        line-height: .32rem;
+        padding-top: .02rem;
       }
       
       .ul_pro li span:active {
@@ -72,9 +71,8 @@
       }
       
       .ul_input {
-        padding: 10px 0;
-        /*width: 350px;*/
-        max-width: 500px;
+        padding: .1rem 0;
+        max-width: 5rem;
         display: flex;
         justify-content: space-between;
         margin: 0 auto;
@@ -83,34 +81,34 @@
       .ul_input li {
         float: left;
         width: 14%;
-        padding: 2px;
+        padding: .02rem;
         text-align: center;
       }
       
       .ul_input li span {
         display: block;
         background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        width: 40px;
+        border: .01rem solid #ccc;
+        border-radius: .04rem;
+        width: .4rem;
         margin: 0 auto;
-        height: 40px;
-        line-height: 40px;
+        height: .4rem;
+        line-height: .4rem;
         color: #646464;
-        font-size: 16px;
+        font-size: .16rem;
       }
       
       .ul_keybord {
         background-color: #CED3D9;
         text-align: center;
-        padding: 4px 2px;
-        font-size: 14px;
+        padding: .04rem .02rem;
+        font-size: .14rem;
       }
       
       .ul_keybord li {
         float: left;
         width: 10%;
-        padding: 2px;
+        padding: .02rem;
         box-sizing: border-box;
       }
       
@@ -139,11 +137,10 @@
       .ul_keybord li span {
         display: block;
         background-color: #fff;
-        border-radius: 4px;
-        box-shadow: 2px 2px 2px #888888;
-        /* max-width:48px; margin:0 auto; */
-        line-height: 32px;
-        padding-top: 2px;
+        border-radius: .04rem;
+        box-shadow: .02rem .02rem .02rem #888888;
+        line-height: .32rem;
+        padding-top: .02rem;
       }
       
       .ul_keybord li span:active {

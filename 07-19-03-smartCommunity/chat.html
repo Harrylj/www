@@ -206,30 +206,31 @@
 				chatManager.im.sendMsg(event.detail.revId, event.detail.msg, event.detail.isSystem);
 				*/
 
-        /*
-        // 初始化 连接服务器    -回调是收消息的方法,用户id,消息,发送时间，
-        chatManager.im.init("cdsdtz", function(userId, msg, dateTime, isSystem) {
-          var chat_content = `<div class="clearfloat">
-                            <div class="author-name">
-                                <small class="chat-date">${dateTime}</small>
-                            </div>
-                            <div class="left">
-                                <div class="chat-avatars"><img src="images/chat/icon01.png" alt="头像"/></div>
-                                <div class="chat-message">
-                                    ${msg}
-                                </div>
-                            </div>
-                        </div>`;
-
-          $('.chatBox-content-demo').append(chat_content);
-
-          console.log(msg)
-        });
-        */
+        
+//      // 初始化 连接服务器    -回调是收消息的方法,用户id,消息,发送时间，
+//      chatManager.im.init("cdsdtz", function(userId, msg, dateTime, isSystem) {
+//        var chat_content = `<div class="clearfloat">
+//                          <div class="author-name">
+//                              <small class="chat-date">${dateTime}</small>
+//                          </div>
+//                          <div class="left">
+//                              <div class="chat-avatars"><img src="images/chat/icon01.png" alt="头像"/></div>
+//                              <div class="chat-message">
+//                                  ${msg}
+//                              </div>
+//                          </div>
+//                      </div>`;
+//
+//        $('.chatBox-content-demo').append(chat_content);
+//
+//        console.log(msg)
+//      });
+        
         // 点击发送按钮
         $('.chat-btn-fs').on('click', function() {
           //var textContent = $(".div-textarea").html().replace(/[\n\r]/g, '<br>')
           var textContent = $(".div-textarea").val().replace(/[\n\r]/g, '<br>');
+          console.log($(".div-textarea").val())
           // 用户id
           var user_id = '3222a169-cdab-4e3a-bba9-124676f64668';
           // 时间
@@ -243,7 +244,7 @@
                     <div class="author-name">
                       <div class="chat-type-div">${val}</div>
                     </div>
-                  </div>
+                  </div>`
             $('.chatBox-content-demo').append(ee)
           }
           
@@ -262,7 +263,7 @@
             s_bottom()
 
             // 发送消息
-            // chatManager.im.sendMsg(user_id, textContent, 0);
+//          chatManager.im.sendMsg(user_id, textContent, 0);
             console.log(textContent)
             
           }

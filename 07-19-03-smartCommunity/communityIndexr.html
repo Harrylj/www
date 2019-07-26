@@ -106,7 +106,24 @@
           </div>
         </div>
         <div class="cib-div cib-div-img">
-          <img class="img-100" src="images/two/ci-02@3x.png"/>
+          <div class="swiper-container swiper-container swiper-container-initialized swiper-container-horizontal">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide swiper-slide-start">
+                 <img class="img-100" src="images/two/ci-02@3x.png"/>
+                </div>
+                <div class="swiper-slide swiper-slide-ing">
+                  <img class="img-100" src="images/two/ci-02@3x.png"/>
+                </div>
+                <div class="swiper-slide swiper-slide-end">
+                  <img class="img-100" src="images/two/ci-02@3x.png"/>
+                </div>
+                <div class="swiper-slide swiper-slide-start">
+                  <img class="img-100" src="images/two/ci-02@3x.png"/>
+                </div>
+              </div>
+              <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div>
+            </div>
+          
         </div>
         <div class="cib-div">
           <div class="cib-div-title">最新资讯</div>
@@ -132,11 +149,33 @@
     	var swiper = new Swiper('.cib-swiper-container', {
         slidesPerView: 2.2,
         spaceBetween: 15,
-        pagination: {
-          el: '.swiper-pagination',
-          clickable: true,
-        },
       });
+      
+      var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            //布局分栏
+            slidesPerView: 1,
+            centeredSlides: true,
+            // autoplay: true,
+            spaceBetween: 15,
+            autoplay: {
+              delay: 15000,//1秒切换一次
+            },
+            //是否循环拖动
+            loop: true,
+            //initialSlide: @ViewBag.Index,
+            //需要指针手抓效果
+            grabCursor: true,
+            onSlideChangeStart: function (swiper) {
+                alert('事件触发了;');
+            },
+            pagination: {
+               el: '.swiper-pagination',
+               clickable: true,
+           },
+
+
+    })
     </script>
 
   </body>

@@ -178,15 +178,7 @@
   margin: 0 -.2rem;
   height: .3rem;
 }
-.me-setting .msf-btn-tcdl {
-  display: block;
-  width: 100%;
-  font-size: .17rem;
-  color: #E91A0E;
-  line-height: .6rem;
-  text-align: center;
-  font-weight: bold;
-}
+
 .me-modify-password .mmp-body {
   padding: .15rem;
 }
@@ -436,7 +428,9 @@
   color: #6D6E8D;
   padding-right: 0;
 }
-.me-setting-info .msi-btn-tcdl {
+.me-setting-info .msi-btn-tcdl
+,.me-setting .msf-btn-tcdl {
+  display: block;
   margin: .3rem auto;
   height: .46rem;
   line-height: .46rem;
