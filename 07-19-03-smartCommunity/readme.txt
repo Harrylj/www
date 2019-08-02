@@ -1,4 +1,12 @@
-﻿.public-two-btn-01: 公用按钮样式
+﻿
+2019-08-02
+ipad兼容问题，低版本的安卓
+icont字体图标
+
+ES6的兼容问题
+https://blog.csdn.net/wangaiheng/article/details/56481631
+
+.public-two-btn-01: 公用按钮样式
 
 弹出层和遮罩层 
 层级调整

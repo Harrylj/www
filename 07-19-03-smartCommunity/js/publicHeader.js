@@ -171,7 +171,7 @@
       var this_content = `
       <div class="two-public-header-div" style="background-color:${opts.bgColor}">
         <div class="two-public-header">
-          <div class="two-public-header-return" style="display:${opts.returnShow?'flex':'none'}"><span class="iconfont icon-fanhui" style="color:${opts.fontColor}"></span></div>
+          <div class="two-public-header-return" style="display:${opts.returnShow?'':'none'}"><span class="iconfont icon-fanhui" style="color:${opts.fontColor}"></span></div>
           <div class="two-public-header-title" style="color:${opts.fontColor}">${opts.titleName}</div>
           <div class="two-public-header-more" style="display:${opts.navListShow?'flex':'none'}"><span class="iconfont icon-icon-test" style="color:${opts.fontColor}"></span></div>
           <div class="two-public-header-nav-div">

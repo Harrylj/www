@@ -427,19 +427,19 @@
   font-size: .17rem;
   color: #6D6E8D;
   padding-right: 0;
+  background-color:transparent;
 }
-.me-setting-info .msi-btn-tcdl
-,.me-setting .msf-btn-tcdl {
-  display: block;
-  margin: .3rem auto;
-  height: .46rem;
-  line-height: .46rem;
-  width: 1.4rem;
-  text-align: center;
-  border-radius: .23rem;
-  background-color: #F5F5F5;
-  color: #E91A0E;
-  font-size: .17rem;
+.me-setting-info .msi-btn-tcdl, .me-setting .msf-btn-tcdl {
+    display: block;
+    margin: .3rem auto;
+    height: .46rem;
+    line-height: .46rem;
+    width: 1.4rem;
+    text-align: center;
+    border-radius: .23rem;
+    background-color: #F5F5F5;
+    color: #E91A0E;
+    font-size: .17rem;
 }
 .me-setting-info .msi-item-05 {
   border: none!important;
@@ -540,19 +540,7 @@
 .me-new .mn-body-ok .mnb-list-div .mnc-item p {
   line-height: .26rem;
 }
-.me-new .mn-body-ok .mnb-list-div .mnc-item:before {
-  position: absolute;
-  left: -.6rem;
-  top: 50%;
-  margin-top: -.22rem;
-  width: .44rem;
-  height: .44rem;
-  content: " ";
-  color: transparent;
-  background-image: url(../images/me-notice-icon-icon@2x.png);
-  background-size: 100% 100%;
-  background-position: 0 center;
-}
+
 .me-new-more .mn-body-no {
   display: none;
 }

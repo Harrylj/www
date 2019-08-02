@@ -23,6 +23,17 @@
     body {
       background-color: white;
     }
+    .two-public-header-return
+    ,.two-public-header-more
+    ,.two-public-header-content{
+      border: 1px solid red;
+    }
+    .two-public-header-return{
+      display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;
+      -webkit-box-orient:column;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;
+      -webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;
+      /*line-height: .44rem;*/
+    }
   </style>
 
   <body>
@@ -36,7 +47,10 @@
     
     <!-- 公用头部-->
     <div class="two-public-header-content"></div>
-    <div class="me-index public-div" style="height: 2000px;">
+    <div class="me-index public-div" style="height: 2000px; padding-top: 1rem;">
+      66777788889999999
+      <h1>class------<span class="iconfont icon-fanhui"></span></h1>
+      <h1>unicode------<i class="iconfont">&#xe63b;</i></h1>
       
       <!--<div class="two-public-header-div">
         <div class="two-public-header">
@@ -59,10 +73,12 @@
     </div>
 
     <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
+    <script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/babel" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/babel" charset="utf-8"></script>
+    <script type="text/babel" >
       $(function() {
-        
+        alert(1)
         // 公用头部
         $('.two-public-header-content').publicHeader({
           // 父级元素
@@ -147,6 +163,8 @@
           bbb: '3333333',
         });
         console.log(optsss)
+        
+        alert(2)
       })
     </script>
 

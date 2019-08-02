@@ -3,6 +3,7 @@
     padding: 0;
 }
 
+
 .l-btn {
     display: inline-block;
     outline: none;
@@ -17,7 +18,7 @@
 }
 
     .l-btn:hover {
-        background: #8078e3;
+        background: #FF9645;
         animation: anniu 1s infinite;
     }
 
