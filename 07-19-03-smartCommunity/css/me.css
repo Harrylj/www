@@ -4,15 +4,21 @@
 }
 .me-index .mi-top {
   height: .9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
-  flex-direction: row;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   padding: .1rem .2rem 0 .2rem;
   margin: 0 -.2rem;
-  background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd933d), to(#fe6026));
-  background: -webkit-linear-gradient(90deg, #fd933d, #fe6026);
-  background: -moz-linear-gradient(90deg, #fd933d, #fe6026);
   background: -o-linear-gradient(90deg, #fd933d, #fe6026);
+  background: -webkit-gradient(linear, left top, right top, from(#fd933d), to(#fe6026));
+  background: -o-linear-gradient(left, #fd933d, #fe6026);
   background: linear-gradient(90deg, #fd933d, #fe6026);
   /* 标准的语法 */
 }
@@ -73,8 +79,12 @@
   margin-bottom: .15rem;
   background-color: transparent;
   line-height: .25rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: .15rem;
   color: white;
   border-radius: .06rem .06rem 0 0;
@@ -96,8 +106,12 @@
 }
 .me-index .mi-body .mibl-item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   line-height: .6rem;
   padding: 0 .2rem 0 .4rem;
   border-bottom: .01rem solid #F5F5F5;
@@ -280,6 +294,8 @@
   margin-bottom: .2rem;
 }
 .me-phone-old .mpo-body .mpo-phone-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .me-phone-old .mpo-body .mpo-phone-div h2 {
@@ -304,8 +320,12 @@
   padding: 0 .15rem 0 0;
 }
 .me-phone-old .mpo-body .mpo-number-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .me-phone-old .mpo-body .mpo-number-div .mpo-input-yzm {
   width: 69%;
@@ -416,9 +436,16 @@
   border-bottom: .01rem solid #E0E0E0;
 }
 .me-setting-info .msi-body .msi-item-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: .17rem;
   color: #6D6E8D;
 }
@@ -518,8 +545,12 @@
   border-bottom: .01rem solid #E0E0E0;
 }
 .me-new .mn-body-ok .mnb-list-div .mnc-item .mnc-item-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .me-new .mn-body-ok .mnb-list-div .mnc-item h2 {
   font-size: .17rem;

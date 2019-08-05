@@ -1,9 +1,16 @@
 .friend-index {
   min-height: 100%;
   padding: .6rem .2rem 0 .2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .friend-index .fi-body img {
   width: 100%;
@@ -27,7 +34,8 @@
   padding: .2rem;
   background-color: white;
   border-radius: .12rem;
-  box-shadow: 0 0 .08rem #DEDEDE;
+  -webkit-box-shadow: 0 0 .08rem #DEDEDE;
+          box-shadow: 0 0 .08rem #DEDEDE;
 }
 .friend-to-me .ftm-content h5 {
   font-size: .12rem;
@@ -60,8 +68,12 @@
 }
 .friend-to-me .ftm-content .ftmc-ul li {
   padding: .06rem .2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   color: #646464;
   font-size: .16rem;
   line-height: .32rem;
@@ -72,9 +84,16 @@
   line-height: .32rem;
 }
 .friend-to-me .ftmc-body .ftmc-ewm-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   position: relative;
   border: .01rem solid #F1F1F1;
   border-radius: .04rem;
@@ -173,7 +192,8 @@
 }
 .friend-index-list .fil-body .fibl-item {
   position: relative;
-  box-shadow: 0 0 .05rem #CCCCCC;
+  -webkit-box-shadow: 0 0 .05rem #CCCCCC;
+          box-shadow: 0 0 .05rem #CCCCCC;
   border-radius: .08rem;
   z-index: 99;
   background-color: white;
@@ -377,9 +397,15 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
 }
 .friend-info-input .fiib-li-left-date {
   width: .8rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
-  flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .friend-info-input .fiib-li-right-date {
   display: table-cell;
@@ -408,8 +434,12 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
   padding: 0 .2rem;
 }
 .friend-info-input .fii-body .fiib-ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .friend-info-input .fii-body .fiib-ul li:last-child {
   border: none;
@@ -541,7 +571,8 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
     }
 .modal-content {
   border: .01rem solid transparent;
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 .fi-modal-sex-content h4 {
   font-size: .18rem;
@@ -552,8 +583,11 @@ div.electricity-administration .fil-body .fibl-item-btn-delete {
   letter-spacing: .03rem;
 }
 .fims-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
 }
 .fims-list h3 {
   color: #969696;

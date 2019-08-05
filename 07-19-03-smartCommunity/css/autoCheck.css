@@ -39,7 +39,8 @@ body {
   box-shadow: 0 .02rem .15rem #c4c4c4;*/
   padding: .3rem 0;
   min-width: 3.2rem;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .modal-check .modal-check-content .check-box .check-list {
@@ -114,4 +115,3 @@ body {
   color: #fff;
   cursor: pointer
 }
-

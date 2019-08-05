@@ -46,8 +46,12 @@
   background-color: white;
 }
 .e-body-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .e-body-top h2 {
   font-size: .18rem;
@@ -172,10 +176,14 @@
   background-color: #F7F7FB;
 }
 .esh-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   width: 86%;
   margin: 0 auto;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .esh-ul li {
   background-color: #F0F0F0;
@@ -242,7 +250,8 @@
 .esb-list-div .esb-item {
   position: relative;
   border-radius: .06rem;
-  box-shadow: 0 0 .04rem #CCCCCC;
+  -webkit-box-shadow: 0 0 .04rem #CCCCCC;
+          box-shadow: 0 0 .04rem #CCCCCC;
   padding: .2rem 1rem .2rem 116px;
   margin-bottom: .15rem;
 }
@@ -298,7 +307,8 @@
   padding-right: 0;
 }
 .electricity-administration .fil-body .fibl-item {
-  box-shadow: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
   border-bottom: 1px solid #E0E0E0;
   padding-left: .9rem;
 }
@@ -351,8 +361,12 @@
   border-radius: .04rem;
 }
 .eaa-body .eea-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .eaa-body .eea-select-div {
   width: 48%;

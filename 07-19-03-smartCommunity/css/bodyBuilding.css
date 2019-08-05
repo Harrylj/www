@@ -116,8 +116,12 @@
   padding: 0 .2rem;
 }
 .bbrh-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: .2rem 0;
 }
 .bbrh-ul li {
@@ -140,6 +144,8 @@
 }
 .bbrb-item {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: .8rem;
 }
@@ -156,9 +162,16 @@
   overflow: hidden;
 }
 .bbrb-item-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 22%;
 }
 .bbrb-item-left p {
@@ -169,8 +182,12 @@
 }
 .bbrb-item-right {
   border-left: .01rem solid #F0EFF8;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 78%;
 }
 .bbrb-item-right h3 {
@@ -208,7 +225,9 @@
   border-radius: 50%;
 }
 .bbrb-item-ok .bbrb-item-right {
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   padding-left: .6rem;
 }
 .bbrb-item-ok .bbrb-item-right p {
@@ -239,8 +258,12 @@
   text-align: right;
 }
 .bbro-div-one {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .bbro-div-one h4 {
   line-height: .7rem;
@@ -248,8 +271,12 @@
   color: #FF0000;
 }
 .bbro-ul-time {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .bbro-ul-time li {
   width: 19.6%;
@@ -354,7 +381,8 @@
   padding: .2rem;
   border-radius: .08rem;
   border: .01rem solid #F5F5F5;
-  box-shadow: 0 0 .08rem #F5F5F5;
+  -webkit-box-shadow: 0 0 .08rem #F5F5F5;
+          box-shadow: 0 0 .08rem #F5F5F5;
   background-color: white;
 }
 .bbrm-card h1 {
@@ -545,7 +573,9 @@
 .bbt-swiper-container h3 span {
   font-weight: 100;
   font-size: .14rem;
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
 }
 .bbt-swiper-container h4 {
   font-size: .13rem;
@@ -700,8 +730,12 @@
   line-height: .32rem;
 }
 .bbrth-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .bbrth-ul li {
   cursor: pointer;
@@ -737,9 +771,16 @@
   padding: .1rem 0;
 }
 .bbrtb-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   background-color: white;
   position: relative;
   padding: .1rem 1rem .1rem .8rem ;
@@ -780,7 +821,8 @@
 }
 .bbrtb-item .cmb-item-footer {
   margin: .05rem 0 0 0;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .bbrtb-item-no .bbrtb-btn-qyy {
   background-color: #DEDEDE;
@@ -824,8 +866,11 @@ div.mui-poppicker-body {
 }
 .bbrf-ul {
   margin-top: .2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-around;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   min-width: 3.2rem;
 }
 .bbrf-ul li {
@@ -835,9 +880,16 @@ div.mui-poppicker-body {
 }
 .bbrf-btn-tqjs {
   background-color: #ed5866;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .bbrf-btn-tqjs h2 {
   width: .2rem;

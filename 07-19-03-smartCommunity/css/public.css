@@ -45,6 +45,8 @@ div.electricity{
   content: " ";
   border-radius: 0 0 .16rem .16rem;
   color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#F5F5F5), to(white));
+  background: -o-linear-gradient(#F5F5F5, white);
   background: linear-gradient(#F5F5F5, white); /* 标准的语法 */
 }
 
@@ -53,7 +55,8 @@ div.electricity{
   padding: 0;
   margin: 0;
   outline: none;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   letter-spacing: .02rem;
   /*font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;*/
   font-family:'Helvetica Neue',Helvetica,sans-serif;
@@ -467,7 +470,8 @@ a.fontcolor1 {
 }
 
 .boxsha5 {
-  box-shadow: .05rem .05rem;
+  -webkit-box-shadow: .05rem .05rem;
+          box-shadow: .05rem .05rem;
 }
 
 .rela {
@@ -584,6 +588,8 @@ a.fontcolor1 {
        position: relative;
        margin: .25rem -.15rem;
        height: .01rem;
+       background-image: -webkit-gradient(linear, left top, right top, from(#ccc), color-stop(50%, #ccc), color-stop(50%, transparent));
+       background-image: -o-linear-gradient(left, #ccc 0%, #ccc 50%, transparent 50%);
        background-image: linear-gradient(to right, #ccc 0%, #ccc 50%, transparent 50%);
        background-size: .12rem .01rem;
        background-repeat: repeat-x;
@@ -728,9 +734,14 @@ div.mui-dtpicker
   line-height: .4rem;
 }
 .two-share-list{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 .two-share-list li{
   margin-right: .3rem;
@@ -816,9 +827,16 @@ div.two-center-content{
   background-size: .22rem .22rem;
   background-repeat: no-repeat;
   text-align: left;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-position: center center;
 }
 .two-public-header-return
@@ -924,8 +942,12 @@ div.two-center-content{
 
 .cmb-item-footer{
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: left;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   
 }
 .cmb-item-footer p{
@@ -934,6 +956,8 @@ div.two-center-content{
      line-height: 0.18rem;
 }
 .cmb-item-footer-div{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   height: .18rem;
   margin-right: .08rem;
@@ -965,8 +989,12 @@ div.two-center-content{
   text-align: center;
 }
 .modal-small-footer{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   padding: 0;
 }
 .two-small-btn-qd
@@ -991,10 +1019,17 @@ div.two-center-content{
 }
 .fib-img-div{
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin: .2rem auto;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background-image: url(../images/two/face-sao@3x.png);
   background-size: 100% 100%;
   width: 2.8rem;

@@ -27,7 +27,9 @@
   display: inline-block;
   font-size: .12rem;
   /* transform: scale(2,2); */
-  transform: scale(0.8);
+  -webkit-transform: scale(0.8);
+      -ms-transform: scale(0.8);
+          transform: scale(0.8);
 
 }
 
@@ -313,8 +315,12 @@
   padding-left: 1.5rem;
 }
 .bh-div-ul li{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .bh-div-ul li:first-child .bh-span-02{
   color: #4FB2F0;
@@ -333,8 +339,12 @@
   height: 1.2rem;
 }
 .bh-one{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .bh-one h2{
   color: #676767;
@@ -358,6 +368,8 @@
 }
 
 .bb-list .bbl-item-header{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .bbl-item{
@@ -414,8 +426,12 @@
     padding: 0 .2rem;
     width: 100%;
     height: .54rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: space-between;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     background-color: white;
     border-top: 1px solid #E0E0E0;
 }
@@ -424,9 +440,14 @@
 }
 
 .bf-right{
-  flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   line-height: .54rem;
 }
 .bf-right p{
@@ -454,14 +475,20 @@
   margin-bottom: .15rem;
 }
 .bpp-header-top{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   
 }
 .bpp-header-top p{
   font-size: .14rem;
   color: #999999;
-  transform: scale(0.85);
+  -webkit-transform: scale(0.85);
+      -ms-transform: scale(0.85);
+          transform: scale(0.85);
   margin: 0 -.15rem;
 }
 .bpp-header h3{
@@ -559,6 +586,8 @@
   padding:.15rem .2rem;
 }
 .bh-item-header{
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 0 .2rem;
 }
@@ -615,6 +644,8 @@
 }
 .bh-item-ul h3{
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   right: .2rem;
   top: 50%;

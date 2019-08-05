@@ -65,8 +65,11 @@
 }
 .house .house-header-top {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
 }
 .house .house-header-top h1 {
@@ -140,8 +143,12 @@
   padding: .2rem;
 }
 .house .house-body .hb-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .house .house-body .hb-top h1 {
   font-size: .17rem;
@@ -212,6 +219,8 @@
   content: " ";
   color: transparent;
   font-size: .01rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.05)));
+  background: -o-linear-gradient(transparent, rgba(0, 0, 0, 0.05));
   background: linear-gradient(transparent, rgba(0, 0, 0, 0.05));
 }
 .house .house-footer .house-footer-item:last-child:after {
@@ -289,8 +298,12 @@
   padding: 0 .2rem;
 }
 .house-detail .hdb-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   line-height: .52rem;
 }
 .house-detail .hdb-item h3 {
@@ -322,9 +335,14 @@
   font-weight: bold;
 }
 .house-detail .hdb-item-footer .hdb-user-div-new {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .house-detail .hdb-item-footer .hudn-btn-add,
 .house-detail .hdb-item-footer .hudn-user-item {
@@ -345,7 +363,8 @@
   padding-top: .9rem;
 }
 .house-detail .hdb-item-footer .hudn-user-item {
-  box-shadow: 0 0 .04rem #999999;
+  -webkit-box-shadow: 0 0 .04rem #999999;
+          box-shadow: 0 0 .04rem #999999;
   border-radius: .06rem;
   position: relative;
   padding-top: ..08rem;
@@ -404,12 +423,20 @@
   border-radius: .02rem;
 }
 .house-detail .hdb-item-footer .hdb-user-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .house-detail .hdb-item-footer .hdb-user-img-all {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-start;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 .house-detail .hdb-item-footer .hdb-user-img {
   position: relative;
@@ -496,7 +523,8 @@
   height: .01rem;
   content: '';
   -webkit-transform: scaleY(0.5);
-  transform: scaleY(0.5);
+  -ms-transform: scaleY(0.5);
+      transform: scaleY(0.5);
   background-color: #c8c7cc;
 }
 .house-detail-address-modify {
@@ -517,7 +545,8 @@
   color: #333333;
   font-size: .18rem;
   margin: 0;
-  text-decoration: .02rem;
+  -webkit-text-decoration: .02rem;
+          text-decoration: .02rem;
 }
 .house-detail-address-modify .hdam-btn-clear {
   position: absolute;
@@ -745,8 +774,12 @@
   padding: .2rem;
 }
 .house-person-type .hpt-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 .house-person-type .hpt-header h2 {
   color: #646464;

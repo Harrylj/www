@@ -1,0 +1,61 @@
+﻿html,
+body {
+  width: 10rem;
+}
+.ax_default {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: 400;
+  font-style: normal;
+  font-size: 0.17333333rem;
+  color: #333333;
+  text-align: center;
+  line-height: normal;
+}
+._一级标题 {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 0.42666667rem;
+  text-align: left;
+}
+._二级标题 {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 0.32rem;
+  text-align: left;
+}
+._三级标题 {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 0.24rem;
+  text-align: left;
+}
+._四级标题 {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 0.18666667rem;
+  text-align: left;
+}
+._五级标题 {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: bold;
+  font-style: normal;
+  text-align: left;
+}
+._六级标题 {
+  font-family: 'Arial Normal', 'Arial';
+  font-weight: bold;
+  font-style: normal;
+  font-size: 0.13333333rem;
+  text-align: left;
+}
+._文本段落 {
+  text-align: left;
+}
+.text_field {
+  color: #000000;
+  text-align: left;
+}

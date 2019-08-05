@@ -1,0 +1,39 @@
+﻿body {
+  margin: 0;
+  background-image: none;
+  position: static;
+  left: auto;
+  width: 10rem;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+#base {
+  position: absolute;
+  z-index: 0;
+}
+#u26_img {
+  border-width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10rem;
+  height: 17.25333333rem;
+}
+#u26 {
+  border-width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 10rem;
+  height: 17.25333333rem;
+}
+#u26_text {
+  border-width: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  visibility: hidden;
+  word-wrap: break-word;
+}

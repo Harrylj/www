@@ -15,7 +15,8 @@
       font-size: .12rem;
       color: rgba(0, 0, 0, 0.5);
       text-indent: 2em;
-      filter: blur(0.02rem);
+      -webkit-filter: blur(0.02rem);
+              filter: blur(0.02rem);
     }
     .read-me-content:before{
        position: fixed;
@@ -29,5 +30,7 @@
        line-height: .4rem;
        letter-spacing: .05rem;
        color: #333333;
-       transform:rotate(45deg)
+       -webkit-transform:rotate(45deg);
+           -ms-transform:rotate(45deg);
+               transform:rotate(45deg)
     }

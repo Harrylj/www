@@ -16,6 +16,8 @@
 }
 .community-index .cm-header-one {
   position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .cmh-btn-more {
@@ -40,9 +42,13 @@
 }
 .cmb-ul {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   position: relative;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   padding: 0 .2rem;
 }
 .cmb-ul li {
@@ -189,8 +195,12 @@
   position: fixed;
   left: 0;
   bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 100%;
   height: .7rem;
   line-height: .4rem;
@@ -198,6 +208,8 @@
   background-color: white;
 }
 .cd-footer-left {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .cd-footer-left img {
@@ -332,10 +344,8 @@
   /* 标准的语法 */
 }
     .ci-header, .ci-header:before {
-        background: -webkit-gradient(linear, 0 100%, 0 0, from(#fd933d), to(#fe6026));
-        background: -webkit-linear-gradient(90deg, #fd933d, #fe6026);
-        background: -moz-linear-gradient(90deg, #fd933d, #fe6026);
-        background: -o-linear-gradient(90deg, #fd933d, #fe6026);
+        background: -webkit-gradient(linear, left top, right top, from(#fd933d), to(#fe6026));
+        background: -o-linear-gradient(left, #fd933d, #fe6026);
         background: linear-gradient(90deg, #fd933d, #fe6026);
     }
 .ci-header h2 {
@@ -375,7 +385,8 @@
     left: 50%;
     width: 92%;
     margin-left: -46%;
-    box-shadow: 0 0 .05rem #CCCCCC;
+    -webkit-box-shadow: 0 0 .05rem #CCCCCC;
+            box-shadow: 0 0 .05rem #CCCCCC;
     border-radius: 0.04rem;
     overflow: hidden;
 }
@@ -474,9 +485,16 @@
   content: "报名中";
 }
 .cib-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .cib-item h2 {
   color: #777171;
