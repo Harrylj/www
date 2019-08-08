@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>apps</title>
+    <style>
+      html,body{
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+    <script>
+      (function(doc, win) {
+        var docEl = doc.documentElement,
+          recalc = function() {
+            var clientWidth = docEl.clientWidth;
+            docEl.style.fontSize = clientWidth * (100 / 750) + 'px';
+          };
+        if(doc.addEventListener) {
+          win.addEventListener('resize', recalc, false);
+        } else {
+          win.attachEvent('onresize', recalc);
+        }
+        recalc();
+      })(document, window);
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+  </body>
+</html>
