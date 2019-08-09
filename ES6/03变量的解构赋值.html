@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		
+    let [y = 1] = [undefined]; //  y // 1
+   
+    
+    let [x = 1] = [null]; // x // null
+    
+    let [a, b, ...c] = ['a'];
+    console.log(a,b,...c)
+    let {foo} = {bar: 'baz'}; // foo // undefined
+    console.log(foo)
+	
+    	const { log } = console;
+    log('hello123') // hello
+    
+    function Timer() {
+  this.s1 = 0;
+  this.s2 = 0;
+  // 箭头函数
+  setInterval(() => this.s1++, 1000);
+  // 普通函数
+  setInterval(function () {
+    this.s2++;
+  }, 1000);
+}
+
+var timer = new Timer();
+
+setTimeout(() => console.log('s1: ', timer.s1), 4001);
+setTimeout(() => console.log('s2: ', timer.s2), 4001);
+	</script>
+</body>
+</html>
