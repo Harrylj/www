@@ -52,6 +52,57 @@ var timer = new Timer();
 
 setTimeout(() => console.log('s1: ', timer.s1), 4001);
 setTimeout(() => console.log('s2: ', timer.s2), 4001);
+
+
+let  d = 1;
+console.log(d)
+function abc (){
+  let d = 2;
+  console.log(d)
+  for(let d =0; d <= 2 ; d++){
+    let d = 'aaa'
+    console.log(d)
+  }
+}
+abc()
+
+
+let birth = '2000/01/01';
+
+const Person = {
+
+  name: '张三',
+
+  //等同于birth: birth
+  birth,
+
+  // 等同于hello: function ()...
+  hello() { 
+    console.log('我的名字是', this.name, this);
+  }
+
+};
+Person.hello();
+
+function getPoint() {
+  const x = 1;
+  const y = 10;
+  return {x, y};
+}
+
+console.log(getPoint())
+
+let aa = 11;
+console.log({aa})
+
+let ms = {aa};
+
+function getItem (key) {
+  return key in ms ? ms[key] : null;
+}
+
+console.log(getItem('aa'))
+
 	</script>
 </body>
 </html>

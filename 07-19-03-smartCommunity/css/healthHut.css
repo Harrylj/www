@@ -1011,23 +1011,20 @@ div.progress-body .progress-bar {
   background-color: #F5F5F5;
 }
 div.progress-fat .progress {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  height: .2rem;
-  border-radius: .1rem;
-  margin-bottom: .08rem;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  /*background: -o-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
-  background: -webkit-gradient(linear, left top, right top, from(#1394D0), color-stop(#18D09A), color-stop(#FC8B2F), to(#FF6666));
-  background: linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);*/
-   background: -webkit-gradient(linear, 0 0, 100% 0, from(#1394D0), color-stop(0.33, #18D09A), color-stop(0.66, #FC8B2F), to(#FF6666));
-  background: -webkit-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
-  background: -moz-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
-  background: -o-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
-  background: linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: .2rem;
+    border-radius: .1rem;
+    margin-bottom: .08rem;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(#1394D0), color-stop(0.33, #18D09A), color-stop(0.66, #FC8B2F), to(#FF6666));
+    background: -webkit-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+    background: -moz-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+    background: -o-linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
+    background: linear-gradient(left, #1394D0, #18D09A, #FC8B2F, #FF6666);
 }
 div.progress-fat .progress-bar {
   background-color: #F5F5F5;
