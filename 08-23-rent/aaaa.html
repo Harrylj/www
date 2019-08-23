@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>名称</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+ 
+  </head>
+  <style type="text/css">
+
+  </style>
+  <body>
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function(){
+
+
+        var aa = {
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            activity: {
+              name: '我参加的',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-activity@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        };
+        
+        var bb = {
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+          returnHref: 'javascript:history.back(-1)',
+          // 标题名称
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        };
+        var optsss = $.extend(true,aa,bb);
+        console.log(optsss)
+      })
+    </script>
+
+  </body>
+
+</html>

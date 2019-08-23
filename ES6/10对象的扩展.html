@@ -1,59 +1,90 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <!-- 使用最新的ie内核渲染 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备优先, 禁止缩放 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
-    <!-- 国产浏览器(360)使用webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止识别为手机号码 -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/public.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <title>名称</title>
-	<style type="text/css">
-		
-	</style>
-</head>
-<body>
-	
-	<script type="text/javascript">
 
-  // console.log(obj.foo.name)
-  // TypeError: Cannot read property 'name' of undefined
-//
-//const descriptor = Object.getOwnPropertyDescriptor(obj, 'foo');
-//
-//console.log(descriptor.get.name) // "get foo"
-//console.log(descriptor.set.name) // "set foo"
-  
-  
-  let _a_10 = Reflect.ownKeys({ [Symbol(0)]:0, b:0, 10:0, 2:0, a:0,[Symbol(1)]:1, })
-  console.log(_a_10)
-// ['2', '10', 'b', 'a', Symbol()]
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>名称</title>
+		<style type="text/css">
 
-  const proto ={
-    foo:'hello'
-  };
-  const obj ={
-    foo: "world",
-    find(){
-      return super.foo;
-    }
-  }
-  Object.setPrototypeOf(obj,proto)
-	console.log(obj.find())
-	let { x, yy, ...z } = { x: 1, y: 2, a: 3, b: 4 };
-  x // 1
-//   y // 2
-  z // { a: 3, b: 4 }
-  console.log(x,yy,z)
+		</style>
+	</head>
 
-	</script>
-</body>
+	<body>
+
+		<script type="text/javascript">
+			// console.log(obj.foo.name)
+			// TypeError: Cannot read property 'name' of undefined
+			//
+			//const descriptor = Object.getOwnPropertyDescriptor(obj, 'foo');
+			//
+			//console.log(descriptor.get.name) // "get foo"
+			//console.log(descriptor.set.name) // "set foo"
+
+			let _a_10 = Reflect.ownKeys({
+				[Symbol(0)]: 0,
+				b: 0,
+				10: 0,
+				2: 0,
+				a: 0,
+				[Symbol(1)]: 1,
+			})
+			console.log(_a_10)
+			// ['2', '10', 'b', 'a', Symbol()]
+
+			const proto = {
+				foo: 'hello'
+			};
+			const obj = {
+				foo: "world",
+				find() {
+					return super.foo;
+				}
+			}
+			Object.setPrototypeOf(obj, proto)
+			console.log(obj.find())
+			let {
+				x,
+				yy,
+				...z
+			} = {
+				x: 1,
+				y: 2,
+				a: 3,
+				b: 4
+			};
+			x // 1
+			//   y // 2
+			z // { a: 3, b: 4 }
+			console.log(x, yy, z)
+
+			let o1 = {
+				a: 1
+			};
+			let o2 = {
+				b: 2
+			};
+			o2.__proto__ = o1;
+			let { ...o3
+			} = o2;
+			console.log('o3', o3.a, '----     o2', o2.a)
+
+			let o5 = { ...'hello'
+			}
+			console.log(o5)
+		</script>
+	</body>
+
 </html>

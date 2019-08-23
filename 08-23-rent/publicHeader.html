@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>公用头</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+    <link rel="stylesheet" type="text/css" href="css/me.css" />
+
+  </head>
+  <style type="text/css">
+    html,
+    body {
+      background-color: white;
+    }
+    .two-public-header-return
+    ,.two-public-header-more
+    ,.two-public-header-content{
+      border: 1px solid red;
+    }
+    .two-public-header-return{
+      display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;
+      -webkit-box-orient:column;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;
+      -webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;
+      /*line-height: .44rem;*/
+    }
+  </style>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-12
+    	描述：使用：1.引入iconfont.css
+    	                 publicHeader.js
+    	            2. <div class="two-public-header-content"></div>
+    -->
+    
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="me-index public-div" style="height: 2000px; padding-top: 1rem;">
+      66777788889999999
+      <h1>class------<span class="iconfont icon-fanhui"></span></h1>
+      <h1>unicode------<i class="iconfont">&#xe63b;</i></h1>
+      
+      <!--<div class="two-public-header-div">
+        <div class="two-public-header">
+          <div class="two-public-header-return"><span class="iconfont icon-fanhui"></span></div>
+          <div class="two-public-header-title">标题</div>
+          <div class="two-public-header-more"><span class="iconfont icon-icon-test"></span></div>
+          <div class="two-public-header-nav-div">
+            <div class="two-public-header-nav-div-after"></div>
+            <div class="two-public-header-big"></div>
+            <ul class="two-public-header-nav">
+              <li class="tphn-join"><a href="#"><img src="images/two/two-nav-activity@3x.png"/><span>我参加的</span></a></li>
+              <li class="tphn-setting"><a href="#"><img src="images/two/two-nav-setting@3x.png"/><span>设置</span></a></li>
+              <li class="tphn-message"><a href="#"><img src="images/two/two-nav-message@3x.png"/><span>消息</span></a></li>
+              <li class="tphn-help"><a href="#"><img src="images/two/two-nav-help@3x.png"/><span>帮助</span></a></li>
+              <li class="tphn-home"><a href="#"><img src="images/two/two-nav-home@3x.png"/><span>首页</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>-->
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/browser.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/babel" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/babel" charset="utf-8"></script>
+    <script type="text/babel" >
+      $(function() {
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+//        returnHref: function(){
+//          aaa()
+//        },
+          // 标题名称
+          titleName: '这是标题',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            activity: {
+              name: '我参加的',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-activity@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            message: {
+              name: '消息',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-message@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            setting: {
+              name: '设置',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-setting@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            help: {
+              name: '帮助',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-help@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+            home: {
+              name: '首页',
+              href: 'www',
+              imgSrc: 'images/two/two-nav-home@3x.png',
+              clickE: function(i) {
+                console.log($(this).attr('class'))
+                return false;
+              }
+            },
+          },
+
+        });
+
+      })
+    </script>
+
+  </body>
+
+</html>

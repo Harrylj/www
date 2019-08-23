@@ -2,30 +2,30 @@
 
 <html>
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>预约健身房</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>预约健身房</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!--标准mui.css-->
-    <link rel="stylesheet" href="css/mui.min.css">
-    <link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
-    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<link rel="stylesheet" type="text/css" href="css/mui.picker.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
 
-    <!--App自定义的css-->
-    <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" type="text/css" href="css/bodyBuilding.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/bodyBuilding.css" />
 
-  </head>
-  <style type="text/css">
-    html,
-    body {
-      background-color: #F5F5F5;
-    }
-    /*.mui-dtpicker-title h5:first-child,
+	</head>
+	<style type="text/css">
+		html,
+		body {
+			background-color: #F5F5F5;
+		}
+		/*.mui-dtpicker-title h5:first-child,
     .mui-dtpicker-title h5:nth-child(2),
     .mui-dtpicker-body .mui-picker:first-child,
     .mui-dtpicker-body .mui-picker:nth-child(2) {
@@ -36,250 +36,402 @@
     .mui-dtpicker .mui-picker {
       width: 33.3%;
     }*/
-  </style>
+	</style>
 
-  <body>
-    <!--
+	<body>
+		<!--
     	作者：648267773@qq.com
     	时间：2019-03-15
     	描述：
     -->
-    <!-- 公用头部-->
-    <div class="two-public-header-content"></div>
-    <div class="body-building-reserve-order public-div">
-      <button id="toastBtn" type="button" class="mui-btn mui-btn-blue mui-btn-outlined">自动消失提示框</button>
-      <div class="bbro-body">
-        <table class="bbro-table" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td>预约使用人</td>
-            <td>
-              <button id="showUserPicker" class="bbro-btn-right" type="button">请选择</button>
-            </td>
-          </tr>
-          <tr>
-            <td>开始时间</td>
-            <td class="bbro-td-04">
-              <button data-options="" class="bbro-btn-start bbro-btn-right" data-h="" data-i="">开始时间</button>
-            </td>
-          </tr>
-          <tr>
-            <td colspan="2">
-              <div class="bbro-div-one">
-                <h3>运动时长</h3>
-                <button id="showTimePicker" class="bbro-btn-right" type="button">请选择</button>
-              </div>
-            </td>
-          </tr>
-          <tr>
-            <td>结束时间</td>
-            <td class="bbro-td-04">
-              20日 <span class="bbro-end-time"></span>
-            </td>
-          </tr>
-          <!--<tr>
+		<!-- 公用头部-->
+		<div class="two-public-header-content"></div>
+		<div class="body-building-reserve-order public-div">
+			<button id="toastBtn" type="button" class="mui-btn mui-btn-blue mui-btn-outlined">自动消失提示框</button>
+			<div class="bbro-body">
+				<div style="height: .5rem;"></div>
+
+				<div class="public-progress-div">
+					<!--<div class="public-progress-content">
+      			<div class="public-progress-content-header">
+	      			<div class="public-progress-bg"></div>
+	      		</div>
+	      		<div class="public-progress-content-footer">
+	      			<p>
+	      				<span>11</span>:<span>00</span>
+	      			</p>
+	      			<p>
+	      				<span>11</span>:<span>15</span>
+	      			</p>
+	      			<p>
+	      				<span>11</span>:<span>30</span>
+	      			</p>
+	      			<p>
+	      				<span>11</span>:<span>45</span>
+	      			</p>
+	      			<p>
+	      				<span>12</span>:<span>00</span>
+	      			</p>
+	      		</div>
+      		</div>-->
+				</div>
+
+				<table class="bbro-table" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>预约使用人</td>
+						<td>
+							<button id="showUserPicker" class="bbro-btn-right" type="button">请选择</button>
+						</td>
+					</tr>
+					<tr>
+						<td>开始时间</td>
+						<td class="bbro-td-04">
+							<button data-options="" class="bbro-btn-start bbro-btn-right" data-h="" data-i="">开始时间</button>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div class="bbro-div-one">
+								<h3>运动时长</h3>
+								<button id="showTimePicker" class="bbro-btn-right" type="button">请选择</button>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td>结束时间</td>
+						<td class="bbro-td-04">
+							20日 <span class="bbro-end-time"></span>
+						</td>
+					</tr>
+					<!--<tr>
             <td>运动经费</td>
             <td class="bbro-td-02">&yen;<span>120</span></td>
           </tr>-->
-        </table>
-      </div>
-    </div>
-    <div class="bbro-footer">
-      <div class="bbro-ts">错误提示</div>
-      <a href="#">
-        <div class="bbro-btn-qdyy public-two-btn-01">确定预约</div>
-      </a>
-    </div>
+				</table>
+			</div>
+		</div>
+		<div class="bbro-footer">
+			<div class="bbro-ts">错误提示</div>
+			<a href="#">
+				<div class="bbro-btn-qdyy public-two-btn-01">确定预约</div>
+			</a>
+		</div>
 
-    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mui.picker.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			(function($, doc) {
+				$.init();
 
-      (function($, doc) {
-        $.init();
-        
-        // 选择预约使用人
-          var userPicker = new $.PopPicker();
-          userPicker.setData([{
-            value: '爸爸',
-            text: '爸爸'
-          }, {
-            value: '妈妈',
-            text: '妈妈'
-          }, {
-            value: '灵风风',
-            text: '灵风风'
-          }]);
-          var showUserPickerButton = doc.getElementById('showUserPicker');
-          // 结果
-          var userResult = doc.getElementById('showUserPicker');
-          showUserPickerButton.addEventListener('tap', function(event) {
-            userPicker.show(function(items) {
-              userResult.innerText = items[0].value
-              console.log(JSON.stringify(items[0]))
-              //userResult.val = JSON.stringify(items[0]);
-              //返回 false 可以阻止选择框的关闭
-              //return false;
-            });
-          }, false);
+				// 选择预约使用人
+				var userPicker = new $.PopPicker();
+				userPicker.setData([{
+					value: '爸爸',
+					text: '爸爸'
+				}, {
+					value: '妈妈',
+					text: '妈妈'
+				}, {
+					value: '灵风风',
+					text: '灵风风'
+				}]);
+				var showUserPickerButton = doc.getElementById('showUserPicker');
+				// 结果
+				var userResult = doc.getElementById('showUserPicker');
+				showUserPickerButton.addEventListener('tap', function(event) {
+					userPicker.show(function(items) {
+						userResult.innerText = items[0].value
+						console.log(JSON.stringify(items[0]))
+						//userResult.val = JSON.stringify(items[0]);
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+					});
+				}, false);
 
-          // 选择运动时长
-          var timePicker = new $.PopPicker();
-          timePicker.setData([{
-            value: '10',
-            text: '10'
-          }, {
-            value: '20',
-            text: '20'
-          }, {
-            value: '30',
-            text: '30'
-          }, {
-            value: '50',
-            text: '50'
-          }, {
-            value: '60',
-            text: '60'
-          }, {
-            value: '80',
-            text: '80'
-          }, {
-            value: '90',
-            text: '90'
-          }]);
-          var showTimePickerButton = doc.getElementById('showTimePicker');
-          // 结果
-          var timeResult = doc.getElementById('showTimePicker');
-          showTimePickerButton.addEventListener('tap', function(event) {
-            timePicker.show(function(items) {
-              timeResult.innerText = items[0].value
-              console.log(JSON.stringify(items[0]))
-              //timeResult.val = JSON.stringify(items[0]);
-              //返回 false 可以阻止选择框的关闭
-              //return false;
-              var time_btn_start = jQuery('.bbro-btn-start'); // 开始时间按钮
-              var time_end = jQuery('.bbro-end-time'); //结束时间
-              // 判断是否已选开始时间
-              // 未选
-              if(time_btn_start.attr('data-h') == '') {
-                time_end.html('');
-              }
-              //已选
-              else {
-                var time_end_i = parseInt(time_btn_start.attr('data-i')) + parseInt(jQuery('#showTimePicker').html());
-                var time_end_h = parseInt(time_btn_start.attr('data-h')) + parseInt(time_end_i / 60)
-                var time_end_i_0 = time_end_i % 60;
-                // 加0
-                if(time_end_i_0 < 10) {
-                  time_end_i_0 = '0' + time_end_i_0;
-                }
-                // 判断小时是否超过24
-                if(time_end_h >= 24) {
-                  time_end_h = '0' + (time_end_h - 24)
-                }
-                time_end.html(time_end_h + ':' + time_end_i_0)
-                console.log(time_end_i, time_end_h)
-              }
-            });
-            
-          }, false);
-          
-        
-        var btns_bbro_start = $('.bbro-btn-start');
-        // 开始时间
-        btns_bbro_start.each(function(i, btn) {
-          btn.addEventListener('tap', function() {
-            var optionsJson = this.getAttribute('data-options') || '{}';
-            var options = JSON.parse(optionsJson);
-            var id = this.getAttribute('id');
-            /*
-             * 首次显示时实例化组件
-             * 示例为了简洁，将 options 放在了按钮的 dom 上
-             * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
-             */
-            var a = new Date();
-            console.log(a.getMinutes())
-            var picker = new $.DtPicker({
-              "type": "time",
-              "beginDate": new Date(2016, 04, 20),
-              "endDate": new Date(),
-              // "value": "(a.AddMinutes(10).ToString('yyyy-MM-dd HH:mm'))",
-              "customData": {
-                "i": [{
-                  "value": "0",
-                  "text": "00"
-                }, {
-                  "value": "10",
-                  "text": "10"
-                }, {
-                  "value": "20",
-                  "text": "20"
-                }, {
-                  "value": "30",
-                  "text": "30"
-                }, {
-                  "value": "40",
-                  "text": "40"
-                }, {
-                  "value": "50",
-                  "text": "50"
-                }]
-              }
-            });
-            picker.show(function(rs) {
-              /*
-               * rs.value 拼合后的 value
-               * rs.text 拼合后的 text
-               * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
-               * rs.m 月，用法同年
-               * rs.d 日，用法同年
-               * rs.h 时，用法同年
-               * rs.i 分（minutes 的第二个字母），用法同年
-               */
-              btns_bbro_start[0].innerText = rs.text;
-              btns_bbro_start[0].setAttribute('data-h', rs.h.text);
-              btns_bbro_start[0].setAttribute('data-i', rs.i.text);
-              picker.dispose();
+				// 选择运动时长
+				var timePicker = new $.PopPicker();
+				timePicker.setData([{
+					value: '10',
+					text: '10'
+				}, {
+					value: '20',
+					text: '20'
+				}, {
+					value: '30',
+					text: '30'
+				}, {
+					value: '50',
+					text: '50'
+				}, {
+					value: '60',
+					text: '60'
+				}, {
+					value: '80',
+					text: '80'
+				}, {
+					value: '90',
+					text: '90'
+				}]);
+				var showTimePickerButton = doc.getElementById('showTimePicker');
+				// 结果
+				var timeResult = doc.getElementById('showTimePicker');
+				showTimePickerButton.addEventListener('tap', function(event) {
+					timePicker.show(function(items) {
+						timeResult.innerText = items[0].value
+						console.log(JSON.stringify(items[0]))
+						//timeResult.val = JSON.stringify(items[0]);
+						//返回 false 可以阻止选择框的关闭
+						//return false;
+						var time_btn_start = jQuery('.bbro-btn-start'); // 开始时间按钮
+						var time_end = jQuery('.bbro-end-time'); //结束时间
+						// 判断是否已选开始时间
+						// 未选
+						if(time_btn_start.attr('data-h') == '') {
+							time_end.html('');
+						}
+						//已选
+						else {
+							var time_end_i = parseInt(time_btn_start.attr('data-i')) + parseInt(jQuery('#showTimePicker').html());
+							var time_end_h = parseInt(time_btn_start.attr('data-h')) + parseInt(time_end_i / 60)
+							var time_end_i_0 = time_end_i % 60;
+							// 加0
+							if(time_end_i_0 < 10) {
+								time_end_i_0 = '0' + time_end_i_0;
+							}
+							// 判断小时是否超过24
+							if(time_end_h >= 24) {
+								time_end_h = '0' + (time_end_h - 24)
+							}
+							time_end.html(time_end_h + ':' + time_end_i_0)
+							console.log(time_end_i, time_end_h)
+						}
+					});
 
-              var time_btn_start = jQuery('.bbro-btn-start'); // 开始时间按钮
-              var time_end = jQuery('.bbro-end-time');
-              // 判断是否已选开始时间
-              // 未选
-              if(jQuery('#showTimePicker').html() == '请选择') {
-                time_end.html('');
-              }
-              //已选
-              else {
-                var time_end_i = parseInt(time_btn_start.attr('data-i')) + parseInt(jQuery('#showTimePicker').html());
-                var time_end_h = parseInt(time_btn_start.attr('data-h')) + parseInt(time_end_i / 60)
-                var time_end_i_0 = time_end_i % 60;
-                // 加0
-                if(time_end_i_0 < 10) {
-                  time_end_i_0 = '0' + time_end_i_0;
-                }
-                // 判断小时是否超过24
-                if(time_end_h >= 24) {
-                  time_end_h = '0' + (time_end_h - 24)
-                }
-                time_end.html(time_end_h + ':' + time_end_i_0)
-                console.log(time_end_i, time_end_h)
-              }
+				}, false);
 
-            });
-          }, false);
-        });
+				var btns_bbro_start = $('.bbro-btn-start');
+				// 开始时间
+				btns_bbro_start.each(function(i, btn) {
+					btn.addEventListener('tap', function() {
+						var optionsJson = this.getAttribute('data-options') || '{}';
+						var options = JSON.parse(optionsJson);
+						var id = this.getAttribute('id');
+						/*
+						 * 首次显示时实例化组件
+						 * 示例为了简洁，将 options 放在了按钮的 dom 上
+						 * 也可以直接通过代码声明 optinos 用于实例化 DtPicker
+						 */
+						var a = new Date();
+						console.log(a.getMinutes())
+						var picker = new $.DtPicker({
+							"type": "time",
+							"beginDate": new Date(2016, 04, 20),
+							"endDate": new Date(),
+							// "value": "(a.AddMinutes(10).ToString('yyyy-MM-dd HH:mm'))",
+							"customData": {
+								"i": [{
+									"value": "0",
+									"text": "00"
+								}, {
+									"value": "10",
+									"text": "10"
+								}, {
+									"value": "20",
+									"text": "20"
+								}, {
+									"value": "30",
+									"text": "30"
+								}, {
+									"value": "40",
+									"text": "40"
+								}, {
+									"value": "50",
+									"text": "50"
+								}]
+							}
+						});
+						picker.show(function(rs) {
+							/*
+							 * rs.value 拼合后的 value
+							 * rs.text 拼合后的 text
+							 * rs.y 年，可以通过 rs.y.vaue 和 rs.y.text 获取值和文本
+							 * rs.m 月，用法同年
+							 * rs.d 日，用法同年
+							 * rs.h 时，用法同年
+							 * rs.i 分（minutes 的第二个字母），用法同年
+							 */
+							btns_bbro_start[0].innerText = rs.text;
+							btns_bbro_start[0].setAttribute('data-h', rs.h.text);
+							btns_bbro_start[0].setAttribute('data-i', rs.i.text);
+							picker.dispose();
 
-        document.getElementById("toastBtn").addEventListener('click', function() {
-          mui.toast('<div class="bbro-toast">预约成功</div>');
-        });
+							var time_btn_start = jQuery('.bbro-btn-start'); // 开始时间按钮
+							var time_end = jQuery('.bbro-end-time');
+							// 判断是否已选开始时间
+							// 未选
+							if(jQuery('#showTimePicker').html() == '请选择') {
+								time_end.html('');
+							}
+							//已选
+							else {
+								var time_end_i = parseInt(time_btn_start.attr('data-i')) + parseInt(jQuery('#showTimePicker').html());
+								var time_end_h = parseInt(time_btn_start.attr('data-h')) + parseInt(time_end_i / 60)
+								var time_end_i_0 = time_end_i % 60;
+								// 加0
+								if(time_end_i_0 < 10) {
+									time_end_i_0 = '0' + time_end_i_0;
+								}
+								// 判断小时是否超过24
+								if(time_end_h >= 24) {
+									time_end_h = '0' + (time_end_h - 24)
+								}
+								time_end.html(time_end_h + ':' + time_end_i_0)
+								console.log(time_end_i, time_end_h)
+							}
 
-      })(mui, document);
-    </script>
+						});
+					}, false);
+				});
 
-    <script type="text/javascript">
-      $(function() {
+				document.getElementById("toastBtn").addEventListener('click', function() {
+					mui.toast('<div class="bbro-toast">预约成功</div>');
+				});
+
+			})(mui, document);
+		</script>
+
+		<script type="text/javascript">
+			$(function() {
+
+				// 生成时间轴进度条
+				function publicProgress() {
+					// 数据数组
+					var arrayNum = [
+						[10, 200],
+						[215, 250],
+						[310, 420],
+						[610, 720]
+					]
+					// 获取当前有几个时间段，未取整60。
+					var arrayTime = new Array();
+					// 获取当前有几个时间段，取整60。
+					var arrayTime_60 = new Array();
+					// 父元素
+					var e_father = $('.public-progress-div');
+					// 声明内容元素格式数组
+					var arrayTypeP = ['00', '15', '30', '45', '00'];
+
+					// 新处理生成的函数  [[10,200],[215,300],[310,320]]
+					var newArray = new Array();
+					// 将值传入时间段数组
+					arrayNum.forEach(function(val) {
+						console.log(val)
+						var val_0 = parseInt(val[0] / 60)
+						// 这里(val[1]-1主要是解决临界值的问题比如60,120,180这样
+						var val_1 = parseInt((val[1] - 1) / 60)
+
+						//生成新的数组啦--
+						// 如果不相等则做其他判断
+						// [[10,200],[215,300],[310,320]]
+						// [[10, 60],[60, 120],[120, 180],[180, 200],[215, 240],[240, 250],[310, 320]]
+						if(val_0 != val_1) {
+							var i = 0;
+							for(i; i <= val_1 - val_0; i++) {
+								// 等于0时，
+								if(i == 0) {
+									newArray.push([val[0], (val_0 + 1) * 60])
+									// console.log('看我 1 "'+ val[0])
+								}
+								// 等于
+								else if(i == val_1 - val_0) {
+									newArray.push([val_1 * 60, val[1]])
+								}
+								// 填充空白
+								else {
+									newArray.push([i * 60, (i + 1) * 60])
+								}
+
+							}
+
+						} else {
+							newArray.push(val)
+						}
+						console.log('newArray :', newArray)
+						// 这这里判断比如有[100,300]，这样跨度比较大的时间段时，填充空白的数组
+						if(val_1 - val_0 > 1) {
+							for(val_0; val_0 < val_1; val_0++) {
+								arrayTime_60.push(val_0)
+							}
+						}
+						// 没有则返回一般的数据
+						else {
+							arrayTime_60.push(val_0)
+							arrayTime_60.push(val_1)
+						}
+						val.forEach(function(num) {
+							console.log(num)
+							// 传值时间段数组取整60
+							arrayTime.push(num)
+							//arrayTime_60.push(parseInt(num/60))
+						})
+					})
+					console.log(arrayTime)
+					console.log(arrayTime_60)
+
+					// 数组去重
+					function unique(arr) {
+						var hash = [];
+						for(var i = 0; i < arr.length; i++) {
+							if(hash.indexOf(arr[i]) == -1) {
+								hash.push(arr[i]);
+							}
+						}
+						return hash;
+					}
+
+					// 遍历取整60的时间段函数，生成框架数据。
+					unique(arrayTime_60).forEach(function(num) {
+						// 内容元素
+						var contentDiv = '';
+						// 遍历内容元素格式数组
+						for(var i = 0; i < arrayTypeP.length; i++) {
+							var addContent = '';
+							if(i == arrayTypeP.length - 1) {
+								addContent = '<p><span>' + (num + 1) + '</span>:<span>' + arrayTypeP[i] + '</span></p>';
+							} else {
+								addContent = '<p><span>' + num + '</span>:<span>' + arrayTypeP[i] + '</span></p>';
+							}
+							contentDiv += addContent
+						}
+						//						console.log(contentDiv)
+						// 定义数组class,标识元素
+						var classNum = 'public-progress-' + num;
+						// 组合单个时间轴元素
+						var createDiv = '<div class="public-progress-content ' + classNum + '"><div class="public-progress-content-header"></div><div class="public-progress-content-footer">' + contentDiv + '</div></div>'
+						e_father.append(createDiv)
+						//						e_father.html(e_father.html() + num)
+					})
+					// var abc = unique(arrayTime_60);
+					console.log(unique(arrayTime_60))
+
+					//这里再循序一次吧，先前是生成框架数据，这里生成占用数据
+					newArray.forEach(function(div) {
+						var div_0 = parseInt(div[0] / 60)
+						// var val_1 = parseInt(val[1]/60)
+						var div_width = (div[1] - div[0]) / 60 * 100 + '%';
+						var div_left = (div[0] - div_0 * 60) / 60 * 100 + '%'
+						var creat_bg = '<div class="public-progress-bg"  style="width:' + div_width + ';left:' + div_left + ' "></div>'
+						$('.public-progress-' + div_0).children('.public-progress-content-header').append(creat_bg);
+					})
+
+				}
+				// 生成时间轴进度条
+				publicProgress();
+
+				/*
         // 公用头部
         $('.two-public-header-content').publicHeader({
           // 父级元素
@@ -301,14 +453,14 @@
           navList: {},
 
         });
+				*/
+				// 点击确定预约
+				$('.bbro-btn-qdyy').on('click', function() {
+					$('#toastBtn').click()
+				})
+			})
+		</script>
 
-        // 点击确定预约
-        $('.bbro-btn-qdyy').on('click', function() {
-          $('#toastBtn').click()
-        })
-      })
-    </script>
-
-  </body>
+	</body>
 
 </html>
