@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>租房类型</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- 引入样式 -->
+		<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">
+-->
+		<link rel="stylesheet" type="text/css" href="css/vant.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/rent.css" />
+		<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+
+		<!-- 引入组件 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+	</head>
+
+	<style type="text/css">
+
+	</style>
+
+	<body>
+		<div id="app" class="rent-detail public-div">
+			<a class="rd-return" href="#"><span class="iconfont icon-fanhui"></span></a>
+			<div class="van-swiper-01-father">
+				<div class="van-swiper-01-header">{{swiperIndex+1}}/{{imageList.length}}</div>
+				<div class="van-swiper-01-label">5天前更新* 2983人浏览</div>
+				<van-swipe class="van-swiper-01" :autoplay="3000" :show-indicators="false" @change="onChange">
+					<van-swipe-item v-for="(image, index) in imageList" :key="index">
+						<img v-lazy="image" :src="imageList[index]" />
+					</van-swipe-item>
+				</van-swipe>
+			</div>
+			<div class="rd-body">
+				<h1>合租｜锦城峰荟主卧 3室1厅 家电齐全 拎包即可入住</h1>
+				<van-divider></van-divider>
+				<ul class="rb-body-ul-01">
+					<li>
+						<h5>1500元/<span>月</span></h5>
+						<p>价格</p>
+					</li>
+					<li>
+						<h5>3室1厅</h5>
+						<p>房型</p>
+					</li>
+					<li>
+						<h5>22/280㎡</h5>
+						<p>面积</p>
+					</li>
+				</ul>
+				<van-divider></van-divider>
+				<div class="public-border-blue">促销:可用优惠卷抵扣3000元</div>
+				<ul class="rb-body-ul-02">
+					<li><h5>卧室</h5><p>主卧</p></li>
+					<li><h5>限制</h5><p>女生</p></li>
+					<li><h5>楼层</h5><p>3/4层</p></li>
+					<li><h5>电梯</h5><p>有</p></li>
+				</ul>
+				<div class="public-line-gray"></div>
+				<h2>配套设施</h2>
+				<van-divider></van-divider>
+				<ul class="rb-body-ul-03">
+					<li class="rb-type-bed">床</li>
+					<li class="rb-type-refrigerator">冰箱</li>
+					<li class="rb-type-television">电视</li>
+					<li class="rb-type-sofa">沙发</li>
+					<li class="rb-type-wardrobe">衣柜</li>
+					<li class="rb-type-washer">洗衣机</li>
+					<li class="rb-type-calorifier">热水器</li>
+					<li class="rb-type-airCooler">空调</li>
+				</ul>
+				<div class="public-line-gray"></div>
+				<div class="rd-address">
+					<div class="address-header">
+						<h3>地址 小区·成都锦城峰荟</h3>
+						<a class="address-header-more" href="#">小区详情<span class="iconfont icon-gengduo"></span></a>
+					</div>
+					<div class="address-map">
+						<img src="images/rent/rent_map.png"/>
+					</div>
+				</div>
+			</div>
+			<a class="rd-footer-btn-yykf" class="#">预约看房</a>
+		</div>
+
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(function() {
+					//点击筛选菜单栏
+					$('#app').on('click', '.rt-header-nav li', function() {
+						$('.modal-show').click();
+					})
+					
+					
+				})
+
+			});
+			var Vue = window.Vue;
+			var vant = window.vant;
+
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						imageList: [
+							'images/rent/rent_detail_01.png',
+							'images/rent/rent_detail_01.png'
+						],
+						swiperIndex: 0,
+					};
+				},
+
+				methods: {
+					// swiper滚动事件
+					onChange(index) {
+						this.swiperIndex = index;
+						vant.Toast('当前 Swipe 索引：' + index);
+					},
+					createcode() {
+						document.getElementById("abc").click();
+					}
+
+				},
+
+				mounted: function() {
+					//this.createcode(); //需要触发的函数
+				}
+
+			})
+
+			// 注册 Lazyload 组件
+			Vue.use(vant.Lazyload);
+			// 调用函数式组件
+			// vant.Toast('提示');
+		</script>
+
+	</body>
+
+</html>

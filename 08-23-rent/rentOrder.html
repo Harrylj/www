@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>预约看房</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- 引入样式 -->
+		<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">
+-->
+		<link rel="stylesheet" type="text/css" href="css/vant.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/rent.css" />
+		<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+
+		<!-- 引入组件 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+	</head>
+
+	<style type="text/css">
+		html,
+		body {
+			background-color: #f6f6f6;
+		}
+		
+		.rt-body {
+			background-color: white;
+		}
+	</style>
+
+	<body>
+		<div id="app" class="rent-order rent-type public-div">
+			<div class="rt-tilte">
+				<a class="rt-tilte-return" href="#"><span class="iconfont icon-fanhui"></span></a>
+				<h1>预约看房</h1>
+			</div>
+			<div class="ro-body rt-body ">
+				<div class="rb-content-01">
+					<div class="rb-content-list">
+						<a href="#">
+							<div class="rb-content-item">
+								<img src="images/rent/rt_01.png" />
+								<h2>5栋一单元2201</h2>
+								<p>次卧 22㎡ 南北</p>
+								<h4>距离地铁站42米</h4>
+								<div class="rb-content-icon-father">
+									<div class="rb-content-icon">押二付一</div>
+									<div class="rb-content-icon">普通装修</div>
+									<div class="rb-content-icon">独卫</div>
+								</div>
+								<div class="rb-content-item-right">
+									<span>1758</span>元/月
+								</div>
+							</div>
+						</a>
+
+					</div>
+
+				</div>
+				<div class="public-line-gray"></div>
+				<div class="to-write-info">
+					<h2>填写信息</h2>
+					<ul>
+						<li>
+							<h3>预约姓名</h3>
+							<input type="text" name="" id="" placeholder="请输入姓名" />
+						</li>
+						<li>
+							<h3>联系电话</h3>
+							<input type="text" name="" id="" placeholder="请输入手机号码" />
+						</li>
+						<li>
+							<h3>看房时间</h3>
+							<span id="to-input-time" ref="termStart" @click="showDatePicker('2019')">选择时间</span>
+							<!--<span ref="termStart" @click="showDatePicker('termStart')">开始时间</span>-->
+						</li>
+					</ul>
+					<van-popup v-model="isPopShow" position="bottom">
+						<!-- 开始时间 -->
+
+						<van-datetime-picker title="选择看房时间" @cancel="cancelPicker" @confirm="confirmPicker" v-model="startTime" type="dateTime" :formatter="formatter" :filter="filter" :min-date="currentTime" />
+						<!--<van-datetime-picker
+                @cancel="cancelPicker"
+                @confirm="confirmPicker"
+                v-if="datePicker == 'startTime'"
+                v-model="startTime"
+                type="date"
+                :formatter="formatter"
+                :max-date="currentTime"
+             />	-->
+					</van-popup>
+
+				</div>
+
+			</div>
+			<van-popup class="ro-result-father" v-model="isResultShow">
+				<div class="ro-result-div">
+					<h4>恭喜您，预约成功啦</h4>
+					<a class="ro-result-btn-ok" @click="hideResultPopup" >知道了</a>
+				</div>
+			</van-popup>
+
+			<a class="rd-footer-btn-yykf" @click="showResultPopup"><span class="iconfont icon-shijian"></span>预约看房</a>
+		</div>
+
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(function() {
+					//点击筛选菜单栏
+					$('#app').on('click', '.rt-header-nav li', function() {
+						$('.modal-show').click();
+					})
+
+				})
+
+			});
+
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						isInputOK: true, // 判断信息是否填写完全
+						isResultShow: false, // 预约结果弹出层隐藏与显示
+						username: '', // 姓名
+						phone: '', // 电话号码
+						currentTime: new Date(), // 开始时间不能超过当前时间
+						startTime: new Date(), // 开始时间
+						endTime: new Date(), // 结束时间
+						datePicker: '', // 用于判断哪个选择器的显示与隐藏
+						isPopShow: false, // 日期弹出层弹出层隐藏与显示
+
+					}
+				},
+
+				methods: {
+					hideResultPopup() { //隐藏预约结果弹出层
+						this.isResultShow = false;
+					},
+					showResultPopup() { //显示预约结果弹出层
+						if(this.isInputOK == true){
+							this.isResultShow = true;
+						}
+						else{
+							vant.Toast.fail('信息填写未完全');
+						}
+						
+					},
+					createcode() {  // 加载完执行的函数
+						
+						console.log(this.currentTime)
+						// document.getElementById("abc").click();
+					},
+					showDatePicker(picker) { //弹出层并显示时间选择器
+						this.isPopShow = true;
+						this.datePicker = picker;
+					},
+					cancelPicker() { // 选择器取消按钮点击事件
+						this.isPopShow = false;
+						this.datePicker = "";
+					},
+					confirmPicker(value) { // 确定按钮，时间格式化并显示在页面上
+
+						var date = value;
+						var m = date.getMonth() + 1;
+						var d = date.getDate();
+						if(m >= 1 && m <= 9) {
+							m = "0" + m;
+						}
+						if(d >= 0 && d <= 9) {
+							d = "0" + d;
+						}
+						var timer = date.getFullYear() + "-" + m + "-" + d
+
+						document.getElementById('to-input-time').innerHTML = timer;
+						this.isPopShow = false;
+						this.datePicker = "";
+					},
+					formatter(type, value) { // 格式化选择器日期
+						console.log(type, value)
+						//						if(type === "year") {
+						//							// return `${value}年`;
+						//							return 'null';
+						//						} else if(type === "month") {
+						//							return `${value}月`;
+						//						}
+						if(type === "year") {
+							return `${value}年`;
+						} else if(type === "month") {
+							return `${value}月`;
+						} else if(type === "day") {
+							return `${value}日`
+						} else if(type === "hour") {
+							return `${value}点`
+						} else if(type === "minute") {
+							return `${value}分`
+						}
+						return value;
+					},
+					filter(type, options) {
+						if(type === 'minute') {
+							return options.filter(option => option % 30 === 0)
+						}
+
+						return options;
+					}
+
+				},
+
+				mounted: function() {
+					this.createcode(); //需要触发的函数
+				}
+
+			})
+
+			var Vue = window.Vue;
+			var vant = window.vant;
+
+			// 注册 Lazyload 组件
+			// Vue.use(vant.Lazyload);
+
+			// 调用函数式组件
+			// vant.Toast('提示');
+		</script>
+
+	</body>
+
+</html>

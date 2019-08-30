@@ -920,7 +920,7 @@
 }
 .ltbtl-list-img{
 	float: left;
-	margin: 0 13.3px;
+	margin: 0 10px;
 	text-align: center;
 }
 .ltbtl-list-img-one{
@@ -944,6 +944,7 @@
 .ltbtl-list-img p{
   font-size: 14px;
   line-height: 26px;
+  min-height: 52px;
 }
 .ltb-two-right{
   position: relative;

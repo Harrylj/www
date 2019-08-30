@@ -9,20 +9,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- 引入样式 -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">
+	
+    	
     <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css">
 		<link rel="stylesheet" type="text/css" href="css/rent.css"/>
+		
+				<!-- 引入组件 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+	
   </head>
   <style type="text/css">
 
   </style>
 
   <body>
-    <div class="rent public-div">
+    <div class="rent public-div page">
       <div class="rent-header">
-      	<img class="img-100" src="images/rent/rent_header_content.jpg"/>
+      	<a class="rent-header-a rent-header-day" href="#">天</a>
+      	<a class="rent-header-a rent-header-week" href="#">周</a>
+      	<a class="rent-header-a rent-header-month" href="#">月</a>
+      	<h5>海/量/真/房/源/省/心/省/时/间</h5>
+      	<h1>租房上人居"<br />/最高免费住30天</h1>
+      	<img class="img-100" src="images/rent/rent_header.jpg"/>
       	<input class="rh-search-input" type="text" placeholder="请输入名称" />
       </div>
       <div class="rent-body">
@@ -43,7 +58,7 @@
     		<div class="rb-swiper-01">
     			<div class="rb-swiper-01-div">
     				<h1>房产资讯</h1>
-    				<h2>租满5年可买成都人才公寓申请指南</h2>
+    				<h2 class="rb-swiper-01-div-hot">租满5年可买成都人才公寓申请指南</h2>
     			</div>
     		</div>
     		<div class="rb-content-01">
@@ -52,18 +67,19 @@
     				<div class="rb-swiper-02-div">
     					<div class="rb-swiper-02-div-left">
     						<h3>锦城峰荟</h3>
-    						<h4>———</h4>
+    						<h4>——</h4>
     						<h5>精选热门区域 <br />让你住得好一点</h5>
     					</div>
-    					<img src="images/rent/rent_header.jpg"/>
+    					<img src="images/rent/rent_01.png"/>
     				</div>
     			</div>
     		</div>
     		<div class="rb-content-01">
     			<h2>房源推荐</h2>
     			<div class="rb-content-list">
+    				<a href="#">
     				<div class="rb-content-item">
-    					<img src="images/rent/rent_header_content.jpg"/>
+    					<img src="images/rent/rt_01.png"/>
     					<h2>5栋一单元2201</h2>
     					<p>次卧 22㎡ 南北</p>
     					<h4>距离地铁站42米</h4>
@@ -76,6 +92,7 @@
     						<span>1758</span>元/月
     					</div>
     				</div>
+    				</a>
     			</div>
     		</div>
     		
@@ -83,9 +100,18 @@
       </div>
     </div>
 
-    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						show: false
+					}
+				},
+				
+			})
+
 		</script>
   </body>
 

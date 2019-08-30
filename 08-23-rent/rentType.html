@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>租房类型</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!-- 引入样式 -->
+		<!--<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">
+-->
+		<link rel="stylesheet" type="text/css" href="css/vant.css" />
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/rent.css" />
+		<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
+
+		<!-- 引入组件 -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+	</head>
+
+	<style type="text/css">
+
+	</style>
+
+	<body>
+		<div id="app" class="rent-type rent-type-myself public-div">
+			<div class="rt-tilte">
+				<a class="rt-tilte-return" href="#"><span class="iconfont icon-fanhui"></span></a>
+				<input class="tr-title-search" type="text" value="搜索整租房" />
+				<a class="rt-title-message" href="#">
+					<span>2</span>
+				</a>
+			</div>
+			<div class="rt-header">
+				<ul class="rt-header-nav">
+					<li id="abc">租金</li>
+					<li>类型</li>
+					<li>筛选</li>
+				</ul>
+			</div>
+			<div class="rt-body">
+				<div class="rb-content-01">
+					<div class="rb-content-list">
+						<a href="#">
+							<div class="rb-content-item">
+								<img src="images/rent/rt_01.png" />
+								<h2>5栋一单元2201</h2>
+								<p>次卧 22㎡ 南北</p>
+								<h4>距离地铁站42米</h4>
+								<div class="rb-content-icon-father">
+									<div class="rb-content-icon">押二付一</div>
+									<div class="rb-content-icon">普通装修</div>
+									<div class="rb-content-icon">独卫</div>
+								</div>
+								<div class="rb-content-item-right">
+									<span>1758</span>元/月
+								</div>
+							</div>
+						</a>
+						<a href="#">
+							<div class="rb-content-item">
+								<img src="images/rent/rt_02.png" />
+								<h2>5栋一单元2201</h2>
+								<p>次卧 22㎡ 南北</p>
+								<h4>距离地铁站42米</h4>
+								<div class="rb-content-icon-father">
+									<div class="rb-content-icon">押二付一</div>
+									<div class="rb-content-icon">普通装修</div>
+									<div class="rb-content-icon">独卫</div>
+								</div>
+								<div class="rb-content-item-right">
+									<span>1758</span>元/月
+								</div>
+							</div>
+						</a>
+						<a href="#">
+							<div class="rb-content-item">
+								<img src="images/rent/rt_03.png" />
+								<h2>5栋一单元2201</h2>
+								<p>次卧 22㎡ 南北</p>
+								<h4>距离地铁站42米</h4>
+								<div class="rb-content-icon-father">
+									<div class="rb-content-icon">押二付一</div>
+									<div class="rb-content-icon">普通装修</div>
+									<div class="rb-content-icon">独卫</div>
+								</div>
+								<div class="rb-content-item-right">
+									<span>1758</span>元/月
+								</div>
+							</div>
+						</a>
+						<a href="#">
+							<div class="rb-content-item">
+								<img src="images/rent/rt_04.png" />
+								<h2>5栋一单元2201</h2>
+								<p>次卧 22㎡ 南北</p>
+								<h4>距离地铁站42米</h4>
+								<div class="rb-content-icon-father">
+									<div class="rb-content-icon">押二付一</div>
+									<div class="rb-content-icon">普通装修</div>
+									<div class="rb-content-icon">独卫</div>
+								</div>
+								<div class="rb-content-item-right">
+									<span>1758</span>元/月
+								</div>
+							</div>
+						</a>
+					</div>
+				</div>
+
+			</div>
+			<div class="popup-content">
+				<van-button class="modal-show" type="primary" @click="showPopup">
+					展示弹出层
+				</van-button>
+				<van-button class="modal-hide" type="primary" @click="hidePopup">
+					隐藏弹出层
+				</van-button>
+
+				<van-popup v-model="show" position="right" get-container="#app">
+					<div class="rt-modal-content rt-modal-content-hover">
+						<div class="rtmc-list">
+							<div class="rtmc-item">
+								<h2>出租方式</h2>
+								<ul class="rtmc-item-ul">
+									<li class="rtmc-item-click">整租</li>
+									<li>合租</li>
+								</ul>
+							</div>
+							<div class="rtmc-item">
+								<h2>户型</h2>
+								<ul class="rtmc-item-ul">
+									<li>不限</li>
+									<li>1室</li>
+									<li>2室</li>
+									<li>3室</li>
+									<li>4室及以上</li>
+								</ul>
+							</div>
+							<div class="rtmc-item">
+								<h2>出租要求</h2>
+								<ul class="rtmc-item-ul">
+									<li>不限</li>
+									<li>只限女生</li>
+									<li>半年起租</li>
+									<li>一家人</li>
+								</ul>
+							</div>
+							<div class="rtmc-item">
+								<h2>房源特色</h2>
+								<ul class="rtmc-item-ul">
+									<li>不限</li>
+									<li>可短租</li>
+									<li>临地铁</li>
+									<li>押一付一</li>
+									<li>配套齐全</li>
+								</ul>
+							</div>
+						</div>
+						<div class="rtmc-footer">
+							<van-button class="rtmc-footer-btn-null" type="default">清空</van-button>
+							<van-button class="rtmc-footer-btn-ok" type="info">确定</van-button>
+						</div>
+
+					</div>
+				</van-popup>
+			</div>
+		</div>
+
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$(function() {
+					//点击筛选菜单栏
+					$('#app').on('click', '.rt-header-nav li', function() {
+						$('.modal-show').click();
+					})
+					// 点击弹窗的每个选项
+					// $('.rtmc-item-ul').children('li').on('click',function(){
+					$('#app').on('click', '.rtmc-item-ul li', function() {
+						var class_click = 'rtmc-item-click';
+						$(this).addClass(class_click).siblings().removeClass(class_click)
+					})
+					// 点击弹窗的清空按钮
+					$('#app').on('click', '.rtmc-footer-btn-null', function() {
+						// 选中第一个
+						$('.rtmc-item-ul').each(function() {
+							$(this).children('li').eq(0).click();
+						})
+					})
+					// 点击弹窗的确定按钮
+					$('#app').on('click', '.rtmc-footer-btn-ok', function() {
+						$('.modal-hide').click();
+						alert('确定')
+					})
+				})
+
+			});
+
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						show: false
+					}
+				},
+
+				methods: {
+					showPopup() {
+						this.show = true;
+					},
+					hidePopup() {
+						this.show = false;
+					},
+					createcode() {
+						document.getElementById("abc").click();
+					}
+
+				},
+
+				mounted: function() {
+					this.createcode(); //需要触发的函数
+				}
+
+			})
+
+			var Vue = window.Vue;
+			var vant = window.vant;
+
+			// 注册 Lazyload 组件
+			// Vue.use(vant.Lazyload);
+
+			// 调用函数式组件
+			// vant.Toast('提示');
+		</script>
+
+	</body>
+
+</html>
