@@ -59,6 +59,10 @@
     color: #666666;
     font-size: 0.28rem;
     cursor: pointer;
+    background-image: url(../images/rent/rent_icon_search.png);
+    background-size: .3rem .3rem;
+    background-position: .4rem center;
+    background-repeat: no-repeat;
 }
 
 .rent-body {
@@ -103,13 +107,16 @@
 }
 
 .rb-swiper-01-div {
-    display: flex;
-    justify-content: flex-start;
+//  display: flex;
+//  justify-content: flex-start;
+    position: relative;
     padding: .2rem 0;
     h1,
     h2 {
         line-height: .5rem;
         font-size: .32rem;
+        height: .5rem;
+        overflow: hidden;
     }
     h1 {
         padding: 0 .08rem;
@@ -128,7 +135,17 @@
         background-repeat: no-repeat;
     }
 }
-
+.van-swipe-03-div{
+    position: absolute;
+    width: 74%;
+    top: 50%;
+    left: 1.6rem;
+    margin-top: -0.25rem;
+    overflow: hidden;
+}
+.van-swipe-03{
+  height: .5rem;  
+}
 .rb-content-01 {
     position: relative;
     h2 {
@@ -210,6 +227,7 @@
     p,
     h4 {
         padding-right: 2rem;
+        color: #333333;
     }
 }
 
@@ -258,6 +276,7 @@
     display: flex;
     justify-content: space-between;
     padding: .15rem .2rem;
+    z-index: 999;
     .rt-tilte-return{
         line-height: .6rem;
         span{
@@ -298,6 +317,7 @@
         top: 0;
         width: 100%;
         padding: .2rem;
+        z-index: 999;
     }
 }
 .tr-title-search {
@@ -307,6 +327,11 @@
     color: #666666;
     border-radius: .04rem;
     font-size: .32rem;
+//  background-image: url(../images/search-icon@2x.png);
+    background-position: .2rem center;
+    background-repeat: no-repeat;
+    background-size: .3rem .3rem;
+    padding: 0 .7rem;
 }
 
 .rt-header-nav {
@@ -607,7 +632,13 @@
     line-height: 1rem;
     text-align: center;
     font-size: .38rem;
-    
+    .icon-shijian{
+        position: relative;
+        top: .03rem;
+        left: -.02rem;
+        font-size: .4rem;
+        
+    }
 }
 .to-write-info{
     h2{
@@ -685,5 +716,21 @@
 .rent-type-myself{
     .rb-content-item{
         border-top: .01rem solid #F3F3F3;
+    }
+}
+        #allmap {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+        
+.rtmc-list-div{
+    .rtmc-list{
+        display: none;
+    }
+    .rtmc-list-hover{
+        display: block;
     }
 }

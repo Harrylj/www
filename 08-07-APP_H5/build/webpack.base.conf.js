@@ -51,6 +51,11 @@ module.exports = {
         loader: 'babel-loader',
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       },
+      // 如果你是.sass文件要设置
+      {
+        test: /\.sass$/,
+        loaders: ['style', 'css', 'sass']
+      },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
@@ -74,7 +79,8 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      }
+      },
+
     ]
   },
   node: {

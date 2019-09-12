@@ -22,8 +22,13 @@
 		<!--<script src="https://unpkg.com/vue/dist/vue.js"></script>-->
 
 		<!-- 引入组件 -->
+		<script type="text/javascript" src="//api.map.baidu.com/api?v=2.0&ak=mZVaFMWgEm4E5S5GZC1qV1WksEdqpvbQ"></script>
+<!--		
 		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>-->
+		
+		<script src="js/vue.min.js"></script>
+		<script src="js/vant.min.js"></script>
 	</head>
 
 	<style type="text/css">
@@ -62,10 +67,22 @@
 				<van-divider></van-divider>
 				<div class="public-border-blue">促销:可用优惠卷抵扣3000元</div>
 				<ul class="rb-body-ul-02">
-					<li><h5>卧室</h5><p>主卧</p></li>
-					<li><h5>限制</h5><p>女生</p></li>
-					<li><h5>楼层</h5><p>3/4层</p></li>
-					<li><h5>电梯</h5><p>有</p></li>
+					<li>
+						<h5>卧室</h5>
+						<p>主卧</p>
+					</li>
+					<li>
+						<h5>限制</h5>
+						<p>女生</p>
+					</li>
+					<li>
+						<h5>楼层</h5>
+						<p>3/4层</p>
+					</li>
+					<li>
+						<h5>电梯</h5>
+						<p>有</p>
+					</li>
 				</ul>
 				<div class="public-line-gray"></div>
 				<h2>配套设施</h2>
@@ -86,12 +103,13 @@
 						<h3>地址 小区·成都锦城峰荟</h3>
 						<a class="address-header-more" href="#">小区详情<span class="iconfont icon-gengduo"></span></a>
 					</div>
-					<div class="address-map">
-						<img src="images/rent/rent_map.png"/>
-					</div>
+					<!--<div class="address-map">
+						<img src="images/rent/rent_map.png" />
+					</div>-->
+					<div id="allmap"></div>
 				</div>
 			</div>
-			<a class="rd-footer-btn-yykf" class="#">预约看房</a>
+			<a class="rd-footer-btn-yykf" class="#"><span class="iconfont icon-shijian"></span>预约看房</a>
 		</div>
 
 		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
@@ -104,8 +122,7 @@
 					$('#app').on('click', '.rt-header-nav li', function() {
 						$('.modal-show').click();
 					})
-					
-					
+
 				})
 
 			});
@@ -143,11 +160,90 @@
 			})
 
 			// 注册 Lazyload 组件
-			Vue.use(vant.Lazyload);
+//			Vue.use(vant.Lazyload);
 			// 调用函数式组件
 			// vant.Toast('提示');
 		</script>
+		<script type="text/javascript">
+			// 百度地图API功能
+			var map_x = 104.1532; // 经纬度
+			var map_y = 30.5993; // 经纬度
+			var map_icon_src = "./images/rent/rent_icon_51.png"; //icon图标地址
+			var map_txt = "成都锦城峰荟"; // 显示名字
+			var mp = new BMap.Map("allmap");
+			mp.centerAndZoom(new BMap.Point(map_x, map_y), 14);
+			mp.enableScrollWheelZoom();
+			// 复杂的自定义覆盖物
+			function ComplexCustomOverlay(point, text, mouseoverText) {
+				this._point = point;
+				this._text = text;
+				this._overText = mouseoverText;
+			}
+			ComplexCustomOverlay.prototype = new BMap.Overlay();
+			ComplexCustomOverlay.prototype.initialize = function(map) {
+				this._map = map;
+				var div = this._div = document.createElement("div");
+				div.className = "map_div";
+				div.style.position = "absolute";
+				div.style.marginTop = "-20px"
+				div.style.zIndex = BMap.Overlay.getZIndex(this._point.lat);
+				div.style.backgroundColor = "white";
+				div.style.border = "1px solid #f5f5f5";
+				div.style.color = "#333333";
+				div.style.height = "40px";
+				div.style.padding = "0 20px";
+				div.style.lineHeight = "40px";
+				div.style.whiteSpace = "nowrap";
+				div.style.MozUserSelect = "none";
+				div.style.fontSize = "20px"
+				var span = this._span = document.createElement("span");
+				div.appendChild(span);
+				span.appendChild(document.createTextNode(this._text));
+				var that = this;
 
+				var arrow = this._arrow = document.createElement("div");
+				arrow.className = "map_div_arrow";
+				//		    arrow.style.background = "url(//map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
+				arrow.style.position = "absolute";
+				arrow.style.borderTop = "10px solid white";
+				arrow.style.borderBottom = "10px solid transparent";
+				arrow.style.borderLeft = "8px solid transparent";
+				arrow.style.borderRight = "8px solid transparent";
+				arrow.style.marginLeft = "-8px";
+				arrow.style.top = "37px";
+				arrow.style.left = "50%";
+				arrow.style.overflow = "hidden";
+				div.appendChild(arrow);
+
+				var icon = this._icon = document.createElement("div");
+				icon.className = "map_div_icon";
+				//		icon.style.background = "url(//map.baidu.com/fwmap/upload/r/map/fwmap/static/house/images/label.png) no-repeat";
+				icon.style.backgroundImage = "url(images/rent/rent_icon_51.png)";
+				icon.style.backgroundSize = "100% 100%";
+				icon.style.position = "absolute";
+				icon.style.width = "30px";
+				icon.style.height = "30px";
+				icon.style.marginLeft = "-15px";
+				icon.style.top = "60px";
+				icon.style.left = "50%";
+				icon.style.overflow = "hidden";
+				div.appendChild(icon);
+
+				mp.getPanes().labelPane.appendChild(div);
+
+				return div;
+			}
+			ComplexCustomOverlay.prototype.draw = function() {
+				var map = this._map;
+				var pixel = map.pointToOverlayPixel(this._point);
+				this._div.style.left = pixel.x - parseInt(this._arrow.style.left) + "px";
+				this._div.style.top = pixel.y - 30 + "px";
+			}
+
+			var myCompOverlay = new ComplexCustomOverlay(new BMap.Point(map_x, map_y), map_txt);
+
+			mp.addOverlay(myCompOverlay);
+		</script>
 	</body>
 
 </html>

@@ -1,68 +1,18 @@
+<!DOCTYPE html>
 <html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <!-- 使用最新的ie内核渲染 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备优先, 禁止缩放 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
-    <!-- 国产浏览器(360)使用webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止识别为手机号码 -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/public.css"/>
-    <link rel="stylesheet" type="text/css" href="css/index.css"/>
-    <title>名称</title>
-	<style type="text/css">
-		.ly_div_aaa{
-		  position: relative;
-		}
-		.ly_div_bbb{
-		  position: absolute;
-		  width: 322px;
-		  height: 100%;
-		  background-color: white;
-		}
-		.ly_div_bbb li{
-		  color: black;
-		  font-size: 14px;
-		  text-align: right;
-		  line-height: 46px;
-		}
-
-		.ly_div_li{
-		  margin-bottom: 122px;
-    }
-
-	</style>
+<head>
+  <script src='https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js' referrerpolicy="origin"></script>
+  <script>
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
 </head>
 
 <body>
-  <div class="ly_div_aaa">
-    <div class="ly_div_bbb">
-      <ul>
-      	<li>标题：</li>
-      	<li class="ly_div_li">内容：</li>
-      	<li>名字：</li>
-      	<li>联系电话：</li>
-      	<li>验证码：</li>
-      </ul>
-    </div>
-    <iframe class="abc" src="http://10.1.231.85:8003/trsapp/appWeb.do?method=addPage&appId=22291&groupId=20162" width="100%" height="400px"></iframe>
-    
-  </div>
-  
-  <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
-  
-<script>
-  $(function(){
-    // var aaa = $(".i_Gr_1_btn1",document.frames('.abc').document).html()
-    // $('.abc').contents().find(".i_Gr_1_btn1").html()
-    var bbb = $('.abc').contents().find(".i_Gr_1_btn1").html(); 
-       console.log(bbb)
-  })
-</script>
+<h1>TinyMCE Quick Start Guide</h1>
+  <form method="post">
+    <textarea id="mytextarea" name="mytextarea">Hello, World!</textarea>
+  </form>
 </body>
 </html>

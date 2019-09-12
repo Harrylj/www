@@ -34,7 +34,7 @@
 		<div id="app" class="rent-type rent-type-myself public-div">
 			<div class="rt-tilte">
 				<a class="rt-tilte-return" href="#"><span class="iconfont icon-fanhui"></span></a>
-				<input class="tr-title-search" type="text" value="搜索整租房" />
+				<input class="tr-title-search" type="text" placeholder="搜索整租房" />
 				<a class="rt-title-message" href="#">
 					<span>2</span>
 				</a>
@@ -118,52 +118,76 @@
 
 			</div>
 			<div class="popup-content">
-				<van-button class="modal-show" type="primary" @click="showPopup">
+				<van-button class="modal-show hide" type="primary" @click="showPopup">
 					展示弹出层
 				</van-button>
-				<van-button class="modal-hide" type="primary" @click="hidePopup">
+				<van-button class="modal-hide hide" type="primary" @click="hidePopup">
 					隐藏弹出层
 				</van-button>
 
 				<van-popup v-model="show" position="right" get-container="#app">
 					<div class="rt-modal-content rt-modal-content-hover">
+						<div class="rtmc-list-div">
+							<div class="rtmc-list rtmc-list-01">
+								<div class="rtmc-item">
+									<h2>出租金额</h2>
+									<ul class="rtmc-item-ul">
+										<li class="rtmc-item-click">1000元以内</li>
+										<li>1000~2000元</li>
+										<li>10000~20000元</li>
+									</ul>
+								</div>
+							</div>
+							<div class="rtmc-list rtmc-list-02 rtmc-list-hover">
+								<div class="rtmc-item">
+									<h2>出租类型</h2>
+									<ul class="rtmc-item-ul">
+										<li class="rtmc-item-click">类型1</li>
+										<li>类型2</li>
+									</ul>
+								</div>
+							</div>
+							<div class="rtmc-list rtmc-list-03">
+								<div class="rtmc-item">
+									<h2>出租方式</h2>
+									<ul class="rtmc-item-ul">
+										<li class="rtmc-item-click">整租</li>
+										<li>合租</li>
+									</ul>
+								</div>
+								<div class="rtmc-item">
+									<h2>户型</h2>
+									<ul class="rtmc-item-ul">
+										<li class="rtmc-item-click">不限</li>
+										<li>1室</li>
+										<li>2室</li>
+										<li>3室</li>
+										<li>4室及以上</li>
+									</ul>
+								</div>
+								<div class="rtmc-item">
+									<h2>出租要求</h2>
+									<ul class="rtmc-item-ul">
+										<li class="rtmc-item-click">不限</li>
+										<li>只限女生</li>
+										<li>半年起租</li>
+										<li>一家人</li>
+									</ul>
+								</div>
+								<div class="rtmc-item">
+									<h2>房源特色</h2>
+									<ul class="rtmc-item-ul">
+										<li class="rtmc-item-click">不限</li>
+										<li>可短租</li>
+										<li>临地铁</li>
+										<li>押一付一</li>
+										<li>配套齐全</li>
+									</ul>
+								</div>
+							</div>
+						</div>
 						<div class="rtmc-list">
-							<div class="rtmc-item">
-								<h2>出租方式</h2>
-								<ul class="rtmc-item-ul">
-									<li class="rtmc-item-click">整租</li>
-									<li>合租</li>
-								</ul>
-							</div>
-							<div class="rtmc-item">
-								<h2>户型</h2>
-								<ul class="rtmc-item-ul">
-									<li>不限</li>
-									<li>1室</li>
-									<li>2室</li>
-									<li>3室</li>
-									<li>4室及以上</li>
-								</ul>
-							</div>
-							<div class="rtmc-item">
-								<h2>出租要求</h2>
-								<ul class="rtmc-item-ul">
-									<li>不限</li>
-									<li>只限女生</li>
-									<li>半年起租</li>
-									<li>一家人</li>
-								</ul>
-							</div>
-							<div class="rtmc-item">
-								<h2>房源特色</h2>
-								<ul class="rtmc-item-ul">
-									<li>不限</li>
-									<li>可短租</li>
-									<li>临地铁</li>
-									<li>押一付一</li>
-									<li>配套齐全</li>
-								</ul>
-							</div>
+							
 						</div>
 						<div class="rtmc-footer">
 							<van-button class="rtmc-footer-btn-null" type="default">清空</van-button>
@@ -184,6 +208,16 @@
 					//点击筛选菜单栏
 					$('#app').on('click', '.rt-header-nav li', function() {
 						$('.modal-show').click();
+						var classOtherHover = 'rtmc-list-hover',
+							thisIndex = $(this).index();
+						// 这里延迟执行，不然无效
+						setTimeout(function(){
+							$('.rtmc-list-div').children('.rtmc-list').eq(thisIndex).addClass(classOtherHover).siblings().removeClass(classOtherHover);
+							// alert(1)
+						},10)
+						
+						// alert(thisIndex)
+						
 					})
 					// 点击弹窗的每个选项
 					// $('.rtmc-item-ul').children('li').on('click',function(){
@@ -200,9 +234,19 @@
 					})
 					// 点击弹窗的确定按钮
 					$('#app').on('click', '.rtmc-footer-btn-ok', function() {
+						var val_array = new Array();
 						$('.modal-hide').click();
-						alert('确定')
+						$('.rtmc-list-hover').children('.rtmc-item').each(function(){
+							
+							var this_val = $(this).children('.rtmc-item-ul').children('.rtmc-item-click').html();
+							val_array.push(this_val);
+						})
+						alert(val_array)
 					})
+					
+
+
+					
 				})
 
 			});
@@ -218,12 +262,14 @@
 				methods: {
 					showPopup() {
 						this.show = true;
+
 					},
 					hidePopup() {
 						this.show = false;
 					},
 					createcode() {
 						document.getElementById("abc").click();
+						// alert(1)
 					}
 
 				},

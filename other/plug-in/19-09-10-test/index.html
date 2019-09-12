@@ -1,0 +1,430 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1 maximum-scale=2, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-title" content="Add to Home">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="x-rim-auto-match" content="none">
+		<title>首汽约车—用户调查</title>
+		<meta name="keywords" content="首汽约车—用户调查">
+		<meta name="description" content="首汽约车—用户调查">
+		<meta name="Copyright" content="首汽约车—用户调查">
+		<meta name="author" content="首汽约车—用户调查">
+		<!-- 网站的ico图标 -->
+		<link rel="shortcut icon" href="img/favicon.jpg" type="image/x-icon">
+		<link href="css/publi.css" rel="stylesheet" type="text/css">
+		<link href="css/question.css" rel="stylesheet" type="text/css">
+		<script src="js/jquery1.8.3.min.js"></script>
+		<script type="text/javascript" src="js/vue.min.js"></script>
+		<!--[if lt IE 9]>
+<script src="js/html5.js"></script>
+<script src="js/respond.min.js"></script>
+<![endif]-->
+		<style type="text/css">
+			h2 {
+				font-size: 14px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- ====================================loading -->
+		<section id="loading"></section>
+		<!-- ====================================页面开始 -->
+		<!--登录-->
+		<section class="question">
+			<header class="que_head">
+				<img src="img/que_top_01.png">
+			</header>
+			<ul class="que_ul">
+				<li class="que_ra que_ac">
+					<h2>１您的性别是（单选）</h2>
+					<label class="que1_01">
+						<input type="radio" name="que1" class="que" />
+						<span>男</span>
+						<img src="img/qye_icon3.png">
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que1_01">
+						<input type="radio" name="que1" class="que" />
+						<span>女</span>
+						<img src="img/qye_icon4.png">
+						<i class="icon_ra"></i>
+					</label>
+				</li>
+				<li class="que_ra que_ac">
+					<h2>２您的年龄（单选）</h2>
+					<label class="que2_01">
+						<input type="radio" name="que2" class="que" />
+						<span>24岁及以下&nbsp;</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que2" class="que" />
+						<span>25岁—30岁</span>
+						<i class="icon_ra"></i>
+					</label>
+					<br />
+					<label class="que2_01">
+						<input type="radio" name="que2" class="que" />
+						<span>31岁—35岁</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que2" class="que" />
+						<span>36岁以上</span>
+						<i class="icon_ra"></i>
+					</label>
+				</li>
+				<li class="que_ra que_ac">
+					<h2>３您的学历（单选）</h2>
+					<label class="que2_01">
+						<input type="radio" name="que3" class="que" />
+						<span>高中及以下</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que3" class="que" />
+						<span>大专</span>
+						<i class="icon_ra"></i>
+					</label>
+					<br />
+					<label class="que2_01">
+						<input type="radio" name="que3" class="que" />
+						<span>本科</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que3" class="que" />
+						<span>本科以上</span>
+						<i class="icon_ra"></i>
+					</label>
+				</li>
+				<li class="que_ra que_ac">
+					<h2>４您的职业（单选）</h2>
+					<label class="que2_01">
+						<input type="radio" name="que4" class="que" />
+						<span>上班族</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que4" class="que" />
+						<span>自由职业</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que4" class="que" />
+						<span>企业员工</span>
+						<i class="icon_ra"></i>
+					</label>
+					<br />
+					<label class="que2_01">
+						<input type="radio" name="que4" class="que" />
+						<span>机关及事业单位</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que4" class="que" />
+						<span>无固定职业或待业</span>
+						<i class="icon_ra"></i>
+					</label>
+				</li>
+				<li class="que_ra que_ac">
+					<h2>５您所在的城市：（单选）</h2>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>北京</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>上海</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>杭州</span>
+						<i class="icon_ra"></i>
+					</label>
+					<br />
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>武汉</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>厦门</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>南京</span>
+						<i class="icon_ra"></i>
+					</label>
+					<br />
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>长沙</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>成都</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>西安</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que5" class="que" />
+						<span>重庆</span>
+						<i class="icon_ra"></i>
+					</label>
+				</li>
+				<li class="que_ra que_ac">
+					<h2>６您是否经常外出打车？（单选））</h2>
+					<label class="que2_01">
+						<input type="radio" name="que2" class="que" />
+						<span>是</span>
+						<i class="icon_ra"></i>
+					</label>
+					<label class="que2_01">
+						<input type="radio" name="que2" class="que" />
+						<span>否</span>
+						<i class="icon_ra"></i>
+					</label>
+				</li>
+				<li class="que_chex que_ac">
+					<h2>７您通过什么渠道了解到首汽约车？（多选）</h2>
+					<label class="que2_01" for="q1">
+
+						<span>媒体报道</span>
+						<i class="icon_chex"></i>
+					</label>
+					<label class="que2_01" for="q2">
+
+						<span>微博、微信</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<label class="que2_01" for="q3">
+
+						<span>广告</span>
+						<i class="icon_chex"></i>
+					</label>
+					<label class="que2_01" for="q4">
+
+						<span>应用市场</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<label class="que2_01" for="q5">
+
+						<span>朋友或同事推荐</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<label class="que2_01" for="q6">
+
+						<span>其他</span>
+						<i class="icon_chex"></i>
+					</label>
+					<input type="text" class="chex_01" />
+				</li>
+				<li class="que_chex que_ac">
+					<h2>8您通过什么渠道了解到首汽约车？（多选）</h2>
+					<label class="que2_01" for="q1">
+
+						<span>媒体报道</span>
+						<i class="icon_chex"></i>
+					</label>
+					<label class="que2_01" for="q2">
+
+						<span>微博、微信</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<label class="que2_01" for="q3">
+
+						<span>广告</span>
+						<i class="icon_chex"></i>
+					</label>
+					<label class="que2_01" for="q4">
+						<span>应用市场</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<label class="que2_01" for="q5">
+
+						<span>朋友或同事推荐</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<label class="que2_01" for="q6">
+
+						<span>其他</span>
+						<i class="icon_chex"></i>
+					</label>
+					<input type="text" class="chex_01" />
+				</li>
+				<li class="que_chex que_ac">
+					<h2>9 除了使用首汽约车，您是否还使用其他专车软件？（多选）</h2>
+					<input type="checkbox" class="qu_chex" id="ss1" value="A" v-model="checkedNames" />
+					<label class="que2_01" for="ss1">
+
+						<span>神州专车</span>
+						<i class="icon_chex"></i>
+					</label>
+					<input type="checkbox" class="qu_chex" id="ss2" value="B" v-model="checkedNames" />
+					<label class="que2_01" for="ss2">
+
+						<span>易到用车</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<input type="checkbox" class="qu_chex" id="ss3" value="C" v-model="checkedNames" />
+					<label class="que2_01" for="ss3">
+
+						<span>滴滴出行</span>
+						<i class="icon_chex"></i>
+					</label>
+					<input type="checkbox" class="qu_chex" id="ss4" value="D" v-model="checkedNames" />
+					<label class="que2_01" for="ss4">
+
+						<span>Uber</span>
+						<i class="icon_chex"></i>
+					</label>
+					<br />
+					<input type="checkbox" class="qu_chex" id="ss5" value="E" v-model="checkedNames" />
+					<label class="que2_01" for="ss5">
+						<span>其他</span>
+						<i class="icon_chex"></i>
+					</label>
+					<input type="text" class="chex_01" />
+					<span>Checked names: {{ checkedNames | json }}</span>
+				</li>
+			</ul>
+			<p class="que_ps">*(此调研问卷均为必选项，请填写完整后提交)</p>
+			<div class="phone">
+				<input type="text" placeholder="请输入手机号" autocomplete="off" id="iphone" />
+			</div>
+			<a href="javascript:;" class="que_receive tc">完成领取优惠劵</a>
+
+		</section>
+		<!--弹出层-->
+		<article id="tip">
+			<div class="pack pack_yl">
+				<p class="tc"></p>
+				<a href="#">
+					<img src="img/que_close.png">
+				</a>
+			</div>
+		</article>
+		<!-- 网站要用到的一些类库 -->
+
+		<script type="text/javascript">
+			new Vue({
+				el: '.question',
+				data: {
+					checkedNames: []
+				}
+			})
+			var checkPhone = function(a) {
+				var patrn = /^((?:13|15|18|14|17)\d{9}|0(?:10|2\d|[3-9]\d{2})[1-9]\d{6,7})$/;
+				if (!patrn.exec(a)) return false;
+				return true;
+			};
+			$(window).on("load", function() {
+					$("#loading").fadeOut();
+				})
+				// ========================================浮层控制
+			$("#tip .pack a").on("click", function() {
+				$("#tip").fadeOut()
+				$("#tip .pack p").html("")
+				return false;
+			})
+
+			function alerths(str) {
+				$("#tip").fadeIn()
+				$("#tip .pack p").html(str)
+				return false;
+			}
+			/*判断单选框选中状态，并且父级添加active*/
+			$(".question ul .que_ra label").click(function() {
+				$(this).addClass("icon_raa").siblings().removeClass("icon_raa");
+				$(this).parent().addClass("active");
+			});
+			/*判断复选框选中状态，并且父级添加删除active*/
+			$(".question ul .que_chex label").click(function() {
+				if ($(this).hasClass("icon_chexa")) {
+					$(this).removeClass("icon_chexa");
+				} else {
+					$(this).addClass("icon_chexa");
+				};
+				if ($(this).parent().children().hasClass("icon_chexa")) {
+					$(this).parent().addClass("active");
+				} else {
+					$(this).parent().removeClass("active");
+				};
+				/*return false;*/
+			})
+			/*弹出框*/
+			$(".que_receive").on("click", function() {
+				var str = $("#iphone").val()
+				var active = $(".active").length;
+				var all_num = $('.que_ul').children('li').length;
+				console.log(str,active,all_num)
+				if (active == all_num ) {
+					// 判断是否全部选完
+				} else {
+					var ss = $('.que_ac').map(function() {
+						if (!$(this).hasClass("active")) {
+							return $(this).index() + 1;
+						}
+					}).get().join();
+					alerths("请填写第" + ss + "题 完成答卷");
+					return;
+				};
+				if (str.length == 11 && checkPhone(str)) {
+					// 判断是不是11位手机号，为真提交
+					
+					var str_arg = new Array();
+					$('.que_ul').children('.que_ac').each(function(){
+						// 单选
+						if($(this).hasClass('que_ra')){
+							var txt = $(this).children('.icon_raa').children('span').html();;
+							str_arg.push(txt)
+						}
+						// 多选
+						else if($(this).hasClass('que_chex')){
+							var txt_arg = new Array();
+							$(this).children('.icon_chexa').each(function(){
+								var txt = $(this).children('span').html();
+								txt_arg.push(txt)
+							})
+							str_arg.push(txt_arg)
+						}
+						// 你这既不是单选也不是多选
+						else{
+							alert('有题既不是单选也不是多选')
+						}
+					})
+					console.log(str_arg)
+					alert('提交成功')
+				} else {
+					alerths("请输入正确的手机号！");
+					return;
+				};
+				return false;
+			})
+		</script>
+	</body>
+
+</html>

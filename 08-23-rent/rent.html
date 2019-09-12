@@ -11,26 +11,31 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black">
     
     <!-- 引入样式 -->
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">
-	
+<!--		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.1/lib/index.css">-->
+
     	
     <!--App自定义的css-->
     <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
     <link rel="stylesheet" type="text/css" href="css/public.css">
+    	<link rel="stylesheet" type="text/css" href="css/vant.css"/>
 		<link rel="stylesheet" type="text/css" href="css/rent.css"/>
 		
 				<!-- 引入组件 -->
-		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
-		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vant.min.js" type="text/javascript" charset="utf-8"></script>
+		<!--<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/vant@2.1/lib/vant.min.js"></script>-->
 	
   </head>
   <style type="text/css">
-
+.vant-swiper-02{
+	/*height: 2rem;*/
+}
   </style>
 
   <body>
-    <div class="rent public-div page">
+    <div id="app" class="rent public-div page">
       <div class="rent-header">
       	<a class="rent-header-a rent-header-day" href="#">天</a>
       	<a class="rent-header-a rent-header-week" href="#">周</a>
@@ -56,22 +61,35 @@
     				</a>
     		</ul>
     		<div class="rb-swiper-01">
+
     			<div class="rb-swiper-01-div">
     				<h1>房产资讯</h1>
-    				<h2 class="rb-swiper-01-div-hot">租满5年可买成都人才公寓申请指南</h2>
+    				<div class="van-swipe-03-div">
+    					<van-swipe class="van-swipe-03" :autoplay="8000"  :show-indicators="false"  vertical >
+							  <van-swipe-item><h2 class="rb-swiper-01-div-hot">租满5年可买成都人才公寓申请指南</h2></van-swipe-item>
+							  <van-swipe-item><h2 class="rb-swiper-01-div-hot">租满5年可买成都人才公寓申请指南</h2></van-swipe-item>
+							  <van-swipe-item><h2 class="rb-swiper-01-div-hot">租满5年可买成都人才公寓申请指南</h2></van-swipe-item>
+							  <van-swipe-item><h2 class="rb-swiper-01-div-hot">租满5年可买成都人才公寓申请指南</h2></van-swipe-item>
+							</van-swipe>
+    				</div>
+    				
     			</div>
     		</div>
     		<div class="rb-content-01">
     			<a href="#"><h2>热门户型</h2></a>
     			<div class="rb-swiper-02">
-    				<div class="rb-swiper-02-div">
-    					<div class="rb-swiper-02-div-left">
-    						<h3>锦城峰荟</h3>
-    						<h4>——</h4>
-    						<h5>精选热门区域 <br />让你住得好一点</h5>
-    					</div>
-    					<img src="images/rent/rent_01.png"/>
-    				</div>
+    				<van-swipe class="vant-swiper-02" :autoplay="5000" :show-indicators="false" @change="onChange">
+							<van-swipe-item v-for="(image, index) in imageList" :key="index">
+								<div class="rb-swiper-02-div">
+		    					<div class="rb-swiper-02-div-left">
+		    						<h3>锦城峰荟</h3>
+		    						<h4>——</h4>
+		    						<h5>精选热门区域 <br />让你住得好一点</h5>
+		    					</div>
+		    					<img v-lazy="image" :src="imageList[index]" />
+		    			</div>
+							</van-swipe-item>
+						</van-swipe>
     			</div>
     		</div>
     		<div class="rb-content-01">
@@ -100,14 +118,33 @@
       </div>
     </div>
 
+<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 		<script type="text/javascript">
+			var Vue = window.Vue;
+			var vant = window.vant;
+			
 			var app = new Vue({
 				el: '#app',
 				data() {
 					return {
-						show: false
+						show: false,
+						imageList: [
+							'images/rent/rent_01.png',
+							'images/rent/rent_01.png'
+						]
 					}
+				},
+				methods: {
+					// swiper滚动事件
+					onChange(index) {
+						this.swiperIndex = index;
+						vant.Toast('当前 Swipe 索引：' + index);
+					},
+					createcode() {
+						document.getElementById("abc").click();
+					}
+
 				},
 				
 			})

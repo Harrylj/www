@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 const home = () => import('@/view/home/index')
 const page1 = () => import('@/view/page1/index')
+const page2 = () => import('@/view/page2/index')
 
 Vue.use(Router)
 
@@ -18,6 +19,11 @@ export default new Router({
           path:'/page1',
           name: 'page1',
           component: page1,
+        },
+        {
+          path:'/page2',
+          name: 'page2',
+          component: page2,
         }
       ]
     }

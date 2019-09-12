@@ -56,6 +56,10 @@
   color: #666666;
   font-size: 0.28rem;
   cursor: pointer;
+  background-image: url(../images/rent/rent_icon_search.png);
+  background-size: 0.3rem 0.3rem;
+  background-position: 0.4rem center;
+  background-repeat: no-repeat;
 }
 .rent-body {
   padding: 0.8rem 0.4rem;
@@ -96,14 +100,15 @@
   background-color: #F9F9F9;
 }
 .rb-swiper-01-div {
-  display: flex;
-  justify-content: flex-start;
+  position: relative;
   padding: 0.2rem 0;
 }
 .rb-swiper-01-div h1,
 .rb-swiper-01-div h2 {
   line-height: 0.5rem;
   font-size: 0.32rem;
+  height: 0.5rem;
+  overflow: hidden;
 }
 .rb-swiper-01-div h1 {
   padding: 0 0.08rem;
@@ -120,6 +125,17 @@
   background-size: 0.63rem 0.3rem;
   background-position: 0.05rem 0.1rem;
   background-repeat: no-repeat;
+}
+.van-swipe-03-div {
+  position: absolute;
+  width: 74%;
+  top: 50%;
+  left: 1.6rem;
+  margin-top: -0.25rem;
+  overflow: hidden;
+}
+.van-swipe-03 {
+  height: 0.5rem;
 }
 .rb-content-01 {
   position: relative;
@@ -200,6 +216,7 @@
 .rb-content-item p,
 .rb-content-item h4 {
   padding-right: 2rem;
+  color: #333333;
 }
 .rb-content-icon-father {
   display: flex;
@@ -243,6 +260,7 @@
   display: flex;
   justify-content: space-between;
   padding: 0.15rem 0.2rem;
+  z-index: 999;
 }
 .rt-tilte .rt-tilte-return {
   line-height: 0.6rem;
@@ -284,6 +302,7 @@
   top: 0;
   width: 100%;
   padding: 0.2rem;
+  z-index: 999;
 }
 .tr-title-search {
   width: 5rem;
@@ -292,6 +311,10 @@
   color: #666666;
   border-radius: 0.04rem;
   font-size: 0.32rem;
+  background-position: 0.2rem center;
+  background-repeat: no-repeat;
+  background-size: 0.3rem 0.3rem;
+  padding: 0 0.7rem;
 }
 .rt-header-nav {
   display: flex;
@@ -585,6 +608,12 @@
   text-align: center;
   font-size: 0.38rem;
 }
+.rd-footer-btn-yykf .icon-shijian {
+  position: relative;
+  top: 0.03rem;
+  left: -0.02rem;
+  font-size: 0.4rem;
+}
 .to-write-info h2 {
   font-size: 0.32rem;
   line-height: 1rem;
@@ -657,4 +686,17 @@
 }
 .rent-type-myself .rb-content-item {
   border-top: 0.01rem solid #F3F3F3;
+}
+#allmap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin: 0;
+  font-family: "微软雅黑";
+}
+.rtmc-list-div .rtmc-list {
+  display: none;
+}
+.rtmc-list-div .rtmc-list-hover {
+  display: block;
 }
