@@ -523,7 +523,8 @@ a:hover,
 .index-fixed-father{
   position: fixed;
   display: block;
-  top: 30%;
+  /*top: 30%;*/
+  top: 358px;
   right: 10px;
   width: 70px;
   background-color: white;

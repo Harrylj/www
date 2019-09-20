@@ -31,12 +31,32 @@
         display: none !important;
       }
     </style>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-09-20
+    	描述： 浮动
+    -->
+		<script src="js/move_port.js"></script>
     <script type="text/javascript">
+			move_obj(".move_div",'','',1,1,0,0,20);
     </script>
   </head>
 
   <body>
-
+		<!--<div class="tz-fixed-model">
+			<a target="_blank" href="http://www.cditv.cn/mobnews/1563/1336.html">
+			<div class="tzfm-div">
+				<img src="images/tz-fixed-01.jpg"/>
+				<p>同心共谱，七彩华章</p>
+			</div>
+			</a>
+		</div>-->
+		
+		<div class="move_div">
+			<a target="_blank" href="http://www.cditv.cn/mobnews/1563/1336.html">
+			<img src="images/tz-fixed-02.jpg"/></a>
+		</div>
+		
     <div class="tz-index center">
       <!-- 公共头部 begin -->
       <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
@@ -509,7 +529,10 @@
     </div>
   </body>
   <script type="text/javascript">
+  	
     $(function() {
+			// 浮动
+			
 
       jQuery(".slideBox").slide({
         mainCell: ".bd ul",

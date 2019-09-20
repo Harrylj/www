@@ -1,0 +1,145 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>移动窗口</title>
+  <style>
+    body{
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 1000px;
+      background: #eee;
+    }
+    /*示例1*/
+    #move_port{
+      position: fixed;
+      width: 15%;
+      min-height: 150px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #2aabd2;
+      z-index: 10000;//调整层级
+    }
+    /*示例2*/
+    .move_div{
+      position: fixed;
+      width: 360px;
+      height: 200px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #d2435c;
+    }
+    /*示例3*/
+    .d0{
+      position:relative;
+      width: 600px;
+      height: 500px;
+      margin: 50px auto;
+      background: #ddd;
+    }
+    .d1{
+      position: absolute;
+      width: 120px;
+      min-height: 80px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #d2a12e;
+    }
+    /*示例4*/
+    .d2{
+      position:fixed;
+      left:0;
+      top:0;
+      width: 500px;
+      height: 300px;
+      background: #cc90c9;
+    }
+    .d3{
+      position: absolute;
+      width: 60px;
+      min-height: 80px;
+      left: 0;
+      top:0;
+      cursor: pointer;
+      background: #74d233;
+    }
+  </style>
+</head>
+<body>
+<div id="move_port">
+  <h3>示例一:相对于body,从左上角开始移动</h3>
+  <p>
+    id为:move_port
+    <br>
+    调用方法时传一个参数,其他默认:
+    <br>
+    move_obj("#move_port");
+  </p>
+</div>
+<div class="move_div">
+  <h3>示例二:相对于body,从指定位置开始移动</h3>
+  <p>
+    class为:move_div
+    <br>
+    调用方法时传部分参数,空字符项为默认:
+    <br>
+    move_obj(".move_div",'','',10,10,800,500,100);
+    <br>
+    空字串仅起占位作用,参数将设置为默认值
+  </p>
+</div>
+<div class="d0">
+  <h3>示例三:相对于父级容器,从默认位置开始移动</h3>
+  <p>
+    class为:d0
+    <br>
+    调用方法时传前三个参数,其他默认:
+    <br>
+    move_obj(".d1",600,500);
+    <br>
+    600,500为父级容器大小,缺省参数将设置为默认值
+  </p>
+  <p style="color: red">
+    <b>传参时,请注意起始位置参数不要超过移动范围!</b>
+  </p>
+  <div class="d1">
+    子级相对父级移动
+  </div>
+</div>
+<div class="d2">
+  <h3>示例四:自身相对body移动,子级相对父级移动</h3>
+  <p>多个浮窗可用 <b>z-index</b> 调整显示层级</p>
+  <p>
+    自身class为:d2
+    <br>
+    子级class为:d3
+    <br>
+    调用方法时分别调用:
+    <br>
+    move_obj(".d2",'','','','','',300,200);
+    <br>
+    move_obj(".d3",500,300);
+    <br>
+    自己移动范围为父级容器大小
+  </p>
+  <div class="d3">
+    子级
+  </div>
+</div>
+<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/move_port.js"></script>
+<script>
+   /*调用移动浮窗方法并按顺序传入正确参数["obj",x,y,l,t,m],obj必填*/
+   //示例:
+   move_obj("#move_port");
+   move_obj(".move_div",'','',10,10,800,500,100);
+   move_obj(".d1",600,500);
+   move_obj(".d2",'','','','','',300,200);
+   move_obj(".d3",500,300);
+</script>
+</body>
+</html>
