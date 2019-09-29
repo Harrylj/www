@@ -21,36 +21,36 @@
 	</style>
 </head>
 <body>
-	<div id="main"></div>
-<script>
-	var a = 0
-	while(a<10){
-        console.log(a)
-        a++;
-    }
 	
-	var i = 2;
-	var n = 1;
-	//alert(i+=n+1)
-	var s = "abcabcbb";
-	console.log(s)
-	var lengthOfLongestSubstring = function(s) {
-	    var i=0, res=0, n=0;
-	    for (var j = 0; j < s.length; j++){
-	        n = s.slice(i,j).indexOf(s[j])
-	        console.log(n)
-	        b = s.slice(i,j);
-	        console.log(b)
-	        if (n == -1){
-	            res = Math.max(res,j+1-i);
-	        }else{
-	            i += n+1;
-	        }
+<script>
+	/*
+	var twoSum = function(nums, target) {
+	   const map_01 = {}
+	   for (let i = 0; i < nums.length; i++){
+           console.log(i)
+	       if(map_01[target - nums[i] ] >= 0){
+              
+	           return [ map_01[target - nums[i] ], i]
+	       }
+	       map_01[nums[i]] = i;
+           console.log('i=',i)
 	    }
-	    return res;
-	};
-	console.log(lengthOfLongestSubstring(s))
-
+       
+	}
+	alert(twoSum([2,7,11,15],9))
+	*/
+	
+	/*
+	var a = function (){
+		return "2"
+		console.log('1')
+		
+	}
+	alert(a())
+	*/
+	for(var i =0; i<9; ++i){
+		console.log(i)
+	}
 </script>
 </body>
 </html>
