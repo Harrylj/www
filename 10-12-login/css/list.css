@@ -1,0 +1,104 @@
+html, body{
+	background-color: transparent;
+}
+.lj-list{
+	padding-top: .5rem;
+}
+.lj-list-table-01{
+	width: 90%;
+	margin: auto;
+}
+.lj-list-table-01 th{
+	background-color: #F8F8F8;
+	font-weight: bold;
+}
+.lj-list-table-01 th
+,.lj-list-table-01 td{
+	line-height: .7rem;
+	border: 1px solid #CCCCCC;
+	padding: 0 10px;
+	
+}
+.lj-list-table-01 th:nth-child(1)
+,.lj-list-table-01 th:nth-child(3)
+,.lj-list-table-01 td:nth-child(1)
+,.lj-list-table-01 td:nth-child(3){
+	text-align: center;
+}
+.lj-list-table-01 td:nth-child(1){
+	font-weight: bold;
+}
+.lj-list-div{
+				display: flex;
+				justify-content: space-between;
+				padding: .1rem .15rem;
+				border-bottom: 1px solid #F5F5F5;
+			}
+			.lj-list-div:last-child{
+				border-bottom: none;
+			}
+			.lj-list-div-right{
+				display: flex;
+				justify-content: space-between;
+				width: 64%;
+			}
+			.lj-list-div h3{
+				position: relative;
+				font-size: .32rem;
+				line-height: 20px;
+				padding: 10px 15px 10px 5px;
+				width: 35%;
+				text-align: right;
+				font-weight: bold;
+			}
+			.lj-list-div h3:after{
+				position: absolute;
+				top: 22px;
+				right: 0;
+				margin-top: -10px;
+				line-height: 20px;
+				height: 20px;
+				color: red;
+				content: "*";
+			}
+			.lj-list-serach-more{
+				position: relative;
+				font-size: .5rem;
+				line-height: 20px;
+				padding: 10px;
+			}
+			.lj-list-input input{
+				font-size: .32rem;
+				
+			}
+			.van-dropdown-menu{
+				width: 100%;
+			}
+			.lj-show-div{
+				background-color: #F8F8F8;
+				position: relative;
+			}
+			/*.lj-show-div .lj-list-div h3{
+				font-weight: 500;
+			}*/
+			.lj-show-div h2{
+				padding:.3rem .5rem;
+				font-weight: bold;
+				font-size: .32rem;
+			}
+			.lj-show-div .lj-list-div{
+				padding: .05rem 0;
+			}
+			.lj-show-div .lj-list-div-right{
+				padding: 10px;
+			}
+.van-hairline--top-bottom::after, .van-hairline-unset--top-bottom::after
+{
+	border: none;
+}
+.van-dropdown-menu{
+	height: initial;
+}
+.lj-list-content{
+	margin-top: .5rem;
+}

@@ -1,0 +1,68 @@
+html,
+body {
+	background-color: rgba(22, 160, 133, 1)!important;
+}
+
+.van-field__label {
+	padding-left: 15px;
+}
+
+.login-body {
+	padding-top: 30px;
+}
+
+.login-btn-login {
+	display: block;
+	margin: auto;
+	width: 100%;
+	margin-top: 30px;
+	font-size: .36rem;
+	letter-spacing: .1rem;
+	background-color: rgb(12, 144, 118);
+}
+
+.van-field__body input {
+	padding: 10px;
+	font-size: .32rem;
+	color: white;
+}
+
+.van-cell--required::before {
+	top: 20px;
+}
+
+.van-field__label span {
+	padding-top: 10px;
+	display: block;
+	font-size: .32rem;
+	color: white;
+}
+
+.login-h {
+	text-align: center;
+	color: #45bda6;
+	margin-bottom: .6rem;
+	font-weight: bold;
+	font-size: .4rem;
+}
+
+.van-field__error-message {
+	padding-left: 10px;
+}
+
+.login {
+	position: fixed;
+	width: 84%;
+	margin-left: -42%;
+	left: 50%;
+	top: 20%;
+}
+
+.van-cell {
+	background-color: rgba(255, 255, 255, .3);
+	margin-bottom: .2rem;
+}
+
+.van-cell-group {
+	background-color: transparent;
+}

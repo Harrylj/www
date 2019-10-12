@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+  <head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/vant.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/list.css"/>
+		<!-- 引入组件 -->
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vant.min.js" type="text/javascript" charset="utf-8"></script>
+    <title>列表页面</title>
+    <style type="text/css">
+			
+    </style>
+  </head>
+
+  <body>
+ 		<div class="lj-list" id="app">
+ 				
+ 			<div class="lj-list-div">
+ 				<h3>渠道编号</h3>
+ 				<div class="lj-list-div-right">
+ 					<van-cell-group>
+					  <van-field class="lj-list-input" v-model="value" placeholder="请输入渠道编号" />
+					</van-cell-group>
+					<van-icon class="lj-list-serach-more" @click="showDiv" name="search" />
+ 				</div>
+ 			</div>
+ 			<!--
+             	作者：648267773@qq.com
+             	时间：2019-10-12
+             	描述：输入框显示内容
+             -->
+ 			<div class="lj-show-div" v-show="showDivBean" >
+ 				<h2>渠道详情</h2>
+ 				<div class="lj-list-div">
+	 				<h3>渠道编码</h3>
+	 				<div class="lj-list-div-right">
+	 					545454411555
+	 				</div>
+	 			</div>
+	 			<div class="lj-list-div">
+	 				<h3>渠道编码</h3>
+	 				<div class="lj-list-div-right">
+	 					545454411555
+	 				</div>
+	 			</div>
+	 			<div class="lj-list-div">
+	 				<h3>渠道编码</h3>
+	 				<div class="lj-list-div-right">
+	 					545454411555
+	 				</div>
+	 			</div>
+	 			<div class="lj-list-div">
+	 				<h3>渠道编码</h3>
+	 				<div class="lj-list-div-right">
+	 					545454411555
+	 				</div>
+	 			</div>
+ 			</div>
+ 			
+ 			<div class="lj-list-div">
+ 				<h3>检查项分类</h3>
+ 				<div class="lj-list-div-right">
+ 					<van-dropdown-menu>
+					  <van-dropdown-item v-model="value1" @change="one"  :options="option1" />
+					</van-dropdown-menu>
+ 				</div>
+ 			</div>
+ 			<div class="lj-list-div">
+ 				<h3>上报年份</h3>
+ 				<div class="lj-list-div-right">
+ 					<van-dropdown-menu>
+					  <van-dropdown-item v-model="value2"   :options="option2" />
+					</van-dropdown-menu>
+ 				</div>
+ 			</div>
+ 			<div class="lj-list-div">
+ 				<h3>上报月份</h3>
+ 				<div class="lj-list-div-right">
+ 					<van-dropdown-menu>
+					  <van-dropdown-item v-model="value3"   :options="option3" />
+					</van-dropdown-menu>
+ 				</div>
+ 			</div>
+ 			
+ 			<div class="lj-list-content">
+ 				<table class="lj-list-table-01" border="0" cellspacing="0" cellpadding="0">
+ 					<tr><th></th><th>检查项名称</th><th>检查项值</th></tr>
+ 					<tr>
+ 						<td>1</td>
+ 						<td>我我我我我我</td>
+ 						<td>
+ 							<van-dropdown-menu>
+							  <van-dropdown-item  v-model="valuetableSelect1" :options="tableSelect1" />
+							</van-dropdown-menu>
+ 						</td>
+ 					</tr>
+ 					<tr>
+ 						<td>1</td>
+ 						<td>我我我我我我</td>
+ 						<td>
+ 							<van-dropdown-menu>
+							  <van-dropdown-item   v-model="valuetableSelect2"  :options="tableSelect2" />
+							</van-dropdown-menu>
+ 						</td>
+ 					</tr>
+ 				</table>
+ 			</div>
+ 			
+ 		</div>
+
+  <script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+			var Vue = window.Vue;
+			var vant = window.vant;
+
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						value: '',
+						password: '',
+						showDivBean: false,  // 是否隐藏内容
+						value1: 0,
+			      value2: 0,
+			      value3: 0,
+			      valuetableSelect1: 0,
+			      valuetableSelect2: 0,
+			      option1: [
+			        { text: '全部商品', value: 0 },
+			        { text: '新款商品', value: 1 },
+			        { text: '活动商品', value: 2 }
+			      ],
+			      option2: [
+			        { text: '2019', value: 0 },
+			        { text: '2018', value: 1 },
+			        { text: '2017', value: 2 },
+			      ],
+			      option3: [
+			        { text: '1', value: 0 },
+			        { text: '2', value: 1 },
+			        { text: '3', value: 2 },
+			      ],
+			      tableSelect1: [
+			        { text: '是', value: 0 },
+			        { text: '否', value: 1 },
+			        { text: '合格', value: 2 },
+			        { text: '不合格', value: 3 },
+			      ],
+			      tableSelect2: [
+			        { text: '是', value: 0 },
+			        { text: '否', value: 1 },
+			        { text: '合格', value: 2 },
+			        { text: '不合格', value: 3 },
+			      ]
+					}
+				},
+				computed: {
+					
+				},
+				watch:{
+					value:function(){
+						// 若输入框为空，则隐藏内容框
+						if(this.value == ''){
+							this.showDivBean = false;
+						}
+						console.log(this.value)
+					}
+				},
+				methods: {
+					// 若输入框不为空，则显示内容框
+					showDiv(){
+						if(this.value != ''){
+							this.showDivBean = true;
+						}
+						else{
+							vant.Dialog({ message: '请输入渠道编号' });
+							// alert('请输入渠道编号')
+						}
+					},
+					//
+					one(){
+						console.log(1)
+					}
+				},
+
+			})
+  </script>  
+  </body>
+
+</html>

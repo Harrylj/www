@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+	<head lang="en">
+		<meta charset="UTF-8">
+		<!-- 使用最新的ie内核渲染 -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- 移动设备优先, 禁止缩放 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+		<!-- 国产浏览器(360)使用webkit内核 -->
+		<meta name="renderer" content="webkit">
+		<!-- 禁止识别为手机号码 -->
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/vant.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css" />
+		<link rel="stylesheet" type="text/css" href="css/login.css" />
+
+		<!-- 引入组件 -->
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vant.min.js" type="text/javascript" charset="utf-8"></script>
+		<title>登录页面</title>
+		<style type="text/css">
+
+		</style>
+	</head>
+
+	<body>
+		<div class="login" id="app">
+			
+			<div class="login-body">
+				<h2 class="login-h">登录页面</h2>
+				<van-cell-group>
+					<van-field v-model="username" type="input" label="用户名"  placeholder="请输入用户名" />
+				</van-cell-group>
+				<van-cell-group>
+					<van-field v-model="password"  type="password" label="密码" placeholder="请输入密码" />
+				</van-cell-group>
+				<van-button class="login-btn-login" @click="login" type="info">登录</van-button>
+			</div>
+			
+
+		</div>
+
+		<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/Particleground.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				  //粒子背景特效
+				  $('body').particleground({
+				    dotColor: '#5cbdaa',
+				    lineColor: '#5cbdaa'
+				  });
+			})
+			
+			var Vue = window.Vue;
+			var vant = window.vant;
+
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						username: '',
+						password: '',
+					}
+				},
+				methods: {
+					login(){
+						vant.Dialog({ message: '错误提示' });
+						console.log(1)
+					}
+				},
+
+			})
+		</script>
+	</body>
+
+</html>
