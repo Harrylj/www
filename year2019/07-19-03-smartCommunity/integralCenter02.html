@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>积分中心2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/integralCenter.css"/>
+  </head>
+  <style type="text/css">
+    html,
+    body {
+      background-color: #F8F8F8;
+      padding-bottom: 1rem;
+    }
+    .grabage-classification {
+    	padding-top: .44rem;
+    }
+    .bpp-btn-tcdl{
+      position: fixed;
+      left: 50%;
+      width: 96%;
+      margin-left: -48%;
+      bottom: .1rem;
+    }
+    .gc-list{
+    	padding: .15rem 3.5%;
+    	display: flex;
+    	justify-content:space-between;
+      flex-wrap: wrap;
+    }
+    .gc-item{
+    	position: relative;
+    	padding: .66rem 0 .1rem 0;
+    	width: 31%;
+    	background-color: white;
+    	margin-bottom: .15rem;
+    }
+    .gc-item img{
+    	position: absolute;
+    	bottom: .7rem;
+    	left: 50%;
+    	display: block;
+    	margin-left: -.18rem;
+    	width: .36rem;
+    }
+    .gc-item h2{
+    	color: #323232;
+    	font-size: .15rem;
+    }
+    .gc-item p{	
+    	color: #999999;
+    	font-size: .12rem;
+    }
+    .gc-item h2
+    ,.gc-item p{
+    	text-align: center;
+    	line-height: .28rem;
+    	height: .28rem;
+    	overflow: hidden;
+    }
+  </style>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-12
+    	描述：使用：1.引入iconfont.css
+    	                 publicHeader.js
+    	            2. <div class="two-public-header-content"></div>
+    -->
+    
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="integral-center-02 public-div">
+				<div class="ic02-header">
+					<img src="images/integral/ic-banner@3x.png"/>
+				</div>
+				<div class="ic02-body">
+					<h2>积分商品</h2>
+					<div class="ic02-body-list">
+						<div class="ic02-body-item">
+							<img src="images/integral/ic-img@3x.png"/>
+							<h3>小米幻想数据线编织线版</h3>
+							<p>高强度纤维编织线体 / 一体化接口设计 / 结实耐用  </p>
+							<ul class="ic02-body-icon">
+								<li>品牌</li>
+							</ul>
+							<div class="ic02-body-btn">积分核销</div>
+						</div>
+						<div class="ic02-body-item">
+							<img src="images/integral/ic-img@3x.png"/>
+							<h3>小米幻想数据线编织线版</h3>
+							<p>高强度纤维编织线体 / 一体化接口设计 / 结实耐用  </p>
+							<ul class="ic02-body-icon">
+								<li>品牌</li>
+							</ul>
+							<div class="ic02-body-btn">积分核销</div>
+						</div>
+						<div class="ic02-body-item">
+							<img src="images/integral/ic-img@3x.png"/>
+							<h3></h3>
+							<p></p>
+							<ul class="ic02-body-icon">
+								<li>品牌</li>
+							</ul>
+							<div class="ic02-body-btn">积分核销</div>
+						</div>
+					</div>
+				</div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+//        returnHref: function(){
+//          aaa()
+//        },
+          // 标题名称
+          titleName: '积分中心',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            
+            
+          },
+
+        });
+
+      })
+    </script>
+
+  </body>
+
+</html>

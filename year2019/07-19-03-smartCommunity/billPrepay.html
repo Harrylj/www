@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>预缴费用</title>
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
+     <script src="//g.alicdn.com/fdilab/lib3rd/viewport-units-buggyfill/0.6.2/??viewport-units-buggyfill.hacks.min.js,viewport-units-buggyfill.min.js"></script>
+    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--标准mui.css-->
+    <link rel="stylesheet" href="css/mui.min.css">
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css"/>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" type="text/css" href="css/bill.css" />
+  </head>
+<style type="text/css">
+	.bill-prepay{
+		padding-top: .44rem;
+	}
+	.bp-line{
+		background-color: #F6F6F6;
+		height: .1rem;
+	}
+	.bpp-header
+	,.bpp-body{
+		padding: .15rem;
+	}
+	.bpp-header h2
+	,.bpp-body h2
+	,.bpp-one h2{
+		color: #101010;
+		font-size: .16rem;
+		font-weight: bold;
+		line-height: .4rem;
+	}
+	.bpp-header{
+		display: flex;
+		line-height: .5rem;
+		margin-bottom: 0;
+	}
+	.bpp-header img{
+		width: .38rem;
+		height: .38rem;
+		margin-left: .05rem;
+	}
+	.bpp-header h2{
+		margin-left: .1rem;
+		line-height: .38rem;
+	}
+	.bh-one-a{
+		font-size: .16rem;
+		color: #646464;
+	}
+	.bpp-ul-date{
+		margin-top: .05rem;
+		display: flex;
+		justify-content: space-between;
+	}
+	.bpp-ul-date li{
+		width: 1rem;
+		height: .44rem;
+		line-height: .44rem;
+		border-radius: .22rem;
+		text-align: center;
+		color: #808080;
+		border: 1px solid #DDDDDD;
+		font-size: .16rem;
+	}
+	.bpp-ul-date .hover-li{
+		color: #FF8F29;
+		border: 1px solid #FF8F29;
+	}
+	.bpp-ul-list{
+		position: relative;
+	}
+	.bpp-ul-list li{
+		display: flex;
+		justify-content: space-between;
+	}
+	.bpp-ul-list li:nth-child(1) h3
+	,.bpp-ul-list li:nth-child(1) h4{
+		color: #333333;
+		font-size: .16rem;
+		font-weight: bold;
+	}
+	.bpp-ul-list li h3
+	,.bpp-ul-list li h4{
+		color: #999999;
+		line-height: .4rem;
+	}
+</style>
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-03
+    	描述：.bbl-item:添加 .bbl-item-ok表示选中
+    -->
+    <button class="fill-btn-center hide" data-toggle="modal" data-target="#myModalCenter">弹窗</button>
+
+		<!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="bill bill-prepay public-div">
+      <div class="bpp-header">
+        <img src="images/property@3x.png"/>
+        <h2>物业费</h2>
+      </div>
+      <div class="bp-line"></div>
+			<div class="bpp-body">
+				<div class="bh-one" style="margin-bottom: .1rem;">
+          <h2>缴费单位</h2>
+          <a class="bh-one-a" href="#">天府新苑</a>
+        </div>
+        <div class="bpp-one">
+          <h2>预缴期限</h2>
+          <ul class="bpp-ul-date">
+          	<li class="hover-li">三个月</li>
+          	<li>半年</li>
+          	<li>一年</li>
+          </ul>
+        </div>
+        <ul class="bpp-ul-list">
+        	<li><h3>2020年1月-2020年6月</h3><h4>600</h4></li>
+        	<li><h3>物业管理费</h3><h4>234.90</h4></li>
+        	<li><h3>垃圾处理费</h3><h4>8.00</h4></li>
+        	<li><h3>停车费</h3><h4>100.00</h4></li>
+        	<li><h3>送水费</h3><h4>12.00</h4></li>
+        </ul>
+			</div>
+    </div>
+    <div class="bill-footer" style="justify-content: flex-end;">
+      <div class="bf-right">
+        <p>&yen;&nbsp;<span>280.00</span></p>&nbsp;&nbsp;
+        <a class="bf-btn-msjf" data-toggle="modal" data-target="#myModalCenter"  >直接缴纳</a>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal two-modal-center fade" id="myModalCenter" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog modal-dialog-center" role="document">
+        <div class="modal-content two-center-content">
+          <h4>是否确认缴费</h4>
+          <div class="two-center-btn-qd" data-dismiss="modal">确定</div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+    <script>
+      $(function() {
+				// 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+//        returnHref: function(){
+//          aaa()
+//        },
+          // 标题名称
+          titleName: '预缴费用',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+          },
+
+        });
+				// 选择预缴期限
+				$('.bpp-ul-date').children('li').on('click',function(){
+					var click_class = 'hover-li';
+					$(this).addClass(click_class).siblings().removeClass(click_class);
+					console.log('日期')
+				})
+				
+
+        // 点击感叹号
+        $('.bbl-item-warn').on('click', function() {
+          $('.fill-btn-center').click();
+          return false;
+        })
+
+        // 点击选中内容
+        $('.bbl-item').on('click', function() {
+          let class_click = 'bbl-item-ok';
+          $(this).toggleClass(class_click);
+          // 调用数据改变函数
+          fi_number_change()
+        })
+
+        // 点击全选内容
+        $('.bf-left').on('click', function() {
+          let class_click = 'bf-left-ok',
+            other_e = $('.bbl-item'),
+            other_class = 'bbl-item-ok';
+          // 全选
+          if(!$(this).hasClass(class_click)) {
+            $(this).addClass(class_click)
+            $(other_e).addClass(other_class)
+          }
+          // 反选
+          else {
+            $(this).removeClass(class_click)
+            $(other_e).removeClass(other_class)
+          }
+        })
+
+      })
+    </script>
+
+  </body>
+
+</html>

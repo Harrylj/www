@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1,maximum-scale=1">
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<title>HTML5 调用手机摄像头</title>
+		<script src="bridgeHelper.js"></script>
+	</head>
+	<body>
+	<input id="file1" type="file"  name="file1" multiple="multiple" accept="">
+	<br>
+		<button type="button" id="btn">显示加载框</button>
+		<button type="button" id="actionSheet">显示底部菜单栏</button>
+		<button type="button" id="recordVideo">录像</button>
+		<button type="button" id="netRequest">网络请求</button>
+		<button type="button" id="share">分享</button>
+		<button type="button" id="quit">退出</button>
+		<img id="myimg" alt="上海鲜花港 - 郁金香" />
+		<video id="myvideo" src="/i/movie.ogg" controls="controls">
+			your browser does not support the video tag
+		</video>
+		<script>
+			bridgeHelper.bridgeReady(function() {
+				document.getElementById("btn").addEventListener('click', function() {
+					sdtz.nativeUI.toast("123");
+				}, false);
+				document.getElementById("quit").addEventListener('click', function() {
+					sdtz.runtime.quit();
+				}, false);
+				document.getElementById("share").addEventListener('click', function() {
+					sdtz.share.send({
+						title: "H5分享",
+						content: "分享测试信息",
+						href: "https://www.baidu.com",
+						images: ["https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575027630945&di=58dde48f32d6c5ed1792dc01714db424&imgtype=0&src=http%3A%2F%2Fimgo173.gda086.com%2Fimg2019%2F11%2F29%2F11%2F2019112997746940.jpg",
+						"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1575027977963&di=d6738c870906f5dc5192a90d3f0aeee8&imgtype=0&src=http%3A%2F%2Fpic.2265.com%2Fupload%2Fdata%2F20141107%2F750d93febbf5366769b558c8ca290271.png"]
+					});
+				}, false);
+				document.getElementById("netRequest").addEventListener('click', function() {
+					sdtz.net.request({
+						url: "/sdtz/adms/appinfo/info",
+						data: {a: 1}
+					}, function(result){
+						console.log(JSON.stringify(result));
+						sdtz.nativeUI.toast("请求成功");
+					}, function(throwable){
+						sdtz.nativeUI.toast(throwable.msg);
+					});
+				}, false);
+				document.getElementById("actionSheet").addEventListener('click', function() {
+					sdtz.nativeUI.actionSheet({
+						title: "底部菜单",
+						buttons: ["相册", "拍照"]
+					}, function(data) {
+						switch (data.index) {
+							case 0:
+								galleryImg();
+								break;
+							case 1:
+								getImage();
+								break;
+							default:
+								break
+						}
+					});
+				}, false);
+
+				document.getElementById("recordVideo").addEventListener('click', function() {
+					sdtz.camera.recordVideo(function(e) {
+						var s = e.file + "?version=" + new Date().getTime();
+						document.querySelector("#myvideo").src = s;
+					}, function(ret) {
+						if (ret.code != sdtz.bridge.CANCEL) {
+							sdtz.nativeUI.toast(ret.msg);
+						}
+					});
+				}, false);
+
+				function getImage() {
+					sdtz.camera.captureImage(function(e) {
+						var s = e.file + "?version=" + new Date().getTime();
+						document.querySelector("#myimg").src = s;
+					}, function(ret) {
+						if (ret.code != sdtz.bridge.CANCEL) {
+							sdtz.nativeUI.toast(ret.msg);
+						}
+					});
+				}
+
+				function galleryImg() {
+					sdtz.album.pick({filter: "image"}, function(e) {
+						var s = e.file + "?version=" + new Date().getTime();
+						document.querySelector("#myimg").src = s;
+					}, function(ret) {
+						if (ret.code != sdtz.bridge.CANCEL) {
+							sdtz.nativeUI.toast(ret.msg);
+						}
+					});
+				}
+
+				function chooseVideo() {
+					sdtz.album.pick({filter: "video"}, function(e) {
+						var s = e.file + "?version=" + new Date().getTime();
+						document.querySelector("#myimg").src = s;
+					}, function(ret) {
+						if (ret.code != sdtz.bridge.CANCEL) {
+							sdtz.nativeUI.toast(ret.msg);
+						}
+					});
+				}
+			});
+			bridgeHelper.back = function() {
+				console.log("返回键11111111");
+			};
+		</script>
+		<style>
+			* {
+			-webkit-touch-callout:none;
+			-webkit-user-select:none;
+			-khtml-user-select:none;
+			-moz-user-select:none;
+			-ms-user-select:none;
+			user-select:none;
+			}
+			#myvideo {
+				width: 100%;
+				height: auto;
+			}
+			#myimg {
+				width: 100%;
+				height: auto;
+			}
+		</style>
+	</body>
+</html>

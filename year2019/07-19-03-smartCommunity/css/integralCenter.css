@@ -1,0 +1,213 @@
+.integral-center-01
+,.integral-center-02{
+	padding-top: .44rem;
+}
+.integral-center-01 {
+	position: relative;
+	background-color: #F6F6F6;
+	background-image: url(../images/integral/bg@3x.png);
+	background-size: 100% auto; 
+	background-repeat: no-repeat;
+	background-position: 0 -.5rem;
+}
+.ic01-header {
+	position: relative;
+	width: 3.45rem;
+	height: 1.31rem;
+	margin: .1rem auto 0 auto;
+	background-color: white;
+	padding: .2rem .15rem;
+	border-radius: .1rem;
+}
+.ic01-header img{
+	position: absolute;
+	left: .15rem;
+	top: .45rem;
+	width: 0.4rem;
+	height: 0.4rem;
+	margin-top: -.2rem;
+	border-radius: 50%;
+}
+.ic01-header h2{
+	padding-left: .5rem;
+	font-size: .22rem;
+	line-height: .28rem;
+	font-weight:bold;
+}
+.ic01-header h5{
+	padding-left: .65rem;
+	font-size: .12rem;
+	color: #999999;
+	line-height: .18rem;
+	background-image: url(../images/integral/integral_icon@3x.png);
+	background-size: 0.12rem 0.12rem;
+	background-position: .5rem center;
+	background-repeat: no-repeat;
+}
+.ic01-header-footer{
+	margin-top: .1rem;
+}
+.ic01-header-footer{
+	display: flex;
+	justify-content: space-between;
+	
+}
+.ic01-header-footer p{
+	color: #333333;
+	font-size: .12rem;
+}
+.ic01-header-footer h4{
+	color: #333333;
+	font-size: .12rem;
+	background-image: url(../images/integral/icon-right.png);
+	background-size: .06rem .1rem;
+	background-repeat: no-repeat;
+	background-position: right center;
+	padding-right: .16rem;
+}
+.ic01-header-footer p,
+.ic01-header-footer h4{
+	line-height: .5rem;
+}
+.ic01-body{
+	position: relative;
+	padding: 0 .15rem;
+}
+.ic01-body h2
+,.ic02-body h2{
+ 	font-size: .18rem;
+ 	color: #333333;	
+ 	line-height: .5rem;
+ 	margin-top: .1rem;
+}
+.ic01-body-list{
+	background-color: white;
+	border-radius: .2rem;
+	padding: 0 .15rem;
+}
+.ic01-body-item{
+	position: relative;
+	padding: .15rem .72rem .15rem .6rem;
+	border-bottom: 1px solid #F1F1F1;
+}
+.ic01-body-item img{
+	position: absolute;
+	left: 0;
+	top: 50%;
+	margin-top: -.23rem;
+	width: .46rem;
+	height: .46rem;
+}
+.ic01-body-item h3{
+	color: #333333;
+}
+.ic01-body-item h4{
+	color: #999999;
+}
+.ic01-body-item h3,
+.ic01-body-item h4{
+	font-size: .15rem;
+	line-height: .24rem;	
+}
+.ic01-body-btn{
+	position: absolute;
+	right: 0;
+	top: 50%;
+	text-align: center;
+	margin-top: -.15rem;
+	width: .74rem;
+	font-size: .12rem;
+	line-height: .28rem;
+	border-radius: .14rem;
+	border: 1px solid transparent;
+}
+.ic01-body-btn-ljqw
+,.ic01-body-btn-lqjf
+,.ic02-body-btn{
+  color: white;
+  background: -webkit-linear-gradient(90deg, #FE6126, #FE913C); /* Safari 5.1 - 6.0 */
+  background: linear-gradient(90deg, #FE6126, #FE913C); /* 标准的语法 */
+}
+.ic01-body-btn-ylq{
+	color: #FE8436;
+	border: 1px solid #FE8436;
+	background-color: white;
+}
+.ic01-body-item .ic01-body-btn-ljqw{
+	display: block;
+}
+.ic01-body-item-ok .ic01-body-btn-ylq
+,.ic01-body-item-ok .ic01-body-btn-ljqw
+,.ic01-body-item-over .ic01-body-btn-lqjf
+,.ic01-body-item-over .ic01-body-btn-ljqw
+,.ic01-body-item .ic01-body-btn-ylq
+,.ic01-body-item .ic01-body-btn-lqjf{
+	display: none;
+}
+.ic01-body-item-ok .ic01-body-btn-lqjf
+,.ic01-body-item-over .ic01-body-btn-ylq{
+	display: block;
+}
+.integral-center-02{
+	padding-left: .15rem;
+	padding-right: .15rem;
+	padding-bottom: .15rem;
+}
+.ic02-header{
+	position: relative;
+	padding-top: .15rem;
+}
+.ic02-header img{
+	display: block;
+	width: 100%;
+}
+.ic02-body{
+	position: relative;
+}
+.ic02-body-item{
+	position: relative;
+	border-radius: .1rem;
+	padding: .15rem .15rem .15rem 1.57rem;
+	background-color: white;
+	margin-bottom: .1rem;
+	min-height: 1.55rem;
+}
+.ic02-body-item img{
+	position: absolute;
+	left: .15rem;
+	top: .15rem;
+	width: 1.27rem;
+	height: 1.27rem;
+}
+.ic02-body-icon{
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding-top: .05rem;
+}
+.ic02-body-icon li{
+	background-color: #F1F1F1;
+	font-size: .12rem;
+	line-height: .18rem;
+	padding: 0 .05rem;
+	color: #999999;
+}
+.ic02-body-item h3{
+	color: #333333;
+	font-size: .16rem;
+	line-height: .28rem;
+}
+.ic02-body-item p{
+	color: #999999;
+	font-size: .12rem;
+	line-height: .18rem;
+}
+.ic02-body-btn{
+	position: relative;
+	display: inline-block;
+	line-height: .28rem;
+	padding: 0 .14rem;
+	font-size: .13rem;
+	border-radius: .14rem;
+	margin-top: .1rem;
+}

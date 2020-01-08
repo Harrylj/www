@@ -1,0 +1,79 @@
+.about-us .au-div-01 {
+  position: relative;
+}
+.about-us .au-div-01 .au-div {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -550px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 99;
+}
+.about-us .au-div-01 .au-div h1 {
+  color: white;
+  line-height: 50px;
+  font-size: 30px;
+  text-align: center;
+}
+.about-us .au-div-01 .au-div p {
+  font-size: 16px;
+  line-height: 28px;
+  color: white;
+  text-align: center;
+}
+.about-us .au-div-02 {
+  position: relative;
+  padding: 80px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.about-us .au-div-02 .au-02-left {
+  width: 50%;
+}
+.about-us .au-div-02 .au-02-right {
+  margin-top: -200px;
+  position: relative;
+  width: 50%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: right;
+  text-align: right;
+}
+.about-us .au-div-02 .au-02-right .au-share-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.about-us .au-div-02 .au-02-right .aur-div {
+  width: 500px;
+  height: 500px;
+  background-color: #2288ff;
+}
+.about-us .au-div-02 .au-02-img {
+  position: absolute;
+  bottom: -80px;
+  left: -15%;
+  z-index: 99;
+}
+.about-us .au-div-02 h1 {
+  font-size: 30px;
+  color: black;
+  line-height: 50px;
+}
+.about-us .au-div-02 p {
+  color: #636768;
+  font-size: 16px;
+  line-height: 28px;
+}
+.about-us .au-div-03 {
+  position: relative;
+  padding: 30px 0 100px 0;
+}
+.about-us .au-div-03 p {
+  font-size: 16px;
+  line-height: 28px;
+  color: black;
+}

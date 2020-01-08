@@ -1,42 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
+<!doctype html>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <!-- 使用最新的ie内核渲染 -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- 移动设备优先, 禁止缩放 -->
-    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
-    <!-- 国产浏览器(360)使用webkit内核 -->
-    <meta name="renderer" content="webkit">
-    <!-- 禁止识别为手机号码 -->
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
-    <!--<link rel="stylesheet" type="text/css" href="css/public.css"/>
-    <link rel="stylesheet" type="text/css" href="css/bbb.css"/>-->
-    <title>函数</title>
-	<style type="text/css">
-		body{
-    background-image: url(https://images.cnblogs.com/cnblogs_com/miangao/1001115/o_bg_water.jpg)!important;
-    background-repeat: no-repeat;
-    background-attachment:fixed;
-}
-	</style>
+    <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--<link rel="stylesheet" type="text/css" href="__CSS__/ionic.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/wx.css">
+    <title>下载APP</title>
 </head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    body{
+        background:#fff;
+        /*overflow:hidden;*/
+    }
+    #weixin-tip img{
+        width:100%;
+    }
+    #weixin-tip{display:none;position:fixed;left:0;top:0;background:rgba(0,0,0,0.8);filter:alpha(opacity=80);width:100%;height:100%;z-index:100;}
+    #weixin-tip p{position:relative;width:90%;margin:0 auto;}
+    #weixin-tip .close{color:#fff;padding:5px;font:bold 20px/24px simsun;text-shadow:0 1px 0 #ddd;position:absolute;top:0;left:0;}
+</style>
 <body>
-	<div style="height: 3000px;">
-		
-	</div>
-<script>
-	let foo = 'outer';
-
-function bar(func = () => foo) {
-  let foo = 'inner';
-  console.log(func());
-}
-
-bar(); // outer
-</script>
+    <a id="J_weixin" href='http://www.cdtzb.gov.cn/cdstzb/indexTZGG/2019-11/04/d38cac716cd749cf96f9ae6bfaa061bf/files/f41401da45f24089b793bbb284ee6665.docx'>aaaaaa</a>
+    <div id="weixin-tip"><p><img src="__STATIC__/index/lib/tp_1.png" alt="微信打开"/><span id="close" title="关闭" class="close">×</span></p></div>
 </body>
+<script>
+    var is_weixin = (function(){return navigator.userAgent.toLowerCase().indexOf('micromessenger') !== -1})();
+    window.onload = function() {
+        var winHeight = typeof window.innerHeight != 'undefined' ? window.innerHeight : document.documentElement.clientHeight; //兼容IOS，不需要的可以去掉
+        var btn = document.getElementById('J_weixin');
+        var tip = document.getElementById('weixin-tip');
+        var close = document.getElementById('close');
+        if (is_weixin) {
+            btn.onclick = function(e) {
+                tip.style.height = winHeight + 'px'; //兼容IOS弹窗整屏
+                tip.style.display = 'block';
+                return false;
+            }
+            close.onclick = function() {
+                tip.style.display = 'none';
+            }
+        }
+    }
+    // var remap=document.getElementById('remap');
+    //    remap.style.height=(winHeight-20) + 'px';     
+</script>
 </html>

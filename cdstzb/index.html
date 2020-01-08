@@ -13,6 +13,7 @@
     <meta name="ArticleTitle" content="<CMSPRO_DOCUMENT num='1000' field='title'></CMSPRO_DOCUMENT>">
     <meta name="PubDate" content="<CMSPRO_DOCUMENT field='publishedTime' dateformat='yyyy-MM-dd HH:mm'></CMSPRO_DOCUMENT>">
     <meta name="ContentSource" content="<CMSPRO_DOCUMENT FIELD='laiyuan' DOMAINMETADATANAME='稿件元数据'>来源</CMSPRO_DOCUMENT>">
+    
     <title>
       <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
     </title>
@@ -30,6 +31,14 @@
       .BMapLabel {
         display: none !important;
       }
+			.tziz-one-ul-div a{
+				display: block !important;
+				padding-right: 20px;
+			}
+			.tziz-one-ul-div a span:nth-child(2){
+				color: #aeaeae;
+    		font-size: 14px;
+			}
     </style>
     <!--
     	作者：648267773@qq.com
@@ -116,8 +125,29 @@
                 <h1 class="fontht"><CMSPRO_DOCUMENT FIELD="title" NUM=""></CMSPRO_DOCUMENT></h1>
               </a>
             </CMSPRO_DOCUMENTS>
+            
+
             <div class="tziz-one-ul-div">
               <ul>
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="1" PAGESIZE="0">
+                  <li>
+                  	<a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="16" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="MM-dd">12-12</CMSPRO_DOCUMENT></span></a>
+                  </li>
+                </CMSPRO_DOCUMENTS>
+              </ul>
+            </div>
+            <div class="tziz-one-ul-div border_no ">
+              <ul>
+                <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="4" STARTPOS="4" PAGESIZE="0">
+                  <li>
+                  	<a href="<CMSPRO_DOCUMENT FIELD='url' >链接地址</CMSPRO_DOCUMENT>"><span><CMSPRO_DOCUMENT FIELD="title" NUM="16" >信息标题</CMSPRO_DOCUMENT></span><span class="time fr"><CMSPRO_DOCUMENT FIELD="publishedTime" DATEFORMAT="MM-dd">12-12</CMSPRO_DOCUMENT></span></a>
+                  </li>
+                </CMSPRO_DOCUMENTS>
+              </ul>
+            </div>
+            <!--<div class="tziz-one-ul-div">
+              <ul>
+              	
                 <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="3" STARTPOS="1" PAGESIZE="0">
                   <li>
                     <CMSPRO_DOCUMENT FIELD="title" NUM="18" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
@@ -125,7 +155,6 @@
                 </CMSPRO_DOCUMENTS>
               </ul>
             </div>
-
             <div class="tziz-one-ul-div border_no ">
               <ul>
                 <CMSPRO_DOCUMENTS CHANNELCODE="yaowenTitle" DOCUMENTTYPE="0|1|2|3|4|5|7|8|9" NUM="4" STARTPOS="4" PAGESIZE="0">
@@ -134,7 +163,7 @@
                   </li>
                 </CMSPRO_DOCUMENTS>
               </ul>
-            </div>
+            </div>-->
 
             <p>
               <a class="tz-index-more-01" href="<CMSPRO_CHANNEL CODE='yaowen'  FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
