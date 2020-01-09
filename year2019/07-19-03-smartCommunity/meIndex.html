@@ -19,8 +19,19 @@
     <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
   </head>
   <style type="text/css">
-      html,body{
-        background-color: white;
+      html,body
+      ,.me-index{
+        background-color: #F2F2F2;
+      }
+      .mib-list{
+      	background-color: white;
+      	margin: 0 -.2rem;
+      	padding: 0 .2rem;
+      }
+      .aaaaa{
+      	display: block;
+      	width: 100%;
+      	margin: 0 -.2rem;
       }
   </style>
   <body>
@@ -32,20 +43,27 @@
         <a class="mit-news" href="#"></a>
         <a class="mit-setting" href="#"></a>
       </div>
+      <div class="mi-top-header"></div>
+      <!--<img class="aaaaa" src="images/two/me-bg-02@3x.png"/>-->
       <div class="mi-header">
         <img class="mih-img" src="images/user-01.jpg" />
         <h1>tititiTfdd试试</h1>
         <p>南湖世纪风景附三单元1234三单元1三单元1三单元1</p>
       </div>
+      <div class="mib-btn-face-new">
+        	<img src="images/two/me-bg-03@3x.png"/>
+        	<h2>立即开启人脸识别</h2>
+        	<p>让用户安全放心使用</p>
+        	<div class="mib-btn-face-mskq">马上开启</div>
+      </div>
       <div class="mi-body">
-        <div class="mib-btn-face"></div>
         <div class="mib-list">
-          <a href="#">
+          <!--<a href="#">
           <div class="mibl-item mibl-item-01">
             <h2>参与的活动</h2>
             <div class="mi-active-number">9</div>
           </div>
-          </a>
+          </a>-->
           <a href="#">
           <div class="mibl-item mibl-item-02">
             <h2>修改手机</h2>
@@ -61,7 +79,12 @@
             <h2>隐私</h2>
           </div>
           </a>
-          <!--<div class="mi-line-15"></div>-->
+          <div style="height: .2rem;background-color: #F2F2F2;margin: 0 -.2rem;"></div>
+          <a href="#">
+          <div class="mibl-item mibl-item-06">
+            <h2>帮助反馈</h2>
+          </div>
+          </a>
           <a href="#">
           <div class="mibl-item mibl-item-05">
             <h2>关于我们</h2>
@@ -74,11 +97,6 @@
     <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
     <script type="text/javascript">
     	$(function(){
-    	  $('.mib-btn-face').on('click',function(){
-    	    alert('人脸识别咯')
-    	  })
-    	  
-    	  
     	  // 公用头部
         $('.two-public-header-content').publicHeader({
           // 父级元素

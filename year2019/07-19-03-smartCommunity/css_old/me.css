@@ -2,10 +2,8 @@
   padding: 0 .2rem 0 .2rem;
   background-color: white;
 }
-.me-index .mi-top
-,.me-index .mi-top-header {
-  /*height: 1.2rem;*/
- 	height: 1.5rem;
+.me-index .mi-top {
+  height: .9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,62 +20,7 @@
   background: -webkit-gradient(linear, left top, right top, from(#fd933d), to(#fe6026));
   background: -o-linear-gradient(left, #fd933d, #fe6026);
   background: linear-gradient(90deg, #fd933d, #fe6026);
-  background-image: url(../images/two/me-bg-02@3x.png);
-  background-size: 100% 100%;
   /* 标准的语法 */
-}
-.me-index div.mi-top-header{
-	height: .3rem;
-	display: none;
-	border-radius: 0 0 50% 50%;
-} 
-.mib-btn-face-new{
-	position: relative;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	width: 3.45rem;
-	height: .75rem;
-	border-radius: .375rem;
-	margin: -.05rem auto .05rem auto;
-	padding:0 1rem;
-	background: -o-linear-gradient(90deg, #3871E5, #0A55D2);
-  background: -webkit-gradient(linear, left top, right top, from(#3871E5), to(#0A55D2));
-  background: -o-linear-gradient(left, #3871E5, #0A55D2);
-  background: linear-gradient(90deg, #3871E5, #0A55D2);
-}
-.mib-btn-face-new img{
-	position: absolute;
-	top: 50%;
-	left: .1rem;
-	margin-top: -.325rem;
-	width: .8rem;
-	height: .65rem;
-}
-.mib-btn-face-new h2{
-	font-size: .16rem;
-}
-.mib-btn-face-new p{
-	font-size: .12rem;
-}
-.mib-btn-face-new h2
-,.mib-btn-face-new p{
-	color: white;
-	line-height: .2rem;
-}
-.mib-btn-face-mskq{
-	position: absolute;
-	right: .2rem;
-	top: 50%;
-	margin-top: -.14rem;
-	background-color: white;
-	width: .75rem;
-	height: .28rem;
-	line-height: .3rem;
-	border-radius: .14rem;
-	color: #2968DF;
-	font-size: .125rem;
-	text-align: center;
 }
 .me-index .mi-top .mit-news,
 .me-index .mi-top .mit-setting {
@@ -97,10 +40,9 @@
 }
 .me-index .mi-header {
   position: relative;
-  padding-left: .8rem;
+  padding-left: 0;
   padding-top: .35rem;
   min-height: .7rem;
-  margin-top: -.7rem;
 }
 .me-index .mi-header .mih-img {
   position: absolute;
@@ -115,7 +57,7 @@
 .me-index .mi-header h1 {
   font-size: .18rem;
   line-height: .3rem;
-  color: white;
+  color: #000000;
   height: .3rem;
   overflow: hidden;
   font-weight: bold;
@@ -123,15 +65,10 @@
 .me-index .mi-header p {
   font-size: .13rem;
   line-height: .24rem;
-  color: white;
+  color: #686868;
   overflow: hidden;
   height: .24rem;
 }
-.me-index .mi-header h1
-,.me-index .mi-header p{
-	position: relative;
-	top: -.6rem;
-} 
 .me-index .mi-body {
   position: relative;
   padding-top: .1rem;
@@ -218,10 +155,6 @@
 .me-index .mi-body .mibl-item-05:before {
   background-image: url(../images/two/me-about-icon@3x.png);
 }
-.me-index .mi-body .mibl-item-06:before {
-  background-image: url(../images/two/me-edit-icon@3x.png);
-}
-
 .me-index .mi-line-15 {
   background-color: #F8F8F8;
   height: .15rem;

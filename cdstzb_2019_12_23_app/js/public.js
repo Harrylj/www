@@ -763,13 +763,23 @@ ZeroClipboard.Client.prototype = {
 $(function(){
 //  console.log($('.ab-one').html());
 //  console.log($('.ltb-one-title').html());
+	  //  隐藏span前的>
+	  function delete_nav_more(_this){
+	  	var _arr = ['国画类','油画类','书法类','摄影类']
+	  	for(var i =0;i < _arr.length; i++){
+	  		if(_this.html()==_arr[i]){
+	  			_this.css({'position':'relative','z-index': '10','background-color': 'white','margin-left': '-12px', 'display': 'inline-block', 'padding-left': '15px'})
+	  		}
+	  	}
+	  	console.log('隐藏span前的>')
+	  }
       // 改变导航页提示字
       $('.ab-one').children('a').each(function(){
         var a = '首页右侧列表',
             b = '频道',
             c = '',
             d = '作品展示';
-        // 隐藏>
+        // a标签隐藏>
         if($(this).html() == a || $(this).html() == b || $(this).html() == c || $(this).html() == d  ){
           $(this).hide().parent('.ab-one').children('a').eq(0).css({'position':'relative','z-index': '10','background-color': 'white','margin-right': '-10px'})
         }
@@ -785,7 +795,7 @@ $(function(){
             b = '频道',
             c = '',
             d = '作品展示';
-        // 隐藏>
+        // a标签隐藏>
         if($(this).html() == a || $(this).html() == b || $(this).html() == c || $(this).html() == d){
           $(this).hide().parent('.ltb-one-title').children('a').eq(0).css({'position':'relative','z-index': '10','background-color': 'white','margin-right': '-10px'})
         }
@@ -796,19 +806,21 @@ $(function(){
         }
       })
       
-      // 去掉一些栏目的首页显示
+      // 去掉一些栏目的首页显示,以及多余的>
       $('.ab-one').children('span').each(function(){
         if($(this).html() != '首页'){
           var aaa = $(this).html().replace("首页","");
           $(this).html(aaa)
         }
+        delete_nav_more($(this))
       })
-      // 去掉一些栏目的首页显示
+      // 去掉一些栏目的首页显示,以及多余的>
       $('.ltb-one-title').children('span').each(function(){
         if($(this).html() != '首页'){
           var aaa = $(this).html().replace("首页","");
           $(this).html(aaa)
         }
+        delete_nav_more($(this))
       })
       console.log('2019-07-16-15:49')
 })

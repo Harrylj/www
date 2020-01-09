@@ -141,6 +141,12 @@
       div.zpzs-div a:nth-child(4n) .ltbtl-list-img{
 			margin-right: 20px;
 	  }
+	  div.ab-content-div{
+	  	padding: 0;
+	  }
+	  div.public-body{
+	  	padding: 0 .2rem;
+	  }
 }
 .lj-app{
 	display: none;
@@ -969,7 +975,7 @@
 	display: block;
 	padding: 0 15px;
 	font-size: 16px;
-	/*clear: both;*/
+	clear: both;
 }
 .ltbtl-list-a-div a:before{
 	position: absolute;
@@ -1136,7 +1142,8 @@
   color: black;
 }
 .ab-one a
-,.ltb-one-title a{
+,.ltb-one-title a
+,.ab-one>span{
   padding: 0 15px;
 }
 .ab-one a:first-child
