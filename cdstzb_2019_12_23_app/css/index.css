@@ -33,10 +33,10 @@
 		}
     div.tzib-one-left{
     	width: 100%;
-    	height: 6.333rem;
+    	height: 4.333rem;
     }
     div.slideBox .bd img{
-    	height: 6.333rem;
+    	height: 4.333rem;
     }
     div.center{
     	width: 100%;
@@ -87,26 +87,50 @@
     	padding: 0 .2rem;
     }
     .lj-app-nav a{
+    	position: relative;
     	float: left;
     	display: inline-block;
     	line-height: 1rem;
     	padding: 0 .2rem ;
-    	font-size: .32rem;
+    	font-size: .36rem;
     	color: #666666;
     	font-weight: bold;
     }
-    .lj-app-nav-right{
+    .lj-app-nav a:after{
     	position: absolute;
+    	top: 50%;
     	right: 0;
+    	content: " ";
+    	color: transparent;
+    	height: .3rem;
+    	margin-top: -.15rem;
+    	width: 1px;
+    	background-color: #F5F5F5;
+    }
+    .lj-app-nav-right
+    ,.lj-app-nav-left{
+    	position: absolute;
     	top: 0;
-    	width: 1rem;
+    	width: 54px;
     	font-size: .36rem;
     	text-align: center;
-    	height: 1rem;
+    	height: 54px;
 		display: flex;
 	    justify-content: center;
 	    flex-direction: column;
-	    background-color: white;
+	    /*background-color: white;*/
+	    background-color: transparent;
+    	color: white;
+    }
+    .lj-app-nav-left{
+    	left: 0;
+    }
+    .lj-app-nav-right{
+    	right: 0;
+    }
+    .lj-app-search{
+    	position: relative;
+    	padding: 0 42px;
     }
     .lj-app-search,
     .van-search{
@@ -135,7 +159,7 @@
       	display: inline-block;
     	line-height: 1rem;
     	padding: 0 .5rem ;
-    	font-size: .32rem;
+    	font-size: .36rem;
     	color: #333333;
       }
       div.zpzs-div a:nth-child(4n) .ltbtl-list-img{
@@ -145,8 +169,123 @@
 	  	padding: 0;
 	  }
 	  div.public-body{
-	  	padding: 0 .2rem;
+	  	padding: 54px .2rem 0 .2rem;
 	  }
+	  div.iil-item
+	  ,div.abcc-body img 
+	  ,div.list-two_10 img
+	  ,div.list-three-four .iil-item{
+	  	width: 7.1rem;
+	  	padding-right: 0;
+	  	margin-right: 0;
+	  }
+	  div.abcc-body img 
+	  ,div.list-two_10 img{
+	  	height: initial;
+	  }
+	  div.iil-item img{
+	  	width: 100%;
+	  	height: initial;
+	  }
+	  div.ltbtl-list-img-div .ltbtl-list-img{
+	  	width: 6.7rem;
+	  }
+	  div.abcc-body video{
+	  	display: block;
+	  	width: 7.1rem;
+	  	height: 4.2rem;
+	  }
+	  div.slideBox-02 img{
+	  	height: .7rem;
+	  }
+	  div.ab-one
+	  ,div.ltb-two-left h1
+	  ,div.abcch-right
+	  ,div.tziz-one-ul-div .time
+	  ,div.page_num .pagination-last
+	  ,div.page_num .pagination-index:first-child
+	  ,div.page_num .pagination-index:last-child
+	  ,div#now_all_page{
+	  	display: none;
+	  }
+	  div.list-two-sdshy .ltbtl-list-img-div a{
+		clear: both;
+	  }
+	  div.ltbtl-list-a-div a{
+	  	display: flex;
+    	flex-direction: column;
+	  	width: 100%;
+	  	margin-bottom: .2rem;
+	  }
+	  div.zpzs-div p{
+	  	margin-left: -80px;
+    	width: 160px;
+	  }
+	  div.zpzs-div{
+	  	display: flex;
+	    justify-content: center;
+	    flex-direction: column;
+	  }
+	  div.index-img-list{
+	  	margin-right: 0;
+	  }
+	  div.list-two-body{
+	  	padding: .3rem 0;
+	  }
+	  div.zpzs-div img{
+	  	width: 160px!important;
+	  }
+	  div.tzi-body{
+	  	padding-top: 0;
+	  }
+	  div#app-header{
+	  	position: fixed;
+	    z-index: 999;
+	    top: 0;
+	    left: 0;
+	  }
+	  /*div.tzib-one-right h1
+	  ul.lj-app-nav a{
+	  	font-size: .36rem;
+	  }
+	  div.index-slide-01 h3{
+	  	font-size: .34rem;
+	  }
+	  div.tzib-one-right h2
+	  ,div.tizb-three-list h3
+	  ,div.slide-click
+	  ,div.ltbtl-list-a-div a span{
+	  	font-size: .32rem;
+	  }
+	  div.tziz-one-ul-div a
+	  ,div.tizb-three-list a
+	  ,div.tziz-one-ul-div a span:nth-child(2){
+	  	font-size: .3rem;
+	  }
+	  div.tizb-three-list a
+	  ,div.tzib-loop-div-header h1
+	  ,div.tzib-nav-04-title,
+	  ,div.tzib-nav-04-footer{
+	  	font-size: .28rem;
+	  }
+	  div.tzib-nav-04 a
+	  ,div.slide-two-all li h3{
+	  	font-size: .26rem;
+	  } 
+	  a.tz-index-more-01
+	  ,.tizb-three-list a.tz-index-more-01
+	  ,ul.infoList a
+	  div.tzib-nav-01 a
+	  ,div.tzib-nav-02 a
+	  ,div.tzib-nav-03 a{
+	  	font-size: .24rem;
+	  }*/
+}
+.lj_title{
+	color: transparent;
+	font-size: .01rem;
+	height: .01rem;
+	background-color: transparent;
 }
 .lj-app{
 	display: none;
@@ -940,6 +1079,7 @@
 .ltb-two-left{
 	width: 760px;
 	position: relative;
+	padding-left: 0;
 }
 .ltb-two-left h1{
 	color: #d00000;

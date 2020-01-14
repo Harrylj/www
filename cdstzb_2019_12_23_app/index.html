@@ -503,7 +503,7 @@
             <a class="tz-index-more-01 tz-index-more-img" href="<CMSPRO_CHANNEL  CODE='indexTPXW' FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
             <a class="tz-index-more-01 tz-index-more-video" href="<CMSPRO_CHANNEL   CODE='indexSPXW'  FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
           </div>
-          <div class="slide-two-all">
+          <div class="slide-two-all slide-two-all-01">
             <div class="slide-04 slide-two-hover">
               <div class="leftLoop">
                 <a class="next"></a>
@@ -982,7 +982,7 @@
             <a class="tz-index-more-01 tz-index-more-img" href="<CMSPRO_CHANNEL  CODE='indexTPXW' FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
             <a class="tz-index-more-01 tz-index-more-video" href="<CMSPRO_CHANNEL   CODE='indexSPXW'  FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
           </div>
-          <div class="slide-two-all">
+          <div class="slide-two-all slide-two-all-02">
             <div class="slide-04 slide-two-hover">
               <div class="leftLoop">
                 <a class="next"></a>
@@ -1038,7 +1038,7 @@
 
 
     </div>
-      <!-- 公共底部 begin -->
+      <div class="lj_title"><CMSPRO_CHANNEL CODE=""  FIELD="displayName"></CMSPRO_CHANNEL></div><!-- 公共底部 begin -->
       <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
       <!-- 公共底部 end -->
 
@@ -1083,12 +1083,14 @@
       $('.slide-click').on('click', function() {
         $(this).addClass('slide-click-hover').siblings().removeClass('slide-click-hover')
         if($(this).hasClass('slide-click-01')) {
-          $('.slide-two-all').children('.slide-04').eq(0).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
+          $('.slide-two-all-01').children('.slide-04').eq(0).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
+          $('.slide-two-all-02').children('.slide-04').eq(0).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
           $('.tz-index-more-img').show();
           $('.tz-index-more-video').hide();
         }
         if($(this).hasClass('slide-click-02')) {
-          $('.slide-two-all').children('.slide-04').eq(1).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
+          $('.slide-two-all-01').children('.slide-04').eq(1).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
+          $('.slide-two-all-02').children('.slide-04').eq(0).addClass('slide-two-hover').siblings().removeClass('slide-two-hover');
           $('.tz-index-more-img').hide();
           $('.tz-index-more-video').show();
         }

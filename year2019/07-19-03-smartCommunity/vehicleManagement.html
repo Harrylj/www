@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>车辆管理</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!--App自定义的css-->
+    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/vehicleManagement.css"/>
+  </head>
+  <style type="text/css">
+    html,
+    body {
+      background-color: #F8F8F8;
+      padding-bottom: 1rem;
+    }
+    .vehicle-management{
+    	padding-top: .44rem;
+    }
+ 
+  </style>
+
+  <body>
+    <!--
+    	作者：648267773@qq.com
+    	时间：2019-06-12
+    	描述：使用：1.引入iconfont.css
+    	                 publicHeader.js
+    	            2. <div class="two-public-header-content"></div>
+    -->
+    
+    <!-- 公用头部-->
+    <div class="two-public-header-content"></div>
+    <div class="grabage-classification vehicle-management public-div">
+				<div class="vm-list">
+					<div class="vm-item">
+						<img src="images/car/car_11.png"/>
+						<p>你还没有绑定车辆</p>
+					</div>
+				</div>
+				<a href="vehicleManagementList.html"><button class="btn public-two-btn-01 bpp-btn-tcdl vm-btn-qbd">去绑定</button></a>
+    </div>
+
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+      $(function() {
+        
+        // 公用头部
+        $('.two-public-header-content').publicHeader({
+          // 父级元素
+          fatherE: '.two-public-header-content',
+          // 背景颜色
+          bgColor: 'white',
+          // 文字和左右菜单栏颜色
+          fontColor: '#323232',
+          // 是否显示返回按钮 Boolean
+          returnShow: true,
+          // 返回按钮地址
+//        returnHref: function(){
+//          aaa()
+//        },
+          // 标题名称
+          titleName: '车辆管理',
+          // 是否显示菜单栏 Boolean
+          navListShow: true,
+          // 配置菜单栏home,help,message,setting,activity
+          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+          navList: {
+            
+            
+          },
+
+        });
+
+      })
+    </script>
+
+  </body>
+
+</html>

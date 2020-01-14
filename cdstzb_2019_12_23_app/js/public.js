@@ -761,6 +761,16 @@ ZeroClipboard.Client.prototype = {
 };  
 
 $(function(){
+	
+	console.log('88888888',$('.lj_title').html())
+	// 更多移动端位置调整
+	$('.tz-index-more-01').each(function(){
+		var _h = $(this).siblings('h2').height();
+		if(_h>10){
+			$(this).css("top", _h - 36 + 'px');
+			console.log('更多移动端位置调整')
+		}
+	})
 //  console.log($('.ab-one').html());
 //  console.log($('.ltb-one-title').html());
 	  //  隐藏span前的>

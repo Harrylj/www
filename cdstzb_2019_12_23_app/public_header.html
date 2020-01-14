@@ -156,10 +156,16 @@
 
 		<div class="iframe-top-header center lj-app" id="app-header">
 			<div class="lj-app-search">
-				<a href="http://www.cdtzb.gov.cn/search/resp?siteCode=5101000013&mobile=1" target="_blank"><van-search placeholder="市委统战学习传达市委十三届四次全会精神" v-model="value" /></a>
+				<div class="lj-app-nav-left">
+					<van-icon name="arrow-left" />
+				</div>
+				<a href="http://www.cdtzb.gov.cn/search/resp?siteCode=5101000013&mobile=1" target="_blank"><van-search placeholder="十三届四次全会精神" v-model="value" /></a>
+				<div class="lj-app-nav-right">
+					<van-icon  name="wap-nav"  @click="show=true"/>
+				</div>
 			</div>
 			<!--公用顶部-->
-			<div class="lj-app-nav">
+			<!--<div class="lj-app-nav">
 				<ul>
 					<li>
 						<a href="<CMSPRO_WEBSITE FIELD='url'></CMSPRO_WEBSITE>" target="_parent">首页</a>
@@ -173,7 +179,7 @@
 				<div class="lj-app-nav-right">
 					<van-icon  name="wap-nav"  @click="show=true"/>
 				</div>
-			</div>
+			</div>-->
 			
 			<!--<van-cell is-link @click="show=true">展示弹出层</van-cell>-->
 			
@@ -198,6 +204,7 @@
 			
 		</div>
 
+		<div class="lj_title"><CMSPRO_CHANNEL CODE=""  FIELD="displayName"></CMSPRO_CHANNEL></div>
 	</body>
 	<script type="text/javascript">
 		$(function() {
@@ -211,7 +218,10 @@
 				$(this).children('.tzih-nav-two').hide();
 				parent.$(".iframe-top-header").removeClass('z-index-more');
 			})
-
+			// 返回上一页
+			$('.lj-app-nav-left').on('click',function(){
+				window.history.back()
+			})
 		})
 	</script>
 	<script type="text/javascript">
