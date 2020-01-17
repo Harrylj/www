@@ -121,6 +121,7 @@
 	    /*background-color: white;*/
 	    background-color: transparent;
     	color: white;
+    	display: none;
     }
     .lj-app-nav-left{
     	left: 0;
@@ -130,7 +131,8 @@
     }
     .lj-app-search{
     	position: relative;
-    	padding: 0 42px;
+    	/*padding: 0 42px;*/
+    	padding: 0;
     }
     .lj-app-search,
     .van-search{
@@ -205,7 +207,8 @@
 	  ,div.page_num .pagination-last
 	  ,div.page_num .pagination-index:first-child
 	  ,div.page_num .pagination-index:last-child
-	  ,div#now_all_page{
+	  ,div#now_all_page
+	  ,div.ltb-one-title{
 	  	display: none;
 	  }
 	  div.list-two-sdshy .ltbtl-list-img-div a{
@@ -221,6 +224,10 @@
 	  	margin-left: -80px;
     	width: 160px;
 	  }
+	  .list-two-xdshjc div.zpzs-div p{
+	  	width: 100%;
+	  	margin-left: 0;
+	  }
 	  div.zpzs-div{
 	  	display: flex;
 	    justify-content: center;
@@ -235,14 +242,14 @@
 	  div.zpzs-div img{
 	  	width: 160px!important;
 	  }
-	  div.tzi-body{
-	  	padding-top: 0;
-	  }
 	  div#app-header{
 	  	position: fixed;
 	    z-index: 999;
 	    top: 0;
 	    left: 0;
+	  }
+	  div.ly_div_bbb{
+	  	width: 26.5%;
 	  }
 	  /*div.tzib-one-right h1
 	  ul.lj-app-nav a{

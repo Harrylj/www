@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+		<title>社区活动</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<!--<meta name="viewport" data-content-max content="width=device-width,initial-scale=1,user-scalable=no">-->
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/vant.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/community.css" />
+		<!--<script src="js/rem.min.js" type="text/javascript" charset="utf-8"></script>-->
+		<!--<script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>-->
+	</head>
+	<style type="text/css">
+		.community-active-list {
+			padding-top: .44rem;
+		}
+		
+		.cmb-item {
+			position: relative;
+		}
+		
+		.cal-ul {
+			display: flex;
+		}
+		
+		.cal-ul li {
+			width: 50%;
+			color: #999999;
+			font-size: .16rem;
+			line-height: .36rem;
+			border-bottom: 1px solid #F5F5F5;
+			text-align: center;
+			/*border-bottom: 1;*/
+		}
+		
+		.cal-ul .cal-li-hover {
+			position: relative;
+			color: #333333;
+		}
+		
+		.cal-ul .cal-li-hover:before {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			z-index: 99;
+			content: " ";
+			color: transparent;
+			background-color: #FF9645;
+			width: .22rem;
+			margin-left: -.11rem;
+			height: 2px;
+			font-size: .01rem;
+		}
+		
+		.cmb-item-ok:before,
+		.cmb-item-no:before {
+			position: absolute;
+			right: 2.1rem;
+			top: .2rem;
+			padding: 0 .05rem;
+			line-height: .2rem;
+			font-size: .14rem;
+			color: white;
+			background-color: #FF9645;
+			content: "正在参与";
+			z-index: 999;
+		}
+		
+		.cmb-item-no:before {
+			content: "已结束";
+		}
+	</style>
+
+	<body>
+		<!--
+				.cmb-item加.cmb-item-ok:正在参与
+				.cmb-item加.cmb-item-no:结束
+		-->
+		<div class="two-public-header-content"></div>
+		<div id="app" class="community-index community-active-list public-div">
+			<van-pull-refresh v-model="isLoading" @refresh="onRefreshOne">
+									<p>刷新次数: {{ countOne }}</p>
+
+									<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+									<van-cell v-for="item in list" :key="item" :title="item" />
+								</van-list>
+			<div class="ci-body">
+				<ul class="cal-ul">
+					<li class="cal-li-hover">进行中的活动</li>
+					<li>已结束的活动</li>
+				</ul>
+				<div class="swiper-container swiper-container swiper-container-initialized swiper-container-horizontal">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide swiper-slide-start swiper-no-swiping">
+							<div class="cib-div">
+								
+									<a href="#">
+										<div class="cmb-item cmb-item-ok">
+											<img src="images/two/ci-04@3x.png" />
+											<h2>4月27日，华西专家为您解密呼吸道疾病</h2>
+											<h3>报名时间：04.24-05.07</h3>
+											<div class="cmb-item-footer">
+												<div class="cmb-item-footer-div">
+													<div class="cmb-item-footer-div-one"></div>
+													<div class="cmb-item-footer-div-two"></div>
+													<div class="cmb-item-footer-div-three"></div>
+												</div>
+												<p>345人参加</p>
+											</div>
+										</div>
+									</a>
+									<a href="#">
+										<div class="cmb-item cmb-item-ok">
+											<img src="images/two/ci-03@3x.png" />
+											<h2>周年庆，狂撒现金红包,狂欢一触即发</h2>
+											<h3>报名时间：04.28-05.10</h3>
+											<div class="cmb-item-footer">
+												<div class="cmb-item-footer-div">
+													<div class="cmb-item-footer-div-one"></div>
+													<div class="cmb-item-footer-div-two"></div>
+													<div class="cmb-item-footer-div-three"></div>
+												</div>
+												<p>345人参加</p>
+											</div>
+										</div>
+									</a>
+
+							</div>
+
+						</div>
+						<div class="swiper-slide swiper-slide-ing swiper-no-swiping">
+							<div class="cib-div">
+								<van-pull-refresh v-model="isLoading" @refresh="onRefreshTwo">
+									<p>刷新次数: {{ countTwo }}</p>
+									<a href="#">
+										<div class="cmb-item cmb-item-no">
+											<img src="images/two/ci-04@3x.png" />
+											<h2>4月27日，华西专家为您解密呼吸道疾病</h2>
+											<h3>报名时间：04.24-05.07</h3>
+											<div class="cmb-item-footer">
+												<div class="cmb-item-footer-div">
+													<div class="cmb-item-footer-div-one"></div>
+													<div class="cmb-item-footer-div-two"></div>
+													<div class="cmb-item-footer-div-three"></div>
+												</div>
+												<p>345人参加</p>
+											</div>
+										</div>
+									</a>
+								</van-pull-refresh>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+			
+
+		</div>
+
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vant.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 公用头部
+				$('.two-public-header-content').publicHeader({
+					// 父级元素
+					fatherE: '.two-public-header-content',
+					// 背景颜色
+					bgColor: 'white',
+					// 文字和左右菜单栏颜色
+					fontColor: '#323232',
+					// 是否显示返回按钮 Boolean
+					returnShow: true,
+					// 返回按钮地址
+					//        returnHref: function(){
+					//          aaa()
+					//        },
+					// 标题名称
+					titleName: '我参与的活动',
+					// 是否显示菜单栏 Boolean
+					navListShow: false,
+					// 配置菜单栏home,help,message,setting,activity
+					// namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+					navList: {
+
+					},
+
+				});
+
+				var swiper = new Swiper('.cib-swiper-container', {
+					slidesPerView: 2.2,
+					spaceBetween: 15,
+				});
+
+				var mySwiper = new Swiper('.swiper-container', {
+					direction: 'horizontal',
+					//布局分栏
+					slidesPerView: 1,
+					centeredSlides: true,
+					autoplay: false,
+					spaceBetween: 15,
+					autoplay: {
+						delay: 1500000, //1秒切换一次
+					},
+					//是否循环拖动
+					loop: true,
+					//需要指针手抓效果
+					grabCursor: true,
+
+				})
+
+				// 点击切换栏目
+				$('.cal-ul').children('li').on('click', function() {
+					var class_click = 'cal-li-hover';
+					$(this).addClass(class_click).siblings().removeClass(class_click)
+					mySwiper.slideTo($(this).index() + 1)
+					console.log($(this).index())
+				})
+			})
+		</script>
+		<script type="text/javascript">
+			var Vue = window.Vue;
+			var vant = window.vant;
+			//			import { List } from 'vant';		
+			//			Vue.use(vant);
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						count: 0,
+						countOne: 0,
+						countTwo: 0,
+						isLoading: false,
+						list: [],
+						loading: false,
+						finished: false
+					};
+				},
+
+				methods: {
+					// 进行活动刷新1
+					onRefreshOne() {
+						setTimeout(() => {
+							this.$toast('刷新成功');
+							this.isLoading = false;
+							this.countOne++;
+						}, 1000);
+					},
+					// 进行活动刷新2
+					onRefreshTwo() {
+						setTimeout(() => {
+							this.$toast('刷新成功');
+							this.isLoading = false;
+							this.countTwo++;
+						}, 1000);
+					},
+					onLoad() {
+						// 异步更新数据
+						setTimeout(() => {
+							for(let i = 0; i < 10; i++) {
+								this.list.push(this.list.length + 1);
+							}
+							// 加载状态结束
+							this.loading = false;
+							console.log(1)
+							// 数据全部加载完成
+							if(this.list.length >= 100) {
+								this.finished = true;
+							}
+						}, 500);
+					}
+
+				},
+
+				mounted: function() {
+					//this.createcode(); //需要触发的函数
+				}
+
+			})
+		</script>
+	</body>
+
+</html>
