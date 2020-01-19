@@ -961,23 +961,23 @@ footer .mui-icon-paperplane {
 }
 
 .ch-li-repair {
-    background-image: url(../images/maintenance.png);
+  background-image: url(../images/chat/chat-Repair@3x.png);
 }
 
 .ch-li-water {
-    background-image: url(../images/water.png);
+  background-image: url(../images/chat/chat-water@3x.png);
 }
 
-/*.ch-li-money {
+.ch-li-money {
   background-image: url(../images/chat/chat-money@3x.png);
-}*/
+}
 
 .ch-li-call {
-    background-image: url(../images/tel.png);
+  background-image: url(../images/chat/chat-Complaint-ivon@3x.png);
 }
 
 .ch-li-complaint {
-    background-image: url(../images/complaints.png);
+  background-image: url(../images/chat/chat-Complaint@3x.png);
 }
 
 .mui-bar {

@@ -1,0 +1,702 @@
+.rent-type {
+  padding-top: 1.2rem !important;
+}
+.rent .rb-content-list {
+  margin-top: -0.3rem;
+}
+.rent-header {
+  position: relative;
+}
+.rent-header h5 {
+  position: absolute;
+  top: 18%;
+  left: 0.4rem;
+  font-size: 0.24rem;
+  line-height: 0.4rem;
+  color: white;
+  letter-spacing: 0.04rem;
+  opacity: 0.8;
+}
+.rent-header h1 {
+  position: absolute;
+  top: 30%;
+  left: 0.4rem;
+  font-size: 0.48rem;
+  line-height: 0.7rem;
+  color: white;
+}
+.rent-header-a {
+  position: absolute;
+  width: 0.8rem;
+  height: 1rem;
+  border: 1px solid red;
+}
+.rent-header-day {
+  left: 58%;
+  top: 20%;
+}
+.rent-header-week {
+  left: 79.5%;
+  top: 0%;
+}
+.rent-header-month {
+  left: 89%;
+  top: 32%;
+}
+.rh-search-input {
+  position: absolute;
+  left: 50%;
+  bottom: -0.5rem;
+  margin-left: -45%;
+  box-shadow: 0 0 0.06rem #CCCCCC;
+  line-height: 1rem;
+  height: 1rem;
+  padding: 0 0.5rem 0 1rem;
+  width: 90%;
+  color: #666666;
+  font-size: 0.28rem;
+  cursor: pointer;
+  background-image: url(../images/rent/rent_icon_search.png);
+  background-size: 0.3rem 0.3rem;
+  background-position: 0.4rem center;
+  background-repeat: no-repeat;
+}
+.rent-body {
+  padding: 0.8rem 0.4rem;
+  background-color: white;
+}
+.rb-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.rb-nav a {
+  display: block;
+  width: 25%;
+}
+.rb-nav li {
+  background-size: 0.8rem 0.8rem;
+  background-position: center 0.1rem;
+  background-repeat: no-repeat;
+  padding-top: 1rem;
+  font-size: 0.3rem;
+  text-align: center;
+  color: #333333;
+  background-image: url(../images/rent/rent_icon_01.png);
+}
+.rb-nav a:nth-child(1) li {
+  background-image: url(../images/rent/rent_icon_01.png);
+}
+.rb-nav a:nth-child(2) li {
+  background-image: url(../images/rent/rent_icon_02.png);
+}
+.rb-nav a:nth-child(3) li {
+  background-image: url(../images/rent/rent_icon_03.png);
+}
+.rb-nav a:nth-child(4) li {
+  background-image: url(../images/rent/rent_icon_04.png);
+}
+.rb-swiper-01 {
+  position: relative;
+  background-color: #F9F9F9;
+}
+.rb-swiper-01-div {
+  position: relative;
+  padding: 0.2rem 0;
+}
+.rb-swiper-01-div h1,
+.rb-swiper-01-div h2 {
+  line-height: 0.5rem;
+  font-size: 0.32rem;
+  height: 0.5rem;
+  overflow: hidden;
+}
+.rb-swiper-01-div h1 {
+  padding: 0 0.08rem;
+  color: #333333;
+  width: 2rem;
+}
+.rb-swiper-01-div h2 {
+  color: #666666;
+  padding: 0 0.1rem;
+}
+.rb-swiper-01-div .rb-swiper-01-div-hot {
+  padding-left: 0.8rem;
+  background-image: url(../images/rent/rent_icon_hot.png);
+  background-size: 0.63rem 0.3rem;
+  background-position: 0.05rem 0.1rem;
+  background-repeat: no-repeat;
+}
+.van-swipe-03-div {
+  position: absolute;
+  width: 74%;
+  top: 50%;
+  left: 1.6rem;
+  margin-top: -0.25rem;
+  overflow: hidden;
+}
+.van-swipe-03 {
+  height: 0.5rem;
+}
+.rb-content-01 {
+  position: relative;
+}
+.rb-content-01 h2 {
+  font-size: 0.42rem;
+  line-height: 1rem;
+  color: #333333;
+}
+.rb-swiper-02-div {
+  position: relative;
+  border-radius: 0.08rem;
+  overflow: hidden;
+}
+.rb-swiper-02-div img {
+  display: block;
+  width: 100%;
+}
+.rb-swiper-02-div .rb-swiper-02-div-left {
+  display: flex;
+  padding-left: 0.2rem;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  height: 100%;
+  width: 40%;
+  background-image: url(../images/rent/rent_div_left.png);
+  background-size: 100% 100%;
+}
+.rb-swiper-02-div .rb-swiper-02-div-left h3,
+.rb-swiper-02-div .rb-swiper-02-div-left h4,
+.rb-swiper-02-div .rb-swiper-02-div-left h5 {
+  font-weight: bold;
+  color: white;
+}
+.rb-swiper-02-div .rb-swiper-02-div-left h3 {
+  font-size: 0.32rem;
+  line-height: 0.4rem;
+}
+.rb-swiper-02-div .rb-swiper-02-div-left h4 {
+  font-size: 0.32rem;
+  line-height: 0.4rem;
+}
+.rb-swiper-02-div .rb-swiper-02-div-left h5 {
+  font-size: 0.24rem;
+  line-height: 0.36rem;
+}
+.rb-content-list {
+  position: relative;
+}
+.rb-content-item {
+  position: relative;
+  padding: 0.3rem 0 0.3rem 2.6rem;
+}
+.rb-content-item img {
+  position: absolute;
+  left: 0;
+  top: 0.3rem;
+  width: 2.4rem;
+  height: 1.8rem;
+  border-radius: 0.06rem;
+}
+.rb-content-item h2 {
+  font-size: 0.32rem;
+  line-height: 0.4rem;
+  font-weight: bold;
+}
+.rb-content-item p {
+  font-size: 0.26rem;
+  padding: 0.08rem 0 0 0;
+  line-height: 0.36rem;
+}
+.rb-content-item h4 {
+  font-size: 0.24rem;
+  padding: 0.12rem 0;
+  line-height: 0.36rem;
+}
+.rb-content-item p,
+.rb-content-item h4 {
+  padding-right: 2rem;
+  color: #333333;
+}
+.rb-content-icon-father {
+  display: flex;
+  justify-content: flex-start;
+}
+.rb-content-icon-father .rb-content-icon {
+  border: 1px solid #2185d3;
+  font-size: 0.24rem;
+  line-height: 0.32rem;
+  color: #2185d3;
+  margin-right: 0.1rem;
+  padding: 0 0.08rem;
+}
+.rb-content-item-right {
+  position: absolute;
+  color: #1b65ec;
+  top: 50%;
+  right: 0;
+  margin-top: -0.3rem;
+  line-height: 0.6rem;
+  height: 0.6rem;
+  font-size: 0.36rem;
+}
+.rb-content-item-right span {
+  font-weight: bold;
+  font-size: 0.46rem;
+}
+.rent-type {
+  padding: 0 0.3rem;
+}
+.rent-type .van-popup--right {
+  height: 100%;
+  width: 90%;
+}
+.rt-tilte {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: #144fda;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.15rem 0.2rem;
+  z-index: 999;
+}
+.rt-tilte .rt-tilte-return {
+  line-height: 0.6rem;
+}
+.rt-tilte .rt-tilte-return span {
+  color: white;
+  font-size: 0.4rem;
+}
+.rt-tilte .rt-title-message {
+  position: relative;
+  width: 0.8rem;
+  height: 0.6rem;
+  background-image: url(../images/rent/rent_icon_message.png);
+  background-repeat: no-repeat;
+  background-size: 0.42rem 0.42rem;
+  background-position: center center;
+}
+.rt-tilte .rt-title-message span {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 0.24rem;
+  color: white;
+}
+.rt-tilte h1 {
+  color: white;
+  font-size: 0.42rem;
+  text-align: center;
+  line-height: 0.6rem;
+}
+.rent-order {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 1.3rem;
+}
+.rent-order h1 {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 0.2rem;
+  z-index: 999;
+}
+.tr-title-search {
+  width: 5rem;
+  text-align: center;
+  line-height: 0.6rem;
+  color: #666666;
+  border-radius: 0.04rem;
+  font-size: 0.32rem;
+  background-position: 0.2rem center;
+  background-repeat: no-repeat;
+  background-size: 0.3rem 0.3rem;
+  padding: 0 0.7rem;
+}
+.rt-header-nav {
+  display: flex;
+  justify-content: space-between;
+}
+.rt-header-nav li {
+  font-size: 0.3rem;
+  color: #333333;
+  line-height: 0.6rem;
+  padding-right: 0.26rem;
+  background-repeat: no-repeat;
+  background-position: center right;
+  background-image: url(../images/rent/rent_icon_bottom.png);
+  background-size: 0.2rem 0.12rem;
+}
+.rt-modal-content {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 1.2rem;
+  overflow-y: scroll;
+}
+.rtmc-item {
+  padding: 0.2rem 0.3rem 0 0.3rem;
+}
+.rtmc-item h2 {
+  font-size: 0.32rem;
+  line-height: 0.8rem;
+  color: black;
+}
+.rtmc-item ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+}
+.rtmc-item li {
+  width: 32%;
+  margin-right: 2%;
+  line-height: 0.8rem;
+  height: 0.8rem;
+  overflow: hidden;
+  background-color: #F5F5F5;
+  color: #333333;
+  font-size: 0.28rem;
+  text-align: center;
+  margin-bottom: 2% ;
+}
+.rtmc-item li:nth-child(3n) {
+  margin-right: 0;
+}
+.rtmc-item .rtmc-item-click {
+  color: #1989FA;
+  background-color: #edf2fd;
+}
+.rtmc-footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+}
+.rtmc-footer-btn-null,
+.rtmc-footer-btn-ok {
+  line-height: 1rem;
+  font-size: 0.32rem;
+  height: 1rem;
+  cursor: pointer;
+}
+.rtmc-footer-btn-null {
+  width: 43%;
+  background-color: #FAFAFA;
+}
+.rtmc-footer-btn-ok {
+  width: 57%;
+}
+.van-swiper-01 img {
+  display: block;
+  width: 100%;
+}
+.van-swiper-01-father {
+  position: relative;
+}
+.van-swiper-01-father .van-swiper-01-header {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  color: white;
+  line-height: 0.9rem;
+  font-size: 0.32rem;
+  text-align: center;
+  z-index: 96;
+}
+.van-swiper-01-father .van-swiper-01-label {
+  position: absolute;
+  right: 0;
+  bottom: 0.3rem;
+  border-radius: 0.2rem 0 0 0.2rem;
+  line-height: 0.4rem;
+  font-size: 0.28rem;
+  padding-left: 0.2rem;
+  color: white;
+  z-index: 96;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.rd-body {
+  position: relative;
+  padding-top: 0.3rem;
+}
+.rd-body h1,
+.rd-body h2,
+.rd-body .rb-body-ul-01,
+.rd-body .rb-body-ul-02,
+.rd-body .rb-body-ul-03,
+.rd-body .address-header {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+.rd-body h1 {
+  font-size: 0.42rem;
+  color: #333333;
+  line-height: 0.6rem;
+  font-weight: bold;
+}
+.rd-body h2 {
+  font-size: 0.38rem;
+  color: #333333;
+  line-height: 0.6rem;
+  margin-top: 0.3rem;
+}
+.rd-body .van-divider {
+  padding: 0 0.4rem;
+}
+.rb-body-ul-01 {
+  display: flex;
+  justify-content: space-between;
+}
+.rb-body-ul-01 h5 {
+  color: #1b65ec;
+  font-size: 0.32rem;
+  line-height: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+.rb-body-ul-01 h5 span {
+  font-weight: 500;
+}
+.rb-body-ul-01 p {
+  font-size: 0.28rem;
+  color: #999999;
+  line-height: 0.5rem;
+  text-align: center;
+}
+.rb-body-ul-01 li {
+  width: 33%;
+  margin: 0.1rem 0;
+}
+.public-border-blue {
+  display: inline-block;
+  margin: 0 0.4rem;
+  color: #2185d3;
+  font-size: 0.3rem;
+  line-height: 0.36rem;
+  border: 1px solid #2185d3;
+  padding: 0 0.08rem;
+}
+.rb-body-ul-02 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.rb-body-ul-02 li {
+  display: flex;
+  width: 43%;
+}
+.rb-body-ul-02 li:nth-child(2n) {
+  width: 57%;
+}
+.rb-body-ul-02 h5,
+.rb-body-ul-02 p {
+  font-size: 0.34rem;
+  line-height: 0.7rem;
+}
+.rb-body-ul-02 h5 {
+  color: #999999;
+  margin-right: 0.2rem;
+}
+.rb-body-ul-02 p {
+  color: #333333;
+}
+.rb-body-ul-03 {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+.rb-body-ul-03 li {
+  width: 1.3rem;
+  padding-top: 0.8rem;
+  text-align: center;
+  line-height: 0.4rem;
+  margin-bottom: 0.2rem;
+  font-size: 0.32rem;
+  background-size: 0.7rem 0.7rem;
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-image: url(../images/rent/rent_icon_22.png);
+}
+.rb-body-ul-03 .rb-type-bed {
+  background-image: url(../images/rent/rent_icon_22.png);
+}
+.rb-body-ul-03 .rb-type-refrigerator {
+  background-image: url(../images/rent/rent_icon_27.png);
+}
+.rb-body-ul-03 .rb-type-television {
+  background-image: url(../images/rent/rent_icon_28.png);
+}
+.rb-body-ul-03 .rb-type-sofa {
+  background-image: url(../images/rent/rent_icon_26.png);
+}
+.rb-body-ul-03 .rb-type-wardrobe {
+  background-image: url(../images/rent/rent_icon_21.png);
+}
+.rb-body-ul-03 .rb-type-washer {
+  background-image: url(../images/rent/rent_icon_23.png);
+}
+.rb-body-ul-03 .rb-type-calorifier {
+  background-image: url(../images/rent/rent_icon_24.png);
+}
+.rb-body-ul-03 .rb-type-airCooler {
+  background-image: url(../images/rent/rent_icon_25.png);
+}
+.public-line-gray {
+  height: 0.2rem;
+  background-color: #f6f6f6;
+}
+.rd-address {
+  position: relative;
+}
+.rd-address .address-header {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-top: 0.4rem;
+  padding-bottom: 0.2rem;
+}
+.rd-address .address-header h3 {
+  font-size: 0.38rem;
+  color: #333333;
+}
+.rd-address .address-header .address-header-more {
+  color: #666666;
+  font-size: 0.28rem;
+}
+.rd-address .address-header .address-header-more .iconfont {
+  font-size: 0.28rem;
+}
+.rd-address .address-header h3,
+.rd-address .address-header .address-header-more {
+  line-height: 0.6rem;
+}
+.address-map img {
+  width: 100%;
+}
+.rent-detail {
+  position: relative;
+  padding-bottom: 1.4rem;
+}
+.rent-detail .public-border-blue {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+.rent-detail .rd-return {
+  position: absolute;
+  top: 0;
+  left: 0.4rem;
+  line-height: 0.9rem;
+  color: white;
+  z-index: 99;
+}
+.rent-detail .rd-return span {
+  font-size: 0.4rem;
+  color: white;
+}
+.rd-footer-btn-yykf {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #1b65ec;
+  color: white;
+  line-height: 1rem;
+  text-align: center;
+  font-size: 0.38rem;
+}
+.rd-footer-btn-yykf .icon-shijian {
+  position: relative;
+  top: 0.03rem;
+  left: -0.02rem;
+  font-size: 0.4rem;
+}
+.to-write-info h2 {
+  font-size: 0.32rem;
+  line-height: 1rem;
+  color: #333333;
+}
+.to-write-info li {
+  display: flex;
+  justify-content: space-between;
+}
+.to-write-info h3 {
+  font-size: 0.28rem;
+  color: #666666;
+  line-height: 0.7rem;
+}
+.to-write-info input {
+  text-align: right;
+}
+.to-write-info .van-field__error-message {
+  text-align: right;
+}
+.ro-body {
+  margin-top: -0.2rem;
+  padding: 0 0.3rem;
+  background-color: #f6f6f6;
+}
+.ro-body .public-line-gray {
+  margin-left: -0.3rem;
+  margin-right: -0.3rem;
+}
+#to-input-time {
+  line-height: 0.7rem;
+}
+.ro-result-father {
+  overflow: initial;
+}
+.ro-result-div {
+  position: relative;
+  width: 4.3rem;
+  border-radius: 0.2rem;
+  text-align: center;
+  padding: 0.8rem 0.3rem 0.5rem 0.3rem;
+}
+.ro-result-div h4 {
+  font-size: 0.32rem;
+  line-height: 0.6rem;
+  text-align: center;
+  color: #333333;
+  margin-bottom: 0.3rem;
+}
+.ro-result-div:before {
+  position: absolute;
+  top: -2.6rem;
+  left: 0;
+  width: 4.3rem;
+  height: 3.2rem;
+  content: " ";
+  font-size: 0.01rem;
+  color: transparent;
+  background-image: url(../images/rent/rent_order_01.png);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+.ro-result-btn-ok {
+  display: inline-block;
+  font-size: 0.32rem;
+  color: white;
+  line-height: 0.7rem;
+  padding: 0 1rem;
+  background-color: #1b65ec;
+}
+.rent-type-myself .rb-content-item {
+  border-top: 0.01rem solid #F3F3F3;
+}
+#allmap {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  margin: 0;
+  font-family: "微软雅黑";
+}
+.rtmc-list-div .rtmc-list {
+  display: none;
+}
+.rtmc-list-div .rtmc-list-hover {
+  display: block;
+}

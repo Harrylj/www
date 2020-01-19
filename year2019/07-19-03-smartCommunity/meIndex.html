@@ -2,177 +2,222 @@
 
 <html>
 
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-    <title>我的-个人中心</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>我的-个人中心</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-    <!--标准mui.css-->
-    <link rel="stylesheet" href="css/mui.min.css">
-    <!--App自定义的css-->
-    <link rel="stylesheet" type="text/css" href="css/iconfont.css" />
-    <link rel="stylesheet" type="text/css" href="css/public.css">
-    <link rel="stylesheet" type="text/css" href="css/me.css"/>
-    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
-  </head>
-  <style type="text/css">
-      html,body
-      ,.me-index{
-        background-color: #F2F2F2;
-      }
-      .mib-list{
-      	background-color: white;
-      	margin: 0 -.2rem;
-      	padding: 0 .2rem;
-      }
-      .aaaaa{
-      	display: block;
-      	width: 100%;
-      	margin: 0 -.2rem;
-      }
-  </style>
-  <body>
-    <!-- 公用头部-->
-    <div class="two-public-header-content"></div>
-    <div class="me-index public-div">
-      
-      <div class="mi-top">
-        <a class="mit-news" href="#"></a>
-        <a class="mit-setting" href="#"></a>
-      </div>
-      <div class="mi-top-header"></div>
-      <!--<img class="aaaaa" src="images/two/me-bg-02@3x.png"/>-->
-      <div class="mi-header">
-        <img class="mih-img" src="images/user-01.jpg" />
-        <h1>tititiTfdd试试</h1>
-        <p>南湖世纪风景附三单元1234三单元1三单元1三单元1</p>
-      </div>
-      <div class="mib-btn-face-new">
-        	<img src="images/two/me-bg-03@3x.png"/>
-        	<h2>立即开启人脸识别</h2>
-        	<p>让用户安全放心使用</p>
-        	<div class="mib-btn-face-mskq">马上开启</div>
-      </div>
-      <div class="mi-body">
-        <div class="mib-list">
-          <!--<a href="#">
+		<!--标准mui.css-->
+		<link rel="stylesheet" href="css/mui.min.css">
+		<!--App自定义的css-->
+		<link rel="stylesheet" type="text/css" href="css/iconfont.css" />
+		<link rel="stylesheet" type="text/css" href="css/public.css">
+		<link rel="stylesheet" type="text/css" href="css/me.css" />
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<style type="text/css">
+		html,
+		body,
+		.me-index {
+			background-color: #F2F2F2;
+		}
+		
+		.mib-list {
+			background-color: white;
+			margin: 0 -.2rem;
+			padding: 0 .2rem;
+		}
+		
+		.aaaaa {
+			display: block;
+			width: 100%;
+			margin: 0 -.2rem;
+		}
+		div.ci-header,
+		div.me-index .mi-top,
+		div.me-index .mi-top-header {
+			height: 1.5rem;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: end;
+			-ms-flex-pack: end;
+			justify-content: flex-end;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			padding: .1rem .2rem 0 .2rem;
+			margin: 0 -.2rem;
+			background: -o-linear-gradient(90deg, #fd933d, #fe6026);
+			background: -webkit-gradient(linear, left top, right top, from(#fd933d), to(#fe6026));
+			background: -o-linear-gradient(left, #fd933d, #fe6026);
+			background: linear-gradient(90deg, #fd933d, #fe6026);
+			background-image: url(images/two/me-bg-02@3x.png);
+			background-size: 100% 100%;
+			/* 标准的语法 */
+		}
+		
+		.two-public-header-div {
+			background-image: none !important;
+		}
+		div.me-index .mi-top-header{
+			display: none;
+		}
+		div.ci-header {
+			margin: 0 0 1rem 0;
+			display: block;
+			position: relative;
+			padding: .15rem .2rem .9rem .2rem;
+		}
+		
+		div.ci-header:before {
+			display: none;
+		}
+		
+	</style>
+
+	<body>
+		<!-- 公用头部-->
+		<div class="two-public-header-content"></div>
+		<div class="me-index public-div">
+
+			<div class="mi-top">
+				<a class="mit-news" href="#"></a>
+				<a class="mit-setting" href="#"></a>
+			</div>
+			<div class="mi-top-header"></div>
+			<!--<img class="aaaaa" src="images/two/me-bg-02@3x.png"/>-->
+			<div class="mi-header">
+				<img class="mih-img" src="images/user-01.jpg" />
+				<h1>tititiTfdd试试</h1>
+				<p>南湖世纪风景附三单元1234三单元1三单元1三单元1</p>
+			</div>
+			<div class="mib-btn-face-new">
+				<img src="images/two/me-bg-03@3x.png" />
+				<h2>立即开启人脸识别</h2>
+				<p>让用户安全放心使用</p>
+				<div class="mib-btn-face-mskq">马上开启</div>
+			</div>
+			<div class="mi-body">
+				<div class="mib-list">
+					<!--<a href="#">
           <div class="mibl-item mibl-item-01">
             <h2>参与的活动</h2>
             <div class="mi-active-number">9</div>
           </div>
           </a>-->
-          <a href="#">
-          <div class="mibl-item mibl-item-02">
-            <h2>修改手机</h2>
-          </div>
-          </a>
-          <a href="#">
-          <div class="mibl-item mibl-item-03">
-            <h2>人脸识别</h2>
-          </div>
-          </a>
-          <a href="#">
-          <div class="mibl-item mibl-item-04">
-            <h2>隐私</h2>
-          </div>
-          </a>
-          <div style="height: .2rem;background-color: #F2F2F2;margin: 0 -.2rem;"></div>
-          <a href="#">
-          <div class="mibl-item mibl-item-06">
-            <h2>帮助反馈</h2>
-          </div>
-          </a>
-          <a href="#">
-          <div class="mibl-item mibl-item-05">
-            <h2>关于我们</h2>
-          </div>
-          </a>
-        </div>
-      </div>
-    </div>
-    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
-    <script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
-    <script type="text/javascript">
-    	$(function(){
-    	  // 公用头部
-        $('.two-public-header-content').publicHeader({
-          // 父级元素
-          fatherE: '.two-public-header-content',
-          // 背景颜色
-          bgColor: 'transparent',
-          // 文字和左右菜单栏颜色
-          fontColor: 'white',
-          // 是否显示返回按钮 Boolean
-          returnShow: false,
-          // 返回按钮地址
-          returnHref: 'javascript:history.back(-1)',
-          // 标题名称
-          titleName: '',
-          // 是否显示菜单栏 Boolean
-          navListShow: true,
-          // 配置菜单栏home,help,message,setting,activity
-          // namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
-          navList: {
-            activity: {
-              name: '我参加的',
-              href: 'www',
-              imgSrc: 'images/two/two-nav-activity@3x.png',
-              clickE: function(i) {
-                console.log($(this).attr('class'))
-                return false;
-              }
-            },
-            message: {
-              name: '消息',
-              href: 'www',
-              imgSrc: 'images/two/two-nav-message@3x.png',
-              clickE: function(i) {
-                console.log($(this).attr('class'))
-                return false;
-              }
-            },
-            setting: {
-              name: '设置',
-              href: 'www',
-              imgSrc: 'images/two/two-nav-setting@3x.png',
-              clickE: function(i) {
-                console.log($(this).attr('class'))
-                return false;
-              }
-            },
-            help: {
-              name: '帮助',
-              href: 'www',
-              imgSrc: 'images/two/two-nav-help@3x.png',
-              clickE: function(i) {
-                console.log($(this).attr('class'))
-                return false;
-              }
-            },
-            home: {
-              name: '首页',
-              href: 'www',
-              imgSrc: 'images/two/two-nav-home@3x.png',
-              clickE: function(i) {
-                console.log($(this).attr('class'))
-                return false;
-              }
-            },
-          },
+					<a href="#">
+						<div class="mibl-item mibl-item-02">
+							<h2>修改手机</h2>
+						</div>
+					</a>
+					<a href="#">
+						<div class="mibl-item mibl-item-03">
+							<h2>人脸识别</h2>
+						</div>
+					</a>
+					<a href="#">
+						<div class="mibl-item mibl-item-04">
+							<h2>隐私</h2>
+						</div>
+					</a>
+					<div style="height: .2rem;background-color: #F2F2F2;margin: 0 -.2rem;"></div>
+					<a href="#">
+						<div class="mibl-item mibl-item-06">
+							<h2>帮助反馈</h2>
+						</div>
+					</a>
+					<a href="#">
+						<div class="mibl-item mibl-item-05">
+							<h2>关于我们</h2>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+		<script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/publicHeader.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				// 公用头部
+				$('.two-public-header-content').publicHeader({
+					// 父级元素
+					fatherE: '.two-public-header-content',
+					// 背景颜色
+					bgColor: 'transparent',
+					// 文字和左右菜单栏颜色
+					fontColor: 'white',
+					// 是否显示返回按钮 Boolean
+					returnShow: false,
+					// 返回按钮地址
+					returnHref: 'javascript:history.back(-1)',
+					// 标题名称
+					titleName: '',
+					// 是否显示菜单栏 Boolean
+					navListShow: true,
+					// 配置菜单栏home,help,message,setting,activity
+					// namv: 菜单名, href:链接地址,imgSrc:图标地址,clickE:a标签绑定事件
+					navList: {
+						activity: {
+							name: '我参加的',
+							href: 'www',
+							imgSrc: 'images/two/two-nav-activity@3x.png',
+							clickE: function(i) {
+								console.log($(this).attr('class'))
+								return false;
+							}
+						},
+						message: {
+							name: '消息',
+							href: 'www',
+							imgSrc: 'images/two/two-nav-message@3x.png',
+							clickE: function(i) {
+								console.log($(this).attr('class'))
+								return false;
+							}
+						},
+						setting: {
+							name: '设置',
+							href: 'www',
+							imgSrc: 'images/two/two-nav-setting@3x.png',
+							clickE: function(i) {
+								console.log($(this).attr('class'))
+								return false;
+							}
+						},
+						help: {
+							name: '帮助',
+							href: 'www',
+							imgSrc: 'images/two/two-nav-help@3x.png',
+							clickE: function(i) {
+								console.log($(this).attr('class'))
+								return false;
+							}
+						},
+						home: {
+							name: '首页',
+							href: 'www',
+							imgSrc: 'images/two/two-nav-home@3x.png',
+							clickE: function(i) {
+								console.log($(this).attr('class'))
+								return false;
+							}
+						},
+					},
 
-        });
-        
-        
-        // 强行改变头部的背景颜色
-        $('.two-public-header-div').css('background',$('.mi-top').css("background"));
-    	  // 强行使公用头部样式正确
-    	  $('.public-div').css('padding-top','0');
-    	})
-    </script>
+				});
 
-  </body>
+				// 强行改变头部的背景颜色
+				$('.two-public-header-div').css('background', $('.mi-top').css("background"));
+				// 强行使公用头部样式正确
+				$('.public-div').css('padding-top', '0');
+			})
+		</script>
+
+	</body>
 
 </html>

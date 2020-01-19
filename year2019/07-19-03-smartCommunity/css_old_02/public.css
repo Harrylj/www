@@ -1177,3 +1177,44 @@ div.two-center-content {
 	height: .1rem;
 	z-index: 101;
 }
+
+/*,div.ci-header:before{
+	
+}*/
+div.ci-header
+,div.me-index .mi-top
+,div.me-index .mi-top-header {
+  /*height: 1.2rem;*/
+ 	height: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  padding: .1rem .2rem 0 .2rem;
+  margin: 0 -.2rem;
+  background: -o-linear-gradient(90deg, #fd933d, #fe6026);
+  background: -webkit-gradient(linear, left top, right top, from(#fd933d), to(#fe6026));
+  background: -o-linear-gradient(left, #fd933d, #fe6026);
+  background: linear-gradient(90deg, #fd933d, #fe6026);
+  background-image: url(../images/two/me-bg-02@3x.png);
+  background-size: 100% 100%;
+  /* 标准的语法 */
+}
+.two-public-header-div{
+	background-image: none !important;
+}
+div.ci-header {
+	margin: 0 0 1rem 0;
+	display: block;
+    position: relative;
+    padding: .15rem .2rem .9rem .2rem;
+}
+div.ci-header:before{
+	display: none;
+}

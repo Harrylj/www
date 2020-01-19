@@ -1,0 +1,198 @@
+.vehicle-management{
+	padding-left: .3rem ;
+	padding-right: .3rem;
+}
+.vehicle-management-edit
+,.vehicle-management-list{
+	padding-left: .15rem ;
+	padding-right: .15rem;
+}
+.vehicle-management-list{
+	padding-bottom: 1rem;
+}
+.bpp-btn-zzcw {
+    position: fixed;
+    left: 50%;
+    width: 96%;
+    margin-left: -48%;
+    bottom: .1rem;
+}
+.vm-list{
+	position: relative;
+}
+.vm-item{
+	padding-top: .5rem;
+}
+.vm-item img{
+	display: block;
+	margin: 0 auto;
+	position: relative;
+	width: 1.75rem;
+	height: 1.75rem;
+	text-align: center;
+}
+.vm-item p{
+	text-align: center;
+	font-size: .16rem;
+	line-height: .6rem;
+	color: #333333;
+}
+.vm-btn-qbd{
+	margin-top: .4rem;
+}
+.vml-list{
+	position: relative;
+	padding-top: .15rem;
+}
+.vml-item{
+	display: block;
+	width: 100%;
+	position: relative;
+	border-radius: .1rem;
+	padding: .25rem .25rem .25rem .8rem;
+	background: linear-gradient(0deg, #3174D8, #5ECDF6); /* 标准的语法 */
+	background: -webkit-linear-gradient(0deg, #3174D8, #5ECDF6); /* Safari 5.1 - 6.0 */
+	background-repeat: no-repeat;
+	margin-bottom: .15rem;
+}
+.vml-item:after{
+	position: absolute;
+	right: 5%;
+	top: 50%;
+	content: " ";
+	color: transparent;
+	margin-top: -.06rem;
+	width: .17rem;
+	height: .12rem;
+	z-index: 99;
+	background-size: 100% 100%;
+	background-image: url(../images/hh-arrow-right@2x.png);
+}
+.vml-item:before{
+	position: absolute;
+	left: .2rem;
+	top: 50%;
+	margin-top: -.21rem;
+	width: .42rem;
+	height: .42rem;
+	background-size: 100% 100%;
+	z-index: 99;
+	content: " ";
+	color: transparent;
+}
+.vml-item:nth-child(2n){
+	background: linear-gradient(0deg, #2AACCC, #21E8B2); /* 标准的语法 */
+	background: -webkit-linear-gradient(0deg, #2AACCC, #21E8B2); /* Safari 5.1 - 6.0 */
+}
+.vml-item:nth-child(n):before{
+	background-image: url(../images/car/car_01.png);
+}
+.vml-item:nth-child(2n):before{
+	background-image: url(../images/car/car_02.png);
+}
+.vml-item h2{
+	font-size: .18rem;
+}
+.vml-item p{
+	font-size: .125rem;
+}
+.vml-item h2
+,.vml-item p{
+	color: white;
+	line-height: .25rem;
+}
+.vml-btn-edit{
+	display: none;
+	position: fixed;
+	z-index: 99999;
+	height: .44rem;
+	right: 0;
+	top: 0;
+	width: .5rem;
+	color: #999999;
+	font-size: .125rem;
+	line-height: .44rem;
+	text-align: center;
+}
+.vme-list{
+	padding-top: .15rem;
+}
+.vme-info
+,.vme-none{
+	position: absolute;
+	right: .15rem;
+	top: 50%;
+	margin-top: -.12rem;
+	background-size: 100% 100%;
+	width: .24rem;
+	height: .24rem;
+	background-image: url(../images/car/car_12.png);
+}
+.vme-item{
+	border-radius: .1rem;
+	padding: .05rem .15rem;
+	background-color: white;
+}
+.vme-item h2{
+	font-size: .155rem;
+	line-height: .5rem;
+	color: #333333;
+	font-weight: bold;
+}
+.vme-item ul{
+	
+}
+.vme-item li{
+	position: relative;
+	display: flex;
+	line-height: .4rem;
+	border-bottom: 1px solid #F2F2F2;
+}
+.vme-item li:last-child{
+	border-bottom: none;
+}
+.vme-item h3{
+	width: 1.2rem;
+	color: #666666;
+	font-size: .155rem;
+}
+.vme-input{
+	width: 100%;
+	color: #333333;
+	font-size: .175rem;
+	line-height: .4rem;
+}
+.vme-none{
+	background-image: url(../images/edit-delete@2x.png);
+	background-size: .145rem .145rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.vme-input-tel{
+	padding-right: .4rem;
+}
+.vme-item  .vme-item-type{
+	justify-content: space-between;
+	padding-right: .2rem;
+	background-image: url(../images/bill_05.png);
+	background-size: .155rem .155rem;
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+.car_input{
+	width: 100%;
+	height: 1rem;
+}
+.vme-item-num{
+	display: flex;
+	flex-wrap: wrap;
+}
+.vme-item-num p{
+	margin-top: .1rem;
+	font-size: .12rem;
+    color: #BABABA;
+    line-height: .32rem;
+}
+.vme-item-select{
+	padding: 0 .2rem;
+}
