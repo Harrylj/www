@@ -810,3 +810,38 @@ $(function(){
       })
       console.log('2019-07-16-15:49')
 })
+
+
+
+
+// 判断是否处于4月4号
+$(function(){
+    // stime 开始时间 etime 结束时间
+    // compareTime('2020-4-04 00:00','2020-4-05 00:00')
+	function compareTime (stime, etime) {
+	      // 转换时间格式，并转换为时间戳
+	      function tranDate (time) {
+	        return new Date(time.replace(/-/g, '/')).getTime();
+	      }
+	      // 开始时间
+	      let startTime = tranDate(stime);
+	      // 结束时间
+	      let endTime = tranDate(etime);
+	      let thisDate = new Date();
+	      // 获取当前时间，格式为 2018-9-10 20:08
+	      let currentTime = thisDate.getFullYear() + '-' + (thisDate.getMonth() + 1) + '-' + thisDate.getDate() + ' ' + thisDate.getHours() + ':' + thisDate.getMinutes();
+	      let nowTime = tranDate(currentTime);
+	      // 如果当前时间处于时间段内，返回true，否则返回false
+	      if (nowTime < startTime || nowTime > endTime) {
+	        return false;
+	      }
+	      return true;
+	   }
+	// 2020-4-04 00:00~2020-4-05 00:00 时间段内
+	if(compareTime('2020-4-04 00:00','2020-4-05 00:00')){
+		$('body').addClass('theme_black')
+		console.log('添加黑白方案')
+	}
+})
+
+

@@ -1,32 +1,81 @@
 /*以下是灰底白字*/
-/*
-body *, body .public-footer-message-div h1, body .pfmd-item h2, body .pfmd-item p{
-    background-color: transparent !important;
-    color: #333333 !important;
-}
-
-
-body .van-tabs__line
-, body .wx-item-02 
-,body .lj-item-title{
-    background-color: #333333 !important;
-}
-
-html, body, body > div{
-    background-color: white !important;
-}
-body .lj-item-title{
+body *
+,body .public-footer-message-div h1
+,body .pfmd-item h2
+,body .pfmd-item p{
+	background-color: transparent!important;
 	color: white!important;
 }
-
-body .fontTitle 
-,body .wx-item-02 h2
-,body .wx-item-02 h4{
-    background-color: transparent !important;
-    color: white !important;
+body .lj-item-title
+,body .lj-icon-title
+,body .zhuan_ti .van-tabs__wrap{
+	background-color: #666666!important;
 }
-body .fontTitle {
-    background-color: rgba(0,0,0,.4) !important;
+body .van-tabs__line{
+	background-color: white!important;
+}
+body>div{
+	background-color: rgba(0,0,0,.3)!important;
+}
+/*
+body h1
+,body h2
+,body h3
+,body h4
+,body h5
+,body h6
+,body p
+,body span{
+	background-color: transparent!important;
+}*/
+/*
+body .slide-click
+,body .tzib-nav-04 a
+,body .wx-content div.van-tab{
+	color: #666666!important;
+}
+body .van-tabs__line{
+	background-color: white!important;
+}
+body .wx-content .van-tab
+,body .body-header h4
+,body .lj-icon-title
+,body .lj-item-title
+,body .body-header
+,body .zhuan_ti .van-tabs__wrap
+,body .van-swipe-item
+,body .van-swipe-item p{
+	background-color: rgba(0,0,0,.3)!important;
+	color: white!important;
+}
+body .lj-item{
+	border-top: 1px solid #F5F5F5;
+}
+body div.wx-content div.van-tab--active{
+	color: white!important;
+}
+@media screen and (max-width: 1099px){
+	body .lj-app-search
+	,body .van-search {
+    background-color: rgba(0,0,0,.3)!important;
+	color: white!important;
+	}
+}
+
+html:before{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  content: " ";
+  background-color: rgba(0,0,0,.02)!important;
+  pointer-events: none;
+  z-index: 99999;
+}
+html{
+	position: relative;
+	min-height: 600px;
 }
 */
 /*以上是灰底白字*/

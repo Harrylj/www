@@ -1,3 +1,16 @@
+/*以下是灰底白字*/
+
+.theme_black{
+	-webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
+}
+/*
+body{
+	-webkit-filter: grayscale(0%); 
+    filter: grayscale(0%);
+}
+*/
+
 * {
   padding: 0;
   margin: 0;
@@ -6,8 +19,13 @@
   letter-spacing: 1px;
   font-family: "微软雅黑", "黑体", "宋体";
 }
-
+body span
+,body a
+,body p{
+	background-color: transparent!important;
+}
 body {
+	position: relative;
   font-size: 12px;
   background: #F5F5F5;
   no-repeat center top;

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="initial-scale=1.0, minimum-scale=1.0, maximum-scale=2.0, user-scalable=no, width=device-width" name="viewport">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <!--<link rel="stylesheet" type="text/css" href="__CSS__/ionic.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css">
+    <link rel="stylesheet" type="text/css" href="css/wx.css">
+    <title>视频时常</title>
+</head>
+<style>
+    *{
+        margin:0px;
+        padding:0px;
+    }
+    body{
+        background:#fff;
+        /*overflow:hidden;*/
+    }
+    
+</style>
+<body>
+     <video id="myvideo" controls>
+      <source
+        src="https://vdse.bdstatic.com//b84fba2d24e31318aea3b215b0d394a9?authorization=bce-auth-v1/fb297a5cc0fb434c971b8fa103e8dd7b/2017-05-11T09:02:31Z/-1//243721300cb13899ad3f3b37abde401c8aafdb6c21222eedf75ba61771ae42d4"
+        type="video/mp4"
+      />
+    </video>
+</body>
+<script>
+    var video = document.getElementById("myvideo");
+//获取缓存的观看过的视频时长
+    var local= localStorage.getItem("currentTime");
+    video.addEventListener("loadedmetadata", function() {
+      this.currentTime = local;
+      console.log(this.currentTime)
+    });
+ //观看过的视频时长载入到缓存
+    video.addEventListener("timeupdate", function() {
+      var proceed = Math.floor(video.currentTime);
+      localStorage.setItem("currentTime", proceed);
+      console.log(proceed)
+    });
+  //视频拓展--获取视频的总长度
+    setTimeout(() => {
+      var allTime = video.duration;
+      console.log(allTime)
+    }, 800);
+
+</script>
+</html>

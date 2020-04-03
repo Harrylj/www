@@ -1,39 +1,8 @@
-/*以下是灰底白字*/
-/*
-body *, body .public-footer-message-div h1, body .pfmd-item h2, body .pfmd-item p{
-    background-color: transparent !important;
-    color: #333333 !important;
-}
-
-
-body .van-tabs__line
-, body .wx-item-02 
-,body .lj-item-title{
-    background-color: #333333 !important;
-}
-
-html, body, body > div{
-    background-color: white !important;
-}
-body .lj-item-title{
-	color: white!important;
-}
-
-body .fontTitle 
-,body .wx-item-02 h2
-,body .wx-item-02 h4{
-    background-color: transparent !important;
-    color: white !important;
-}
-body .fontTitle {
-    background-color: rgba(0,0,0,.4) !important;
-}
-*/
-/*以上是灰底白字*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
     margin: 0;
     padding: 0
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0

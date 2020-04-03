@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>医院</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <link rel="stylesheet" type="text/css" href="css/vant.css"/>
+    <link rel="stylesheet" type="text/css" href="css/hospital.css">	
+	
+  </head>
+  <style type="text/css">
+  	html,body{
+  		background-color: #19d09c;
+  	}
+.hospital{
+	padding: .3rem;
+}
+.h-content{
+	padding: .2rem;
+	background-color: white;
+	border-radius: .2rem;
+}
+.h-header{
+	padding-top: .2rem;
+}
+.h-header img{
+	width: 100%;
+	display: block;
+	margin-bottom: .2rem;
+}
+.hb-item{
+	position: relative;
+	margin-bottom: .15rem;
+	min-height: 2.9rem;
+	border-radius: .1rem;
+	padding: 0 .2rem .1rem 2.9rem;
+}
+.hb-item
+,.hb-item-content .van-cell
+,.hb-item-content .van-collapse-item__content{
+	background-color: #F5F5F5;
+}
+.hb-item img{
+	position: absolute;
+	left: .2rem;
+	top: .2rem;
+	width: 2.4rem;
+	height: 2.6rem;
+	border-radius: .1rem;
+}
+.hb-item-content{
+	position: relative;
+}
+.hb-item-header{
+	line-height: .6rem;
+	display: flex;
+	flex-wrap: wrap;
+	padding-top: .2rem;
+	align-items: center;
+}
+.hb-item-content .hb-item-header h3{
+	font-size: .32rem;
+	font-weight: bold;
+	margin: 0 .2rem 0 0;
+}
+.hb-item-header span{
+	background-color: #19d09c;
+	display: block;
+	padding: 0 .1rem;
+	border-radius: .05rem;
+	color: white;
+	font-weight: bold;
+	font-size: .24rem;
+	line-height: .4rem;
+	height: .4rem;
+}
+.hb-item-content h3{
+	font-size: .3rem;
+}
+.hb-item-content h4{
+	font-size: .28rem;
+}
+.hb-item-content h4
+,.hb-item-content h3{
+	color: #4e4e4e;
+	font-weight: 500;
+	line-height: .46rem;
+	margin: 0;
+	padding: .05rem 0;
+}
+.hb-item-content p{
+	color: #8c8c8c;
+	font-size: .24rem;
+	margin: 0;
+	line-height: .4rem;
+}
+.hb-item-content .van-cell{
+	padding: 0;
+	font-size: .24rem;
+}
+.hb-item-content .van-collapse-item__content{
+	padding: .1rem 0;
+}
+.hb-item-content .hb-item-content p{
+	font-size: .24rem;
+}
+  </style>
+
+  <body>
+    <div id="app" class="hospital">
+    	<div class="h-content">
+    		<div class="h-header">
+	    		<img src="images/lj_title_01.png"/>
+					<img src="images/lj_title_02.png"/>
+	    	</div>
+	    	<div class="h-body">
+	    		<van-collapse v-model="activeNames">
+	    		<div class="hb-list">
+	    			<div class="hb-item">
+	    				<img src="images/user_01.jpg"/>
+	    				<div class="hb-item-content">
+	    					<div class="hb-item-header"><h3>卢纹凯</h3><span>五星好评医生</span></div>
+	    					<h3>内分泌科 主任医师</h3>
+	    					<h4>人民医院内分泌科资深主任医师</h4>
+	    					<van-collapse-item title="查看更多">
+	    						<p>美国哈佛大学客座医学副教授世界糖尿病联盟主席</p>
+	    					</van-collapse-item>
+	    				</div>
+	    			</div>
+	    			<div class="hb-item">
+	    				<img src="images/user_01.jpg"/>
+	    				<div class="hb-item-content">
+	    					<div class="hb-item-header"><h3>卢纹凯卢纹凯卢纹凯卢纹凯</h3><span>五星好评医生</span></div>
+	    					<h3>内分泌科 主任医师</h3>
+	    					<h4>资深主任医师</h4>
+	    					<van-collapse-item title="查看更多">
+	    						<p>美国哈佛大学客座医学副教授世界糖尿病联盟主席</p>
+	    					</van-collapse-item>
+	    				</div>
+	    			</div>
+	    			<div class="hb-item">
+	    				<img src="images/user_01.jpg"/>
+	    				<div class="hb-item-content">
+	    					<div class="hb-item-header"><h3>卢纹凯</h3><span>五星好评医生</span></div>
+	    					<h3>内分泌科 主任医师</h3>
+	    					<h4>资深主任医师</h4>
+	    					<van-collapse-item title="查看更多">
+	    						<p>美国哈佛大学客座医学副教授世界糖尿病联盟主席</p>
+	    					</van-collapse-item>
+	    				</div>
+	    			</div>
+	    		</div>
+	    		</van-collapse>
+	    	</div>
+    	</div>
+    </div>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vant.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var Vue = window.Vue;
+			var vant = window.vant;
+			
+			var app = new Vue({
+				el: '#app',
+				data() {
+					return {
+						activeNames: ['1'],
+					}
+				},
+				methods: {
+				},
+				
+			})
+
+		</script>
+  </body>
+
+</html>
