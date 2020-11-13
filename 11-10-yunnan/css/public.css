@@ -1,0 +1,263 @@
+@media only screen and (min-width: 0px) {
+	.swiper-container {
+		height: 200px;
+	}
+}
+@media only screen and (min-width: 480px) {
+	.swiper-container {
+		height: 300px;
+	}
+}
+* {
+	font-size: 0.24rem;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	letter-spacing: 0.01rem;
+}
+#app{
+	padding: 1rem 0;
+}
+.index-header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 1rem;
+	width: 100%;
+	z-index: 99;
+	display: flex;
+	justify-content: center;
+	flex: 1;
+	background-color: white;
+	align-items: center;
+}
+.index-header img {
+	width: 0.3rem;
+	height: 0.3rem;
+	margin-right: 0.2rem;
+}
+.index-header span {
+	line-height: 1rem;
+	color: #222222;
+	font-size: 0.4rem;
+}
+.van-tabbar {
+	height: 1.61rem;
+}
+.public-footer-nav {
+	background-color: #212d4f;
+	z-index: 99;
+}
+div.public-footer-nav:after {
+	border: none;
+}
+.public-footer-nav .van-tabbar-item__icon img {
+	width: 0.41rem;
+	height: 0.41rem;
+}
+.public-footer-nav .van-tabbar-item:nth-child(3) {
+	position: relative;
+	top: -0.55rem;
+}
+.public-footer-nav .van-tabbar-item:nth-child(3) .van-tabbar-item__icon img {
+	width: 1.39rem;
+	height: 1.39rem;
+}
+.public-footer-nav .van-tabbar-item--active {
+	background-color: transparent;
+}
+.public-footer-nav .van-tabbar-item--active span {
+	color: #009bfe;
+	opacity: 1;
+}
+.public-footer-nav span {
+	font-size: 0.23rem;
+	line-height: 0.6rem;
+	opacity: 0.8;
+	color: #ffffff;
+}
+.public-header-title {
+	position: fixed;
+	z-index: 99;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 1rem;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.public-header-title-content {
+	position: relative;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+}
+.phtc-title{
+	color: white;
+	font-size: .35rem;
+	letter-spacing: .03rem;
+	text-align: center;
+	width: 100%;
+}
+.phtc-return {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background-image: url(../images/icon-fanhui.png);
+	background-size: 0.43rem 0.415rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.phtc-fenxiang {
+	position: absolute;
+	right: 1rem;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background-image: url(../images/icon-fenxiang.png);
+	background-size: 0.48rem 0.4rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.phtc-mulu {
+	position: absolute;
+	right: 0rem;
+	top: 0;
+	width: 1rem;
+	height: 1rem;
+	background-image: url(../images/icon-mulu.png);
+	background-size: 0.4rem 0.34rem;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.index-live{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	left: .3rem;
+	width: .9rem;
+	height:.38rem;
+	background-color: rgba(255, 255, 255, .76);
+	border-radius: .08rem;
+	color: #222222;
+	letter-spacing: .02rem;
+}
+.index-live span{
+	/* position: absolute;
+	left: .12rem;
+	content: " ";
+	color: transparent;
+	top: 50%;
+	margin-top: -.04rem;
+	margin-left: -.04rem; */
+	display: inline-block;
+	width: .08rem;
+	height: .08rem;
+	margin-right: .06rem;
+	background-color: #22AC38;
+	border-radius: 50%;
+}
+.index-live,
+.index-video-num {
+	top: 0.3rem;
+	font-size: 0.21rem;
+	z-index: 2;
+}
+.index-video-num {
+	position: absolute;
+	height: 0.38rem;
+	padding: 0 0.12rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.58);
+	left: 1.4rem;
+	color: #ffffff;
+	border-radius: 0.08rem;
+}
+.index-video-num{
+	position: absolute;
+}
+.index-video-num img{
+	width: .23rem;
+	height: .15rem;
+	margin-right: .04rem;
+}
+
+.index-swipe-02-father{
+	position: relative;
+	padding: 0 .3rem;
+}
+.index-swipe-02-father .index-h2,
+.index-ygz .index-h2{
+			color: #F8F8F8;
+}
+.index-swipe-02-div{
+	width: 3rem;
+}
+.index-swipe-02-div img{
+	width: 100%;
+}
+.index-swipe-02 .van-swipe-item{
+	width: 2rem;
+	padding-right: .2rem;
+}
+.index-swipe-02-father{
+	padding-right: 0;
+	width: 7.5rem;
+}
+.index-swipe-02-father .van-swipe-item-div{
+	background-color: #18316F;
+	padding: .3rem 0 .2rem 0;
+	min-height: 3.5rem;
+	border-radius: .2rem;
+}
+.index-swipe-02-father img{
+	display: block;
+	width: 1.5rem;
+	height: 1.5rem;
+	border-radius: 50%;
+	margin: auto;
+}
+.index-swipe-02 h3{
+	margin-top: .1rem;
+	color: white;
+	font-size: .29rem;
+	font-weight: bold;
+}
+.index-swipe-02 p{
+	color: white;
+	font-size: .26rem;
+	opacity: .72;
+}
+.index-swipe-02 h3
+,.index-swipe-02 p{
+	line-height: .48rem;
+	text-align: center;
+}
+.index-h2 {
+	color: white;
+	font-size: .35rem;
+	line-height: 1rem;
+	font-weight: bold;
+}
+.vjs-custom-skin > .video-js .vjs-big-play-button{
+	background-image: url(../images/index-bofang.png)!important;
+	background-size: 100% 100%!important;
+	width: 1.14rem!important;
+	height: 1.14rem!important;
+	background-repeat: no-repeat!important;
+	color: transparent!important;
+	border: none!important;
+	background-color: transparent!important;
+	margin-left: -.57rem;
+	margin-top: -.57rem;
+}
+div.video-js{
+	width: 7.5rem;
+	height: 4.8rem;
+}
+

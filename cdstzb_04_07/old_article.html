@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+      table td{
+        border: 1px solid #CCCCCC;
+      }
+    </style>
+    <script type="text/javascript">
+    $(document).ready(function(){
+      $("#searchBtn").click(function(){
+          $.ajax({
+              type:"GET",
+              url:"http://10.190.232.85:8003/trsapp/appDataWeb.do?method=queryAppData&appId=22291&groupId=20162",
+              dataType:"json",
+              success:function(data){
+                  if(data.errorCode==0){
+                                           $("#nickname").val(mylogin.nickname);                             
+                                   }else{
+                                           $("#nickname").val("用户");                         
+                                   }
+              },
+              error:function(jqXHR){
+                  console.log("Error: "+jqXHR.status);
+              }
+          });
+      });
+  });
+    </script>
+  </head>
+
+  <body>
+    <div class="article center">
+      <p>article.html</p>
+      <h1><CMSPRO_CHANNEL FIELD="channelName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+      <!-- 公共头部 begin -->
+        <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!-- 公共头部 end -->
+      <p>
+        <input id="nickname" type="" name="" value="" />
+        <button id="searchBtn">ajax</button>
+      </p>
+      
+      <div class="tzi-body public-body">
+        <div class="ab-one">
+          <a href="#">首页</a>/<a href="#">要闻动态</a>/<a class="ab-a-hover" href="#">要闻详情</a>
+        </div>
+        <div class="ab-content-div">
+          <h1 class="abc-title fontst">上课了打底裤打开代开点点滴滴对对对</h1>
+          <div class="abc-content">
+            <div class="abcc-header">
+              <div class="abcch-left fl">
+                <span>2018-08-09</span>&nbsp;&nbsp;&nbsp;&nbsp;<span>民盟中央网站</span>
+              </div>
+              <div class="abcch-right fr">
+                <a class="abc-a-fzlj" href="#">复制链接</a>
+                <a class="abc-a-dywb" href="#">打印文本</a>
+              </div>
+              <div class="clear"></div>
+            </div>
+            <!-- 正文 -->
+            <div class="abcc-body">
+              正文内容
+            </div>
+            <!--翻页-->
+            <div class="abcc-footer">
+              <ul>
+                <li>上一篇：<CMSPRO_DOCUMENTNAVIGATION TYPE="PREV">上篇</CMSPRO_DOCUMENTNAVIGATION></li>
+                <li>下一篇：<CMSPRO_DOCUMENTNAVIGATION TYPE="NEXT">下篇</CMSPRO_DOCUMENTNAVIGATION></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 公共底部 begin -->
+        <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!-- 公共底部 end -->
+      <!-- 公共二维码 begin -->
+        <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!-- 公共二维码 end -->
+
+    </div>
+  </body>
+  <script type="text/javascript">
+  </script>
+
+</html>

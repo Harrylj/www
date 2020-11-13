@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+    </style>
+    <script type="text/javascript">
+    </script>
+  </head>
+
+  <body>
+    <!--调用公用二维码-->
+      <div class="index-fixed-father">
+        <div class="index-fixed-list">
+          <ul class="index-fixed-ul">
+            <li class="index-fixed-wx">
+              <p>微信</p>
+              <div class="index-gzh index-fixed-li-more">
+                <div class="index-gzh-div">
+                  <CMSPRO_DOCUMENTS DOCUMENTTYPE="0|1|2|3|4|8|9" NUM="1" STARTPOS="0" CHANNELCODE="publicEWM">
+                    <CMSPRO_APPENDIXS MODE='IMG' STARTPOS='0' NUM='1'><img class="title-img" src='<CMSPRO_APPENDIX FIELD="path"></CMSPRO_APPENDIX>' /></CMSPRO_APPENDIXS>
+                    <p><CMSPRO_DOCUMENT FIELD="title" NUM="12">稿件标题</CMSPRO_DOCUMENT></p>
+                  </CMSPRO_DOCUMENTS>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+  </body>
+  <script type="text/javascript">
+    $(function(){
+      $('.index-fixed-ul').children('li').on('mouseover', function() {
+        $(this).children('.index-fixed-li-more').show();
+      })
+      $('.index-fixed-ul').children('li').on('mouseout', function() {
+        $(this).children('.index-fixed-li-more').hide();
+      })
+    })
+  </script>
+
+</html>

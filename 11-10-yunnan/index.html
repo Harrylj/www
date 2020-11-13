@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>首页</title>
+	<style type="text/css">
+		#app {
+			/* padding: 0 0 2rem 0; */
+		}
+		.index-body{
+			padding-bottom: 2rem;
+			border-radius:  .3rem .3rem 0 0;
+			background: linear-gradient(180deg, #0036B9, #153790, #1A3883);
+		}
+		p {
+			font-size: .3rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4rem;
+		}
+		.index-swipe-01 img {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.index-nav-01,
+		.index-nav,
+		.index-video,
+		.index-ygz,
+		.index-tshw,
+		.index-zbdw,
+		.index-cbdw,
+		.index-xbdw{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.index-nav-01{
+			padding-top: .1rem;
+		}
+		.index-nav-01-div{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-nav-01-div a{
+			display: inline-block;
+			margin-top: .2rem;
+		}
+		.index-nav-01-div img{
+			width: 3.3rem;
+			height: 2.12rem;
+		}
+		.index-nav {
+			margin-top: .2rem;
+			display: flex;
+			justify-content: space-around;
+			flex: 1;
+		}
+		.index-nav-div {
+			text-align: center;
+		}
+
+		.index-nav-div h2 {
+			font-size: .24rem;
+			line-height: .6rem;
+		}
+		
+		.index-nav-div img {
+			width: 1rem;
+		}
+
+		.index-video {
+			position: relative;
+		}
+
+		.index-video-div{
+			position: relative;
+		}
+		
+		.index-video-bgimg{
+			display: block;
+			width: 100%;
+			height: 3.9rem;
+		}
+		.index-video video {
+			width: 100%;
+			height: 4rem;
+		}
+		/* .index-video-div::before{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			content: " ";
+			color: transparent;
+			width: 1.12rem;
+			height: 1.12rem;
+			z-index: 2;
+			margin-left: -.56rem;
+			margin-top: -.56rem;
+			background-image: url(./images/index-bofang.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		} */
+		.index-ygz{
+			position: relative;
+		}
+		.index-ygz-more{
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 2;
+			color: white;
+			font-size: .31rem;
+			line-height: 1rem;
+			opacity: .67;
+			padding: 0 .3rem;
+		}
+		.index-ygz-list
+		,.index-tshw-list{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.index-ygz-item{
+			position: relative;
+			width: 3.3rem;
+			height: 4.8rem;
+			margin-bottom: .2rem;
+		}
+		.index-ygz-item img{
+			width: 100%;
+			height: 100%;
+			border-radius: .2rem;
+		}
+		.index-ygz-item h3,
+		.index-ygz-item p{
+			position: absolute;
+			width: 100%;
+			padding: 0 .2rem;
+			left: 0;
+			line-height: .5rem;
+			color: white;
+		}
+		.index-ygz-item h3{
+			bottom: .7rem;
+			font-size: .31rem;
+		}
+		.index-ygz-item p{
+			font-size: .25rem;
+			opacity: .75;
+			bottom: .2rem;
+		}
+		.index-tshw-item{
+			position: relative;
+			padding-bottom: .1rem;
+		}
+		.index-tshw-item img{
+			width: 3.3rem;
+			height: 3.2rem;
+			border-radius: .2rem;
+			margin-bottom: .1rem;
+		}
+		.index-tshw-item h3,
+		.index-tshw-item p{
+			position: relative;
+			width: 100%;
+			line-height: .5rem;
+		}
+		.index-tshw-item h3{
+			font-size: .31rem;
+			font-weight: 400;
+			color: white;
+		}
+		.index-tshw-item p{
+			font-size: .25rem;
+			color: #8B909E;
+		}
+		
+		.index-logo-nav-list{
+			display: flex;
+			justify-content: space-between;
+		}
+		.index-logo-nav-item img{
+			width: 2.15rem;
+			height: 1.3rem;
+			border-radius: .2rem;
+		}
+		.index-logo-nav-item p{
+			text-align: center;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: .27rem;
+			opacity: .58;
+			line-height: .8rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="index" id="app">
+		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
+		<!-- <div class="index-header">
+			<div class="index-header-div"></div>
+			<img src="images/bg.png" alt="" />
+			<span>云南文博会</span>
+		</div> -->
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="3000" >
+				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+					<img v-lazy="image" alt="">
+					<p>{{index}}</p>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="index-body">
+			<div class="index-nav-01">
+				<div class="index-nav-01-div">
+					<a href="column_zhzj.html"><img src="images/index-nav-01-01.png" alt=""></a>
+					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
+					<a href="#"><img src="images/index-nav-01-03.png" alt=""></a>
+					<a href="#"><img src="images/index-nav-01-04.png" alt=""></a>
+				</div>
+			</div>
+			<!-- <div class="index-nav">
+				<div class="index-nav-div" v-for="(nav,index) in 4" :key="index">
+					<img src="images/index-nav-01.png" alt="">
+					<h2>地址{{index}}</h2>
+				</div>
+			</div> -->
+			
+			<div class="index-video">
+				<a href="column_kms.html">
+				<div class="index-h2">2020云南文博开幕式</div>
+				</a>
+				<div class="index-video-div">
+					<div class="index-live"><span></span>LIVE</div>
+					<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+				</div>
+			</div>
+			
+			<div class="index-swipe-02-father">
+				<div class="index-h2">重磅嘉宾</div>
+				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
+					<van-swipe-item v-for="index in 7" :key="index">
+						<a href="article_jbjs.html">
+						<div class="van-swipe-item-div">
+							<img src="images/index-user-01.png" alt="">
+							<h3>嘉宾{{index}}</h3>
+							<p>嘉宾职称</p>
+							<p v-show="index>2">嘉宾职称</p>
+						</div>
+						</a>
+					</van-swipe-item>
+				</van-swipe>
+			</div>
+			<div class="index-ygz">
+				<div class="index-h2">云逛展</div>
+				<div class="index-ygz-more">换一换</div>
+				<div class="index-ygz-list">
+					<div class="index-ygz-item" v-for="index in 4" :key="index">
+						<div class="index-live"><span></span>LIVE</div>
+						<img src="images/bg.png" alt="">
+						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+						<p class="van-ellipsis">直播用户名</p>
+					</div>
+				</div>
+			</div>
+			<div class="index-tshw">
+				<div class="index-h2">特色好物</div>
+				<div class="index-tshw-list">
+					<div class="index-tshw-item" v-for="index in 4" :key="index">
+						<div class="index-live"><span></span>LIVE</div>
+						<img src="images/bg.png" alt="">
+						<h3 class="van-ellipsis">{{index}}彩帮陶瓷花瓶摆件</h3>
+						<p class="van-ellipsis">36人正在逛</p>
+					</div>
+				</div>
+			</div>
+			<div class="index-zbdw">
+				<div class="index-h2">主办单位</div>
+				<div class="index-logo-nav-list">
+					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
+						<img src="images/bg.png" alt="">
+						<p>云南电视台</p>
+					</div>
+				</div>
+			</div>
+			<div class="index-cbdw">
+				<div class="index-h2">承办单位</div>
+				<div class="index-logo-nav-list">
+					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
+						<img src="images/bg.png" alt="">
+						<p>云南电视台</p>
+					</div>
+				</div>
+			</div>
+			<div class="index-xbdw">
+				<div class="index-h2">协办单位</div>
+				<div class="index-logo-nav-list">
+					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
+						<img src="images/bg.png" alt="">
+						<p>云南电视台</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<van-tabbar class="public-footer-nav" v-model="active">
+			<!-- <van-tabbar-item badge="3">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? icon.active : icon.inactive" />
+				</template>
+			</van-tabbar-item> -->
+			<van-tabbar-item @click="window.location.href='index.html'">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-01-hover.png' : 'images/public-nav-01.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_jjwb.html'">
+				<span>聚焦文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_gywb.html'">
+				<!-- <span>自定义</span> -->
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wzwb.html'">
+				<span>玩转文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-04-hover.png' : 'images/public-nav-04.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wbjj.html'">
+				<span>文博经济</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-05-hover.png' : 'images/public-nav-05.png'" />
+				</template>
+			</van-tabbar-item>
+		</van-tabbar>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+
+	<script type="text/javascript">
+	
+		var _obj = public_obj();
+		console.log('222', public_obj())
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			// new Vue({
+			el: '#app',
+			data: {
+				swipeWidth:2.68,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				active: 0,
+				icon: {
+					active: 'https://img.yzcdn.cn/vant/user-active.png',
+					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+				},
+				value: 2,
+				message: 'Hello Vue!',
+				current: ['mail'],
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					poster: "images/bg.png", //你的封面地址
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						{
+							withCredentials: false,
+							type: 'application/x-mpegURL',
+							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
+			},
+			created: function () {
+				// console.log(1,document.documentElement.style.fontSize = '200px')
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				console.log(3,_rem)
+				// alert(document.documentElement.style.fontSize)
+				vant.Toast('提示看看');
+			},
+			mounted: function () {
+				console.log(_obj.appkey)
+			}
+
+		})
+		console.log('99999', vant.Lazyload)
+		// app.use(vant.Lazyload);
+	</script>
+</body>
+
+</html>

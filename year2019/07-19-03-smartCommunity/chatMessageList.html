@@ -166,7 +166,7 @@
 					}
 				}
 			});
-			
+			/*
 			mui.plusReady(function() {
 				document.getElementById("scan").addEventListener("tap", function(e){
 					mui.openWindow({
@@ -200,7 +200,7 @@
 				});
 				changeCount();
 			});
-
+			*/
 			var app = new Vue({
 				el: '#app',
 				data: {
@@ -224,7 +224,37 @@
 					}
 				}
 			});
-
+			document.getElementById("scan").addEventListener("tap", function(e){
+					mui.openWindow({
+						url: 'barcode.html',
+						id: 'barcode',
+						styles: {
+							scrollIndicator: "none"
+						},
+					});
+				});
+				
+				document.getElementById("patrol").addEventListener("tap", function(e){
+					mui.openWindow({
+						url: 'task-list.html',
+						id: 'task-list',
+						styles: {
+							scrollIndicator: "none"
+						},
+					});
+				});
+				
+				document.getElementById("clean").addEventListener("tap", function(e){
+					if(!app.isCleaning) {
+						app.isCleaning = true;
+						setTimeout(function() {
+							app.isCleaning = false;
+						}, 1500);
+					} else {
+						mui.toast("正在清理中，请稍候");
+					}
+				});
+			changeCount();
 			function initData() {
 				var diff = 6 * 60 * 1000;
 				for (var i = 0; i < 1; i++) {

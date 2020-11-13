@@ -89,15 +89,14 @@
 
                 <!--右侧滚动公告-->
                 <div class="tzib-loop-div">
-                  <CMSPRO_CHANNELS CODE="_SITE" STARTPOS='15' NUM="1" CHILDTYPE="3">
                     <div class="tzib-loop-div-header">
-                      <h1><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
-                      <a class="tz-index-more-01" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
+                      <h1><CMSPRO_CHANNEL CODE="indexTZGG" FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></h1>
+                      <a class="tz-index-more-01" href="<CMSPRO_CHANNEL CODE='indexTZGG' FIELD='url' ></CMSPRO_CHANNEL>">更多</a>
                     </div>
                     <div class="topLoop">
                       <div class="bd">
                         <ul class="infoList">
-                          <CMSPRO_DOCUMENTS CHANNELCODE="" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
+                          <CMSPRO_DOCUMENTS CHANNELCODE="indexTZGG" DOCUMENTTYPE="0|1|8|9" NUM="10" STARTPOS="0">
                             <li>
                               <CMSPRO_DOCUMENT FIELD="title" NUM="999" AUTOLINK="true" LINKALT="true" TRUNCATEDTIP="...">标题</CMSPRO_DOCUMENT>
                             </li>
@@ -105,7 +104,6 @@
                         </ul>
                       </div>
                     </div>
-                  </CMSPRO_CHANNELS>
                 </div>
 
               </div>
@@ -116,7 +114,7 @@
 
       </div>
 
-      <!-- 公共底部 begin -->
+      <!-- <div class="lj_title" style="display: none;"><CMSPRO_CHANNEL CODE=""  FIELD="displayName"></CMSPRO_CHANNEL></div> -->
       <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
       <!-- 公共底部 end -->
       <!-- 公共二维码 begin -->

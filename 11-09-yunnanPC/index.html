@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/antd.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="app">
+	  <a-icon type="step-forward"></a-icon>
+	  <a-icon type="step-forward"></a-icon>
+		<div>
+		  <a-menu v-model="current" mode="horizontal">
+			<a-menu-item key="mail"> <a-icon type="mail" />Navigation One </a-menu-item>
+			<a-menu-item key="app" disabled> <a-icon type="appstore" />Navigation Two </a-menu-item>
+			<a-sub-menu>
+			  <span slot="title" class="submenu-title-wrapper"
+				><a-icon type="setting" />Navigation Three - Submenu</span
+			  >
+			  <a-menu-item-group title="Item 1">
+				<a-menu-item key="setting:1">
+				  Option 1
+				</a-menu-item>
+				<a-menu-item key="setting:2">
+				  Option 2
+				</a-menu-item>
+			  </a-menu-item-group>
+			  <a-menu-item-group title="Item 2">
+				<a-menu-item key="setting:3">
+				  Option 3
+				</a-menu-item>
+				<a-menu-item key="setting:4">
+				  Option 4
+				</a-menu-item>
+			  </a-menu-item-group>
+			</a-sub-menu>
+			<a-menu-item key="alipay">
+			  <a href="https://antdv.com" target="_blank" rel="noopener noreferrer"
+				>Navigation Four - Link</a
+			  >
+			</a-menu-item>
+		  </a-menu>
+		</div>
+
+
+	  <div id="main">
+		  <div style="background-color:coral;">红色</div>
+		  <div style="background-color:lightblue;">蓝色</div>  
+		  <div style="background-color:lightgreen;">带有更多内容的绿色 div</div>
+	  </div>
+	  {{ message }}
+	  <!--<video  width="300" height="200" src="https://ip4214528475.mobgslb.tbcache.com/liveng.alicdn.com/mediaplatform/c988dffc-3f71-4a23-bbd3-c5dd9ce0b893.flv?auth_key=1604392294-0-0-b630841d23ad07a9df44d4f7f19d8aef&ali_redirect_ex_hot=100" controls="controls">
+		your browser does not support the video tag
+		</video>
+		<video  width="300" height="200" src="https://taobaolive.taobao.com/room/index.htm?spm=a21tn.8216370.2278281.2.6e145722WLKGSj&feedId=b3715fa7-779a-4739-af60-fe85d9b298ef" controls="controls">
+		your browser does not support the video tag
+		</video>-->
+	  <div style="height: 1000px;"></div>
+	  <a-rate v-model="value"></a-rate>
+	  3333
+	  <div id="components-back-top-demo-custom">
+	    <a-back-top>
+	      <div class="ant-back-top-inner">
+	        UP
+	      </div>
+	    </a-back-top>
+	    Scroll down to see the bottom-right
+	    <strong style="color: #1088e9"> blue </strong>
+	    button.
+	  </div>
+	</div>
+<script>  
+
+</script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.14/es5-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.14/es5-sham.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-sham.min.js"></script>-->
+<script src="js/es5-shim.min.js"></script>
+<script src="js/es5-sham.min.js"></script>
+<script src="js/json3.min.js"></script>
+<script src="js/es6-shim.min.js"></script>
+<script src="js/es6-sham.min.js"></script>
+	<script src="js/antd.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var _obj = public_obj();
+		console.log('222',public_obj())
+//		import appkey_public from 'public';
+//		import appkey_public from './public'
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		  	value: 2,
+		    message: 'Hello Vue!',
+			current: ['mail'],
+		  },
+		  created:function(){
+		  	console.log(1)
+		  }, 
+		  mounted:function(){
+			console.log(_obj.appkey)
+		  	axios.get('http://api.hanyuananiu.com/api/Login/GetPhoneOrEmailCheckCode?contact=18200166593')
+			 .then(function (response) {
+			  console.log(response);
+			 })
+			 .catch(function (error) {
+			  console.log(error);
+			 });	
+			 
+			axios.post('/api/v1/contents', {
+			  "siteId": 1,
+			  "checked": true,
+			  "page": 1,
+			  "perPage": 30
+			})
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+			
+		  }
+		  
+		})
+	</script>
+</body>
+</html>

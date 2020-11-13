@@ -13,22 +13,162 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/antd.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/public.css"/>
     <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <title>名称</title>
 	<style type="text/css">
-		
+		.ie-hint{
+			text-align: center;
+		}
+		.ie-hint,.ie-hint a{
+			line-height: 100px;
+			font-size: 16px;
+		}
+		#main
+{
+	width:220px;
+	height:300px;
+	border:1px solid black;
+	display:flex;
+}
+
+#main div
+{
+	flex:1;
+}
+
+#components-back-top-demo-custom .ant-back-top {
+  bottom: 100px;
+}
+#components-back-top-demo-custom .ant-back-top-inner {
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+  border-radius: 4px;
+  background-color: #1088e9;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+}
 	</style>
 </head>
 <body>
+	<div id="app">
+	  
+	  <div id="main">
+		  <div style="background-color:coral;">红色</div>
+		  <div style="background-color:lightblue;">蓝色</div>  
+		  <div style="background-color:lightgreen;">带有更多内容的绿色 div</div>
+	  </div>
+	  {{ message }}
+	  <!--<video  width="300" height="200" src="https://ip4214528475.mobgslb.tbcache.com/liveng.alicdn.com/mediaplatform/c988dffc-3f71-4a23-bbd3-c5dd9ce0b893.flv?auth_key=1604392294-0-0-b630841d23ad07a9df44d4f7f19d8aef&ali_redirect_ex_hot=100" controls="controls">
+		your browser does not support the video tag
+		</video>
+		<video  width="300" height="200" src="https://taobaolive.taobao.com/room/index.htm?spm=a21tn.8216370.2278281.2.6e145722WLKGSj&feedId=b3715fa7-779a-4739-af60-fe85d9b298ef" controls="controls">
+		your browser does not support the video tag
+		</video>-->
+	  <div style="height: 1000px;"></div>
+	  <a-rate v-model="value"></a-rate>
+	  3333
+	  <div id="components-back-top-demo-custom">
+	    <a-back-top>
+	      <div class="ant-back-top-inner">
+	        UP
+	      </div>
+	    </a-back-top>
+	    Scroll down to see the bottom-right
+	    <strong style="color: #1088e9"> blue </strong>
+	    button.
+	  </div>
+	</div>
+<script>  
+  //浏览器版本过低 提示升级 低于ie 10的都会提示  
+  (function (w) {  
+  if (!("WebSocket" in w && 2 === w.WebSocket.CLOSING)) {  
+  	var b = document.getElementsByTagName('body')[0];
+//  b.innerHTML= "";
+    var d = document.createElement("div");
+  d.className = "browsehappy";  
+  d.innerHTML = '<div class="ie-hint" >为了您的电脑安全，请升级您的浏览器</strong><a target="_blank" href="http://browsehappy.osfipin.com/" >点击此处升级</a></div>';  
+  
+  var f = function () {
+      var s = document.getElementsByTagName("body")[0];  
+  if ("undefined" == typeof(s)) {  
+        setTimeout(f, 10)  
+      } else {  
+        s.insertBefore(d, s.firstChild)  
+      }  
+    };  
+  f()  
+  }  
+}(window));
+</script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
 	
-	<script src="js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.14/es5-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es5-shim/4.5.14/es5-sham.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/json3/3.3.2/json3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-shim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.5/es6-sham.min.js"></script>-->
+<script src="js/es5-shim.min.js"></script>
+<script src="js/es5-sham.min.js"></script>
+<script src="js/json3.min.js"></script>
+<script src="js/es6-shim.min.js"></script>
+<script src="js/es6-sham.min.js"></script>
+	<script src="js/antd.min.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
-		
+		var _obj = public_obj();
+		console.log(public_obj())
+//		import appkey_public from 'public';
+//		import appkey_public from './public'
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		  	value: 2,
+		    message: 'Hello Vue! 01'
+		  },
+		  created:function(){
+		  	console.log(1)
+		  }, 
+		  mounted:function(){
+//			axios.defaults.headers.common['X-SS-API-KEY'] = '7cd22002-27a7-4c5d-ba4d-a1c108a20eaf';
+//			axios.defaults.headers
 
+//axios.defaults.headers = {
+//	'Content-Type': 'application/json',
+//	'X-SS-API-KEY': _obj.appkey
+//	'X-SS-API-KEY': '7cd22002-27a7-4c5d-ba4d-a1c108a20eaf'
+//};
 
-
-	
+			console.log(_obj.appkey)
+		  	axios.get('http://api.hanyuananiu.com/api/Login/GetPhoneOrEmailCheckCode?contact=18200166593')
+			 .then(function (response) {
+			  console.log(response);
+			 })
+			 .catch(function (error) {
+			  console.log(error);
+			 });	
+			 
+			axios.post('/api/v1/contents', {
+			  "siteId": 1,
+			  "checked": true,
+			  "page": 1,
+			  "perPage": 30
+			})
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+			
+		  }
+		  
+		})
 	</script>
 </body>
 </html>

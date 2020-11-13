@@ -1,0 +1,291 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <meta name="SiteName" content="<CMSPRO_WEBSITE FIELD='' code=''></CMSPRO_WEBSITE>">
+    <title>
+      <CMSPRO_WEBSITE FIELD="name" code=""></CMSPRO_WEBSITE>
+    </title>
+    <link rel="stylesheet" type="text/css" href="css/selectFilter.css" />
+    <link rel="stylesheet" type="text/css" href="css/inputMore.css" />
+    <link rel="stylesheet" type="text/css" href="css/public.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <script src="js/jquery-1.12.4.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/jquery.SuperSlide.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/selectFilter.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/inputMore.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=sGu1eURLxfZakyWTZXocl8M2DQMCFmz4" type="text/javascript"></script>
+    <script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+    <style type="text/css">
+      .pagination-first .pagination-index {
+        display: none;
+      }
+      
+      .hyb-btn-wyxr {
+        display: none;
+      }
+    </style>
+
+  </head>
+
+  <body class="body-bg-article">
+    <div class="article center">
+      <!-- 公共头部 begin -->
+      <!--#include virtual="/cdstzb/publicHeader/public_header.shtml"-->
+      <!-- 公共头部 end -->
+      <div class="tzi-body public-body">
+        <!--<div class="ab-one">
+          <CMSPRO_LOCATION LINK="" SELFONLY="false" AUTOLINK="true" TARGET="_self" LINKEXTRA="" HOMEPAGEDESC="首页">当前位置</CMSPRO_LOCATION>
+        </div>-->
+        <div class="hyb-body">
+          <div class="hyb-one">
+            <h1><span><CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL></span><p>总信件<span class="hyb-number-all">1</span>封</p></h1>
+            <a class="hyb-btn-wyxr" href="#">我要写入</a>
+            <CMSPRO_CHANNELS CODE="" STARTPOS='0' NUM="" CHILDTYPE="3">
+              <a class="hyb-btn-wyly" target="_blank" href="<CMSPRO_CHANNEL FIELD='url' ></CMSPRO_CHANNEL>">
+                <CMSPRO_CHANNEL FIELD="displayName" NUM="">栏目名称</CMSPRO_CHANNEL>
+              </a>
+            </CMSPRO_CHANNELS>
+          </div>
+          <div class="hyb-two">
+            <!--.hybtwo-item-ok ： hybtwo-item添加表示已回复-->
+            <!--<div class="hybtwo-item">
+              <div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div>
+              <div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div>
+              <p>成都交通太堵了</p>
+              <h5>留言时间：2017年12月30日 00:00:00</h5>
+              <div class="hytwo-item-more">
+                <p><span class="red">回复：</span><span>感谢留言，已经到了。我们会尽快处理的</span></p>
+                <h5>回复时间：2017年12月30日 00:00:00</h5>
+              </div>
+            </div>
+            <div class="hybtwo-item hybtwo-item-ok">
+              <div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div>
+              <div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div>
+              <p>成都交通太堵了</p>
+              <h5>留言时间：2017年12月30日 00:00:00</h5>
+              <div class="hytwo-item-more">
+                <p><span class="red">回复：</span><span>感谢留言，已经到了。我们会尽快处理的</span></p>
+                <h5>回复时间：2017年12月30日 00:00:00</h5>
+              </div>
+            </div>-->
+          </div>
+          <div class="page_num">
+            <div id="page_div"></div>
+          </div>
+        </div>
+
+      </div>
+      <!-- 公共底部 begin -->
+      <!--#include virtual="/cdstzb/publicFooter/public_footer.shtml"-->
+      <!-- 公共底部 end -->
+      <!-- 公共二维码 begin -->
+      <!--#include virtual="/cdstzb/publicEWM/public_ewm.shtml"-->
+      <!-- 公共二维码 end -->
+    </div>
+  </body>
+  <script type="text/javascript">
+    // 做这个的时候吧，修改地址的话，要修改2个地方，同理修改每页数目var _pageSize =，也需要2个地方,现在默认每页15条数据
+
+    function createPageHTML(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageExt, _nPageSum) {
+      // $('.hyb-two').html('')
+      var con_text = "";
+      var active = "";
+      var pagination_num = [];
+      var num = 7; //页数展示个数，只能为奇数
+      if(_nPageCount == null || _nPageCount < 1) return;
+
+      con_text += "<span class=\"pagination-first\"><a class=\"pagination-index\" href=\"" + _sPageName + "." + _sPageExt + "\">首页</a>";
+      if(_nCurrIndex == 1) {
+        con_text += "<a class=\"pagination-index\" href=\"javascript:;\">上一页</a>";
+      } else {
+        if(_nCurrIndex == 2) {
+          con_text += "<a class=\"pagination-index\" href=\"" + _sPageName + "." + _sPageExt + "\">上一页</a>";
+        } else {
+          con_text += "<a class=\"pagination-index\" href=\"" + _sPageName + "_" + (_nCurrIndex - 1) + "." + _sPageExt + "\">上一页</a>";
+        }
+      }
+
+      for(var i = 0; i < num; i++) {
+        var pagination_num_txt = _nCurrIndex - (num - 1) / 2 + i;
+        active = (i == (num - 1) / 2) ? "active" : "";
+        if(pagination_num_txt == 1) {
+          if((i == (num - 1) / 2)) {
+            pagination_num[i] = "<a class=\"pagination-num " + active + "\" href=\"javascript:;\">" + pagination_num_txt + "</a>";
+          } else {
+            pagination_num[i] = "<a class=\"pagination-num " + active + "\" href=\"" + _sPageName + "." + _sPageExt + "\">" + pagination_num_txt + "</a>";
+          }
+        } else {
+          if((i == (num - 1) / 2)) {
+            pagination_num[i] = "<a class=\"pagination-num " + active + "\" href=\"javascript:;\">" + pagination_num_txt + "</a>";
+          } else {
+            pagination_num[i] = "<a class=\"pagination-num " + active + "\" href=\"" + _sPageName + "_" + pagination_num_txt + "." + _sPageExt + "\">" + pagination_num_txt + "</a>";
+          }
+        }
+        if(pagination_num_txt > _nPageCount || pagination_num_txt < 1) {
+          pagination_num[i] = "";
+        }
+        con_text += pagination_num[i];
+      }
+
+      if(_nCurrIndex == _nPageCount) {
+        con_text += "<a class=\"pagination-index\" href=\"javascript:;\">下一页</a>";
+      } else {
+        con_text += "<a class=\"pagination-index\" href=\"" + _sPageName + "_" + (_nCurrIndex + 1) + "." + _sPageExt + "\">下一页</a>";
+      }
+      if(_nPageCount == 1) {
+        con_text += "<a class=\"pagination-index\" href=\"javascript:;\">末页</a></span>";
+      } else {
+        con_text += "<a class=\"pagination-index\" href=\"" + _sPageName + "_" + _nPageCount + "." + _sPageExt + "\">末页</a></span>";
+      }
+
+      document.getElementById(_divName).innerHTML = con_text;
+      $('.pagination-first').children('a').attr('href', '#').attr('onclick', 'abcd(this)')
+    }
+
+    // 添加的函数
+    function abcd(e) {
+      $('.hyb-two').html('')
+      var _divName = 'page_div'; //  div元素名
+      var _nPageCount; // 总页数；
+      var _nCurrIndex = $(e).html(); // 当前页码；
+      var _sPageName = 'list_one'; // 共同前缀名；
+      var _sPageExt = 'html'; // 分页页面的文件名后缀;
+      var _nPageSum; // 总记录数
+      var _pageSize = 15; // 当前页有几条数据
+      $.ajax({
+        type: 'get',
+        // url: 'http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd&pageSize=1&pageIndex=1',
+        url: 'http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd&pageSize=' + _pageSize + '&pageIndex=' + _nCurrIndex + '',
+        dataType: 'json',
+        // jsonp: 'json',
+        success: function(data) {
+          var hyb_number_all = data.page_info.result_count, // 总数
+            page_now_number = data.datas.length; // 当前页面有几条数据
+          page_all_number = data.page_info.page_count; // 总页数
+          page_now_index = data.page_info.pageIndex // 当前页码
+          _nPageCount = page_all_number;
+          _nPageSum = hyb_number_all;
+
+          $('.hyb-number-all').html(hyb_number_all);
+          var father_div = $('.hyb-two');
+          for(var i = 0; i < page_now_number; i++) {
+            var data_start_time = data.datas[i].CRTIME; // 留言时间
+            var data_end_time = data.datas[i].OPERTIME; // 回复时间
+            var data_start_content = data.datas[i].CONTENT // 留言内容
+            var data_end_content = data.datas[i].REPLYCONTENT // 回复内容
+            var data_status = data.datas[i].STATUS; // 邮件状态  0:待处理、1处理中、2已处理、-1全部
+            createPageHTML(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageExt, _nPageSum)
+            console.log(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageExt, _nPageSum)
+            // 未回复
+            if(data_status == 0) {
+              var e_content = $('<div class="hybtwo-item"><div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div><div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div><p>' +
+                data_start_content + '</p><h5>留言时间：<span>' + data_start_time +
+                '</span></h5><div class="hytwo-item-more"><p><span class="red">回复：</span><span>' +
+                data_end_content + '</span></p><h5>回复时间：<span>' + data_end_time + '</span></h5></div></div>');
+              father_div.append(e_content)
+            }
+            // 已回复
+            else if(data_status == 2) {
+              var e_content = $('<div class="hybtwo-item hybtwo-item-ok"><div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div><div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div><p>' +
+                data_start_content + '</p><h5>留言时间：<span>' + data_start_time +
+                '</span></h5><div class="hytwo-item-more"><p><span class="red">回复：</span><span>' +
+                data_end_content + '</span></p><h5>回复时间：<span>' + data_end_time + '</span></h5></div></div>');
+              father_div.append(e_content)
+            }
+            //出问题了
+            else {
+              alert('数据错误，重新加载')
+            }
+            // alert(data_status)
+          }
+
+        },
+        error: function(data) {
+          console.log('fail:' + data);
+        }
+      });
+      // $(e).addClass('active').siblings().removeClass('active')
+      console.log($(e).html());
+
+    }
+
+    $(document).ready(function() {
+      $(".hyb-btn-wyly").click(function() {
+        $.getJSON("http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd", function(json) {
+          console.log(json);
+        });
+      });
+
+      // 写入
+      $('.hyb-btn-wyxr').click(function() {
+        var _divName = 'page_div'; //  div元素名
+        var _nPageCount; // 总页数；
+        var _nCurrIndex = 1; // 当前页码；
+        var _sPageName = 'list_one'; // 共同前缀名；
+        var _sPageExt = 'html'; // 分页页面的文件名后缀;
+        var _nPageSum; // 总记录数
+        var _pageSize = 15; // 当前页有几条数据
+        $.ajax({
+          type: 'get',
+          // url: 'http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd&pageSize=1&pageIndex=1',
+          url: 'http://api.chengdu.gov.cn/trsapp/appDataWeb.do?method=queryAppData&appId=22291&x-msc-token=pkxPqbmo7SrYVmfBSfygeP4HitcU90Sd&pageSize=' + _pageSize + '&pageIndex=' + _nCurrIndex + '',
+          dataType: 'json',
+          // jsonp: 'json',
+          success: function(data) {
+            var hyb_number_all = data.page_info.result_count, // 总数
+              page_now_number = data.datas.length; // 当前页面有几条数据
+            page_all_number = data.page_info.page_count; // 总页数
+            page_now_index = data.page_info.pageIndex // 当前页码
+            _nPageCount = page_all_number;
+            _nPageSum = hyb_number_all;
+
+            $('.hyb-number-all').html(hyb_number_all);
+            var father_div = $('.hyb-two');
+            for(var i = 0; i < page_now_number; i++) {
+              var data_start_time = data.datas[i].CRTIME; // 留言时间
+              var data_end_time = data.datas[i].OPERTIME; // 回复时间
+              var data_start_content = data.datas[i].CONTENT // 留言内容
+              var data_end_content = data.datas[i].REPLYCONTENT // 回复内容
+              var data_status = data.datas[i].STATUS; // 邮件状态  0:待处理、1处理中、2已处理、-1全部
+              createPageHTML(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageExt, _nPageSum)
+              console.log(_divName, _nPageCount, _nCurrIndex, _sPageName, _sPageExt, _nPageSum)
+              // 未回复
+              if(data_status == 0) {
+                var e_content = $('<div class="hybtwo-item"><div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div><div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div><p>' +
+                  data_start_content + '</p><h5>留言时间：<span>' + data_start_time +
+                  '</span></h5><div class="hytwo-item-more"><p><span class="red">回复：</span><span>' +
+                  data_end_content + '</span></p><h5>回复时间：<span>' + data_end_time + '</span></h5></div></div>');
+                father_div.append(e_content)
+              }
+              // 已回复
+              else if(data_status == 2) {
+                var e_content = $('<div class="hybtwo-item hybtwo-item-ok"><div class="hybtwo-item-answer hybtwo-item-answer-no">未回复</div><div class="hybtwo-item-answer hybtwo-item-answer-ok">已回复</div><p>' +
+                  data_start_content + '</p><h5>留言时间：<span>' + data_start_time +
+                  '</span></h5><div class="hytwo-item-more"><p><span class="red">回复：</span><span>' +
+                  data_end_content + '</span></p><h5>回复时间：<span>' + data_end_time + '</span></h5></div></div>');
+                father_div.append(e_content)
+              }
+              //出问题了
+              else {
+                alert('数据错误，重新加载')
+              }
+              // alert(data_status)
+              console.log(data)
+            }
+
+          },
+          error: function(data) {
+            console.log('fail:' + data);
+          }
+        });
+
+      })
+
+      $('.hyb-btn-wyxr').click()
+    });
+  </script>
+
+</html>

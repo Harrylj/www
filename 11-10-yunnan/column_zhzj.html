@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展会直击</title>
+	<style type="text/css">
+		.zhzj {
+			padding: 1rem 0;
+		}
+
+		.zhzj-mulu.van-popup--bottom.van-popup--round {
+			background-color: #162463;
+			border-radius: .67rem .67rem 0 0;
+			height: 8rem;
+			padding: 0 .3rem .3rem .3rem;
+		}
+		.zhzj-mulu-close{
+			font-size: .3rem;
+			color: white;
+		}
+		.zhzj-mulu h3,
+		.zhzj-mulu-close,
+		.zhzj-mulu-item h4,
+		.zhzj-mulu-item h5,
+		.zhzj-mulu-item h6,
+		.zhzj-mulu-item p {
+			color: white;
+		}
+
+		/* .zhzj-mulu-item h4
+		,.zhzj-mulu-item h5{
+			text-align: center;
+		} */
+		.zhzj-mulu-item h4 {
+			background-color: #D3D5E9;
+			color: #222222;
+			width: .55rem;
+			height: .55rem;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: .3rem;
+		}
+
+		.zhzj-mulu-item h5 {
+			opacity: .6;
+			font-size: .29rem;
+			margin-right: .3rem;
+		}
+
+		.zhzj-mulu-item h6,
+		.zhzj-mulu-item p {
+			line-height: .5rem;
+		}
+
+		.zhzj-mulu-item h6 {
+			font-size: .31rem;
+			opacity: .6;
+		}
+
+		.zhzj-mulu-item p {
+			font-size: .28rem;
+			font-weight: bold;
+		}
+
+		.zhzj-mulu-title {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			line-height: 1rem;
+			padding: 0 .2rem;
+			margin: .2rem 0;
+		}
+
+		.zhzj-mulu-item-content {
+			width: 3.9rem;
+		}
+
+		.zhzj-mulu-title h3 {
+			font-size: .35rem;
+		}
+
+		.zhzj-mulu-close {
+			font-size: .4rem;
+			opacity: .8;
+		}
+
+		.zhzj-mulu-item {
+			display: flex;
+			justify-content: space-between;
+			/* flex: 10% 70% 20%; */
+			flex: 1;
+			background-color: #28346F;
+			align-items: center;
+			min-height: 1.8rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+
+		.zhzj-mulu-item-hover {
+			background-color: #697199;
+		}
+		.zhzj-video{
+			position: relative;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="zhzj" id="app">
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title"></div>
+				<div class="phtc-fenxiang" @click="fenxiang()"></div>
+				<div class="phtc-mulu" @click="mulu()"></div>
+			</div>
+		</div>
+		<div class="zhzj-video">
+			<div class="index-live"><span></span>LIVE</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+			<img style="width: 5rem;" src="images/bg.png" alt="">
+			{{ message }}
+		</div>
+
+		<van-popup class="zhzj-mulu" v-model="show" :overlay="false" round position="bottom">
+			<div class="zhzj-mulu-title">
+				<h3>开幕式目录</h3>
+				<van-icon class="zhzj-mulu-close" name="cross" @click="hidePopup()" />
+			</div>
+			<div class="zhzj-mulu-list">
+				<div class="zhzj-mulu-item" :class="index==active?'zhzj-mulu-item-hover':''" v-for="index in 5"
+					::key="index" @click="selectMulu(index)">
+					<h4>{{index}}</h4>
+					<div class="zhzj-mulu-item-content">
+						<h6>即将开始</h6>
+						<p>2020云南文博会开幕式</p>
+					</div>
+					<h5>15:30pm</h5>
+				</div>
+			</div>
+		</van-popup>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		var _obj = public_obj();
+		console.log('222', public_obj())
+		var app = new Vue({
+			el: '#app',
+			data: {
+				value: 2,
+				active: 3,
+				message: '展会直击',
+				show: false,
+			},
+			created: function () {
+				console.log(1)
+				vant.Toast('提示看看');
+			},
+			mounted: function () {
+				this.mulu()
+			},
+			methods: {
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				mulu() {
+					vant.Toast('目录')
+					this.showPopup()
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>
