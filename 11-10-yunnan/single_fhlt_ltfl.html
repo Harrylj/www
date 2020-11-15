@@ -17,69 +17,57 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>新闻详情</title>
+	<title>峰会论坛-分类</title>
 	<style type="text/css">
-		.xwxq {
+		.jbjs {
 			position: relative;
 		}
 
 		#app {
-			padding-top: 0;
-			background-color: #1A285C;
+			padding-top: 1rem;
+			background-color: #1D2D7E;
 		}
 
 		.public-header-title {
-			background-color: transparent;
+			background-color: #1D2D7E;
 		}
-
-		.phtc-fenxiang {
+		.phtc-return{
 			right: 0;
+			left: auto;
+			background-image: url(images/icon-quxiao.png);
+			background-size: .25rem .25rem;
 		}
-		.van-search{
-			background-color: transparent;
-			padding: .3rem 0 .3rem .3rem;
+		.ltfl-list{
+			position: relative;
 		}
-		.van-search .van-cell{
-			padding: .15rem .15rem .15rem 0;
+		.ltfl-item{
+			padding: 0 .3rem;
+			border-top: 1px solid rgba(255,255,255,.25)
 		}
-		.van-search__action{
+		.ltfl-item:last-child{
+			border-bottom: 1px solid rgba(255,255,255,.25)
+		}
+		.ltfl-item a{
+			line-height: 1.2rem;
 			color: white;
-		}
-		.van-search__content{
-			background-color: rgba(255, 255, 255, .2);
-			border-radius: .15rem;
-			padding-left: .2rem;
-		}
-		.van-field__left-icon{
-			margin-right: .1rem;
-		}
-		.van-field__left-icon .van-icon{
-			color: #cccccc;
-			font-size: .4rem;
-		}
-		.van-field__control{
-			color: white;
-			font-size: .3rem;
+			font-size: .32rem;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="xwxq search" id="app">
-		<!-- <div class="public-header-title">
+	<div class="ltfl jbjs fhlt" id="app">
+		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">新闻详情</div>
-				<div class="phtc-fenxiang" @click="fenxiang()"></div>
+				<div class="phtc-title">峰会论坛</div>
 			</div>
-		</div> -->
-		<div class="search-title">
-			<van-search v-model="value" show-action placeholder="请输入搜索关键词" @search="onSearch" @cancel="public_return_page()" />
 		</div>
-		<div class="search-body">
-
+		<div class="ltfl-list">
+			<div class="ltfl-item" v-for="index in 7" :key="index" >
+				<a href="column_fhlt.html" @click="setData(index)">{{index}}智慧云南·文创赋能</a>
+			</div>
 		</div>
-		
 	</div>
 	<script>
 
@@ -92,38 +80,47 @@
 	<script src="js/vant.min.js"></script>
 
 	<script type="text/javascript">
-		$(function () {
-			navHeader(150, 34, 49, 119);
-			$(window).scroll(function () {
-				navHeader(150, 34, 49, 119);
-			})
-		})
+		// $(function () {
+		// 	navHeader(150, 34, 49, 119);
+		// 	$(window).scroll(function () {
+		// 		navHeader(150, 34, 49, 119);
+		// 	})
+		// })
 		var _obj = public_obj();
 		console.log('222', public_obj())
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
 		var app = new Vue({
 			el: '#app',
 			data: {
-				value: '',
+				swipeWidth: 2.68,
+				value: 2,
 				active: 3,
 				show: false,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth * _rem;
+				// vant.Toast('提示看看');
 			},
 			mounted: function () {
 
 			},
 			methods: {
-				fenxiang() {
-					vant.Toast('分享')
-				},
-				onSearch(val) {
-					vant.Toast(val);
-				},
-				onCancel() {
-					vant.Toast('取消');
-				},
+				setData(index){
+					var abc= window.localStorage.setItem('key_fhlt_ltfl',index)
+					console.log(abc)
+				}
 			},
 
 		})

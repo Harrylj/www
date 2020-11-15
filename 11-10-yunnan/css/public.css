@@ -261,3 +261,84 @@ div.video-js{
 	height: 4.8rem;
 }
 
+.jjwb-fhlt-div{
+	display: flex;
+	justify-content: space-between;
+}
+.index-ygz-list
+		,.index-tshw-list{
+			width: 3.3rem;
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.index-ygz-item{
+			position: relative;
+			width: 3.3rem;
+			/* height: 3.5rem; */
+			margin-bottom: .2rem;
+		}
+		.index-ygz-list:nth-child(1) .index-ygz-item:nth-child(2) img
+		,.index-ygz-list:nth-child(2) .index-ygz-item:nth-child(1) img{
+			height: 2.5rem;
+		}
+		.index-ygz-item img{
+			width: 100%;
+			height: 3.5rem;
+			border-radius: .2rem;
+			margin-bottom: .1rem;
+		}
+		.index-ygz-item h3,
+		.index-ygz-item p{
+			/* position: absolute;
+			left: 0; */
+			width: 100%;
+			padding: 0 .2rem;
+			line-height: .5rem;
+			color: white;
+		}
+		.index-ygz-item h3{
+			bottom: .7rem;
+			font-size: .31rem;
+		}
+		.index-ygz-item p{
+			font-size: .25rem;
+			opacity: .6;
+			bottom: .2rem;
+		}
+		.index-ygz{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.van-tabs--line .van-tabs__wrap{
+			height: .8rem;
+		}
+		.van-tabs__wrap--scrollable .van-tabs__nav--complete{
+			padding-left: .1rem;
+			padding-right: .1rem;
+		}
+		.van-tabs__wrap--scrollable .van-tab{
+			padding: 0 .2rem;
+		}
+		.van-tabs__nav--line{
+			padding-bottom: .25rem
+		}
+		.index-ygz{
+			position: relative;
+		}
+		.index-ygz-more{
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 2;
+			color: white;
+			font-size: .31rem;
+			line-height: 1rem;
+			opacity: .67;
+			padding: 0 .3rem;
+			display: flex;
+			align-items: center;
+		}
+		.index-ygz-more .van-icon{
+			margin-left: .1rem;
+		}

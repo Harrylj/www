@@ -19,18 +19,22 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>首页</title>
+	<title>玩转文博</title>
 	<style type="text/css">
 		#app {
 			/* padding: 0 0 2rem 0; */
+			padding-top: 0;
 		}
 		.index-body{
-			padding-bottom: 2rem;
-			border-radius:  .3rem .3rem 0 0;
-			background: linear-gradient(180deg, #0036B9, #153790, #1A3883);
+			padding-top: .2rem;
+			padding-bottom: 1.1rem;
+			border-radius:  .67rem .67rem 0 0;
+			background-color: #162463;
+			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
 		}
-		p {
-			font-size: .3rem;
+		.index-h2
+		,.index-ygz-more{
+			line-height: 1.2rem;
 		}
 		.index-swipe-01{
 			position: relative;
@@ -49,184 +53,169 @@
 			width: .12rem;
 			background-color: #FFFFFF;
 		}
-		.index-nav-01,
-		.index-nav,
-		.index-video,
-		.index-ygz,
-		.index-tshw,
-		.index-zbdw,
-		.index-cbdw,
-		.index-xbdw{
-			position: relative;
-			padding: 0 .3rem;
-		}
-		.index-nav-01{
-			padding-top: .1rem;
-		}
-		.index-nav-01-div{
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-		}
-		.index-nav-01-div a{
-			display: inline-block;
-			margin-top: .2rem;
-		}
-		.index-nav-01-div img{
-			width: 3.3rem;
-			height: 2.12rem;
-		}
-		.index-nav {
-			margin-top: .2rem;
-			display: flex;
-			justify-content: space-around;
-			flex: 1;
-		}
-		.index-nav-div {
-			text-align: center;
-		}
-
-		.index-nav-div h2 {
-			font-size: .24rem;
-			line-height: .6rem;
-		}
-		
-		.index-nav-div img {
-			width: 1rem;
-		}
-
-		.index-video {
+		.wzwb-zqsl-div{
 			position: relative;
 		}
-
-		.index-video-div{
+		.zqsl-item,
+		.wzwb-flhd-div,
+		.mflj-item{
+			background-color: #263377;
+		}
+		.zqsl-item{
 			position: relative;
-		}
-		
-		.index-video-bgimg{
-			display: block;
-			width: 100%;
-			height: 3.9rem;
-		}
-		.index-video video {
-			width: 100%;
-			height: 4rem;
-		}
-		/* .index-video-div::before{
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			content: " ";
-			color: transparent;
-			width: 1.12rem;
-			height: 1.12rem;
-			z-index: 2;
-			margin-left: -.56rem;
-			margin-top: -.56rem;
-			background-image: url(./images/index-bofang.png);
-			background-size: 100% 100%;
-			background-repeat: no-repeat;
-		} */
-		.index-ygz{
-			position: relative;
-		}
-		.index-ygz-more{
-			position: absolute;
-			right: 0;
-			top: 0;
-			z-index: 2;
-			color: white;
-			font-size: .31rem;
-			line-height: 1rem;
-			opacity: .67;
-			padding: 0 .3rem;
-		}
-		.index-ygz-list
-		,.index-tshw-list{
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-		.index-ygz-item{
-			position: relative;
-			width: 3.3rem;
-			height: 4.8rem;
+			border-radius: .2rem;
 			margin-bottom: .2rem;
 		}
-		.index-ygz-item img{
-			width: 100%;
-			height: 100%;
-			border-radius: .2rem;
-		}
-		.index-ygz-item h3,
-		.index-ygz-item p{
+		.zqsl-item img{
 			position: absolute;
-			width: 100%;
-			padding: 0 .2rem;
 			left: 0;
-			line-height: .5rem;
-			color: white;
-		}
-		.index-ygz-item h3{
-			bottom: .7rem;
-			font-size: .31rem;
-		}
-		.index-ygz-item p{
-			font-size: .25rem;
-			opacity: .75;
-			bottom: .2rem;
-		}
-		.index-tshw-item{
-			position: relative;
-			padding-bottom: .1rem;
-		}
-		.index-tshw-item img{
-			width: 3.3rem;
-			height: 3.2rem;
+			top: 0;
+			width: 2.5rem;
+			height: 2.5rem;
 			border-radius: .2rem;
-			margin-bottom: .1rem;
 		}
-		.index-tshw-item h3,
-		.index-tshw-item p{
+		.zqsl-item-right{
 			position: relative;
-			width: 100%;
+			display: flex;
+			/* align-items: center; */
+			justify-content: center;
+			padding-left: 2.9rem;
+			min-height: 2.5rem;
+			flex-direction: column;
+		}
+		.zqsl-item h3,
+		.zqsl-item p{
+			color: white;
 			line-height: .5rem;
 		}
-		.index-tshw-item h3{
+		.zqsl-item h3{
 			font-size: .31rem;
-			font-weight: 400;
+		}
+		.zqsl-item p,
+		.wzwb-flhd-div p{
+			font-size: .28rem;
+			opacity: .7;
+		}
+		.wzwb-flhd-div{
+			position: relative;
+			border-radius: .2rem;
+			padding-bottom: .2rem;
+		}
+		.wzwb-flhd-div img{
+			display: block;
+			width: 100%;
+			height: 3rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+		.wzwb-flhd-div h3,
+		.wzwb-flhd-div p{
+			padding: 0 .4rem;
+		}
+		.wzwb-flhd-div h3{
+			font-size: .33rem;
+			line-height: .6rem;
+		}
+		.wzwb-flhd-div p{
+			line-height: .5rem;
+		}
+		.index-ygz *{
 			color: white;
 		}
-		.index-tshw-item p{
-			font-size: .25rem;
-			color: #8B909E;
+		.mflj-item{
+			position: relative;
+			padding-left: 2.7rem;
+			min-height: 2.5rem;
+			margin-bottom: .2rem;
+			padding-top: .2rem;
 		}
-		
-		.index-logo-nav-list{
+		.mflj-item:last-child{
+			margin-bottom: 0;
+		}
+		.wzwb-mflj-div h3{
+			font-size: .31rem;
+			line-height: .6rem;
+		}
+		.wzwb-mflj-div p{
+			opacity: .7;
+			font-size: .28rem
+		}
+		.mflj-item img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 2.5rem;
+			width: 2.3rem;
+			border-radius: .2rem;
+		}
+		.mflj-item h3{
+			font-size: .31rem;
+			line-height: .5rem;
+		}
+		.mflj-item p{
+			font-size: .25rem;
+			opacity: .7;
+			line-height: .46rem;
+		}
+		.wzwb-btn-mflq{
+			position: absolute;
+			line-height: .6rem;
+			padding: 0 .3rem;
+			right: .2rem;
+			bottom: .2rem;
+			border-radius: .23rem;
+			border: 1px solid white;
+		}
+		.wzwb-zhyj-div{
 			display: flex;
 			justify-content: space-between;
 		}
-		.index-logo-nav-item img{
-			width: 2.15rem;
-			height: 1.3rem;
+		.zhyj-item{
+			position: relative;
+			width: 3.3rem;
+		}
+		.zhyj-item::before,
+		.zhyj-item::after{
+			position: absolute;
+			top: .15rem;
+			left: 50%;
+			z-index: 1;
+			content: " ";
+			height: 2.4rem;
+			width: 3rem;
+			opacity: .8;
+			margin-left: -1.5rem;
+			background-color: white;
+			color: transparent;
 			border-radius: .2rem;
 		}
-		.index-logo-nav-item p{
-			text-align: center;
-			color: #FFFFFF;
-			text-align: center;
-			font-size: .27rem;
-			opacity: .58;
-			line-height: .8rem;
+		.zhyj-item::after{
+			opacity: .3;
+			top: .3rem;
+			width: 2.7rem;
+			margin-left: -1.35rem;
 		}
-		.index-ygz-list, .index-tshw-list{
-			width: 100%;
+		.zhyj-item img{
+			position: relative;
+			z-index: 2;
+			width: 3.3rem;
+			height: 2.4rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+		.zhyj-item h4{
+			font-size: .31rem;
+			line-height: 1rem;
+		}
+		.wzwb-line{
+			margin-top: .4rem;
+			border-top: 1px solid rgba(255, 255, 255, .2);
 		}
 	</style>
 </head>
 
 <body>
-	<div class="index" id="app">
+	<div class="index wzwb" id="app">
 		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
 		<!-- <div class="index-header">
 			<div class="index-header-div"></div>
@@ -242,95 +231,70 @@
 			</van-swipe>
 		</div>
 		<div class="index-body">
-			<div class="index-nav-01">
-				<div class="index-nav-01-div">
-					<a href="column_zhzj.html"><img src="images/index-nav-01-01.png" alt=""></a>
-					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
-					<a href="#"><img src="images/index-nav-01-03.png" alt=""></a>
-					<a href="#"><img src="images/index-nav-01-04.png" alt=""></a>
+			<div class="index-ygz wzwb-zqsl">
+				<div class="index-h2">展区速览</div>
+				<a href="column_fhlt.html"><div class="index-ygz-more">更多展区<van-icon name="arrow" /></div></a>
+				<div class="wzwb-zqsl-div">
+					
 				</div>
 			</div>
-			<!-- <div class="index-nav">
-				<div class="index-nav-div" v-for="(nav,index) in 4" :key="index">
-					<img src="images/index-nav-01.png" alt="">
-					<h2>地址{{index}}</h2>
-				</div>
-			</div> -->
-			
-			<div class="index-video">
-				<a href="column_kms.html">
-				<div class="index-h2">2020云南文博开幕式</div>
-				</a>
-				<div class="index-video-div">
-					<div class="index-live"><span></span>LIVE</div>
-					<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
-					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
-				</div>
-			</div>
-			
-			<div class="index-swipe-02-father">
-				<div class="index-h2">重磅嘉宾</div>
-				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
-					<van-swipe-item v-for="index in 7" :key="index">
-						<a href="article_jbjs.html">
-						<div class="van-swipe-item-div">
-							<img src="images/index-user-01.png" alt="">
-							<h3>嘉宾{{index}}</h3>
-							<p>嘉宾职称</p>
-							<p v-show="index>2">嘉宾职称</p>
+			<div class="index-ygz wzwb-zqsl">
+				<div class="index-h2">展区速览</div>
+				<a href="column_fhlt.html"><div class="index-ygz-more">更多展区<van-icon name="arrow" /></div></a>
+				<div class="wzwb-zqsl-div">
+					<a href="#" v-for="index in 2" :key="index">
+					<div class="zqsl-item">
+						<img src="images/bg.png" alt="">
+						<div class="zqsl-item-right">
+							<h3>C展区</h3>
+							<p>主题:非遗文化主题</p>
+							<p>地址:昆明市A会场B展区</p>
+							<p>展商:58家</p>
 						</div>
-						</a>
-					</van-swipe-item>
-				</van-swipe>
-			</div>
-			<div class="index-ygz">
-				<div class="index-h2">云逛展</div>
-				<div class="index-ygz-more">换一换</div>
-				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 4" :key="index">
-						<div class="index-live"><span></span>LIVE</div>
-						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-						<p class="van-ellipsis">直播用户名</p>
 					</div>
+					</a>
 				</div>
 			</div>
-			<div class="index-tshw">
-				<div class="index-h2">特色好物</div>
-				<div class="index-tshw-list">
-					<div class="index-tshw-item" v-for="index in 4" :key="index">
-						<div class="index-live"><span></span>LIVE</div>
+			<div class="index-ygz wzwb-flhd">
+				<div class="index-h2">福利活动</div>
+				<a href="column_fhlt.html"><div class="index-ygz-more">马上参与<van-icon name="arrow" /></div></a>
+				<a href="#">
+				<div class="wzwb-flhd-div">
+					<img src="images/bg.png" alt="">
+					<h3>手绘艺术生</h3>
+					<p>活动说明：手绘一双风格独特的鞋，参与投票有机会获得奖品哦~</p>
+				</div>
+				</a>
+			</div>
+			<div class="index-ygz wzwb-mflj">
+				<div class="index-h2">免费领劵</div>
+				<a href="column_fhlt.html"><div class="index-ygz-more">更多福利<van-icon name="arrow" /></div></a>
+				<div class="wzwb-mflj-div">
+					<div class="mflj-item" v-for="index in 2" :key="index">
 						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}彩帮陶瓷花瓶摆件</h3>
-						<p class="van-ellipsis">36人正在逛</p>
+						<div class="mflj-item-right">
+								<h3>C展区</h3>
+								<p>主题:非遗文化主题</p>
+								<p>地址:昆明市A会场B展区</p>
+								<a href="#">
+								<div class="wzwb-btn-mflq">免费领取</div>
+								</a>
+						</div>
 					</div>
+					
 				</div>
 			</div>
-			<div class="index-zbdw">
-				<div class="index-h2">主办单位</div>
-				<div class="index-logo-nav-list">
-					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
+			<div class="wzwb-line"></div>
+			<div class="index-ygz wzwb-zhyj">
+				<div class="index-h2">展会影集</div>
+				<a href="column_fhlt.html"><div class="index-ygz-more">更多影集<van-icon name="arrow" /></div></a>
+				<div class="wzwb-zhyj-div">
+					<a href="#" v-for="index in 2" :key="index">
+					<div class="zhyj-item">
 						<img src="images/bg.png" alt="">
-						<p>云南电视台</p>
+						<h4>影集主题</h4>
 					</div>
-				</div>
-			</div>
-			<div class="index-cbdw">
-				<div class="index-h2">承办单位</div>
-				<div class="index-logo-nav-list">
-					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
-						<img src="images/bg.png" alt="">
-						<p>云南电视台</p>
-					</div>
-				</div>
-			</div>
-			<div class="index-xbdw">
-				<div class="index-h2">协办单位</div>
-				<div class="index-logo-nav-list">
-					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
-						<img src="images/bg.png" alt="">
-						<p>云南电视台</p>
-					</div>
+					</a>
 				</div>
 			</div>
 		</div>
@@ -406,12 +370,12 @@
 					'https://img.yzcdn.cn/vant/apple-1.jpg',
 					'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
-				active: 0,
+				active: 3,
 				icon: {
 					active: 'https://img.yzcdn.cn/vant/user-active.png',
 					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
 				},
-				value: 2,
+				value: 3,
 				message: 'Hello Vue!',
 				current: ['mail'],
 				playerOptions: {

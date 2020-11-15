@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>新闻动态</title>
+	<title>峰会论坛</title>
 	<style type="text/css">
 		.jbjs {
 			position: relative;
@@ -25,11 +25,11 @@
 
 		#app {
 			padding-top: 1rem;
-			background-color: #1A285C;
+			background-color: #1D2D7E;
 		}
 
 		.public-header-title {
-			background-color: transparent;
+			background-color: #1D2D7E;
 		}
 
 		.index-header-swipe {
@@ -37,84 +37,8 @@
 			padding: .3rem;
 		}
 
-		.index-swipe-01 {
-			position: relative;
-			height: 3.1rem;
-		}
-
-		.index-swipe-01 img {
-			height: 100%;
-			width: 6.9rem;
-			border-radius: .1rem;
-		}
-
-		.index-swipe-01 .van-swipe__indicator {
-			width: .08rem;
-			height: .06rem;
-			background-color: #91ACE1;
-		}
-
-		.index-swipe-01 .van-swipe__indicator--active {
-			width: .12rem;
-			background-color: #FFFFFF;
-		}
-
-		.jbjs-content {
-			background-color: #273570;
-		}
-
-		.jbjs-body h2,
-		.jbjs-body h4,
-		.jbjs-body h6 {
-			color: white;
-		}
-
-		.jbjs-body {
-			position: relative;
-		}
-
-		.jbjs-body>h2 {
-			font-size: .35rem;
-			line-height: 1rem;
-		}
-
-		.jbjs-body-item {
-			background-color: rgba(255, 255, 255, .08);
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: .3rem .3rem;
-			border-radius: .2rem;
-			margin-bottom: .2rem;
-
-		}
-
-		.jbjs-body {
-			padding: 0 .3rem;
-		}
-
-		.jbjs-body-item-img {
-			margin-left: .3rem;
-			width: 1.86rem;
-			height: 1.4rem;
-			/* width: 1rem;
-			height: 1rem; */
-			border-radius: .1rem;
-			overflow: hidden;
-			flex-shrink: 0;
-		}
-
-		.jbjs-body-item h4 {
-			font-size: .32rem;
-			font-weight: 400;
-			line-height: .5rem;
-		}
-
-		.jbjs-body-item h6 {
-			font-size: .27rem;
-			font-weight: 400;
-			opacity: .6;
-			line-height: .5rem;
+		.van-tab {
+			border-bottom: 1px solid #344080;
 		}
 
 		.van-tabs__nav {
@@ -136,75 +60,96 @@
 			opacity: .6;
 			font-weight: 400;
 		}
-		.jbjs-serach{
+
+		.jbjs-serach {
 			display: block;
 			width: 6.9rem;
 			margin: 0 auto;
+		}
+		.index-ygz{
+			padding-top: .3rem;
+		}
+		.fhlt-nav-more{
+			position: absolute;
+			z-index: 2;
+			right: 0;
+			top: 1.18rem;
+			height:.8rem;
+			width: 1rem;
+			background-image: url(images/icon-mulu.png);
+			background-size: .2467rem .2067rem;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: #12206A;
+		}
+		.van-tabs{
+			background-color: #12206A;
+			border-radius: .4rem .4rem 0 0;
+			padding-top: .2rem;
+		}
+		.van-tabs__line{
+			width: .5rem;
+			/* left: 50%;
+			margin-left: -.25rem; */
 		}
 	</style>
 </head>
 
 <body>
-	<div class="jbjs" id="app">
+	<div class="jbjs fhlt" id="app">
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">新闻动态</div>
+				<div class="phtc-title">峰会论坛</div>
 			</div>
 		</div>
-		<a href="single_search.html"><img class="jbjs-serach" src="images/search-01.png" alt=""></a>
-		<div class="index-header-swipe">
-			<van-swipe class="index-swipe-01" :autoplay="13000">
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<a href="article_xwxq.html">
-					<img v-lazy="image" alt="">
-					</a>
-				</van-swipe-item>
-			</van-swipe>
-		</div>
-		<!-- <van-tabs>
+		<a href="single_fhlt_ltfl.html"><div class="fhlt-nav-more"></div></a>
+		<van-tabs @click="onClick" v-model="active">
 			<van-tab v-for="(item,index) in 6" :title="'标签 ' + index">
-			  <div class="jbjs-body">
-				<h2>最新动态{{ index }}</h2>
-				<div class="jbjs-body-list">
-					<a href="#" v-for="index in index+2" :key="index">
-					<div class="jbjs-body-item">
-						<div class="jbjs-body-item-content">
-							<h4>中国教师报举办游以致学首 研学中国课程论坛</h4>
-							<h6>10月10日</h6>
-						</div>
-						<van-image
-						v-show="index<3"
-						class="jbjs-body-item-img"
-						fit="fill"
-						src="images/index-user-01.png"
-						>
-						</van-image>
-					</div>
-				</a>
-				</div>
-			  </div>
-			</van-tab>
-		</van-tabs> -->
-		<van-tabs @click="onClick">
-			<van-tab v-for="(item,index) in 6" :title="'标签 ' + index" >
 				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
 					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
 						<div class="jbjs-body">
-							<h2>{{ index }}</h2>
-							<div class="jbjs-body-list">
-								<a href="article_xwxq.html" v-for="index in index+4" :key="index">
-									<div class="jbjs-body-item">
-										<div class="jbjs-body-item-content">
-											<h4>{{index}}中国教师报举办游以致学首 研学中国课程论坛</h4>
-											<h6>10月10日</h6>
-										</div>
-										<van-image v-show="index<3" class="jbjs-body-item-img" fit="fill"
-											src="images/index-user-01.png">
-										</van-image>
-									</div>
-								</a>
+							<div class="index-swipe-02-father">
+								<div class="index-h2">演讲嘉宾{{index}}</div>
+								<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth"
+									:show-indicators="false">
+									<van-swipe-item v-for="index in 7" :key="index">
+										<a href="article_jbjs.html">
+											<div class="van-swipe-item-div">
+												<img src="images/index-user-01.png" alt="">
+												<h3>嘉宾{{index}}</h3>
+												<p>嘉宾职称</p>
+												<p v-show="index>2">嘉宾职称</p>
+											</div>
+										</a>
+									</van-swipe-item>
+								</van-swipe>
 							</div>
+							<div class="jjwb-fhlt index-ygz">
+								<div class="jjwb-fhlt-div">
+									<div class="index-ygz-list">
+										<div class="index-ygz-item" v-for="index in 2" :key="index">
+											<a href="column_fhlt_video.html">
+											<div class="index-live"><span></span>LIVE</div>
+											<img src="images/bg.png" alt="">
+											<h3 class="van-ellipsis">{{index}}首届“研学中国”论坛</h3>
+											<p class="van-ellipsis">2020.12.5</p>
+											</a>
+										</div>
+									</div>
+									<div class="index-ygz-list">
+										<div class="index-ygz-item" v-for="index in 2" :key="index">
+												<a href="column_fhlt_video.html">
+											<div class="index-live"><span></span>回放</div>
+											<img src="images/bg.png" alt="">
+											<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+											<p class="van-ellipsis">2020.12.5</p>
+										</a>
+										</div>
+									</div>
+								</div>
+							</div>
+
 							<van-cell v-for="item in list" :key="item" :title="item" />
 						</div>
 					</van-list>
@@ -224,12 +169,12 @@
 	<script src="js/vant.min.js"></script>
 
 	<script type="text/javascript">
-		$(function () {
-			navHeader(150, 34, 49, 119);
-			$(window).scroll(function () {
-				navHeader(150, 34, 49, 119);
-			})
-		})
+		// $(function () {
+		// 	navHeader(150, 34, 49, 119);
+		// 	$(window).scroll(function () {
+		// 		navHeader(150, 34, 49, 119);
+		// 	})
+		// })
 		var _obj = public_obj();
 		console.log('222', public_obj())
 		// 自动注册 Lazyload 组件,可以配置额外的选项
@@ -239,7 +184,8 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
-				value: 2,
+				swipeWidth: 2.68,
+				value: 0,
 				active: 3,
 				show: false,
 				swipeImages: [
@@ -252,15 +198,22 @@
 				refreshing: false,
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				this.active = parseInt(window.localStorage.getItem("key_fhlt_ltfl"))+1;
+				console.log('22',this.active)
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth * _rem;
+				// vant.Toast('提示看看');
 			},
 			mounted: function () {
 
 			},
+			beforeDestroy:function(){
+				console.log(11111111111)
+				window.localStorage.removeItem('key_fhlt_ltfl')
+			},
 			methods: {
 				onClick(name, title) {
-					this.list=[];
+					this.list = [];
 					console.log(title)
 					vant.Toast(title);
 				},
