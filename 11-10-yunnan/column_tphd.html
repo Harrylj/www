@@ -17,17 +17,17 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>福利活动</title>
+	<title>投票活动</title>
 	<style type="text/css">
 		.xwxq{
 			position: relative;
 		}
 		#app{
-			padding-top: 1rem;
+			padding-top: 0;
 			background-color:#12206A
 		}
 		.public-header-title{
-			background-color: #12206A;
+			background-color: transparent;
 		}
 		.phtc-fenxiang{
 			right: 0;
@@ -42,7 +42,7 @@
 		}
 		.zqxq-body{
 			position: relative;
-			padding: .4rem 0;
+			padding: 0 0 .4rem 0;
 			/* background-color: rgba(255, 255, 255, .08);
 			border-radius: .67rem .67rem 0 0; */
 		}
@@ -152,58 +152,133 @@
 		.tphd-btn-tp{
 			background-color: #2E5ED4;
 		}
+		.index-swipe-01{
+			position: relative;
+			height: 3.4rem;
+		}
+		.index-swipe-01 img {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.tphd-hdgz{
+			position: absolute;
+			right: 0;
+			top: 50%;
+			margin-top: -.25rem;
+			background-color: #94A4C6;
+			font-size: .27rem;
+			height: .5rem;
+			border-radius: .26rem 0 0 .26rem;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0 .2rem;
+		}
+		.tphd-hdgz .van-icon{
+			margin-right: .1rem;
+		}
+		.van-tabs__nav{
+			background-color: transparent;
+			padding: 0 1.5rem;
+		}
+		.van-tab.van-tab--active{
+			opacity: 1;
+		}
+		.van-tab{
+			opacity: .6;
+		}
+		.van-tabs__line{
+			background-color: transparent;
+		}
+		.van-tab__text{
+			font-size: .35rem;
+		}
+		.van-tabs--line .van-tabs__wrap{
+			height: 1.2rem;
+		}
+		.tphd-btn-sczp{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			line-height: 1.2rem;
+			text-align: center;
+			font-size: .31rem;
+			font-weight: bold;
+			background-color: #28356F;
+			letter-spacing: .04rem;
+		}
 	</style>
 </head>
 
 <body>
-	<div class="xwxq flhd" id="app" v-cloak>
+	<div class="tphd xwxq flhd" id="app" v-cloak>
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">福利活动</div>
+				<div class="tphd-hdgz" @click="activityRule()"><van-icon name="warning-o"></van-icon>活动规则</div>
+				<!-- <div class="phtc-title">投票活动</div> -->
 				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
-		
-		<div class="zqxq-body">
-			<div class="index-ygz flhd-tphd">
-				<div class="index-h2">投票活动</div>
-				<a href="column_tphd.html"><div class="index-ygz-more flhd-btn-gdhd">更多活动<van-icon name="arrow" /></div></a>
-				<div class="flhd-tphd-div">
-					<a href="#" v-for="index in 4" :key="index">
-					<div class="flhd-tphd-item">
-						<img src="images/bg.png" alt="">
-						<div class="flhd-tphd-item-index">20号</div>
-						<h3>作品名称</h3>
-						<p>546票</p>
-						<div class="flhd-tphd-item-footer">
-							<div class="tphd-btn-lp">拉票</div>
-							<div class="tphd-btn-tp">投票</div>
-						</div>
-					</div>
-					</a>
-				</div>
-			</div>
-			<div class="index-ygz wzwb-mflj">
-				<div class="index-h2">免费领劵</div>
-				<a href="column_fhlt.html"><div class="index-ygz-more">更多福利<van-icon name="arrow" /></div></a>
-				<div class="wzwb-mflj-div">
-					<div class="mflj-item" v-for="index in 2" :key="index">
-						<img src="images/bg.png" alt="">
-						<div class="mflj-item-right">
-								<h3>C展区</h3>
-								<p>主题:非遗文化主题</p>
-								<p>地址:昆明市A会场B展区</p>
-								<a href="#">
-								<div class="wzwb-btn-mflq">免费领取</div>
-								</a>
-						</div>
-					</div>
-					
-				</div>
-			</div>
-			
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="3000" >
+				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+					<img v-lazy="image" alt="">
+					<p>{{index}}</p>
+				</van-swipe-item>
+			</van-swipe>
 		</div>
+		<div class="zqxq-body">
+			<van-tabs v-model="active">
+				<van-tab title="最新">
+					<div class="index-ygz flhd-tphd">
+						<div class="flhd-tphd-div">
+							<div class="flhd-tphd-item" v-for="index in 8" :key="index">
+								<a href="article_tphd.html" >
+								<img src="images/bg.png" alt="">
+								</a>
+								<div class="flhd-tphd-item-index">20号</div>
+								<h3>最新作品名称</h3>
+								<p>546票</p>
+								<div class="flhd-tphd-item-footer">
+									<div class="tphd-btn-lp">拉票</div>
+									<div class="tphd-btn-tp">投票</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</van-tab>
+				<van-tab title="热门">
+					<div class="index-ygz flhd-tphd">
+						<div class="flhd-tphd-div">
+							<div class="flhd-tphd-item" v-for="index in 8" :key="index">
+								<a href="article_tphd.html" >
+								<img src="images/bg.png" alt="">
+								</a>
+								<div class="flhd-tphd-item-index">20号</div>
+								<h3>热门作品名称</h3>
+								<p>546票</p>
+								<div class="flhd-tphd-item-footer">
+									<div class="tphd-btn-lp">拉票</div>
+									<div class="tphd-btn-tp">投票</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</van-tab>
+			</van-tabs>
+		</div>
+		<a href="single_sczp.html"><div class="tphd-btn-sczp">上传作品</div></a>
 	</div>
 	<script>
 
@@ -222,6 +297,10 @@
 				navHeader(150,18,32,106);
 			})
 		})
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
 		var _obj = public_obj();
 		console.log('222', public_obj())
 		var app = new Vue({
@@ -230,6 +309,10 @@
 				value: 2,
 				active: 3,
 				show: false,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
 			},
 			created: function () {
 				console.log(1)
@@ -239,6 +322,9 @@
 
 			},
 			methods: {
+				activityRule(){
+					vant.Toast('活动规则')
+				},
 				fenxiang() {
 					vant.Toast('分享')
 				},

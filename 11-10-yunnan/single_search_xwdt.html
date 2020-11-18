@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>新闻详情</title>
+	<title>新闻动态-搜索</title>
 	<style type="text/css">
 		.xwxq {
 			position: relative;
@@ -61,11 +61,17 @@
 			color: white;
 			font-size: .3rem;
 		}
+		.van-search__action:hover{
+			background-color: #1A285C;
+		}
+		.search-body{
+			padding: 0 .3rem;
+		}
 	</style>
 </head>
 
 <body>
-	<div class="xwxq search" id="app">
+	<div class="xwxq search" id="app" v-cloak>
 		<!-- <div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
@@ -77,7 +83,17 @@
 			<van-search v-model="value" show-action placeholder="请输入搜索关键词" @search="onSearch" @cancel="public_return_page()" />
 		</div>
 		<div class="search-body">
-
+			<a href="article_xwxq.html" v-for="index in 4" :key="index">
+				<div class="jbjs-body-item">
+					<div class="jbjs-body-item-content">
+						<h4>{{index}}中国教师报举办游以致学首 研学中国课程论坛</h4>
+						<h6>10月10日</h6>
+					</div>
+					<van-image v-show="index<3" class="jbjs-body-item-img" fit="fill"
+						src="images/index-user-01.png">
+					</van-image>
+				</div>
+			</a>
 		</div>
 		
 	</div>

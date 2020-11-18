@@ -24,10 +24,11 @@
 		#app {
 			/* padding: 0 0 2rem 0; */
 			padding-top: 0;
+			padding-bottom: 0;
 		}
 		.index-body{
 			padding-top: .2rem;
-			padding-bottom: 1.1rem;
+			padding-bottom: 2.1rem;
 			border-radius:  .67rem .67rem 0 0;
 			background-color: #162463;
 			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
@@ -215,7 +216,7 @@
 </head>
 
 <body>
-	<div class="index wzwb" id="app">
+	<div class="index wzwb" id="app" v-cloak>
 		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
 		<!-- <div class="index-header">
 			<div class="index-header-div"></div>
@@ -318,7 +319,7 @@
 					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
 				</template>
 			</van-tabbar-item>
-			<van-tabbar-item  @click="window.location.href='column_gywb.html'">
+			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
 				<!-- <span>自定义</span> -->
 				<template #icon="props">
 					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />

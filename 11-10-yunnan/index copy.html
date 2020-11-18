@@ -4,7 +4,7 @@
   href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"
 />
 
-<div id="app">
+<div id="app" v-cloak>
 	<img v-for="img in swipeImages" v-lazy="img" :alt="img" />
 	<h2>{{swipeImages[0]}}</h2>
 	<img v-for="img in imageList" v-lazy="img" />

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>福利活动-信息填写</title>
+	<style type="text/css">
+		.jbjs {
+			position: relative;
+		}
+
+		#app {
+			padding-top: 1rem;
+			background-color: #1D2D7E;
+		}
+		#app *{
+			color: white;
+		}
+		.xwxq-body{
+			position: relative;
+			padding: 0 .3rem 0 .3rem;
+			border-radius: .67rem .67rem 0 0;
+		}
+		.public-header-title {
+			background-color: #1D2D7E;
+		}
+		.phtc-return{
+			right: 0;
+			left: auto;
+			background-image: url(images/icon-quxiao.png);
+			background-size: .25rem .25rem;
+			opacity: .6;
+		}
+		.van-cell{
+			padding: .3rem 0;
+			background-color: transparent;
+		}
+		.van-cell::after{
+			left: 0;
+			right: 0;
+			border-bottom: 1px solid rgba(247, 245, 245, 0.2);
+		}
+		.sczp-zpms
+		,.sczp-zpt{
+			padding: .1rem 0 .35rem 0;
+			flex-direction: column;
+		}
+		.sczp-zpms .van-field__body{
+			background-color: rgba(255, 255, 255, .08);
+		}
+		.van-cell__title span{
+			font-size: .31rem;
+			line-height: .8rem;
+		}
+		.van-field__body input{
+			font-size: .31rem;
+			line-height: .8rem;
+		}
+		.van-field__error-message{
+			font-size: .24rem;
+			line-height: .5rem;
+		}
+		.sczp-zpms textarea{
+			padding: .3rem;
+			height: 2.4rem!important;
+			line-height: .6rem;
+			font-size: .31rem;
+		}
+		.sczp-zpt.van-cell::after{
+			border: none;
+		}
+		.sczp-zpt .van-uploader{
+			margin-top: .3rem;
+		}
+		.van-uploader__preview-image
+		,.van-uploader__upload{
+			width: 2.15rem;
+			height: 2.15rem;
+		}
+		.van-uploader__preview{
+			margin: 0 .2rem .2rem 0;
+		}
+		.van-uploader__preview:nth-child(3n)
+		,.van-uploader__upload{
+			margin-right: 0;
+		}
+		.van-uploader__upload{
+			background-image: url(images/icon-shangchuan.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-color: transparent;
+		}
+		.van-uploader__upload .van-icon
+		,.van-icon-photograph::before{
+			color: transparent;
+		}
+		.sczp-btn-tj-div{
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			padding: .4rem .8rem;
+			background-color: #1D2D7E;
+		}
+		.sczp-btn-tj span{
+			font-size: .31rem;
+			letter-spacing: .1rem;
+		}
+		.sczp-zpt .van-field__label{
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="ltfl jbjs fhlt" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">信息填写</div>
+			</div>
+		</div>
+		<div class="sczp-body xwxq-body">
+			<van-form @submit="onSubmit">
+				<van-field
+				  v-model="userName"
+				  name="姓名"
+				  label="姓名"
+				  placeholder="请填写姓名"
+				  :rules="[{ required: true, message: '姓名不能为空' }]"
+				></van-field>
+				<van-field
+				  v-model="userTel"
+				  name="pattern"
+				  label="手机号"
+				  placeholder="请填写手机号码"
+				  :rules="[{ pattern, message: '手机号码格式不正确' }]"
+				></van-field>
+				<van-field
+				  v-model="identityCard"
+				  name="身份证号"
+				  label="身份证号"
+				  placeholder="请填写身份证号码"
+				  :rules="[{ required: true, message: '身份证号码不能为空' }]"
+				></van-field>
+				<div class="sczp-btn-tj-div">
+				  <van-button class="sczp-btn-tj" round block type="info" native-type="submit">
+					提交
+				  </van-button>
+				</div>
+			</van-form>
+			
+		</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		// $(function () {
+		// 	navHeader(150, 34, 49, 119);
+		// 	$(window).scroll(function () {
+		// 		navHeader(150, 34, 49, 119);
+		// 	})
+		// })
+		var _obj = public_obj();
+		console.log('222', public_obj())
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		var app = new Vue({
+			el: '#app',
+			data: {
+				identityCard:'',
+				userName: '',
+				userTel:'',
+				pattern:/^1(3|4|5|6|7|8|9)\d{9}$/,
+				swipeWidth: 2.68,
+				value: 2,
+				active: 3,
+				show: false,
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
+			},
+			created: function () {
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth * _rem;
+				// vant.Toast('提示看看');
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				onSubmit(values) {
+					console.log('submit', values);
+				},
+				setData(index){
+					var abc= window.localStorage.setItem('key_fhlt_ltfl',index)
+					console.log(abc)
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

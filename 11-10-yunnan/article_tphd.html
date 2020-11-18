@@ -17,14 +17,15 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>新闻详情</title>
+	<title>作品详情</title>
 	<style type="text/css">
 		.xwxq{
 			position: relative;
 		}
 		#app{
 			padding-top: 1rem;
-			background-color: #1A285C;
+			padding-bottom: 1.5rem;
+			background-color: #12206A;
 		}
 		.public-header-title{
 			background-color: transparent;
@@ -35,47 +36,134 @@
 		.xwxq-body{
 			position: relative;
 			padding: .3rem;
-			background-color: rgba(255, 255, 255, .08);
-			border-radius: .67rem .67rem 0 0;
+			/* background-color: rgba(255, 255, 255, .08);
+			border-radius: .67rem .67rem 0 0; */
 		}
-		.xwxq-body>h2
-		,.xwxq-body>h6
-		,.xwxq-content{
+		.tphd *{
 			color: white;
 		}
-
-		.xwxq-body>h2{
-			font-size: .37rem;
+		.tphd-body-title{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.xwxq-body h2
+		,.xwxq-body h5{
+			font-size: .33rem;
 			line-height: .6rem;
 		}
-		.xwxq-body>h6{
-			font-size: .27rem;
+		.xwxq-body h5{
+			font-size: .25rem;
 			opacity: .6;
+			font-weight: 400;
+		}
+		.xwxq-body h6{
+			font-size: .28rem;
+			opacity: .6;
+			font-weight: 400;
 			line-height: .8rem;
 		}
 		.xwxq-content{
-			color: rgba(255, 255, 255, .6);
+			color: rgba(255, 255, 255, .8);
 			line-height: .6rem;
+			font-size: .29rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4.6rem;
+		}
+		.index-swipe-01 img {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.tphd-header-list{
+			display: flex;
+			flex: 1;
+			justify-content: space-between;
+			padding: .3rem .6rem;
+			border-bottom: 1px solid rgba(255, 255, 255, .2);
+		}
+		.tphd-header-item{
+			width: 30%;
+		}
+		.tphd-header-list h2{
+			font-size: .33rem;
+			line-height: .5rem;
+			text-align: center;
+		}
+		.tphd-header-list p{
+			font-size: .28rem;
+			opacity: .6;
+			text-align: center;
+			line-height: .5rem;
+		}
+		.sczp-btn-tj-div{
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			padding: .4rem .8rem;
+			background-color: #12206A;
+		}
+		.sczp-btn-tj span{
 			font-size: .31rem;
+			letter-spacing: .1rem;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="xwxq" id="app" v-cloak>
+	<div class="tphd xwxq" id="app" v-cloak>
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">新闻详情</div>
+				<div class="phtc-title">作品详情</div>
 				<div class="phtc-fenxiang" @click="fenxiang()"></div>
 			</div>
 		</div>
-		<div class="xwxq-body">
-			<h2>中国教师报举办游以致学首研学中国课程论坛</h2>
-			<h6>10月10日</h6>
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="3000" >
+				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+					<img v-lazy="image" alt="">
+				</van-swipe-item>
+			</van-swipe>
+			<div class="tphd-header-list">
+				<div class="tphd-header-item">
+					<h2>20</h2>
+					<p>编号</p>
+				</div>
+				<div class="tphd-header-item">
+					<h2>520</h2>
+					<p>票数</p>
+				</div>
+				<div class="tphd-header-item">
+					<h2>2</h2>
+					<p>排名</p>
+				</div>
+			</div>
+		</div>
+		<div class="tphd-body xwxq-body">
+			<div class="tphd-body-title">
+				<h2>中国教师报举办坛</h2>
+				<h5>2020.10.23</h5>
+			</div>
+			<h6>张三丰</h6>
 			<div class="xwxq-content">
 				云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。 其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团、30万人次的观众参与，成为云南第一动漫展会品牌；此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。 为了集中人力、财力和物力，搭建内容丰富、功能齐全的文化产业交流合作平台，提高云南文化会展的规模化和集约化水平，2013云南文化产业博览会应运而生了。
 			</div>
+		</div>
+		<div class="sczp-btn-tj-div">
+			<van-button class="sczp-btn-tj" round block type="info" native-type="submit">
+			  投票
+			</van-button>
 		</div>
 	</div>
 	<script>
@@ -90,11 +178,15 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,34,49,119);
+			navHeader(150,18,32,106);
 			$(window).scroll(function () {
-				navHeader(150,34,49,119);
+				navHeader(150,18,32,106);
 			})
 		})
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
 		var _obj = public_obj();
 		console.log('222', public_obj())
 		var app = new Vue({
@@ -103,6 +195,10 @@
 				value: 2,
 				active: 3,
 				show: false,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
 			},
 			created: function () {
 				console.log(1)

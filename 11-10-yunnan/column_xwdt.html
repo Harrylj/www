@@ -77,44 +77,8 @@
 			font-size: .35rem;
 			line-height: 1rem;
 		}
-
-		.jbjs-body-item {
-			background-color: rgba(255, 255, 255, .08);
-			display: flex;
-			justify-content: space-between;
-			align-items: center;
-			padding: .3rem .3rem;
-			border-radius: .2rem;
-			margin-bottom: .2rem;
-
-		}
-
 		.jbjs-body {
 			padding: 0 .3rem;
-		}
-
-		.jbjs-body-item-img {
-			margin-left: .3rem;
-			width: 1.86rem;
-			height: 1.4rem;
-			/* width: 1rem;
-			height: 1rem; */
-			border-radius: .1rem;
-			overflow: hidden;
-			flex-shrink: 0;
-		}
-
-		.jbjs-body-item h4 {
-			font-size: .32rem;
-			font-weight: 400;
-			line-height: .5rem;
-		}
-
-		.jbjs-body-item h6 {
-			font-size: .27rem;
-			font-weight: 400;
-			opacity: .6;
-			line-height: .5rem;
 		}
 
 		.van-tabs__nav {
@@ -145,7 +109,7 @@
 </head>
 
 <body>
-	<div class="jbjs" id="app">
+	<div class="jbjs" id="app" v-cloak>
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>

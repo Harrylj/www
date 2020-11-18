@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>上传作品</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			padding-bottom: 0;
+			background-color: #1A285C;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq-body{
+			position: relative;
+			padding: 0 .3rem 0 .3rem;
+			border-radius: .67rem .67rem 0 0;
+		}
+		.sxzp-body{
+			position: relative;
+		}
+		#app *{
+			color: white;
+		}
+		.van-cell{
+			padding: .1rem 0;
+			background-color: transparent;
+		}
+		.van-cell::after{
+			left: 0;
+			right: 0;
+			border-bottom: 1px solid rgba(247, 245, 245, 0.2);
+		}
+		.sczp-zpms
+		,.sczp-zpt{
+			padding: .1rem 0 .35rem 0;
+			flex-direction: column;
+		}
+		.sczp-zpms .van-field__body{
+			background-color: rgba(255, 255, 255, .08);
+		}
+		.van-cell__title span{
+			font-size: .31rem;
+			line-height: .8rem;
+		}
+		.van-field__body input{
+			font-size: .31rem;
+			line-height: .8rem;
+		}
+		.van-field__error-message{
+			font-size: .24rem;
+			line-height: .5rem;
+		}
+		.sczp-zpms textarea{
+			padding: .3rem;
+			height: 2.4rem!important;
+			line-height: .6rem;
+			font-size: .31rem;
+		}
+		.sczp-zpt.van-cell::after{
+			border: none;
+		}
+		.sczp-zpt .van-uploader{
+			margin-top: .3rem;
+		}
+		.van-uploader__preview-image
+		,.van-uploader__upload{
+			width: 2.15rem;
+			height: 2.15rem;
+		}
+		.van-uploader__preview{
+			margin: 0 .2rem .2rem 0;
+		}
+		.van-uploader__preview:nth-child(3n)
+		,.van-uploader__upload{
+			margin-right: 0;
+		}
+		.van-uploader__upload{
+			background-image: url(images/icon-shangchuan.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			background-color: transparent;
+		}
+		.van-uploader__upload .van-icon
+		,.van-icon-photograph::before{
+			color: transparent;
+		}
+		.sczp-zpt .van-field__label{
+			width: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sczp xwxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">上传作品</div>
+				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
+			</div>
+		</div>
+		<div class="sczp-body xwxq-body">
+			<van-form @submit="onSubmit">
+				<van-field
+				  v-model="worksName"
+				  name="作品名称"
+				  label="作品名称"
+				  placeholder="请填写作品名称"
+				  :rules="[{ required: true, message: '作品名称不能为空' }]"
+				></van-field>
+				<van-field
+				  v-model="userName"
+				  name="作者姓名"
+				  label="作者姓名"
+				  placeholder="请填写作者姓名"
+				  :rules="[{ required: true, message: '作者姓名不能为空' }]"
+				></van-field>
+				<van-field
+				  v-model="userTel"
+				  name="pattern"
+				  label="联系电话"
+				  placeholder="请填写联系电话"
+				  :rules="[{ pattern, message: '联系电话格式不正确' }]"
+				></van-field>
+				<van-field
+				  class="sczp-zpms"
+				  v-model="worksDescription"
+				  name="作品描述"
+				  maxlength="100"
+				  label="作品描述"
+				  type="textarea"
+				  autosize
+				  placeholder="请输入作品描述"
+				  :rules="[{ required: true, message: '作品描述不能为空' }]"
+				></van-field>
+				<van-field
+				 class="sczp-zpt"
+				 name="uploader" label="参赛作品图">
+					<template #input>
+					  <van-uploader v-model="uploader" />
+					</template>
+				</van-field>
+				<div class="sczp-btn-tj-div">
+				  <van-button class="sczp-btn-tj" round block type="info" native-type="submit">
+					提交
+				  </van-button>
+				</div>
+			</van-form>
+			
+		</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader(150,34,49,119);
+			$(window).scroll(function () {
+				navHeader(150,34,49,119);
+			})
+		})
+		var _obj = public_obj();
+		console.log('222', public_obj())
+		var app = new Vue({
+			el: '#app',
+			data: {
+				worksName:'',
+				userName: '',
+				userTel:'',
+				worksDescription:'',
+				pattern:/^1(3|4|5|6|7|8|9)\d{9}$/,
+				value: 2,
+				active: 3,
+				show: false,
+				uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+			},
+			created: function () {
+				console.log(1)
+				vant.Toast('提示看看');
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				onSubmit(values) {
+					console.log('submit', values);
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

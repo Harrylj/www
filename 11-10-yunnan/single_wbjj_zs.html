@@ -14,25 +14,53 @@
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="keywords" content="">
 	<meta name="description" content="">
-	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>展区速览</title>
+	<title>展商</title>
 	<style type="text/css">
-		#app {
-			padding: 0;
+		.xwxq{
+			position: relative;
 		}
-		.index-body{
-			padding-top: .2rem;
-			padding-bottom: 1.1rem;
-			border-radius:  .67rem .67rem 0 0;
-			background-color: #162463;
-			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
+		#app{
+			padding-top: 1rem;
+			padding-bottom: 0;
+			background-color: #1A285C;
 		}
-		.index-h2
-		,.index-ygz-more{
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq-body{
+			position: relative;
+			padding: 0 .3rem 0 .3rem;
+			border-radius: .67rem .67rem 0 0;
+		}
+		.sxzp-body{
+			position: relative;
+		}
+		#app *{
+			color: white;
+		}
+		.zp-search{
+			display: block;
+			width: 100%;
+			margin-bottom: .3rem;
+		}
+		.index-ygz-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-ygz-item img
+		,.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 2.5rem;
+		}
+		.index-ygz-more{
 			line-height: 1.2rem;
 		}
 		.index-ygz-more{
@@ -44,66 +72,6 @@
 			width: .29rem;
 			height: .29rem;
 			margin-left: .1rem;
-		}
-		.index-swipe-01{
-			position: relative;
-			height: 4rem;
-		}
-		.index-swipe-01 img {
-			height: 100%;
-			width: 100%;
-		}
-		.index-swipe-01 .van-swipe__indicator{
-			width: .08rem;
-			height: .06rem;
-			background-color: #91ACE1;
-		}
-		.index-swipe-01 .van-swipe__indicator--active{
-			width: .12rem;
-			background-color: #FFFFFF;
-		}
-		.wzwb-zqsl-div{
-			position: relative;
-		}
-		.zqsl-item,
-		.wzwb-flhd-div,
-		.mflj-item{
-			background-color: #263377;
-		}
-		.zqsl-item{
-			position: relative;
-			border-radius: .2rem;
-			margin-bottom: .2rem;
-		}
-		.zqsl-item img{
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 2.5rem;
-			height: 2.5rem;
-			border-radius: .2rem;
-		}
-		.zqsl-item-right{
-			position: relative;
-			display: flex;
-			/* align-items: center; */
-			justify-content: center;
-			padding-left: 2.9rem;
-			min-height: 2.5rem;
-			flex-direction: column;
-		}
-		.zqsl-item h3,
-		.zqsl-item p{
-			color: white;
-			line-height: .5rem;
-		}
-		.zqsl-item h3{
-			font-size: .31rem;
-		}
-		.zqsl-item p,
-		.wzwb-flhd-div p{
-			font-size: .28rem;
-			opacity: .7;
 		}
 		.zqsl-popup{
 			padding-top: 1.2rem;
@@ -155,27 +123,27 @@
 </head>
 
 <body>
-	<div class="index wzwb" id="app" v-cloak>
+	<div class="sczp xwxq" id="app" v-cloak>
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">展商</div>
+				<div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div>
+				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
-		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
-		<!-- <div class="index-header">
-			<div class="index-header-div"></div>
-			<img src="images/bg.png" alt="" />
-			<span>云南文博会</span>
-		</div> -->
-		<div class="index-header-swipe">
-			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<img v-lazy="image" alt="">
-					<p>{{index}}</p>
-				</van-swipe-item>
-			</van-swipe>
+		<div class="sczp-body xwxq-body">
+			<img class="zp-search" src="images/search-01.png" alt="">
+			<div class="jjwb-fhlt-div">
+				<div class="index-ygz-list">
+					<div class="index-ygz-item" v-for="index in 7" :key="index">
+						<img src="images/bg.png" alt="">
+						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+						<p class="van-ellipsis">36人正在浏览</p>
+					</div>
+				</div>
+			</div>
 		</div>
-		<!-- <van-cell is-link @click="showPopup">展示弹出层</van-cell> -->
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="会场" name="1">
@@ -198,27 +166,6 @@
 				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
 			</div>
 		</van-popup>
-		<div class="index-body">
-			<div class="index-ygz wzwb-zqsl">
-				<div class="index-h2">展区速览</div>
-				<div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div>
-				<div class="wzwb-zqsl-div">
-					<a href="article_zqxq.html" v-for="index in 5" :key="index">
-					<div class="zqsl-item">
-						<img src="images/bg.png" alt="">
-						<div class="zqsl-item-right">
-							<h3>C展区</h3>
-							<p>主题:非遗文化主题</p>
-							<p>地址:昆明市A会场B展区</p>
-							<p>展商:58家</p>
-						</div>
-					</div>
-					</a>
-				</div>
-			</div>
-
-		</div>
-		
 	</div>
 	<script>
 
@@ -229,9 +176,6 @@
 	<script src="js/axios.min.js"></script>
 	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vant.min.js"></script>
-	<script src="js/vue-video-player.min.js"></script>
-	<script src="js/videojs-contrib-hls.min.js"></script>
-
 
 	<script type="text/javascript">
 		$(function(){
@@ -242,44 +186,22 @@
 		})
 		var _obj = public_obj();
 		console.log('222', public_obj())
-		// 自动注册 Lazyload 组件,可以配置额外的选项
-		Vue.use(vant.Lazyload, {
-			lazyComponent: true
-		});
-		// 挂载VueVideoPlayer插件
-		Vue.use(VueVideoPlayer)
 		var app = new Vue({
-			// new Vue({
 			el: '#app',
 			data: {
 				activeNames: ['1','2'],
-				swipeWidth:2.68,
-				swipeImages: [
-					'https://img.yzcdn.cn/vant/apple-1.jpg',
-					'https://img.yzcdn.cn/vant/apple-2.jpg',
-				],
+				value: 2,
 				active: 3,
-				icon: {
-					active: 'https://img.yzcdn.cn/vant/user-active.png',
-					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
-				},
-				value: 3,
-				message: 'Hello Vue!',
-				current: ['mail'],
 				show: false,
 				activeHC:1,
 				activeZQ:1,
 			},
 			created: function () {
-				// console.log(1,document.documentElement.style.fontSize = '200px')
-				var _rem = 100 * (document.documentElement.clientWidth / 750)
-				this.swipeWidth = this.swipeWidth*_rem ; 
-				console.log(3,_rem)
-				// alert(document.documentElement.style.fontSize)
+				console.log(1)
 				vant.Toast('提示看看');
 			},
 			mounted: function () {
-				console.log(_obj.appkey)
+
 			},
 			methods: {
 				showPopup() {
@@ -287,6 +209,17 @@
 				},
 				hidePopup() {
 					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
 				},
 				selectHC(_index){
 					this.activeHC = _index;
@@ -298,16 +231,17 @@
 				},
 				selectQD(){
 					vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					this.hidePopup()
 				},
 				reset(){
 					this.activeHC = 1;
 					this.activeZQ = 1;
+					console.log('重置')
 				}
 			},
 
 		})
-		console.log('99999', vant.Lazyload)
-		// app.use(vant.Lazyload);
 	</script>
 </body>
 

@@ -22,6 +22,8 @@
 	<title>首页</title>
 	<style type="text/css">
 		#app {
+			padding-top: 0;
+			padding-bottom: 0;
 			/* padding: 0 0 2rem 0; */
 		}
 		.index-body{
@@ -34,7 +36,7 @@
 		}
 		.index-swipe-01{
 			position: relative;
-			height: 4rem;
+			height: 4.4rem;
 		}
 		.index-swipe-01 img {
 			height: 100%;
@@ -222,11 +224,15 @@
 		.index-ygz-list, .index-tshw-list{
 			width: 100%;
 		}
+		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 4.8rem;
+		}
 	</style>
 </head>
 
 <body>
-	<div class="index" id="app">
+	<div class="index" id="app" v-cloak>
 		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
 		<!-- <div class="index-header">
 			<div class="index-header-div"></div>
@@ -246,8 +252,8 @@
 				<div class="index-nav-01-div">
 					<a href="column_zhzj.html"><img src="images/index-nav-01-01.png" alt=""></a>
 					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
-					<a href="#"><img src="images/index-nav-01-03.png" alt=""></a>
-					<a href="#"><img src="images/index-nav-01-04.png" alt=""></a>
+					<a href="column_flhd.html"><img src="images/index-nav-01-03.png" alt=""></a>
+					<a href="column_wbjj.html"><img src="images/index-nav-01-04.png" alt=""></a>
 				</div>
 			</div>
 			<!-- <div class="index-nav">
@@ -354,7 +360,7 @@
 					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
 				</template>
 			</van-tabbar-item>
-			<van-tabbar-item  @click="window.location.href='column_gywb.html'">
+			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
 				<!-- <span>自定义</span> -->
 				<template #icon="props">
 					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
@@ -440,6 +446,16 @@
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
+				// http://192.168.0.250:8032/api/v1/channels/{siteId}
+
+				// axios.get('http://192.168.0.250:8032/api/v1/channels/23')
+				axios.get('api/v1/channels/23')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			}
 
 		})

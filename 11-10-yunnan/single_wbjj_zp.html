@@ -17,13 +17,14 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>新闻详情</title>
+	<title>展品</title>
 	<style type="text/css">
 		.xwxq{
 			position: relative;
 		}
 		#app{
 			padding-top: 1rem;
+			padding-bottom: 0;
 			background-color: #1A285C;
 		}
 		.public-header-title{
@@ -34,47 +35,56 @@
 		}
 		.xwxq-body{
 			position: relative;
-			padding: .3rem;
-			background-color: rgba(255, 255, 255, .08);
+			padding: 0 .3rem 0 .3rem;
 			border-radius: .67rem .67rem 0 0;
 		}
-		.xwxq-body>h2
-		,.xwxq-body>h6
-		,.xwxq-content{
+		.sxzp-body{
+			position: relative;
+		}
+		#app *{
 			color: white;
 		}
-
-		.xwxq-body>h2{
-			font-size: .37rem;
-			line-height: .6rem;
+		.zp-search{
+			display: block;
+			width: 100%;
+			margin-bottom: .3rem;
 		}
-		.xwxq-body>h6{
-			font-size: .27rem;
-			opacity: .6;
-			line-height: .8rem;
+		.index-ygz-item img{
+			height: 3.2rem;
 		}
-		.xwxq-content{
-			color: rgba(255, 255, 255, .6);
-			line-height: .6rem;
-			font-size: .31rem;
+		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 2rem;
 		}
 	</style>
 </head>
 
 <body>
-	<div class="xwxq" id="app" v-cloak>
+	<div class="sczp xwxq" id="app" v-cloak>
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">新闻详情</div>
-				<div class="phtc-fenxiang" @click="fenxiang()"></div>
+				<div class="phtc-title">展品</div>
+				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
-		<div class="xwxq-body">
-			<h2>中国教师报举办游以致学首研学中国课程论坛</h2>
-			<h6>10月10日</h6>
-			<div class="xwxq-content">
-				云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。 其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团、30万人次的观众参与，成为云南第一动漫展会品牌；此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。 为了集中人力、财力和物力，搭建内容丰富、功能齐全的文化产业交流合作平台，提高云南文化会展的规模化和集约化水平，2013云南文化产业博览会应运而生了。
+		<div class="sczp-body xwxq-body">
+			<img class="zp-search" src="images/search-01.png" alt="">
+			<div class="jjwb-fhlt-div">
+				<div class="index-ygz-list">
+					<div class="index-ygz-item" v-for="index in 4" :key="index">
+						<img src="images/bg.png" alt="">
+						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+						<p class="van-ellipsis">36人正在浏览</p>
+					</div>
+				</div>
+				<div class="index-ygz-list">
+					<div class="index-ygz-item" v-for="index in 3" :key="index">
+						<img src="images/bg.png" alt="">
+						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+						<p class="van-ellipsis">36人正在浏览</p>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -90,9 +100,9 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,34,49,119);
+			navHeader(150,18,32,106);
 			$(window).scroll(function () {
-				navHeader(150,34,49,119);
+				navHeader(150,18,32,106);
 			})
 		})
 		var _obj = public_obj();
@@ -112,9 +122,6 @@
 
 			},
 			methods: {
-				fenxiang() {
-					vant.Toast('分享')
-				},
 				showPopup() {
 					this.show = true;
 				},
