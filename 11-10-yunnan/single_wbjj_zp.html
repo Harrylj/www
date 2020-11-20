@@ -49,12 +49,75 @@
 			width: 100%;
 			margin-bottom: .3rem;
 		}
-		.index-ygz-item img{
-			height: 3.2rem;
+		.index-ygz-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
 		}
-		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		.index-ygz-item img
+		,.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
 		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
-			height: 2rem;
+			height: 2.5rem;
+		}
+		.index-ygz-more{
+			line-height: 1.2rem;
+		}
+		.index-ygz-more{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.index-ygz-more img{
+			width: .29rem;
+			height: .29rem;
+			margin-left: .1rem;
+		}
+		.zqsl-popup{
+			padding-top: 1.2rem;
+			background-color: #162463;
+		}
+		.zqsl-popup *{
+			color: white;
+		}
+		.van-cell,
+		.van-collapse-item__content,
+		.van-cell--clickable:active{
+			background-color: transparent;
+			padding:  .2rem .3rem;
+		}
+		.van-collapse-item--border::after,
+		.van-hairline--top-bottom::after,
+		.van-hairline-unset--top-bottom::after,
+		.van-cell::after{
+			border: none;
+		}
+		.van-cell__title{
+			padding-left: .1rem;
+		}
+		.van-cell__title span{
+			font-size: .35rem;
+			font-weight: bold;
+		}
+		.zqsl-sx-list{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zqsl-sx-item{
+			font-size: .28rem;
+			line-height: .8rem;
+			border-radius: .4rem;
+			width: 2.8rem;
+			text-align: center;
+			background-color: rgba(255, 255, 255, .08);
+			margin-bottom: .3rem;
+		}
+		.zqsl-sx-item-click{
+			background-color: #2E5ED4;
+		}
+		.zqsl-btn-footer{
+			padding: .3rem;
 		}
 	</style>
 </head>
@@ -65,21 +128,15 @@
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
 				<div class="phtc-title">展品</div>
+				<div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div>
 				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
 		<div class="sczp-body xwxq-body">
-			<img class="zp-search" src="images/search-01.png" alt="">
+			<img class="zp-search" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 4" :key="index">
-						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-						<p class="van-ellipsis">36人正在浏览</p>
-					</div>
-				</div>
-				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 3" :key="index">
+					<div class="index-ygz-item" v-for="index in 7" :key="index">
 						<img src="images/bg.png" alt="">
 						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
 						<p class="van-ellipsis">36人正在浏览</p>
@@ -87,6 +144,28 @@
 				</div>
 			</div>
 		</div>
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames">
+				<van-collapse-item title="会场" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="index in 5" :key="index">
+							会场{{index}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+							展区{{index}}
+						</div>
+					</div>
+				</van-collapse-item>
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">重置</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
 	</div>
 	<script>
 
@@ -100,9 +179,9 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,18,32,106);
+			navHeader()
 			$(window).scroll(function () {
-				navHeader(150,18,32,106);
+				navHeader()
 			})
 		})
 		var _obj = public_obj();
@@ -110,13 +189,32 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				activeNames: ['1','2'],
 				value: 2,
 				active: 3,
 				show: false,
+				activeHC:1,
+				activeZQ:1,
 			},
 			created: function () {
 				console.log(1)
 				vant.Toast('提示看看');
+				// 获取展品
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
+				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetAll')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 
@@ -138,6 +236,24 @@
 					this.active = _index;
 					vant.Toast(this.active)
 					this.hidePopup()
+				},
+				selectHC(_index){
+					this.activeHC = _index;
+					vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					this.hidePopup()
+				},
+				reset(){
+					this.activeHC = 1;
+					this.activeZQ = 1;
+					console.log('重置')
 				}
 			},
 

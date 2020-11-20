@@ -128,12 +128,12 @@
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
 				<div class="phtc-title">展商</div>
-				<div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div>
+				<!-- <div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div> -->
 				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
 		<div class="sczp-body xwxq-body">
-			<img class="zp-search" src="images/search-01.png" alt="">
+			<img class="zp-search" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
 					<div class="index-ygz-item" v-for="index in 7" :key="index">
@@ -179,9 +179,9 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,18,32,106);
+			navHeader()
 			$(window).scroll(function () {
-				navHeader(150,18,32,106);
+				navHeader()
 			})
 		})
 		var _obj = public_obj();
@@ -199,6 +199,22 @@
 			created: function () {
 				console.log(1)
 				vant.Toast('提示看看');
+				// 获取展商
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
+				axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 			},
 			mounted: function () {
 

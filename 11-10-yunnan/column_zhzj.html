@@ -14,17 +14,22 @@
 	<meta name="format-detection" content="telephone=no" />
 	<meta name="keywords" content="">
 	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<title>展会直击</title>
 	<style type="text/css">
-		.zhzj {
-			padding: 1rem 0;
+		#app.zhzj {
+			padding: 0 0 1rem 0;
 		}
-
+		.index-video-div{
+			position: relative;
+		}
 		.zhzj-mulu.van-popup--bottom.van-popup--round {
-			background-color: #162463;
+			/* background-color: #162463; */
+			background: linear-gradient(90deg, #1116A4, #2480EC);
 			border-radius: .67rem .67rem 0 0;
 			height: 8rem;
 			padding: 0 .3rem .3rem .3rem;
@@ -32,6 +37,9 @@
 		.zhzj-mulu-close{
 			font-size: .3rem;
 			color: white;
+		}
+		div.video-js{
+			height: 8rem;
 		}
 		.zhzj-mulu h3,
 		.zhzj-mulu-close,
@@ -106,7 +114,8 @@
 			justify-content: space-between;
 			/* flex: 10% 70% 20%; */
 			flex: 1;
-			background-color: #28346F;
+			/* background-color: #28346F; */
+			background-color: rgba(246,246,246, .08);
 			align-items: center;
 			min-height: 1.8rem;
 			border-radius: .2rem;
@@ -114,10 +123,18 @@
 		}
 
 		.zhzj-mulu-item-hover {
-			background-color: #697199;
+			/* background-color: #697199; */
+			background-color: rgba(246,246,246, .28);
 		}
 		.zhzj-video{
 			position: relative;
+		}
+		.public-header-title{
+			background-color: rgba(0, 0, 0, .2);
+		}
+		.index-live
+		,.index-video-num{
+			top: 1.3rem;
 		}
 	</style>
 </head>
@@ -133,10 +150,15 @@
 			</div>
 		</div>
 		<div class="zhzj-video">
-			<div class="index-live"><span></span>LIVE</div>
+			<!-- <div class="index-live"><span></span>LIVE</div>
 			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
 			<img style="width: 5rem;" src="images/bg.png" alt="">
-			{{ message }}
+			{{ message }} -->
+			<div class="index-video-div">
+				<div class="index-live"><span></span>LIVE</div>
+				<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+				<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+			</div>
 		</div>
 
 		<van-popup class="zhzj-mulu" v-model="show" :overlay="false" round position="bottom">
@@ -166,10 +188,13 @@
 	<script src="js/axios.min.js"></script>
 	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vant.min.js"></script>
-
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
 	<script type="text/javascript">
 		var _obj = public_obj();
 		console.log('222', public_obj())
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
 		var app = new Vue({
 			el: '#app',
 			data: {
@@ -177,6 +202,21 @@
 				active: 3,
 				message: '展会直击',
 				show: false,
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					poster: "images/bg.png", //你的封面地址
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						{
+							withCredentials: false,
+							type: 'application/x-mpegURL',
+							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
 			},
 			created: function () {
 				console.log(1)
@@ -197,7 +237,7 @@
 				},
 				mulu() {
 					vant.Toast('目录')
-					this.showPopup()
+					this.show =!this.show;
 				},
 				onClickLeft() {
 					vant.Toast('返回');

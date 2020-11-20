@@ -33,8 +33,7 @@
 			right: 0;
 		}
 		.zqsl-item,
-		.wzwb-flhd-div,
-		.mflj-item{
+		.wzwb-flhd-div{
 			background-color: #263377;
 		}
 		.xwxq *{
@@ -56,7 +55,7 @@
 		}
 		.zqxq-body h3{
 			font-size: .31rem;
-			line-height: .6rem;
+			line-height: .5rem;
 		}
 		.zqxq-list{
 			display: flex;
@@ -116,19 +115,21 @@
 			border-radius: 0 .07rem .07rem 0;
 			background-color: rgba(10, 10, 10, 0.58);
 		}
-		.flhd-tphd-item h3{
+		.flhd-tphd-content{
 			position: absolute;
 			left: 0;
-			bottom: 1.2rem;
+			bottom: .7rem;
 			width: 100%;
+			padding-top: .4rem;
+			padding-bottom: .1rem;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0));
+		}
+		.flhd-tphd-item h3{
 			text-align: center;
 			font-size: .31rem;
 			line-height: .5rem;
 		}
 		.flhd-tphd-item p{
-			position: absolute;
-			bottom: .8rem;
-			left: 0;
 			font-size: .28rem;
 			opacity: .58;
 			width: 100%;
@@ -147,10 +148,10 @@
 			font-size: .31rem;
 		}
 		.tphd-btn-lp{
-			background-color: #3F4A86;
+			background-color: #4350BA;
 		}
 		.tphd-btn-tp{
-			background-color: #2E5ED4;
+			background-color: #009BFE;
 		}
 	</style>
 </head>
@@ -174,8 +175,10 @@
 					<div class="flhd-tphd-item">
 						<img src="images/bg.png" alt="">
 						<div class="flhd-tphd-item-index">20号</div>
-						<h3>作品名称</h3>
-						<p>546票</p>
+						<div class="flhd-tphd-content">
+							<h3 class="van-ellipsis">作品名称</h3>
+							<p>546票</p>
+						</div>
 						<div class="flhd-tphd-item-footer">
 							<div class="tphd-btn-lp">拉票</div>
 							<div class="tphd-btn-tp">投票</div>
@@ -191,9 +194,9 @@
 					<div class="mflj-item" v-for="index in 2" :key="index">
 						<img src="images/bg.png" alt="">
 						<div class="mflj-item-right">
-								<h3>C展区</h3>
-								<p>主题:非遗文化主题</p>
-								<p>地址:昆明市A会场B展区</p>
+								<h3 class="van-ellipsis">C展区</h3>
+								<p class="van-ellipsis">主题:非遗文化主题</p>
+								<p class="van-ellipsis">地址:昆明市A会场B展区</p>
 								<a href="#">
 								<div class="wzwb-btn-mflq">免费领取</div>
 								</a>
@@ -217,9 +220,9 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,18,32,106);
+			navHeader();
 			$(window).scroll(function () {
-				navHeader(150,18,32,106);
+				navHeader();
 			})
 		})
 		var _obj = public_obj();

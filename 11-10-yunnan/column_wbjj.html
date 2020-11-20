@@ -23,29 +23,33 @@
 	<style type="text/css">
 		#app {
 			padding-top: 0;
-			background-color: #162463;
+			padding-bottom: .5rem;
+			/* background-color: #162463; */
 			/* background: linear-gradient(180deg, #192964, #212D4F); */
+			/* background: green; */
 		}
 		#app *{
 			color: white;
 		}
 		.index-body{
 			padding-bottom: 0rem;
+			padding-bottom: 1rem;
 		}
 		p {
 			font-size: .3rem;
 		}
 		.index-swipe-01{
 			position: relative;
-			height: 2.6rem;
+			height: 2.9rem;
 			padding-top: .2rem;
-			background-color: #233176;
+			background-color:rgba(255, 255, 255, .08);
 			border-radius: .2rem;
 		}
 		.index-swipe-01 img {
 			display: block;
 			margin: 0 auto;
-			width: 1.2rem;
+			width: 2rem;
+			height: 1.65rem;
 			margin-bottom: .2rem;
 			max-height: 1.6rem;
 			max-width: 2rem;
@@ -105,8 +109,10 @@
 			width: 100%;
 		}
 		#app .wbjj-btn-search{
-			color: #697099;
-			background-color: #2A3779;
+			/*color: #697099;
+			background-color: #2A3779; */
+			color: white;
+			background-color: rgba(255, 255, 255, .16);
 			line-height: .8rem;
 			border-radius: .4rem;
 			font-size: .28rem;
@@ -117,7 +123,7 @@
 			margin-right: .3rem;
 		}
 		#app .wbjj-btn-search .van-icon{
-			color:#555F94;
+			color: white;
 			font-size: .34rem;
 			margin-right: .2rem;
 		}
@@ -130,14 +136,18 @@
 		.van-popup{
 			background-color: transparent;
 		}
-		.van-tree-select__nav
-		,.van-sidebar-item{
-			background-color: #253176;
+		.van-tree-select__nav{
+			background-color: transparent;
+		}
+		.van-sidebar-item{
+			background-color: rgba(255, 255, 255, .08);
 		}
 		.van-tree-select__content,
-		.van-sidebar-item--select,
+		.van-sidebar-item--select{
+			background-color:transparent;
+		}
 		.van-sidebar-item--select:active{
-			background-color: #162463;
+			background: linear-gradient(90deg, #1116A4, #2480EC);
 		}
 		.van-sidebar-item--select::before{
 			height: .6rem;
@@ -186,6 +196,7 @@
 		}
 		.van-sidebar-item__text{
 			font-size: .31rem;
+			font-weight: bold;
 		}
 		.index-ygz-more{
 			padding: 0;
@@ -218,6 +229,7 @@
 			line-height: .5rem;
 			font-size: .29rem;
 			opacity: .6;
+			text-align: center;
 		}
 		.wbjj-rmzs-list
 		,.wbjj-tsfl-list
@@ -283,6 +295,9 @@
 		.van-dropdown-item .van-cell__title span{
 			font-size: .28rem;
 		}
+		.van-swipe-item{
+			padding-right: .3rem;
+		}
 	</style>
 </head>
 
@@ -312,7 +327,7 @@
 					<div class="wbjj-bp index-ygz" v-if="activeContent===0">
 						<div class="index-h2">{{items[current].text}}<span></span>爆品</div>
 						<div class="index-header-swipe">
-							<van-swipe class="index-swipe-01" :autoplay="13000" @change="onChange" >
+							<van-swipe class="index-swipe-01" :autoplay="130000" @change="onChange" >
 								<van-swipe-item v-for="index in items" :key="index">
 									<div class="index-swipe-01-div" v-for="(image, index) in swipeImages" :key="index">
 										<a :href="index">
@@ -358,7 +373,7 @@
 						<div class="wbjj-tsfl-div">
 							<div class="wbjj-tsfl-list">
 								<div class="wbjj-tsfl-item" v-for="index in 2" :key="index">
-									<a href="#">
+									<a href="single_wbjj_zp.html">
 									<img src="images/bg.png" alt="">
 									<p class="van-ellipsis">类型{{index}}</p>
 									</a>
@@ -482,11 +497,28 @@
     
 			},
 			created: function () {
+				var _this = this;
 				// console.log(1,document.documentElement.style.fontSize = '200px')
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// alert(document.documentElement.style.fontSize)
 				vant.Toast('提示看看');
+				// 获取会场地址
+				axios.get('api/v1/channels/23/62')
+				.then(function (response) {
+					_this.option1 = []
+					// _this.option1 = response.data.children;
+					response.data.children.forEach((element,index) => {
+						var _a = {value:index,text:element.channelName}
+						_this.option1.push(_a)
+					});
+					// _this.option1 = response.data.children;
+					console.log(_this.option1);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				
 			},
 			mounted: function () {
 				console.log(_obj.appkey)

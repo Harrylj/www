@@ -116,7 +116,7 @@
 				<div class="phtc-title">新闻动态</div>
 			</div>
 		</div>
-		<a href="single_search.html"><img class="jbjs-serach" src="images/search-01.png" alt=""></a>
+		<!-- <a href="single_search.html"><img class="jbjs-serach" src="images/search-01.png" alt=""></a> -->
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="13000">
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
@@ -126,31 +126,7 @@
 				</van-swipe-item>
 			</van-swipe>
 		</div>
-		<!-- <van-tabs>
-			<van-tab v-for="(item,index) in 6" :title="'标签 ' + index">
-			  <div class="jbjs-body">
-				<h2>最新动态{{ index }}</h2>
-				<div class="jbjs-body-list">
-					<a href="#" v-for="index in index+2" :key="index">
-					<div class="jbjs-body-item">
-						<div class="jbjs-body-item-content">
-							<h4>中国教师报举办游以致学首 研学中国课程论坛</h4>
-							<h6>10月10日</h6>
-						</div>
-						<van-image
-						v-show="index<3"
-						class="jbjs-body-item-img"
-						fit="fill"
-						src="images/index-user-01.png"
-						>
-						</van-image>
-					</div>
-				</a>
-				</div>
-			  </div>
-			</van-tab>
-		</van-tabs> -->
-		<van-tabs @click="onClick">
+		<!-- <van-tabs @click="onClick">
 			<van-tab v-for="(item,index) in 6" :title="'标签 ' + index" >
 				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
 					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
@@ -175,7 +151,23 @@
 				</van-pull-refresh>
 
 			</van-tab>
-		</van-tabs>
+		</van-tabs> -->
+		<div class="jbjs-body">
+			<div class="jbjs-body-list">
+				<a href="article_xwxq.html" v-for="index in 4" :key="index">
+					<div class="jbjs-body-item">
+						<div class="jbjs-body-item-content">
+							<h4>{{index}}中国教师报举办游以致学首 研学中国课程论坛</h4>
+							<h6>10月10日</h6>
+						</div>
+						<van-image v-show="index<3" class="jbjs-body-item-img" fit="fill"
+							src="images/index-user-01.png">
+						</van-image>
+					</div>
+				</a>
+			</div>
+			<van-cell v-for="item in list" :key="item" :title="item" />
+		</div>
 	</div>
 	<script>
 
@@ -189,9 +181,9 @@
 
 	<script type="text/javascript">
 		$(function () {
-			navHeader(150, 34, 49, 119);
+			navHeader();
 			$(window).scroll(function () {
-				navHeader(150, 34, 49, 119);
+				navHeader();
 			})
 		})
 		var _obj = public_obj();

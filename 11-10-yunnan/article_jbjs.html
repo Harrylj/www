@@ -24,7 +24,8 @@
 		}
 		#app{
 			padding-top: 0;
-			background-color: #1A285C;
+			/* background-color: #1A285C; */
+			/* background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(255,255,255,.5)); */
 		}
 		.public-header-title{
 			background-color: transparent;
@@ -38,7 +39,8 @@
 		}
 		.jbjs-header
 		,.jbjs-content{
-			background-color: #273570;
+			/* background-color: #273570; */
+			background-color: rgba(255,255, 255, 0.08);
 		}
 		.jbjs-header-img{
 			margin-right: .3rem;
@@ -157,7 +159,6 @@
 			</a>
 			</div>
 		</div>
-		<div style="height: 10rem;"></div>
 	</div>
 	<script>
 
@@ -171,9 +172,9 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,34,49,119);
+			navHeader();
 			$(window).scroll(function () {
-				navHeader(150,34,49,119);
+				navHeader();
 			})
 		})
 		var _obj = public_obj();

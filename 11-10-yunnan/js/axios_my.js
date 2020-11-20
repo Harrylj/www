@@ -1,12 +1,15 @@
-axios.defaults.baseURL="http://192.168.0.250:8032/";
+// axios.defaults.baseURL="http://192.168.0.250:8032/";
+axios.defaults.baseURL= public_obj().siteUrl;
 
 // 添加请求拦截器
 axios.interceptors.request.use(function (config) {
     // 在发送请求之前做些什么
-    if (config.url.indexOf('api/v1') != -1) {
+    // if (config.url.indexOf('api/v1') != -1) {
+    if (config.url.indexOf('api') != -1) {
     	config.headers = {
 	       	'Content-Type': 'application/json',
-			    'X-SS-API-KEY': 'f003e79e-6820-4235-a781-aae069cee459'
+			    // 'X-SS-API-KEY': 'f003e79e-6820-4235-a781-aae069cee459'
+			    'X-SS-API-KEY': public_obj().appkey
       }
       // config.url = 'http://192.168.0.250:8032'+config.url
       console.log('33333',config.url)

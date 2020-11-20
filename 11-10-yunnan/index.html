@@ -29,7 +29,7 @@
 		.index-body{
 			padding-bottom: 2rem;
 			border-radius:  .3rem .3rem 0 0;
-			background: linear-gradient(180deg, #0036B9, #153790, #1A3883);
+			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
 		}
 		p {
 			font-size: .3rem;
@@ -160,23 +160,27 @@
 			height: 100%;
 			border-radius: .2rem;
 		}
+		.index-ygz-item-footer{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0;
+			padding: .3rem 0;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0));
+			border-radius: 0 0 .2rem .2rem;
+		}
 		.index-ygz-item h3,
 		.index-ygz-item p{
-			position: absolute;
-			width: 100%;
 			padding: 0 .2rem;
-			left: 0;
 			line-height: .5rem;
 			color: white;
 		}
 		.index-ygz-item h3{
-			bottom: .7rem;
 			font-size: .31rem;
 		}
 		.index-ygz-item p{
 			font-size: .25rem;
 			opacity: .75;
-			bottom: .2rem;
 		}
 		.index-tshw-item{
 			position: relative;
@@ -184,7 +188,7 @@
 		}
 		.index-tshw-item img{
 			width: 3.3rem;
-			height: 3.2rem;
+			height: 2.5rem;
 			border-radius: .2rem;
 			margin-bottom: .1rem;
 		}
@@ -228,6 +232,33 @@
 		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
 			height: 4.8rem;
 		}
+		.index-header-img{
+			position: relative;
+			padding-top: .6rem;
+    		margin-bottom: -2.8rem;
+		}
+		.index-header-img img{
+			display: block;
+			width: 100%;
+		}
+		.index-dw-div{
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-dw-item{
+			border-radius: .2rem;
+			line-height: 1.1rem;
+			width: 3.35rem;
+			background-color: rgba(255, 255, 255, 0.1);
+			font-size: .29rem;
+			text-align: center;
+			color: white;
+		}
+		.index-xbdw .index-dw-item{
+			margin-bottom: .2rem;
+		}
 	</style>
 </head>
 
@@ -239,13 +270,16 @@
 			<img src="images/bg.png" alt="" />
 			<span>云南文博会</span>
 		</div> -->
-		<div class="index-header-swipe">
+		<!-- <div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
 					<img v-lazy="image" alt="">
 					<p>{{index}}</p>
 				</van-swipe-item>
 			</van-swipe>
+		</div> -->
+		<div class="index-header-img">
+			<img src="images/index-header-img.png" alt="">
 		</div>
 		<div class="index-body">
 			<div class="index-nav-01">
@@ -273,17 +307,24 @@
 					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
 				</div>
 			</div>
-			
+			<!-- 
+			<h2 style="color: white;">{{userList.length}}</h2>
+			<h2 style="color: white;">{{userList}}</h2> -->
 			<div class="index-swipe-02-father">
 				<div class="index-h2">重磅嘉宾</div>
+				<!-- <img src="http://192.168.0.250:8032/mobile/upload/files/2020/11/3c74dca23e58e25f.jpg" alt=""> -->
 				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
-					<van-swipe-item v-for="index in 7" :key="index">
+					<van-swipe-item v-for="(user,index) in userList" :key="index">
 						<a href="article_jbjs.html">
 						<div class="van-swipe-item-div">
-							<img src="images/index-user-01.png" alt="">
-							<h3>嘉宾{{index}}</h3>
-							<p>嘉宾职称</p>
-							<p v-show="index>2">嘉宾职称</p>
+							<!-- <img src="images/index-user-01.png" alt=""> -->
+							<van-image
+							fit="cover"
+							:src="user.imageUrl"
+							></van-image>
+							<h3 class="van-ellipsis">{{user.title}}</h3>
+							<p class="van-ellipsis">{{user.job}}</p>
+							<p class="van-ellipsis">{{user.jobTwo}}</p>
 						</div>
 						</a>
 					</van-swipe-item>
@@ -296,8 +337,10 @@
 					<div class="index-ygz-item" v-for="index in 4" :key="index">
 						<div class="index-live"><span></span>LIVE</div>
 						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-						<p class="van-ellipsis">直播用户名</p>
+						<div class="index-ygz-item-footer">
+							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+							<p class="van-ellipsis">直播用户名</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -314,28 +357,31 @@
 			</div>
 			<div class="index-zbdw">
 				<div class="index-h2">主办单位</div>
-				<div class="index-logo-nav-list">
+				<div class="index-dw-div">
+					<div class="index-dw-item" v-for="index in 2" :key="index">
+						云南省委宣传部
+					</div>
+				</div>
+				<!-- <div class="index-logo-nav-list">
 					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
 						<img src="images/bg.png" alt="">
 						<p>云南电视台</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="index-cbdw">
 				<div class="index-h2">承办单位</div>
-				<div class="index-logo-nav-list">
-					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
-						<img src="images/bg.png" alt="">
-						<p>云南电视台</p>
+				<div class="index-dw-div">
+					<div class="index-dw-item" v-for="index in 2" :key="index">
+						云南省委宣传部
 					</div>
 				</div>
 			</div>
 			<div class="index-xbdw">
 				<div class="index-h2">协办单位</div>
-				<div class="index-logo-nav-list">
-					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
-						<img src="images/bg.png" alt="">
-						<p>云南电视台</p>
+				<div class="index-dw-div">
+					<div class="index-dw-item" v-for="index in 4" :key="index">
+						云南省委宣传部
 					</div>
 				</div>
 			</div>
@@ -435,20 +481,16 @@
 						}
 					]
 				},
+				userList:[],
 			},
 			created: function () {
-				// console.log(1,document.documentElement.style.fontSize = '200px')
+				var _this = this;
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				console.log(3,_rem)
 				// alert(document.documentElement.style.fontSize)
 				vant.Toast('提示看看');
-			},
-			mounted: function () {
-				console.log(_obj.appkey)
-				// http://192.168.0.250:8032/api/v1/channels/{siteId}
-
-				// axios.get('http://192.168.0.250:8032/api/v1/channels/23')
+				// 获取首页站点下栏目
 				axios.get('api/v1/channels/23')
 				.then(function (response) {
 					console.log(response);
@@ -456,7 +498,67 @@
 				.catch(function (error) {
 					console.log(error);
 				});
-			}
+				
+				// 获取重磅嘉宾列表
+				axios.post('api/v1/contents', {
+					"siteId": 23,
+					"channelId": 34,
+					"wheres":[ {
+          "column": "checked",
+          "operator": "=",
+          "value": "1"
+      }],
+				
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.userList = response.data.contents;
+					_this.userList.forEach((element,index) => {
+						var aa = element.fileUrl.split('@/')[1];
+						var bb = element.imageUrl.split('@/')[1];
+						_this.userList[index].fileUrl = _obj.siteUrl+'mobile/'+aa;
+						_this.userList[index].imageUrl = _obj.siteUrl+ 'mobile/' + bb;
+						console.log('33333',aa,bb)
+					}); 
+					console.log('123',_this.userList);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				console.log('999',this.userList)
+				// http://47.98.233.45:8031/swagger/index.html
+				// 获取展商
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取展商
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
+				axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				
+				
+			},
+			mounted: function () {
+				console.log(')))))obj-',_obj)
+				// http://192.168.0.250:8032/api/v1/channels/{siteId}
+
+				
+			},
+			methods: {
+
+			},
 
 		})
 		console.log('99999', vant.Lazyload)

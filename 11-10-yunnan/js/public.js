@@ -1,3 +1,41 @@
+// 公用参数，栏目
+function public_obj() {
+	var _obj = {};
+	_obj.appkey = 'f003e79e-6820-4235-a781-aae069cee459',
+	_obj.siteUrl = 'http://47.98.233.45:8032/', // 站点栏目，内容
+	_obj.shopUrl = 'http://47.98.233.45:8031/', // 展品展商
+	_obj.idSite = 23, // 站点id
+	_obj.idSYDBLB = 28, // 首页顶部轮播
+	_obj.idXWDT = 30, // 新闻动态
+	_obj.idXBDW = 38, // 协办单位
+	_obj.idZQZJ = 29, // 展区直击
+	_obj.idCBDW = 37, // 承办单位
+	_obj.idZBDW = 36, // 主办单位
+	_obj.idZBJB = 34, // 重磅嘉宾
+	_obj.idKMS = 33, // 开幕式
+	_obj.idYGZ = 35, // 云逛展
+	_obj.idTSHW = 32, // 特色好物
+	_obj.idFLHD = 31, // 福利活动
+	_obj.idFHLT = 41, // 峰会论坛
+	_obj.idLXWM = 40, // 联系我们
+	_obj.idZQ = 62, // 展区
+	_obj.idZQ_01 = 63, // 展区01
+	_obj.idZQ_02 = 64, // 展区02
+	_obj.idZQ_03 = 65, // 展区03
+	_obj.idZQ_04 = 66; // 展区04
+	return _obj;
+}
+// 处理图片路径
+function public_imgsrc(_this,_obj){
+	_obj.forEach((element,index) => {
+		var _src = element.fileUrl.split('@/')[1];
+		_a = 'mobile/';
+		// 附件地址
+		_obj[index].fileUrl = public_obj().siteUrl+_a+src;
+		console.log('33333',_obj)
+	}); 
+}
+
 (function (doc, win) {
 	//      用原生方法获取用户设置的浏览器的字体大小(兼容ie)
 	if (doc.documentElement.currentStyle) {
@@ -43,11 +81,6 @@
 	console.log('1234',aa,bb)
 })(document, window);
 
-function public_obj() {
-	var _obj = {};
-	_obj.appkey = '123455644444';
-	return _obj;
-}
 function public_return_page(){
 	window.history.back();
 	console.log('返回上一页')
@@ -74,20 +107,26 @@ function public_return_page(){
 }(window));
 
 // 使用
-// $(function(){
-// 	navHeader(150,34,49,119);
-// 	$(window).scroll(function () {
-// 		navHeader(150,34,49,119);
-// 	})
+// navHeader();
+// $(window).scroll(function () {
+// 	navHeader();
 // })
-// 顶部添加背景色_h:下拉的距离,rgb(颜色)
-function navHeader(_h,_r,_g,_b) {
-	console.log(_h,_r,_g,_b)
+// 顶部添加背景色_h:下拉的距离,rgb(左颜色),rgb(右颜色)
+function navHeader(_h,_r_01,_g_01,_b_01,_r_02,_g_02,_b_02) {
+	// 默认值// navHeader(150,20,24,158,40,128,232);
+	var _h = _h?_h:150
+	var _r_01 =_r_01?_r_01:20
+	var _g_01 = _g_01?_g_01:24
+	var _b_01 = _b_01?_b_01:158
+	var _r_02 = _r_02?_r_02:40
+	var _g_02 = _g_02?_g_02:128
+	var _b_02 = _b_02?_b_02:232
+	console.log(_h,_r_01,_g_01,_b_01,_r_02,_g_02,_b_02)
 	if ($(window).scrollTop() > 0) {
 		var _opacity = $(window).scrollTop()/_h;
 		// $(".public-header-title").addClass("light");
-		// $(".public-header-title").css('opacity',_opacity)
-		$(".public-header-title").css('background', 'rgba('+_r+','+_g+','+_b+','+_opacity+')')
+		// $(".public-header-title").css('background', 'rgba('+_r+','+_g+','+_b+','+_opacity+')')
+		$(".public-header-title").css('background', 'linear-gradient(90deg, rgba('+_r_01+','+_g_01+','+_b_01+','+_opacity+'), rgba('+_r_02+','+_g_02+','+_b_02+','+_opacity+'))')
 		// console.log($(window).scrollTop())
 	} else {
 		// $(".public-header-title").removeClass("light");

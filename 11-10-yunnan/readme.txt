@@ -36,3 +36,28 @@ single_flhd_xxtx 福利活动-信息填写
 single_wbjj_zp 文博经济-展品
 single_wbjj_zs 文博经济-展商
 single_lxwm 联系我们
+
+
+axios.get('api/v1/channels/23')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				
+				// 获取重磅嘉宾列表
+axios.post('api/v1/contents', {
+					"siteId": 23,
+					"channelId": 34,
+					// "checked": true,
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.userList = response.data.contents;
+					console.log('123',_this.userList);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});

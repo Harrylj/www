@@ -37,7 +37,7 @@
 		}
 		.zqxq-body{
 			position: relative;
-			padding: .4rem .3rem;
+			padding: .4rem 0;
 			/* background-color: rgba(255, 255, 255, .08);
 			border-radius: .67rem .67rem 0 0; */
 		}
@@ -47,7 +47,7 @@
 		.zqxq-header img{
 			display: block;
 			width: 6.9rem;
-			height: 3.2rem;
+			height: 3.5rem;
 			border-radius: .2rem;
 			margin-bottom: .2rem;
 		}
@@ -57,9 +57,9 @@
 			line-height: .8rem;
 		}
 		.zqxq-header p{
-			line-height: .6rem;
+			line-height: .56rem;
 			font-size: .28rem;
-			opacity: .6;
+			opacity: .8;
 		}
 		.zqxq-body{
 			position: relative;
@@ -92,6 +92,75 @@
 			line-height: .6rem;
 			opacity: .6;
 		}
+		.fhlt-nav-more{
+			position: absolute;
+			z-index: 2;
+			right: .3rem;
+			top: 1.08rem;
+			height:.66rem;
+			width: 1rem;
+			background-image: url(images/icon-mulu.png);
+			background-size: .2467rem .2067rem;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: #12206A;
+		}
+		.van-tabs{
+			background-color: #12206A;
+			/* border-radius: .4rem .4rem 0 0; */
+		}
+		.van-tabs__line{
+			display: none;
+			width: .5rem; 
+		}
+		.van-tabs--line .van-tabs__wrap{
+			width: 5.9rem; 
+			height: .66rem;
+			margin-bottom: .5rem;
+		}
+		.gywm-zhrc{
+			position: relative;
+		}
+		.gywm-zgzq{
+			position: relative;
+			padding-left: .3rem;
+		}
+		.gywm-zgzq img{
+			height: 2.8rem;
+			width: 2.95rem;
+			border-radius: .2rem;
+		}
+		.van-tabs__nav{
+			background-color: transparent;
+		}
+		.van-cell{
+			background-color: transparent;
+		}
+		.mflj-item img{
+			width: 2.3rem;
+			height: 1.95rem;
+		}
+		.mflj-item{
+			min-height: 1.95rem;
+		}
+		.gywm-zhrc{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.gywm-zhrc h2{
+			margin: .3rem 0;
+		}
+		.van-tab--active{
+			background-color: #009BFE;
+		}
+		.van-tabs__wrap--scrollable .van-tab{
+			padding: 0 .3rem;
+			margin-right: .2rem;
+			border-radius: .2rem;
+		}
+		.van-tab--active .van-tab__text{
+
+		}
 	</style>
 </head>
 
@@ -104,26 +173,70 @@
 				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
+
+
 		<div class="zqxq-header">
 			<h2>展会介绍</h2>
 			<img src="images/bg.png" alt="">
-			<h2>精彩文化 魅力云南</h2>
-			<p>展示面积: 458²</p>
-			<p>展馆介绍: 展馆描述说明,展馆描述说明</p>
-			<p>目标客户: 文化品牌企业类，投资项目交易类和文化新
-业态类
+			<p>
+				上海国际室内空气净化展览会起始于2004年，由上海市室内环境净化行业协会与上海博华国际展览有限公司联合主办，是国内较早的室内环境净化类细分专业展会……
 			</p>
 		</div>
 		<div class="zqxq-body">
-			<h2>参展商</h2>
-			<div class="zqxq-list">
-				<a href="article_zsxq.html" v-for="index in 4" :key="index">
-				<div class="zqxq-item">
-					<img src="images/bg.png" alt="">
-					<h3 class="van-ellipsis">展商A</h3>
-					<p class="van-ellipsis">昆明市A会场B展区</p>
+			<div class="gywm-zgzq">
+				<h2>展馆展区</h2>
+				<div class="zgzq-swipe-father">
+					<van-swipe class="zgzq-swipe-02" :loop="false" :width="swipeWidth"
+						:show-indicators="false">
+						<van-swipe-item v-for="index in 7" :key="index">
+							<a href="#">
+								<div class="zgzq-swipe-item-div">
+									<img src="images/index-user-01.png" alt="">
+								</div>
+							</a>
+						</van-swipe-item>
+					</van-swipe>
 				</div>
-			</a>
+			</div>
+			<!-- <div class="gywm-czs">
+				<h2>展会日程</h2>
+				<div class="wzwb-mflj-div">
+					<div class="mflj-item" v-for="index in 2" :key="index">
+						<img src="images/bg.png" alt="">
+						<div class="mflj-item-right">
+								<h3>C展区</h3>
+								<p>主题:非遗文化主题</p>
+								<p>地址:昆明市A会场B展区</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="gywm-zhrc">
+				<h2>展会日程</h2>
+				<a href="#"><div class="fhlt-nav-more"></div></a>
+				<van-tabs @click="onClick"  v-model="active">
+					<van-tab v-for="(item,index) in 6" :title="'标签 ' + index">
+						<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+							<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+								<div class="wzwb-mflj-div">
+									<div class="mflj-item" v-for="index in 2" :key="index">
+										<img src="images/bg.png" alt="">
+										<div class="mflj-item-right">
+												<h3>{{index}}C展区</h3>
+												<p class="van-ellipsis">主题:非遗文化主题</p>
+												<p class="van-ellipsis">地址:昆明市A会场B展区</p>
+										</div>
+									</div>
+								</div>
+								<div class="jbjs-body">
+									{{index}}
+								</div>
+								<van-cell v-for="item in list" :key="item" :title="item" />
+							</van-list>
+						</van-pull-refresh>
+
+					</van-tab>
+				</van-tabs>
 			</div>
 		</div>
 	</div>
@@ -139,9 +252,9 @@
 
 	<script type="text/javascript">
 		$(function(){
-			navHeader(150,18,32,106);
+			navHeader();
 			$(window).scroll(function () {
-				navHeader(150,18,32,106);
+				navHeader();
 			})
 		})
 		var _obj = public_obj();
@@ -149,18 +262,30 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				swipeWidth: 3.2,
 				value: 2,
 				active: 3,
 				show: false,
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
 			},
 			created: function () {
 				console.log(1)
 				vant.Toast('提示看看');
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth * _rem;
 			},
 			mounted: function () {
 
 			},
 			methods: {
+				onClick(name, title) {
+					this.list = [];
+					console.log(title)
+					vant.Toast(title);
+				},
 				fenxiang() {
 					vant.Toast('分享')
 				},
@@ -180,7 +305,33 @@
 					this.active = _index;
 					vant.Toast(this.active)
 					this.hidePopup()
-				}
+				},
+				onLoad() {
+					setTimeout(() => {
+						if (this.refreshing) {
+							this.list = [];
+							this.refreshing = false;
+						}
+
+						for (let i = 0; i < 10; i++) {
+							this.list.push(this.list.length + 1);
+						}
+						this.loading = false;
+
+						if (this.list.length >= 40) {
+							this.finished = true;
+						}
+					}, 1000);
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
+
 			},
 
 		})

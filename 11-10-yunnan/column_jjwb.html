@@ -23,7 +23,7 @@
 	<style type="text/css">
 		#app {
 			padding-top: 0;
-			background: linear-gradient(180deg, #192964, #212D4F);
+			/* background: linear-gradient(180deg, #192964, #212D4F); */
 		}
 		.index-body{
 			padding-bottom: 2rem;
@@ -146,6 +146,16 @@
 			border-top: 1px solid white;
 			opacity: .2;
 		}
+		.index-ygz-list{
+			display: flex;
+			width: 100%;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		, .index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 3.5rem;
+		}
 	</style>
 </head>
 
@@ -168,21 +178,22 @@
 				<a href="column_fhlt.html"><div class="index-ygz-more">更多论坛<van-icon name="arrow" /></div></a>
 				<div class="jjwb-fhlt-div">
 					<div class="index-ygz-list">
-						<div class="index-ygz-item" v-for="index in 2" :key="index">
-							<div class="index-live"><span></span>LIVE</div>
+						<div class="index-ygz-item" v-for="index in 4" :key="index">
+							<div class="index-live" v-if="index<2"><span></span>LIVE</div>
+							<div class="index-live" v-if="index>=2"><span></span>回放</div>
 							<img src="images/bg.png" alt="">
 							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
 							<p class="van-ellipsis">直播用户名</p>
 						</div>
 					</div>
-					<div class="index-ygz-list">
+					<!-- <div class="index-ygz-list">
 						<div class="index-ygz-item" v-for="index in 2" :key="index">
 							<div class="index-live"><span></span>回放</div>
 							<img src="images/bg.png" alt="">
 							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
 							<p class="van-ellipsis">直播用户名</p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 			<div class="jjwb-line"></div>
