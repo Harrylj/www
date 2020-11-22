@@ -167,12 +167,12 @@
 				<van-icon class="zhzj-mulu-close" name="cross" @click="hidePopup()" />
 			</div>
 			<div class="zhzj-mulu-list">
-				<div class="zhzj-mulu-item" :class="index==active?'zhzj-mulu-item-hover':''" v-for="index in 5"
+				<div class="zhzj-mulu-item" :class="index==active?'zhzj-mulu-item-hover':''" v-for="(video,index) in videoML"
 					::key="index" @click="selectMulu(index)">
 					<h4>{{index}}</h4>
 					<div class="zhzj-mulu-item-content">
 						<h6>即将开始</h6>
-						<p>2020云南文博会开幕式</p>
+						<p>{{video.title}}</p>
 					</div>
 					<h5>15:30pm</h5>
 				</div>
@@ -217,10 +217,27 @@
 						}
 					]
 				},
+				videoML:[],
 			},
 			created: function () {
+				var _this = this;
 				console.log(1)
-				vant.Toast('提示看看');
+				// vant.Toast('提示看看');
+				// 目录
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZHZJ,
+					"page": 1,
+					"perPage": 130
+				})
+				.then(function (response) {
+					_this.videoML = response.data.contents;
+					public_imgsrc(_this.videoML)
+					console.log('123',_this.videoML);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 				this.mulu()

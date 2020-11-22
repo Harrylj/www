@@ -476,3 +476,75 @@ div.video-js {
 .mflj-item:last-child{
 	margin-bottom: 0;
 }
+div.zqsl-popup{
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+	background: linear-gradient(90deg, #1115A4, #2480EC);
+}
+.zqsl-popup *{
+	color: white;
+}
+.van-cell,
+.van-collapse-item__content,
+.van-cell--clickable:active{
+	background-color: transparent;
+	padding:  .2rem .3rem;
+}
+.van-collapse-item--border::after,
+.van-hairline--top-bottom::after,
+.van-hairline-unset--top-bottom::after,
+.van-cell::after{
+	border: none;
+}
+.van-cell__title{
+	padding-left: .1rem;
+}
+.van-cell__title span{
+	font-size: .35rem;
+	font-weight: bold;
+}
+.zqsl-sx-list{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+#app .zqsl-btn-footer .zqsl-sx-item{
+	color: #009BFE;
+}
+.zqsl-sx-item{
+	font-size: .28rem;
+	line-height: .8rem;
+	border-radius: .4rem;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(255, 255, 255, .08);
+	margin-bottom: .2rem;
+	
+}
+.zqsl-btn-footer .zqsl-sx-item:nth-child(2){
+	border-radius: 0 .4rem .4rem 0;
+}
+#app .zqsl-sx-item-click{
+	background: linear-gradient(90deg, #1115A4, #2480EC);
+	border: 1px solid #009BFE;
+	color: #009BFE;
+}
+.zqsl-btn-footer{
+	display: flex;
+	justify-content: center;
+	padding: .3rem;
+}
+.zqsl-btn-footer .zqsl-sx-item{
+	border: 1px solid #009BFE;
+	font-size: .28rem;
+	line-height: .8rem;
+	border-radius: .4rem 0 0 .4rem;
+	width: 50%;
+	text-align: center;
+	background-color: rgba(255, 255, 255, .08);
+	margin-bottom: .3rem;
+}
+#app .zqsl-btn-footer .zqsl-sx-item-click{
+	background: #009BFE;
+	color: white;
+}

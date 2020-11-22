@@ -8,7 +8,7 @@ function public_obj() {
 	_obj.idSYDBLB = 28, // 首页顶部轮播
 	_obj.idXWDT = 30, // 新闻动态
 	_obj.idXBDW = 38, // 协办单位
-	_obj.idZQZJ = 29, // 展区直击
+	_obj.idZHZJ = 29, // 展区直击
 	_obj.idCBDW = 37, // 承办单位
 	_obj.idZBDW = 36, // 主办单位
 	_obj.idZBJB = 34, // 重磅嘉宾
@@ -25,15 +25,19 @@ function public_obj() {
 	_obj.idZQ_04 = 66; // 展区04
 	return _obj;
 }
-// 处理图片路径
-function public_imgsrc(_this,_obj){
+// 处理图片路径,相对路径改为绝对路径
+function public_imgsrc(_obj){
 	_obj.forEach((element,index) => {
-		var _src = element.fileUrl.split('@/')[1];
+		var file_src = element.fileUrl.split('@/')[1];
+		var image_src = element.imageUrl.split('@/')[1];
 		_a = 'mobile/';
 		// 附件地址
-		_obj[index].fileUrl = public_obj().siteUrl+_a+src;
-		console.log('33333',_obj)
+		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
+		// 图片地址
+		_obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
+		// console.log('123src',_obj)
 	}); 
+	return _obj
 }
 
 (function (doc, win) {

@@ -270,17 +270,16 @@
 			<img src="images/bg.png" alt="" />
 			<span>云南文博会</span>
 		</div> -->
-		<!-- <div class="index-header-swipe">
+		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<img v-lazy="image" alt="">
-					<p>{{index}}</p>
+				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
+					<img v-lazy="image.imageUrl" alt="">
 				</van-swipe-item>
 			</van-swipe>
-		</div> -->
-		<div class="index-header-img">
-			<img src="images/index-header-img.png" alt="">
 		</div>
+		<!-- <div class="index-header-img">
+			<img src="images/index-header-img.png" alt="">
+		</div> -->
 		<div class="index-body">
 			<div class="index-nav-01">
 				<div class="index-nav-01-div">
@@ -290,13 +289,6 @@
 					<a href="column_wbjj.html"><img src="images/index-nav-01-04.png" alt=""></a>
 				</div>
 			</div>
-			<!-- <div class="index-nav">
-				<div class="index-nav-div" v-for="(nav,index) in 4" :key="index">
-					<img src="images/index-nav-01.png" alt="">
-					<h2>地址{{index}}</h2>
-				</div>
-			</div> -->
-			
 			<div class="index-video">
 				<a href="column_kms.html">
 				<div class="index-h2">2020云南文博开幕式</div>
@@ -334,12 +326,16 @@
 				<div class="index-h2">云逛展</div>
 				<div class="index-ygz-more">换一换</div>
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 4" :key="index">
+					<div class="index-ygz-item" v-for="(item,index) in YGZ" :key="index">
 						<div class="index-live"><span></span>LIVE</div>
-						<img src="images/bg.png" alt="">
+						<img :src="item.imageUrl" alt="">
+						<!-- <van-image
+							fit="cover"
+							:src="item.imageUrl"
+						></van-image> -->
 						<div class="index-ygz-item-footer">
-							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-							<p class="van-ellipsis">直播用户名</p>
+							<h3 class="van-ellipsis">{{item.title}}</h3>
+							<p class="van-ellipsis">{{item.title}}</p>
 						</div>
 					</div>
 				</div>
@@ -358,9 +354,7 @@
 			<div class="index-zbdw">
 				<div class="index-h2">主办单位</div>
 				<div class="index-dw-div">
-					<div class="index-dw-item" v-for="index in 2" :key="index">
-						云南省委宣传部
-					</div>
+					<div class="index-dw-item van-ellipsis" v-for="(item,index) in ZBDW" :key="index">{{item.title}}</div>
 				</div>
 				<!-- <div class="index-logo-nav-list">
 					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
@@ -372,17 +366,13 @@
 			<div class="index-cbdw">
 				<div class="index-h2">承办单位</div>
 				<div class="index-dw-div">
-					<div class="index-dw-item" v-for="index in 2" :key="index">
-						云南省委宣传部
-					</div>
+					<div class="index-dw-item van-ellipsis" v-for="(item,index) in CBDW" :key="index">{{item.title}}</div>
 				</div>
 			</div>
 			<div class="index-xbdw">
 				<div class="index-h2">协办单位</div>
 				<div class="index-dw-div">
-					<div class="index-dw-item" v-for="index in 4" :key="index">
-						云南省委宣传部
-					</div>
+					<div class="index-dw-item van-ellipsis" v-for="(item,index) in XBDW" :key="index">{{item.title}}</div>
 				</div>
 			</div>
 		</div>
@@ -481,7 +471,12 @@
 						}
 					]
 				},
-				userList:[],
+				userList:[], // 重磅嘉宾
+				imagesDBLB:[], // 顶部轮播
+				YGZ:[], // 云逛展
+				ZBDW:[], // 主办单位
+				CBDW:[], // 承办单位
+				XBDW:[], // 协办单位
 			},
 			created: function () {
 				var _this = this;
@@ -491,42 +486,109 @@
 				// alert(document.documentElement.style.fontSize)
 				vant.Toast('提示看看');
 				// 获取首页站点下栏目
-				axios.get('api/v1/channels/23')
+				// axios.get('api/v1/channels/23')
+				axios.get('api/v1/channels/'+_obj.idSite)
 				.then(function (response) {
 					console.log(response);
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
+				// 顶部轮播
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idSYDBLB,
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.imagesDBLB = response.data.contents;
+					public_imgsrc(_this.imagesDBLB)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 云逛展
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idYGZ,
+					"page": 1,
+					"perPage": 4
+				})
+				.then(function (response) {
+					_this.YGZ = response.data.contents;
+					public_imgsrc(_this.YGZ)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 主办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBDW,
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.ZBDW = response.data.contents;
+					public_imgsrc(_this.ZBDW)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 承办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idCBDW,
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.CBDW = response.data.contents;
+					public_imgsrc(_this.CBDW)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 协办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXBDW,
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.XBDW = response.data.contents;
+					public_imgsrc(_this.XBDW)
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 				
+
 				// 获取重磅嘉宾列表
 				axios.post('api/v1/contents', {
-					"siteId": 23,
-					"channelId": 34,
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBJB,
 					"wheres":[ {
-          "column": "checked",
-          "operator": "=",
-          "value": "1"
-      }],
-				
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
 					"page": 1,
 					"perPage": 30
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;
-					_this.userList.forEach((element,index) => {
-						var aa = element.fileUrl.split('@/')[1];
-						var bb = element.imageUrl.split('@/')[1];
-						_this.userList[index].fileUrl = _obj.siteUrl+'mobile/'+aa;
-						_this.userList[index].imageUrl = _obj.siteUrl+ 'mobile/' + bb;
-						console.log('33333',aa,bb)
-					}); 
-					console.log('123',_this.userList);
+					public_imgsrc(_this.userList)
+					// console.log('123',_this.userList);
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
-				console.log('999',this.userList)
+
+
+
 				// http://47.98.233.45:8031/swagger/index.html
 				// 获取展商
 				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')

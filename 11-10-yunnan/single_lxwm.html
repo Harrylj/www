@@ -23,7 +23,7 @@
 	<style type="text/css">
 		#app {
 			padding-top: 0;
-			padding-bottom: 0;
+			padding-bottom: 1.8rem;
 			/* padding: 0 0 2rem 0; */
 			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
 			background-color: #12206A;
@@ -32,6 +32,9 @@
 			padding-bottom: 2rem;
 			border-radius:  0;
 			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
+		}
+		.xwxq *{
+			color: white;
 		}
 		p {
 			font-size: .3rem;
@@ -61,14 +64,14 @@
 			padding: 0 .3rem;
 		}
 		.lxwm-body{
-			background-color: #12206A;
+			background-color: transparent;
 			padding: .3rem;
 		}
 		.lxwm-body *{
 			color: white;
 		}
 		.lxwm-body-div{
-			background-color: #233176;
+			background-color: rgba(255, 255, 255, .1);
 			border-radius: .2rem;
 			padding: .4rem .5rem;
 		}
@@ -89,10 +92,10 @@
 			color: #F3F7FA;
 			font-size: .31rem;
 			line-height: .7rem;
-			text-align: center;
+			text-align: left;
+			padding-left: 1rem;
 			display: flex;
 			align-items: center;
-			justify-content: center;
 			opacity: .9;
 		}
 		.lxwm-body-div li .van-icon{
@@ -109,11 +112,130 @@
 			margin-top: .5rem;
 			margin-bottom: .1rem;
 		}
+		.zqxq-header{
+			padding: .3rem;
+		}
+		.zqxq-header img{
+			display: block;
+			width: 6.9rem;
+			height: 3.5rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+		.zqxq-header h2
+		,.zqxq-body h2{
+			font-size: .35rem;
+			line-height: .8rem;
+		}
+		.zqxq-header p{
+			line-height: .56rem;
+			font-size: .28rem;
+			opacity: .8;
+		}
+		.zqxq-body{
+			position: relative;
+			/* border-top: 1px solid rgba(255, 255, 255, .2); */
+		}
+		.zqxq-body h2{
+			margin-bottom: .2rem;
+		}
+		.zqxq-body h3{
+			font-size: .31rem;
+			line-height: .6rem;
+		}
+		.zqxq-list{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zqxq-item{
+			width: 3.3rem;
+			margin-bottom: .2rem;
+		}
+		.zqxq-item img{
+			display: block;
+			height: 2.5rem;
+			width: 100%;
+			margin-bottom: .2rem;
+		}
+		.zqxq-item p{
+			font-size: .28rem;
+			line-height: .6rem;
+			opacity: .6;
+		}
+		.fhlt-nav-more{
+			position: absolute;
+			z-index: 2;
+			right: .3rem;
+			top: 1.08rem;
+			height:.66rem;
+			width: 1rem;
+			background-image: url(images/icon-mulu.png);
+			background-size: .2467rem .2067rem;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: transparent;
+		}
+		.van-tabs{
+			background-color: transparent;
+			/* border-radius: .4rem .4rem 0 0; */
+		}
+		.van-tabs__line{
+			display: none;
+			width: .5rem; 
+		}
+		.van-tabs--line .van-tabs__wrap{
+			width: 5.9rem; 
+			height: .66rem;
+			margin-bottom: .5rem;
+		}
+		.gywm-zhrc{
+			position: relative;
+		}
+		.gywm-zgzq{
+			position: relative;
+			padding-left: .3rem;
+		}
+		.gywm-zgzq img{
+			height: 2.8rem;
+			width: 2.95rem;
+			border-radius: .2rem;
+		}
+		.van-tabs__nav{
+			background-color: transparent;
+		}
+		.van-cell{
+			background-color: transparent;
+		}
+		.mflj-item img{
+			width: 2.3rem;
+			height: 1.95rem;
+		}
+		.mflj-item{
+			min-height: 1.95rem;
+		}
+		.gywm-zhrc{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.gywm-zhrc h2{
+			margin: .3rem 0;
+		}
+		
+		.van-tabs__wrap--scrollable .van-tab{
+			padding: 0 .3rem;
+			margin-right: .2rem;
+			border-radius: .2rem;
+			background-color: rgba(255, 255, 255, .1);
+		}
+		.van-tabs__wrap--scrollable .van-tab--active{
+			background-color: #009BFE;
+		}
 	</style>
 </head>
 
 <body>
-	<div class="index lxwm" id="app" v-cloak>
+	<div class="index lxwm xwxq" id="app" v-cloak>
 		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
 		<!-- <div class="index-header">
 			<div class="index-header-div"></div>
@@ -128,6 +250,11 @@
 				</van-swipe-item>
 			</van-swipe>
 		</div>
+		<div class="zqxq-header">
+			<p>
+				上海国际室内空气净化展览会起始于2004年，由上海市室内环境净化行业协会与上海博华国际展览有限公司联合主办，是国内较早的室内环境净化类细分专业展会……
+			</p>
+		</div>
 		<div class="index-body lxwm-body">
 			<div class="lxwm-body-div">
 				<h3>参展预定/合作咨询：</h3>
@@ -138,16 +265,72 @@
 				</ul>
 				<p>参展请与展会主办方联系：</p>
 				<p>云南广播电视台，云南广电传媒集团</p>
-				<div class="sczp-btn-tj-div">
-					<a href="#">
+				<!-- <div class="sczp-btn-tj-div">
+					<a href="column_gywm.html">
 					<van-button class="sczp-btn-tj" round block type="info" native-type="submit">
 					  关于文博
 					</van-button>
 					</a>
-				</div>
+				</div> -->
 			</div>
 		</div>
-		
+		<div class="zqxq-body">
+			<div class="gywm-zgzq">
+				<h2>展馆展区</h2>
+				<div class="zgzq-swipe-father">
+					<van-swipe class="zgzq-swipe-02" :loop="false" :width="swipeWidth"
+						:show-indicators="false">
+						<van-swipe-item v-for="index in 7" :key="index">
+							<a href="#">
+								<div class="zgzq-swipe-item-div">
+									<img src="images/index-user-01.png" alt="">
+								</div>
+							</a>
+						</van-swipe-item>
+					</van-swipe>
+				</div>
+			</div>
+			<!-- <div class="gywm-czs">
+				<h2>展会日程</h2>
+				<div class="wzwb-mflj-div">
+					<div class="mflj-item" v-for="index in 2" :key="index">
+						<img src="images/bg.png" alt="">
+						<div class="mflj-item-right">
+								<h3>C展区</h3>
+								<p>主题:非遗文化主题</p>
+								<p>地址:昆明市A会场B展区</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="gywm-zhrc">
+				<h2>展会日程</h2>
+				<a href="#"><div class="fhlt-nav-more"></div></a>
+				<van-tabs @click="onClick"  v-model="active">
+					<van-tab v-for="(item,index) in 6" :title="'标签 ' + index">
+						<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+							<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+								<div class="wzwb-mflj-div">
+									<div class="mflj-item" v-for="index in 2" :key="index">
+										<img src="images/bg.png" alt="">
+										<div class="mflj-item-right">
+												<h3>{{index}}C展区</h3>
+												<p class="van-ellipsis">主题:非遗文化主题</p>
+												<p class="van-ellipsis">地址:昆明市A会场B展区</p>
+										</div>
+									</div>
+								</div>
+								<div class="jbjs-body">
+									{{index}}
+								</div>
+								<van-cell v-for="item in list" :key="item" :title="item" />
+							</van-list>
+						</van-pull-refresh>
+
+					</van-tab>
+				</van-tabs>
+			</div>
+		</div>
 		<van-tabbar class="public-footer-nav" v-model="active">
 			<!-- <van-tabbar-item badge="3">
 				<span>首页</span>
@@ -214,7 +397,7 @@
 			// new Vue({
 			el: '#app',
 			data: {
-				swipeWidth:2.68,
+				swipeWidth: 3.2,
 				swipeImages: [
 					'images/index-swiper-01.png',
 				],
@@ -225,7 +408,11 @@
 				},
 				value: 2,
 				message: 'Hello Vue!',
-				
+				show: false,
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
 			},
 			created: function () {
 				// console.log(1,document.documentElement.style.fontSize = '200px')
@@ -237,7 +424,60 @@
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
-			}
+			},
+			methods: {
+				onClick(name, title) {
+					this.list = [];
+					console.log(title)
+					vant.Toast(title);
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				},
+				onLoad() {
+					setTimeout(() => {
+						if (this.refreshing) {
+							this.list = [];
+							this.refreshing = false;
+						}
+
+						for (let i = 0; i < 10; i++) {
+							this.list.push(this.list.length + 1);
+						}
+						this.loading = false;
+
+						if (this.list.length >= 40) {
+							this.finished = true;
+						}
+					}, 1000);
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
+
+			},
 
 		})
 		console.log('99999', vant.Lazyload)
