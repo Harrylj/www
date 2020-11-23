@@ -13,11 +13,17 @@ function public_obj() {
 	_obj.idZBDW = 36, // 主办单位
 	_obj.idZBJB = 34, // 重磅嘉宾
 	_obj.idKMS = 33, // 开幕式
+	_obj.idKMS_CID = 48, // 开幕式-内容id
 	_obj.idYGZ = 35, // 云逛展
 	_obj.idTSHW = 32, // 特色好物
 	_obj.idFLHD = 31, // 福利活动
 	_obj.idFHLT = 41, // 峰会论坛
 	_obj.idLXWM = 40, // 联系我们
+	_obj.idLXWM_CID = 70, // 联系我们-内容id
+	_obj.idHZZX = 91, // 合作咨询
+	_obj.idHZZX_CID = 93, // 合作咨询-内容id
+	_obj.idZGZQ = 92, // 展馆展区
+	_obj.idZGRC = 93, // 展馆日程
 	_obj.idZQ = 62, // 展区
 	_obj.idZQ_01 = 63, // 展区01
 	_obj.idZQ_02 = 64, // 展区02
@@ -35,9 +41,64 @@ function public_imgsrc(_obj){
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
 		_obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
-		// console.log('123src',_obj)
+		// 直播状态转大写
+		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
+		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
 	}); 
 	return _obj
+}
+
+
+/**
+ * obj2qs({'a':1,'b':2})
+ * @author web得胜
+ * @param {Object} obj 需要拼接的参数对象
+ * @return {String}
+ * */
+function obj2qs(obj) {
+    if(!obj && !Object.keys(obj).length) {
+        return "";
+    } else {
+        var arr = [];
+        for(var key in obj) {
+            arr.push(key + "=" + obj[key]);
+        }
+        return arr.join("&");
+    }
+}
+
+/**
+ * qs2obj('file:///E:/wamp/www/11-10-yunnan/column_xwdt.html?abc=1&aaa=2')
+ * @param {String} url url地址栏
+ * @return {Object}
+ */
+function qs2obj(url) {
+    var qs = url.split("?")[1];
+    var arr = [];
+    var res = {};
+    if(!qs) {
+        // return res;
+    } else {
+        arr = qs.split("&");
+        for(var i = 0, len = arr.length; i < len; i++) {
+            var key = arr[i].split("=")[0];
+            var val = arr[i].split("=")[1];
+            res[key] = decodeURIComponent(val);
+        }
+    }
+    return res;
+}
+
+// 跳转页面js
+function goPage(_src,_obj){
+	_obj?window.location.href= _src + '?'+obj2qs(_obj):window.location.href= _src;
+	
+}
+
+// 返回上一页
+function public_return_page(){
+	window.history.back();
+	console.log('返回上一页')
 }
 
 (function (doc, win) {
@@ -85,10 +146,7 @@ function public_imgsrc(_obj){
 	console.log('1234',aa,bb)
 })(document, window);
 
-function public_return_page(){
-	window.history.back();
-	console.log('返回上一页')
-}
+
 //浏览器版本过低 提示升级 低于ie 10的都会提示  
 (function (w) {
 	if (!("WebSocket" in w && 2 === w.WebSocket.CLOSING)) {

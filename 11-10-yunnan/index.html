@@ -253,6 +253,7 @@
 			width: 3.35rem;
 			background-color: rgba(255, 255, 255, 0.1);
 			font-size: .29rem;
+			padding: 0 .15rem;
 			text-align: center;
 			color: white;
 		}
@@ -294,8 +295,8 @@
 				<div class="index-h2">2020云南文博开幕式</div>
 				</a>
 				<div class="index-video-div">
-					<div class="index-live"><span></span>LIVE</div>
-					<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
+					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
 					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
 				</div>
 			</div>
@@ -324,10 +325,10 @@
 			</div>
 			<div class="index-ygz">
 				<div class="index-h2">云逛展</div>
-				<div class="index-ygz-more">换一换</div>
+				<div class="index-ygz-more" @click="ygzNext">换一换</div>
 				<div class="index-ygz-list">
 					<div class="index-ygz-item" v-for="(item,index) in YGZ" :key="index">
-						<div class="index-live"><span></span>LIVE</div>
+						<div class="index-live"><span></span>{{item.zT}}</div>
 						<img :src="item.imageUrl" alt="">
 						<!-- <van-image
 							fit="cover"
@@ -344,7 +345,7 @@
 				<div class="index-h2">特色好物</div>
 				<div class="index-tshw-list">
 					<div class="index-tshw-item" v-for="index in 4" :key="index">
-						<div class="index-live"><span></span>LIVE</div>
+						<!-- <div class="index-live"><span></span>LIVE</div> -->
 						<img src="images/bg.png" alt="">
 						<h3 class="van-ellipsis">{{index}}彩帮陶瓷花瓶摆件</h3>
 						<p class="van-ellipsis">36人正在逛</p>
@@ -465,7 +466,7 @@
 						{
 							withCredentials: false,
 							type: 'application/x-mpegURL',
-							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
 							muted: false,
 							nativeAudioTracks:false,
 						}
@@ -477,6 +478,8 @@
 				ZBDW:[], // 主办单位
 				CBDW:[], // 承办单位
 				XBDW:[], // 协办单位
+				KMS:[], // 开幕式
+				YGZPage:1, //云逛展翻页
 			},
 			created: function () {
 				var _this = this;
@@ -485,6 +488,15 @@
 				console.log(3,_rem)
 				// alert(document.documentElement.style.fontSize)
 				vant.Toast('提示看看');
+				//开幕式播放量
+				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
 				// 获取首页站点下栏目
 				// axios.get('api/v1/channels/23')
 				axios.get('api/v1/channels/'+_obj.idSite)
@@ -508,16 +520,56 @@
 				.catch(function (error) {
 					console.log(error);
 				});
+				// 获取重磅嘉宾列表
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBJB,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.userList = response.data.contents;
+					public_imgsrc(_this.userList)
+					// console.log('123',_this.userList);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取开幕式列表
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
+				.then(function (response) {
+					_this.KMS = response.data;
+					public_imgsrc([_this.KMS])
+					_this.playerOptions.poster = _this.KMS.imageUrl;
+					_this.playerOptions.sources[0].src = _this.KMS.shipin;
+				
+					// toUpperCase()
+					console.log('123',_this.KMS);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 				// 云逛展
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idYGZ,
-					"page": 1,
+					"page": _this.YGZPage,
 					"perPage": 4
 				})
 				.then(function (response) {
 					_this.YGZ = response.data.contents;
 					public_imgsrc(_this.YGZ)
+					if(_this.YGZ.length<4){
+							_this.YGZPage = 1;
+					}else{
+							_this.YGZPage = _this.YGZPage + 1;
+					}
+					// console.log('9999922311',_this.YGZ)
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -566,28 +618,6 @@
 				});
 				
 
-				// 获取重磅嘉宾列表
-				axios.post('api/v1/contents', {
-					"siteId": _obj.idSite,
-					"channelId": _obj.idZBJB,
-					"wheres":[ {
-						"column": "checked",
-						"operator": "=",
-						"value": "1"
-					}],
-					"page": 1,
-					"perPage": 30
-				})
-				.then(function (response) {
-					_this.userList = response.data.contents;
-					public_imgsrc(_this.userList)
-					// console.log('123',_this.userList);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
-
-
 
 				// http://47.98.233.45:8031/swagger/index.html
 				// 获取展商
@@ -619,7 +649,29 @@
 				
 			},
 			methods: {
-
+				ygzNext(){
+					var _this = this;
+					// 云逛展
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idYGZ,
+						"page": _this.YGZPage,
+						"perPage": 4
+					})
+					.then(function (response) {
+						_this.YGZ = response.data.contents;
+						public_imgsrc(_this.YGZ)
+						if(_this.YGZ.length<4){
+							_this.YGZPage = 1;
+						}else{
+							_this.YGZPage = _this.YGZPage + 1;
+						}
+						// console.log('9999922311',_this.YGZ)
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				}
 			},
 
 		})

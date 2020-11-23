@@ -59,9 +59,25 @@
 div.public-footer-nav:after {
 	border: none;
 }
-.public-footer-nav .van-tabbar-item__icon img {
+.public-footer-nav .van-tabbar-item img {
 	width: 0.41rem;
 	height: 0.41rem;
+}
+.public-footer-nav .van-tabbar-item:nth-child(1) img {
+	width: 0.44rem;
+	height: 0.47rem;
+}
+.public-footer-nav .van-tabbar-item:nth-child(2) img {
+	width: 0.45rem;
+	height: 0.45rem;
+}
+.public-footer-nav .van-tabbar-item:nth-child(4) img {
+	width: 0.46rem;
+	height: 0.45rem;
+}
+.public-footer-nav .van-tabbar-item:nth-child(5) img {
+	width: 0.49rem;
+	height: 0.38rem;
 }
 .public-footer-nav .van-tabbar-item:nth-child(3) {
 	position: relative;

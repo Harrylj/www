@@ -244,27 +244,27 @@
 		</div> -->
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+				<van-swipe-item v-for="(image, index) in [LXWM.imageUrl]" :key="index">
 					<img v-lazy="image" alt="">
-					<p>{{index}}</p>
+					<!-- <p>{{index}}</p> -->
 				</van-swipe-item>
 			</van-swipe>
 		</div>
-		<div class="zqxq-header">
-			<p>
+		<div class="zqxq-header" v-html="LXWM.body">
+			<!-- <p>
 				上海国际室内空气净化展览会起始于2004年，由上海市室内环境净化行业协会与上海博华国际展览有限公司联合主办，是国内较早的室内环境净化类细分专业展会……
-			</p>
+			</p> -->
 		</div>
 		<div class="index-body lxwm-body">
 			<div class="lxwm-body-div">
 				<h3>参展预定/合作咨询：</h3>
 				<ul>
-					<li><van-icon name="envelop-o"></van-icon>邮箱：ymg@yntv.cn</li>
-					<li><van-icon name="desktop-o"></van-icon>传真：65361744</li>
-					<li><van-icon name="phone-circle-o" ></van-icon>电话：0871-65310156</li>
+					<li><van-icon name="envelop-o"></van-icon>邮箱：{{HZZX.youxiang}}</li>
+					<li><van-icon name="desktop-o"></van-icon>传真：{{HZZX.chuanzhen}}</li>
+					<li><van-icon name="phone-circle-o" ></van-icon>电话：{{HZZX.dianhua}}</li>
 				</ul>
 				<p>参展请与展会主办方联系：</p>
-				<p>云南广播电视台，云南广电传媒集团</p>
+				<p>{{HZZX.czqyzhzbflx}}</p>
 				<!-- <div class="sczp-btn-tj-div">
 					<a href="column_gywm.html">
 					<van-button class="sczp-btn-tj" round block type="info" native-type="submit">
@@ -413,14 +413,37 @@
 				loading: false,
 				finished: false,
 				refreshing: false,
+				LXWM:'', // 联系我们内容
+				HZZX:'', // 合作咨询
 			},
 			created: function () {
+				var _this = this;
 				// console.log(1,document.documentElement.style.fontSize = '200px')
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				console.log(3,_rem)
-				// alert(document.documentElement.style.fontSize)
-				vant.Toast('提示看看');
+				// vant.Toast('提示看看');
+
+				// 获取联系我们内容
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idLXWM +'/'+_obj.idLXWM_CID)
+				.then(function (response) {
+					_this.LXWM = response.data;
+					public_imgsrc([_this.LXWM])
+					// console.log('123',_this.LXWM);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取合作咨询
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idHZZX +'/'+_obj.idHZZX_CID)
+				.then(function (response) {
+					_this.HZZX = response.data;
+					public_imgsrc([_this.HZZX])
+					console.log('123',_this.HZZX);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 				console.log(_obj.appkey)

@@ -119,9 +119,9 @@
 		<!-- <a href="single_search.html"><img class="jbjs-serach" src="images/search-01.png" alt=""></a> -->
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="13000">
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+				<van-swipe-item v-for="(image, index) in listSwipe" :key="index">
 					<a href="article_xwxq.html">
-					<img v-lazy="image" alt="">
+					<img v-lazy="image.imageUrl" alt="">
 					</a>
 				</van-swipe-item>
 			</van-swipe>
@@ -154,14 +154,15 @@
 		</van-tabs> -->
 		<div class="jbjs-body">
 			<div class="jbjs-body-list">
-				<a href="article_xwxq.html" v-for="index in 4" :key="index">
+				<!-- <a href="article_xwxq.html" v-for="(item,index) in listXW" :key="index"> -->
+				<a @click="goPage('abc.html',{'aa':11,'bb':22})" v-for="(item,index) in listXW" :key="index">
 					<div class="jbjs-body-item">
 						<div class="jbjs-body-item-content">
-							<h4>{{index}}中国教师报举办游以致学首 研学中国课程论坛</h4>
-							<h6>10月10日</h6>
+							<h4>{{item.summary}}</h4>
+							<h6>{{item.createdDate}}</h6>
 						</div>
-						<van-image v-show="index<3" class="jbjs-body-item-img" fit="fill"
-							src="images/index-user-01.png">
+						<van-image v-show="item.imageUrl.length>0" class="jbjs-body-item-img" fit="fill"
+							:src="item.imageUrl">
 						</van-image>
 					</div>
 				</a>
@@ -206,10 +207,54 @@
 				loading: false,
 				finished: false,
 				refreshing: false,
+				listXW:[], // 新闻动态
+				listSwipe:[], // 轮播推广位
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				// alert(GetQueryString("aaaa"));
+				var _this = this;
+				// 获取新闻动态
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXWDT,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.listXW = response.data.contents;
+					public_imgsrc(_this.listXW)
+					console.log('123',_this.listXW);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取轮播推广位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXWDT,
+					"wheres":[ {
+						"column": "top",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.listSwipe = response.data.contents;
+					public_imgsrc(_this.listSwipe)
+					console.log('321',_this.listSwipe);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				// vant.Toast('提示看看');
 			},
 			mounted: function () {
 

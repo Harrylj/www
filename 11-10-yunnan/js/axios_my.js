@@ -34,4 +34,13 @@ axios.interceptors.response.use(function (response) {
   }, function (error) {
     // 对响应错误做点什么
     return Promise.reject(error);
-  });
+});
+
+//网站访问量
+axios.get(public_obj().shopUrl+'api/services/app/statistics/state')
+.then(function (response) {
+  console.log('99991121',response);
+})
+.catch(function (error) {
+  console.log(error);
+});
