@@ -337,7 +337,7 @@
 			<div class="wbjj-menu-address" @click="showPopup">
 				<div class="van-dropdown-menu__bar">
 					<div role="button" tabindex="0" class="van-dropdown-menu__item">
-						<span class="van-dropdown-menu__title van-ellipsis">{{items[activeHC].channelName}}</span>
+						<span class="van-dropdown-menu__title van-ellipsis">{{items[activeHC].label}}</span>
 					</div>
 				</div>
 			</div>
@@ -492,7 +492,7 @@
 	<script type="text/javascript">
 	
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
 		Vue.use(vant.Lazyload, {
 			lazyComponent: true
@@ -536,25 +536,30 @@
 				// console.log(1,document.documentElement.style.fontSize = '200px')
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
-				// alert(document.documentElement.style.fontSize)
-				vant.Toast('提示看看');
-				// 获取会场地址
-				axios.get('api/v1/channels/23/62')
+				// vant.Toast('提示看看');
+				// // 获取会场地址
+				// axios.get('api/v1/channels/23/62')
+				// .then(function (response) {
+				// 	_this.option1 = []
+				// 	_this.items = response.data.children;
+				// 	// _this.option1 = response.data.children;
+				// 	console.log('11123',_this.items);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
+
+				
+				// 获取所有数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
 				.then(function (response) {
-					_this.option1 = []
-					// _this.option1 = response.data.children;
-					// response.data.children.forEach((element,index) => {
-					// 	var _a = {value:index,text:element.channelName}
-					// 	_this.option1.push(_a)
-					// });
-					_this.items = response.data.children;
-					// _this.option1 = response.data.children;
-					console.log(_this.option1);
+					_this.items = response.data.result.custom.BCodes.ExhibitionArea;
+					console.log('33222222111',_this.items);
+					console.log('33222222111',response.data.result.custom.BCodes.ExhibitionArea);
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
-				
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
@@ -594,8 +599,8 @@
 				selectQD(){
 					// vant.Toast(this.activeHC,this.activeZQ)
 					console.log(this.activeHC,this.activeZQ)
-					console.log(this.items[this.activeHC].channelName)
-					console.log(this.items[this.activeHC].children[this.activeZQ].channelName)
+					console.log(this.items[this.activeHC].label)
+					console.log(this.items[this.activeHC].children[this.activeZQ].label)
 					this.hidePopup()
 				},
 				reset(){

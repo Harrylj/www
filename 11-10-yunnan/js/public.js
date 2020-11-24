@@ -13,11 +13,14 @@ function public_obj() {
 	_obj.idZBDW = 36, // 主办单位
 	_obj.idZBJB = 34, // 重磅嘉宾
 	_obj.idKMS = 33, // 开幕式
+	_obj.idYJJB = 100, // 演讲嘉宾
 	_obj.idKMS_CID = 48, // 开幕式-内容id
 	_obj.idYGZ = 35, // 云逛展
 	_obj.idTSHW = 32, // 特色好物
 	_obj.idFLHD = 31, // 福利活动
 	_obj.idFHLT = 41, // 峰会论坛
+	_obj.idFHLT_list = '115,116,117,118,119', // 峰荟论坛子集数组
+	_obj.idFHLT_listJB = [120,121,122,123,124], // 峰会论坛子集特邀嘉宾列表
 	_obj.idLXWM = 40, // 联系我们
 	_obj.idLXWM_CID = 70, // 联系我们-内容id
 	_obj.idHZZX = 91, // 合作咨询
@@ -34,13 +37,16 @@ function public_obj() {
 // 处理图片路径,相对路径改为绝对路径
 function public_imgsrc(_obj){
 	_obj.forEach((element,index) => {
-		var file_src = element.fileUrl.split('@/')[1];
-		var image_src = element.imageUrl.split('@/')[1];
+		var file_src = element.fileUrl?element.fileUrl.split('@/')[1]:'';
+		var image_src = element.imageUrl?element.imageUrl.split('@/')[1]:'';
+		var video_src = element.imageUrl?element.videoUrl.split('@/')[1]:'';
 		_a = 'mobile/';
 		// 附件地址
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
 		_obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
+		// 视频地址
+		_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
@@ -98,7 +104,7 @@ function goPage(_src,_obj){
 // 返回上一页
 function public_return_page(){
 	window.history.back();
-	console.log('返回上一页')
+	// console.log('返回上一页')
 }
 
 (function (doc, win) {
@@ -121,13 +127,13 @@ function public_return_page(){
 			if (!clientWidth) return;
 			if (!doc.addEventListener) return;
 			if (clientWidth < 1080) {
-				console.log('111',clientWidth)
+				// console.log('111',clientWidth)
 				//              设置rem的js设置的字体大小
 				view_jsset_font = 100 * (clientWidth / 750);
 				//              最终的字体大小为rem字体/系数
 				// result_font = view_jsset_font / xs;
 				result_font = view_jsset_font;
-				console.log('222',view_jsset_font,result_font)
+				// console.log('222',view_jsset_font,result_font)
 				//              设置根字体大小
 				docEl.style.fontSize = result_font + 'px';
 			}

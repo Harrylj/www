@@ -50,7 +50,8 @@
 		,.jbjs-content h5
 		,.jbjs-body h2
 		,.jbjs-body h4
-		,.jbjs-body h6{
+		,.jbjs-body h6
+		,.jbjs-content p{
 			color: white;
 		}
 		.jbjs-header-right h3{
@@ -61,7 +62,8 @@
 			font-size: .27rem;
 			line-height: .5rem;
 		}
-		.jbjs-content h5{
+		.jbjs-content h5
+		,.jbjs-content p{
 			font-weight: 400;
 			font-size: .31rem;
 			line-height: .5rem;
@@ -132,31 +134,29 @@
 			>
 			</van-image>
 			<div class="jbjs-header-right">
-				<h3>嘉宾姓名</h3>
-				<p>嘉宾职称</p>
+				<h3>{{data_content.title}}</h3>
+				<p>{{data_content.job}}</p>
 			</div>
 		</div>
-		<div class="jbjs-content">
+		<div class="jbjs-content" v-html="data_content.body">
 			<h5>云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。</h5>
 		</div>
 		<div class="jbjs-body">
 			<h2>最新动态</h2>
 			<div class="jbjs-body-list">
-				<a href="#" v-for="index in 5" :key="index">
-				<div class="jbjs-body-item">
+				<div class="jbjs-body-item" @click="goPage('article_xwxq.html',{'id':item.id})" v-for="(item,index) in listXW" :key="index">
 					<div class="jbjs-body-item-content">
-						<h4>中国教师报举办游以致学首 研学中国课程论坛</h4>
-						<h6>10月10日</h6>
+						<h4>{{item.summary}}</h4>
+						<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 					</div>
 					<van-image
-					v-show="index<3"
+					v-show="item.imageUrl.length>0"
 					class="jbjs-body-item-img"
 					fit="fill"
-					src="images/index-user-01.png"
+					:src="item.imageUrl"
 					>
 					</van-image>
 				</div>
-			</a>
 			</div>
 		</div>
 	</div>
@@ -178,17 +178,52 @@
 			})
 		})
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		var app = new Vue({
 			el: '#app',
 			data: {
 				value: 2,
 				active: 3,
 				show: false,
+				data_content: '',
+				listXW:[], // 新闻动态
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _this = this;
+				// vant.Toast('提示看看');
+				// 获取嘉宾详情
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idYJJB +'/'+ qs2obj(window.location.href).id)
+				.then(function (response) {
+					_this.data_content = response.data;
+					public_imgsrc([_this.data_content])
+					// _this.playerOptions.poster = _this.KMS.imageUrl;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
+					console.log('123',_this.data_content);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				// 获取新闻动态
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXWDT,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.listXW = response.data.contents;
+					public_imgsrc(_this.listXW)
+					console.log('123',_this.listXW);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 

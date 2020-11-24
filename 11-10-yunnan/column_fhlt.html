@@ -109,6 +109,17 @@
 			margin-left: -.25rem;
 			width: .5rem;
 			background-color: #009BFE;
+		}
+		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		, .index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 3.5rem;
+		}
+		.index-ygz-list
+		,.index-tshw-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
 		}  
 	</style>
 </head>
@@ -122,35 +133,27 @@
 			</div>
 		</div>
 		<a href="single_fhlt_ltfl.html"><div class="fhlt-nav-more"></div></a>
-		<!-- <van-tabs v-model="active" scrollspy sticky>
-			<van-tab v-for="index in 8" :title="'选项 ' + index">
-			  内容 {{ index }}
-			</van-tab>
-		  </van-tabs>
-		<van-tabs v-model="active">
-			<van-tab title="标签 1">内容 1</van-tab>
-			<van-tab title="标签 2">内容 2</van-tab>
-			<van-tab title="标签 3">内容 3</van-tab>
-			<van-tab title="标签 4">内容 4</van-tab>
-			<van-tab title="标签 5">内容 5</van-tab>
-			<van-tab title="标签 6">内容 6</van-tab>
-		</van-tabs> -->
-		<van-tabs @click="onClick" :class="activeType?'fhlt-tab':''" v-model="active">
-			<van-tab v-for="(item,index) in 6" :title="'标签 ' + index">
+		<van-tabs @click="onClick" :class="activeType?'fhlt-tab':''" v-model="active" ellipsis="false" swipe-threshold="3">
+			<van-tab v-for="(item,index) in navFHLT" :key="index"  :title="item.channelName">
 				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
 					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
 						<div class="jbjs-body">
+							<!-- <div class="index-h2" style="padding-left: .3rem;">{{item.channelName}}</div> -->
 							<div class="index-swipe-02-father">
-								<div class="index-h2">演讲嘉宾{{index}}</div>
+								<div class="index-h2">演讲嘉宾</div>
 								<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth"
 									:show-indicators="false">
-									<van-swipe-item v-for="index in 7" :key="index">
+									<van-swipe-item v-for="(user,index) in listYJJB" :key="index" >
 										<a href="article_jbjs.html">
 											<div class="van-swipe-item-div">
-												<img src="images/index-user-01.png" alt="">
-												<h3>嘉宾{{index}}</h3>
-												<p>嘉宾职称</p>
-												<p v-show="index>2">嘉宾职称</p>
+												<!-- <img src="images/index-user-01.png" alt=""> -->
+												<van-image
+												fit="cover"
+												:src="user.imageUrl"
+												></van-image>
+												<h3 class="van-ellipsis">{{user.title}}</h3>
+												<p class="van-ellipsis">{{user.job}}</p>
+												<p class="van-ellipsis">{{user.jobTwo}}</p>
 											</div>
 										</a>
 									</van-swipe-item>
@@ -159,16 +162,18 @@
 							<div class="jjwb-fhlt index-ygz">
 								<div class="jjwb-fhlt-div">
 									<div class="index-ygz-list">
-										<div class="index-ygz-item" v-for="index in 2" :key="index">
-											<a href="column_fhlt_video.html">
-											<div class="index-live"><span></span>LIVE</div>
-											<img src="images/bg.png" alt="">
-											<h3 class="van-ellipsis">{{index}}首届“研学中国”论坛</h3>
-											<p class="van-ellipsis">2020.12.5</p>
-											</a>
+										<div class="index-ygz-item"  @click="goPage('column_fhlt_video.html',{'id':item.id})" v-for="(item,index) in listFHLT" :key="index">
+											<div class="index-live"><span></span>{{item.zT}}</div>
+											<!-- <img src="images/bg.png" alt=""> -->
+											<van-image
+											fit="fill"
+											src="https://img.yzcdn.cn/vant/cat.jpeg"
+											></van-image>
+											<h3 class="van-ellipsis">{{item.title}}</h3>
+											<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
 										</div>
 									</div>
-									<div class="index-ygz-list">
+									<!-- <div class="index-ygz-list">
 										<div class="index-ygz-item" v-for="index in 2" :key="index">
 												<a href="column_fhlt_video.html">
 											<div class="index-live"><span></span>回放</div>
@@ -177,7 +182,7 @@
 											<p class="van-ellipsis">2020.12.5</p>
 										</a>
 										</div>
-									</div>
+									</div> -->
 								</div>
 							</div>
 
@@ -207,7 +212,7 @@
 			// })
 		// })
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
 		Vue.use(vant.Lazyload, {
 			lazyComponent: true
@@ -217,7 +222,7 @@
 			data: {
 				swipeWidth: 2.68,
 				value: 0,
-				active: 5,
+				active: 0,
 				activeType:true,
 				show: false,
 				swipeImages: [
@@ -228,32 +233,163 @@
 				loading: false,
 				finished: false,
 				refreshing: false,
+				listFHLT:[], // 峰会论坛
+				listYJJB:[], // 演讲嘉宾
+				navFHLT:[], // 峰会论坛分类列表
 			},
 			created: function () {
-				if ( window.localStorage.getItem("key_fhlt_ltfl") == null ){
-					console.log("没有",window.localStorage.getItem("key_fhlt_ltfl"));
-				} else {
-					console.log("有",window.localStorage.getItem("key_fhlt_ltfl"));
-					this.active = parseInt(window.localStorage.getItem("key_fhlt_ltfl"))+1;
-				}
-				console.log('22',this.active)
+				var _this = this;
+				console.log('22index',this.active)
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth * _rem;
 				// vant.Toast('提示看看');
+				// 峰会论坛分类列表
+				this.getNavFHLT()
+				// 获取演讲嘉宾
+				// this.postListYJJB();
+				// // 获取峰会论坛
+				// this.postListFHLT();
+
 			},
 			mounted: function () {
 
 			},
 			beforeDestroy:function(){
 				console.log(11111111111)
-				window.localStorage.removeItem('key_fhlt_ltfl')
+				// window.localStorage.removeItem('key_fhlt_ltfl')
 			},
 			methods: {
+				setData(index){
+					var abc= window.localStorage.setItem('key_fhlt_ltfl',index)
+					var aaa = window.localStorage.getItem("key_fhlt_ltfl")
+					console.log('3222',index)
+					console.log('aaa',aaa)
+				},
 				onClick(name, title) {
 					this.activeType = false;
 					this.list = [];
-					console.log(title)
-					vant.Toast(title);
+					console.log(name,title)
+					this.setData(name)
+					// vant.Toast(title);
+					// 获取演讲嘉宾
+					this.postListYJJB(name)
+					// 获取峰会论坛
+					this.postListFHLT(name);
+				},
+				// 峰会论坛分类列表
+				getNavFHLT(){
+					var _this = this;
+					axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idFHLT )
+					.then(function (response) {
+						_this.navFHLT = response.data.children;
+						_this.navFHLT.unshift({'channelName':'全部'}); 
+						public_imgsrc(_this.navFHLT)
+						console.log('123456',_this.navFHLT);
+						if ( window.localStorage.getItem("key_fhlt_ltfl") == null ){
+						console.log("没有",window.localStorage.getItem("key_fhlt_ltfl"));
+						} else {
+							console.log("有选",window.localStorage.getItem("key_fhlt_ltfl"));
+							_this.active = parseInt(window.localStorage.getItem("key_fhlt_ltfl"));
+						}
+						if(_this.active>0){
+							// 获取演讲嘉宾
+							_this.postListYJJB(_this.active)
+							// 获取峰会论坛
+							_this.postListFHLT(_this.active);
+						}
+						else{
+							// 获取演讲嘉宾
+							_this.postListYJJB()
+							// 获取峰会论坛
+							_this.postListFHLT();
+						}
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				},
+				// 获取演讲嘉宾
+				postListYJJB(_index){
+					var _this = this;
+					var abc =  {
+						"siteId": _obj.idSite,
+						"groupNames":['tyyjyb'],
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
+						// "page": 1,
+						// "perPage": 30
+					};
+					_index?abc={
+						"siteId": _obj.idSite,
+						"channelId": _obj.idFHLT_listJB[_index-1],
+						// "wheres":[ {
+						// 	"column": "checked",
+						// 	"operator": "=",
+						// 	"value": "1"
+						// }],
+						// "page": 1,
+						// "perPage": 30
+					}:'';
+					axios.post('api/v1/contents',abc)
+					.then(function (response) {
+						_this.listYJJB = response.data.contents;
+						public_imgsrc(_this.listYJJB)
+						console.log('123',_this.listYJJB);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+					
+				},
+				// 获取峰会论坛
+				postListFHLT(_index){
+					var _this = this;
+					var abc =  {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idFHLT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+							},
+							{
+								"column": "ChannelId",
+								"operator": "In",
+								"value": _obj.idFHLT_list
+							}
+						],
+						"page": 1,
+						"perPage": 30
+					};
+					_index?abc={
+						"siteId": _obj.idSite,
+						"channelId": _obj.idFHLT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+							},
+							{
+								"column": "ChannelId",
+								"operator": "In",
+								"value": _this.navFHLT[_index].id
+							}
+						],
+						"page": 1,
+						"perPage": 30
+					}:'';
+					axios.post('api/v1/contents',abc)
+					.then(function (response) {
+						_this.listFHLT = response.data.contents;
+						public_imgsrc(_this.listFHLT)
+						console.log('123',_this.listFHLT);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
 				},
 				onLoad() {
 					setTimeout(() => {
@@ -261,12 +397,10 @@
 							this.list = [];
 							this.refreshing = false;
 						}
-
 						for (let i = 0; i < 10; i++) {
 							this.list.push(this.list.length + 1);
 						}
 						this.loading = false;
-
 						if (this.list.length >= 40) {
 							this.finished = true;
 						}

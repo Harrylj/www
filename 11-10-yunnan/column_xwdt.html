@@ -119,10 +119,8 @@
 		<!-- <a href="single_search.html"><img class="jbjs-serach" src="images/search-01.png" alt=""></a> -->
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="13000">
-				<van-swipe-item v-for="(image, index) in listSwipe" :key="index">
-					<a href="article_xwxq.html">
+				<van-swipe-item  @click="goPage('article_xwxq.html',{'id':image.id})" v-for="(image, index) in listSwipe" :key="index">
 					<img v-lazy="image.imageUrl" alt="">
-					</a>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -155,17 +153,15 @@
 		<div class="jbjs-body">
 			<div class="jbjs-body-list">
 				<!-- <a href="article_xwxq.html" v-for="(item,index) in listXW" :key="index"> -->
-				<a @click="goPage('abc.html',{'aa':11,'bb':22})" v-for="(item,index) in listXW" :key="index">
-					<div class="jbjs-body-item">
+					<div class="jbjs-body-item"  @click="goPage('article_xwxq.html',{'id':item.id})" v-for="(item,index) in listXW" :key="index">
 						<div class="jbjs-body-item-content">
 							<h4>{{item.summary}}</h4>
-							<h6>{{item.createdDate}}</h6>
+							<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 						</div>
 						<van-image v-show="item.imageUrl.length>0" class="jbjs-body-item-img" fit="fill"
 							:src="item.imageUrl">
 						</van-image>
 					</div>
-				</a>
 			</div>
 			<van-cell v-for="item in list" :key="item" :title="item" />
 		</div>
@@ -188,7 +184,7 @@
 			})
 		})
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
 		Vue.use(vant.Lazyload, {
 			lazyComponent: true
@@ -211,7 +207,6 @@
 				listSwipe:[], // 轮播推广位
 			},
 			created: function () {
-				// alert(GetQueryString("aaaa"));
 				var _this = this;
 				// 获取新闻动态
 				axios.post('api/v1/contents', {
@@ -228,7 +223,7 @@
 				.then(function (response) {
 					_this.listXW = response.data.contents;
 					public_imgsrc(_this.listXW)
-					console.log('123',_this.listXW);
+					// console.log('123',_this.listXW);
 				})
 				.catch(function (error) {
 					console.log(error);

@@ -167,8 +167,8 @@
 				<div class="index-h2">2020云南文博开幕式</div>
 				</a>
 				<div class="index-video-div">
-					<div class="index-live"><span></span>LIVE</div>
-					<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
+					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
 					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
 				</div>
 			</div>
@@ -178,12 +178,15 @@
 				<a href="column_fhlt.html"><div class="index-ygz-more">更多论坛<van-icon name="arrow" /></div></a>
 				<div class="jjwb-fhlt-div">
 					<div class="index-ygz-list">
-						<div class="index-ygz-item" v-for="index in 4" :key="index">
-							<div class="index-live" v-if="index<2"><span></span>LIVE</div>
-							<div class="index-live" v-if="index>=2"><span></span>回放</div>
-							<img src="images/bg.png" alt="">
-							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-							<p class="van-ellipsis">2020.12.5</p>
+						<div class="index-ygz-item"  @click="goPage('column_fhlt_video.html',{'id':item.id})" v-for="(item,index) in listFHLT" :key="index">
+							<div class="index-live"><span></span>{{item.zT}}</div>
+							<!-- <img src="images/bg.png" alt=""> -->
+							<van-image
+							fit="fill"
+							src="https://img.yzcdn.cn/vant/cat.jpeg"
+							></van-image>
+							<h3 class="van-ellipsis">{{item.title}}</h3>
+							<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
 						</div>
 					</div>
 					<!-- <div class="index-ygz-list">
@@ -201,21 +204,19 @@
 				<h2>新闻动态</h2>
 				<a href="column_xwdt.html"><div class="index-ygz-more">更多动态<van-icon name="arrow" /></div></a>
 				<div class="jbjs-body-list">
-					<a href="article_xwxq.html" v-for="index in 5" :key="index">
-					<div class="jbjs-body-item">
+					<div class="jbjs-body-item" @click="goPage('article_xwxq.html',{'id':item.id})" v-for="(item,index) in listXW" :key="index">
 						<div class="jbjs-body-item-content">
-							<h4>中国教师报举办游以致学首 研学中国课程论坛</h4>
-							<h6>10月10日</h6>
+							<h4>{{item.summary}}</h4>
+							<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 						</div>
 						<van-image
-						v-show="index<3"
+						v-show="item.imageUrl.length>0"
 						class="jbjs-body-item-img"
 						fit="fill"
-						src="images/index-user-01.png"
+						:src="item.imageUrl"
 						>
 						</van-image>
 					</div>
-					</a>
 				</div>
 			</div>
 
@@ -277,7 +278,7 @@
 	<script type="text/javascript">
 	
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
 		Vue.use(vant.Lazyload, {
 			lazyComponent: true
@@ -310,19 +311,80 @@
 						{
 							withCredentials: false,
 							type: 'application/x-mpegURL',
-							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
 							muted: false,
 							nativeAudioTracks:false,
 						}
 					]
 				},
+				KMS:[], // 开幕式
+				listXW:[], // 新闻动态
+				listFHLT:[], // 峰会论坛
 			},
 			created: function () {
-				// console.log(1,document.documentElement.style.fontSize = '200px')
+				var _this = this;
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
-				// alert(document.documentElement.style.fontSize)
-				vant.Toast('提示看看');
+				// vant.Toast('提示看看');
+				//开幕式播放量
+				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取开幕式列表
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
+				.then(function (response) {
+					_this.KMS = response.data;
+					public_imgsrc([_this.KMS])
+					_this.playerOptions.poster = _this.KMS.imageUrl;
+					_this.playerOptions.sources[0].src = _this.KMS.shipin;
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取峰会论坛
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idFHLT,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 4
+				})
+				.then(function (response) {
+					_this.listFHLT = response.data.contents;
+					public_imgsrc(_this.listFHLT)
+					console.log('123',_this.listFHLT);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取新闻动态
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXWDT,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.listXW = response.data.contents;
+					public_imgsrc(_this.listXW)
+					// console.log('123',_this.listXW);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 				console.log(_obj.appkey)

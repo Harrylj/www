@@ -151,11 +151,20 @@
 		}
 		.kms-btn-close{
 			position: fixed;
-			right: .4rem;
-			bottom: 9rem;
+			right: .1rem;
+			bottom: 8.2rem;
 			z-index: 2010;
 			color: white;
 			font-size: .3rem;
+			background-image: url(images/quanping.png);
+			background-size: .37rem .37rem;
+			background-repeat: no-repeat;
+			width: 1rem;
+			height: 1rem;
+			background-position: center center;
+		}
+		.public-header-title{
+			z-index: 9999;
 		}
 	</style>
 </head>
@@ -171,35 +180,49 @@
 			</div>
 		</div>
 		<div class="zhzj-video">
-			<div class="index-live"><span></span>LIVE</div>
-			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
-			<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+			<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{KMS.hits}}</div>
+			<!-- <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"
+			></video-player> -->
+			<div class="videoBox">
+				<video-player
+				  class="video-player vjs-custom-skin"
+				  ref="videoPlayer"
+				  :playsinline="true"
+				  :options="playerOptions"
+				  @play="onPlayerPlay($event)"
+				  @pause="onPlayerPause($event)"
+				></video-player>
+			  </div>
 		</div>
-		<div v-show="show" class="kms-btn-close" @click="hidePopup()">关闭</div>
-		<van-popup class="zhzj-mulu" v-model="show" :overlay="true" round position="bottom">
+		<!-- <button @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])">全屏</button> -->
+		<div v-show="show" class="kms-btn-close" @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])"></div>
+		<van-popup class="zhzj-mulu" :close-on-click-overlay="false" @click-overlay="onPlayerPlay(document.getElementsByClassName('video-player')[0])" v-model="show" :overlay="true" round position="bottom">
 			<div class="zhzj-mulu-title" v-show="!showJJ">
 				<h3>文博会开幕式直播现场</h3>
 				<div class="zhzj-btn-jj" @click="jianjie()">简介<van-icon name="arrow" /></div>
 			</div>
 			<div class="index-swipe-02-father" v-show="!showJJ">
-				<div class="index-h2">重磅嘉宾</div>
+				<div class="index-h2">演讲嘉宾</div>
 				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
-					<van-swipe-item v-for="index in 7" :key="index">
-						<a href="article_jbjs.html">
-						<div class="van-swipe-item-div">
-							<img src="images/index-user-01.png" alt="">
-							<h3>嘉宾{{index}}</h3>
-							<p>嘉宾职称</p>
-							<p v-show="index>2">嘉宾职称</p>
+					<van-swipe-item v-for="(user,index) in userList" :key="index">
+						<div class="van-swipe-item-div" @click="goPage('article_jbjs.html',{'id':user.id})">
+							<!-- <img src="images/index-user-01.png" alt=""> -->
+							<van-image
+							fit="cover"
+							:src="user.imageUrl"
+							></van-image>
+							<h3 class="van-ellipsis">{{user.title}}</h3>
+							<p class="van-ellipsis">{{user.job}}</p>
+							<p class="van-ellipsis">{{user.jobTwo}}</p>
 						</div>
-						</a>
 					</van-swipe-item>
 				</van-swipe>
 			</div>
 			<div class="kms-jianjie" v-show="showJJ">
 				<h3>简介</h3>
 				<p>
-					云南是一个多民族文化省份，有众多特色的文化产品尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团30万人次的观众参与，成为云南第一动漫展会品牌此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。
+					{{KMS.summary}}
 				</p>
 			</div>
 
@@ -218,7 +241,7 @@
 	<script src="js/videojs-contrib-hls.min.js"></script>
 	<script type="text/javascript">
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 挂载VueVideoPlayer插件
 		Vue.use(VueVideoPlayer)
 		var app = new Vue({
@@ -239,24 +262,96 @@
 						{
 							withCredentials: false,
 							type: 'application/x-mpegURL',
-							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
 							muted: false,
 							nativeAudioTracks:false,
 						}
 					]
 				},
+				videoDialogVisible: false, // 控制弹出层
+				// events: ['fullscreenchange'],
+				KMS:[], // 开幕式
+				userList:[], // 演讲嘉宾
 			},
 			created: function () {
+				var _this = this;
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
-				console.log(3,_rem)
-				console.log(1)
-				vant.Toast('提示看看');
+				// vant.Toast('提示看看');
+				//开幕式播放量
+				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取开幕式列表
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
+				.then(function (response) {
+					_this.KMS = response.data;
+					public_imgsrc([_this.KMS])
+					_this.playerOptions.poster = _this.KMS.imageUrl;
+					_this.playerOptions.sources[0].src = _this.KMS.shipin;
+					// console.log('123',_this.KMS);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取演讲嘉宾嘉宾列表
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBJB,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.userList = response.data.contents;
+					public_imgsrc(_this.userList)
+					// console.log('123',_this.userList);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 				this.mulu()
 			},
 			methods: {
+				// 视频全屏事件1
+				full(element) {	
+					//做兼容处理
+					if (element.requestFullscreen) {
+						element.requestFullscreen();
+					} else if (element.mozRequestFullScreen) {
+						element.mozRequestFullScreen();
+					} else if (element.msRequestFullscreen) {
+						element.msRequestFullscreen();
+					} else if (element.oRequestFullscreen) {
+						element.oRequestFullscreen();
+					} else if (element.webkitRequestFullscreen) {
+						element.webkitRequestFullScreen();
+					} else {
+						var docHtml = document.documentElement;
+						var docBody = document.body;
+						var videobox = document.getElementsByClassName("video-player");
+						var cssText = "width:100%;height:100%;overflow:hidden;";
+						docHtml.style.cssText = cssText;
+						docBody.style.cssText = cssText;
+						videobox.style.cssText = cssText + ";" + "margin:0px;padding:0px;";
+						document.IsFullScreen = true;
+					}
+				},
+				// onPlayerPlay(document.getElementsByClassName('video-player')[0])
+				// 视频全屏触发事件
+				onPlayerPlay(player) {
+					this.full(player)
+				},
 				showPopup() {
 					this.show = true;
 					this.showJJ = false; 
@@ -283,7 +378,8 @@
 					this.active = _index;
 					vant.Toast(this.active)
 					this.hidePopup()
-				}
+				},
+
 			},
 
 		})

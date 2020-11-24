@@ -12,7 +12,7 @@ axios.interceptors.request.use(function (config) {
 			    'X-SS-API-KEY': public_obj().appkey
       }
       // config.url = 'http://192.168.0.250:8032'+config.url
-      console.log('33333',config.url)
+      // console.log('33333',config.url)
     	/*
         if (config.method == 'get') {
             config.params = setNewData(config.params)

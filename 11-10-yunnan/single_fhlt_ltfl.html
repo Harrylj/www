@@ -29,7 +29,7 @@
 		}
 
 		.public-header-title {
-			background-color: #1D2D7E;
+			background-color:transparent;
 		}
 		.phtc-return{
 			right: 0;
@@ -64,8 +64,8 @@
 			</div>
 		</div>
 		<div class="ltfl-list">
-			<div class="ltfl-item" v-for="index in 7" :key="index" >
-				<a href="column_fhlt.html" @click="setData(index)">{{index}}智慧云南·文创赋能</a>
+			<div class="ltfl-item" v-for="(item,index) in listFHLT" :key="index" >
+				<a href="column_fhlt.html" @click="setData(index)">{{item.channelName}}</a>
 			</div>
 		</div>
 	</div>
@@ -87,7 +87,7 @@
 			// })
 		// })
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
 		Vue.use(vant.Lazyload, {
 			lazyComponent: true
@@ -107,18 +107,30 @@
 				loading: false,
 				finished: false,
 				refreshing: false,
+				listFHLT:[], // 峰会论坛分类列表
 			},
 			created: function () {
+				var _this = this;
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth * _rem;
 				// vant.Toast('提示看看');
+				// 峰会论坛分类列表
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idFHLT )
+				.then(function (response) {
+					_this.listFHLT = response.data.children;
+					public_imgsrc(_this.listFHLT)
+					console.log('123',_this.listFHLT);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 
 			},
 			methods: {
 				setData(index){
-					var abc= window.localStorage.setItem('key_fhlt_ltfl',index)
+					var abc= window.localStorage.setItem('key_fhlt_ltfl',index+1)
 					console.log(abc)
 				}
 			},

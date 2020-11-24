@@ -308,8 +308,7 @@
 				<!-- <img src="http://192.168.0.250:8032/mobile/upload/files/2020/11/3c74dca23e58e25f.jpg" alt=""> -->
 				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
 					<van-swipe-item v-for="(user,index) in userList" :key="index">
-						<a href="article_jbjs.html">
-						<div class="van-swipe-item-div">
+						<div class="van-swipe-item-div"  @click="goPage('article_jbjs.html',{'id':user.id})">
 							<!-- <img src="images/index-user-01.png" alt=""> -->
 							<van-image
 							fit="cover"
@@ -319,7 +318,6 @@
 							<p class="van-ellipsis">{{user.job}}</p>
 							<p class="van-ellipsis">{{user.jobTwo}}</p>
 						</div>
-						</a>
 					</van-swipe-item>
 				</van-swipe>
 			</div>
@@ -433,7 +431,7 @@
 	<script type="text/javascript">
 	
 		var _obj = public_obj();
-		console.log('222', public_obj())
+		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
 		Vue.use(vant.Lazyload, {
 			lazyComponent: true
@@ -485,9 +483,8 @@
 				var _this = this;
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
-				console.log(3,_rem)
-				// alert(document.documentElement.style.fontSize)
-				vant.Toast('提示看看');
+				// vant.Toast('提示看看');
+
 				//开幕式播放量
 				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
 				.then(function (response) {
@@ -547,9 +544,7 @@
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
 					_this.playerOptions.sources[0].src = _this.KMS.shipin;
-				
-					// toUpperCase()
-					console.log('123',_this.KMS);
+					// console.log('123',_this.KMS);
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -620,17 +615,17 @@
 
 
 				// http://47.98.233.45:8031/swagger/index.html
-				// 获取展商
+				// 获取展品
 				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
-				axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?status=1')
 				.then(function (response) {
 					console.log(response);
 				})
-				.catch(function (error) {
+				.catch(function (error) {z
 					console.log(error);
 				});
+				/*
 				// 获取展商
-				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
 				axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
 				.then(function (response) {
 					console.log(response);
@@ -638,7 +633,7 @@
 				.catch(function (error) {
 					console.log(error);
 				});
-
+				*/
 				
 				
 			},

@@ -38,21 +38,36 @@
 		p {
 			font-size: .3rem;
 		}
+		.index-ygz-more{
+			line-height: 1rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 0 .3rem;
+		}
+		.index-ygz-more img{
+			width: .29rem;
+			height: .29rem;
+			margin-left: .1rem;
+		}
 		.index-swipe-01{
 			position: relative;
-			height: 2.9rem;
-			padding-top: .2rem;
-			background-color:rgba(255, 255, 255, .08);
+			height: 3.6rem;
+			/* padding-top: .2rem; */
+			margin-top: -.2rem;
+			/* background-color:rgba(255, 255, 255, .08); */
 			border-radius: .2rem;
 		}
 		.index-swipe-01 img {
 			display: block;
 			margin: 0 auto;
-			width: 2rem;
-			height: 1.65rem;
+			width: 2.1rem;
+			height: 2.15rem;
 			margin-bottom: .2rem;
-			max-height: 1.6rem;
-			max-width: 2rem;
+			border-radius: .2rem;
+		}
+		.van-swipe__indicators{
+			bottom: .1rem;
 		}
 		.index-swipe-01 .van-swipe__indicator{
 			width: .08rem;
@@ -128,7 +143,7 @@
 			margin-right: .2rem;
 		}
 		.van-dropdown-menu{
-			width: 2.1rem;
+			width: 5.1rem;
 		}
 		.van-dropdown-menu,
 		.van-dropdown-menu__bar,
@@ -136,6 +151,7 @@
 		.van-popup{
 			background-color: transparent;
 		}
+		
 		.van-tree-select__nav{
 			background-color: transparent;
 		}
@@ -171,6 +187,9 @@
 		,.van-tree-select{
 			height: 10rem;
 		} */
+		.wbjj-body{
+			padding: 0 .3rem 1.8rem .3rem;
+		}
 		.van-tree-select__nav-item{
 			padding: .2rem .1rem;
 			text-align: center;
@@ -198,9 +217,6 @@
 			font-size: .31rem;
 			font-weight: bold;
 		}
-		.index-ygz-more{
-			padding: 0;
-		}
 		.index-h2{
 			display: flex;
 			align-items: center;
@@ -223,7 +239,12 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			width: 50%;
+			/* width: 33%; */
+			flex: 1;
+		}
+		.index-swipe-01-div a{
+			display: block;
+			width: 100%;
 		}
 		.index-swipe-01-div p{
 			line-height: .5rem;
@@ -242,23 +263,23 @@
 		,.wbjj-tsfl-item
 		,.wbjj-hhbg-item{
 			position: relative;
-			width: 2.3rem;
+			width: 3.33rem;
 			border-radius: .2rem;
 			overflow: hidden;
-			background-color: rgba(255, 255, 255, .08);
+			/* background-color: rgba(255, 255, 255, .08); */
 		}
 		.wbjj-rmzs-item img
 		,.wbjj-tsfl-item img
 		,.wbjj-hhbg-item img{
 			display: block;
 			width: 100%;
-			height: 1.7rem;
+			height: 2.5rem;
 			border-radius: .2rem;
 		}
 		.wbjj-rmzs-item h3{
-			color: #F3F7FA;
-			opacity: .6;
-			font-size: .28rem;
+			color: white;
+			/* opacity: .6; */
+			font-size: .31rem;
 			line-height: .8rem;
 			padding: 0 .2rem;
 			font-weight: 400;
@@ -272,8 +293,15 @@
 			bottom: 0;
 			left: 0;
 			font-size: .28rem;
+			padding-top: .2rem;
 			line-height: .8rem;
 			text-align: center;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+		}
+		.wbjj-line{
+			/* margin-top: .4rem; */
+			margin: .1rem -.3rem;
+			border-bottom: 1px solid rgba(255, 255, 255, .2);
 		}
 		.wbjj-hhbg-item{
 			background-color: transparent;
@@ -285,18 +313,18 @@
 		.wbjj-hhbg-item h3{
 			font-size: .31rem;
 			font-weight: 400;
-			line-height: .4rem;
+			line-height: .5rem;
 		}
 		.wbjj-hhbg-item p{
 			font-size: .25rem;
-			line-height: .4rem;
+			line-height: .5rem;
 			opacity: .6;
 		}
 		.van-dropdown-item .van-cell__title span{
 			font-size: .28rem;
 		}
 		.van-swipe-item{
-			padding-right: .3rem;
+			padding-right: .45rem;
 		}
 	</style>
 </head>
@@ -306,106 +334,109 @@
 		<div class="wbjj-header">
 			<!-- <div class="wbjj-header-address">昆明</div> -->
 			<van-icon class="wbjj-icon-address" name="location-o" ></van-icon>
-			<van-dropdown-menu class="wbjj-menu-address">
+			<div class="wbjj-menu-address" @click="showPopup">
+				<div class="van-dropdown-menu__bar">
+					<div role="button" tabindex="0" class="van-dropdown-menu__item">
+						<span class="van-dropdown-menu__title van-ellipsis">{{items[activeHC].channelName}}</span>
+					</div>
+				</div>
+			</div>
+			<!-- <van-dropdown-menu class="wbjj-menu-address">
 				<van-dropdown-item v-model="value1" @change="addreeMenu(value1)" :options="option1" ></van-dropdown-item>
-			</van-dropdown-menu>
-			<div class="wbjj-btn-search"><van-icon name="search" ></van-icon>请输入关键词</div>
-			<!-- <img src="images/search-01.png" alt=""> -->
+			</van-dropdown-menu> -->
+			<div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div>
+			<!-- <div class="wbjj-btn-search"><van-icon name="search" ></van-icon>请输入关键词</div> -->
 		</div>
-		<div class="index-body">
-			<van-tree-select height="11rem" :items="items" :main-active-index.sync="activeContent">
-				<template #content>
-				  <!-- <van-image
-					v-if="activeContent === 0"
-					src="https://img.yzcdn.cn/vant/apple-1.jpg"
-				  ></van-image>
-				  <van-image
-					v-if="activeContent === 1"
-					src="https://img.yzcdn.cn/vant/apple-2.jpg"
-				  ></van-image> -->
-				  <div class="wbjj-content" v-if="activeContent === index-1" v-for="index in items.length" :key="index">
-					<div class="wbjj-bp index-ygz" v-if="activeContent===0">
-						<div class="index-h2">{{items[current].text}}<span></span>爆品</div>
-						<div class="index-header-swipe">
-							<van-swipe class="index-swipe-01" :autoplay="130000" @change="onChange" >
-								<van-swipe-item v-for="index in items" :key="index">
-									<div class="index-swipe-01-div" v-for="(image, index) in swipeImages" :key="index">
-										<a :href="index">
-										<img v-lazy="image" alt=""/>
-										<p class="van-ellipsis">{{index}}条纹瓷器</p>
-										</a>
-									</div>
-								</van-swipe-item>
-							</van-swipe>
+		<div class="index-body wbjj-body">
+			
+			<div class="wbjj-bp index-ygz">
+				<div class="index-h2">爆品</div>
+				<div class="index-header-swipe">
+					<van-swipe class="index-swipe-01" :autoplay="131000" >
+						<van-swipe-item v-for="index in 2" :key="index">
+							<div class="index-swipe-01-div" v-for="(image, index) in swipeImages" :key="index">
+								<a :href="index">
+								<img v-lazy="image" alt=""/>
+								<p class="van-ellipsis">{{index}}条纹瓷器</p>
+								</a>
+							</div>
+						</van-swipe-item>
+					</van-swipe>
+				</div>
+			</div>
+			<div class="wbjj-rmzs index-ygz">
+				<div class="index-h2">热门展商</div>
+				<a href="single_wbjj_zs.html"><div class="index-ygz-more">更多展商<van-icon name="arrow" /></div></a>
+				<div class="wbjj-rmzs-div">
+					<div class="wbjj-rmzs-list">
+						<div class="wbjj-rmzs-item" v-for="index in 2" :key="index">
+							<a href="#">
+							<img src="images/bg.png" alt="">
+							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+							</a>
 						</div>
 					</div>
-					<div class="wbjj-bp index-ygz" v-if="activeContent!=0">
-						<div class="index-h2">{{index}}爆品</div>
-						<div class="index-header-swipe">
-							<van-swipe class="index-swipe-01" :autoplay="13000" >
-								<van-swipe-item v-for="index in 2" :key="index">
-									<div class="index-swipe-01-div" v-for="(image, index) in swipeImages" :key="index">
-										<a :href="index">
-										<img v-lazy="image" alt=""/>
-										<p class="van-ellipsis">{{index}}条纹瓷器</p>
-										</a>
-									</div>
-								</van-swipe-item>
-							</van-swipe>
+				</div>
+			 </div>
+			 <div class="wbjj-line"></div>
+			 <div class="wbjj-tsfl index-ygz">
+				<div class="index-h2">特色分类</div>
+				<div class="wbjj-tsfl-div">
+					<div class="wbjj-tsfl-list">
+						<div class="wbjj-tsfl-item" v-for="index in 2" :key="index">
+							<a href="single_wbjj_zp.html">
+							<img src="images/bg.png" alt="">
+							<p class="van-ellipsis">类型{{index}}</p>
+							</a>
 						</div>
 					</div>
-					<div class="wbjj-rmzs index-ygz">
-						<div class="index-h2">{{index}}热门展商</div>
-						<a href="single_wbjj_zs.html"><div class="index-ygz-more">更多展商<van-icon name="arrow" /></div></a>
-						<div class="wbjj-rmzs-div">
-							<div class="wbjj-rmzs-list">
-								<div class="wbjj-rmzs-item" v-for="index in 2" :key="index">
-									<a href="#">
-									<img src="images/bg.png" alt="">
-									<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-									</a>
-								</div>
-							</div>
+				</div>
+			 </div>
+			 <div class="wbjj-hhbg index-ygz">
+				<div class="index-h2">好货必逛</div>
+				<div class="wbjj-hhbg-div">
+					<div class="wbjj-hhbg-list">
+						<div class="wbjj-hhbg-item" v-for="index in 2" :key="index">
+							<a href="#">
+							<img src="images/bg.png" alt="">
+							<h3 class="van-ellipsis">{{index}}彩帮陶瓷花顶顶顶顶</h3>
+							<p class="van-ellipsis">36人正在逛</p>
+							</a>
 						</div>
-					 </div>
-					 <div class="wbjj-tsfl index-ygz">
-						<div class="index-h2">{{index}}特色分类</div>
-						<div class="wbjj-tsfl-div">
-							<div class="wbjj-tsfl-list">
-								<div class="wbjj-tsfl-item" v-for="index in 2" :key="index">
-									<a href="single_wbjj_zp.html">
-									<img src="images/bg.png" alt="">
-									<p class="van-ellipsis">类型{{index}}</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					 </div>
-					 <div class="wbjj-hhbg index-ygz">
-						<div class="index-h2">{{index}}好货必逛</div>
-						<div class="wbjj-hhbg-div">
-							<div class="wbjj-hhbg-list">
-								<div class="wbjj-hhbg-item" v-for="index in 2" :key="index">
-									<a href="#">
-									<img src="images/bg.png" alt="">
-									<h3 class="van-ellipsis">{{index}}彩帮陶瓷花顶顶顶顶</h3>
-									<p class="van-ellipsis">36人正在逛</p>
-									</a>
-								</div>
-							</div>
-						</div>
-					 </div>
-				  </div>
-				  
-
-				</template>
-			</van-tree-select>
-
-			
-			
+					</div>
+				</div>
+			 </div>
 
 		</div>
-		
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames">
+				<van-collapse-item title="会场" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in items" :key="index">
+							{{item.channelName}}{{index}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="(item,index) in items[activeHC].children" :key="index">
+							{{item.channelName}}{{index}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<!-- <van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+							展区{{index}}
+						</div>
+					</div>
+				</van-collapse-item> -->
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">重置</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
 		<van-tabbar class="public-footer-nav" v-model="active">
 			<!-- <van-tabbar-item badge="3">
 				<span>首页</span>
@@ -481,6 +512,7 @@
 				swipeImages: [
 					'https://img.yzcdn.cn/vant/apple-1.jpg',
 					'https://img.yzcdn.cn/vant/apple-2.jpg',
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
 				],
 				active: 4, // 底部导航栏选中值
 				icon: {
@@ -494,7 +526,10 @@
 					{ text: '昆明2三生三世', value: 1 },
 					{ text: '昆明3', value: 2 },
 				],
-    
+				activeNames: ['1','2'],
+				show: false,
+				activeHC:0,
+				activeZQ:0,
 			},
 			created: function () {
 				var _this = this;
@@ -508,17 +543,28 @@
 				.then(function (response) {
 					_this.option1 = []
 					// _this.option1 = response.data.children;
-					response.data.children.forEach((element,index) => {
-						var _a = {value:index,text:element.channelName}
-						_this.option1.push(_a)
-					});
+					// response.data.children.forEach((element,index) => {
+					// 	var _a = {value:index,text:element.channelName}
+					// 	_this.option1.push(_a)
+					// });
+					_this.items = response.data.children;
 					// _this.option1 = response.data.children;
 					console.log(_this.option1);
 				})
 				.catch(function (error) {
 					console.log(error);
 				});
+
 				
+				// 获取所有数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				.then(function (response) {
+					
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
@@ -530,6 +576,43 @@
 				onChange(index) {
 					this.current = index;
 				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				},
+				selectHC(_index){
+					this.activeHC = _index;
+					vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					// vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					console.log(this.items[this.activeHC].channelName)
+					console.log(this.items[this.activeHC].children[this.activeZQ].channelName)
+					this.hidePopup()
+				},
+				reset(){
+					this.activeHC = 0;
+					this.activeZQ = 0;
+					console.log('重置')
+				}
 			},
 
 		})
