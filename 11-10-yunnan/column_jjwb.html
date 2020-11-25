@@ -106,7 +106,7 @@
 		}
 		.jbjs-body>h2{
 			font-size: .35rem;
-			line-height: 1rem;
+			line-height: 1.2rem;
 		}
 		.jbjs-body-item{
 			background-color: rgba(255, 255, 255, .08);
@@ -162,17 +162,20 @@
 <body>
 	<div class="index jjwb" id="app" v-cloak>
 		<div class="index-body">
+			<a href="column_kms.html">
 			<div class="index-video">
-				<a href="column_kms.html">
 				<div class="index-h2">2020云南文博开幕式</div>
-				</a>
 				<div class="index-video-div">
 					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
 					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
-					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+					<van-image
+							fit="cover"
+							:src="playerOptions.poster"
+					></van-image>
+					<!-- <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player> -->
 				</div>
 			</div>
-			
+			</a>
 			<div class="jjwb-fhlt index-ygz">
 				<div class="index-h2">峰会论坛</div>
 				<a href="column_fhlt.html"><div class="index-ygz-more">更多论坛<van-icon name="arrow" /></div></a>

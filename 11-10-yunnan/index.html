@@ -75,7 +75,7 @@
 			margin-top: .2rem;
 		}
 		.index-nav-01-div img{
-			width: 3.3rem;
+			width: 3.35rem;
 			height: 2.12rem;
 		}
 		.index-nav {
@@ -149,9 +149,12 @@
 			flex-wrap: wrap;
 			justify-content: space-between;
 		}
+		.index-ygz-list{
+			padding-bottom: .3rem;
+		}
 		.index-ygz-item{
 			position: relative;
-			width: 3.3rem;
+			width: 3.35rem;
 			height: 4.8rem;
 			margin-bottom: .2rem;
 		}
@@ -186,11 +189,13 @@
 			position: relative;
 			padding-bottom: .1rem;
 		}
-		.index-tshw-item img{
-			width: 3.3rem;
+		/* .index-tshw-item img{ */
+		.index-tshw-item .van-image{
+			width: 3.35rem;
 			height: 2.5rem;
 			border-radius: .2rem;
 			margin-bottom: .1rem;
+			overflow: hidden;
 		}
 		.index-tshw-item h3,
 		.index-tshw-item p{
@@ -205,7 +210,8 @@
 		}
 		.index-tshw-item p{
 			font-size: .25rem;
-			color: #8B909E;
+			color: white;
+			opacity: .6;
 		}
 		
 		.index-logo-nav-list{
@@ -260,6 +266,10 @@
 		.index-xbdw .index-dw-item{
 			margin-bottom: .2rem;
 		}
+		.index-hzs{
+			padding-top: .5rem;
+			padding-bottom: .25rem;
+		}
 	</style>
 </head>
 
@@ -290,16 +300,22 @@
 					<a href="column_wbjj.html"><img src="images/index-nav-01-04.png" alt=""></a>
 				</div>
 			</div>
+			<a href="column_kms.html">
 			<div class="index-video">
-				<a href="column_kms.html">
+				
 				<div class="index-h2">2020云南文博开幕式</div>
-				</a>
+				
 				<div class="index-video-div">
 					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
 					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
-					<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+					<van-image
+							fit="cover"
+							:src="playerOptions.poster"
+					></van-image>
+					<!-- <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player> -->
 				</div>
 			</div>
+			</a>
 			<!-- 
 			<h2 style="color: white;">{{userList.length}}</h2>
 			<h2 style="color: white;">{{userList}}</h2> -->
@@ -339,14 +355,33 @@
 					</div>
 				</div>
 			</div>
+			<div class="index-line"></div>
+			<div class="index-tshw index-hzs">
+				<div class="index-tshw-list">
+					<div class="index-tshw-item" v-for="(goods,index) in 4" :key="index">
+						<!-- <div class="index-live"><span></span>LIVE</div> -->
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image
+							fit="contain"
+							:src="goods.logo"
+							><template v-slot:error>加载失败</template></van-image>
+						<h3 class="van-ellipsis">{{goods.exhibitorName}}123</h3>
+					</div>
+				</div>
+			</div>
+			<div class="index-line"></div>
 			<div class="index-tshw">
 				<div class="index-h2">特色好物</div>
 				<div class="index-tshw-list">
-					<div class="index-tshw-item" v-for="index in 4" :key="index">
+					<div class="index-tshw-item" v-for="(goods,index) in listGoods" :key="index">
 						<!-- <div class="index-live"><span></span>LIVE</div> -->
-						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}彩帮陶瓷花瓶摆件</h3>
-						<p class="van-ellipsis">36人正在逛</p>
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image
+							fit="contain"
+							:src="goods.logo"
+							><template v-slot:error>加载失败</template></van-image>
+						<h3 class="van-ellipsis">{{goods.exhibitorName}}</h3>
+						<p class="van-ellipsis">{{goods.apphit}}人正在浏览</p>
 					</div>
 				</div>
 			</div>
@@ -419,6 +454,7 @@
 
 	</script>
 	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
 	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/axios.min.js"></script>
@@ -429,7 +465,8 @@
 
 
 	<script type="text/javascript">
-	
+		// 引入qs
+		var qs = Qs;
 		var _obj = public_obj();
 		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
@@ -458,7 +495,7 @@
 				playerOptions: {
 					autoplay: false,
 					controls: true,
-					poster: "images/bg.png", //你的封面地址
+					// poster: "images/bg.png", //你的封面地址
 					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
 					sources: [
 						{
@@ -478,6 +515,12 @@
 				XBDW:[], // 协办单位
 				KMS:[], // 开幕式
 				YGZPage:1, //云逛展翻页
+				formData:{ // 特色好物列表请求数组
+					SkipCount:0,
+					Position:[],
+					MaxResultCount:4,
+				},
+				listGoods: [], // 特色好物列表
 			},
 			created: function () {
 				var _this = this;
@@ -612,11 +655,13 @@
 					console.log(error);
 				});
 				
-
+				// 获取特色好物
+				this.getGoods()
 
 				// http://47.98.233.45:8031/swagger/index.html
 				// 获取展品
 				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				/*
 				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?status=1')
 				.then(function (response) {
 					console.log(response);
@@ -624,6 +669,7 @@
 				.catch(function (error) {z
 					console.log(error);
 				});
+*/
 				/*
 				// 获取展商
 				axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
@@ -644,9 +690,22 @@
 				
 			},
 			methods: {
+				// 获取特色好物
+				getGoods(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods =  response.data.result.items;
+					})
+				},
+				// 云逛展
 				ygzNext(){
 					var _this = this;
-					// 云逛展
 					axios.post('api/v1/contents', {
 						"siteId": _obj.idSite,
 						"channelId": _obj.idYGZ,

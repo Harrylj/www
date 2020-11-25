@@ -119,6 +119,9 @@
 		.zqsl-btn-footer{
 			padding: .3rem;
 		}
+		.index-ygz-item p{
+			font-size: .28rem;
+		}
 	</style>
 </head>
 
@@ -136,10 +139,10 @@
 			<img class="zp-search" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 7" :key="index">
-						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-						<p class="van-ellipsis">36人正在浏览</p>
+					<div class="index-ygz-item" v-for="(shop,index) in shops" :key="index">
+						<img :src="shop.logo" alt="">
+						<h3 class="van-ellipsis">{{shop.name}}</h3>
+						<p class="van-ellipsis">{{items?items[qs2obj(window.location.href).HC].label:''}}{{items?items[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].label:''}}</p>
 					</div>
 				</div>
 			</div>
@@ -171,6 +174,7 @@
 
 	</script>
 	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
 	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/axios.min.js"></script>
@@ -184,6 +188,8 @@
 				navHeader()
 			})
 		})
+		// 引入qs
+		var qs = Qs;
 		var _obj = public_obj();
 		 
 		var app = new Vue({
@@ -195,26 +201,27 @@
 				show: false,
 				activeHC:1,
 				activeZQ:1,
+				formData:{ // 展商列表请求数组
+					SkipCount:0,
+					Position:[],
+					MaxResultCount:10,
+				},
+				shops:[], // 展商列表
+				items:[], // 展会展区
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _this = this;
+				// vant.Toast('提示看看');
 				// 获取展商
-				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
-				axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList')
+				this.getShops();
+
+				// 获取所有数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
 				.then(function (response) {
-					console.log(response);
+					_this.items = response.data.result.custom.BCodes.ExhibitionArea;
+					console.log('33222222111',_this.items);
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
-				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
-				// .then(function (response) {
-				// 	console.log(response);
-				// })
-				// .catch(function (error) {
-				// 	console.log(error);
-				// });
+
 			},
 			mounted: function () {
 
@@ -254,6 +261,34 @@
 					this.activeHC = 1;
 					this.activeZQ = 1;
 					console.log('重置')
+				},
+				getShops(){
+					var _this = this;
+					this.formData.Position = [qs2obj(window.location.href).position1,qs2obj(window.location.href).position2];
+					// console.log('111111222222',qs2obj(window.location.href).position1,qs2obj(window.location.href).position2)
+					// console.log('99111118778',this.formData.Position)
+					this.formData.SkipCount = 0;
+					this.formData.MaxResultCount = 50;
+					// this.formData.SkipCount += 10
+					axios.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList', {
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					}).then(response =>{
+						_this.shops = response.data.result.items;
+						console.log(response.data.result.items)
+						// res.result.items.forEach(element => {
+						// 	this.list.push(element)
+						// })
+						// this.loading = false
+						// if (!res || !res.result || res.result.items == 0) {
+						// 	this.finished = true
+						// }
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
 				}
 			},
 

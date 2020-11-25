@@ -58,13 +58,16 @@
 			/* background-color:rgba(255, 255, 255, .08); */
 			border-radius: .2rem;
 		}
-		.index-swipe-01 img {
+		/* .index-swipe-01 img { */
+		.index-swipe-01 img
+		,.index-swipe-01 .van-image {
 			display: block;
 			margin: 0 auto;
 			width: 2.1rem;
 			height: 2.15rem;
 			margin-bottom: .2rem;
 			border-radius: .2rem;
+			overflow: hidden;
 		}
 		.van-swipe__indicators{
 			bottom: .1rem;
@@ -252,6 +255,12 @@
 			opacity: .6;
 			text-align: center;
 		}
+		.wbjj-rmzs{
+			min-height: 4.3rem;
+		}
+		.wbjj-hhbg{
+			min-height: 4.5rem;
+		}
 		.wbjj-rmzs-list
 		,.wbjj-tsfl-list
 		,.wbjj-hhbg-list{
@@ -306,9 +315,16 @@
 		.wbjj-hhbg-item{
 			background-color: transparent;
 		}
-		.wbjj-hhbg-item img{
+		#app .van-image__error{
+			color: #666666;
+		}
+		/* .wbjj-hhbg-item img */
+		.wbjj-hhbg-item .van-image{
+			width: 100%;
 			height: 2.3rem;
 			margin-bottom: .2rem;
+			border-radius: .2rem;
+			overflow: hidden;
 		}
 		.wbjj-hhbg-item h3{
 			font-size: .31rem;
@@ -348,16 +364,20 @@
 			<!-- <div class="wbjj-btn-search"><van-icon name="search" ></van-icon>请输入关键词</div> -->
 		</div>
 		<div class="index-body wbjj-body">
-			
 			<div class="wbjj-bp index-ygz">
-				<div class="index-h2">爆品</div>
+				<div class="index-h2">爆品推荐</div>
 				<div class="index-header-swipe">
-					<van-swipe class="index-swipe-01" :autoplay="131000" >
-						<van-swipe-item v-for="index in 2" :key="index">
-							<div class="index-swipe-01-div" v-for="(image, index) in swipeImages" :key="index">
-								<a :href="index">
-								<img v-lazy="image" alt=""/>
-								<p class="van-ellipsis">{{index}}条纹瓷器</p>
+					<van-swipe class="index-swipe-01" :autoplay="15000" >
+						<van-swipe-item>
+							<div class="index-swipe-01-div" v-for="(hot, index) in listHot" :key="index">
+							<div class="index-swipe-01-div">
+								<a :href="hot.webSiteUrl">
+								<!-- <img v-lazy="hot.logo" alt=""/> -->
+								<van-image
+								fit="contain"
+								:src="hot.logo"
+								><template v-slot:error>加载失败</template></van-image>
+								<p class="van-ellipsis">{{hot.exhibitorName}}</p>
 								</a>
 							</div>
 						</van-swipe-item>
@@ -366,28 +386,29 @@
 			</div>
 			<div class="wbjj-rmzs index-ygz">
 				<div class="index-h2">热门展商</div>
-				<a href="single_wbjj_zs.html"><div class="index-ygz-more">更多展商<van-icon name="arrow" /></div></a>
+				<div class="index-ygz-more" @click="goPage('single_wbjj_zs.html',{'position1':items[activeHC].value,'position2':items[activeHC].children[activeZQ].value,'HC':activeHC,'ZQ':activeZQ})">更多展商<van-icon name="arrow" /></div>
 				<div class="wbjj-rmzs-div">
 					<div class="wbjj-rmzs-list">
-						<div class="wbjj-rmzs-item" v-for="index in 2" :key="index">
-							<a href="#">
-							<img src="images/bg.png" alt="">
-							<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-							</a>
+						<div class="wbjj-rmzs-item" v-for="(shop,index) in shops" :key="index">
+							<!-- <img src="images/bg.png" alt=""> -->
+							<img :src="shop.logo" alt="">
+							<h3 class="van-ellipsis">{{shop.name}}</h3>
 						</div>
 					</div>
 				</div>
 			 </div>
 			 <div class="wbjj-line"></div>
 			 <div class="wbjj-tsfl index-ygz">
-				<div class="index-h2">特色分类</div>
+				<div class="index-h2">特色展品</div>
 				<div class="wbjj-tsfl-div">
 					<div class="wbjj-tsfl-list">
-						<div class="wbjj-tsfl-item" v-for="index in 2" :key="index">
-							<a href="single_wbjj_zp.html">
-							<img src="images/bg.png" alt="">
-							<p class="van-ellipsis">类型{{index}}</p>
-							</a>
+						<div class="wbjj-tsfl-item" 
+						@click="goPage('single_wbjj_zp.html',{'type':typeGoods[index].value,'HC':activeHC,'ZQ':activeZQ})"	
+						v-for="(goods,index) in typeGoods" :key="index">
+							<!-- <a href="single_wbjj_zp.html"> -->
+							<img :src="goods.tag" alt="">
+							<p class="van-ellipsis">{{goods.label}}</p>
+							<!-- </a> -->
 						</div>
 					</div>
 				</div>
@@ -396,11 +417,15 @@
 				<div class="index-h2">好货必逛</div>
 				<div class="wbjj-hhbg-div">
 					<div class="wbjj-hhbg-list">
-						<div class="wbjj-hhbg-item" v-for="index in 2" :key="index">
-							<a href="#">
-							<img src="images/bg.png" alt="">
-							<h3 class="van-ellipsis">{{index}}彩帮陶瓷花顶顶顶顶</h3>
-							<p class="van-ellipsis">36人正在逛</p>
+						<div class="wbjj-hhbg-item" v-for="(goods,index) in listGoods" :key="index">
+							<a :href="goods.webSiteUrl">
+							<!-- <img :src="goods.logo" alt=""> -->
+							<van-image
+							fit="contain"
+							:src="goods.logo"
+							><template v-slot:error>加载失败</template></van-image>
+							<h3 class="van-ellipsis">{{goods.exhibitorName}}</h3>
+							<p class="van-ellipsis">{{goods.apphit}}人正在浏览</p>
 							</a>
 						</div>
 					</div>
@@ -413,14 +438,14 @@
 				<van-collapse-item title="会场" name="1">
 					<div class="zqsl-sx-list zqsl-sx-hc">
 						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in items" :key="index">
-							{{item.channelName}}{{index}}
+							{{item.label}}
 						</div>
 					</div>
 				</van-collapse-item>
 				<van-collapse-item title="展区" name="2">
 					<div class="zqsl-sx-list zqsl-sx-zq">
 						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="(item,index) in items[activeHC].children" :key="index">
-							{{item.channelName}}{{index}}
+							{{item.label}}
 						</div>
 					</div>
 				</van-collapse-item>
@@ -480,6 +505,7 @@
 
 	</script>
 	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
 	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/axios.min.js"></script>
@@ -490,7 +516,8 @@
 
 
 	<script type="text/javascript">
-	
+		// 引入qs
+		var qs = Qs;
 		var _obj = public_obj();
 		 
 		// 自动注册 Lazyload 组件,可以配置额外的选项
@@ -505,7 +532,7 @@
 			data: {
 				current: 0,// 指示器
 				activeContent: 0,//当前显示内容
-      			items: [
+      			items: [ // 展会展区
 					  { text: '全部展区' },{ text: 'a展区' }, { text: 'b展区' }, { text: 'c展区' }
 					  ],
 				swipeWidth:2.68,
@@ -528,8 +555,17 @@
 				],
 				activeNames: ['1','2'],
 				show: false,
-				activeHC:0,
+				activeHC:2,
 				activeZQ:0,
+				formData:{ // 展商列表请求数组
+					SkipCount:0,
+					Position:[],
+					MaxResultCount:2,
+				},
+				shops: [], // 展商列表
+				listGoods: [], // 展品列表
+				typeGoods: [], // 展品类型
+				listHot:[], // 爆品推荐
 			},
 			created: function () {
 				var _this = this;
@@ -548,18 +584,30 @@
 				// .catch(function (error) {
 				// 	console.log(error);
 				// });
-
+				// /api/services/app/ Exhibit/GetCachePageList
 				
-				// 获取所有数据
+				// 获取所有配置数据
 				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
 				.then(function (response) {
 					_this.items = response.data.result.custom.BCodes.ExhibitionArea;
-					console.log('33222222111',_this.items);
-					console.log('33222222111',response.data.result.custom.BCodes.ExhibitionArea);
+					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
+					console.log('33222222111',_this.typeGoods);
+					// 获取展商
+					_this.getShops()
+					// 获取展品
+					_this.getGoods();
+					// 获取爆品推荐
+					_this.getHot()
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				/*
+				// 获取所有展品
+				axios.get(_obj.shopUrl+'api/services/app/ Exhibit/GetCachePageList?Status=1')
+				.then(function (response) {
+					_this.listGoods = response.data.result.items;
+					// _this.items = response.data;
+					console.log('11133222222111',_this.listGoods);
+				})
+				*/
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
@@ -601,12 +649,88 @@
 					console.log(this.activeHC,this.activeZQ)
 					console.log(this.items[this.activeHC].label)
 					console.log(this.items[this.activeHC].children[this.activeZQ].label)
-					this.hidePopup()
+					// 获取展商
+					this.getShops();
+					// 获取展品
+					this.getGoods();
+					// 获取爆品推荐
+					this.getHot()
+					this.hidePopup();
 				},
 				reset(){
 					this.activeHC = 0;
 					this.activeZQ = 0;
 					console.log('重置')
+				},
+				// 展商
+				getShops(){
+					// if(this.navs[this.idx1].value||this.navList2[this.idx2].value){
+					// 	this.formData.Position = [this.navs[this.idx1].value,this.navList2[this.idx2].value]
+					// }
+					// this.formData.SkipCount += 10
+					// ajax.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList', {
+					// 	params:this.formData,
+					// 	paramsSerializer: function(params) {
+					// 		return qs.stringify(params, {arrayFormat: 'repeat'})
+					// 	}
+					// }).then(res =>{
+					// 	res.result.items.forEach(element => {
+					// 		this.list.push(element)
+					// 	})
+					// 	this.loading = false
+					// 	if (!res || !res.result || res.result.items == 0) {
+					// 		this.finished = true
+					// 	}
+					// })
+					var _this = this;
+					if(this.items[this.activeHC].value||this.items[this.activeHC].children[this.activeZQ].value){
+						this.formData.Position = [this.items[this.activeHC].value,this.items[this.activeHC].children[this.activeZQ].value]
+					}
+					this.formData.SkipCount = 0;
+					this.formData.MaxResultCount = 2;
+					// this.formData.SkipCount += 10
+					axios.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList', {
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					}).then(response =>{
+						_this.shops = response.data.result.items;
+						console.log(response.data.result.items)
+						// res.result.items.forEach(element => {
+						// 	this.list.push(element)
+						// })
+						// this.loading = false
+						// if (!res || !res.result || res.result.items == 0) {
+						// 	this.finished = true
+						// }
+					})
+				},
+				// 获取展品
+				getGoods(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods =  response.data.result.items;
+					})
+				},
+				// 获取爆品推荐
+				getHot(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listHot =  response.data.result.items;
+					})
 				}
 			},
 

@@ -23,6 +23,9 @@
 	padding: 1rem 0;
 	background: linear-gradient(90deg, #1116A4, #2480EC);
 }
+.index-line{
+	border-top: 1px solid rgba(255, 255, 255,.2);
+}
 .index-header {
 	position: fixed;
 	top: 0;
@@ -55,6 +58,22 @@
 	background-size: 100% 100%;
 	background-repeat: no-repeat;
 	z-index: 99;
+}
+.index-video-div .van-image{
+	height: 3.88125rem;
+}
+.index-video-div .van-image::after{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-top: -.565rem;
+	margin-left: -.565rem;
+	width: 1.13rem;
+	height: 1.13rem;
+	content: ' ';
+	color: transparent;
+	background-image: url(../images/index-bofang.png);
+	background-size: 100% 100%;
 }
 div.public-footer-nav:after {
 	border: none;
@@ -262,6 +281,7 @@ div.public-footer-nav:after {
 	color: white;
 	font-size: 0.26rem;
 	opacity: 0.72;
+	padding: 0 .15rem;
 }
 .index-swipe-02 h3,
 .index-swipe-02 p {
@@ -271,7 +291,7 @@ div.public-footer-nav:after {
 .index-h2 {
 	color: white;
 	font-size: 0.35rem;
-	line-height: 1rem;
+	line-height: 1.2rem;
 	font-weight: bold;
 }
 .vjs-custom-skin > .video-js .vjs-big-play-button {
@@ -369,7 +389,7 @@ div.video-js {
 	z-index: 2;
 	color: white;
 	font-size: 0.31rem;
-	line-height: 1rem;
+	line-height: 1.2rem;
 	opacity: 0.67;
 	padding: 0 0.3rem;
 	display: flex;
@@ -573,4 +593,7 @@ div.zqsl-popup{
 	content: "\f108";
 	font-size: 1.8em;
 	line-height: 1.67;
+}
+.van-image .van-image__error{
+	color: #666666;
 }

@@ -197,7 +197,7 @@
 		</div>
 		<!-- <button @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])">全屏</button> -->
 		<div v-show="show" class="kms-btn-close" @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])"></div>
-		<van-popup class="zhzj-mulu" :close-on-click-overlay="false" @click-overlay="onPlayerPlay(document.getElementsByClassName('video-player')[0])" v-model="show" :overlay="true" round position="bottom">
+		<van-popup class="zhzj-mulu" :overlay="false" :close-on-click-overlay="false" @click-overlay="onPlayerPlay(document.getElementsByClassName('video-player')[0])" v-model="show" :overlay="true" round position="bottom">
 			<div class="zhzj-mulu-title" v-show="!showJJ">
 				<h3>文博会开幕式直播现场</h3>
 				<div class="zhzj-btn-jj" @click="jianjie()">简介<van-icon name="arrow" /></div>
