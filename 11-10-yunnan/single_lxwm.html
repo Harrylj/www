@@ -195,11 +195,18 @@
 		.gywm-zgzq{
 			position: relative;
 			padding-left: .3rem;
+			padding-right: .3rem;
 		}
-		.gywm-zgzq img{
+		/* .gywm-zgzq img{
 			height: 2.8rem;
 			width: 2.95rem;
 			border-radius: .2rem;
+		} */
+		.gywm-zgzq .van-image{
+			width: 6.9rem;
+			height: 3.5rem;
+			border-radius: .2rem;
+			overflow: hidden;
 		}
 		.van-tabs__nav{
 			background-color: transparent;
@@ -207,7 +214,8 @@
 		.van-cell{
 			background-color: transparent;
 		}
-		.mflj-item img{
+		.mflj-item img
+		,.mflj-item .van-image{
 			width: 2.3rem;
 			height: 1.95rem;
 		}
@@ -221,15 +229,32 @@
 		.gywm-zhrc h2{
 			margin: .3rem 0;
 		}
-		
+		.van-tab{
+			border-radius: .2rem;
+			overflow: hidden;
+			background-color: rgba(255, 255, 255, .1);
+			margin-right: .3rem;
+		}
 		.van-tabs__wrap--scrollable .van-tab{
 			padding: 0 .3rem;
 			margin-right: .2rem;
 			border-radius: .2rem;
 			background-color: rgba(255, 255, 255, .1);
 		}
-		.van-tabs__wrap--scrollable .van-tab--active{
+		.van-tabs .van-tab--active{
 			background-color: #009BFE;
+		}
+		.zgzq-swipe-item-div{
+			position: relative;
+		}
+		.zgzq-swipe-item-div p{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			line-height: 1rem;
+			padding:.2rem .3rem 0 .3rem;
+			width: 100%;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.344), rgba(0, 0, 0, 0));
 		}
 	</style>
 </head>
@@ -276,16 +301,21 @@
 		</div>
 		<div class="zqxq-body">
 			<div class="gywm-zgzq">
-				<h2>展馆展区</h2>
+				<h2>文博会场</h2>
 				<div class="zgzq-swipe-father">
-					<van-swipe class="zgzq-swipe-02" :loop="false" :width="swipeWidth"
+					<van-swipe class="zgzq-swipe-02" :loop="false" 
 						:show-indicators="false">
-						<van-swipe-item v-for="index in 7" :key="index">
-							<a href="#">
-								<div class="zgzq-swipe-item-div">
-									<img src="images/index-user-01.png" alt="">
-								</div>
-							</a>
+						<van-swipe-item v-for="(item,index) in WBHC" :key="index">
+							<div class="zgzq-swipe-item-div">
+								<van-image 
+								lazy-load
+								fit="fill"
+								:src="item.imageUrl">
+									<template v-slot:error>加载失败</template>
+								</van-image>
+								<!-- <img src="images/index-user-01.png" alt=""> -->
+								<p>{{item.channelName}}</p>
+							</div>
 						</van-swipe-item>
 					</van-swipe>
 				</div>
@@ -305,25 +335,29 @@
 			</div> -->
 			<div class="gywm-zhrc">
 				<h2>展会日程</h2>
-				<a href="#"><div class="fhlt-nav-more"></div></a>
-				<van-tabs @click="onClick"  v-model="active">
-					<van-tab v-for="(item,index) in 6" :title="'标签 ' + index">
+				<div class="fhlt-nav-more" @click="showPopup"></div>
+				<van-tabs @click="onClick"  v-model="activeRC">
+					<van-tab v-for="(items,index) in ZGRC" ::key="index" :title="items.channelName">
 						<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
 							<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
 								<div class="wzwb-mflj-div">
-									<div class="mflj-item" v-for="index in 2" :key="index">
-										<img src="images/bg.png" alt="">
+									<div class="mflj-item" v-for="(item,index) in items.ljcontent" :key="index">
+										<!-- <img :src="item.imageUrl" alt=""> -->
+										<van-image
+										lazy-load
+										:src="item.imageUrl"
+										><template v-slot:error>加载失败</template></van-image>
 										<div class="mflj-item-right">
-												<h3>{{index}}C展区</h3>
-												<p class="van-ellipsis">主题:非遗文化主题</p>
-												<p class="van-ellipsis">地址:昆明市A会场B展区</p>
+												<h3>{{item.title}}</h3>
+												<p class="van-ellipsis">{{item.subTitle}}</p>
+												<p class="van-ellipsis">{{item.summary}}</p>
 										</div>
 									</div>
 								</div>
-								<div class="jbjs-body">
+								<!-- <div class="jbjs-body">
 									{{index}}
 								</div>
-								<van-cell v-for="item in list" :key="item" :title="item" />
+								<van-cell v-for="item in list" :key="item" :title="item" /> -->
 							</van-list>
 						</van-pull-refresh>
 
@@ -331,6 +365,28 @@
 				</van-tabs>
 			</div>
 		</div>
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames">
+				<van-collapse-item title="展会日程" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(items,index) in ZGRC" ::key="index">
+							{{items.channelName}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<!-- <van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+							展区{{index}}
+						</div>
+					</div>
+				</van-collapse-item> -->
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">取消</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
 		<van-tabbar class="public-footer-nav" v-model="active">
 			<!-- <van-tabbar-item badge="3">
 				<span>首页</span>
@@ -415,6 +471,13 @@
 				refreshing: false,
 				LXWM:'', // 联系我们内容
 				HZZX:'', // 合作咨询
+				WBHC:[], // 文博会场
+				ZGRC:[], // 展馆日程
+				activeNames: ['1','2'],
+				show: false,
+				activeHC:2,	//
+				activeZQ:0,
+				activeRC:0, // 确认日程
 			},
 			created: function () {
 				var _this = this;
@@ -431,19 +494,42 @@
 					public_imgsrc([_this.LXWM])
 					// console.log('123',_this.LXWM);
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 获取合作咨询
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idHZZX +'/'+_obj.idHZZX_CID)
 				.then(function (response) {
 					_this.HZZX = response.data;
 					public_imgsrc([_this.HZZX])
-					console.log('123',_this.HZZX);
+					// console.log('123',_this.HZZX);
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// 获取文博会场
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idZQ)
+				.then(function (response) {
+					_this.WBHC = response.data.children;
+					public_imgsrc(_this.WBHC)
+					// console.log('1211113',_this.WBHC);
+				})
+				// 获取展馆日程
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idZGRC)
+				.then(function (response) {
+					_this.ZGRC = response.data.children;
+					_this.ZGRC.unshift({'channelName':'全部','id':_obj.idZGRC});
+					public_imgsrc(_this.ZGRC)
+					console.log('1211113',_this.ZGRC);
+					// 获取日程活动
+					_this.ZGRC.forEach((element,index) => {
+						axios.post('api/v1/contents', {
+							"siteId": _obj.idSite,
+							"channelId": _this.ZGRC[index].id,
+							"page": 1,
+							"perPage": 30
+						})
+						.then(function (response) {
+							_this.ZGRC[index].ljcontent = response.data.contents;
+							public_imgsrc(_this.ZGRC[index].ljcontent)
+							console.log('999887777',_this.ZGRC[index].ljcontent);
+						})
+					});
+				})
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
@@ -459,6 +545,7 @@
 				},
 				showPopup() {
 					this.show = true;
+					this.activeHC = this.activeRC;
 				},
 				hidePopup() {
 					this.show = false;
@@ -473,6 +560,23 @@
 					this.active = _index;
 					vant.Toast(this.active)
 					this.hidePopup()
+				},
+				selectHC(_index){
+					this.activeHC = _index;
+					vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					this.activeRC= this.activeHC;
+					// vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					this.hidePopup();
+				},
+				reset(){
+					this.hidePopup();
 				},
 				onLoad() {
 					setTimeout(() => {

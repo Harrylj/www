@@ -152,10 +152,21 @@
 					'https://img.yzcdn.cn/vant/apple-1.jpg',
 					'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
+				data_content:'',
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _this = this;
+				// this.swipeImages = [];
+				// console.log(1)
+				// vant.Toast('提示看看');
+				// 获取影集详情
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idZHYJ +'/'+ qs2obj(window.location.href).id)
+				.then(function (response) {
+					_this.data_content = response.data;
+					public_imgsrc([_this.data_content])
+					console.log(_this.data_content)
+					// console.log('123',_this.KMS);
+				})
 			},
 			mounted: function () {
 

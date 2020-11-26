@@ -159,6 +159,7 @@
 			height: 2.5rem;
 			width: 2.3rem;
 			border-radius: .2rem;
+			overflow: hidden;
 		}
 		.mflj-item h3{
 			font-size: .31rem;
@@ -181,6 +182,7 @@
 		.wzwb-zhyj-div{
 			display: flex;
 			justify-content: space-between;
+			flex-wrap: wrap;
 		}
 		.zhyj-item{
 			position: relative;
@@ -208,13 +210,16 @@
 			width: 2.7rem;
 			margin-left: -1.35rem;
 		}
-		.zhyj-item img{
+		.zhyj-item img
+		,.zhyj-item  .van-image{
+			display: block;
 			position: relative;
 			z-index: 2;
 			width: 3.3rem;
 			height: 2.4rem;
 			border-radius: .2rem;
 			margin-bottom: .2rem;
+			overflow: hidden;
 		}
 		.zhyj-item h4{
 			font-size: .31rem;
@@ -240,9 +245,8 @@
 		</div> -->
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<img v-lazy="image" alt="">
-					<p>{{index}}</p>
+				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
+					<img @click="" v-lazy="image.imageUrl" alt="">
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -301,12 +305,13 @@
 				<div class="index-h2">展会影集</div>
 				<a href="column_zhyj.html"><div class="index-ygz-more">更多影集<van-icon name="arrow" /></div></a>
 				<div class="wzwb-zhyj-div">
-					<a href="column_zhyj.html" v-for="index in 2" :key="index">
-					<div class="zhyj-item">
-						<img src="images/bg.png" alt="">
-						<h4>影集主题</h4>
+					<div class="zhyj-item" @click="goPage('column_zhyj.html',{'id':item.id})" v-for="(item,index) in ZHYJ" :key="index">
+						<!-- <img :src="item.imageUrl" alt=""> -->
+						<van-image fil="cover" :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
+						<h4>{{item.channelName}}</h4>
 					</div>
-					</a>
 				</div>
 			</div>
 		</div>
@@ -405,14 +410,34 @@
 						}
 					]
 				},
+				imagesDBLB:[], // 顶部轮播
+				ZHYJ:[], // 展会影集
 			},
 			created: function () {
-				// console.log(1,document.documentElement.style.fontSize = '200px')
+				var _this = this;
+
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
-				console.log(3,_rem)
-				// alert(document.documentElement.style.fontSize)
-				vant.Toast('提示看看');
+				// vant.Toast('提示看看');
+				// 顶部轮播
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idSYDBLB,
+					"page": 1,
+					"perPage": 30
+				})
+				.then(function (response) {
+					_this.imagesDBLB = response.data.contents;
+					public_imgsrc(_this.imagesDBLB)
+				})
+				// alert(_obj.idZHYJ)
+				// 展会影集
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)
+				.then(function (response) {
+						_this.ZHYJ = response.data.children;
+						public_imgsrc(_this.ZHYJ)
+						// console.log('9999922311',_this.ZHYJ)
+				})
 			},
 			mounted: function () {
 				console.log(_obj.appkey)

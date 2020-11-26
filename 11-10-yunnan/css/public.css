@@ -310,7 +310,10 @@ div.video-js {
 	width: 7.5rem;
 	height: 4.8rem;
 }
-
+.index-video .van-image{
+	border-radius: .2rem;
+	overflow: hidden;
+}
 .jjwb-fhlt-div {
 	display: flex;
 	justify-content: space-between;
@@ -420,13 +423,15 @@ div.video-js {
 	opacity: 0.7;
 	font-size: 0.28rem;
 }
-.mflj-item img {
+.mflj-item>img
+,.mflj-item  .van-image {
 	position: absolute;
 	top: 0;
 	left: 0;
 	height: 2.5rem;
 	width: 2.3rem;
 	border-radius: 0.2rem;
+	overflow: hidden;
 }
 .mflj-item h3 {
 	font-size: 0.31rem;

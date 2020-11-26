@@ -189,6 +189,10 @@
 			position: relative;
 			padding-bottom: .1rem;
 		}
+		.index-tshw-item:nth-child(1),
+		.index-tshw-item:nth-child(2){
+			margin-bottom: .1rem;
+		}
 		/* .index-tshw-item img{ */
 		.index-tshw-item .van-image{
 			width: 3.35rem;
@@ -284,7 +288,7 @@
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
 				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
-					<img v-lazy="image.imageUrl" alt="">
+					<img @click="image.linkUrl?goPage('single_videoYN.html',{}):''" v-lazy="image.imageUrl" alt="">
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -356,16 +360,16 @@
 				</div>
 			</div>
 			<div class="index-line"></div>
+			<!-- 合作商 -->
 			<div class="index-tshw index-hzs">
 				<div class="index-tshw-list">
-					<div class="index-tshw-item" v-for="(goods,index) in 4" :key="index">
-						<!-- <div class="index-live"><span></span>LIVE</div> -->
+					<div class="index-tshw-item" v-for="(goods,index) in HZS" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
-							fit="contain"
-							:src="goods.logo"
+							fit="cover"
+							:src="goods.imageUrl"
 							><template v-slot:error>加载失败</template></van-image>
-						<h3 class="van-ellipsis">{{goods.exhibitorName}}123</h3>
+						<h3 class="van-ellipsis">{{goods.channelName}}</h3>
 					</div>
 				</div>
 			</div>
@@ -521,6 +525,7 @@
 					MaxResultCount:4,
 				},
 				listGoods: [], // 特色好物列表
+				HZS:[], // 合作商
 			},
 			created: function () {
 				var _this = this;
@@ -543,9 +548,6 @@
 				.then(function (response) {
 					console.log(response);
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 顶部轮播
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -557,9 +559,6 @@
 					_this.imagesDBLB = response.data.contents;
 					public_imgsrc(_this.imagesDBLB)
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 获取重磅嘉宾列表
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -577,9 +576,6 @@
 					public_imgsrc(_this.userList)
 					// console.log('123',_this.userList);
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 获取开幕式列表
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
 				.then(function (response) {
@@ -589,9 +585,6 @@
 					_this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// console.log('123',_this.KMS);
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 云逛展
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -609,9 +602,27 @@
 					}
 					// console.log('9999922311',_this.YGZ)
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				/*
+				// 合作商
+				axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idHZS,
+						"page": 1,
+						"perPage": 30
+					})
+				.then(function (response) {
+						_this.HZS = response.data.contents;
+						public_imgsrc(_this.HZS)
+						console.log('9999922311',_this.HZS)
+				})
+				*/
+				// 合作商
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idHZS)
+				.then(function (response) {
+						_this.HZS = response.data.children;
+						public_imgsrc(_this.HZS)
+						console.log('9999922311',_this.HZS)
+				})
 				// 主办单位
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -623,9 +634,6 @@
 					_this.ZBDW = response.data.contents;
 					public_imgsrc(_this.ZBDW)
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 承办单位
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -637,9 +645,6 @@
 					_this.CBDW = response.data.contents;
 					public_imgsrc(_this.CBDW)
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				// 协办单位
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -651,9 +656,6 @@
 					_this.XBDW = response.data.contents;
 					public_imgsrc(_this.XBDW)
 				})
-				.catch(function (error) {
-					console.log(error);
-				});
 				
 				// 获取特色好物
 				this.getGoods()
@@ -722,9 +724,6 @@
 						}
 						// console.log('9999922311',_this.YGZ)
 					})
-					.catch(function (error) {
-						console.log(error);
-					});
 				}
 			},
 

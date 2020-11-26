@@ -16,6 +16,7 @@ function public_obj() {
 	_obj.idYJJB = 100, // 演讲嘉宾
 	_obj.idKMS_CID = 48, // 开幕式-内容id
 	_obj.idYGZ = 35, // 云逛展
+	_obj.idHZS = 167, // 合作商,文博企业
 	_obj.idTSHW = 32, // 特色好物
 	_obj.idFLHD = 31, // 福利活动
 	_obj.idFHLT = 41, // 峰会论坛
@@ -27,30 +28,43 @@ function public_obj() {
 	_obj.idHZZX_CID = 93, // 合作咨询-内容id
 	_obj.idZGZQ = 92, // 展馆展区
 	_obj.idZGRC = 93, // 展馆日程
-	_obj.idZQ = 62, // 展区
+	_obj.idZQ = 62, // 会场展区
 	_obj.idZQ_01 = 63, // 展区01
 	_obj.idZQ_02 = 64, // 展区02
 	_obj.idZQ_03 = 65, // 展区03
-	_obj.idZQ_04 = 66; // 展区04
+	_obj.idZQ_04 = 66, // 展区04
+	_obj.idZHYJ = 95; // 展会影集
 	return _obj;
 }
 // 处理图片路径,相对路径改为绝对路径
 function public_imgsrc(_obj){
 	_obj.forEach((element,index) => {
+		var _index = index;
+		var _element = element;
 		var file_src = element.fileUrl?element.fileUrl.split('@/')[1]:'';
-		var image_src = element.imageUrl?element.imageUrl.split('@/')[1]:'';
-		var video_src = element.imageUrl?element.videoUrl.split('@/')[1]:'';
+		// var image_src = element.imageUrl?element.imageUrl.split('@/')[1]:'';
+		var video_src = element.videoUrl?element.videoUrl.split('@/')[1]:'';
 		_a = 'mobile/';
 		// 附件地址
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
-		_obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
+		// _obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
 		// 视频地址
 		_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
+		var arr_img = [];
+		// 图片地址数组处理
+		Object.keys(_element).forEach((element,key)=>{
+			if(element.indexOf("imageUrl") != -1 & element != 'imageUrlCount'){
+				var image_src = _element[element].split('@/')[1];
+				_obj[_index][element]= public_obj().siteUrl+_a+image_src;
+				// arr_img.push(element) 
+			}
+		})
 	}); 
+	// console.log('122223455',_obj)
 	return _obj
 }
 
