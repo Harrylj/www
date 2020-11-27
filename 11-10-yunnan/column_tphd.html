@@ -101,7 +101,8 @@
 			overflow: hidden;
 			margin-bottom: .2rem;
 		}
-		.flhd-tphd-item img{
+		.flhd-tphd-item>img,
+		.flhd-tphd-item .van-image{
 			display: block;
 			width: 3.3rem;
 			height: 3.8rem;
@@ -116,22 +117,22 @@
 			border-radius: 0 .07rem .07rem 0;
 			background-color: rgba(10, 10, 10, 0.58);
 		}
-		.flhd-tphd-item h3{
+		.flhd-tphd-item .flhd-tphd-content{
 			position: absolute;
+			bottom: .7rem;
 			left: 0;
-			bottom: 1.2rem;
 			width: 100%;
+			padding-top: .3rem;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+		}
+		.flhd-tphd-item h3{
 			text-align: center;
 			font-size: .31rem;
 			line-height: .5rem;
 		}
 		.flhd-tphd-item p{
-			position: absolute;
-			bottom: .8rem;
-			left: 0;
 			font-size: .28rem;
 			opacity: .58;
-			width: 100%;
 			text-align: center;
 			line-height: .5rem;
 		}
@@ -141,7 +142,7 @@
 		}
 		.tphd-btn-lp,
 		.tphd-btn-tp{
-			width: 50%;
+			width: 100%;
 			text-align: center;
 			line-height: .7rem;
 			font-size: .31rem;
@@ -155,6 +156,10 @@
 		.index-swipe-01{
 			position: relative;
 			height: 3.4rem;
+		}
+		.index-swipe-01 .van-image{
+			position: relative;
+			height: 100%;
 		}
 		.index-swipe-01 img {
 			height: 100%;
@@ -232,26 +237,31 @@
 		</div>
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<img v-lazy="image" alt="">
-					<p>{{index}}</p>
+				<van-swipe-item>
+					<!-- <img v-lazy="FLHD.imageUrl" alt=""> -->
+					<van-image fil="cover" lazy-load :src="FLHD.imageUrl">
+						<template v-slot:error>加载失败</template>
+					</van-image>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
 		<div class="zqxq-body">
-			<van-tabs v-model="active">
+			<van-tabs v-model="active"  @click="toggleList">
 				<van-tab title="最新">
 					<div class="index-ygz flhd-tphd">
 						<div class="flhd-tphd-div">
-							<div class="flhd-tphd-item" v-for="index in 8" :key="index">
-								<a href="article_tphd.html" >
-								<img src="images/bg.png" alt="">
-								</a>
-								<div class="flhd-tphd-item-index">20号</div>
-								<h3>最新作品名称</h3>
-								<p>546票</p>
+							<div class="flhd-tphd-item" @click="goPage('article_tphd.html',{'id':item.id})" v-for="(item,index) in list_content" :key="index">
+								<!-- <img src="images/bg.png" alt=""> -->
+								<van-image fil="cover" lazy-load :src="item.imageUrl">
+									<template v-slot:error>加载失败</template>
+								</van-image>
+								<div class="flhd-tphd-item-index">{{item.taxis}}号</div>
+								<div class="flhd-tphd-content">
+									<h3>{{item.title}}</h3>
+									<p>{{item.hits}}票</p>
+								</div>
 								<div class="flhd-tphd-item-footer">
-									<div class="tphd-btn-lp">拉票</div>
+									<!-- <div class="tphd-btn-lp">拉票</div> -->
 									<div class="tphd-btn-tp">投票</div>
 								</div>
 							</div>
@@ -261,15 +271,18 @@
 				<van-tab title="热门">
 					<div class="index-ygz flhd-tphd">
 						<div class="flhd-tphd-div">
-							<div class="flhd-tphd-item" v-for="index in 8" :key="index">
-								<a href="article_tphd.html" >
-								<img src="images/bg.png" alt="">
-								</a>
-								<div class="flhd-tphd-item-index">20号</div>
-								<h3>热门作品名称</h3>
-								<p>546票</p>
+							<div class="flhd-tphd-item" @click="goPage('article_tphd.html',{'id':item.id})" v-for="(item,index) in list_content" :key="index">
+								<!-- <img src="images/bg.png" alt=""> -->
+								<van-image fil="cover" lazy-load :src="item.imageUrl">
+									<template v-slot:error>加载失败</template>
+								</van-image>
+								<div class="flhd-tphd-item-index">{{item.taxis}}号</div>
+								<div class="flhd-tphd-content">
+									<h3>{{item.title}}</h3>
+									<p>{{item.hits}}票</p>
+								</div>
 								<div class="flhd-tphd-item-footer">
-									<div class="tphd-btn-lp">拉票</div>
+									<!-- <div class="tphd-btn-lp">拉票</div> -->
 									<div class="tphd-btn-tp">投票</div>
 								</div>
 							</div>
@@ -313,15 +326,66 @@
 					'https://img.yzcdn.cn/vant/apple-1.jpg',
 					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
+				FLHD:'', // 福利活动-投票活动
+				list_content:[], // 内容列表
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _this = this;
+				// vant.Toast('提示看看');
+				// 福利活动
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idTPHD)
+				.then(function (response) {
+						_this.FLHD = response.data;
+						public_imgsrc([_this.FLHD])
+						// console.log('9999922311',_this.FLHD)
+				})
+				// 获取投票数据
+				this.getData();
 			},
 			mounted: function () {
 
 			},
 			methods: {
+				// 切换最新热门
+				toggleList(name,title){
+					console.log(name,title)
+					// 获取投票数据
+					this.getData(name);
+				},
+				// 获取投票数据
+				getData(_index){
+					var _this = this;
+					var _name = 'createdDate',
+						_type = false;
+					if(_index == 0){ // 最新
+						_name = 'createdDate';
+						_type = false;
+					}
+					else if(_index == 1){ // 热门
+						_name = 'hits';
+						_type = true;
+					}
+					axios.post('api/v1/contents', {
+						siteId: _obj.idSite_PC,
+						channelId: _obj.idTPHD_PC,
+						wheres:[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
+						orders:[{
+							column: _name,  // 最新createdDate  热门hits
+							desc: _type
+						}],
+						page:0,
+						perPage:10
+					})
+					.then(function (response) {
+						_this.list_content = response.data.contents;
+						// public_imgsrc(_this.list_content)
+						console.log('9999922311',_this.list_content)
+					})
+				},
 				activityRule(){
 					vant.Toast('活动规则')
 				},

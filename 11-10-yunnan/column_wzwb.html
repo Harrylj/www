@@ -78,13 +78,15 @@
 		.zqsl-item:last-child{
 			margin-bottom: 0;
 		}
-		.zqsl-item img{
+		.zqsl-item>img
+		,.zqsl-item .van-image{
 			position: absolute;
 			left: 0;
 			top: 0;
 			width: 2.5rem;
 			height: 2.5rem;
 			border-radius: .2rem;
+			overflow: hidden;
 		}
 		.zqsl-item-right{
 			position: relative;
@@ -113,12 +115,14 @@
 			border-radius: .2rem;
 			padding-bottom: .2rem;
 		}
-		.wzwb-flhd-div img{
+		.wzwb-flhd-div>img
+		,.wzwb-flhd-div .van-image{
 			display: block;
 			width: 100%;
 			height: 3rem;
 			border-radius: .2rem;
 			margin-bottom: .2rem;
+			overflow: hidden;
 		}
 		.wzwb-flhd-div h3,
 		.wzwb-flhd-div p{
@@ -258,15 +262,18 @@
 			</div> -->
 			<div class="index-ygz wzwb-zqsl">
 				<div class="index-h2">展区速览</div>
-				<a href="column_fhlt.html"><div class="index-ygz-more">更多展区<van-icon name="arrow" /></div></a>
+				<a href="column_zqsl.html"><div class="index-ygz-more">更多展区<van-icon name="arrow" /></div></a>
 				<div class="wzwb-zqsl-div">
-					<div class="zqsl-item" v-for="index in 2" :key="index">
-						<img src="images/bg.png" alt="">
+					<div class="zqsl-item" @click="goPage('article_zqxq.html',{'id':item.id})"  v-for="(item,index) in listZq" :key="index">
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image fil="cover" lazy-load :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
 						<div class="zqsl-item-right">
-							<h3>C展区</h3>
-							<p>主题:非遗文化主题</p>
-							<p>地址:昆明市A会场B展区</p>
-							<p>展商:58家</p>
+							<h3 class="van-ellipsis">{{item.title}}</h3>
+							<p class="van-ellipsis">主题:{{item.zhuti}}</p>
+							<p class="van-ellipsis">地址:{{item.dizhi}}</p>
+							<p class="van-ellipsis">展商:{{item.zhanshangshu}}家</p>
 						</div>
 					</div>
 				</div>
@@ -274,15 +281,17 @@
 			<div class="index-ygz wzwb-flhd">
 				<div class="index-h2">福利活动</div>
 				<a href="column_flhd.html"><div class="index-ygz-more">马上参与<van-icon name="arrow" /></div></a>
-				<a href="column_flhd.html">
-				<div class="wzwb-flhd-div">
-					<img src="images/bg.png" alt="">
-					<h3>手绘艺术生</h3>
-					<p>活动说明：手绘一双风格独特的鞋，参与投票有机会获得奖品哦~</p>
+				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html',{})">
+					<!-- <img :src="FLHD.imageUrl" alt=""> -->
+					<van-image fil="cover" lazy-load :src="FLHD.imageUrl">
+						<template v-slot:error>加载失败</template>
+					</van-image>
+					<h3>{{FLHD.channelName}}</h3>
+					<p>{{FLHD.description}}</p>
 				</div>
 				</a>
 			</div>
-			<div class="index-ygz wzwb-mflj">
+			<!-- <div class="index-ygz wzwb-mflj">
 				<div class="index-h2">免费领劵</div>
 				<a href="column_mflq.html"><div class="index-ygz-more">更多福利<van-icon name="arrow" /></div></a>
 				<div class="wzwb-mflj-div">
@@ -299,7 +308,7 @@
 					</div>
 					
 				</div>
-			</div>
+			</div> -->
 			<div class="wzwb-line"></div>
 			<div class="index-ygz wzwb-zhyj">
 				<div class="index-h2">展会影集</div>
@@ -412,6 +421,8 @@
 				},
 				imagesDBLB:[], // 顶部轮播
 				ZHYJ:[], // 展会影集
+				listZq:[], //展区
+				FLHD:'', // 福利活动-投票活动
 			},
 			created: function () {
 				var _this = this;
@@ -430,6 +441,13 @@
 					_this.imagesDBLB = response.data.contents;
 					public_imgsrc(_this.imagesDBLB)
 				})
+				// 福利活动
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idTPHD)
+				.then(function (response) {
+						_this.FLHD = response.data;
+						public_imgsrc([_this.FLHD])
+						// console.log('9999922311',_this.FLHD)
+				})
 				// alert(_obj.idZHYJ)
 				// 展会影集
 				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)
@@ -438,10 +456,28 @@
 						public_imgsrc(_this.ZHYJ)
 						// console.log('9999922311',_this.ZHYJ)
 				})
+				// 获取所有展区
+				this.getAllZQ()
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
-			}
+			},
+			methods: {
+				// 获取所有展区
+				getAllZQ(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idZQ,
+						"page": 1,
+						"perPage": 2
+					})
+					.then(function (response) {
+						_this.listZq = response.data.contents;
+						public_imgsrc(_this.listZq)
+					})
+				},
+			},
 
 		})
 		console.log('99999', vant.Lazyload)

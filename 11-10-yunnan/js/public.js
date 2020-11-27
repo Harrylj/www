@@ -5,6 +5,7 @@ function public_obj() {
 	_obj.siteUrl = 'http://47.98.233.45:8032/', // 站点栏目，内容
 	_obj.shopUrl = 'http://47.98.233.45:8031/', // 展品展商
 	_obj.idSite = 23, // 站点id
+	_obj.idSite_PC = 1, // 站点id-PC端
 	_obj.idSYDBLB = 28, // 首页顶部轮播
 	_obj.idXWDT = 30, // 新闻动态
 	_obj.idXBDW = 38, // 协办单位
@@ -33,6 +34,8 @@ function public_obj() {
 	_obj.idZQ_02 = 64, // 展区02
 	_obj.idZQ_03 = 65, // 展区03
 	_obj.idZQ_04 = 66, // 展区04
+	_obj.idTPHD = 94, // 投票活动-活动规则存放处
+	_obj.idTPHD_PC = 11, // 投票活动-PC端-内容存放处
 	_obj.idZHYJ = 95; // 展会影集
 	return _obj;
 }
@@ -58,7 +61,7 @@ function public_imgsrc(_obj){
 		// 图片地址数组处理
 		Object.keys(_element).forEach((element,key)=>{
 			if(element.indexOf("imageUrl") != -1 & element != 'imageUrlCount'){
-				var image_src = _element[element].split('@/')[1];
+				var image_src = _element[element]?_element[element].split('@/')[1]:'';
 				_obj[_index][element]= public_obj().siteUrl+_a+image_src;
 				// arr_img.push(element) 
 			}

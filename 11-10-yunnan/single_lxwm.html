@@ -29,10 +29,25 @@
 			background-color: #12206A;
 		}
 		.index-body{
+			position: relative;
+			z-index: 2;
 			padding-bottom: 2rem;
 			border-radius:  0;
 			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
 		}
+		/* .index-body::before{
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: -2rem;
+			width: 100%;
+			height: 7rem;
+			content: " ";
+			color: transparent;
+			background-image: url(images/index-bg-01.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		} */
 		.xwxq *{
 			color: white;
 		}
@@ -41,7 +56,7 @@
 		}
 		.index-swipe-01{
 			position: relative;
-			height: 4rem;
+			height: 4.8rem;
 		}
 		.index-swipe-01 img {
 			height: 100%;
@@ -93,10 +108,24 @@
 			font-size: .31rem;
 			line-height: .7rem;
 			text-align: left;
-			padding-left: 1rem;
+			padding-left: 1.5rem;
 			display: flex;
 			align-items: center;
 			opacity: .9;
+			background-repeat: no-repeat;
+			background-position: 1.05rem center;
+		}
+		.lxwm-body-div li:nth-child(1){
+			background-image: url(images/lxwm-icon-01.png);
+			background-size: .27rem .21rem;
+		}
+		.lxwm-body-div li:nth-child(2){
+			background-image: url(images/lxwm-icon-02.png);
+			background-size: .29rem .28rem;
+		}
+		.lxwm-body-div li:nth-child(3){
+			background-image: url(images/lxwm-icon-03.png);
+			background-size: .28rem .29rem;
 		}
 		.lxwm-body-div li .van-icon{
 			margin-right: .2rem;
@@ -170,8 +199,10 @@
 			top: 1.08rem;
 			height:.66rem;
 			width: 1rem;
-			background-image: url(images/icon-mulu.png);
-			background-size: .2467rem .2067rem;
+			/* background-image: url(images/icon-mulu.png);
+			background-size: .2467rem .2067rem; */
+			background-image: url(images/lxwm-icon-04.png);
+			background-size: .37rem .37rem;
 			background-repeat: no-repeat;
 			background-position: center center;
 			background-color: transparent;
@@ -284,9 +315,12 @@
 			<div class="lxwm-body-div">
 				<h3>参展预定/合作咨询：</h3>
 				<ul>
-					<li><van-icon name="envelop-o"></van-icon>邮箱：{{HZZX.youxiang}}</li>
+					<!-- <li><van-icon name="envelop-o"></van-icon>邮箱：{{HZZX.youxiang}}</li>
 					<li><van-icon name="desktop-o"></van-icon>传真：{{HZZX.chuanzhen}}</li>
-					<li><van-icon name="phone-circle-o" ></van-icon>电话：{{HZZX.dianhua}}</li>
+					<li><van-icon name="phone-circle-o" ></van-icon>电话：{{HZZX.dianhua}}</li> -->
+					<li>邮箱：{{HZZX.youxiang}}</li>
+					<li>传真：{{HZZX.chuanzhen}}</li>
+					<li>电话：{{HZZX.dianhua}}</li>
 				</ul>
 				<p>参展请与展会主办方联系：</p>
 				<p>{{HZZX.czqyzhzbflx}}</p>

@@ -63,7 +63,8 @@
 			font-weight: 400;
 			line-height: .8rem;
 		}
-		.xwxq-content{
+		.xwxq-content
+		,.xwxq-content p{
 			color: rgba(255, 255, 255, .8);
 			line-height: .6rem;
 			font-size: .29rem;
@@ -111,7 +112,7 @@
 			bottom: 0;
 			width: 100%;
 			padding: .4rem .8rem;
-			background-color: #12206A;
+			background: linear-gradient(90deg, #1116A4, #2480EC);
 		}
 		.sczp-btn-tj span{
 			font-size: .31rem;
@@ -137,11 +138,11 @@
 			</van-swipe>
 			<div class="tphd-header-list">
 				<div class="tphd-header-item">
-					<h2>20</h2>
+					<h2>{{data_content.taxis}}</h2>
 					<p>编号</p>
 				</div>
 				<div class="tphd-header-item">
-					<h2>520</h2>
+					<h2>{{data_content.hits}}</h2>
 					<p>票数</p>
 				</div>
 				<div class="tphd-header-item">
@@ -152,13 +153,11 @@
 		</div>
 		<div class="tphd-body xwxq-body">
 			<div class="tphd-body-title">
-				<h2>中国教师报举办坛</h2>
-				<h5>2020.10.23</h5>
+				<h2>{{data_content.title}}</h2>
+				<h5>{{data_content.createdDate}}</h5>
 			</div>
-			<h6>张三丰</h6>
-			<div class="xwxq-content">
-				云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。 其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团、30万人次的观众参与，成为云南第一动漫展会品牌；此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。 为了集中人力、财力和物力，搭建内容丰富、功能齐全的文化产业交流合作平台，提高云南文化会展的规模化和集约化水平，2013云南文化产业博览会应运而生了。
-			</div>
+			<h6>{{data_content.author}}</h6>
+			<div class="xwxq-content" v-html="data_content.body"></div>
 		</div>
 		<div class="sczp-btn-tj-div">
 			<van-button class="sczp-btn-tj" round block type="info" native-type="submit">
@@ -199,10 +198,28 @@
 					'https://img.yzcdn.cn/vant/apple-1.jpg',
 					'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
+				data_content:'',
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _this = this;
+				// vant.Toast('提示看看');
+				// 获取投票详情
+				axios.get('api/v1/contents/'+_obj.idSite_PC+'/'+ _obj.idTPHD_PC +'/'+ qs2obj(window.location.href).id)
+				.then(function (response) {
+					_this.data_content = response.data;
+					// public_imgsrc([_this.data_content])
+					_this.swipeImages = [];
+					for(var i = 0 ; i < _this.data_content.imageUrlCount+1;i++){
+						var imgName = 'imageUrl';
+						if(i>0){
+							imgName = imgName+i
+						}
+						console.log(imgName)
+						_this.swipeImages.push(_this.data_content[imgName])
+					}
+					console.log('99214',_this.swipeImages)
+					// console.log('123',_this.KMS);
+				})
 			},
 			mounted: function () {
 

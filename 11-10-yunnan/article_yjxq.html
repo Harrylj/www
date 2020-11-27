@@ -58,7 +58,8 @@
 			font-weight: 400;
 			line-height: .8rem;
 		}
-		.xwxq-content{
+		.xwxq-content
+		,.xwxq-content p{
 			color: rgba(255, 255, 255, .6);
 			line-height: .6rem;
 			font-size: .31rem;
@@ -109,11 +110,9 @@
 			</van-swipe>
 		</div>
 		<div class="tphd-body xwxq-body">
-			<h2>中国教师报举办坛</h2>
-			<div class="xwxq-content">
-				云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。 其中，昆明泛亚民族民间工艺品博览会已经成
-			</div>
-			<h6>张三丰</h6>
+			<h2>{{data_content.title}}</h2>
+			<div class="xwxq-content" v-html="data_content.body"></div>
+			<h6 v-if="data_content.source?data_content.source.length>0:''">来源:{{data_content.source}}</h6>
 		</div>
 	</div>
 	<script>
@@ -147,10 +146,10 @@
 				active: 3,
 				show: false,
 				swipeImages: [
-					'https://img.yzcdn.cn/vant/apple-1.jpg',
-					'https://img.yzcdn.cn/vant/apple-2.jpg',
-					'https://img.yzcdn.cn/vant/apple-1.jpg',
-					'https://img.yzcdn.cn/vant/apple-2.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
 				data_content:'',
 			},
@@ -164,7 +163,16 @@
 				.then(function (response) {
 					_this.data_content = response.data;
 					public_imgsrc([_this.data_content])
-					console.log(_this.data_content)
+					_this.swipeImages = [];
+					for(var i = 0 ; i < _this.data_content.imageUrlCount+1;i++){
+						var imgName = 'imageUrl';
+						if(i>0){
+							imgName = imgName+i
+						}
+						console.log(imgName)
+						_this.swipeImages.push(_this.data_content[imgName])
+					}
+					console.log('99214',_this.swipeImages)
 					// console.log('123',_this.KMS);
 				})
 			},

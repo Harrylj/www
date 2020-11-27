@@ -203,17 +203,42 @@
 				active: 3,
 				show: false,
 				uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+				data_content:{
+					siteId: _obj.idSite_PC,
+					channelId: _obj.idTPHD_PC,
+					title: "",  // 标题
+					body: "", // 描述
+					author: "",  //作者
+					phoneNumber:'', // 电话号码
+					imageUrl:'', //
+				}
 			},
 			created: function () {
 				console.log(1)
 				vant.Toast('提示看看');
+				
 			},
 			mounted: function () {
 
 			},
 			methods: {
 				onSubmit(values) {
+					this.data_content.title = this.worksName;
+					this.data_content.body = this.worksDescription;
+					this.data_content.author = this.userName;
+					this.data_content.phoneNumber = this.userTel;
+					this.data_content.imageUrl = this.uploader[0]
 					console.log('submit', values);
+					this.shangchuan()
+				},
+				shangchuan(){
+					// 上传作品
+					axios.post('api/v1/contents/'+_obj.idSite_PC+'/'+_obj.idTPHD_PC, this.data_content)
+					.then(function (response) {
+						// _this.userList = response.data.contents;
+						// public_imgsrc(_this.userList)
+						// console.log('123',_this.userList);
+					})
 				},
 				fenxiang() {
 					vant.Toast('分享')
