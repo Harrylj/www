@@ -163,6 +163,7 @@
 				formData:{ // 展商列表请求数组
 					SkipCount:0,
 					Position:[],
+					ExhibitType:'',
 					MaxResultCount:30,
 				},
 				listGoods: [], // 展品列表
@@ -175,7 +176,11 @@
 				.then(function (response) {
 					// _this.items = response.data.result.custom.BCodes.ExhibitionArea;
 					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
-					console.log('33222222111',_this.typeGoods);
+					var aa = response.data.result.custom.BCodes.ExhibitionArea;
+					console.log('1122',aa)
+					_this.formData.ExhibitType = qs2obj(window.location.href).type;
+					_this.formData.Position= [aa[qs2obj(window.location.href).HC].value,aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
+					console.log('33222222111',_this.formData);
 					// 获取展品
 					_this.getGoods();
 

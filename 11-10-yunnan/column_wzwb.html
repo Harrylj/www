@@ -312,7 +312,7 @@
 			<div class="wzwb-line"></div>
 			<div class="index-ygz wzwb-zhyj">
 				<div class="index-h2">展会影集</div>
-				<a href="column_zhyj.html"><div class="index-ygz-more">更多影集<van-icon name="arrow" /></div></a>
+				<div class="index-ygz-more" @click="goPage('column_zhyj.html',{'id':ZHYJID})">更多影集<van-icon name="arrow" /></div>
 				<div class="wzwb-zhyj-div">
 					<div class="zhyj-item" @click="goPage('column_zhyj.html',{'id':item.id})" v-for="(item,index) in ZHYJ" :key="index">
 						<!-- <img :src="item.imageUrl" alt=""> -->
@@ -423,6 +423,7 @@
 				ZHYJ:[], // 展会影集
 				listZq:[], //展区
 				FLHD:'', // 福利活动-投票活动
+				ZHYJID:'', // 展会影集id
 			},
 			created: function () {
 				var _this = this;
@@ -453,6 +454,7 @@
 				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)
 				.then(function (response) {
 						_this.ZHYJ = response.data.children;
+						_this.ZHYJID = response.data.id;
 						public_imgsrc(_this.ZHYJ)
 						// console.log('9999922311',_this.ZHYJ)
 				})

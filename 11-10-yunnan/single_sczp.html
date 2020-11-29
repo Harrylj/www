@@ -160,7 +160,7 @@
 				 class="sczp-zpt"
 				 name="uploader" label="参赛作品图">
 					<template #input>
-					  <van-uploader v-model="uploader" />
+					  <van-uploader v-model="uploader" :after-read="afterRead"  />
 					</template>
 				</van-field>
 				<div class="sczp-btn-tj-div">
@@ -211,6 +211,7 @@
 					author: "",  //作者
 					phoneNumber:'', // 电话号码
 					imageUrl:'', //
+					pic:'',  // 上传图片后的地址
 				}
 			},
 			created: function () {
@@ -230,6 +231,20 @@
 					this.data_content.imageUrl = this.uploader[0]
 					console.log('submit', values);
 					this.shangchuan()
+				},
+				afterRead(file) {
+				// 此时可以自行将文件上传至服务器
+					console.log(file);
+					this.uploadPic(file)
+				},
+				// 上传图片
+				uploadPic(_img){
+					axios.post(_obj.shopUrl+'api/services/app/Attachment/UploadImage',
+					_img)
+					.then(function (response) {
+						_this.pic = response.data;
+						console.log('33222222111',_this.pic);
+					})
 				},
 				shangchuan(){
 					// 上传作品

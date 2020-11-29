@@ -92,6 +92,12 @@
 			padding: .1rem .3rem;
 			font-size: .28rem;
 		}
+		.index-ygz-list, .index-tshw-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
 	</style>
 </head>
 
@@ -105,31 +111,31 @@
 			</div>
 		</div>
 		<div class="zqxq-header">
-			<img src="images/bg.png" alt="">
-			<h2>展商A</h2>
-			<p>展商网站: www.coqwnug.com</p>
-			<p>展商邮箱: 8409646@163.com</p>
-			<p>联系方式: 16867543780</p>
-			<p>展区位置: 昆明街道</p>
+			<img :src="shop.logo" alt="">
+			<h2>{{shop.name}}</h2>
+			<p>展商网站: {{shop.webSiteUrl}}</p>
+			<p>展商邮箱: {{shop.emailAddress}}</p>
+			<p>联系方式: {{shop.contectPhone}}</p>
+			<p>展区位置: {{shopObj.PositionName}}</p>
 			<div class="zsxq-btn-jdgg">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">
 
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
+					<div class="index-ygz-item" v-for="(item,index) in listGoods" :key="index">
+						<img :src="item.qrCode" alt="">
+						<h3 class="van-ellipsis">{{item.name}}</h3>
+						<p class="van-ellipsis">{{item.webHits}}人正在浏览</p>
+					</div>
+				</div>
+				<!-- <div class="index-ygz-list">
 					<div class="index-ygz-item" v-for="index in 2" :key="index">
 						<img src="images/bg.png" alt="">
 						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
 						<p class="van-ellipsis">36人正在浏览</p>
 					</div>
-				</div>
-				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 2" :key="index">
-						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-						<p class="van-ellipsis">36人正在浏览</p>
-					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</div>
@@ -164,13 +170,26 @@
 				shopObj:{
 					Keyword:'',  // 展商名
 					PositionName:'', // 展区地址
-				}
+				},
+				goodsObj:{
+					ExhibitorName:'',
+					Position:[],
+					// PositionName:'',
+				},
+				shop:'', // 展商详情
+				listGoods:[], // 展品列表
+				
 			},
 			created: function () {
 				// console.log(1)
 				// vant.Toast('提示看看');
+				this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
+				this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
+				this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
+				// this.goodsObj.PositionName = qs2obj(window.location.href).PositionName;
+				// this.goodsObj.Position = [qs2obj(window.location.href).HC,qs2obj(window.location.href).ZQ]
 				// 获取展商详情
-				this.getShop()
+				this.getShop();
 			},
 			mounted: function () {
 
@@ -179,8 +198,6 @@
 				// 获取展商详情
 				getShop(){
 					var _this = this;
-					this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
-					this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
 					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList',{
 						params:this.shopObj,
 						paramsSerializer: function(params) {
@@ -188,7 +205,24 @@
 						}
 					})
 					.then(function (response) {
-						// _this.listGoods =  response.data.result.items;
+						_this.shop = response.data.result.items[0];
+						_this.goodsObj.Position = _this.shop.position;
+						// 获取展品列表
+						_this.getGoods();
+					})
+				},
+				// 获取展品列表
+				getGoods(){
+					var _this = this;
+					
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
+						params:this.goodsObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods = response.data.result.items;
 					})
 				},
 				fenxiang() {
