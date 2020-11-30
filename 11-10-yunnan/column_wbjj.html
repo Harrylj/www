@@ -424,8 +424,8 @@
 							fit="contain"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
-							<h3 class="van-ellipsis">{{goods.exhibitorName}}</h3>
-							<p class="van-ellipsis">{{goods.apphit}}人正在浏览</p>
+							<h3 class="van-ellipsis">{{goods.name}}</h3>
+							<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 							</a>
 						</div>
 					</div>
@@ -573,6 +573,9 @@
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// vant.Toast('提示看看');
+
+				
+
 				// // 获取会场地址
 				// axios.get('api/v1/channels/23/62')
 				// .then(function (response) {

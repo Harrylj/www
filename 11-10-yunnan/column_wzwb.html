@@ -280,7 +280,8 @@
 			</div>
 			<div class="index-ygz wzwb-flhd">
 				<div class="index-h2">福利活动</div>
-				<a href="column_flhd.html"><div class="index-ygz-more">马上参与<van-icon name="arrow" /></div></a>
+				<!-- <a href="column_flhd.html"><div class="index-ygz-more">马上参与<van-icon name="arrow" /></div></a> -->
+				<div @click="goPage('column_tphd.html',{})" class="index-ygz-more">马上参与<van-icon name="arrow" /></div>
 				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html',{})">
 					<!-- <img :src="FLHD.imageUrl" alt=""> -->
 					<van-image fil="cover" lazy-load :src="FLHD.imageUrl">

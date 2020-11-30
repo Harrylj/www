@@ -364,7 +364,6 @@
 			methods: {
 				// 投票
 				toupiao(_id){
-					// alert(_id)
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
 					"siteId": _obj.idSite_PC,
 					"channelId": _obj.idTPHD_PC,
@@ -373,8 +372,14 @@
 					.then(function (response) {
 						// _this.YGZ = response.data.contents;
 						// public_imgsrc(_this.YGZ)
+						vant.Toast('投票成功')
 						console.log(response.data)
 					})
+					.catch(function (error) {
+						// console.log(error)
+						vant.Toast('投票失败，今天投过啦')
+						// vant.Toast(error)
+					});
 				},
 				showPopup() {
 					this.show = true;

@@ -91,40 +91,40 @@
 			</div>
 		</div>
 		<div class="sczp-body xwxq-body">
-			<img class="zp-search" src="images/search-02.png" alt="">
+			<img class="zp-search" @click="goPage('single_search_zp.html',{})" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="(goods,index) in listGoods" :key="index">
+					<div class="index-ygz-item" @click="goPage(goods.liveUrl,{})" v-for="(goods,index) in listGoods" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
 							fit="contain"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
-						<h3 class="van-ellipsis">{{goods.exhibitorName}}</h3>
-						<p class="van-ellipsis">{{goods.apphit}}人正在浏览</p>
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
-				<van-collapse-item title="类型" name="1">
+				<van-collapse-item title="分类" name="1">
 					<div class="zqsl-sx-list zqsl-sx-hc">
-						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="index in 5" :key="index">
-							类型{{index}}
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in typeGoods" :key="index">
+							{{item.label}}
 						</div>
 					</div>
 				</van-collapse-item>
-				<van-collapse-item title="品牌" name="2">
+				<!-- <van-collapse-item title="品牌" name="2">
 					<div class="zqsl-sx-list zqsl-sx-zq">
 						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
 							品牌{{index}}
 						</div>
 					</div>
-				</van-collapse-item>
+				</van-collapse-item> -->
 			</van-collapse>
 			<div class="zqsl-sx-list zqsl-btn-footer">
-				<div class="zqsl-sx-item" @click="reset()">重置</div>
+				<div class="zqsl-sx-item" @click="reset()">取消</div>
 				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
 			</div>
 		</van-popup>
@@ -160,26 +160,28 @@
 				show: false,
 				activeHC:0,
 				activeZQ:0,
+				selectType:0, // 选择的类型
 				formData:{ // 展商列表请求数组
 					SkipCount:0,
 					Position:[],
 					ExhibitType:'',
-					MaxResultCount:30,
+					MaxResultCount:100,
 				},
 				listGoods: [], // 展品列表
+				typeGoods: [], // 展品类型
+				aa :'',
 			},
 			created: function () {
 				var _this = this;
 				// vant.Toast('提示看看');
+				_this.selectType = parseInt(qs2obj(window.location.href).type) - 1;
 				// 获取所有配置数据
 				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
 				.then(function (response) {
 					// _this.items = response.data.result.custom.BCodes.ExhibitionArea;
 					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
-					var aa = response.data.result.custom.BCodes.ExhibitionArea;
-					console.log('1122',aa)
-					_this.formData.ExhibitType = qs2obj(window.location.href).type;
-					_this.formData.Position= [aa[qs2obj(window.location.href).HC].value,aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
+					_this.aa = response.data.result.custom.BCodes.ExhibitionArea;
+					// console.log('1122',aa)
 					console.log('33222222111',_this.formData);
 					// 获取展品
 					_this.getGoods();
@@ -200,8 +202,14 @@
 			},
 			methods: {
 				// 获取展品
-				getGoods(){
+				getGoods(_type){
 					var _this = this;
+					_this.formData.ExhibitType = qs2obj(window.location.href).type;
+					_this.formData.Position= [_this.aa[qs2obj(window.location.href).HC].value,_this.aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
+					if(_type?true:false&_type<10){
+						_type = '0' + _type
+					}
+					_type?_this.formData.ExhibitType=_type:'';
 					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
 						params:this.formData,
 						paramsSerializer: function(params) {
@@ -213,6 +221,7 @@
 					})
 				},
 				showPopup() {
+					this.activeHC = this.selectType;
 					this.show = true;
 				},
 				hidePopup() {
@@ -230,22 +239,27 @@
 					this.hidePopup()
 				},
 				selectHC(_index){
+					// this.selectType = _index;
 					this.activeHC = _index;
-					vant.Toast('会场'+_index)
+					// vant.Toast('会场'+_index)
 				},
 				selectZQ(_index){
 					this.activeZQ = _index;
-					vant.Toast('展区'+_index)
+					// vant.Toast('展区'+_index)
 				},
 				selectQD(){
-					vant.Toast(this.activeHC,this.activeZQ)
-					console.log(this.activeHC,this.activeZQ)
+					this.selectType = this.activeHC;
+					// vant.Toast(this.selectType)
+					// 获取展品
+					this.getGoods(this.selectType);
+					// console.log(this.activeHC,this.activeZQ)
 					this.hidePopup()
 				},
 				reset(){
-					this.activeHC = 1;
-					this.activeZQ = 1;
-					console.log('重置')
+					this.hidePopup();
+					// this.activeHC = 1;
+					// this.activeZQ = 1;
+					// console.log('重置')
 				}
 			},
 

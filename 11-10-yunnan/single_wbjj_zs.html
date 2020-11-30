@@ -136,10 +136,13 @@
 			</div>
 		</div>
 		<div class="sczp-body xwxq-body">
-			<img class="zp-search" src="images/search-02.png" alt="">
+			<!-- <img class="zp-search" src="images/search-02.png" alt=""> -->
+			<img class="zp-search" @click="goPage('single_search_zs.html',{})" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="(shop,index) in shops" :key="index">
+					<div class="index-ygz-item"
+					@click="goPage('article_zsxq.html',{'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"
+					v-for="(shop,index) in shops" :key="index">
 						<img :src="shop.logo" alt="">
 						<h3 class="van-ellipsis">{{shop.name}}</h3>
 						<p class="van-ellipsis">{{items?items[qs2obj(window.location.href).HC].label:''}}{{items?items[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].label:''}}</p>
@@ -215,6 +218,9 @@
 				// 获取展商
 				this.getShops();
 
+				this.activeHC = qs2obj(window.location.href).HC;
+				this.activeZQ = qs2obj(window.location.href).ZQ;
+
 				// 获取所有数据
 				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
 				.then(function (response) {
@@ -262,6 +268,7 @@
 					this.activeZQ = 1;
 					console.log('重置')
 				},
+				// 获取展商
 				getShops(){
 					var _this = this;
 					this.formData.Position = [qs2obj(window.location.href).position1,qs2obj(window.location.href).position2];

@@ -89,7 +89,7 @@
 		.tphd-header-list{
 			display: flex;
 			flex: 1;
-			justify-content: space-between;
+			justify-content: space-around;
 			padding: .3rem .6rem;
 			border-bottom: 1px solid rgba(255, 255, 255, .2);
 		}
@@ -145,22 +145,22 @@
 					<h2>{{data_content.hits}}</h2>
 					<p>票数</p>
 				</div>
-				<div class="tphd-header-item">
+				<!-- <div class="tphd-header-item">
 					<h2>2</h2>
 					<p>排名</p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="tphd-body xwxq-body">
 			<div class="tphd-body-title">
 				<h2>{{data_content.title}}</h2>
-				<h5>{{data_content.createdDate}}</h5>
+				<h5>{{data_content.createdDate?data_content.createdDate.split(' ')[0]:''}}</h5>
 			</div>
 			<h6>{{data_content.author}}</h6>
 			<div class="xwxq-content" v-html="data_content.body"></div>
 		</div>
 		<div class="sczp-btn-tj-div">
-			<van-button class="sczp-btn-tj" round block type="info" native-type="submit">
+			<van-button class="sczp-btn-tj"  @click.stop="toupiao(data_content.id)" round block type="info" native-type="submit">
 			  投票
 			</van-button>
 		</div>
@@ -225,6 +225,30 @@
 
 			},
 			methods: {
+				// 投票
+				toupiao(_id){
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
+					"siteId": _obj.idSite_PC,
+					"channelId": _obj.idTPHD_PC,
+					"contentId": _id,
+					})
+					.then(function (response) {
+						// _this.YGZ = response.data.contents;
+						// public_imgsrc(_this.YGZ)
+						vant.Toast('投票成功')
+						console.log(response.data)
+					})
+					.catch(function (error) {
+						// alert(111)
+						vant.Toast('您已投过票了，明天再来吧！')
+						console.log(error)
+						// vant.Toast(error)
+					});
+					// .catch(function (response) {
+					// 	console.log(response)
+					// 	vant.Toast(response)
+					// });
+				},
 				fenxiang() {
 					vant.Toast('分享')
 				},

@@ -321,7 +321,8 @@
 				<div class="index-nav-01-div">
 					<a href="column_zhzj.html"><img src="images/index-nav-01-01.png" alt=""></a>
 					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
-					<a href="column_flhd.html"><img src="images/index-nav-01-03.png" alt=""></a>
+					<!-- <a href="column_flhd.html"><img src="images/index-nav-01-03.png" alt=""></a> -->
+					<a href="column_tphd.html"><img src="images/index-nav-01-03.png" alt=""></a>
 					<a href="column_wbjj.html"><img src="images/index-nav-01-04.png" alt=""></a>
 				</div>
 			</div>
@@ -398,15 +399,17 @@
 			<div class="index-tshw">
 				<div class="index-h2">特色好物</div>
 				<div class="index-tshw-list">
-					<div class="index-tshw-item" v-for="(goods,index) in listGoods" :key="index">
+					<div class="index-tshw-item" 
+						@click="goPage(goods.liveUrl,{})"
+						v-for="(goods,index) in listGoods" :key="index">
 						<!-- <div class="index-live"><span></span>LIVE</div> -->
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
 							fit="contain"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
-						<h3 class="van-ellipsis">{{goods.exhibitorName}}</h3>
-						<p class="van-ellipsis">{{goods.apphit}}人正在浏览</p>
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 					</div>
 				</div>
 			</div>
@@ -689,7 +692,7 @@
 				.then(function (response) {
 					console.log(response);
 				})
-				.catch(function (error) {z
+				.catch(function (error) {
 					console.log(error);
 				});
 */

@@ -48,12 +48,14 @@
 			border-radius: .2rem;
 			padding-bottom: .2rem;
 		}
-		.zqxq-header img{
+		.zqxq-header>img
+		,.zqxq-header .van-image{
 			display: block;
 			width: 6.9rem;
 			height: 3.2rem;
 			border-radius: .2rem;
 			margin-bottom: .2rem;
+			overflow: hidden;
 		}
 		.zqxq-header h2
 		,.zqxq-body h2{
@@ -79,7 +81,9 @@
 		.index-ygz-item img{
 			height: 2.5rem;
 		}
-		.index-ygz-list:nth-child(1) .index-ygz-item:nth-child(2) img, .index-ygz-list:nth-child(2) .index-ygz-item:nth-child(1) img{
+		.index-ygz-list:nth-child(1) .index-ygz-item:nth-child(2)>img,
+		.index-ygz-list:nth-child(2) .index-ygz-item:nth-child(1)>img,
+		.index-ygz-list .van-image{
 			height: 2.5rem;
 		}
 		.zsxq-btn-jdgg{
@@ -111,20 +115,28 @@
 			</div>
 		</div>
 		<div class="zqxq-header">
-			<img :src="shop.logo" alt="">
+			<!-- <img :src="shop.logo" alt=""> -->
+			<van-image
+				fit="cover"
+				:src="shop.logo"
+			><template v-slot:error>加载失败</template></van-image>
 			<h2>{{shop.name}}</h2>
-			<p>展商网站: {{shop.webSiteUrl}}</p>
-			<p>展商邮箱: {{shop.emailAddress}}</p>
+			<p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p>
+			<p v-show="shop.emailAddress?shop.emailAddress.length>0:''">展商邮箱: {{shop.emailAddress}}</p>
 			<p>联系方式: {{shop.contectPhone}}</p>
 			<p>展区位置: {{shopObj.PositionName}}</p>
-			<div class="zsxq-btn-jdgg">进店逛逛</div>
+			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl,{})">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">
 
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
 					<div class="index-ygz-item" v-for="(item,index) in listGoods" :key="index">
-						<img :src="item.qrCode" alt="">
+						<!-- <img :src="item.qrCode" alt=""> -->
+						<van-image
+							fit="cover"
+							:src="item.qrCode"
+						><template v-slot:error>加载失败</template></van-image>
 						<h3 class="van-ellipsis">{{item.name}}</h3>
 						<p class="van-ellipsis">{{item.webHits}}人正在浏览</p>
 					</div>
@@ -206,6 +218,7 @@
 					})
 					.then(function (response) {
 						_this.shop = response.data.result.items[0];
+						console.log('332221111111',_this.shop)
 						_this.goodsObj.Position = _this.shop.position;
 						// 获取展品列表
 						_this.getGoods();

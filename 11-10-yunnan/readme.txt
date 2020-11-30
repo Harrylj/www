@@ -30,6 +30,7 @@ article_yjxq 福利活动-展会影集-影集详情
 单页
 single_search_xwdt 聚焦文博-新闻动态-搜索
 single_search_wbjj 文博经济-搜索
+single_search_zp 展品搜索
 single_fhlt_ltfl 峰会论坛-论坛分类
 single_sczp 投票活动-上传作品
 single_flhd_xxtx 福利活动-信息填写
@@ -37,6 +38,7 @@ single_wbjj_zp 文博经济-展品
 single_wbjj_zs 文博经济-展商
 single_lxwm 联系我们
 single_video 云南欢迎你视频
+
 
 
 axios.get('api/v1/channels/23')

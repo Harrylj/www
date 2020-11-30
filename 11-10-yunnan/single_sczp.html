@@ -110,6 +110,9 @@
 		.sczp-zpt .van-field__label{
 			width: 100%;
 		}
+		#app .van-field__error-message{
+			color: #ee0a24;
+		}
 	</style>
 </head>
 
@@ -160,7 +163,7 @@
 				 class="sczp-zpt"
 				 name="uploader" label="参赛作品图">
 					<template #input>
-					  <van-uploader v-model="uploader" :after-read="afterRead"  />
+					  <van-uploader v-model="uploader" :after-read="afterRead" :before-delete="deleteImg" ></van-uploader>
 					</template>
 				</van-field>
 				<div class="sczp-btn-tj-div">
@@ -202,7 +205,8 @@
 				value: 2,
 				active: 3,
 				show: false,
-				uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+				// uploader: [{ url: 'https://img.yzcdn.cn/vant/leaf.jpg' }],
+				uploader: [],
 				data_content:{
 					siteId: _obj.idSite_PC,
 					channelId: _obj.idTPHD_PC,
@@ -212,11 +216,13 @@
 					phoneNumber:'', // 电话号码
 					imageUrl:'', //
 					pic:'',  // 上传图片后的地址
-				}
+					imageUrlCount:'', // 图片总数
+				},
+				imgList:[], // 图片在线地址列表
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				// console.log(1)
+				// vant.Toast('提示看看');
 				
 			},
 			mounted: function () {
@@ -228,31 +234,59 @@
 					this.data_content.body = this.worksDescription;
 					this.data_content.author = this.userName;
 					this.data_content.phoneNumber = this.userTel;
-					this.data_content.imageUrl = this.uploader[0]
+					this.data_content.imageUrlCount = imgList.length;
+					// this.data_content.imageUrl = this.uploader[0]
 					console.log('submit', values);
 					this.shangchuan()
 				},
+				// 删除图片
+				deleteImg(detail,index){
+					this.uploader.splice(index.index,1);
+					this.imgList.splice(index.index,1);
+					console.log('99889',this.imgList)
+					// this.fileList.splice(index.index,1);
+				},
+				// 判断图片类型并上传
 				afterRead(file) {
-				// 此时可以自行将文件上传至服务器
+					// 
+					if (file.file.type !== "image/jpeg" && file.file.type !== "image/png") {
+						this.$toast("请上传 jpg,png 格式图片");
+						file.status = 'failed';
+						file.message = '上传失败';
+						return false;
+					}
+					// 此时可以自行将文件上传至服务器
 					console.log(file);
 					this.uploadPic(file)
+					console.log('99889',this.uploader)
+					
 				},
 				// 上传图片
 				uploadPic(_img){
+					var _this = this;
+					let formData = new FormData()
+					formData.append('imgfile',_img.file)
 					axios.post(_obj.shopUrl+'api/services/app/Attachment/UploadImage',
-					_img)
+					formData)
 					.then(function (response) {
-						_this.pic = response.data;
-						console.log('33222222111',_this.pic);
+						// _this.pic = response.data;
+						_this.imgList.push(response.data.result)
+						// console.log('33222222111',_this.pic);
 					})
 				},
+				// 上传作品
 				shangchuan(){
-					// 上传作品
+					var imgUrl = 'imageUrl'
+					for(var i =0;i<this.imgList.length;i++){
+						if(i>0){
+							imgUrl = imgUrl + i
+						}
+						this.data_content[imgUrl] = this.imgList[i]
+					}
+					console.log('11111111112',this.data_content)
 					axios.post('api/v1/contents/'+_obj.idSite_PC+'/'+_obj.idTPHD_PC, this.data_content)
 					.then(function (response) {
-						// _this.userList = response.data.contents;
-						// public_imgsrc(_this.userList)
-						// console.log('123',_this.userList);
+						vant.Toast('上传成功,审核后显示');
 					})
 				},
 				fenxiang() {
