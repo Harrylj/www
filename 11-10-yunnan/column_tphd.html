@@ -225,7 +225,8 @@
 			text-align: center;
 			font-size: .31rem;
 			font-weight: bold;
-			background-color: #28356F;
+			/* background-color: #28356F; */
+			background-color: rgba(255, 255, 255, .1);
 			letter-spacing: .04rem;
 		}
 		.zqsl-btn-footer .zqsl-sx-item{
@@ -377,7 +378,7 @@
 					})
 					.catch(function (error) {
 						// console.log(error)
-						vant.Toast('投票失败，今天投过啦')
+						vant.Toast('您已投过票了，明天再来吧！')
 						// vant.Toast(error)
 					});
 				},

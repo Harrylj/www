@@ -59,7 +59,7 @@
 			border-radius: .2rem;
 		}
 		/* .index-swipe-01 img { */
-		.index-swipe-01 img
+		.index-swipe-01>img
 		,.index-swipe-01 .van-image {
 			display: block;
 			margin: 0 auto;
@@ -252,7 +252,7 @@
 		.index-swipe-01-div p{
 			line-height: .5rem;
 			font-size: .29rem;
-			opacity: .6;
+			/* opacity: .6; */
 			text-align: center;
 		}
 		.wbjj-rmzs{
@@ -369,16 +369,13 @@
 				<div class="index-header-swipe">
 					<van-swipe class="index-swipe-01" :autoplay="15000" >
 						<van-swipe-item>
-							<div class="index-swipe-01-div" v-for="(hot, index) in listHot" :key="index">
-							<div class="index-swipe-01-div">
-								<a :href="hot.webSiteUrl">
+							<div class="index-swipe-01-div" @click="goPage(hot.liveUrl,{})" v-for="(hot, index) in listHot" :key="index">
 								<!-- <img v-lazy="hot.logo" alt=""/> -->
 								<van-image
-								fit="contain"
+								fit="cover"
 								:src="hot.logo"
 								><template v-slot:error>加载失败</template></van-image>
-								<p class="van-ellipsis">{{hot.exhibitorName}}</p>
-								</a>
+								<p class="van-ellipsis">{{hot.name}}</p>
 							</div>
 						</van-swipe-item>
 					</van-swipe>
@@ -421,7 +418,7 @@
 							<a :href="goods.webSiteUrl">
 							<!-- <img :src="goods.logo" alt=""> -->
 							<van-image
-							fit="contain"
+							fit="cover"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{goods.name}}</h3>
@@ -641,7 +638,7 @@
 				},
 				selectHC(_index){
 					this.activeHC = _index;
-					vant.Toast('会场'+_index)
+					// vant.Toast('会场'+_index)
 				},
 				selectZQ(_index){
 					this.activeZQ = _index;

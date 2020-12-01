@@ -38,7 +38,8 @@ single_wbjj_zp 文博经济-展品
 single_wbjj_zs 文博经济-展商
 single_lxwm 联系我们
 single_video 云南欢迎你视频
-
+single_ygz_video 云逛展-视频
+single_wbqy 文博企业
 
 
 axios.get('api/v1/channels/23')

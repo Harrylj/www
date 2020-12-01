@@ -21,6 +21,9 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<title>峰会论坛视频</title>
 	<style type="text/css">
+		html,body,#app.zhzj,.zhzj-video,.index-video-div{
+			height: 100%;
+		}
 		.zhzj
 		,#app {
 			padding: 0;
@@ -29,7 +32,8 @@
 			height: 10rem;
 		}
 		.zhzj-mulu.van-popup--bottom.van-popup--round {
-			background-color: #162463;
+			/* background-color: #162463; */
+			background: linear-gradient(90deg, #1116A4, #2480EC);
 			border-radius: .67rem .67rem 0 0;
 			height: 8rem;
 			padding: 0 0 .3rem 0;
@@ -138,6 +142,7 @@
 		}
 		.public-header-title{
 			background-color: rgba(0, 0, 0, .12);
+			z-index: 9999;
 		}
 		.zhzj-btn-jj{
 			display: flex;
@@ -151,17 +156,38 @@
 		}
 		.kms-btn-close{
 			position: fixed;
-			right: .4rem;
-			bottom: 9rem;
+			right: .1rem;
+			bottom: 8.2rem;
 			z-index: 2010;
 			color: white;
 			font-size: .3rem;
+			background-image: url(images/quanping.png);
+			background-size: .37rem .37rem;
+			background-repeat: no-repeat;
+			width: 1rem;
+			height: 1rem;
+			background-position: center center;
 		}
 		.index-ygz-list{
+			display: flex;
+			justify-content: space-between;
 			width: 6.9rem;
 		}
 		.index-ygz-list .index-ygz-item img{
 			height: 3.5rem!important;
+		}
+		.jjwb-fhlt{
+			border-top: 1px solid rgba(250, 247, 247, 0.15);
+		}
+		.jjwb-fhlt h2{
+			font-size: .35rem;
+			line-height: 1rem;
+			color: white;
+			padding: .1rem 0;
+		}
+		.index-ygz-item .index-live,
+		.index-ygz-item  .index-video-num{
+			top: .3rem;
 		}
 	</style>
 </head>
@@ -177,34 +203,49 @@
 			</div>
 		</div>
 		<div class="zhzj-video">
-			<div class="index-live"><span></span>LIVE</div>
-			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
-			<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+			<div class="index-live"><span></span>{{FHLT.zhibozt}}</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{FHLT.hits}}</div>
+			<video-player class="vjs-custom-skin"  :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
+			<!-- <video-player
+				  class="video-player vjs-custom-skin"
+				  :class="!show?'index-video-middle':''"
+				  ref="videoPlayer"
+				  :playsinline="true"
+				  :options="playerOptions"
+				  @play="onPlayerPlay($event)"
+				  @pause="onPlayerPause($event)"
+				></video-player> -->
 		</div>
-		<div v-show="show" class="kms-btn-close" @click="hidePopup()">关闭</div>
-		<van-popup class="zhzj-mulu" v-model="show" :overlay="true" round position="bottom">
+		<!-- <div v-show="show" class="kms-btn-close" @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])"></div> -->
+		<div v-show="show" class="kms-btn-close" @click="hidePopup()"></div>
+		<!-- <van-popup class="zhzj-mulu" :close-on-click-overlay="false" @click-overlay="onPlayerPlay(document.getElementsByClassName('video-player')[0])"  v-model="show" :overlay="true" round position="bottom"> -->
+		<van-popup class="zhzj-mulu" :close-on-click-overlay="false" @click-overlay="hidePopup()" v-model="show" :overlay="true" round position="bottom">
 			<div class="zhzj-mulu-title" v-show="!showJJ">
-				<h3>文博会开幕式直播现场</h3>
+				<h3>{{FHLT.title}}</h3>
 				<div class="zhzj-btn-jj" @click="jianjie()">简介<van-icon name="arrow" /></div>
 			</div>
+			
 			<div class="jjwb-fhlt index-ygz" v-show="!showJJ">
+					<h2>其他视频</h2>
 					<div class="jjwb-fhlt-div">
 						<div class="index-ygz-list">
-							<a href="column_fhlt_video.html"  v-for="index in 2" :key="index">
-							<div class="index-ygz-item">
-								<div class="index-live"><span></span>LIVE</div>
-								<img src="images/bg.png" alt="">
-								<h3 class="van-ellipsis">{{index}}首届“研学中国”论坛</h3>
-								<p class="van-ellipsis">2020.12.5</p>
+							<div class="index-ygz-item" @click="goPage('column_fhlt_video.html',{'id':item.id})"  v-for="(item,index) in listFHLT" :key="index">
+								<div class="index-live"><span></span>{{item.zT}}</div>
+								<!-- <img :src="item.imageUrl" alt=""> -->
+								<van-image
+										fit="cover"
+										:src="item.imageUrl"
+								><template v-slot:error>加载失败</template></van-image>
+								<h3 class="van-ellipsis">{{item.title}}</h3>
+								<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
 							</div>
-							</a>
 						</div>
 					</div>
 				</div>
 			<div class="kms-jianjie" v-show="showJJ">
 				<h3>简介</h3>
 				<p>
-					云南是一个多民族文化省份，有众多特色的文化产品尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团30万人次的观众参与，成为云南第一动漫展会品牌此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。
+					{{FHLT.summary}}
 				</p>
 			</div>
 
@@ -249,15 +290,89 @@
 						}
 					]
 				},
+				videoDialogVisible: false, // 控制弹出层
+				contentID:0, // 内容id
+				FHLT:'', // 峰会论坛内容
+				listFHLT:[], // 峰会论坛其他视频
 			},
 			created: function () {
-				console.log(1)
-				vant.Toast('提示看看');
+				var _this = this;
+				this.contentID = qs2obj(window.location.href).id;
+				// console.log(1)
+				// vant.Toast('提示看看');
+				//视频播放量
+				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+ this.contentID)
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取峰会论坛内容
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+this.contentID)
+				.then(function (response) {
+					_this.FHLT = response.data;
+					public_imgsrc([_this.FHLT])
+					_this.playerOptions.poster = _this.FHLT.imageUrl;
+					_this.playerOptions.sources[0].src = _this.FHLT.shipin;
+					// console.log('123',_this.KMS);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取峰会论坛其他视频
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idFHLT,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 100
+				})
+				.then(function (response) {
+					var arrContent = response.data.contents;
+					public_imgsrc(arrContent)
+					// 随机数组取2值
+					_this.listFHLT = getRandomArrayElements(arrContent, 2)
+					console.log('123',_this.listFHLT);
+				})
 			},
 			mounted: function () {
 				// this.mulu()
 			},
 			methods: {
+				// 视频全屏事件1
+				full(element) {	
+					//做兼容处理
+					if (element.requestFullscreen) {
+						element.requestFullscreen();
+					} else if (element.mozRequestFullScreen) {
+						element.mozRequestFullScreen();
+					} else if (element.msRequestFullscreen) {
+						element.msRequestFullscreen();
+					} else if (element.oRequestFullscreen) {
+						element.oRequestFullscreen();
+					} else if (element.webkitRequestFullscreen) {
+						element.webkitRequestFullScreen();
+					} else {
+						var docHtml = document.documentElement;
+						var docBody = document.body;
+						var videobox = document.getElementsByClassName("video-player");
+						var cssText = "width:100%;height:100%;overflow:hidden;";
+						docHtml.style.cssText = cssText;
+						docBody.style.cssText = cssText;
+						videobox.style.cssText = cssText + ";" + "margin:0px;padding:0px;";
+						document.IsFullScreen = true;
+					}
+				},
+				// onPlayerPlay(document.getElementsByClassName('video-player')[0])
+				// 视频全屏触发事件
+				onPlayerPlay(player) {
+					this.full(player)
+				},
 				showPopup() {
 					this.show = true;
 					this.showJJ = false; 

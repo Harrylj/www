@@ -119,6 +119,19 @@ function goPage(_src,_obj){
 	_obj?window.location.href= _src + '?'+obj2qs(_obj):window.location.href= _src;
 	
 }
+// 数组随机取值
+function getRandomArrayElements(arr, count) {
+	var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+	while (i-- > min) {
+	index = Math.floor((i + 1) * Math.random());
+	temp = shuffled[index];
+	shuffled[index] = shuffled[i];
+	shuffled[i] = temp;
+	}
+	return shuffled.slice(min);
+}
+// var items = ['1','2','4','5','6','7','8','9','10'];
+// console.log('222222222',getRandomArrayElements(items, 4) );
 
 // 返回上一页
 function public_return_page(){

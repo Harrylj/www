@@ -21,6 +21,9 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<title>开幕式</title>
 	<style type="text/css">
+		html,body,#app.zhzj,.zhzj-video,.index-video-div{
+			height: 100%;
+		}
 		.zhzj
 		,#app {
 			padding: 0;
@@ -29,7 +32,8 @@
 			height: 10rem;
 		}
 		.zhzj-mulu.van-popup--bottom.van-popup--round {
-			background-color: #162463;
+			/* background-color: #162463; */
+			background: linear-gradient(90deg, #1116A4, #2480EC);
 			border-radius: .67rem .67rem 0 0;
 			height: 8rem;
 			padding: 0 0 .3rem 0;
@@ -166,6 +170,9 @@
 		.public-header-title{
 			z-index: 9999;
 		}
+		.index-swipe-02-father{
+			border-top: 1px solid rgba(250, 247, 247, 0.15);
+		}
 	</style>
 </head>
 
@@ -182,24 +189,24 @@
 		<div class="zhzj-video">
 			<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
 			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{KMS.hits}}</div>
-			<!-- <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"
-			></video-player> -->
-			<div class="videoBox">
-				<video-player
+			<video-player class="vjs-custom-skin" :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
+			<!-- <video-player
 				  class="video-player vjs-custom-skin"
 				  ref="videoPlayer"
 				  :playsinline="true"
 				  :options="playerOptions"
 				  @play="onPlayerPlay($event)"
 				  @pause="onPlayerPause($event)"
-				></video-player>
-			  </div>
+			></video-player> -->
+
 		</div>
 		<!-- <button @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])">全屏</button> -->
-		<div v-show="show" class="kms-btn-close" @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])"></div>
-		<van-popup class="zhzj-mulu" :overlay="false" :close-on-click-overlay="false" @click-overlay="onPlayerPlay(document.getElementsByClassName('video-player')[0])" v-model="show" :overlay="true" round position="bottom">
+		<!-- <div v-show="show" class="kms-btn-close" @click="onPlayerPlay(document.getElementsByClassName('video-player')[0])"></div> -->
+		<div v-show="show" class="kms-btn-close" @click="hidePopup()"></div>
+		<!-- <van-popup class="zhzj-mulu" :overlay="false" :close-on-click-overlay="false" @click-overlay="onPlayerPlay(document.getElementsByClassName('video-player')[0])" v-model="show" :overlay="true" round position="bottom"> -->
+		<van-popup class="zhzj-mulu" :overlay="true" :close-on-click-overlay="false" @click-overlay="hidePopup()" v-model="show" :overlay="true" round position="bottom">
 			<div class="zhzj-mulu-title" v-show="!showJJ">
-				<h3>文博会开幕式直播现场</h3>
+				<h3>{{KMS.title}}</h3>
 				<div class="zhzj-btn-jj" @click="jianjie()">简介<van-icon name="arrow" /></div>
 			</div>
 			<div class="index-swipe-02-father" v-show="!showJJ">
@@ -320,7 +327,7 @@
 				});
 			},
 			mounted: function () {
-				this.mulu()
+				// this.mulu()
 			},
 			methods: {
 				// 视频全屏事件1

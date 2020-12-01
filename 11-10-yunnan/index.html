@@ -179,7 +179,9 @@
 			height: 4.8rem;
 			margin-bottom: .26rem;
 		}
-		.index-ygz-item img{
+		.index-ygz-item>img,
+		.index-ygz-item .van-image,
+		.index-ygz-item .van-image img{
 			width: 100%;
 			height: 100%;
 			border-radius: .2rem;
@@ -260,7 +262,9 @@
 			width: 100%;
 		}
 		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
-		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img
+		,.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) .van-image
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) .van-image{
 			height: 4.8rem;
 		}
 		.index-header-img{
@@ -337,7 +341,7 @@
 					<van-image
 							fit="cover"
 							:src="playerOptions.poster"
-					></van-image>
+					><template v-slot:error>加载失败</template></van-image>
 					<!-- <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player> -->
 				</div>
 			</div>
@@ -355,7 +359,7 @@
 							<van-image
 							fit="cover"
 							:src="user.imageUrl"
-							></van-image>
+							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{user.title}}</h3>
 							<p class="van-ellipsis">{{user.job}}</p>
 							<p class="van-ellipsis">{{user.jobTwo}}</p>
@@ -367,9 +371,13 @@
 				<div class="index-h2">云逛展</div>
 				<div class="index-ygz-more" @click="ygzNext">换一换</div>
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="(item,index) in YGZ" :key="index">
+					<div class="index-ygz-item" @click="goPage('single_ygz_video.html',{'id':item.id})" v-for="(item,index) in YGZ" :key="index">
 						<div class="index-live"><span></span>{{item.zT}}</div>
-						<img :src="item.imageUrl" alt="">
+						<!-- <img :src="item.imageUrl" alt=""> -->
+						<van-image
+							fit="cover"
+							:src="item.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
 						<!-- <van-image
 							fit="cover"
 							:src="item.imageUrl"
@@ -385,7 +393,7 @@
 			<!-- 合作商 -->
 			<div class="index-tshw index-hzs">
 				<div class="index-tshw-list">
-					<div class="index-tshw-item" v-for="(goods,index) in HZS" :key="index">
+					<div class="index-tshw-item" @click="goPage('single_wbqy.html',{})" v-for="(goods,index) in HZS" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
 							fit="cover"
@@ -405,7 +413,7 @@
 						<!-- <div class="index-live"><span></span>LIVE</div> -->
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
-							fit="contain"
+							fit="cover"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
 						<h3 class="van-ellipsis">{{goods.name}}</h3>

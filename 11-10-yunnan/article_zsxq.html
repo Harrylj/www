@@ -37,7 +37,7 @@
 		}
 		.zqxq-body{
 			position: relative;
-			padding: .4rem .3rem;
+			padding: 0 .3rem .4rem .3rem;
 			/* background-color: rgba(255, 255, 255, .08);
 			border-radius: .67rem .67rem 0 0; */
 		}
@@ -102,6 +102,91 @@
 			justify-content: space-between;
 			flex-wrap: wrap;
 		}
+		.zsxq-bktj{
+			position: relative;
+			border-radius: .2rem;
+		}
+		.zsxq-bktj h2{
+			display: flex;
+			align-items: center;
+			font-size: .35rem;
+			line-height: 1rem;
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.zsxq-bktj h2 img{
+			margin-left: .1rem;
+			position: relative;
+			top: -.03rem;
+			width: .24rem;
+			height: .34rem;
+		}
+		.zsxq-bktj-list{
+			border-radius: .2rem;
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			background-color: rgba(255, 255, 255, .1);
+		}
+		.zsxq-bktj-item{
+			position: relative;
+			width: 33.333%;
+			text-align: center;
+			
+		}
+		.zsxq-bktj-item::after{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 0.01rem;
+			background-color:  rgba(255, 255, 255, .1);
+			content: " ";
+			color: transparent;
+		}
+		.zsxq-bktj-item:last-child:after{
+			display: none;
+		}
+		.zsxq-bktj-item .van-image{
+			width: 2.05rem;
+			height: 1.5rem;
+			margin: .2rem auto;
+		}
+		.zsxq-bktj-item-content{
+			margin-top: -1rem;
+			padding-top: 1rem;
+			padding-bottom: .2rem;
+			background: linear-gradient(0deg, rgba(255, 135, 17, 0.5), rgba(0, 0, 0, 0));
+		}
+		.zsxq-bktj-item h3{
+			font-size: .31rem;
+		}
+		.zsxq-bktj-item p{
+			font-size: .25rem;
+		}
+		.zsxq-bktj-item h3,
+		.zsxq-bktj-item p{
+			line-height: .5rem;
+			text-align: center;
+		}
+		.zsxq-bktj-item-num{
+			background-color: #FF8711;
+			width: 1.1rem;
+			height: .46rem;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			border-radius: 0 0 .2rem .2rem;
+		}
+		.zsxq-bktj-item-num span{
+			font-size: .31rem;
+		}
+		.zsxq-line{
+			border-top: 1px solid rgba(255, 255, 255, .15);
+			margin: .44rem -.3rem;
+		}
 	</style>
 </head>
 
@@ -128,10 +213,26 @@
 			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl,{})">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">
-
+			<div class="zsxq-bktj">
+				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
+				<div class="zsxq-bktj-list">
+					<div class="zsxq-bktj-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listTop" :key="index">
+						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
+						<van-image
+							fit="cover"
+							:src="item.logo"
+						><template v-slot:error>加载失败</template></van-image>
+						<div class="zsxq-bktj-item-content">
+							<h3 class="van-ellipsis">{{item.name}}</h3>
+							<p class="van-ellipsis">{{item.appHits}}人正在逛</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="zsxq-line"></div>
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="(item,index) in listGoods" :key="index">
+					<div class="index-ygz-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listGoods" :key="index">
 						<!-- <img :src="item.qrCode" alt=""> -->
 						<van-image
 							fit="cover"
@@ -188,8 +289,16 @@
 					Position:[],
 					// PositionName:'',
 				},
+				topObj:{
+					Position:[], // 地址
+					Ishot:true, // 是否热门
+					SkipCount:0,
+					MaxResultCount:3
+					// PositionName:'',
+				},
 				shop:'', // 展商详情
 				listGoods:[], // 展品列表
+				listTop:[], // top展品列表
 				
 			},
 			created: function () {
@@ -222,12 +331,13 @@
 						_this.goodsObj.Position = _this.shop.position;
 						// 获取展品列表
 						_this.getGoods();
+						// 获取top展品列表
+						_this.getTop()
 					})
 				},
 				// 获取展品列表
 				getGoods(){
 					var _this = this;
-					
 					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
 						params:this.goodsObj,
 						paramsSerializer: function(params) {
@@ -236,6 +346,20 @@
 					})
 					.then(function (response) {
 						_this.listGoods = response.data.result.items;
+					})
+				},
+				// 获取top展品列表
+				getTop(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
+						params:this.topObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listTop = response.data.result.items;
+						console.log('32223333',_this.listTop)
 					})
 				},
 				fenxiang() {

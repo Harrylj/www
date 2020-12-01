@@ -386,12 +386,12 @@
 					this.activeHC = _index;
 					this.idHC = _id;
 					this.activeZQ = 0;
-					vant.Toast('会场'+_index)
+					// vant.Toast('会场'+_index)
 				},
 				// 选择展区
 				selectZQ(_index){
 					this.activeZQ = _index;
-					vant.Toast('展区'+_index)
+					// vant.Toast('展区'+_index)
 				},
 				// 选择确定
 				selectQD(){
@@ -404,6 +404,7 @@
 				// 选择取消
 				reset(){
 					// 获取所有展区
+					this.activeHC = 0;
 					this.getAllZQ();
 					this.hidePopup();
 					// this.activeHC = 0;

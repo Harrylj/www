@@ -21,8 +21,11 @@
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
 	<title>展会直击</title>
 	<style type="text/css">
+		html,body,#app.zhzj,.zhzj-video,.index-video-div{
+			height: 100%;
+		}
 		#app.zhzj {
-			padding: 0 0 1rem 0;
+			padding: 0;
 		}
 		.index-video-div{
 			position: relative;
@@ -155,15 +158,15 @@
 			<img style="width: 5rem;" src="images/bg.png" alt="">
 			{{ message }} -->
 			<div class="index-video-div">
-				<div class="index-live"><span></span>LIVE</div>
-				<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
-				<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+				<div class="index-live"><span></span>{{videoML[active].zt}}</div>
+				<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
+				<video-player class="vjs-custom-skin " :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
 			</div>
 		</div>
 
-		<van-popup class="zhzj-mulu" v-model="show" :overlay="false" round position="bottom">
+		<van-popup class="zhzj-mulu" v-model="show" :overlay="true" round position="bottom">
 			<div class="zhzj-mulu-title">
-				<h3>开幕式目录</h3>
+				<h3>目录</h3>
 				<van-icon class="zhzj-mulu-close" name="cross" @click="hidePopup()" />
 			</div>
 			<div class="zhzj-mulu-list">
@@ -174,7 +177,8 @@
 						<h6>即将开始</h6>
 						<p>{{video.title}}</p>
 					</div>
-					<h5>15:30pm</h5>
+					<!-- <h5>15:30pm</h5> -->
+					<h5>{{video.createdDate?video.createdDate.split(' ')[1].substring(0,5):''}}</h5>
 				</div>
 			</div>
 		</van-popup>
@@ -199,7 +203,7 @@
 			el: '#app',
 			data: {
 				value: 2,
-				active: 3,
+				active: 0,
 				message: '展会直击',
 				show: false,
 				playerOptions: {
@@ -211,28 +215,56 @@
 						{
 							withCredentials: false,
 							type: 'application/x-mpegURL',
-							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
 							muted: false,
 							nativeAudioTracks:false,
 						}
 					]
 				},
 				videoML:[],
+				KMS:'', // 播放量,这里统一显示开幕式的
 			},
 			created: function () {
 				var _this = this;
-				console.log(1)
+				// console.log(1)
 				// vant.Toast('提示看看');
+				//开幕式播放量
+				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				// 获取开幕式列表
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
+				.then(function (response) {
+					_this.KMS = response.data;
+					public_imgsrc([_this.KMS])
+					// _this.playerOptions.poster = _this.KMS.imageUrl;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
+					// console.log('123',_this.KMS);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 				// 目录
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idZHZJ,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
 					"page": 1,
 					"perPage": 130
 				})
 				.then(function (response) {
 					_this.videoML = response.data.contents;
 					public_imgsrc(_this.videoML)
+					_this.playerOptions.poster = _this.videoML[0].imageUrl;
+					_this.playerOptions.sources[0].src = _this.videoML[0].shipin;
 					console.log('123',_this.videoML);
 				})
 				.catch(function (error) {
@@ -240,7 +272,7 @@
 				});
 			},
 			mounted: function () {
-				this.mulu()
+				// this.mulu()
 			},
 			methods: {
 				showPopup() {
@@ -253,7 +285,7 @@
 					vant.Toast('分享')
 				},
 				mulu() {
-					vant.Toast('目录')
+					// vant.Toast('目录')
 					this.show =!this.show;
 				},
 				onClickLeft() {
@@ -263,8 +295,11 @@
 					vant.Toast('按钮');
 				},
 				selectMulu(_index) {
+					var _this = this;
 					this.active = _index;
-					vant.Toast(this.active)
+					_this.playerOptions.poster = _this.videoML[_index].imageUrl;
+					_this.playerOptions.sources[0].src = _this.videoML[_index].shipin;
+					// vant.Toast(this.active)
 					this.hidePopup()
 				}
 			},

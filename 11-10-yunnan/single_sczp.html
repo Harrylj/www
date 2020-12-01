@@ -234,10 +234,15 @@
 					this.data_content.body = this.worksDescription;
 					this.data_content.author = this.userName;
 					this.data_content.phoneNumber = this.userTel;
-					this.data_content.imageUrlCount = imgList.length;
+					this.data_content.imageUrlCount = this.imgList.length;
 					// this.data_content.imageUrl = this.uploader[0]
 					console.log('submit', values);
-					this.shangchuan()
+					if(this.imgList.length>0){
+						this.shangchuan()
+					}
+					else{
+						vant.Toast('请上传图片')
+					}
 				},
 				// 删除图片
 				deleteImg(detail,index){
@@ -287,6 +292,10 @@
 					axios.post('api/v1/contents/'+_obj.idSite_PC+'/'+_obj.idTPHD_PC, this.data_content)
 					.then(function (response) {
 						vant.Toast('上传成功,审核后显示');
+						setTimeout(function(){
+							public_return_page()
+							console.log('去上一页')
+						},1000)
 					})
 				},
 				fenxiang() {
