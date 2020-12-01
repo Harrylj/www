@@ -4,7 +4,7 @@ function public_obj() {
 	_obj.appkey = 'f003e79e-6820-4235-a781-aae069cee459',
 	// _obj.siteUrl = 'http://47.98.233.45:8032/', // 站点栏目，内容
 	// _obj.shopUrl = 'http://47.98.233.45:8031/', // 展品展商
-	_obj.siteUrl = 'http://47.98.233.45:8032/', // 站点栏目，内容
+	_obj.siteUrl = 'http://admin.ynwbh.com/', // 站点栏目，内容
 	_obj.shopUrl = 'http://exhibitor.ynwbh.com/', // 展品展商
 	_obj.idSite = 23, // 站点id
 	_obj.idSite_PC = 1, // 站点id-PC端
