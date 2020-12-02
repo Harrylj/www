@@ -189,7 +189,7 @@
 							<!-- <img src="images/bg.png" alt=""> -->
 							<van-image
 							fit="fill"
-							src="https://img.yzcdn.cn/vant/cat.jpeg"
+							:src="item.imageUrl"
 							></van-image>
 							<h3 class="van-ellipsis">{{item.title}}</h3>
 							<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
@@ -333,13 +333,13 @@
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// vant.Toast('提示看看');
 				//开幕式播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 				// 获取开幕式列表
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
 				.then(function (response) {
@@ -381,7 +381,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.listXW = response.data.contents;

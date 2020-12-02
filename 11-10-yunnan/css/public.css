@@ -261,7 +261,8 @@ div.public-footer-nav:after {
 	min-height: 3.5rem;
 	border-radius: 0.2rem;
 }
-.index-swipe-02-father img {
+.index-swipe-02-father img
+,.index-swipe-02-father .van-image{
 	display: block;
 	width: 1.5rem;
 	height: 1.5rem;
@@ -609,4 +610,114 @@ div.zqsl-popup{
     justify-content: center;
     flex-direction: column;
     background-color: black;
+}
+.public-countdown-father{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background-color: rgba(0, 0, 0, .5);
+	background-image: url(../images/countdown-bg.jpg);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	background-size: cover;
+}
+.public-countdown-div{
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+.public-countdown-num{
+	position: absolute;
+	left: 50%;
+	top: 30%;
+	margin-left: -1.5rem;
+	background-image: url(../images/countdown-10.png);
+	background-repeat: no-repeat;
+	width: 3rem;
+	height: 3rem;
+	background-size: 2.7rem 1.55rem;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.public-countdown-num-10{
+	background-image: url(../images/countdown-10.png);
+	background-size: 2.7rem 1.55rem;
+}
+.public-countdown-num-9{
+	background-image: url(../images/countdown-9.png);
+	background-size: 2rem 1.51rem;
+}
+.public-countdown-num-8{
+	background-image: url(../images/countdown-8.png);
+	background-size: 1.9rem 1.49rem;
+}
+.public-countdown-num-7{
+	background-image: url(../images/countdown-7.png);
+	background-size: 1.93rem 1.54rem;
+}
+.public-countdown-num-6{
+	background-image: url(../images/countdown-6.png);
+	background-size: 2.01rem 1.5rem;
+}
+.public-countdown-num-5{
+	background-image: url(../images/countdown-5.png);
+	background-size: 2.3rem 1.5rem;
+}
+.public-countdown-num-4{
+	background-image: url(../images/countdown-4.png);
+	background-size: 2.2rem 1.56rem;
+}
+.public-countdown-num-3{
+	background-image: url(../images/countdown-3.png);
+	background-size: 2.05rem 1.54rem;
+}
+.public-countdown-num-2{
+	background-image: url(../images/countdown-2.png);
+	background-size: 2.17rem 1.51rem;
+}
+.public-countdown-num-1{
+	background-image: url(../images/countdown-1.png);
+	background-size: 1.7rem 1.55rem;
+}
+.public-countdown-h1{
+	position: absolute;
+	top: 10%;
+	left: 0;
+	width: 100%;
+	padding-left: .75rem;
+	letter-spacing: .027rem;
+	color: #F3F7FA;
+	font-size: .39rem;
+	line-height: 1rem;
+}
+.public-countdown-content{
+	position: absolute;
+	bottom: 10%;
+	left: 0;
+	width: 100%;
+}
+.public-countdown-content h5{
+	margin-top: .2rem;
+}
+.public-countdown-content h5,
+.public-countdown-content p{
+	color: #F3F7FA;
+	font-size: .29rem;
+	letter-spacing: .027rem;
+	line-height: .5rem;
+	text-align: center;
+}
+.public-countdown-right{
+	position: absolute;
+	top: 10%;
+	right: 0;
+	text-align: right;
+	padding-right: .5rem;
+	font-size: .3rem;
+	line-height: 1rem;
+	color: white;
+	opacity: .8;
 }

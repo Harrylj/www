@@ -23,13 +23,11 @@ axios.interceptors.request.use(function (config) {
         }
         */
     }
-    // 统计量
-    if(config.url.indexOf('api/v1') != -1){
+    // 统计量数组
+    if(config.url.indexOf('api/v1/contents/') != -1){
       fwlList.push(config.url)
     }
-    console.log('9999',fwlList,config)
-    // alert(1)
-    // console.log('2211111122233',config.url)
+    // console.log('9999',fwlList,config)
     return config;
   }, function (error) {
     // 对请求错误做些什么
@@ -49,8 +47,22 @@ axios.interceptors.response.use(function (response) {
 //网站访问量
 axios.get(public_obj().shopUrl+'api/services/app/statistics/state')
 .then(function (response) {
-  console.log('99991121',response);
+  // console.log('99991121',response);
 })
 .catch(function (error) {
   console.log(error);
 });
+
+// 延迟执行统计量
+setTimeout(()=>{
+  fwlList.forEach((element,index)=>{
+    var _address = element.split('contents/')[1];
+    // console.log('22222111',element.split('contents/')[1])
+    //执行统计量
+    axios.get('api/hits/'+_address)
+    .then(function (response) {
+      // console.log(response);
+    });
+  })
+
+},1000)

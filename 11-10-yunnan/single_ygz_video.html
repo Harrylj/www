@@ -284,7 +284,9 @@
 						{
 							withCredentials: false,
 							type: 'application/x-mpegURL',
-							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							src: 'http://pullhls8928c963.live.126.net/live/a1cc1e2c7c8947ac971e513ed5dcb12c/playlist.m3u8',
+							// src: 'rtmp://v8928c963.live.126.net/live/a1cc1e2c7c8947ac971e513ed5dcb12c',
 							muted: false,
 							nativeAudioTracks:false,
 						}
@@ -302,13 +304,13 @@
 				// console.log(1)
 				// vant.Toast('提示看看');
 				//视频播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+ this.contentID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+ this.contentID)
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 				// 获取峰会论坛内容
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+this.contentID)
 				.then(function (response) {

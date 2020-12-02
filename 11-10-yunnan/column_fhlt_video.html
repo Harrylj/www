@@ -301,13 +301,13 @@
 				// console.log(1)
 				// vant.Toast('提示看看');
 				//视频播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+ this.contentID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+ this.contentID)
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 				// 获取峰会论坛内容
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+this.contentID)
 				.then(function (response) {

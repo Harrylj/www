@@ -92,7 +92,7 @@
 			border-radius: .3rem;
 			line-height: .4rem;
 			right: .3rem;
-			bottom: .3rem;
+			bottom: .2rem;
 			padding: .1rem .3rem;
 			font-size: .28rem;
 		}
@@ -195,7 +195,7 @@
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">展商详情</div>
+				<div class="phtc-title">文博企业</div>
 				<!-- <div class="phtc-fenxiang" @click="fenxiang()"></div> -->
 			</div>
 		</div>
@@ -203,17 +203,17 @@
 			<!-- <img :src="shop.logo" alt=""> -->
 			<van-image
 				fit="cover"
-				:src="shop.logo"
+				:src="WBQY.imageUrl"
 			><template v-slot:error>加载失败</template></van-image>
 			<h2>{{shop.name}}</h2>
-			<p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p>
-			<p v-show="shop.emailAddress?shop.emailAddress.length>0:''">展商邮箱: {{shop.emailAddress}}</p>
-			<p>联系方式: {{shop.contectPhone}}</p>
-			<p>展区位置: {{shopObj.PositionName}}</p>
-			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl,{})">进店逛逛</div>
+			<p v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''">企业网站: {{WBQY.wangzhan}}</p>
+			<p v-show="WBQY.youxiang?WBQY.youxiang.length>0:''">企业邮箱: {{WBQY.youxiang}}</p>
+			<p>联系方式: {{WBQY.lianxifangshi}}</p>
+			<p>企业位置: {{WBQY.zhanquweizhi}}</p>
+			<div class="zsxq-btn-jdgg" v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''" @click="goPage(WBQY.wangzhan,{})">去逛逛</div>
 		</div>
 		<div class="zqxq-body">
-			<div class="zsxq-bktj">
+			<!-- <div class="zsxq-bktj">
 				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
 				<div class="zsxq-bktj-list">
 					<div class="zsxq-bktj-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listTop" :key="index">
@@ -227,19 +227,22 @@
 							<p class="van-ellipsis">{{item.appHits}}人正在逛</p>
 						</div>
 					</div>
-				</div>
+				</div>id
 			</div>
-			<div class="zsxq-line"></div>
+			<div class="zsxq-line"></div> -->
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listGoods" :key="index">
+					<div class="index-ygz-item" @click="item.videoUrl.length>30?goPage('single_wbqy_video.html',{'id':item.id}):goPage('single_wbqy_qyxq.html',{'id':item.id})" v-for="(item,index) in listGoods" :key="index">
 						<!-- <img :src="item.qrCode" alt=""> -->
 						<van-image
 							fit="cover"
-							:src="item.qrCode"
+							:src="item.imageUrl"
 						><template v-slot:error>加载失败</template></van-image>
-						<h3 class="van-ellipsis">{{item.name}}</h3>
-						<p class="van-ellipsis">{{item.webHits}}人正在浏览</p>
+						<!-- <h2>{{item.videoUrl.length}}</h2>
+						<h1>{{item.videoUrl.length>30?'video':'arr'}}</h1>
+						<h3>{{item.id}}</h3> -->
+						<h3 class="van-ellipsis">{{item.title}}</h3>
+						<!-- <p class="van-ellipsis">{{item.webHits}}人正在浏览</p> -->
 					</div>
 				</div>
 				<!-- <div class="index-ygz-list">
@@ -299,23 +302,40 @@
 				shop:'', // 展商详情
 				listGoods:[], // 展品列表
 				listTop:[], // top展品列表
+				WBQY:'', // 文博企业详情
 				
 			},
 			created: function () {
 				// console.log(1)
 				// vant.Toast('提示看看');
-				this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
-				this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
-				this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
+				// this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
+				// this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
+				// this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
 				// this.goodsObj.PositionName = qs2obj(window.location.href).PositionName;
 				// this.goodsObj.Position = [qs2obj(window.location.href).HC,qs2obj(window.location.href).ZQ]
 				// 获取展商详情
-				this.getShop();
+				// this.getShop();
+				// 获取栏目详情
+				this.getChannel()
+				// 获取展品列表
+				this.getGoods()
 			},
 			mounted: function () {
 
 			},
 			methods: {
+				// 获取栏目详情
+				getChannel(){
+					var _this = this;
+					// 获取首页站点下栏目
+					// axios.get('api/v1/channels/23')
+					axios.get('api/v1/channels/'+_obj.idSite+'/'+ qs2obj(window.location.href).id)
+					.then(function (response) {
+						_this.WBQY = response.data
+						public_imgsrc([_this.WBQY])
+						console.log(_this.WBQY);
+					})
+				},
 				// 获取展商详情
 				getShop(){
 					var _this = this;
@@ -338,6 +358,23 @@
 				// 获取展品列表
 				getGoods(){
 					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": qs2obj(window.location.href).id,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
+						"page": 1,
+						"perPage": 100
+					})
+					.then(function (response) {
+						_this.listGoods = response.data.contents;
+						public_imgsrc(_this.listGoods)
+						// console.log('123',_this.userList);
+					})
+					/*
 					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
 						params:this.goodsObj,
 						paramsSerializer: function(params) {
@@ -347,6 +384,7 @@
 					.then(function (response) {
 						_this.listGoods = response.data.result.items;
 					})
+					*/
 				},
 				// 获取top展品列表
 				getTop(){

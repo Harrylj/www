@@ -40,8 +40,9 @@ single_lxwm 联系我们
 single_video 云南欢迎你视频
 single_ygz_video 云逛展-视频
 single_wbqy 文博企业
-
-
+single_wbqy_video 文博企业-视频详情
+single_wbqy_qyxq 文博企业-企业详情
+single_wbqy_one 文博企业-云南报业传媒集团
 axios.get('api/v1/channels/23')
 				.then(function (response) {
 					console.log(response);
@@ -56,7 +57,7 @@ axios.post('api/v1/contents', {
 					"channelId": 34,
 					// "checked": true,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;

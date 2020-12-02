@@ -166,13 +166,13 @@
 				// vant.Toast('提示看看');
 
 				//开幕式播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 
 				// 获取首页站点下栏目
 				// axios.get('api/v1/channels/23')
@@ -185,7 +185,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idSYDBLB,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.imagesDBLB = response.data.contents;
@@ -201,7 +201,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;
@@ -239,7 +239,7 @@
 						"siteId": _obj.idSite,
 						"channelId": _obj.idHZS,
 						"page": 1,
-						"perPage": 30
+						"perPage": 100
 					})
 				.then(function (response) {
 						_this.HZS = response.data.contents;
@@ -251,7 +251,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idZBDW,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.ZBDW = response.data.contents;
@@ -262,7 +262,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idCBDW,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.CBDW = response.data.contents;
@@ -273,7 +273,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idXBDW,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.XBDW = response.data.contents;

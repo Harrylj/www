@@ -310,6 +310,26 @@
 			<img src="images/bg.png" alt="" />
 			<span>云南文博会</span>
 		</div> -->
+		<transition name="van-slide-down">
+			<!-- <div v-show="countdownShow">Slide Up</div> -->
+		
+		<div class="public-countdown-father"  v-if="countdownShow" @click="countdownHide()">
+			<div class="public-countdown-div">
+				<div class="public-countdown-right">测试版</div>
+				<div class="public-countdown-h1">展会倒计时</div>
+				<div class="public-countdown-num" :class="'public-countdown-num-'+countdownDay"></div>
+				<div class="public-countdown-content">
+					<h5>展会时间</h5>
+					<p>2020.12.12-12.31</p>
+					<h5>展会地点</h5>
+					<p>主会场：昆明</p>
+					<p>分会场：玉溪  丽江  保山</p>
+				</div>
+
+			</div>
+			
+		</div>
+		</transition>
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="30000" >
 				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
@@ -361,8 +381,8 @@
 							:src="user.imageUrl"
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{user.title}}</h3>
-							<p class="van-ellipsis">{{user.job}}</p>
-							<p class="van-ellipsis">{{user.jobTwo}}</p>
+							<!-- <p class="van-ellipsis">{{user.job}}</p> -->
+							<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
 						</div>
 					</van-swipe-item>
 				</van-swipe>
@@ -393,7 +413,8 @@
 			<!-- 合作商 -->
 			<div class="index-tshw index-hzs">
 				<div class="index-tshw-list">
-					<div class="index-tshw-item" @click="goPage('single_wbqy.html',{})" v-for="(goods,index) in HZS" :key="index">
+					<!-- <div class="index-tshw-item" @click="goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index"> -->
+					<div class="index-tshw-item" @click="goods.channelName=='云南报业传媒集团'?goPage('single_wbqy_one.html',{'id':goods.id}):goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
 							fit="cover"
@@ -558,34 +579,51 @@
 				},
 				listGoods: [], // 特色好物列表
 				HZS:[], // 合作商
+				countdownDay:'', // 倒计时天数
+				countdownShow:false, // 是否显示倒计时 
 			},
 			created: function () {
+				
 				var _this = this;
+				// 距离指定日期还有多少天
+				this.countdownDay = getDistanceSpecifiedTime('2020/12/13 00:00:00')
+				setTimeout(()=>{
+					_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
+				},500)
+
+				// var countdown_h = window.screen.height;
+				// var countdown_w = window.screen.width;
+				// var countdown_h = document.body.clientHeight || document.documentElement.clientHeight;
+				// var countdown_w = document.body.clientWidth || document.documentElement.clientWidth;
+				// document.getElementsByClassName('public-countdown-father')[0].style.width=countdown_w + 'px';
+				// document.getElementsByClassName('public-countdown-father')[0].style.height=countdown_h + 'px';
+
+				
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// vant.Toast('提示看看');
 
 				//开幕式播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				// .then(function (response) {
+				// 	// console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 
 				// 获取首页站点下栏目
 				// axios.get('api/v1/channels/23')
 				axios.get('api/v1/channels/'+_obj.idSite)
 				.then(function (response) {
-					console.log(response);
+					// console.log(response);
 				})
 				// 顶部轮播
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idSYDBLB,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.imagesDBLB = response.data.contents;
@@ -601,7 +639,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;
@@ -640,7 +678,7 @@
 						"siteId": _obj.idSite,
 						"channelId": _obj.idHZS,
 						"page": 1,
-						"perPage": 30
+						"perPage": 100
 					})
 				.then(function (response) {
 						_this.HZS = response.data.contents;
@@ -653,14 +691,14 @@
 				.then(function (response) {
 						_this.HZS = response.data.children;
 						public_imgsrc(_this.HZS)
-						console.log('9999922311',_this.HZS)
+						// console.log('9999922311',_this.HZS)
 				})
 				// 主办单位
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idZBDW,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.ZBDW = response.data.contents;
@@ -671,7 +709,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idCBDW,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.CBDW = response.data.contents;
@@ -682,7 +720,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idXBDW,
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.XBDW = response.data.contents;
@@ -718,12 +756,16 @@
 				
 			},
 			mounted: function () {
-				console.log(')))))obj-',_obj)
+				// console.log(')))))obj-',_obj)
 				// http://192.168.0.250:8032/api/v1/channels/{siteId}
 
 				
 			},
 			methods: {
+				// 点击隐藏倒计时
+				countdownHide(){
+					this.countdownShow = false;
+				},
 				// 获取特色好物
 				getGoods(){
 					var _this = this;
@@ -760,7 +802,6 @@
 			},
 
 		})
-		console.log('99999', vant.Lazyload)
 		// app.use(vant.Lazyload);
 	</script>
 </body>

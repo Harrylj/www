@@ -220,8 +220,8 @@
 							:src="user.imageUrl"
 							></van-image>
 							<h3 class="van-ellipsis">{{user.title}}</h3>
-							<p class="van-ellipsis">{{user.job}}</p>
-							<p class="van-ellipsis">{{user.jobTwo}}</p>
+							<!-- <p class="van-ellipsis">{{user.job}}</p> -->
+							<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
 						</div>
 					</van-swipe-item>
 				</van-swipe>
@@ -286,13 +286,13 @@
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// vant.Toast('提示看看');
 				//开幕式播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 				// 获取开幕式列表
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
 				.then(function (response) {
@@ -315,7 +315,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 30
+					"perPage": 100
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;

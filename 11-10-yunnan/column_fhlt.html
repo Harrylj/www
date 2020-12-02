@@ -152,8 +152,8 @@
 												:src="user.imageUrl"
 												></van-image>
 												<h3 class="van-ellipsis">{{user.title}}</h3>
-												<p class="van-ellipsis">{{user.job}}</p>
-												<p class="van-ellipsis">{{user.jobTwo}}</p>
+												<!-- <p class="van-ellipsis">{{user.job}}</p> -->
+												<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
 											</div>
 										</a>
 									</van-swipe-item>
@@ -320,7 +320,7 @@
 							"value": "1"
 						}],
 						// "page": 1,
-						// "perPage": 30
+						// "perPage": 100
 					};
 					_index?abc={
 						"siteId": _obj.idSite,
@@ -331,7 +331,7 @@
 						// 	"value": "1"
 						// }],
 						// "page": 1,
-						// "perPage": 30
+						// "perPage": 100
 					}:'';
 					axios.post('api/v1/contents',abc)
 					.then(function (response) {
@@ -362,7 +362,7 @@
 							}
 						],
 						"page": 1,
-						"perPage": 30
+						"perPage": 100
 					};
 					_index?abc={
 						"siteId": _obj.idSite,
@@ -379,7 +379,7 @@
 							}
 						],
 						"page": 1,
-						"perPage": 30
+						"perPage": 100
 					}:'';
 					axios.post('api/v1/contents',abc)
 					.then(function (response) {
