@@ -182,6 +182,18 @@
 				</div>
 			</div>
 		</van-popup>
+		<!-- 分享内容start -->
+		<link rel="stylesheet" href="css/share.min.css">
+		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
+		<van-popup class="public-fenxiang-popup" v-model="showShare" position="bottom"  >
+			<div class="public-fenxiang-popup-div" >
+				<div id="share-2" v-show="showShare" v-show="showShare"></div>
+				<div class="public-fenxiang-popup-close" @click="showShare=false">取消</div>
+			</div>
+		</van-popup>
+		<script src="js/social-share.js"></script>
+		<script src="js/qrcode.js"></script>
+		<!-- 分享内容over -->
 	</div>
 	<script>
 
@@ -202,6 +214,8 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				showShare:false,  // 分享
+				showShareWX:false,	// 微信浏览器分享
 				value: 2,
 				active: 0,
 				message: '展会直击',
@@ -241,6 +255,8 @@
 				.then(function (response) {
 					_this.KMS = response.data;
 					public_imgsrc([_this.KMS])
+					_this.playerOptions.poster = _this.KMS.imageUrl;
+					_this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// _this.playerOptions.poster = _this.KMS.imageUrl;
 					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// console.log('123',_this.KMS);
@@ -275,14 +291,28 @@
 				// this.mulu()
 			},
 			methods: {
+				//分享
+				fenxiang() {
+					var _this = this;
+					if(isWeChatBrowser()){
+						this.showShareWX = true;
+					}
+					else{
+						this.showShare = true;
+						setTimeout(()=>{
+							_this.fenxiangNext();
+						},50)
+					}
+				},
+				// 分享组件
+				fenxiangNext(){
+					socialShare('#share-2', {sites: ['wechat','weibo']});
+				},
 				showPopup() {
 					this.show = true;
 				},
 				hidePopup() {
 					this.show = false;
-				},
-				fenxiang() {
-					vant.Toast('分享')
 				},
 				mulu() {
 					// vant.Toast('目录')

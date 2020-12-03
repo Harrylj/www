@@ -138,7 +138,7 @@
 			</van-swipe>
 			<div class="tphd-header-list">
 				<div class="tphd-header-item">
-					<h2>{{data_content.taxis}}</h2>
+					<h2>{{data_content.code}}</h2>
 					<p>编号</p>
 				</div>
 				<div class="tphd-header-item">
@@ -164,6 +164,18 @@
 			  投票
 			</van-button>
 		</div>
+		<!-- 分享内容start -->
+		<link rel="stylesheet" href="css/share.min.css">
+		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
+		<van-popup class="public-fenxiang-popup" v-model="showShare" position="bottom"  >
+			<div class="public-fenxiang-popup-div" >
+				<div id="share-2" v-show="showShare" v-show="showShare"></div>
+				<div class="public-fenxiang-popup-close" @click="showShare=false">取消</div>
+			</div>
+		</van-popup>
+		<script src="js/social-share.js"></script>
+		<script src="js/qrcode.js"></script>
+		<!-- 分享内容over -->
 	</div>
 	<script>
 
@@ -191,6 +203,8 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				showShare:false,  // 分享
+				showShareWX:false,	// 微信浏览器分享
 				value: 2,
 				active: 3,
 				show: false,
@@ -225,6 +239,23 @@
 
 			},
 			methods: {
+				//分享
+				fenxiang() {
+					var _this = this;
+					if(isWeChatBrowser()){
+						this.showShareWX = true;
+					}
+					else{
+						this.showShare = true;
+						setTimeout(()=>{
+							_this.fenxiangNext();
+						},50)
+					}
+				},
+				// 分享组件
+				fenxiangNext(){
+					socialShare('#share-2', {sites: ['wechat','weibo']});
+				},
 				// 投票
 				toupiao(_id){
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
@@ -248,9 +279,6 @@
 					// 	console.log(response)
 					// 	vant.Toast(response)
 					// });
-				},
-				fenxiang() {
-					vant.Toast('分享')
 				},
 				showPopup() {
 					this.show = true;

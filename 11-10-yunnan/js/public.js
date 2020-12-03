@@ -1,3 +1,9 @@
+// pc打开跳转pc
+// if(!(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent))) {
+// 	window.location.href = 'http://www.ynwbh.com'
+// }
+
+
 // 公用参数，栏目
 function public_obj() {
 	var _obj = {};
@@ -59,6 +65,8 @@ function public_imgsrc(_obj){
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
+		
+		element.body?element.body = element.body.replace(/@/g,'http://admin.ynwbh.com/mobile'):'';
 		var arr_img = [];
 		// 图片地址数组处理
 		Object.keys(_element).forEach((element,key)=>{
@@ -157,6 +165,12 @@ function getRandomArrayElements(arr, count) {
 }
 // var items = ['1','2','4','5','6','7','8','9','10'];
 // console.log('222222222',getRandomArrayElements(items, 4) );
+// 判断当前是否微信浏览器
+function isWeChatBrowser() {
+	const ua = window.navigator.userAgent.toLowerCase()
+	const matchArr = ua.match(/MicroMessenger/i)
+	return matchArr && (matchArr.toString() === 'micromessenger')
+}
 
 // 返回上一页
 function public_return_page(){

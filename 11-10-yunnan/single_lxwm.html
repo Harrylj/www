@@ -287,6 +287,14 @@
 			width: 100%;
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.344), rgba(0, 0, 0, 0));
 		}
+		.van-swipe-item{
+			border-radius: .2rem;
+			overflow: hidden;
+			height: 3.5rem;
+		}
+		.index-header-swipe .van-swipe-item{
+			height: 100%;
+		}
 	</style>
 </head>
 
@@ -572,10 +580,10 @@
 				onClick(name, title) {
 					this.list = [];
 					console.log(title)
-					vant.Toast(title);
+					// vant.Toast(title);
 				},
 				fenxiang() {
-					vant.Toast('分享')
+					// vant.Toast('分享')
 				},
 				showPopup() {
 					this.show = true;
@@ -585,23 +593,23 @@
 					this.show = false;
 				},
 				onClickLeft() {
-					vant.Toast('返回');
+					// vant.Toast('返回');
 				},
 				onClickRight() {
-					vant.Toast('按钮');
+					// vant.Toast('按钮');
 				},
 				selectMulu(_index) {
 					this.active = _index;
-					vant.Toast(this.active)
+					// vant.Toast(this.active)
 					this.hidePopup()
 				},
 				selectHC(_index){
 					this.activeHC = _index;
-					vant.Toast('会场'+_index)
+					// vant.Toast('会场'+_index)
 				},
 				selectZQ(_index){
 					this.activeZQ = _index;
-					vant.Toast('展区'+_index)
+					// vant.Toast('展区'+_index)
 				},
 				selectQD(){
 					this.activeRC= this.activeHC;

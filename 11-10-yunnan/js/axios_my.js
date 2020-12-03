@@ -53,16 +53,25 @@ axios.get(public_obj().shopUrl+'api/services/app/statistics/state')
   console.log(error);
 });
 
+
 // 延迟执行统计量
 setTimeout(()=>{
   fwlList.forEach((element,index)=>{
-    var _address = element.split('contents/')[1];
-    // console.log('22222111',element.split('contents/')[1])
-    //执行统计量
-    axios.get('api/hits/'+_address)
-    .then(function (response) {
-      // console.log(response);
-    });
+    // 投票详情不统计
+    if(element.indexOf("1/11") != -1){
+
+    }
+    else{
+      var _address = element.split('contents/')[1];
+      // console.log('22222111',element.split('contents/')[1])
+      //执行统计量
+      axios.get('api/hits/'+_address)
+      .then(function (response) {
+        // console.log(response);
+      });
+    }
+    
   })
 
 },1000)
+

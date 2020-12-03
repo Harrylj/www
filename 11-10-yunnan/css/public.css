@@ -156,6 +156,7 @@ div.public-footer-nav:after {
 	background-position: center center;
 }
 .phtc-fenxiang {
+	/* display: none; */
 	position: absolute;
 	right: 1rem;
 	top: 0;
@@ -710,14 +711,135 @@ div.zqsl-popup{
 	line-height: .5rem;
 	text-align: center;
 }
-.public-countdown-right{
+.public-countdown-close{
 	position: absolute;
 	top: 10%;
-	right: 0;
+	right: .55rem;
+	margin-top: .335rem;
+	width: .33rem;
+	height: .33rem;
+}
+.public-countdown-right{
+	position: absolute;
+	top: 15.5%;
+	left: .75rem;
 	text-align: right;
 	padding-right: .5rem;
 	font-size: .3rem;
 	line-height: 1rem;
 	color: white;
 	opacity: .8;
+}
+.public-footer-bah{
+	line-height: .6rem;
+	color: white;
+	font-size: .24rem;
+	text-align: center;
+	padding-bottom: 2rem;
+}
+.public-fenxiang-popup{
+	overflow-y: initial;
+	background-color: transparent;
+}
+
+.van-overflow-hidden #share-2{
+	display: flex;
+	justify-content: space-around;
+	padding: 1rem 1rem 1.5rem 1rem;
+}
+.van-overflow-hidden .public-fenxiang-popup-close,
+.van-overflow-hidden #share-2{
+	background-color: white;
+	border-radius: .2rem;
+}
+.van-overflow-hidden .public-fenxiang-popup-close{
+	position: relative;
+	line-height: 1rem;
+	text-align: center;
+	font-size: .33rem;
+	margin-top: .2rem;
+}
+
+.van-overflow-hidden #share-2>a::after{
+	position: absolute;
+	bottom: -1rem;
+	left: 50%;
+	margin-left: -.5rem;
+	color: #222222;
+	font-size: .27rem;
+	line-height: .6rem;
+	width: 1rem;
+	text-align: center;
+}
+.van-overflow-hidden #share-2>.icon-wechat::after{
+	content: "微信";
+}
+.van-overflow-hidden #share-2>.icon-weibo::after{
+	content: "微博";
+}
+.van-overflow-hidden .public-fenxiang-popup-div{
+	position: relative;
+	height: 100%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+}
+.van-overflow-hidden .social-share .icon-wechat .wechat-qrcode {
+    display: none;
+    border: 1px solid #eee;
+    position: absolute;
+    z-index: 9;
+    top: -4.1rem;
+    left: -1.68rem;
+    width: 4rem;
+    height: 3.84rem;
+    color: #666;
+    font-size: .24rem;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 .04rem .2rem #aaa;
+    transition: all 200ms;
+    -webkit-tansition: all 350ms;
+    -moz-transition: all 350ms;
+}
+.van-overflow-hidden .social-share .icon-wechat .wechat-qrcode h4 {
+    font-weight: normal;
+    height: .52rem;
+    line-height: .52rem;
+    font-size: .24rem;
+    background-color: #f3f3f3;
+    margin: 0;
+    padding: 0;
+    color: #777;
+}
+.van-overflow-hidden .social-share .icon-wechat .wechat-qrcode .qrcode {
+	/* width: 2.1rem; */
+	display: flex;
+    justify-content: center;
+    height: 2.1rem;
+    flex-direction: column;
+    margin: .1rem auto;
+}
+.van-overflow-hidden .social-share .icon-wechat .wechat-qrcode .help p {
+    font-weight: normal;
+    line-height: .32rem;
+    padding: 0;
+	margin: 0;
+	color: #222222;
+}
+.weixin-share{
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 99999;
+	width: 100%;
+	height: 100%;
+	background-image: url(../images/share-weixin.png);
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, 0.3);
+}
+div.weixin-share-hide{
+	display: none;
 }

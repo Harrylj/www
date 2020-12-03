@@ -81,6 +81,18 @@
 				云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。 其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团、30万人次的观众参与，成为云南第一动漫展会品牌；此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。 为了集中人力、财力和物力，搭建内容丰富、功能齐全的文化产业交流合作平台，提高云南文化会展的规模化和集约化水平，2013云南文化产业博览会应运而生了。
 			</div>
 		</div>
+		<!-- 分享内容start -->
+		<link rel="stylesheet" href="css/share.min.css">
+		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
+		<van-popup class="public-fenxiang-popup" v-model="showShare" position="bottom"  >
+			<div class="public-fenxiang-popup-div" >
+				<div id="share-2" v-show="showShare" v-show="showShare"></div>
+				<div class="public-fenxiang-popup-close" @click="showShare=false">取消</div>
+			</div>
+		</van-popup>
+		<script src="js/social-share.js"></script>
+		<script src="js/qrcode.js"></script>
+		<!-- 分享内容over -->
 	</div>
 	<script>
 
@@ -104,6 +116,8 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				showShare:false,  // 分享
+				showShareWX:false,	// 微信浏览器分享
 				value: 2,
 				active: 3,
 				show: false,
@@ -115,7 +129,7 @@
 				axios.get('api/v1/contents/'+ _obj.idSite+ '/'+ _obj.idXWDT+ '/' + qs2obj(window.location.href).id)
 				.then(function (response) {
 					_this.data_content = response.data
-					public_imgsrc(_this.data_content)
+					public_imgsrc([_this.data_content])
 					console.log('1234',_this.data_content);
 				})
 				.catch(function (error) {
@@ -126,8 +140,22 @@
 
 			},
 			methods: {
+				//分享
 				fenxiang() {
-					vant.Toast('分享')
+					var _this = this;
+					if(isWeChatBrowser()){
+						this.showShareWX = true;
+					}
+					else{
+						this.showShare = true;
+						setTimeout(()=>{
+							_this.fenxiangNext();
+						},50)
+					}
+				},
+				// 分享组件
+				fenxiangNext(){
+					socialShare('#share-2', {sites: ['wechat','weibo']});
 				},
 				showPopup() {
 					this.show = true;

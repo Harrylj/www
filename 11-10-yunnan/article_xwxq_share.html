@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>文博企业详情</title>
+	<title>新闻详情</title>
 	<style type="text/css">
 		.xwxq{
 			position: relative;
@@ -62,6 +62,14 @@
 			line-height: .6rem;
 			font-size: .31rem;
 		}
+
+
+		#share-2 a{
+
+		}
+		#share-2 a:nth-child(n+3){
+			display: none;
+		}
 	</style>
 </head>
 
@@ -70,10 +78,29 @@
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title"></div>
-				
+				<div class="phtc-title">新闻详情</div>
+				<div class="phtc-fenxiang" @click="fenxiang()"></div>
 			</div>
 		</div>
+		<!-- <transition name="van-slide-down">
+		<ol v-if="showShare" >
+			<li class="row"  style="padding-top: 5rem;padding-left: 2rem;">
+				<div id="share-2"></div>
+			  </li>
+		</ol>
+		</transition> -->
+		
+		<!-- <van-action-sheet v-model="showShare" title="标题">
+			<div class="content">
+				<h2>内容</h2>
+				<ol>
+					<li class="row"  style="padding-top: 5rem;padding-left: 2rem;">
+						<div id="share-2"></div>
+					  </li>
+				</ol>
+			</div>
+		  </van-action-sheet> -->
+		
 		<div class="xwxq-body">
 			<h2>{{data_content.title}}</h2>
 			<h6>{{data_content.createdDate?data_content.createdDate.split(' ')[0]:''}}</h6>
@@ -81,6 +108,18 @@
 				云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。各类文化产业展会也在多年的培育和积淀后，在国内乃至海外取得了较大的影响力和知名度。 其中，昆明泛亚民族民间工艺品博览会已经成功举办了五届，年交易额超1亿元，成为国内规模较大的工艺美术专业展会;已经连续举办五届的云南·昆明动漫节，每年有超过200多家社团、30万人次的观众参与，成为云南第一动漫展会品牌；此外，云南玉雕大师作品展也已成为云南玉雕作品集大成的文化盛宴，对推动云南珠宝文化产业生了积极的影响。 为了集中人力、财力和物力，搭建内容丰富、功能齐全的文化产业交流合作平台，提高云南文化会展的规模化和集约化水平，2013云南文化产业博览会应运而生了。
 			</div>
 		</div>
+		<!-- 分享内容start -->
+		<link rel="stylesheet" href="css/share.min.css">
+		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
+		<van-popup class="public-fenxiang-popup" v-model="showShare" position="bottom"  >
+			<div class="public-fenxiang-popup-div" >
+				<div id="share-2" v-show="showShare" v-show="showShare"></div>
+				<div class="public-fenxiang-popup-close" @click="showShare=false">取消</div>
+			</div>
+		</van-popup>
+		<script src="js/social-share.js"></script>
+		<script src="js/qrcode.js"></script>
+		<!-- 分享内容over -->
 	</div>
 	<script>
 
@@ -91,8 +130,11 @@
 	<script src="js/axios.min.js"></script>
 	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
 	<script src="js/vant.min.js"></script>
+	
 
 	<script type="text/javascript">
+		
+		// socialShare('#share-2', {sites: ['wechat','weibo']});
 		$(function(){
 			navHeader();
 			$(window).scroll(function () {
@@ -104,18 +146,21 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				showShare:false,  // 分享
+				showShareWX:false,	// 微信浏览器分享
 				value: 2,
 				active: 3,
 				show: false,
 				data_content:'',
 			},
 			created: function () {
+				// socialShare('#share-2', {sites: ['wechat','weibo']});
 				var _this = this;
 				// vant.Toast('提示看看');
 				axios.get('api/v1/contents/'+ _obj.idSite+ '/'+ _obj.idXWDT+ '/' + qs2obj(window.location.href).id)
 				.then(function (response) {
 					_this.data_content = response.data
-					public_imgsrc(_this.data_content)
+					public_imgsrc([_this.data_content])
 					console.log('1234',_this.data_content);
 				})
 				.catch(function (error) {
@@ -123,11 +168,26 @@
 				});
 			},
 			mounted: function () {
-
 			},
 			methods: {
+				//分享
 				fenxiang() {
-					vant.Toast('分享')
+					var _this = this;
+					if(isWeChatBrowser()){
+					// if(true){
+						this.showShareWX = true;
+						// alert(isWeChatBrowser())
+					}
+					else{
+						this.showShare = true;
+						setTimeout(()=>{
+							_this.fenxiangNext();
+						},50)
+					}
+				},
+				// 分享组件
+				fenxiangNext(){
+					socialShare('#share-2', {sites: ['wechat','weibo']});
 				},
 				showPopup() {
 					this.show = true;

@@ -19,7 +19,7 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>首页</title>
+	<title>创意云南2020云上文化产业博览会</title>
 	<style type="text/css">
 		#app {
 			padding-top: 0;
@@ -29,7 +29,7 @@
 		.index-body{
 			position: relative;
 			z-index: 1;
-			padding-bottom: 2rem;
+			padding-bottom: .3rem;
 			border-radius:  .3rem .3rem 0 0;
 			
 			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
@@ -94,9 +94,11 @@
 		.index-nav-01-div a{
 			display: inline-block;
 			margin-top: .2rem;
+			width: 48%;
 		}
 		.index-nav-01-div img{
-			width: 3.35rem;
+			/* width: 3.35rem; */
+			width: 100%;
 			height: 2.12rem;
 		}
 		.index-nav {
@@ -315,17 +317,22 @@
 		
 		<div class="public-countdown-father"  v-if="countdownShow" @click="countdownHide()">
 			<div class="public-countdown-div">
-				<div class="public-countdown-right">测试版</div>
 				<div class="public-countdown-h1">展会倒计时</div>
+				<img class="public-countdown-close" src="images/icon-quxiao.png" alt="">
+				<div class="public-countdown-right">测试版</div>
 				<div class="public-countdown-num" :class="'public-countdown-num-'+countdownDay"></div>
 				<div class="public-countdown-content">
-					<h5>展会时间</h5>
+					<!-- <h5>展会时间</h5>
 					<p>2020.12.12-12.31</p>
 					<h5>展会地点</h5>
 					<p>主会场：昆明</p>
-					<p>分会场：玉溪  丽江  保山</p>
+					<p>昆明融创文旅城•滇池后海，昆明同德广场，</p>
+					<p>公园1903，南亚风情第壹城，七彩云南第壹城，</p>
+					<p>云南大剧院，云南广播电视台</p>
+					<p>分会场：玉溪  丽江  保山</p> -->
+					<img style="width: 96%;display: block; margin: 0 auto;" src="images/countdown-content.png" alt="">
 				</div>
-
+											
 			</div>
 			
 		</div>
@@ -343,7 +350,7 @@
 		<div class="index-body">
 			<div class="index-nav-01">
 				<div class="index-nav-01-div">
-					<a href="column_zhzj.html"><img src="images/index-nav-01-01.png" alt=""></a>
+					<a href="column_zhzj.html"><img src="images/index-nav-01-011.png" alt=""></a>
 					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
 					<!-- <a href="column_flhd.html"><img src="images/index-nav-01-03.png" alt=""></a> -->
 					<a href="column_tphd.html"><img src="images/index-nav-01-03.png" alt=""></a>
@@ -506,6 +513,7 @@
 				</template>
 			</van-tabbar-item>
 		</van-tabbar>
+		<div class="public-footer-bah">创意云南2020云上文化产业博览会<br/>滇ICP备2020009195号-1 <br/>Copyright © 2020</div>
 	</div>
 	<script>
 
@@ -583,14 +591,26 @@
 				countdownShow:false, // 是否显示倒计时 
 			},
 			created: function () {
-				
 				var _this = this;
+				
 				// 距离指定日期还有多少天
 				this.countdownDay = getDistanceSpecifiedTime('2020/12/13 00:00:00')
 				setTimeout(()=>{
 					_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
+					// 是否显示倒计时
+					if ( window.localStorage.getItem("key_index_djs") == null ){
+							console.log("没有",window.localStorage.getItem("key_index_djs"));
+					} else {
+							console.log("有选",window.localStorage.getItem("key_index_djs"));
+							_this.countdownShow = false;
+							console.log(_this.countdownShow)
+					}
+				
 				},500)
-
+				setTimeout(()=>{
+					_this.countdownShow = false;
+					window.localStorage.setItem('key_index_djs',true)
+				},5000)
 				// var countdown_h = window.screen.height;
 				// var countdown_w = window.screen.width;
 				// var countdown_h = document.body.clientHeight || document.documentElement.clientHeight;
@@ -611,6 +631,10 @@
 				// .catch(function (error) {
 				// 	console.log(error);
 				// });
+
+				// axios.delete('api/v1/contents/23/38/334').then(function (response) {
+				// 		alert('删除了')
+				// })
 
 				// 获取首页站点下栏目
 				// axios.get('api/v1/channels/23')
@@ -691,7 +715,7 @@
 				.then(function (response) {
 						_this.HZS = response.data.children;
 						public_imgsrc(_this.HZS)
-						// console.log('9999922311',_this.HZS)
+						console.log('9999922311',_this.HZS)
 				})
 				// 主办单位
 				axios.post('api/v1/contents', {
@@ -719,6 +743,11 @@
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idXBDW,
+					"wheres":[ {
+						"column": "sourceId",
+						"operator": ">",
+						"value": "-1"
+					}],
 					"page": 1,
 					"perPage": 100
 				})
@@ -765,6 +794,7 @@
 				// 点击隐藏倒计时
 				countdownHide(){
 					this.countdownShow = false;
+					window.localStorage.setItem('key_index_djs',true)
 				},
 				// 获取特色好物
 				getGoods(){
