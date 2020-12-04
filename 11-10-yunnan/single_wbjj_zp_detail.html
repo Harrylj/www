@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展品详情</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			padding-bottom: 0;
+			background-color: #12206A;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq-body{
+			position: relative;
+			padding: .2rem .3rem;
+			/* background-color: rgba(255, 255, 255, .08);
+			border-radius: .67rem .67rem 0 0; */
+		}
+		.tphd *{
+			color: white;
+		}
+		.xwxq-body h2
+		,.xwxq-body h5{
+			font-size: .33rem;
+			line-height: .8rem;
+		}
+		.xwxq-body h5{
+			font-size: .25rem;
+			opacity: .6;
+			font-weight: 400;
+		}
+		.xwxq-body h6{
+			font-size: .25rem;
+			opacity: .6;
+			font-weight: 400;
+			line-height: .8rem;
+		}
+		.xwxq-content
+		,.xwxq-content p{
+			color: rgba(255, 255, 255, .6);
+			line-height: .6rem;
+			font-size: .31rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4.6rem;
+		}
+		.index-swipe-01>img
+		,.index-swipe-01 .van-image {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.custom-indicator{
+			font-size: .42rem;
+			opacity: .8;
+			line-height: 1rem;
+			padding: .4rem 0;
+			text-align: center;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="tphd xwxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">展品详情</div>
+			</div>
+		</div>
+		<div class="index-header-swipe">
+			<div class="custom-indicator">
+				  {{ current + 1 }}/{{data_Img.images?data_Img.images.length:''}}
+			</div>
+			<van-swipe class="index-swipe-01" @change="onChange" :autoplay="5000" :show-indicators="false" >
+				<van-swipe-item v-for="(image, index) in data_Img.images" :key="index">
+					<van-image
+							fit="cover"
+							lazy-load
+							:src="image.url"
+					><template v-slot:error>加载失败</template></van-image>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="tphd-body xwxq-body">
+			<h2>{{data_goods.name}}</h2>
+			<div class="xwxq-content" v-html="data_goods.description"></div>
+			<!-- <h6 v-if="data_content.source?data_content.source.length>0:''">来源:{{data_content.source}}</h6> -->
+		</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				current: 0,
+				value: 2,
+				active: 3,
+				show: false,
+				swipeImages: [
+					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				data_goods:'', // 展品详情
+				data_Img:'', // 展品图片详情
+			},
+			created: function () {
+				var _this = this;
+				// this.swipeImages = [];
+				// console.log(1)
+				// vant.Toast('提示看看');
+				// 获取影集详情
+				/*
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idZHYJ +'/'+ qs2obj(window.location.href).id)
+				.then(function (response) {
+					_this.data_content = response.data;
+					public_imgsrc([_this.data_content])
+					_this.swipeImages = [];
+					for(var i = 0 ; i < _this.data_content.imageUrlCount+1;i++){
+						var imgName = 'imageUrl';
+						if(i>0){
+							imgName = imgName+i
+						}
+						console.log(imgName)
+						_this.swipeImages.push(_this.data_content[imgName])
+					}
+					console.log('99214',_this.swipeImages)
+					// console.log('123',_this.KMS);
+				})
+				*/
+				// 获取展品详情
+				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+						params:{
+							id: qs2obj(window.location.href).id
+						},
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+				})
+				.then(function (response) {
+						_this.data_goods =  response.data.result;
+				})
+				// 获取展品图集与简介
+				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetDetailCache?Status=1',{
+						params:{
+							id: qs2obj(window.location.href).id
+						},
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+				})
+				.then(function (response) {
+						_this.data_Img = response.data.result;
+						// _this.data_content =  response.data;
+				})
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				onChange(index) {
+					this.current = index;
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

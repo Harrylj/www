@@ -120,6 +120,9 @@
 			display: flex;
 			justify-content: space-between;
 			flex-wrap: wrap;
+		}
+		.index-swipe-02-father .van-swipe-item-div{
+			padding: 0.3rem 0.1rem 0.2rem 0.1rem;
 		}  
 	</style>
 </head>
@@ -143,8 +146,7 @@
 								<div class="index-h2">演讲嘉宾</div>
 								<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth"
 									:show-indicators="false">
-									<van-swipe-item v-for="(user,index) in listYJJB" :key="index" >
-										<a href="article_jbjs.html">
+									<van-swipe-item @click="goPage('article_jbjs.html',{'id':user.id})" v-for="(user,index) in listYJJB" :key="index" >
 											<div class="van-swipe-item-div">
 												<!-- <img src="images/index-user-01.png" alt=""> -->
 												<van-image
@@ -155,7 +157,7 @@
 												<!-- <p class="van-ellipsis">{{user.job}}</p> -->
 												<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
 											</div>
-										</a>
+		
 									</van-swipe-item>
 								</van-swipe>
 							</div>
@@ -166,8 +168,8 @@
 											<div class="index-live"><span></span>{{item.zT}}</div>
 											<!-- <img src="images/bg.png" alt=""> -->
 											<van-image
-											fit="fill"
-											src="https://img.yzcdn.cn/vant/cat.jpeg"
+											fit="cover"
+											:src="item.imageUrl"
 											></van-image>
 											<h3 class="van-ellipsis">{{item.title}}</h3>
 											<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
@@ -186,7 +188,7 @@
 								</div>
 							</div>
 
-							<van-cell v-for="item in list" :key="item" :title="item" />
+							<!-- <van-cell v-for="item in list" :key="item" :title="item" /> -->
 						</div>
 					</van-list>
 				</van-pull-refresh>

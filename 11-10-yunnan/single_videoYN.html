@@ -46,7 +46,8 @@
 
 <body>
 	<div class="index" id="app" v-cloak>
-		<iframe class="index-irame" src="https://res.eschervr.com/culture/index.html#/?name=first" frameborder="0"></iframe>
+		<!-- <iframe class="index-irame" src="https://res.eschervr.com/culture/index.html#/?name=first" frameborder="0"></iframe> -->
+		<iframe class="index-irame" :src="qs2obj(window.location.href).linkUrl" frameborder="0"></iframe>
 		<van-tabbar class="public-footer-nav" v-model="active">
 			<!-- <van-tabbar-item badge="3">
 				<span>首页</span>

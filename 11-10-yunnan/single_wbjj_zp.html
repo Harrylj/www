@@ -91,13 +91,15 @@
 			</div>
 		</div>
 		<div class="sczp-body xwxq-body">
-			<img class="zp-search" @click="goPage('single_search_zp.html',{})" src="images/search-02.png" alt="">
+			<img class="zp-search" @click="goPage('single_search_zp.html')" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" @click="goPage(goods.liveUrl,{})" v-for="(goods,index) in listGoods" :key="index">
+					<div class="index-ygz-item" 
+					:class="goods.isLive?'goods-live-hover':''" 
+					@click="goGoodsDetail(goods)" v-for="(goods,index) in listGoods" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
-							fit="contain"
+							fit="cover"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
 						<h3 class="van-ellipsis">{{goods.name}}</h3>
@@ -201,6 +203,40 @@
 
 			},
 			methods: {
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
 				// 获取展品
 				getGoods(_type){
 					var _this = this;
@@ -249,9 +285,10 @@
 				},
 				selectQD(){
 					this.selectType = this.activeHC;
+					// alert(this.selectType)
 					// vant.Toast(this.selectType)
 					// 获取展品
-					this.getGoods(this.selectType);
+					this.getGoods(this.selectType+1);
 					// console.log(this.activeHC,this.activeZQ)
 					this.hidePopup()
 				},

@@ -213,6 +213,7 @@
 		.index-tshw-item{
 			position: relative;
 			padding-bottom: .1rem;
+			width: 3.35rem;
 		}
 		.index-tshw-item:nth-child(1),
 		.index-tshw-item:nth-child(2){
@@ -301,6 +302,9 @@
 			padding-top: .5rem;
 			padding-bottom: .25rem;
 		}
+		.index-swipe-02-father .van-swipe-item-div{
+			padding: 0.3rem 0.1rem 0.2rem 0.1rem;
+		}
 	</style>
 </head>
 
@@ -340,7 +344,7 @@
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="30000" >
 				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
-					<img @click="image.linkUrl?goPage('single_videoYN.html',{}):''" v-lazy="image.imageUrl" alt="">
+					<img @click="image.linkUrl?goPage('single_videoYN.html',{'linkUrl':image.linkUrl}):''" v-lazy="image.imageUrl" alt="">
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -435,15 +439,18 @@
 			<div class="index-tshw">
 				<div class="index-h2">特色好物</div>
 				<div class="index-tshw-list">
-					<div class="index-tshw-item" 
-						@click="goPage(goods.liveUrl,{})"
+					<div class="index-tshw-item"
+						:class="goods.isLive?'goods-live-hover':''" 
+						@click="goGoodsDetail(goods)"
 						v-for="(goods,index) in listGoods" :key="index">
 						<!-- <div class="index-live"><span></span>LIVE</div> -->
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
 							fit="cover"
+							lazy-load
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
+						
 						<h3 class="van-ellipsis">{{goods.name}}</h3>
 						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 					</div>
@@ -791,6 +798,42 @@
 				
 			},
 			methods: {
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+							
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+							// window.location.href=_item.webSiteUrl;
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
 				// 点击隐藏倒计时
 				countdownHide(){
 					this.countdownShow = false;
@@ -815,6 +858,11 @@
 					axios.post('api/v1/contents', {
 						"siteId": _obj.idSite,
 						"channelId": _obj.idYGZ,
+						"wheres":[ {
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
 						"page": _this.YGZPage,
 						"perPage": 4
 					})

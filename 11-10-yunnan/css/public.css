@@ -751,6 +751,7 @@ div.zqsl-popup{
 .van-overflow-hidden #share-2{
 	background-color: white;
 	border-radius: .2rem;
+	color: #222222;
 }
 .van-overflow-hidden .public-fenxiang-popup-close{
 	position: relative;
@@ -842,4 +843,27 @@ div.zqsl-popup{
 }
 div.weixin-share-hide{
 	display: none;
+}
+.goods-live-hover{
+	position: relative;
+}
+.goods-live-hover::before{
+	position: absolute;
+	left: .3rem;
+	top: .3rem;
+	width: 1.43rem;
+	height: .38rem;
+	content: " ";
+	color: transparent;
+	background-image: url(../images/icon-zhengzaizhibo.png);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	z-index: 3;
+}
+.zsxq-bktj-list .goods-live-hover::before{
+	top: .8rem;
+}
+.index-swipe-01 .goods-live-hover::before{
+	top: .6rem;
+	left: .3rem;
 }

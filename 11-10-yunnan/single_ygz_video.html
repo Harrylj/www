@@ -203,7 +203,7 @@
 			</div>
 		</div>
 		<div class="zhzj-video">
-			<div class="index-live"><span></span>{{FHLT.zhibozt}}</div>
+			<div class="index-live"><span></span>{{FHLT.zT}}</div>
 			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{FHLT.hits}}</div>
 			<video-player class="vjs-custom-skin"  :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
 			<!-- <video-player
@@ -297,9 +297,10 @@
 					sources: [
 						{
 							withCredentials: false,
-							type: 'application/x-mpegURL',
+							// type: 'application/x-mpegURL',
+							src: '',
 							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
-							src: 'http://pullhls8928c963.live.126.net/live/a1cc1e2c7c8947ac971e513ed5dcb12c/playlist.m3u8',
+							// src: 'http://pullhls8928c963.live.126.net/live/a1cc1e2c7c8947ac971e513ed5dcb12c/playlist.m3u8',
 							// src: 'rtmp://v8928c963.live.126.net/live/a1cc1e2c7c8947ac971e513ed5dcb12c',
 							muted: false,
 							nativeAudioTracks:false,
@@ -317,22 +318,28 @@
 				this.contentID = qs2obj(window.location.href).id;
 				// console.log(1)
 				// vant.Toast('提示看看');
-				//视频播放量
-				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+ this.contentID)
-				// .then(function (response) {
-				// 	console.log(response);
-				// })
-				// .catch(function (error) {
-				// 	console.log(error);
-				// });
 				// 获取峰会论坛内容
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idFHLT +'/'+this.contentID)
 				.then(function (response) {
 					_this.FHLT = response.data;
 					public_imgsrc([_this.FHLT])
 					_this.playerOptions.poster = _this.FHLT.imageUrl;
-					_this.playerOptions.sources[0].src = _this.FHLT.shipin;
-					// console.log('123',_this.KMS);
+					// 直播
+					if(_this.FHLT.zT == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src = _this.FHLT.shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src = _this.FHLT.videoUrl
+					}
+					
+					// if(_this.FHLT.videoUrl.length>30){
+					// 	_this.playerOptions.sources[0].src = _this.FHLT.videoUrl;
+					// }
+					// console.log('123',_this.FHLT);
 				})
 				.catch(function (error) {
 					console.log(error);

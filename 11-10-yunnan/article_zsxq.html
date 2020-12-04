@@ -205,17 +205,19 @@
 				:src="shop.logo"
 			><template v-slot:error>加载失败</template></van-image>
 			<h2>{{shop.name}}</h2>
-			<p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p>
+			<!-- <p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p> -->
 			<p v-show="shop.emailAddress?shop.emailAddress.length>0:''">展商邮箱: {{shop.emailAddress}}</p>
 			<p>联系方式: {{shop.contectPhone}}</p>
 			<p>展区位置: {{shopObj.PositionName}}</p>
-			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl,{})">进店逛逛</div>
+			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl)">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">
 			<div class="zsxq-bktj">
 				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
 				<div class="zsxq-bktj-list">
-					<div class="zsxq-bktj-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listTop" :key="index">
+					<div class="zsxq-bktj-item"
+					:class="item.isLive?'goods-live-hover':''" 
+					@click="goGoodsDetail(item)" v-for="(item,index) in listTop" :key="index">
 						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
 						<van-image
 							fit="cover"
@@ -231,7 +233,10 @@
 			<div class="zsxq-line"></div>
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listGoods" :key="index">
+					<div class="index-ygz-item"
+					:class="item.isLive?'goods-live-hover':''" 
+					@click="goGoodsDetail(item)"
+					v-for="(item,index) in listGoods" :key="index">
 						<!-- <img :src="item.qrCode" alt=""> -->
 						<!-- <van-image
 							fit="cover"
@@ -319,6 +324,40 @@
 
 			},
 			methods: {
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
 				// 获取展商详情
 				getShop(){
 					var _this = this;

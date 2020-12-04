@@ -212,7 +212,7 @@
 				<div class="jbjs-body-list">
 					<div class="jbjs-body-item" @click="goPage('article_xwxq.html',{'id':item.id})" v-for="(item,index) in listXW" :key="index">
 						<div class="jbjs-body-item-content">
-							<h4>{{item.summary}}</h4>
+							<h4 class="van-multi-ellipsis--l2">{{item.summary}}</h4>
 							<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 						</div>
 						<van-image

@@ -254,11 +254,11 @@
 				:src="WBQY.imageUrl"
 			><template v-slot:error>加载失败</template></van-image>
 			<h2>{{shop.name}}</h2>
-			<p v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''">企业网站: {{WBQY.wangzhan}}</p>
+			<!-- <p v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''">企业网站: {{WBQY.wangzhan}}</p> -->
 			<p v-show="WBQY.youxiang?WBQY.youxiang.length>0:''">企业邮箱: {{WBQY.youxiang}}</p>
 			<p>联系方式: {{WBQY.lianxifangshi}}</p>
 			<p>企业位置: {{WBQY.zhanquweizhi}}</p>
-			<div class="zsxq-btn-jdgg" v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''" @click="goPage(WBQY.wangzhan,{})">去逛逛</div>
+			<!-- <div class="zsxq-btn-jdgg" v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''" @click="goPage(WBQY.wangzhan)">去逛逛</div> -->
 		</div>
 		<div class="zqxq-body">
 			<van-tabs class="fhlt-tab" v-model="activeTab" @click="onClick">
@@ -290,7 +290,7 @@
 			<!-- <div class="zsxq-bktj">
 				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
 				<div class="zsxq-bktj-list">
-					<div class="zsxq-bktj-item" @click="goPage(item.liveUrl,{})" v-for="(item,index) in listTop" :key="index">
+					<div class="zsxq-bktj-item" @click="goPage(item.liveUrl)" v-for="(item,index) in listTop" :key="index">
 						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
 						<van-image
 							fit="cover"
@@ -304,30 +304,7 @@
 				</div>id
 			</div>
 			<div class="zsxq-line"></div> -->
-			<div style="height: 500px;"></div>
-			<div class="jjwb-fhlt-div">
-				<div class="index-ygz-list">
-					<div class="index-ygz-item" @click="item.videoUrl.length>30?goPage('single_wbqy_video.html',{'id':item.id}):goPage('single_wbqy_qyxq.html',{'id':item.id})" v-for="(item,index) in listGoods" :key="index">
-						<!-- <img :src="item.qrCode" alt=""> -->
-						<van-image
-							fit="cover"
-							:src="item.imageUrl"
-						><template v-slot:error>加载失败</template></van-image>
-						<!-- <h2>{{item.videoUrl.length}}</h2>
-						<h1>{{item.videoUrl.length>30?'video':'arr'}}</h1>
-						<h3>{{item.id}}</h3> -->
-						<h3 class="van-ellipsis">{{item.title}}</h3>
-						<!-- <p class="van-ellipsis">{{item.webHits}}人正在浏览</p> -->
-					</div>
-				</div>
-				<!-- <div class="index-ygz-list">
-					<div class="index-ygz-item" v-for="index in 2" :key="index">
-						<img src="images/bg.png" alt="">
-						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
-						<p class="van-ellipsis">36人正在浏览</p>
-					</div>
-				</div> -->
-			</div>
+			
 		</div>
 	</div>
 	<script>

@@ -90,12 +90,13 @@
 		}
 		.zqsl-item-right{
 			position: relative;
-			display: flex;
-			/* align-items: center; */
+			padding-top: .3rem;
+			/* display: flex;
 			justify-content: center;
+			flex-direction: column; */
 			padding-left: 2.9rem;
 			min-height: 2.5rem;
-			flex-direction: column;
+			
 		}
 		.zqsl-item h3,
 		.zqsl-item p{
@@ -281,8 +282,8 @@
 			<div class="index-ygz wzwb-flhd">
 				<div class="index-h2">福利活动</div>
 				<!-- <a href="column_flhd.html"><div class="index-ygz-more">马上参与<van-icon name="arrow" /></div></a> -->
-				<div @click="goPage('column_tphd.html',{})" class="index-ygz-more">马上参与<van-icon name="arrow" /></div>
-				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html',{})">
+				<div @click="goPage('column_tphd.html')" class="index-ygz-more">马上参与<van-icon name="arrow" /></div>
+				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html')">
 					<!-- <img :src="FLHD.imageUrl" alt=""> -->
 					<van-image fil="cover" lazy-load :src="FLHD.imageUrl">
 						<template v-slot:error>加载失败</template>

@@ -79,6 +79,8 @@
 			opacity: .6;
 		}
 		.tphd-content{
+			height: 85%;
+			overflow-y: scroll;
 			padding: .3rem;
 		}
 		.tphd-content p{
@@ -129,6 +131,7 @@
 			left: 0;
 			width: 100%;
 			padding-top: .3rem;
+			padding-bottom: .1rem;
 			background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
 		}
 		.flhd-tphd-item h3{
@@ -157,7 +160,7 @@
 			background-color: #3F4A86;
 		}
 		.tphd-btn-tp{
-			background-color: #2E5ED4;
+			background: #009BFE;
 		}
 		.index-swipe-01{
 			position: relative;
@@ -230,8 +233,16 @@
 			background-color: rgba(255, 255, 255, .1);
 			letter-spacing: .04rem;
 		}
+		div.zqsl-popup{
+			padding-bottom: 0;
+		}
+		.zqsl-btn-footer{
+			flex-direction: column;
+			height: 15%;
+		}
 		.zqsl-btn-footer .zqsl-sx-item{
 			border-radius: .4rem;
+			margin: 0 auto;
 		}
 	</style>
 </head>
@@ -272,7 +283,7 @@
 								<van-image fil="cover" lazy-load :src="item.imageUrl">
 									<template v-slot:error>加载失败</template>
 								</van-image>
-								<div class="flhd-tphd-item-index">{{item.code}}号</div>
+								<div v-show="item.code?true:false" class="flhd-tphd-item-index">{{item.code}}号</div>
 								<div class="flhd-tphd-content">
 									<h3>{{item.title}}</h3>
 									<p>{{item.hits}}票</p>

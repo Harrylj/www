@@ -242,8 +242,9 @@
 			flex-direction: column;
 			justify-content: center;
 			align-items: center;
-			/* width: 33%; */
-			flex: 1;
+			width: 33%;
+			overflow: hidden;
+			padding: 0 .1rem;
 		}
 		.index-swipe-01-div a{
 			display: block;
@@ -254,6 +255,7 @@
 			font-size: .29rem;
 			/* opacity: .6; */
 			text-align: center;
+			width: 100%;
 		}
 		.wbjj-rmzs{
 			min-height: 4.3rem;
@@ -346,6 +348,21 @@
 		.van-swipe-item{
 			padding-right: .45rem;
 		}
+		div.zqsl-popup{
+			padding-bottom: 0;
+		}
+		.zqsl-popup-content{
+			height: 85%;
+			overflow-x: scroll;
+		}
+		.zqsl-btn-footer{
+			height: 15%;
+			align-items: center;
+		}
+		.zqsl-btn-footer .zqsl-sx-item{
+			height: .8rem;
+			margin-bottom: 0;
+		}
 	</style>
 </head>
 
@@ -373,7 +390,9 @@
 				<div class="index-header-swipe">
 					<van-swipe class="index-swipe-01" :autoplay="15000" >
 						<van-swipe-item>
-							<div class="index-swipe-01-div" @click="goPage(hot.liveUrl,{})" v-for="(hot, index) in listHot" :key="index">
+							<div class="index-swipe-01-div"
+							:class="hot.isLive?'goods-live-hover':''" 
+							@click="goGoodsDetail(hot)" v-for="(hot, index) in listHot" :key="index">
 								<!-- <img v-lazy="hot.logo" alt=""/> -->
 								<van-image
 								fit="cover"
@@ -418,8 +437,9 @@
 				<div class="index-h2">好货必逛</div>
 				<div class="wbjj-hhbg-div">
 					<div class="wbjj-hhbg-list">
-						<div class="wbjj-hhbg-item" v-for="(goods,index) in listGoods" :key="index">
-							<a :href="goods.webSiteUrl">
+						<div class="wbjj-hhbg-item"
+						:class="goods.isLive?'goods-live-hover':''" 
+						@click="goGoodsDetail(goods)" v-for="(goods,index) in listGoods" :key="index">
 							<!-- <img :src="goods.logo" alt=""> -->
 							<van-image
 							fit="cover"
@@ -427,7 +447,6 @@
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{goods.name}}</h3>
 							<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
-							</a>
 						</div>
 					</div>
 				</div>
@@ -435,29 +454,31 @@
 
 		</div>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
-			<van-collapse v-model="activeNames">
-				<van-collapse-item title="会场" name="1">
-					<div class="zqsl-sx-list zqsl-sx-hc">
-						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in items" :key="index">
-							{{item.label}}
+			<div class="zqsl-popup-content">
+				<van-collapse v-model="activeNames">
+					<van-collapse-item title="会场" name="1">
+						<div class="zqsl-sx-list zqsl-sx-hc">
+							<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in items" :key="index">
+								{{item.label}}
+							</div>
 						</div>
-					</div>
-				</van-collapse-item>
-				<van-collapse-item title="展区" name="2">
-					<div class="zqsl-sx-list zqsl-sx-zq">
-						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="(item,index) in items[activeHC].children" :key="index">
-							{{item.label}}
+					</van-collapse-item>
+					<van-collapse-item title="展区" name="2">
+						<div class="zqsl-sx-list zqsl-sx-zq">
+							<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="(item,index) in items[activeHC].children" :key="index">
+								{{item.label}}
+							</div>
 						</div>
-					</div>
-				</van-collapse-item>
-				<!-- <van-collapse-item title="展区" name="2">
-					<div class="zqsl-sx-list zqsl-sx-zq">
-						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
-							展区{{index}}
+					</van-collapse-item>
+					<!-- <van-collapse-item title="展区" name="2">
+						<div class="zqsl-sx-list zqsl-sx-zq">
+							<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+								展区{{index}}
+							</div>
 						</div>
-					</div>
-				</van-collapse-item> -->
-			</van-collapse>
+					</van-collapse-item> -->
+				</van-collapse>
+			</div>
 			<div class="zqsl-sx-list zqsl-btn-footer">
 				<div class="zqsl-sx-item" @click="reset()">重置</div>
 				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
@@ -617,6 +638,40 @@
 				console.log(_obj.appkey)
 			},
 			methods: {
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
 				addreeMenu(value){
 					console.log(value,this.option1[value].text)
 				},
@@ -727,7 +782,12 @@
 				getHot(){
 					var _this = this;
 					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
-						params:this.formData,
+						params:{
+							SkipCount:0,
+							MaxResultCount:3,
+							Position:_this.formData.Position,
+							Ishot:true,
+						},
 						paramsSerializer: function(params) {
 							return qs.stringify(params, {arrayFormat: 'repeat'})
 						}

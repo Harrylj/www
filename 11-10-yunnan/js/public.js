@@ -150,7 +150,9 @@ function qs2obj(url) {
 // 跳转页面js
 function goPage(_src,_obj){
 	_obj?window.location.href= _src + '?'+obj2qs(_obj):window.location.href= _src;
-	
+	// _obj?(_obj.length>1?window.location.href= _src + '?'+obj2qs(_obj):''):window.location.href= _src;
+	// _obj?window.location.href= _src;
+
 }
 // 数组随机取值
 function getRandomArrayElements(arr, count) {

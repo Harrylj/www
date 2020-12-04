@@ -35,6 +35,7 @@ single_fhlt_ltfl 峰会论坛-论坛分类
 single_sczp 投票活动-上传作品
 single_flhd_xxtx 福利活动-信息填写
 single_wbjj_zp 文博经济-展品
+single_wbjj_zp_detail 文博经济-展品-展品详情
 single_wbjj_zs 文博经济-展商
 single_lxwm 联系我们
 single_video 云南欢迎你视频
@@ -43,6 +44,8 @@ single_wbqy 文博企业
 single_wbqy_video 文博企业-视频详情
 single_wbqy_qyxq 文博企业-企业详情
 single_wbqy_one 文博企业-云南报业传媒集团
+
+
 axios.get('api/v1/channels/23')
 				.then(function (response) {
 					console.log(response);
