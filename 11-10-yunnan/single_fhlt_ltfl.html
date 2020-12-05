@@ -64,6 +64,9 @@
 			</div>
 		</div>
 		<div class="ltfl-list">
+			<div class="ltfl-item" >
+				<a href="column_fhlt.html" @click="setData(-1)">全部</a>
+			</div>
 			<div class="ltfl-item" v-for="(item,index) in listFHLT" :key="index" >
 				<a href="column_fhlt.html" @click="setData(index)">{{item.channelName}}</a>
 			</div>
@@ -131,6 +134,7 @@
 			methods: {
 				setData(index){
 					var abc= window.localStorage.setItem('key_fhlt_ltfl',index+1)
+					// goPage('column_fhlt.html')
 					console.log(abc)
 				}
 			},

@@ -15,7 +15,6 @@ function public_obj() {
 	_obj.idSite = 23, // 站点id
 	_obj.idSite_PC = 1, // 站点id-PC端
 	_obj.idSYDBLB = 28, // 首页顶部轮播
-	_obj.idWZWBDBLB = 179, // 玩转文博顶部轮播
 	_obj.idXWDT = 30, // 新闻动态
 	_obj.idXBDW = 38, // 协办单位
 	_obj.idZHZJ = 29, // 展区直击
@@ -105,10 +104,8 @@ function public_imgsrc_pc(_obj){
 		// 图片地址数组处理
 		Object.keys(_element).forEach((element,key)=>{
 			if(element.indexOf("imageUrl") != -1 & element != 'imageUrlCount'){
-				if(_element[element].indexOf("@/")!= -1){
-					var image_src = _element[element]?_element[element].split('@/')[1]:'';
-					_obj[_index][element]= public_obj().siteUrl+_a+image_src;
-				}
+				var image_src = _element[element]?_element[element].split('@/')[1]:'';
+				_obj[_index][element]= public_obj().siteUrl+_a+image_src;
 				// arr_img.push(element) 
 			}
 		})

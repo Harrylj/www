@@ -57,9 +57,10 @@
 		}
 		.index-swipe-01{
 			position: relative;
-			height: 4rem;
+			height: 3.8rem;
 		}
-		.index-swipe-01 img {
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
 			height: 100%;
 			width: 100%;
 		}
@@ -125,6 +126,18 @@
 		.zqsl-popup *{
 			color: white;
 		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0rem;
+			padding: .2rem .2rem .7rem .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .32rem;
+			line-height: .4rem;
+		}
 		/* .van-cell,
 		.van-collapse-item__content,
 		.van-cell--clickable:active{
@@ -182,8 +195,15 @@
 		</div> -->
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
-					<img @click="" v-lazy="image.imageUrl" alt="">
+				<van-swipe-item 
+				@click="image.linkUrl?goPage(image.linkUrl):goPage('article_xwxq.html',{'id':image.id})"
+				v-for="(image, index) in imagesDBLB" :key="index">
+					<!-- <img @click="" v-lazy="image.imageUrl" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -200,8 +220,8 @@
 						</van-image>
 						<div class="zqsl-item-right">
 							<h3 class="van-ellipsis">{{item.title}}</h3>
-							<p class="van-multi-ellipsis--l2">主题:{{item.zhuti}}</p>
-							<p class="van-ellipsis">地址:{{item.dizhi}}</p>
+							<p v-if="item.zhuti?item.zhuti.length>0:''" class="van-multi-ellipsis--l2">主题:{{item.zhuti}}</p>
+							<p v-if="item.dizhi?item.dizhi.length>0:''" class="van-ellipsis">地址:{{item.dizhi}}</p>
 							<!-- <p class="van-ellipsis">展商:{{item.zhanshangshu}}家</p> -->
 						</div>
 					</div>
@@ -212,6 +232,9 @@
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="会场" name="1">
 					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="activeHC==-1?'zqsl-sx-item-click':''" @click="selectHC(-1,-1)">
+							全部
+						</div>
 						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(item.id,index)" v-for="(item,index) in items" :key="index">
 							{{item.channelName}}
 						</div>
@@ -285,7 +308,7 @@
 				message: 'Hello Vue!',
 				current: ['mail'],
 				show: false,
-				activeHC:0,
+				activeHC:-1,
 				activeZQ:0,
 				items: [ // 会场
 					  { text: '全部展区' },{ text: 'a展区' }, { text: 'b展区' }, { text: 'c展区' }
@@ -305,9 +328,9 @@
 				// 顶部轮播
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
-					"channelId": _obj.idSYDBLB,
+					"channelId": _obj.idWZWBDBLB,
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.imagesDBLB = response.data.contents;
@@ -322,8 +345,16 @@
 					// _this.getZQ(_this.items[0].id)
 					// console.log('1211113',_this.WBHC);
 				})
-				// 获取所有展区
-				this.getAllZQ();
+				// 联系我们会场跳转过来
+				if(qs2obj(window.location.href).lxwmHC?true:false){
+					this.getZQ(qs2obj(window.location.href).lxwmHC)
+					this.activeHC = qs2obj(window.location.href).index;
+				}
+				else{
+					// 获取所有展区
+					this.getAllZQ();
+				}
+				
 			},
 			mounted: function () {
 				console.log(_obj.appkey)
@@ -332,22 +363,28 @@
 				// 获取对应展区
 				getZQ(_id){
 					var _this = this;
-					// 主办单位
-					axios.post('api/v1/contents', {
-						"siteId": _obj.idSite,
-						"channelId": _id,
-						"page": 1,
-						"perPage": 100
-					})
-					.then(function (response) {
-						_this.listZq = response.data.contents;
-						public_imgsrc(_this.listZq)
-					})
+					if(_id <0){
+						// 获取所有展区
+						_this.getAllZQ()
+					}
+					else{
+						// 获取对应展区
+						axios.post('api/v1/contents', {
+							"siteId": _obj.idSite,
+							"channelId": _id,
+							"page": 1,
+							"perPage": 200
+						})
+						.then(function (response) {
+							_this.listZq = response.data.contents;
+							public_imgsrc(_this.listZq)
+						})
+					}
+					
 				},
 				// 获取所有展区
 				getAllZQ(){
 					var _this = this;
-					// 主办单位
 					axios.post('api/v1/contents', {
 						"siteId": _obj.idSite,
 						"channelId": _obj.idZQ,
@@ -405,7 +442,7 @@
 				// 选择取消
 				reset(){
 					// 获取所有展区
-					this.activeHC = 0;
+					this.activeHC = -1;
 					this.getAllZQ();
 					this.hidePopup();
 					// this.activeHC = 0;

@@ -41,11 +41,16 @@
 			position: relative;
 			height: 3.1rem;
 		}
-
-		.index-swipe-01 img {
+		.van-swipe-item{
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
 			height: 100%;
 			width: 6.9rem;
-			border-radius: .1rem;
+			border-radius: .2rem;
+			overflow: hidden;
 		}
 
 		.index-swipe-01 .van-swipe__indicator {
@@ -105,6 +110,18 @@
 			width: 6.9rem;
 			margin: 0 auto;
 		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0rem;
+			padding: .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .3rem;
+			line-height: .4rem;
+		}
 	</style>
 </head>
 
@@ -120,7 +137,12 @@
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="13000">
 				<van-swipe-item  @click="goPage('article_xwxq.html',{'id':image.id})" v-for="(image, index) in listSwipe" :key="index">
-					<img v-lazy="image.imageUrl" alt="">
+					<!-- <img v-lazy="image.imageUrl" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -218,7 +240,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.listXW = response.data.contents;
@@ -239,7 +261,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.listSwipe = response.data.contents;

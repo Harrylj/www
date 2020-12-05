@@ -68,7 +68,8 @@
 			position: relative;
 			height: 4.6rem;
 		}
-		.index-swipe-01 img {
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image{
 			height: 100%;
 			width: 100%;
 		}
@@ -105,7 +106,11 @@
 			</div>
 			<van-swipe class="index-swipe-01" @change="onChange" :autoplay="5000" :show-indicators="false" >
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<img v-lazy="image" alt="">
+					<!-- <img v-lazy="image" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image"
+							><template v-slot:error>加载失败</template></van-image>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -170,7 +175,11 @@
 							imgName = imgName+i
 						}
 						console.log(imgName)
-						_this.swipeImages.push(_this.data_content[imgName])
+						// _this.swipeImages.push(_this.data_content[imgName])
+						if(_this.data_content[imgName].length>30){
+							_this.swipeImages.push(_this.data_content[imgName])
+						}
+						console.log('1111',_this.data_content[imgName].length)
 					}
 					console.log('99214',_this.swipeImages)
 					// console.log('123',_this.KMS);

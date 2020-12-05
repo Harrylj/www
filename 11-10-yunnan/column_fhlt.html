@@ -316,24 +316,31 @@
 					var abc =  {
 						"siteId": _obj.idSite,
 						"groupNames":['tyyjyb'],
+						"channelId": _obj.idFHLT,
 						"wheres":[ {
 							"column": "checked",
 							"operator": "=",
 							"value": "1"
 						}],
 						// "page": 1,
-						// "perPage": 100
+						// "perPage": 200
 					};
 					_index?abc={
 						"siteId": _obj.idSite,
+						"groupNames":['tyyjyb'],
 						"channelId": _obj.idFHLT_listJB[_index-1],
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
 						// "wheres":[ {
 						// 	"column": "checked",
 						// 	"operator": "=",
 						// 	"value": "1"
 						// }],
 						// "page": 1,
-						// "perPage": 100
+						// "perPage": 200
 					}:'';
 					axios.post('api/v1/contents',abc)
 					.then(function (response) {
@@ -364,7 +371,7 @@
 							}
 						],
 						"page": 1,
-						"perPage": 100
+						"perPage": 200
 					};
 					_index?abc={
 						"siteId": _obj.idSite,
@@ -381,7 +388,7 @@
 							}
 						],
 						"page": 1,
-						"perPage": 100
+						"perPage": 200
 					}:'';
 					axios.post('api/v1/contents',abc)
 					.then(function (response) {

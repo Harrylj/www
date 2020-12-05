@@ -128,6 +128,9 @@
 			justify-content: space-between;
 			background-color: rgba(255, 255, 255, .1);
 		}
+		div.zsxq-bktj-list-center{
+			justify-content:space-around;
+		}
 		.zsxq-bktj-item{
 			position: relative;
 			width: 33.333%;
@@ -212,16 +215,16 @@
 			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl)">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">
-			<div class="zsxq-bktj">
+			<div class="zsxq-bktj" v-if="listTop.length>0">
 				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
-				<div class="zsxq-bktj-list">
+				<div class="zsxq-bktj-list" :class="listTop.length<3?'zsxq-bktj-list-center':''">
 					<div class="zsxq-bktj-item"
 					:class="item.isLive?'goods-live-hover':''" 
 					@click="goGoodsDetail(item)" v-for="(item,index) in listTop" :key="index">
 						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
 						<van-image
 							fit="cover"
-							:src="item.logo"
+							:src="item.images[0].url"
 						><template v-slot:error>加载失败</template></van-image>
 						<div class="zsxq-bktj-item-content">
 							<h3 class="van-ellipsis">{{item.name}}</h3>
@@ -298,6 +301,7 @@
 					// PositionName:'',
 				},
 				topObj:{
+					ExhibitorName:'',
 					Position:[], // 地址
 					Ishot:true, // 是否热门
 					SkipCount:0,
@@ -317,6 +321,7 @@
 				this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
 				this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
 				this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
+				this.topObj.ExhibitorName = qs2obj(window.location.href).Keyword;
 				// this.goodsObj.PositionName = qs2obj(window.location.href).PositionName;
 				// this.goodsObj.Position = [qs2obj(window.location.href).HC,qs2obj(window.location.href).ZQ]
 				// 获取所有配置数据
@@ -380,6 +385,7 @@
 						_this.shop = response.data.result.items[0];
 						console.log('332221111111',_this.shop)
 						_this.goodsObj.Position = _this.shop.position;
+						_this.topObj.Position = _this.shop.position;
 						// 获取展品列表
 						_this.getGoods();
 						// 获取top展品列表

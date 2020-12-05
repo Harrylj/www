@@ -117,9 +117,9 @@
 			</van-image>
 			<h2>{{data_content.title}}</h2>
 			<!-- <p>展示面积: {{data_content.zhanshimianji}}</p> -->
-			<p>展馆主题: {{data_content.zhuti}}</p>
-			<p>展馆地址: {{data_content.dizhi}}</p>
-			<p>展馆介绍: {{data_content.zhanguanjiesao}}</p>
+			<p v-if="data_content.zhuti?data_content.zhuti.length>0:''">展馆主题: {{data_content.zhuti}}</p>
+			<p v-if="data_content.dizhi?data_content.dizhi.length>0:''">展馆地址: {{data_content.dizhi}}</p>
+			<p v-if="data_content.zhanguanjiesao?data_content.zhanguanjiesao.length>0:''">展馆介绍: {{data_content.zhanguanjiesao}}</p>
 			<!-- <p>目标客户: {{data_content.mubiaokehu}}</p> -->
 		</div>
 		<div class="zqxq-body">

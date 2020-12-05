@@ -60,7 +60,7 @@ axios.post('api/v1/contents', {
 					"channelId": 34,
 					// "checked": true,
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;

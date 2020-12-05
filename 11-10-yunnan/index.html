@@ -58,7 +58,8 @@
 			position: relative;
 			height: 4.24rem;
 		}
-		.index-swipe-01 img {
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
 			height: 100%;
 			width: 100%;
 		}
@@ -305,6 +306,18 @@
 		.index-swipe-02-father .van-swipe-item-div{
 			padding: 0.3rem 0.1rem 0.2rem 0.1rem;
 		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0;
+			padding: .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .32rem;
+			line-height: .4rem;
+		}
 	</style>
 </head>
 
@@ -342,9 +355,16 @@
 		</div>
 		</transition>
 		<div class="index-header-swipe">
-			<van-swipe class="index-swipe-01" :autoplay="30000" >
-				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
-					<img @click="image.linkUrl?goPage('single_videoYN.html',{'linkUrl':image.linkUrl}):''" v-lazy="image.imageUrl" alt="">
+			<van-swipe class="index-swipe-01" :autoplay="10000" >
+				<van-swipe-item
+				@click="image.linkUrl?goPage('single_videoYN.html',{'linkUrl':image.linkUrl}):goPage('article_xwxq.html',{'id':image.id})"
+				v-for="(image, index) in imagesDBLB" :key="index">
+					<!-- <img  v-lazy="image.imageUrl" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -415,7 +435,7 @@
 						></van-image> -->
 						<div class="index-ygz-item-footer">
 							<h3 class="van-ellipsis">{{item.title}}</h3>
-							<p class="van-ellipsis">{{item.title}}</p>
+							<p class="van-ellipsis">{{item.hits}}</p>
 						</div>
 					</div>
 				</div>
@@ -437,7 +457,7 @@
 				</div>
 			</div>
 			<div class="index-line"></div>
-			<div class="index-tshw">
+			<div class="index-tshw" v-if="listGoods.length>0">
 				<div class="index-h2">特色好物</div>
 				<div class="index-tshw-list">
 					<div class="index-tshw-item"
@@ -449,7 +469,7 @@
 						<van-image
 							fit="cover"
 							lazy-load
-							:src="goods.logo"
+							:src="goods.images[0].url"
 							><template v-slot:error>加载失败</template></van-image>
 						
 						<h3 class="van-ellipsis">{{goods.name}}</h3>
@@ -655,7 +675,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idSYDBLB,
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.imagesDBLB = response.data.contents;
@@ -671,7 +691,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.userList = response.data.contents;
@@ -710,7 +730,7 @@
 						"siteId": _obj.idSite,
 						"channelId": _obj.idHZS,
 						"page": 1,
-						"perPage": 100
+						"perPage": 200
 					})
 				.then(function (response) {
 						_this.HZS = response.data.contents;
@@ -730,7 +750,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idZBDW,
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.ZBDW = response.data.contents;
@@ -741,7 +761,7 @@
 					"siteId": _obj.idSite,
 					"channelId": _obj.idCBDW,
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.CBDW = response.data.contents;
@@ -757,7 +777,7 @@
 						"value": "-1"
 					}],
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.XBDW = response.data.contents;

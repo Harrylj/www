@@ -73,7 +73,8 @@
 			position: relative;
 			height: 4.6rem;
 		}
-		.index-swipe-01 img {
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
 			height: 100%;
 			width: 100%;
 		}
@@ -133,7 +134,11 @@
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="3000" >
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<img v-lazy="image" alt="">
+					<!-- <img v-lazy="image" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image"
+							><template v-slot:error>加载失败</template></van-image>
 				</van-swipe-item>
 			</van-swipe>
 			<div class="tphd-header-list">
@@ -209,8 +214,8 @@
 				active: 3,
 				show: false,
 				swipeImages: [
-					'https://img.yzcdn.cn/vant/apple-1.jpg',
-					'https://img.yzcdn.cn/vant/apple-2.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
 				data_content:'',
 			},
@@ -221,7 +226,7 @@
 				axios.get('api/v1/contents/'+_obj.idSite_PC+'/'+ _obj.idTPHD_PC +'/'+ qs2obj(window.location.href).id)
 				.then(function (response) {
 					_this.data_content = response.data;
-					// public_imgsrc([_this.data_content])
+					public_imgsrc_pc([_this.data_content])
 					_this.swipeImages = [];
 					for(var i = 0 ; i < _this.data_content.imageUrlCount+1;i++){
 						var imgName = 'imageUrl';
@@ -229,7 +234,10 @@
 							imgName = imgName+i
 						}
 						console.log(imgName)
-						_this.swipeImages.push(_this.data_content[imgName])
+						if(_this.data_content[imgName].length>1){
+							_this.swipeImages.push(_this.data_content[imgName])
+						}
+						
 					}
 					console.log('99214',_this.swipeImages)
 					// console.log('123',_this.KMS);

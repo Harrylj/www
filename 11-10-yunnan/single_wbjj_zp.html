@@ -112,6 +112,9 @@
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="分类" name="1">
 					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="-1==activeHC?'zqsl-sx-item-click':''" @click="selectHC(-1)" >
+							全部
+						</div>
 						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in typeGoods" :key="index">
 							{{item.label}}
 						</div>
@@ -242,10 +245,16 @@
 					var _this = this;
 					_this.formData.ExhibitType = qs2obj(window.location.href).type;
 					_this.formData.Position= [_this.aa[qs2obj(window.location.href).HC].value,_this.aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
-					if(_type?true:false&_type<10){
-						_type = '0' + _type
+					console.log('333333',_type)
+					// 全部
+					if(_type == 0){
+						_this.formData.ExhibitType = ' '
 					}
-					_type?_this.formData.ExhibitType=_type:'';
+					// 按照类型
+					else if(_type?true:false&_type<10){
+						_type = '0' + _type
+						_type?_this.formData.ExhibitType=_type:'';
+					}
 					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
 						params:this.formData,
 						paramsSerializer: function(params) {
@@ -277,6 +286,7 @@
 				selectHC(_index){
 					// this.selectType = _index;
 					this.activeHC = _index;
+					// alert(this.activeHC)
 					// vant.Toast('会场'+_index)
 				},
 				selectZQ(_index){

@@ -326,8 +326,8 @@
 					<!-- <li><van-icon name="envelop-o"></van-icon>邮箱：{{HZZX.youxiang}}</li>
 					<li><van-icon name="desktop-o"></van-icon>传真：{{HZZX.chuanzhen}}</li>
 					<li><van-icon name="phone-circle-o" ></van-icon>电话：{{HZZX.dianhua}}</li> -->
-					<li>邮箱：{{HZZX.youxiang}}</li>
-					<li>传真：{{HZZX.chuanzhen}}</li>
+					<li v-show="HZZX.youxiang.length>1">邮箱：{{HZZX.youxiang}}</li>
+					<li v-show="HZZX.chuanzhen.length>1">网站：{{HZZX.chuanzhen}}</li>
 					<li>电话：{{HZZX.dianhua}}</li>
 				</ul>
 				<p>参展请与展会主办方联系：</p>
@@ -347,7 +347,9 @@
 				<div class="zgzq-swipe-father">
 					<van-swipe class="zgzq-swipe-02" :loop="false" 
 						:show-indicators="false">
-						<van-swipe-item v-for="(item,index) in WBHC" :key="index">
+						<van-swipe-item
+						@click="goPage('column_zqsl.html',{'lxwmHC':item.id,'index':index})"
+						v-for="(item,index) in WBHC" :key="index">
 							<div class="zgzq-swipe-item-div">
 								<van-image 
 								lazy-load
@@ -563,7 +565,7 @@
 							"siteId": _obj.idSite,
 							"channelId": _this.ZGRC[index].id,
 							"page": 1,
-							"perPage": 100
+							"perPage": 200
 						})
 						.then(function (response) {
 							_this.ZGRC[index].ljcontent = response.data.contents;

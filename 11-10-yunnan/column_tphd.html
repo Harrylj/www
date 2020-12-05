@@ -138,6 +138,7 @@
 			text-align: center;
 			font-size: .31rem;
 			line-height: .5rem;
+			padding:  0 .1rem;
 		}
 		.flhd-tphd-item p{
 			font-size: .28rem;
@@ -230,7 +231,8 @@
 			font-size: .31rem;
 			font-weight: bold;
 			/* background-color: #28356F; */
-			background-color: rgba(255, 255, 255, .1);
+			/* background-color: rgba(255, 255, 255, .1); */
+			background-color: #009BFE;
 			letter-spacing: .04rem;
 		}
 		div.zqsl-popup{
@@ -285,7 +287,7 @@
 								</van-image>
 								<div v-show="item.code?true:false" class="flhd-tphd-item-index">{{item.code}}号</div>
 								<div class="flhd-tphd-content">
-									<h3>{{item.title}}</h3>
+									<h3 class="van-ellipsis">{{item.title}}</h3>
 									<p>{{item.hits}}票</p>
 								</div>
 								<div class="flhd-tphd-item-footer">
@@ -304,9 +306,9 @@
 								<van-image fil="cover" lazy-load :src="item.imageUrl">
 									<template v-slot:error>加载失败</template>
 								</van-image>
-								<div class="flhd-tphd-item-index">{{item.code}}号</div>
+								<div v-show="item.code?true:false" class="flhd-tphd-item-index">{{item.code}}号</div>
 								<div class="flhd-tphd-content">
-									<h3>{{item.title}}</h3>
+									<h3 class="van-ellipsis">{{item.title}}</h3>
 									<p>{{item.hits}}票</p>
 								</div>
 								<div class="flhd-tphd-item-footer">
@@ -436,11 +438,11 @@
 							desc: _type
 						}],
 						page:0,
-						perPage:10
+						perPage:200
 					})
 					.then(function (response) {
 						_this.list_content = response.data.contents;
-						public_imgsrc(_this.list_content)
+						public_imgsrc_pc(_this.list_content)
 						console.log('9999922311',_this.list_content)
 					})
 				},

@@ -155,7 +155,7 @@
 						<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 					</div>
 					<van-image
-					v-show="item.imageUrl.length>0"
+					v-show="item.imageUrl.length>30"
 					class="jbjs-body-item-img"
 					fit="fill"
 					:src="item.imageUrl"
@@ -219,7 +219,7 @@
 						"value": "1"
 					}],
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.listXW = response.data.contents;

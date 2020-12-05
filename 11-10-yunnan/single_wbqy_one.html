@@ -253,11 +253,11 @@
 				fit="cover"
 				:src="WBQY.imageUrl"
 			><template v-slot:error>加载失败</template></van-image>
-			<h2>{{shop.name}}</h2>
-			<!-- <p v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''">企业网站: {{WBQY.wangzhan}}</p> -->
-			<p v-show="WBQY.youxiang?WBQY.youxiang.length>0:''">企业邮箱: {{WBQY.youxiang}}</p>
-			<p>联系方式: {{WBQY.lianxifangshi}}</p>
-			<p>企业位置: {{WBQY.zhanquweizhi}}</p>
+			<h2>{{WBQY.channelName}}</h2>
+			<p v-if="WBQY.wangzhan?WBQY.wangzhan.length>0:''">企业网站: {{WBQY.wangzhan}}</p>
+			<p v-if="WBQY.youxiang?WBQY.youxiang.length>0:''">企业邮箱: {{WBQY.youxiang}}</p>
+			<p v-if="WBQY.lianxifangshi?WBQY.lianxifangshi.length>0:''">联系方式: {{WBQY.lianxifangshi}}</p>
+			<!-- <p>企业位置: {{WBQY.zhanquweizhi}}</p> -->
 			<!-- <div class="zsxq-btn-jdgg" v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''" @click="goPage(WBQY.wangzhan)">去逛逛</div> -->
 		</div>
 		<div class="zqxq-body">
@@ -435,7 +435,7 @@
 							"value": "1"
 						}],
 						"page": 1,
-						"perPage": 100
+						"perPage": 200
 					})
 					.then(function (response) {
 						_this.listGoods = response.data.contents;

@@ -237,6 +237,9 @@
 			display: flex;
 			justify-content: space-between;
 		}
+		div.van-swipe-item{
+			justify-content: space-around;
+		}
 		.index-swipe-01-div{
 			display: flex;
 			flex-direction: column;
@@ -345,9 +348,9 @@
 		.van-dropdown-item .van-cell__title span{
 			font-size: .28rem;
 		}
-		.van-swipe-item{
+		/* .van-swipe-item{
 			padding-right: .45rem;
-		}
+		} */
 		div.zqsl-popup{
 			padding-bottom: 0;
 		}
@@ -385,18 +388,18 @@
 			<!-- <div class="wbjj-btn-search"><van-icon name="search" ></van-icon>请输入关键词</div> -->
 		</div>
 		<div class="index-body wbjj-body">
-			<div class="wbjj-bp index-ygz">
+			<div class="wbjj-bp index-ygz" v-if="listHot.length>0">
 				<div class="index-h2">爆品推荐</div>
 				<div class="index-header-swipe">
 					<van-swipe class="index-swipe-01" :autoplay="15000" >
-						<van-swipe-item>
+						<van-swipe-item :class="listHot.length<3?'van-swipe-item-center':''">
 							<div class="index-swipe-01-div"
 							:class="hot.isLive?'goods-live-hover':''" 
 							@click="goGoodsDetail(hot)" v-for="(hot, index) in listHot" :key="index">
 								<!-- <img v-lazy="hot.logo" alt=""/> -->
 								<van-image
 								fit="cover"
-								:src="hot.logo"
+								:src="hot.images[0].url"
 								><template v-slot:error>加载失败</template></van-image>
 								<p class="van-ellipsis">{{hot.name}}</p>
 							</div>
@@ -443,7 +446,7 @@
 							<!-- <img :src="goods.logo" alt=""> -->
 							<van-image
 							fit="cover"
-							:src="goods.logo"
+							:src="goods.images[0].url"
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{goods.name}}</h3>
 							<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>

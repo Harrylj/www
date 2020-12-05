@@ -28,12 +28,12 @@
 			background-color: transparent;
 		}
 		.van-swipe__indicators{
-			bottom: .9rem;
+			bottom: .8rem;
 		}
 		.index-body{
 			position: relative;
 			z-index: 2;
-			margin-top: -.7rem;
+			margin-top: -.6rem;
 			padding-top: .2rem;
 			padding-bottom: 2.1rem;
 			border-radius:  .67rem .67rem 0 0;
@@ -48,7 +48,8 @@
 			position: relative;
 			height: 3.8rem;
 		}
-		.index-swipe-01 img {
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
 			height: 100%;
 			width: 100%;
 		}
@@ -237,6 +238,18 @@
 		.wzwb-mflj{
 			margin-top: 0;
 		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0rem;
+			padding: .2rem .2rem .7rem .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .32rem;
+			line-height: .4rem;
+		}
 	</style>
 </head>
 
@@ -249,9 +262,16 @@
 			<span>云南文博会</span>
 		</div> -->
 		<div class="index-header-swipe">
-			<van-swipe class="index-swipe-01" :autoplay="3000" >
-				<van-swipe-item v-for="(image, index) in imagesDBLB" :key="index">
-					<img @click="" v-lazy="image.imageUrl" alt="">
+			<van-swipe class="index-swipe-01" :autoplay="10000" >
+				<van-swipe-item 
+				@click="image.linkUrl?goPage(image.linkUrl):goPage('article_xwxq.html',{'id':image.id})"
+				v-for="(image, index) in imagesDBLB" :key="index">
+					<!-- <img  v-lazy="image.imageUrl" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
@@ -436,9 +456,9 @@
 				// 顶部轮播
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
-					"channelId": _obj.idSYDBLB,
+					"channelId": _obj.idWZWBDBLB,
 					"page": 1,
-					"perPage": 100
+					"perPage": 200
 				})
 				.then(function (response) {
 					_this.imagesDBLB = response.data.contents;
