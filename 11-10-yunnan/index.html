@@ -425,7 +425,8 @@
 			<div class="index-tshw index-hzs">
 				<div class="index-tshw-list">
 					<!-- <div class="index-tshw-item" @click="goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index"> -->
-					<div class="index-tshw-item" @click="goods.channelName=='云南报业传媒集团'?goPage('single_wbqy_one.html',{'id':goods.id}):goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index">
+					<!-- <div class="index-tshw-item" @click="goods.channelName=='云南报业传媒集团'?goPage('single_wbqy_one.html',{'id':goods.id}):goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index"> -->
+					<div class="index-tshw-item" @click="goPage('single_wbqy_one.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
 							fit="cover"

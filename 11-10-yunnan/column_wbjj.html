@@ -596,6 +596,16 @@
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// vant.Toast('提示看看');
 
+				// 是否记录会场和展区
+				if(window.localStorage.getItem("key_wbjj_HC") == null ){
+					console.log('无记录会场')
+				}
+				else{
+					console.log('有记录会场')
+					this.activeHC = window.localStorage.getItem("key_wbjj_HC")
+					this.activeZQ = window.localStorage.getItem("key_wbjj_ZQ")
+				}
+				
 				
 
 				// // 获取会场地址
@@ -705,6 +715,8 @@
 				},
 				selectQD(){
 					// vant.Toast(this.activeHC,this.activeZQ)
+					window.localStorage.setItem('key_wbjj_HC',this.activeHC)
+					window.localStorage.setItem('key_wbjj_ZQ',this.activeZQ)
 					console.log(this.activeHC,this.activeZQ)
 					console.log(this.items[this.activeHC].label)
 					console.log(this.items[this.activeHC].children[this.activeZQ].label)

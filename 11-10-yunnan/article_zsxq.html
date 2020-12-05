@@ -208,7 +208,7 @@
 			<!-- <p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p> -->
 			<p v-show="shop.emailAddress?shop.emailAddress.length>0:''">展商邮箱: {{shop.emailAddress}}</p>
 			<p>联系方式: {{shop.contectPhone}}</p>
-			<p>展区位置: {{shopObj.PositionName}}</p>
+			<p v-show="shopObj.PositionName=='undefined'?false:true">展区位置: {{shopObj.PositionName}}</p>
 			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl)">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">
@@ -307,9 +307,11 @@
 				shop:'', // 展商详情
 				listGoods:[], // 展品列表
 				listTop:[], // top展品列表
+				PositionList:[]//
 				
 			},
 			created: function () {
+				var _this = this
 				// console.log(1)
 				// vant.Toast('提示看看');
 				this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
@@ -317,8 +319,15 @@
 				this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
 				// this.goodsObj.PositionName = qs2obj(window.location.href).PositionName;
 				// this.goodsObj.Position = [qs2obj(window.location.href).HC,qs2obj(window.location.href).ZQ]
+				// 获取所有配置数据
+				// axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				// .then(function (response) {
+				// 	_this.PositionList = response.data.result.custom.BCodes.ExhibitionArea;
+					
+				// })
 				// 获取展商详情
-				this.getShop();
+				_this.getShop();
+				
 			},
 			mounted: function () {
 
@@ -374,7 +383,9 @@
 						// 获取展品列表
 						_this.getGoods();
 						// 获取top展品列表
-						_this.getTop()
+						_this.getTop();
+						// _this.shopObj.PositionName = _this.PositionList
+
 					})
 				},
 				// 获取展品列表

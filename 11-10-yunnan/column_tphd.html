@@ -290,7 +290,7 @@
 								</div>
 								<div class="flhd-tphd-item-footer">
 									<!-- <div class="tphd-btn-lp">拉票</div> -->
-									<div class="tphd-btn-tp" @click.stop="toupiao(item.id)">投票</div>
+									<div class="tphd-btn-tp" @click.stop="toupiao(item)">投票</div>
 								</div>
 							</div>
 						</div>
@@ -376,16 +376,17 @@
 			},
 			methods: {
 				// 投票
-				toupiao(_id){
+				toupiao(_item){
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
 					"siteId": _obj.idSite_PC,
 					"channelId": _obj.idTPHD_PC,
-					"contentId": _id,
+					"contentId": _item.id,
 					})
 					.then(function (response) {
 						// _this.YGZ = response.data.contents;
 						// public_imgsrc(_this.YGZ)
 						vant.Toast('投票成功')
+						_item.hits = _item.hits+1;
 						console.log(response.data)
 					})
 					.catch(function (error) {

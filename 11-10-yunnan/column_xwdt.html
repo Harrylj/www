@@ -158,7 +158,7 @@
 							<h4 class="van-multi-ellipsis--l2">{{item.summary}}</h4>
 							<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 						</div>
-						<van-image v-show="item.imageUrl.length>0" class="jbjs-body-item-img" fit="fill"
+						<van-image v-show="item.imageUrl.length>30" class="jbjs-body-item-img" fit="fill"
 							:src="item.imageUrl">
 						</van-image>
 					</div>
@@ -223,6 +223,7 @@
 				.then(function (response) {
 					_this.listXW = response.data.contents;
 					public_imgsrc(_this.listXW)
+					console.log(_this.listXW)
 					// console.log('123',_this.listXW);
 				})
 				.catch(function (error) {
