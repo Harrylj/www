@@ -108,12 +108,12 @@
 			font-size: .31rem;
 			line-height: .7rem;
 			text-align: left;
-			padding-left: 1.5rem;
+			padding-left: .4rem;
 			display: flex;
 			align-items: center;
 			opacity: .9;
 			background-repeat: no-repeat;
-			background-position: 1.05rem center;
+			background-position: 0rem center;
 		}
 		.lxwm-body-div li:nth-child(1){
 			background-image: url(images/lxwm-icon-01.png);
@@ -252,6 +252,9 @@
 		}
 		.mflj-item{
 			min-height: 1.95rem;
+			padding-left: .3rem;
+			padding-right: .3rem;
+			padding-bottom: .2rem;
 		}
 		.gywm-zhrc{
 			position: relative;
@@ -385,8 +388,7 @@
 						<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
 							<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
 								<div class="wzwb-mflj-div">
-									<div class="mflj-item" v-for="(item,index) in items.ljcontent" :key="index">
-										<!-- <img :src="item.imageUrl" alt=""> -->
+									<!-- <div class="mflj-item" v-for="(item,index) in items.ljcontent" :key="index">
 										<van-image
 										lazy-load
 										:src="item.imageUrl"
@@ -394,7 +396,14 @@
 										<div class="mflj-item-right">
 												<h3>{{item.title}}</h3>
 												<p class="van-ellipsis">{{item.subTitle}}</p>
-												<p class="van-ellipsis">{{item.summary}}</p>
+												<p class="van-ellipsis" >{{item.summary}}</p>
+										</div>
+									</div> -->
+									<div class="mflj-item" v-for="(item,index) in items.ljcontent" :key="index">
+										<div class="mflj-item-right">
+												<h3>{{item.title}}</h3>
+												<p>{{item.subTitle}}</p>
+												<p >{{item.summary}}</p>
 										</div>
 									</div>
 								</div>

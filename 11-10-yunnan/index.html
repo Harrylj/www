@@ -440,6 +440,38 @@
 					</div>
 				</div>
 			</div>
+			
+			<div class="index-line"></div>
+			<div class="index-tshw" v-if="listGoods.length>0">
+				<div class="index-h2">特色好物</div>
+				<div class="index-tshw-list">
+					<!-- <div class="index-tshw-item"
+						:class="goods.isLive?'goods-live-hover':''" 
+						@click="goGoodsDetail(goods)"
+						v-for="(goods,index) in listGoods" :key="index">
+						<van-image
+							fit="cover"
+							lazy-load
+							:src="goods.images[0].url"
+							><template v-slot:error>加载失败</template></van-image>
+						
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
+					</div> -->
+					<div class="index-tshw-item"
+						@click="goPage('article_zsxq.html',{'Keyword':goods.name})"
+						v-for="(goods,index) in listGoods" :key="index"
+						>
+						<van-image
+							fit="cover"
+							lazy-load
+							:src="goods.logo"
+							><template v-slot:error>加载失败</template></van-image>
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
+					</div>
+				</div>
+			</div>
 			<div class="index-line"></div>
 			<!-- 合作商 -->
 			<div class="index-tshw index-hzs">
@@ -453,27 +485,6 @@
 							:src="goods.imageUrl"
 							><template v-slot:error>加载失败</template></van-image>
 						<h3 class="van-ellipsis">{{goods.channelName}}</h3>
-					</div>
-				</div>
-			</div>
-			<div class="index-line"></div>
-			<div class="index-tshw" v-if="listGoods.length>0">
-				<div class="index-h2">特色好物</div>
-				<div class="index-tshw-list">
-					<div class="index-tshw-item"
-						:class="goods.isLive?'goods-live-hover':''" 
-						@click="goGoodsDetail(goods)"
-						v-for="(goods,index) in listGoods" :key="index">
-						<!-- <div class="index-live"><span></span>LIVE</div> -->
-						<!-- <img src="images/bg.png" alt=""> -->
-						<van-image
-							fit="cover"
-							lazy-load
-							:src="goods.images[0].url"
-							><template v-slot:error>加载失败</template></van-image>
-						
-						<h3 class="van-ellipsis">{{goods.name}}</h3>
-						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 					</div>
 				</div>
 			</div>
@@ -609,6 +620,8 @@
 				KMS:[], // 开幕式
 				YGZPage:1, //云逛展翻页
 				formData:{ // 特色好物列表请求数组
+					// ExhibitorName:'云南陶韵文化传播有限公司',
+					Keyword:'云南陶韵文化传播有限公司',
 					SkipCount:0,
 					Position:[],
 					MaxResultCount:4,
@@ -684,6 +697,7 @@
 				// 获取重磅嘉宾列表
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
+					"groupNames":["重磅嘉宾"],
 					"channelId": _obj.idZBJB,
 					"wheres":[ {
 						"column": "checked",
@@ -711,6 +725,11 @@
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idYGZ,
+					"wheres":[{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
 					"page": _this.YGZPage,
 					"perPage": 4
 				})
@@ -863,7 +882,7 @@
 				// 获取特色好物
 				getGoods(){
 					var _this = this;
-					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
+					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList',{
 						params:this.formData,
 						paramsSerializer: function(params) {
 							return qs.stringify(params, {arrayFormat: 'repeat'})
@@ -879,7 +898,7 @@
 					axios.post('api/v1/contents', {
 						"siteId": _obj.idSite,
 						"channelId": _obj.idYGZ,
-						"wheres":[ {
+						"wheres":[{
 							"column": "sourceId",
 							"operator": ">",
 							"value": "-1"

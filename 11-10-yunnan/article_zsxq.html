@@ -52,7 +52,8 @@
 		,.zqxq-header .van-image{
 			display: block;
 			width: 6.9rem;
-			height: 3.2rem;
+			/* height: 3.2rem; */
+			height: 5.175rem;
 			border-radius: .2rem;
 			margin-bottom: .2rem;
 			overflow: hidden;
@@ -204,14 +205,14 @@
 		<div class="zqxq-header">
 			<!-- <img :src="shop.logo" alt=""> -->
 			<van-image
-				fit="cover"
+				fit="fill"
 				:src="shop.logo"
 			><template v-slot:error>加载失败</template></van-image>
 			<h2>{{shop.name}}</h2>
 			<!-- <p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p> -->
 			<p v-show="shop.emailAddress?shop.emailAddress.length>0:''">展商邮箱: {{shop.emailAddress}}</p>
 			<p>联系方式: {{shop.contectPhone}}</p>
-			<p v-show="shopObj.PositionName=='undefined'?false:true">展区位置: {{shopObj.PositionName}}</p>
+			<p v-show="shopObj.PositionName?shopObj.PositionName=='undefined'?false:true:''">展区位置: {{shopObj.PositionName}}</p>
 			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl)">进店逛逛</div>
 		</div>
 		<div class="zqxq-body">

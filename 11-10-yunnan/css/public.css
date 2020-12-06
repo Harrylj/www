@@ -259,7 +259,7 @@ div.public-footer-nav:after {
 	/* background-color: #18316f; */
 	background-color: rgba(243,247,250, 0.1);
 	padding: 0.3rem 0 0.2rem 0;
-	min-height: 3.5rem;
+	/* min-height: 3.5rem; */
 	border-radius: 0.2rem;
 }
 .index-swipe-02-father img

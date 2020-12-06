@@ -249,6 +249,9 @@ function public_return_page(){
 			else {
 				docEl.style.fontSize = 100 + 'px';
 			}
+			// 设置新闻详情页最低高度
+			document.getElementsByClassName("xwxq-body")[0].style.minHeight=(aa-view_jsset_font)+'px'
+			console.log('9993221',view_jsset_font)
 		};
 	win.addEventListener(resizeEvt, recalc, false);
 	doc.addEventListener('DOMContentLoaded', recalc, false);
@@ -258,6 +261,8 @@ function public_return_page(){
 	var bb = window.screen.width;
 	document.getElementById("app").style.minHeight=aa+'px'
 	document.getElementById("app").style.minWidth=bb+'px'
+	
+	
 	// console.log('1234',aa,bb)
 })(document, window);
 
