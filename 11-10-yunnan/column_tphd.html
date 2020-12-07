@@ -277,7 +277,7 @@
 		</van-popup>
 		<div class="zqxq-body">
 			<van-tabs v-model="active"  @click="toggleList">
-				<van-tab title="最新">
+				<van-tab title="人气展品">
 					<div class="index-ygz flhd-tphd">
 						<div class="flhd-tphd-div">
 							<div class="flhd-tphd-item" @click="goPage('article_tphd.html',{'id':item.id})" v-for="(item,index) in list_content" :key="index">
@@ -298,7 +298,7 @@
 						</div>
 					</div>
 				</van-tab>
-				<van-tab title="热门">
+				<van-tab title="热门展点">
 					<div class="index-ygz flhd-tphd">
 						<div class="flhd-tphd-div">
 							<div class="flhd-tphd-item" @click="goPage('article_tphd.html',{'id':item.id})" v-for="(item,index) in list_content" :key="index">

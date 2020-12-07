@@ -366,7 +366,7 @@
 							fit="cover"
 							:src="image.imageUrl"
 							><template v-slot:error>加载失败</template></van-image>
-					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
+					<div v-if="image.id==541||image.title=='创意云南2020云上文化产业博览会'||image.title.length<1?false:true" class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
 				</van-swipe-item>
 			</van-swipe>
 		</div>
