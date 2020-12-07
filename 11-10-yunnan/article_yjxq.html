@@ -97,7 +97,7 @@
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">作品详情</div>
+				<div class="phtc-title">影集详情</div>
 			</div>
 		</div>
 		<div class="index-header-swipe">
@@ -108,7 +108,7 @@
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
 					<!-- <img v-lazy="image" alt=""> -->
 					<van-image
-							fit="cover"
+							fit="contain"
 							:src="image"
 							><template v-slot:error>加载失败</template></van-image>
 				</van-swipe-item>

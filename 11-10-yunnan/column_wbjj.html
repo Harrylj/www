@@ -398,7 +398,7 @@
 							@click="goGoodsDetail(hot)" v-for="(hot, index) in listHot" :key="index">
 								<!-- <img v-lazy="hot.logo" alt=""/> -->
 								<van-image
-								fit="cover"
+								fit="contain"
 								:src="hot.images[0].url"
 								><template v-slot:error>加载失败</template></van-image>
 								<p class="van-ellipsis">{{hot.name}}</p>
@@ -445,7 +445,7 @@
 						@click="goGoodsDetail(goods)" v-for="(goods,index) in listGoods" :key="index">
 							<!-- <img :src="goods.logo" alt=""> -->
 							<van-image
-							fit="cover"
+							fit="contain"
 							:src="goods.images[0].url"
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{goods.name}}</h3>
@@ -629,7 +629,7 @@
 				.then(function (response) {
 					_this.items = response.data.result.custom.BCodes.ExhibitionArea;
 					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
-					console.log('33222222111',_this.typeGoods);
+					// console.log('33222222111',_this.typeGoods);
 					// 获取展商
 					_this.getShops()
 					// 获取展品
@@ -648,7 +648,7 @@
 				*/
 			},
 			mounted: function () {
-				console.log(_obj.appkey)
+				// console.log(_obj.appkey)
 			},
 			methods: {
 				// 去展品详情
@@ -721,8 +721,8 @@
 					window.localStorage.setItem('key_wbjj_HC',this.activeHC)
 					window.localStorage.setItem('key_wbjj_ZQ',this.activeZQ)
 					console.log(this.activeHC,this.activeZQ)
-					console.log(this.items[this.activeHC].label)
-					console.log(this.items[this.activeHC].children[this.activeZQ].label)
+					// console.log(this.items[this.activeHC].label)
+					// console.log(this.items[this.activeHC].children[this.activeZQ].label)
 					// 获取展商
 					this.getShops();
 					// 获取展品
@@ -770,7 +770,7 @@
 						}
 					}).then(response =>{
 						_this.shops = response.data.result.items;
-						console.log(response.data.result.items)
+						// console.log(response.data.result.items)
 						// res.result.items.forEach(element => {
 						// 	this.list.push(element)
 						// })

@@ -233,7 +233,8 @@
 			width: 2.95rem;
 			border-radius: .2rem;
 		} */
-		.gywm-zgzq .van-image{
+		.gywm-zgzq .van-image
+		,.zgzq-swipe-item-div{
 			width: 6.9rem;
 			height: 3.5rem;
 			border-radius: .2rem;
@@ -280,6 +281,7 @@
 		}
 		.zgzq-swipe-item-div{
 			position: relative;
+			overflow: hidden;
 		}
 		.zgzq-swipe-item-div p{
 			position: absolute;
@@ -310,7 +312,7 @@
 			<span>云南文博会</span>
 		</div> -->
 		<div class="index-header-swipe">
-			<van-swipe class="index-swipe-01" :autoplay="3000" >
+			<van-swipe class="index-swipe-01" :autoplay="3000"  >
 				<van-swipe-item v-for="(image, index) in [LXWM.imageUrl]" :key="index">
 					<img v-lazy="image" alt="">
 					<!-- <p>{{index}}</p> -->
@@ -329,8 +331,8 @@
 					<!-- <li><van-icon name="envelop-o"></van-icon>邮箱：{{HZZX.youxiang}}</li>
 					<li><van-icon name="desktop-o"></van-icon>传真：{{HZZX.chuanzhen}}</li>
 					<li><van-icon name="phone-circle-o" ></van-icon>电话：{{HZZX.dianhua}}</li> -->
-					<li v-show="HZZX.youxiang.length>1">邮箱：{{HZZX.youxiang}}</li>
-					<li v-show="HZZX.chuanzhen.length>1">网站：{{HZZX.chuanzhen}}</li>
+					<li v-show="HZZX.youxiang?HZZX.youxiang.length>1:''">邮箱：{{HZZX.youxiang}}</li>
+					<li v-show="HZZX.chuanzhen?HZZX.chuanzhen.length>1:''">网站：{{HZZX.chuanzhen}}</li>
 					<li>电话：{{HZZX.dianhua}}</li>
 				</ul>
 				<p>参展请与展会主办方联系：</p>
@@ -353,15 +355,12 @@
 						<van-swipe-item
 						@click="goPage('column_zqsl.html',{'lxwmHC':item.id,'index':index})"
 						v-for="(item,index) in WBHC" :key="index">
-							<div class="zgzq-swipe-item-div">
-								<van-image 
+							<div class="zgzq-swipe-item-div"><van-image 
 								lazy-load
 								fit="fill"
 								:src="item.imageUrl">
 									<template v-slot:error>加载失败</template>
-								</van-image>
-								<!-- <img src="images/index-user-01.png" alt=""> -->
-								<p>{{item.channelName}}</p>
+								</van-image><p>{{item.channelName}}</p>
 							</div>
 						</van-swipe-item>
 					</van-swipe>
@@ -537,7 +536,7 @@
 				// console.log(1,document.documentElement.style.fontSize = '200px')
 				var _rem = 100 * (document.documentElement.clientWidth / 750)
 				this.swipeWidth = this.swipeWidth*_rem ; 
-				console.log(3,_rem)
+				// console.log(3,_rem)
 				// vant.Toast('提示看看');
 
 				// 获取联系我们内容
@@ -567,7 +566,8 @@
 					_this.ZGRC = response.data.children;
 					_this.ZGRC.unshift({'channelName':'全部','id':_obj.idZGRC});
 					public_imgsrc(_this.ZGRC)
-					console.log('1211113',_this.ZGRC);
+					
+					// console.log('1211113',_this.ZGRC);
 					// 获取日程活动
 					_this.ZGRC.forEach((element,index) => {
 						axios.post('api/v1/contents', {
@@ -579,13 +579,15 @@
 						.then(function (response) {
 							_this.ZGRC[index].ljcontent = response.data.contents;
 							public_imgsrc(_this.ZGRC[index].ljcontent)
-							console.log('999887777',_this.ZGRC[index].ljcontent);
+							// 倒序获取日程，他们录得有问题
+							_this.ZGRC[index].ljcontent.reverse()
+							// console.log('999887777',_this.ZGRC[index].ljcontent);
 						})
 					});
 				})
 			},
 			mounted: function () {
-				console.log(_obj.appkey)
+				// console.log(_obj.appkey)
 			},
 			methods: {
 				onClick(name, title) {
@@ -660,7 +662,7 @@
 			},
 
 		})
-		console.log('99999', vant.Lazyload)
+		// console.log('99999', vant.Lazyload)
 		// app.use(vant.Lazyload);
 	</script>
 </body>

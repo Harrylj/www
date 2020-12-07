@@ -67,7 +67,15 @@ function public_imgsrc(_obj){
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
 		
+		String.prototype.myReplace=function(f,e){//吧f替换成e
+			var reg=new RegExp(f,"g"); //创建正则RegExp对象   
+			return this.replace(reg,e); 
+		}
+		// var newstr=str.myReplace('中国','天朝');
+		var abc = '汪"汪你爱"汪"汪'
 		element.body?element.body = element.body.replace(/@/g,'http://admin.ynwbh.com/mobile'):'';
+		// element.body?element.body = element.body.myReplace('src="/mobile','http://admin.ynwbh.com/mobile'):'';
+		// alert(abc.myReplace('"汪','呃？？'))
 		var arr_img = [];
 		// 图片地址数组处理
 		Object.keys(_element).forEach((element,key)=>{
@@ -216,55 +224,58 @@ function public_return_page(){
 	// console.log('返回上一页')
 }
 
-(function (doc, win) {
-	//      用原生方法获取用户设置的浏览器的字体大小(兼容ie)
-	if (doc.documentElement.currentStyle) {
-		var user_webset_font = doc.documentElement.currentStyle['fontSize'];
-	}
-	else {
-		var user_webset_font = getComputedStyle(doc.documentElement, false)['fontSize'];
-	}
-	//      取整后与默认16px的比例系数
-	var xs = parseFloat(user_webset_font) / 16;
-	//      设置rem的js设置的字体大小
-	var view_jsset_font, result_font;
-	var docEl = doc.documentElement,
-		resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
-		clientWidth,
-		recalc = function () {
-			clientWidth = docEl.clientWidth;
-			if (!clientWidth) return;
-			if (!doc.addEventListener) return;
-			if (clientWidth < 1080) {
-				// console.log('111',clientWidth)
-				//              设置rem的js设置的字体大小
-				view_jsset_font = 100 * (clientWidth / 750);
-				//              最终的字体大小为rem字体/系数
-				// result_font = view_jsset_font / xs;
-				result_font = view_jsset_font;
-				// console.log('222',view_jsset_font,result_font)
-				//              设置根字体大小
-				docEl.style.fontSize = result_font + 'px';
-			}
-			else {
-				docEl.style.fontSize = 100 + 'px';
-			}
-			// 设置新闻详情页最低高度
-			document.getElementsByClassName("xwxq-body")[0].style.minHeight=(aa-view_jsset_font)+'px'
-			console.log('9993221',view_jsset_font)
-		};
-	win.addEventListener(resizeEvt, recalc, false);
-	doc.addEventListener('DOMContentLoaded', recalc, false);
-	
+/*
+    作者:alan
+    此版本应用于 750px尺寸的 iOS 设计稿
+    rem计算方式：设计图尺寸px / 100 = 实际rem  【例: 100px = 1rem，32px = 0.32rem】
+ */
+!function (window) {
+    /* 设计图文档宽度 */
+    var docWidth = 750;
+    var doc = window.document,
+        docEl = doc.documentElement,
+        resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize';
+    var recalc = (function refreshRem () {
+        /* 窗口当前宽度 */
+        var clientWidth = docEl.getBoundingClientRect().width;
+        /* 页面宽度大于 750 时不再放大 */
+        clientWidth = clientWidth > 750 ? 750 : clientWidth;
+        var oldSize = (clientWidth/docWidth*100) + 'px';
+        docEl.style.fontSize = oldSize;
 
-	var aa = window.screen.height;
-	var bb = window.screen.width;
-	document.getElementById("app").style.minHeight=aa+'px'
-	document.getElementById("app").style.minWidth=bb+'px'
-	
-	
-	// console.log('1234',aa,bb)
-})(document, window);
+        /* 获取设置后的字体大小情况 - 因微信设置APP字体大小后会影响该设置 */
+        var nowSize = window.getComputedStyle(document.getElementsByTagName("html")[0]).fontSize;
+        var oldSizeValue = parseFloat(oldSize,10);
+        var nowSizeValue = parseFloat(nowSize,10);
+
+        /* 当差值大于1时重新按差比计算出正确的px值 */
+        if((nowSizeValue - oldSizeValue) > 1 || (nowSizeValue - oldSizeValue) < -1){
+            var diff = (oldSizeValue / nowSizeValue);
+            docEl.style.fontSize = (clientWidth/docWidth*100*diff) + 'px';
+		}
+		// 设置app和新闻详情页最低高度
+		var aa = window.screen.height;
+		if(document.getElementsByClassName("xwxq-body").length>0){
+			document.getElementsByClassName("xwxq-body")[0].style.minHeight=(aa-nowSize.split('px')[0])+'px';
+		}
+		document.getElementById("app").style.minHeight=aa+'px'
+		// alert(nowSize.split('px')[0])
+		return refreshRem;
+    })();
+    /* 添加倍屏标识，安卓为1 */
+    docEl.setAttribute('data-dpr', window.navigator.appVersion.match(/iphone/gi) ? window.devicePixelRatio : 1);
+    if (/iP(hone|od|ad)/.test(window.navigator.userAgent)) {
+        /* 添加IOS标识 */
+        doc.documentElement.classList.add('ios');
+        /* IOS8以上给html添加hairline样式，以便特殊处理 */
+        if (parseInt(window.navigator.appVersion.match(/OS (\d+)_(\d+)_?(\d+)?/)[1], 10) >= 8)
+            doc.documentElement.classList.add('hairline');
+    }
+    if (!doc.addEventListener) return;
+    window.addEventListener(resizeEvt, recalc, false);
+	doc.addEventListener('DOMContentLoaded', recalc, false);
+
+}(window);
 
 
 //浏览器版本过低 提示升级 低于ie 10的都会提示  

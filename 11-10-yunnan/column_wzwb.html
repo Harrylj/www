@@ -121,7 +121,8 @@
 		,.wzwb-flhd-div .van-image{
 			display: block;
 			width: 100%;
-			height: 3rem;
+			/* height: 3rem; */
+			height: 5.175rem;
 			border-radius: .2rem;
 			margin-bottom: .2rem;
 			overflow: hidden;
@@ -305,7 +306,7 @@
 				<div @click="goPage('column_tphd.html')" class="index-ygz-more">马上参与<van-icon name="arrow" /></div>
 				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html')">
 					<!-- <img :src="FLHD.imageUrl" alt=""> -->
-					<van-image fil="cover" lazy-load :src="FLHD.imageUrl">
+					<van-image fil="cover"  :src="FLHD.imageUrl">
 						<template v-slot:error>加载失败</template>
 					</van-image>
 					<h3>{{FLHD.channelName}}</h3>

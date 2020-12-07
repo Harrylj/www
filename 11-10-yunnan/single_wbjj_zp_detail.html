@@ -107,7 +107,7 @@
 			<van-swipe class="index-swipe-01" @change="onChange" :autoplay="5000" :show-indicators="false" >
 				<van-swipe-item v-for="(image, index) in data_Img.images" :key="index">
 					<van-image
-							fit="cover"
+							fit="contain"
 							lazy-load
 							:src="image.url"
 					><template v-slot:error>加载失败</template></van-image>

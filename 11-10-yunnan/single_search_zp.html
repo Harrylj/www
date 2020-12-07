@@ -136,7 +136,7 @@
 					v-for="(goods,index) in listGoods" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
 						<van-image
-							fit="cover"
+							fit="contain"
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
 						<h3 class="van-ellipsis">{{goods.name}}</h3>

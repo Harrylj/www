@@ -195,7 +195,9 @@
 			width: 100%;
 			bottom: 0;
 			padding: .2rem 0;
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0));
+			/* background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0)); */
+			background: url(images/ygz-footer-bg.png);
+			background-size: 100% 100%;
 			border-radius: 0 0 .2rem .2rem;
 		}
 		.index-ygz-item h3,
@@ -468,7 +470,7 @@
 							:src="goods.logo"
 							><template v-slot:error>加载失败</template></van-image>
 						<h3 class="van-ellipsis">{{goods.name}}</h3>
-						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
+						<p v-if="goods.appHits?goods.appHits.length>0?true:false:''" class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 					</div>
 				</div>
 			</div>
