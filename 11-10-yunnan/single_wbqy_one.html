@@ -277,7 +277,7 @@
 				</van-tab>
 				<van-tab title="子公司">
 					<div class="index-ygz-list">
-						<div class="index-ygz-item" @click="goPage('article_zsxq.html',{'Keyword':item.name,'PositionName':shop.name})" v-for="(item,index) in listZS" :key="index">
+						<div class="index-ygz-item" @click="goPage('article_zsxq.html',{'id':item.id,'Keyword':item.name,'PositionName':shop.name})" v-for="(item,index) in listZS" :key="index">
 							<van-image
 								fit="cover"
 								:src="item.logo"

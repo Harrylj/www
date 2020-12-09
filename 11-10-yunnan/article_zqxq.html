@@ -112,7 +112,7 @@
 		</div>
 		<div class="zqxq-header">
 			<!-- <img src="images/bg.png" alt=""> -->
-			<van-image fil="cover" lazy-load :src="data_content.imageUrl">
+			<van-image fit="cover" lazy-load :src="data_content.imageUrl">
 				<template v-slot:error>加载失败</template>
 			</van-image>
 			<h2>{{data_content.title}}</h2>
@@ -125,9 +125,9 @@
 		<div class="zqxq-body">
 			<h2>参展商</h2>
 			<div class="zqxq-list">
-				<div class="zqxq-item" @click="goPage('article_zsxq.html',{'Keyword':item.name,'PositionName':data_content.title})" v-for="(item,index) in listZS" :key="index">
+				<div class="zqxq-item" @click="goPage('article_zsxq.html',{'id':item.id,'Keyword':item.name,'PositionName':data_content.title})" v-for="(item,index) in listZS" :key="index">
 					<!-- <img src="images/bg.png" alt=""> -->
-					<van-image fil="cover" lazy-load :src="item.logo">
+					<van-image fit="cover" lazy-load :src="item.logo">
 						<template v-slot:error>加载失败</template>
 					</van-image>
 					<h3 class="van-ellipsis">{{item.name}}</h3>

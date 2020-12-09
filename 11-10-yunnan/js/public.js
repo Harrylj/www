@@ -18,20 +18,21 @@ function public_obj() {
 	_obj.idWZWBDBLB = 179, // 玩转文博顶部轮播
 	_obj.idXWDT = 30, // 新闻动态
 	_obj.idXBDW = 38, // 协办单位
-	_obj.idZHZJ = 29, // 展区直击
+	_obj.idZHZJ = 29, // 展会直击
 	_obj.idCBDW = 37, // 承办单位
 	_obj.idZBDW = 36, // 主办单位
 	_obj.idZBJB = 34, // 重磅嘉宾
 	_obj.idKMS = 33, // 开幕式
 	_obj.idYJJB = 100, // 演讲嘉宾
 	_obj.idKMS_CID = 48, // 开幕式-内容id
+	// _obj.idKMS_CID = 1336, // 开幕式-内容id
 	_obj.idYGZ = 35, // 云逛展
 	_obj.idHZS = 167, // 合作商,文博企业
 	_obj.idTSHW = 32, // 特色好物
 	_obj.idFLHD = 31, // 福利活动
 	_obj.idFHLT = 41, // 峰会论坛
 	_obj.idFHLT_list = '115,116,117,118,119', // 峰荟论坛子集数组
-	_obj.idFHLT_listJB = [120,121,122,123,124], // 峰会论坛子集特邀嘉宾列表
+	_obj.idFHLT_listJB = [120,121,122,124,123], // 峰会论坛子集特邀嘉宾列表
 	_obj.idLXWM = 40, // 联系我们
 	_obj.idLXWM_CID = 70, // 联系我们-内容id
 	_obj.idHZZX = 91, // 合作咨询
@@ -65,8 +66,8 @@ function public_imgsrc(_obj){
 		_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
-		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
-		
+		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : '';
+		_obj[index].zt ? _obj[index].zt = _obj[index].zt.toUpperCase() : '';
 		String.prototype.myReplace=function(f,e){//吧f替换成e
 			var reg=new RegExp(f,"g"); //创建正则RegExp对象   
 			return this.replace(reg,e); 
@@ -106,7 +107,8 @@ function public_imgsrc_pc(_obj){
 		_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
-		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : _obj[index].zT = 'LIVE';
+		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : '';
+		_obj[index].zt ? _obj[index].zt = _obj[index].zt.toUpperCase() : '';
 		
 		element.body?element.body = element.body.replace(/@/g,'http://admin.ynwbh.com'):'';
 		var arr_img = [];
@@ -222,6 +224,37 @@ function isWeChatBrowser() {
 function public_return_page(){
 	window.history.back();
 	// console.log('返回上一页')
+}
+
+// 获取展商展品的地址名
+function getCodeText(value) {
+	// var codes = JSON.parse(sessionStorage.getItem('ExhibitionArea')).ExhibitionArea
+	var codes = sessionStorage.getItem('ExhibitionArea');
+	console.log('99999',codes)
+	if (typeof value == 'object') {
+		let text = ""
+		value.forEach(i => {
+			text += this.getCodeText(i) + '·'
+		})
+		return text.substr(0, text.length - 1)
+	}
+	if(typeof value == 'string'){
+		value = value.substr(value.lastIndexOf(',')+1)
+	}
+	
+	let getText = (items) => {
+		if (items) {
+			for (var i = 0; i < items.length; i++) {
+				if (items[i].value == value) {
+					return items[i].label
+				}
+				let t = getText(items[i].children)
+				if (t) return t
+			}
+		}
+		return ''
+	}
+	return getText(codes)
 }
 
 /*

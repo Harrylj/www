@@ -147,7 +147,7 @@
 			top: 0;
 			height: 100%;
 			width: 0.01rem;
-			background-color:  rgba(255, 255, 255, .1);
+			/* background-color:  rgba(255, 255, 255, .1); */
 			content: " ";
 			color: transparent;
 		}
@@ -299,6 +299,7 @@
 				shopObj:{
 					Keyword:'',  // 展商名
 					PositionName:'', // 展区地址
+					id:'', //展商id
 				},
 				goodsObj:{
 					ExhibitorName:'',
@@ -346,6 +347,17 @@
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
+					// 统计访问展品量
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
 					//在直播
 					if(_item.isLive){
 						// 在直播 有直播地址  跳直播
@@ -398,6 +410,27 @@
 						// _this.shopObj.PositionName = _this.PositionList
 
 					})
+					_this.shopObj.id = qs2obj(window.location.href).id;
+					// 调用展商详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCache',{
+						params:this.shopObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						// _this.shop = response.data.result.items[0];
+						// console.log('332221111111',_this.shop)
+						// _this.goodsObj.Position = _this.shop.position;
+						// _this.topObj.Position = _this.shop.position;
+						// // 获取展品列表
+						// _this.getGoods();
+						// // 获取top展品列表
+						// _this.getTop();
+						// // _this.shopObj.PositionName = _this.PositionList
+
+					})
+
 				},
 				// 获取展品列表
 				getGoods(){

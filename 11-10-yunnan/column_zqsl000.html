@@ -196,7 +196,7 @@
 					<a href="article_zqxq.html">
 					<div class="zqsl-item"  v-for="(item,index) in items[activeHC].children" :key="index">
 						<!-- <img src="images/bg.png" alt=""> -->
-						<van-image fil="cover" lazy-load :src="item.imageUrl">
+						<van-image fit="cover" lazy-load :src="item.imageUrl">
 							<template v-slot:error>加载失败</template>
 						</van-image>
 						<div class="zqsl-item-right">

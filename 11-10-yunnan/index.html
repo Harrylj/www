@@ -47,7 +47,7 @@
 			height: 7rem;
 			content: " ";
 			color: transparent;
-			background-image: url(images/index-bg-01.png);
+			/* background-image: url(images/index-bg-01.png); */
 			background-size: 100% 100%;
 			background-repeat: no-repeat;
 		}
@@ -320,6 +320,16 @@
 			font-size: .32rem;
 			line-height: .4rem;
 		}
+		.index-ygz-item p{
+			display: flex;
+			align-items: center;
+		}
+		.index-ygz-item p img{
+			width: 0.23rem!important;
+			height: 0.15rem!important;
+			margin-bottom: 0!important;
+			margin-right: .1rem;
+		}
 	</style>
 </head>
 
@@ -386,7 +396,7 @@
 			<a href="column_kms.html">
 			<div class="index-video">
 				
-				<div class="index-h2">2020云南文博开幕式</div>
+				<div class="index-h2">{{KMSTitle.channelName}}</div>
 				
 				<div class="index-video-div">
 					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
@@ -415,7 +425,7 @@
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{user.title}}</h3>
 							<!-- <p class="van-ellipsis">{{user.job}}</p> -->
-							<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
+							<p class="van-multi-ellipsis--l2">{{user.zhicheng}}</p>
 						</div>
 					</van-swipe-item>
 				</van-swipe>
@@ -437,7 +447,7 @@
 						></van-image> -->
 						<div class="index-ygz-item-footer">
 							<h3 class="van-ellipsis">{{item.title}}</h3>
-							<p class="van-ellipsis">{{item.hits}}</p>
+							<p class="van-ellipsis"><img src="images/index-eye.png" alt=""><span>{{item.hits}}</span></p>
 						</div>
 					</div>
 				</div>
@@ -461,7 +471,7 @@
 						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
 					</div> -->
 					<div class="index-tshw-item"
-						@click="goPage('article_zsxq.html',{'Keyword':goods.name})"
+						@click="goPage('article_zsxq.html',{'Keyword':goods.name,'id':goods.id})"
 						v-for="(goods,index) in listGoods" :key="index"
 						>
 						<van-image
@@ -619,7 +629,8 @@
 				ZBDW:[], // 主办单位
 				CBDW:[], // 承办单位
 				XBDW:[], // 协办单位
-				KMS:[], // 开幕式
+				KMSTitle:[], // 开幕式栏目
+				KMS:[], // 开幕式内容
 				YGZPage:1, //云逛展翻页
 				formData:{ // 特色好物列表请求数组
 					// ExhibitorName:'云南陶韵文化传播有限公司',
@@ -654,6 +665,22 @@
 					_this.countdownShow = false;
 					window.localStorage.setItem('key_index_djs',true)
 				},5000)
+				// setTimeout(()=>{
+				// 	_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
+				// 	// 是否显示倒计时
+				// 	if ( window.sessionStorage.getItem("key_index_djs") == null ){
+				// 			console.log("没有",window.sessionStorage.getItem("key_index_djs"));
+				// 	} else {
+				// 			console.log("有选",window.sessionStorage.getItem("key_index_djs"));
+				// 			_this.countdownShow = false;
+				// 			console.log(_this.countdownShow)
+				// 	}
+				
+				// },500)
+				setTimeout(()=>{
+					_this.countdownShow = false;
+					window.sessionStorage.setItem('key_index_djs',true)
+				},5000)
 				// var countdown_h = window.screen.height;
 				// var countdown_w = window.screen.width;
 				// var countdown_h = document.body.clientHeight || document.documentElement.clientHeight;
@@ -678,6 +705,18 @@
 				// axios.delete('api/v1/contents/23/38/334').then(function (response) {
 				// 		alert('删除了')
 				// })
+
+				// 获取所有配置数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				.then(function (response) {
+					// sessionStorage.setItem('ExhibitionArea', response.data.result.custom.BCodes.ExhibitionArea);
+					// console.log('9',getCodeText())
+					// console.log('8',getCodeText())
+					// var  aaaa =  JSON.stringify(sessionStorage.getItem('ExhibitionArea'));
+					// console.log('4',aaaa)
+					// console.log('6',sessionStorage.getItem('ExhibitionArea'))
+					// console.log('7',JSON.parse('<%- JSON.stringify(sessionStorage.getItem("ExhibitionArea")) %>'))
+				})
 
 				// 获取首页站点下栏目
 				// axios.get('api/v1/channels/23')
@@ -706,6 +745,10 @@
 						"operator": "=",
 						"value": "1"
 					}],
+					orders:[{
+							column: 'addDate',  // 创建时间
+							desc: false,
+					}],
 					"page": 1,
 					"perPage": 200
 				})
@@ -714,20 +757,42 @@
 					public_imgsrc(_this.userList)
 					// console.log('123',_this.userList);
 				})
+				// 获取开幕式栏目
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idKMS)
+				.then(function (response) {
+					_this.KMSTitle = response.data;
+					public_imgsrc([_this.KMSTitle])
+				})
 				// 获取开幕式列表
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
 				.then(function (response) {
 					_this.KMS = response.data;
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
-					_this.playerOptions.sources[0].src = _this.KMS.shipin;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// console.log('123',_this.KMS);
+					// 直播
+					if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src =  _this.KMS.shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					}
 				})
 				// 云逛展
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
 					"channelId": _obj.idYGZ,
-					"wheres":[{
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					},
+					{
 							"column": "sourceId",
 							"operator": ">",
 							"value": "-1"
@@ -764,7 +829,7 @@
 				.then(function (response) {
 						_this.HZS = response.data.children;
 						public_imgsrc(_this.HZS)
-						console.log('9999922311',_this.HZS)
+						// console.log('9999922311',_this.HZS)
 				})
 				// 主办单位
 				axios.post('api/v1/contents', {
@@ -843,6 +908,17 @@
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
+					// 获取展品详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
 					//在直播
 					if(_item.isLive){
 						// 在直播 有直播地址  跳直播

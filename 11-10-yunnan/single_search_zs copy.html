@@ -17,7 +17,7 @@
 	<link rel="stylesheet" href="css/vant.css" />
 	<link rel="stylesheet" type="text/css" href="css/public.css" />
 	<link rel="stylesheet" type="text/css" href="css/index.css" />
-	<title>展商</title>
+	<title>展商搜索</title>
 	<style type="text/css">
 		.xwxq{
 			position: relative;
@@ -122,6 +122,41 @@
 		.index-ygz-item p{
 			font-size: .28rem;
 		}
+		.van-search{
+			background-color: transparent;
+			padding: .3rem 0 .3rem .3rem;
+		}
+		.van-search .van-cell{
+			padding: .15rem .15rem .15rem 0;
+		}
+		.van-search__action{
+			color: white;
+		}
+		.van-search__content{
+			background-color: rgba(255, 255, 255, .2);
+			border-radius: .45rem;
+			padding-left: .2rem;
+		}
+		.van-field__left-icon{
+			margin-right: .1rem;
+		}
+		.van-field__left-icon .van-icon{
+			color: #cccccc;
+			font-size: .4rem;
+		}
+		.van-field__control{
+			color: white;
+			font-size: .3rem;
+		}
+		.van-search__action:hover{
+			background-color: #1A285C;
+		}
+		.nodata_ts{
+			font-size: .32rem;
+			text-align: center;
+			line-height: 1rem;
+			font-weight: 400;
+		}
 	</style>
 </head>
 
@@ -130,25 +165,30 @@
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">展商</div>
+				<div class="phtc-title">展商搜索</div>
 				<!-- <div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div> -->
 				
 			</div>
 		</div>
+		<div class="search-title">
+			<van-search v-model="value" show-action placeholder="请输入搜索关键词"  @search="onSearch" @cancel="public_return_page()" />
+		</div>
 		<div class="sczp-body xwxq-body">
-			<!-- <img class="zp-search" src="images/search-02.png" alt=""> -->
-			<img class="zp-search" @click="goPage('single_search_zs.html')" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
+					<!-- <div class="index-ygz-item"
+					@click="goPage('article_zsxq.html',{'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"
+					v-for="(shop,index) in shops" :key="index"> -->
 					<div class="index-ygz-item"
-					@click="goPage('article_zsxq.html',{'id':shop.id,'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"
+					@click="goPage('article_zsxq.html',{'id':shop.id,'Keyword':shop.name})"
 					v-for="(shop,index) in shops" :key="index">
 						<img :src="shop.logo" alt="">
 						<h3 class="van-ellipsis">{{shop.name}}</h3>
-						<p class="van-ellipsis">{{items?items[qs2obj(window.location.href).HC].label:''}}{{items?items[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].label:''}}</p>
+						<!-- <p class="van-ellipsis">{{items?items[qs2obj(window.location.href).HC].label:''}}{{items?items[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].label:''}}</p> -->
 					</div>
 				</div>
 			</div>
+			<h2 class="nodata_ts" v-show="nodata">没有找到该展商</h2>
 		</div>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
@@ -199,7 +239,7 @@
 			el: '#app',
 			data: {
 				activeNames: ['1','2'],
-				value: 2,
+				value: '',
 				active: 3,
 				show: false,
 				activeHC:1,
@@ -207,16 +247,18 @@
 				formData:{ // 展商列表请求数组
 					SkipCount:0,
 					Position:[],
-					MaxResultCount:10,
+					MaxResultCount:200,
+					Keyword:'', //关键字
 				},
 				shops:[], // 展商列表
 				items:[], // 展会展区
+				nodata:false,
 			},
 			created: function () {
 				var _this = this;
 				// vant.Toast('提示看看');
 				// 获取展商
-				this.getShops();
+				// this.getShops();
 
 				this.activeHC = qs2obj(window.location.href).HC;
 				this.activeZQ = qs2obj(window.location.href).ZQ;
@@ -233,6 +275,11 @@
 
 			},
 			methods: {
+				onSearch(val) {
+					// 获取
+					this.getShops(val)
+					// vant.Toast(val);
+				},
 				showPopup() {
 					this.show = true;
 				},
@@ -269,9 +316,10 @@
 					console.log('重置')
 				},
 				// 获取展商
-				getShops(){
+				getShops(_content){
 					var _this = this;
-					this.formData.Position = [qs2obj(window.location.href).position1,qs2obj(window.location.href).position2];
+					this.formData.Keyword = _content;
+					// this.formData.Position = [qs2obj(window.location.href).position1,qs2obj(window.location.href).position2];
 					// console.log('111111222222',qs2obj(window.location.href).position1,qs2obj(window.location.href).position2)
 					// console.log('99111118778',this.formData.Position)
 					this.formData.SkipCount = 0;
@@ -284,6 +332,7 @@
 						}
 					}).then(response =>{
 						_this.shops = response.data.result.items;
+						_this.shops.length == 0?_this.nodata=true:_this.nodata=false;
 						console.log(response.data.result.items)
 						// res.result.items.forEach(element => {
 						// 	this.list.push(element)

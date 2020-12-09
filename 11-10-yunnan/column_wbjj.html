@@ -412,7 +412,7 @@
 				<div class="index-ygz-more" @click="goPage('single_wbjj_zs.html',{'position1':items[activeHC].value,'position2':items[activeHC].children[activeZQ].value,'HC':activeHC,'ZQ':activeZQ})">更多展商<van-icon name="arrow" /></div>
 				<div class="wbjj-rmzs-div">
 					<div class="wbjj-rmzs-list">
-						<div class="wbjj-rmzs-item" @click="goPage('article_zsxq.html',{'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"  v-for="(shop,index) in shops" :key="index">
+						<div class="wbjj-rmzs-item" @click="goPage('article_zsxq.html',{'id':shop.id,'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"  v-for="(shop,index) in shops" :key="index">
 							<!-- <img src="images/bg.png" alt=""> -->
 							<img :src="shop.logo" alt="">
 							<h3 class="van-ellipsis">{{shop.name}}</h3>
@@ -654,6 +654,17 @@
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
+					// 获取展品详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
 					//在直播
 					if(_item.isLive){
 						// 在直播 有直播地址  跳直播

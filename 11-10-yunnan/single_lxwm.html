@@ -290,7 +290,7 @@
 			line-height: 1rem;
 			padding:.2rem .3rem 0 .3rem;
 			width: 100%;
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.344), rgba(0, 0, 0, 0));
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.744), rgba(0, 0, 0, .1));
 		}
 		.van-swipe-item{
 			border-radius: .2rem;
@@ -564,7 +564,7 @@
 				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idZGRC)
 				.then(function (response) {
 					_this.ZGRC = response.data.children;
-					_this.ZGRC.unshift({'channelName':'全部','id':_obj.idZGRC});
+					// _this.ZGRC.unshift({'channelName':'全部','id':_obj.idZGRC});
 					public_imgsrc(_this.ZGRC)
 					
 					// console.log('1211113',_this.ZGRC);
@@ -573,6 +573,12 @@
 						axios.post('api/v1/contents', {
 							"siteId": _obj.idSite,
 							"channelId": _this.ZGRC[index].id,
+							"orders": [
+								{
+									"column": "AddDate",
+									"desc": true,
+								}
+							],
 							"page": 1,
 							"perPage": 200
 						})

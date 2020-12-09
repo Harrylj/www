@@ -250,6 +250,14 @@
 				//分享
 				fenxiang() {
 					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite_PC,
+						"channelId": _obj.idTPHD_PC,
+						"contentId": qs2obj(window.location.href).id,
+					})
+					.then(function (response) {
+					})
 					if(isWeChatBrowser()){
 						this.showShareWX = true;
 					}

@@ -221,7 +221,7 @@
 							></van-image>
 							<h3 class="van-ellipsis">{{user.title}}</h3>
 							<!-- <p class="van-ellipsis">{{user.job}}</p> -->
-							<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
+							<p class="van-multi-ellipsis--l2">{{user.zhicheng}}</p>
 						</div>
 					</van-swipe-item>
 				</van-swipe>
@@ -282,7 +282,8 @@
 					sources: [
 						{
 							withCredentials: false,
-							type: 'application/x-mpegURL',
+							// type: 'application/x-mpegURL',
+							src: '',
 							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
 							muted: false,
 							nativeAudioTracks:false,
@@ -307,14 +308,25 @@
 				// .catch(function (error) {
 				// 	console.log(error);
 				// });
-				// 获取开幕式列表
+				// 获取开幕式内容
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
 				.then(function (response) {
 					_this.KMS = response.data;
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
-					_this.playerOptions.sources[0].src = _this.KMS.shipin;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// console.log('123',_this.KMS);
+					// 直播
+					if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src =  _this.KMS.shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					}
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -322,11 +334,16 @@
 				// 获取演讲嘉宾嘉宾列表
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
+					"groupNames":["重磅嘉宾"],
 					"channelId": _obj.idZBJB,
 					"wheres":[ {
 						"column": "checked",
 						"operator": "=",
 						"value": "1"
+					}],
+					orders:[{
+							column: 'addDate',  // 创建时间
+							desc: false,
 					}],
 					"page": 1,
 					"perPage": 200
@@ -347,6 +364,14 @@
 				//分享
 				fenxiang() {
 					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idKMS,
+						"contentId": _obj.idKMS_CID,
+					})
+					.then(function (response) {
+					})
 					if(isWeChatBrowser()){
 						this.showShareWX = true;
 					}

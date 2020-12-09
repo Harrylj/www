@@ -325,7 +325,7 @@
 					public_imgsrc([_this.FHLT])
 					_this.playerOptions.poster = _this.FHLT.imageUrl;
 					// 直播
-					if(_this.FHLT.zT == 'LIVE'){
+					if(_this.FHLT.zT == 'LIVE' || _this.FHLT.zt == 'LIVE'){
 						_this.playerOptions.sources[0].type ='application/x-mpegURL';
 						_this.playerOptions.sources[0].src = _this.FHLT.shipin;
 						console.log('直播')

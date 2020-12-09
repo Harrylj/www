@@ -33,7 +33,7 @@
 		.phtc-fenxiang{
 			right: 0;
 		}
-		.ss-body{
+		.xwxq-body{
 			position: relative;
 			padding: 0 .3rem 0 .3rem;
 			border-radius: .67rem .67rem 0 0;
@@ -127,11 +127,9 @@
 		<div class="search-title">
 			<van-search v-model="value" show-action placeholder="请输入搜索关键词"  @search="onSearch" @cancel="public_return_page()" />
 		</div>
-		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-		<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
-		<div class="sczp-body ss-body" >
+		<div class="sczp-body xwxq-body">
 			<div class="jjwb-fhlt-div">
-				<div class="index-ygz-list" >
+				<div class="index-ygz-list">
 					<div class="index-ygz-item" 
 					:class="goods.isLive?'goods-live-hover':''" 
 					@click="goGoodsDetail(goods)" 
@@ -148,16 +146,6 @@
 			</div>
 			<h2 class="nodata_ts" v-show="nodata">没有找到该展品</h2>
 		</div>
-		</van-list>
-			<!-- <van-list
-			  v-model="loading"
-			  :finished="finished"
-			  finished-text="没有更多了"
-			  @load="onLoad"
-			>
-			  <van-cell v-for="item in list" :key="item" :title="item" />
-			</van-list> -->
-		</van-pull-refresh>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="类型" name="1">
@@ -210,18 +198,13 @@
 					SkipCount:0,
 					Position:[],
 					ExhibitType:'',
-					MaxResultCount:10,
+					MaxResultCount:400,
 					Keyword:'', //关键字
 				},
 				listGoods: [], // 展品列表
 				typeGoods: [], // 展品类型
 				aa :'',
 				nodata:false,
-				list: [],
-				// skipCount:10,
-				loading: false,		// 开启加载
-				finished: false,	// 结束加载
-				refreshing: false,  // 下拉刷新
 			},
 			created: function () {
 				var _this = this;
@@ -240,34 +223,19 @@
 
 				})
 
+				// // 获取展品
+				// axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList')
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
 			},
 			mounted: function () {
 
 			},
 			methods: {
-				// 加载事件
-				onLoad() {
-					var _this = this;
-					setTimeout(() => {
-						if (_this.refreshing) {
-							_this.listGoods = [];
-							_this.refreshing = false;
-							_this.formData.SkipCount = 0;
-						}
-						// 获取展品
-						_this.getGoods(_this.value)
-						// _this.onLoad()
-					},10);
-					console.log('下拉')
-				},
-				onRefresh() {
-					// 清空列表数据
-					this.finished = false;
-					// 重新加载数据
-					// 将 loading 设置为 true，表示处于加载状态
-					this.loading = true;
-					this.onLoad();
-				},
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
@@ -314,8 +282,6 @@
 					}
 				},
 				onSearch(val) {
-					this.listGoods = [];
-					this.formData.SkipCount = 0;
 					// 获取展品
 					this.getGoods(val)
 					// vant.Toast(val);
@@ -334,17 +300,8 @@
 						}
 					})
 					.then(function (response) {
-						response.data.result.items.forEach((element,index) => {
-							_this.listGoods.push(element)
-						});
-						_this.formData.SkipCount = _this.formData.SkipCount + _this.formData.MaxResultCount;
+						_this.listGoods =  response.data.result.items;
 						_this.listGoods.length == 0?_this.nodata=true:_this.nodata=false;
-						// 加载完成
-						_this.loading = false;
-						// 结束加载
-						if(response.data.result.items.length < _this.formData.MaxResultCount){
-							_this.finished = true;
-						}
 					})
 				},
 				showPopup() {

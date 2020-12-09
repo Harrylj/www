@@ -209,6 +209,17 @@
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
+					// 获取展品详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
 					//在直播
 					if(_item.isLive){
 						// 在直播 有直播地址  跳直播

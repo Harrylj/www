@@ -155,7 +155,7 @@
 												></van-image>
 												<h3 class="van-ellipsis">{{user.title}}</h3>
 												<!-- <p class="van-ellipsis">{{user.job}}</p> -->
-												<p class="van-multi-ellipsis--l2">{{user.jobTwo}}</p>
+												<p class="van-multi-ellipsis--l2">{{user.zhicheng}}</p>
 											</div>
 		
 									</van-swipe-item>
@@ -322,6 +322,10 @@
 							"operator": "=",
 							"value": "1"
 						}],
+						orders:[{
+							column: 'addDate',  // 最新createdDate  热门hits
+							desc: false,
+						}],
 						// "page": 1,
 						// "perPage": 200
 					};
@@ -333,6 +337,10 @@
 							"column": "checked",
 							"operator": "=",
 							"value": "1"
+						}],
+						orders:[{
+							column: 'addDate',  // 最新createdDate  热门hits
+							desc: false,
 						}],
 						// "wheres":[ {
 						// 	"column": "checked",

@@ -297,8 +297,9 @@
 					sources: [
 						{
 							withCredentials: false,
-							type: 'application/x-mpegURL',
-							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							// type: 'application/x-mpegURL',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							src:'',
 							muted: false,
 							nativeAudioTracks:false,
 						}
@@ -328,8 +329,19 @@
 					_this.FHLT = response.data;
 					public_imgsrc([_this.FHLT])
 					_this.playerOptions.poster = _this.FHLT.imageUrl;
-					_this.playerOptions.sources[0].src = _this.FHLT.shipin;
+					// _this.playerOptions.sources[0].src = _this.FHLT.shipin;
 					// console.log('123',_this.KMS);
+					// 直播
+					if( _this.FHLT.zT == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src =  _this.FHLT.shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src =  _this.FHLT.videoUrl
+					}
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -361,6 +373,14 @@
 				//分享
 				fenxiang() {
 					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idFHLT,
+						"contentId": qs2obj(window.location.href).id,
+					})
+					.then(function (response) {
+					})
 					if(isWeChatBrowser()){
 						this.showShareWX = true;
 					}

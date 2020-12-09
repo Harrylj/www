@@ -171,6 +171,14 @@
 				//分享
 				fenxiang() {
 					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idXWDT,
+						"contentId": qs2obj(window.location.href).id,
+					})
+					.then(function (response) {
+					})
 					if(isWeChatBrowser()){
 					// if(true){
 						this.showShareWX = true;

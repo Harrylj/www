@@ -137,7 +137,8 @@
 					sources: [
 						{
 							withCredentials: false,
-							type: 'application/x-mpegURL',
+							// type: 'application/x-mpegURL',
+							src:'',
 							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
 							muted: false,
 							nativeAudioTracks:false,
@@ -215,8 +216,19 @@
 					_this.KMS = response.data;
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
-					_this.playerOptions.sources[0].src = _this.KMS.shipin;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// console.log('123',_this.KMS);
+					// 直播
+					if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src =  _this.KMS.shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					}
 				})
 				// 云逛展
 				axios.post('api/v1/contents', {

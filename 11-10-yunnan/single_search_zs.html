@@ -33,7 +33,7 @@
 		.phtc-fenxiang{
 			right: 0;
 		}
-		.xwxq-body{
+		.ss-body{
 			position: relative;
 			padding: 0 .3rem 0 .3rem;
 			border-radius: .67rem .67rem 0 0;
@@ -173,14 +173,16 @@
 		<div class="search-title">
 			<van-search v-model="value" show-action placeholder="请输入搜索关键词"  @search="onSearch" @cancel="public_return_page()" />
 		</div>
-		<div class="sczp-body xwxq-body">
+		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+		<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
+		<div class="sczp-body ss-body">
 			<div class="jjwb-fhlt-div">
 				<div class="index-ygz-list">
 					<!-- <div class="index-ygz-item"
 					@click="goPage('article_zsxq.html',{'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"
 					v-for="(shop,index) in shops" :key="index"> -->
 					<div class="index-ygz-item"
-					@click="goPage('article_zsxq.html',{'Keyword':shop.name})"
+					@click="goPage('article_zsxq.html',{'id':shop.id,'Keyword':shop.name})"
 					v-for="(shop,index) in shops" :key="index">
 						<img :src="shop.logo" alt="">
 						<h3 class="van-ellipsis">{{shop.name}}</h3>
@@ -190,6 +192,8 @@
 			</div>
 			<h2 class="nodata_ts" v-show="nodata">没有找到该展商</h2>
 		</div>
+	</van-list>
+	</van-pull-refresh>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="会场" name="1">
@@ -247,12 +251,15 @@
 				formData:{ // 展商列表请求数组
 					SkipCount:0,
 					Position:[],
-					MaxResultCount:200,
+					MaxResultCount:10,
 					Keyword:'', //关键字
 				},
 				shops:[], // 展商列表
 				items:[], // 展会展区
 				nodata:false,
+				loading: false,		// 开启加载
+				finished: false,	// 结束加载
+				refreshing: false,  // 下拉刷新
 			},
 			created: function () {
 				var _this = this;
@@ -275,8 +282,33 @@
 
 			},
 			methods: {
+				// 加载事件
+				onLoad() {
+					var _this = this;
+					setTimeout(() => {
+						if (_this.refreshing) {
+							_this.shops = [];
+							_this.refreshing = false;
+							_this.formData.SkipCount = 0;
+						}
+						// 获取展品
+						_this.getShops(_this.value)
+						// _this.onLoad()
+					},10);
+					console.log('下拉')
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
 				onSearch(val) {
-					// 获取
+					this.shops = [];
+					this.formData.SkipCount = 0;
+					// 获取展品
 					this.getShops(val)
 					// vant.Toast(val);
 				},
@@ -319,11 +351,8 @@
 				getShops(_content){
 					var _this = this;
 					this.formData.Keyword = _content;
-					// this.formData.Position = [qs2obj(window.location.href).position1,qs2obj(window.location.href).position2];
-					// console.log('111111222222',qs2obj(window.location.href).position1,qs2obj(window.location.href).position2)
-					// console.log('99111118778',this.formData.Position)
-					this.formData.SkipCount = 0;
-					this.formData.MaxResultCount = 50;
+					// this.formData.SkipCount = 0;
+					// this.formData.MaxResultCount = 50;
 					// this.formData.SkipCount += 10
 					axios.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList', {
 						params:this.formData,
@@ -331,16 +360,21 @@
 							return qs.stringify(params, {arrayFormat: 'repeat'})
 						}
 					}).then(response =>{
-						_this.shops = response.data.result.items;
+						// _this.shops = response.data.result.items;
+						// _this.shops.length == 0?_this.nodata=true:_this.nodata=false;
+						// console.log(response.data.result.items)
+
+						response.data.result.items.forEach((element,index) => {
+							_this.shops.push(element)
+						});
+						_this.formData.SkipCount = _this.formData.SkipCount + _this.formData.MaxResultCount;
 						_this.shops.length == 0?_this.nodata=true:_this.nodata=false;
-						console.log(response.data.result.items)
-						// res.result.items.forEach(element => {
-						// 	this.list.push(element)
-						// })
-						// this.loading = false
-						// if (!res || !res.result || res.result.items == 0) {
-						// 	this.finished = true
-						// }
+						// 加载完成
+						_this.loading = false;
+						// 结束加载
+						if(response.data.result.items.length < _this.formData.MaxResultCount){
+							_this.finished = true;
+						}
 					})
 					.catch(function (error) {
 						console.log(error);

@@ -158,8 +158,9 @@
 			<img style="width: 5rem;" src="images/bg.png" alt="">
 			{{ message }} -->
 			<div class="index-video-div">
-				<div class="index-live"><span></span>{{videoML[active].zt}}</div>
-				<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
+				<div class="index-live"><span></span>{{videoML[active].zt?videoML[active].zt:''}}</div>
+				<!-- <div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div> -->
+				<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{videoML[active].hits}}</div>
 				<video-player class="vjs-custom-skin " :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
 			</div>
 		</div>
@@ -228,8 +229,9 @@
 					sources: [
 						{
 							withCredentials: false,
-							type: 'application/x-mpegURL',
+							// type: 'application/x-mpegURL',
 							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							src:'',
 							muted: false,
 							nativeAudioTracks:false,
 						}
@@ -237,6 +239,7 @@
 				},
 				videoML:[],
 				KMS:'', // 播放量,这里统一显示开幕式的
+				shareId:'', // 分享id
 			},
 			created: function () {
 				var _this = this;
@@ -250,6 +253,8 @@
 				// .catch(function (error) {
 				// 	console.log(error);
 				// });
+
+				/*
 				// 获取开幕式列表
 				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
 				.then(function (response) {
@@ -264,6 +269,7 @@
 				.catch(function (error) {
 					console.log(error);
 				});
+				*/
 				// 目录
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -272,7 +278,12 @@
 						"column": "checked",
 						"operator": "=",
 						"value": "1"
-					}],
+					},
+					{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
 					"page": 1,
 					"perPage": 130
 				})
@@ -280,8 +291,25 @@
 					_this.videoML = response.data.contents;
 					public_imgsrc(_this.videoML)
 					_this.playerOptions.poster = _this.videoML[0].imageUrl;
-					_this.playerOptions.sources[0].src = _this.videoML[0].shipin;
+					// _this.playerOptions.sources[0].src = _this.videoML[0].shipin;
+					// 直播
+					if( _this.videoML[0].zT == 'LIVE' || _this.videoML[0].zt == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src =  _this.videoML[0].shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src =  _this.videoML[0].videoUrl
+					}
 					console.log('123',_this.videoML);
+					_this.shareId = _this.videoML[0].id;
+					//执行统计量
+					axios.get('api/hits/'+_obj.idSite+'/'+_obj.idZHZJ+'/'+_this.shareId)
+					.then(function (response) {
+						// console.log(response);
+					});
 				})
 				.catch(function (error) {
 					console.log(error);
@@ -294,6 +322,14 @@
 				//分享
 				fenxiang() {
 					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idZHZJ,
+						"contentId": _this.shareId,
+					})
+					.then(function (response) {
+					})
 					if(isWeChatBrowser()){
 						this.showShareWX = true;
 					}
@@ -324,11 +360,33 @@
 				onClickRight() {
 					vant.Toast('按钮');
 				},
+				// 目录
 				selectMulu(_index) {
 					var _this = this;
 					this.active = _index;
 					_this.playerOptions.poster = _this.videoML[_index].imageUrl;
-					_this.playerOptions.sources[0].src = _this.videoML[_index].shipin;
+					// _this.playerOptions.sources[0].src = _this.videoML[_index].shipin;
+					// 直播
+					if( _this.videoML[_index].zT == 'LIVE' || _this.videoML[_index].zt == 'LIVE'){
+						_this.playerOptions.sources[0].type ='application/x-mpegURL';
+						_this.playerOptions.sources[0].src =  _this.videoML[_index].shipin;
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+						_this.playerOptions.sources[0].src =  _this.videoML[_index].videoUrl;
+					}
+					_this.shareId = _this.videoML[_index].id;
+					// 调用详情
+					axios.get('api/v1/contents/'+_obj.idSite+'/'+_obj.idZHZJ+'/'+_this.shareId)
+					.then(function (response) {
+					})
+					//执行统计量
+					axios.get('api/hits/'+_obj.idSite+'/'+_obj.idZHZJ+'/'+_this.shareId)
+					.then(function (response) {
+						// console.log(response);
+					});
 					// vant.Toast(this.active)
 					this.hidePopup()
 				}
