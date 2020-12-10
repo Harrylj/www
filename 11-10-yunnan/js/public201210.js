@@ -62,11 +62,8 @@ function public_imgsrc(_obj){
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
 		// _obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
-		// 判断是否在线地址
-		if(element.videoUrl?element.videoUrl.indexOf("@") != -1:false){
-			// 视频地址
-			_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
-		}
+		// 视频地址
+		_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : '';
@@ -106,11 +103,8 @@ function public_imgsrc_pc(_obj){
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
 		// _obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
-		// 判断是否在线地址
-		if(element.videoUrl?element.videoUrl.indexOf("@") != -1:false){
-			// 视频地址
-			_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
-		}
+		// 视频地址
+		_obj[index].videoUrl= public_obj().siteUrl+_a+video_src;
 		// 直播状态转大写
 		_obj[index].zhibozt ? _obj[index].zhibozt = _obj[index].zhibozt.toUpperCase() : _obj[index].zhibozt= 'LIVE';
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : '';

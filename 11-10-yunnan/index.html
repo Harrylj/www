@@ -195,8 +195,8 @@
 			width: 100%;
 			bottom: 0;
 			padding: .2rem 0;
-			/* background: linear-gradient(0deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0)); */
-			background: url(images/ygz-footer-bg.png);
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0));
+			/* background: url(images/ygz-footer-bg.png); */
 			background-size: 100% 100%;
 			border-radius: 0 0 .2rem .2rem;
 		}
@@ -369,7 +369,7 @@
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="10000" >
 				<van-swipe-item
-				@click="image.linkUrl?goPage('single_videoYN.html',{'linkUrl':image.linkUrl}):goPage('article_xwxq.html',{'id':image.id})"
+				@click="image.linkUrl?goPage(image.linkUrl):goPage('article_xwxq.html',{'id':image.id})"
 				v-for="(image, index) in imagesDBLB" :key="index">
 					<!-- <img  v-lazy="image.imageUrl" alt=""> -->
 					<van-image
@@ -386,7 +386,7 @@
 		<div class="index-body">
 			<div class="index-nav-01">
 				<div class="index-nav-01-div">
-					<a href="column_zhzj.html"><img src="images/index-nav-01-011.png" alt=""></a>
+					<a href="column_zhzj.html"><img src="images/index-nav-01-0111.png" alt=""></a>
 					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
 					<!-- <a href="column_flhd.html"><img src="images/index-nav-01-03.png" alt=""></a> -->
 					<a href="column_tphd.html"><img src="images/index-nav-01-03.png" alt=""></a>
@@ -434,7 +434,8 @@
 				<div class="index-h2">云逛展</div>
 				<div class="index-ygz-more" @click="ygzNext">换一换</div>
 				<div class="index-ygz-list">
-					<div class="index-ygz-item" @click="goPage('single_ygz_video.html',{'id':item.id})" v-for="(item,index) in YGZ" :key="index">
+					<!-- <div class="index-ygz-item" @click="item.linkUrl?goPage(item.linkUrl):goPage('single_ygz_video.html',{'id':item.id})" v-for="(item,index) in YGZ" :key="index"> -->
+					<div class="index-ygz-item" @click="goYGZ(item)" v-for="(item,index) in YGZ" :key="index">
 						<div class="index-live"><span></span>{{item.zT}}</div>
 						<!-- <img :src="item.imageUrl" alt=""> -->
 						<van-image
@@ -633,8 +634,8 @@
 				KMS:[], // 开幕式内容
 				YGZPage:1, //云逛展翻页
 				formData:{ // 特色好物列表请求数组
-					// ExhibitorName:'云南陶韵文化传播有限公司',
-					Keyword:'云南陶韵文化传播有限公司',
+					isHot: true,
+					// Keyword:'云南陶韵文化传播有限公司',
 					SkipCount:0,
 					Position:[],
 					MaxResultCount:4,
@@ -649,13 +650,31 @@
 				
 				// 距离指定日期还有多少天
 				this.countdownDay = getDistanceSpecifiedTime('2020/12/13 00:00:00')
+				// setTimeout(()=>{
+				// 	_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
+				// 	// 是否显示倒计时
+				// 	if ( window.localStorage.getItem("key_index_djs") == null ){
+				// 			console.log("没有",window.localStorage.getItem("key_index_djs"));
+				// 	} else {
+				// 			console.log("有选",window.localStorage.getItem("key_index_djs"));
+				// 			_this.countdownShow = false;
+				// 			console.log(_this.countdownShow)
+				// 	}
+				
+				// },500)
+				// setTimeout(()=>{
+				// 	_this.countdownShow = false;
+				// 	window.localStorage.setItem('key_index_djs',true)
+				// },5000)
+
+				// 每次浏览器打开都提示倒计时
 				setTimeout(()=>{
 					_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
 					// 是否显示倒计时
-					if ( window.localStorage.getItem("key_index_djs") == null ){
-							console.log("没有",window.localStorage.getItem("key_index_djs"));
+					if ( window.sessionStorage.getItem("key_index_djs") == null ){
+							console.log("没有",window.sessionStorage.getItem("key_index_djs"));
 					} else {
-							console.log("有选",window.localStorage.getItem("key_index_djs"));
+							console.log("有选",window.sessionStorage.getItem("key_index_djs"));
 							_this.countdownShow = false;
 							console.log(_this.countdownShow)
 					}
@@ -663,24 +682,9 @@
 				},500)
 				setTimeout(()=>{
 					_this.countdownShow = false;
-					window.localStorage.setItem('key_index_djs',true)
-				},5000)
-				// setTimeout(()=>{
-				// 	_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
-				// 	// 是否显示倒计时
-				// 	if ( window.sessionStorage.getItem("key_index_djs") == null ){
-				// 			console.log("没有",window.sessionStorage.getItem("key_index_djs"));
-				// 	} else {
-				// 			console.log("有选",window.sessionStorage.getItem("key_index_djs"));
-				// 			_this.countdownShow = false;
-				// 			console.log(_this.countdownShow)
-				// 	}
-				
-				// },500)
-				setTimeout(()=>{
-					_this.countdownShow = false;
 					window.sessionStorage.setItem('key_index_djs',true)
 				},5000)
+
 				// var countdown_h = window.screen.height;
 				// var countdown_w = window.screen.width;
 				// var countdown_h = document.body.clientHeight || document.documentElement.clientHeight;
@@ -829,7 +833,7 @@
 				.then(function (response) {
 						_this.HZS = response.data.children;
 						public_imgsrc(_this.HZS)
-						// console.log('9999922311',_this.HZS)
+						console.log('9999922311',_this.HZS)
 				})
 				// 主办单位
 				axios.post('api/v1/contents', {
@@ -905,6 +909,21 @@
 				
 			},
 			methods: {
+				// 去云逛展
+				goYGZ(_item){
+					// item.linkUrl?goPage(item.linkUrl):goPage('single_ygz_video.html',{'id':item.id})
+					// _item.linkUrl?goPage(_item.linkUrl):goPage('single_ygz_video.html',{'id':_item.id})
+					if(_item.linkUrl){
+						//执行统计量
+						axios.get('api/hits/'+_obj.idSite+'/'+_obj.idYGZ+'/'+_item.id)
+						.then(function (response) {
+						});
+						goPage(_item.linkUrl)
+					}
+					else{
+						goPage('single_ygz_video.html',{'id':_item.id})
+					}
+				},
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
@@ -955,7 +974,8 @@
 				// 点击隐藏倒计时
 				countdownHide(){
 					this.countdownShow = false;
-					window.localStorage.setItem('key_index_djs',true)
+					// window.localStorage.setItem('key_index_djs',true)
+					window.sessionStorage.setItem('key_index_djs',true)
 				},
 				// 获取特色好物
 				getGoods(){

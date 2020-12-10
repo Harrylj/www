@@ -45,6 +45,8 @@ single_wbqy_video 文博企业-视频详情
 single_wbqy_qyxq 文博企业-企业详情
 single_wbqy_one 文博企业-云南报业传媒集团
 
+single_videoYN 云南宣传视频_带壳
+goPage('single_videoYN.html',{'linkUrl':image.linkUrl})
 
 axios.get('api/v1/channels/23')
 				.then(function (response) {

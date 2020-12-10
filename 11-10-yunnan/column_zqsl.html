@@ -343,7 +343,7 @@
 					_this.items = response.data.children;
 					// public_imgsrc(_this.items)
 					// _this.getZQ(_this.items[0].id)
-					// console.log('1211113',_this.WBHC);
+					console.log('1211113',_this.items);
 				})
 				// 联系我们会场跳转过来
 				if(qs2obj(window.location.href).lxwmHC?true:false){
@@ -394,6 +394,7 @@
 					.then(function (response) {
 						_this.listZq = response.data.contents;
 						public_imgsrc(_this.listZq)
+						console.log(9987141,_this.listZq)
 					})
 				},
 				addreeMenu(value){

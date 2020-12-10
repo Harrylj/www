@@ -46,15 +46,9 @@
 
 <body>
 	<div class="index" id="app" v-cloak>
-		<!-- <iframe class="index-irame" src="https://res.eschervr.com/culture/index.html#/?name=first" frameborder="0"></iframe> -->
+		<!-- <iframe class="index-irame" src="https://webcast.amemv.com/webcast/reflow/6904483807601101576?u_code=iglc202g&app=aweme&utm_campaign=client_share&utm_medium=ios&tt_from=copy&utm_source=copy" frameborder="0"></iframe> -->
 		<iframe class="index-irame" :src="qs2obj(window.location.href).linkUrl" frameborder="0"></iframe>
 		<van-tabbar class="public-footer-nav" v-model="active">
-			<!-- <van-tabbar-item badge="3">
-				<span>首页</span>
-				<template #icon="props">
-					<img :src="props.active ? icon.active : icon.inactive" />
-				</template>
-			</van-tabbar-item> -->
 			<van-tabbar-item @click="window.location.href='index.html'">
 				<span>首页</span>
 				<template #icon="props">
@@ -68,7 +62,6 @@
 				</template>
 			</van-tabbar-item>
 			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
-				<!-- <span>自定义</span> -->
 				<template #icon="props">
 					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
 				</template>
