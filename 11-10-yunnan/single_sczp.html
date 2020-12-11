@@ -257,7 +257,7 @@
 				// 判断图片类型并上传
 				afterRead(file) {
 					// 
-					if (file.file.type !== "image/jpeg" && file.file.type !== "image/png") {
+					if (file.file.type !== "image/jpeg" & file.file.type !== "image/png") {
 						this.$toast("请上传 jpg,png 格式图片");
 						file.status = 'failed';
 						file.message = '上传失败';

@@ -172,8 +172,6 @@
 
 			</van-tab>
 		</van-tabs> -->
-		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-			<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
 		<div class="jbjs-body">
 			<div class="jbjs-body-list">
 				<!-- <a href="article_xwxq.html" v-for="(item,index) in listXW" :key="index"> -->
@@ -182,7 +180,6 @@
 							<h4 class="van-multi-ellipsis--l2">{{item.title}}</h4>
 							<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
 						</div>
-						<!-- <h6>{{item.imageUrl.length}}</h6> -->
 						<van-image v-show="item.imageUrl.length>30" class="jbjs-body-item-img" fit="fill"
 							:src="item.imageUrl">
 						</van-image>
@@ -190,8 +187,6 @@
 			</div>
 			<van-cell v-for="item in list" :key="item" :title="item" />
 		</div>
-		</van-list>
-		</van-pull-refresh>
 	</div>
 	<script>
 
@@ -232,15 +227,30 @@
 				refreshing: false,
 				listXW:[], // 新闻动态
 				listSwipe:[], // 轮播推广位
-				loading: false,		// 开启加载
-				finished: false,	// 结束加载
-				refreshing: false,  // 下拉刷新
-				pageIndex:1,
-				pageNum:10,
 			},
 			created: function () {
 				var _this = this;
-				
+				// 获取新闻动态
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXWDT,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.listXW = response.data.contents;
+					public_imgsrc(_this.listXW)
+					console.log(_this.listXW)
+					// console.log('123',_this.listXW);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
 				// 获取轮播推广位
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,
@@ -262,29 +272,33 @@
 					console.log(error);
 				});
 
-				// 获取新闻动态
-				// this.getXWDT()
 				// vant.Toast('提示看看');
 			},
 			mounted: function () {
 
 			},
 			methods: {
-				// 加载事件
+				onClick(name, title) {
+					this.list=[];
+					console.log(title)
+					vant.Toast(title);
+				},
 				onLoad() {
-					var _this = this;
 					setTimeout(() => {
-						if (_this.refreshing) {
-							_this.listXW = [];
-							_this.refreshing = false;
-							_this.pageIndex = 1;
-							// _this.formData.SkipCount = 0;
+						if (this.refreshing) {
+							this.list = [];
+							this.refreshing = false;
 						}
-						// 获取新闻动态
-						_this.getXWDT()
-						// _this.onLoad()
-					},10);
-					console.log('下拉')
+
+						for (let i = 0; i < 10; i++) {
+							this.list.push(this.list.length + 1);
+						}
+						this.loading = false;
+
+						if (this.list.length >= 40) {
+							this.finished = true;
+						}
+					}, 1000);
 				},
 				onRefresh() {
 					// 清空列表数据
@@ -294,45 +308,6 @@
 					this.loading = true;
 					this.onLoad();
 				},
-				// 获取新闻动态
-				getXWDT(){
-					var _this = this;
-					axios.post('api/v1/contents', {
-						"siteId": _obj.idSite,
-						"channelId": _obj.idXWDT,
-						"wheres":[ {
-							"column": "checked",
-							"operator": "=",
-							"value": "1"
-						}],
-						"page": this.pageIndex,
-						"perPage": this.pageNum,
-					})
-					.then(function (response) {
-						var _abc = response.data.contents;
-						public_imgsrc(_abc)
-						_abc.forEach((element,index) => {
-							_this.listXW.push(element)
-						});
-						// console.log('123',_this.listXW);
-						_this.pageIndex = _this.pageIndex +1;
-						// 加载完成
-						_this.loading = false;
-						// 结束加载
-						if(response.data.contents.length < _this.pageNum){
-							_this.finished = true;
-						}
-					})
-					.catch(function (error) {
-						console.log(error);
-					});
-				},
-				onClick(name, title) {
-					this.list=[];
-					console.log(title)
-					vant.Toast(title);
-				},
-				
 			},
 
 		})

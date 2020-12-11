@@ -135,8 +135,6 @@
 				
 			</div>
 		</div>
-		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-		<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
 		<div class="sczp-body xwxq-body">
 			<!-- <img class="zp-search" src="images/search-02.png" alt=""> -->
 			<img class="zp-search" @click="goPage('single_search_zs.html')" src="images/search-02.png" alt="">
@@ -152,8 +150,6 @@
 				</div>
 			</div>
 		</div>
-		</van-list>
-		</van-pull-refresh>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="会场" name="1">
@@ -211,20 +207,16 @@
 				formData:{ // 展商列表请求数组
 					SkipCount:0,
 					Position:[],
-					MaxResultCount:10,
+					MaxResultCount:400,
 				},
 				shops:[], // 展商列表
 				items:[], // 展会展区
-				nodata:false,
-				loading: false,		// 开启加载
-				finished: false,	// 结束加载
-				refreshing: false,  // 下拉刷新
 			},
 			created: function () {
 				var _this = this;
 				// vant.Toast('提示看看');
 				// 获取展商
-				// this.getShops();
+				this.getShops();
 
 				this.activeHC = qs2obj(window.location.href).HC;
 				this.activeZQ = qs2obj(window.location.href).ZQ;
@@ -241,29 +233,6 @@
 
 			},
 			methods: {
-				// 加载事件
-				onLoad() {
-					var _this = this;
-					setTimeout(() => {
-						if (_this.refreshing) {
-							_this.shops = [];
-							_this.refreshing = false;
-							_this.formData.SkipCount = 0;
-						}
-						// 获取展品
-						_this.getShops(_this.value)
-						// _this.onLoad()
-					},10);
-					console.log('下拉')
-				},
-				onRefresh() {
-					// 清空列表数据
-					this.finished = false;
-					// 重新加载数据
-					// 将 loading 设置为 true，表示处于加载状态
-					this.loading = true;
-					this.onLoad();
-				},
 				showPopup() {
 					this.show = true;
 				},
@@ -310,7 +279,7 @@
 					}
 					// console.log('111111222222',qs2obj(window.location.href).position1,qs2obj(window.location.href).position2)
 					// console.log('99111118778',this.formData.Position)
-					// this.formData.SkipCount = 0;
+					this.formData.SkipCount = 0;
 					// this.formData.MaxResultCount = 200;
 					// this.formData.SkipCount += 10
 					axios.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList', {
@@ -319,21 +288,15 @@
 							return qs.stringify(params, {arrayFormat: 'repeat'})
 						}
 					}).then(response =>{
-						// _this.shops = response.data.result.items;
-						// console.log(response.data.result.items);
-
-						response.data.result.items.forEach((element,index) => {
-							_this.shops.push(element)
-						});
-						_this.formData.SkipCount = _this.formData.SkipCount + _this.formData.MaxResultCount;
-						
-						_this.shops.length == 0?_this.nodata=true:_this.nodata=false;
-						// 加载完成
-						_this.loading = false;
-						// 结束加载
-						if(response.data.result.items.length < _this.formData.MaxResultCount){
-							_this.finished = true;
-						}
+						_this.shops = response.data.result.items;
+						console.log(response.data.result.items)
+						// res.result.items.forEach(element => {
+						// 	this.list.push(element)
+						// })
+						// this.loading = false
+						// if (!res || !res.result || res.result.items == 0) {
+						// 	this.finished = true
+						// }
 					})
 					.catch(function (error) {
 						console.log(error);

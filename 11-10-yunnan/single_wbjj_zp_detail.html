@@ -36,6 +36,7 @@
 		.xwxq-body{
 			position: relative;
 			padding: .2rem .3rem;
+			min-height: 1rem!important;
 			/* background-color: rgba(255, 255, 255, .08);
 			border-radius: .67rem .67rem 0 0; */
 		}
@@ -164,6 +165,7 @@
 			},
 			created: function () {
 				var _this = this;
+				document.getElementsByClassName("xwxq-body")[0].style.minHeight=(100)+'px';
 				// this.swipeImages = [];
 				// console.log(1)
 				// vant.Toast('提示看看');
@@ -186,6 +188,7 @@
 					// console.log('123',_this.KMS);
 				})
 				*/
+
 				// 获取展品详情
 				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
 						params:{

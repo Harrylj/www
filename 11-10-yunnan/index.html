@@ -368,10 +368,12 @@
 		</transition>
 		<div class="index-header-swipe">
 			<van-swipe class="index-swipe-01" :autoplay="10000" >
+				<!-- <van-swipe-item
+				@click="image.linkUrl?goPage('single_link_footer.html',{'linkUrl':image.linkUrl}):goPage('article_xwxq.html',{'id':image.id})"
+				v-for="(image, index) in imagesDBLB" :key="index"> -->
 				<van-swipe-item
-				@click="image.linkUrl?goPage(image.linkUrl):goPage('article_xwxq.html',{'id':image.id})"
+				@click="goSwipePage(image)"
 				v-for="(image, index) in imagesDBLB" :key="index">
-					<!-- <img  v-lazy="image.imageUrl" alt=""> -->
 					<van-image
 							fit="cover"
 							:src="image.imageUrl"
@@ -380,9 +382,6 @@
 				</van-swipe-item>
 			</van-swipe>
 		</div>
-		<!-- <div class="index-header-img">
-			<img src="images/index-header-img.png" alt="">
-		</div> -->
 		<div class="index-body">
 			<div class="index-nav-01">
 				<div class="index-nav-01-div">
@@ -650,6 +649,7 @@
 				
 				// 距离指定日期还有多少天
 				this.countdownDay = getDistanceSpecifiedTime('2020/12/13 00:00:00')
+				// this.countdownDay = getDistanceSpecifiedTime('2020/12/12 18:12:00')
 				// setTimeout(()=>{
 				// 	_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
 				// 	// 是否显示倒计时
@@ -909,6 +909,20 @@
 				
 			},
 			methods: {
+				// 轮播导航页
+				goSwipePage(_item){
+					if(_item.linkUrl){
+						if(_item.linkUrl.indexOf(_obj.mobileUrl) != -1){
+							goPage(_item.linkUrl)
+						}
+						else{
+							goPage('single_link_footer.html',{'linkUrl':_item.linkUrl})
+						}
+					}
+					else{
+						goPage('article_xwxq.html',{'id':_item.id})
+					}
+				},
 				// 去云逛展
 				goYGZ(_item){
 					// item.linkUrl?goPage(item.linkUrl):goPage('single_ygz_video.html',{'id':item.id})

@@ -141,14 +141,12 @@
 				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
 					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
 						<div class="jbjs-body">
-							<!-- <div class="index-h2" style="padding-left: .3rem;">{{item.channelName}}</div> -->
-							<div class="index-swipe-02-father">
+							<div class="index-swipe-02-father" v-if="listYJJB.length>0">
 								<div class="index-h2">演讲嘉宾</div>
 								<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth"
 									:show-indicators="false">
 									<van-swipe-item @click="goPage('article_jbjs.html',{'id':user.id})" v-for="(user,index) in listYJJB" :key="index" >
 											<div class="van-swipe-item-div">
-												<!-- <img src="images/index-user-01.png" alt=""> -->
 												<van-image
 												fit="cover"
 												:src="user.imageUrl"

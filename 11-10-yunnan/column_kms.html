@@ -207,27 +207,30 @@
 		<van-popup class="zhzj-mulu" :overlay="true" :close-on-click-overlay="false" @click-overlay="hidePopup()" v-model="show" :overlay="true" round position="bottom">
 			<div class="zhzj-mulu-title" v-show="!showJJ">
 				<h3>{{KMS.title}}</h3>
-				<div class="zhzj-btn-jj" @click="jianjie()">简介<van-icon name="arrow" /></div>
+				<!-- <div class="zhzj-btn-jj" @click="jianjie()">简介<van-icon name="arrow" /></div> -->
 			</div>
-			<div class="index-swipe-02-father" v-show="!showJJ">
+			<!-- <div class="index-swipe-02-father" v-show="!showJJ">
 				<div class="index-h2">演讲嘉宾</div>
 				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
 					<van-swipe-item v-for="(user,index) in userList" :key="index">
 						<div class="van-swipe-item-div" @click="goPage('article_jbjs.html',{'id':user.id})">
-							<!-- <img src="images/index-user-01.png" alt=""> -->
 							<van-image
 							fit="cover"
 							:src="user.imageUrl"
 							></van-image>
 							<h3 class="van-ellipsis">{{user.title}}</h3>
-							<!-- <p class="van-ellipsis">{{user.job}}</p> -->
 							<p class="van-multi-ellipsis--l2">{{user.zhicheng}}</p>
 						</div>
 					</van-swipe-item>
 				</van-swipe>
-			</div>
-			<div class="kms-jianjie" v-show="showJJ">
+			</div> -->
+			<!-- <div class="kms-jianjie" v-show="showJJ">
 				<h3>简介</h3>
+				<p>
+					{{KMS.summary}}
+				</p>
+			</div> -->
+			<div class="kms-jianjie">
 				<p>
 					{{KMS.summary}}
 				</p>

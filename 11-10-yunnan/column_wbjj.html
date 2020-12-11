@@ -378,7 +378,7 @@
 				<div class="van-dropdown-menu__bar">
 					<div role="button" tabindex="0" class="van-dropdown-menu__item">
 						<!-- <span class="van-dropdown-menu__title van-ellipsis">{{!activeAll?items[activeHC].label:'全部'}}</span> -->
-						<span class="van-dropdown-menu__title van-ellipsis">{{items[activeHC].label?items[activeHC].label:''}}</span>
+						<span class="van-dropdown-menu__title van-ellipsis">{{activeAll?'全部':items[activeHC].label}}</span>
 					</div>
 				</div>
 			</div>
@@ -400,7 +400,7 @@
 								<!-- <img v-lazy="hot.logo" alt=""/> -->
 								<van-image
 								fit="contain"
-								:src="hot.images[0].url"
+								:src="hot.images[0].url?hot.images[0].url:''"
 								><template v-slot:error>加载失败</template></van-image>
 								<p class="van-ellipsis">{{hot.name}}</p>
 							</div>
@@ -408,9 +408,9 @@
 					</van-swipe>
 				</div>
 			</div>
-			<div class="wbjj-rmzs index-ygz">
+			<div class="wbjj-rmzs index-ygz" v-if="shops.length>0">
 				<div class="index-h2">热门展商</div>
-				<div class="index-ygz-more" @click="goPage('single_wbjj_zs.html',{'position1':items[activeHC].value,'position2':items[activeHC].children[activeZQ].value,'HC':activeHC,'ZQ':activeZQ})">更多展商<van-icon name="arrow" /></div>
+				<div class="index-ygz-more" @click="goHotZS()">更多展商<van-icon name="arrow" /></div>
 				<div class="wbjj-rmzs-div">
 					<div class="wbjj-rmzs-list">
 						<div class="wbjj-rmzs-item" @click="goPage('article_zsxq.html',{'id':shop.id,'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"  v-for="(shop,index) in shops" :key="index">
@@ -426,32 +426,28 @@
 				<div class="index-h2">特色分类</div>
 				<div class="wbjj-tsfl-div">
 					<div class="wbjj-tsfl-list">
-						<div class="wbjj-tsfl-item" 
+						<!-- <div class="wbjj-tsfl-item" 
 						@click="goPage('single_wbjj_zp.html',{'type':typeGoods[index].value,'HC':activeHC,'ZQ':activeZQ})"	
+						v-for="(goods,index) in typeGoods" :key="index"> -->
+						<div class="wbjj-tsfl-item" 
+						@click="goGoodsType(index)"	
 						v-for="(goods,index) in typeGoods" :key="index">
 							<img :src="goods.tag" alt="">
 							<p class="van-ellipsis">{{goods.label}}</p>
 						</div>
-						<!-- <div class="wbjj-tsfl-item" 
-						@click="goPage('single_wbjj_zp.html',{'type':typeGoods[index].value,'ZQ':activeZQ})"	
-						v-for="(goods,index) in typeGoods" :key="index">
-							<img :src="goods.tag" alt="">
-							<p class="van-ellipsis">{{goods.label}}</p>
-						</div> -->
 					</div>
 				</div>
 			 </div>
-			 <div class="wbjj-hhbg index-ygz">
+			 <div class="wbjj-hhbg index-ygz" v-if="listGoods.length>0">
 				<div class="index-h2">好货必逛</div>
 				<div class="wbjj-hhbg-div">
 					<div class="wbjj-hhbg-list">
 						<div class="wbjj-hhbg-item"
 						:class="goods.isLive?'goods-live-hover':''" 
 						@click="goGoodsDetail(goods)" v-for="(goods,index) in listGoods" :key="index">
-							<!-- <img :src="goods.logo" alt=""> -->
 							<van-image
 							fit="contain"
-							:src="goods.images[0].url"
+							:src="goods.images[0].url?goods.images[0].url:''"
 							><template v-slot:error>加载失败</template></van-image>
 							<h3 class="van-ellipsis">{{goods.name}}</h3>
 							<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
@@ -476,8 +472,8 @@
 					</van-collapse-item>
 					<van-collapse-item title="展区" name="2">
 						<div class="zqsl-sx-list zqsl-sx-zq">
-							<div class="zqsl-sx-item" v-if="activeAll" :class="index==activeZQALL?'zqsl-sx-item-click':''" @click="selectZQALL(index)" v-for="(item,index) in itemsALL.children" :key="item">
-								{{item.label}}
+							<div class="zqsl-sx-item" v-if="activeAll" :class="activeAll?'zqsl-sx-item-click':''">
+								全部
 							</div>
 							<div class="zqsl-sx-item" v-if="!activeAll" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="(item,index) in items[activeHC].children" :key="item">
 								{{item.label}}
@@ -599,10 +595,11 @@
 				],
 				activeNames: ['1','2'],
 				show: false,
+				// activeAll:false,
 				activeAll:false,
 				activeHC:0,
 				activeZQ:0,
-				activeZQALL:0,
+				// activeZQALL:0,
 				formData:{ // 展商列表请求数组
 					SkipCount:0,
 					Position:[],
@@ -620,16 +617,8 @@
 				this.swipeWidth = this.swipeWidth*_rem ; 
 				// vant.Toast('提示看看');
 
-				// 是否记录会场和展区
-				if(window.localStorage.getItem("key_wbjj_HC") == null ){
-					console.log('无记录会场')
-				}
-				else{
-					console.log('有记录会场')
-					this.activeHC = window.localStorage.getItem("key_wbjj_HC")
-					this.activeZQ = window.localStorage.getItem("key_wbjj_ZQ")
-				}
 				
+				// this.selectQD()
 				
 
 				// // 获取会场地址
@@ -660,15 +649,38 @@
 					_this.itemsALL= {'children':''};
 					_this.itemsALL.children = arr_all;
 					console.log('33322111',_this.itemsALL)
+					// this.activeAll = true;
 					// _this.items[-1] = 0;
 					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
 					// console.log('33222222111',_this.typeGoods);
+					// _this.selectQD()
+					// _this.selectHCALL()
+					// 是否记录会场和展区
+					if(window.localStorage.getItem("key_wbjj_HC") == null & window.localStorage.getItem("key_wbjj_ALL") == null ){
+						console.log('无记录会场')
+						_this.selectHCALL()
+					}
+					else if(window.localStorage.getItem("key_wbjj_ALL") == true){
+						console.log('有记录全部')
+						_this.selectHCALL()
+					}
+					else{
+						console.log('有记录会场')
+						_this.activeHC = 0;
+						_this.activeZQ = 0;
+						_this.activeAll = window.localStorage.getItem("key_wbjj_ALL")?window.localStorage.getItem("key_wbjj_ALL"):false;
+						_this.activeHC = window.localStorage.getItem("key_wbjj_HC")
+						_this.activeZQ = window.localStorage.getItem("key_wbjj_ZQ")
+						console.log(_this.activeAll,_this.activeHC,_this.activeZQ)
+					}
+					// 点击确定
+					_this.selectQD()
 					// 获取展商
-					_this.getShops()
-					// 获取展品
-					_this.getGoods();
-					// 获取爆品推荐
-					_this.getHot()
+					// _this.getShops()
+					// // 获取展品
+					// _this.getGoods();
+					// // 获取爆品推荐
+					// _this.getHot()
 				})
 				/*
 				// 获取所有展品
@@ -681,9 +693,18 @@
 				*/
 			},
 			mounted: function () {
+				
 				// console.log(_obj.appkey)
 			},
 			methods: {
+				// 去热门展商
+				goHotZS(){
+					goPage('single_wbjj_zs.html',{'position1':this.items[this.activeHC].value,'position2':this.items[this.activeHC].children[this.activeZQ].value,'HC':this.activeHC,'ZQ':this.activeZQ,'activeAll':this.activeAll})
+				},
+				// 去特色分类
+				goGoodsType(_index){
+					goPage('single_wbjj_zp.html',{'type':this.typeGoods[_index].value,'HC':this.activeHC,'ZQ':this.activeZQ,'activeAll':this.activeAll})
+				},
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
@@ -760,7 +781,7 @@
 					this.figNum++;
 					console.log(this.activeHC)
 					console.log(this.items)
-					console.log(this.items[this.activeHC].children)
+					// console.log(this.items[this.activeHC].children)
 					console.log(!this.activeAll)
 					// vant.Toast('会场'+_index)
 				},
@@ -768,25 +789,27 @@
 					var _this = this;
 					this.activeAll = true;
 					this.activeZQ = 0;
-					this.activeHC = _this.itemsALL.children[_this.activeZQ].HCID;
+					this.activeHC = 0;
 					this.figNum++;
-					// alert(this.activeHC)
+					// alert(this.activeHC,this.activeZQ)
 				},
 				selectZQ(_index){
 					this.activeZQ = _index;
 					// vant.Toast('展区'+_index)
 				},
-				selectZQALL(_index){
-					var _this = this;
-					this.activeZQALL = _index;
-					this.activeZQ = _this.itemsALL.children[_index].ZQID;
-					// alert(this.activeZQ )
-					// vant.Toast('展区'+_index)
-				},
 				selectQD(){
 					// vant.Toast(this.activeHC,this.activeZQ)
-					window.localStorage.setItem('key_wbjj_HC',this.activeHC)
-					window.localStorage.setItem('key_wbjj_ZQ',this.activeZQ)
+					if(this.activeAll){
+						window.localStorage.setItem('key_wbjj_ALL',this.activeAll)
+						window.localStorage.setItem('key_wbjj_HC',this.activeHC)
+						window.localStorage.setItem('key_wbjj_ZQ',this.activeZQ)
+					}
+					else{
+						// window.localStorage.setItem('key_wbjj_ALL',this.activeAll)
+						window.localStorage.removeItem('key_wbjj_ALL');
+						window.localStorage.setItem('key_wbjj_HC',this.activeHC)
+						window.localStorage.setItem('key_wbjj_ZQ',this.activeZQ)
+					}
 					console.log(this.activeHC,this.activeZQ)
 
 					// 获取展商
@@ -802,20 +825,22 @@
 					this.activeZQ = 0;
 					console.log('重置')
 				},
-				// 展商
+				// 热门展商
 				getShops(){
 					console.log(this.activeHC,this.activeZQ)
 					var _this = this;
-					if(this.items[this.activeHC].value||this.items[this.activeHC].children[this.activeZQ].value){
+					if(this.activeAll){
+						this.formData.Position = []
+						// this.activeNames = [0,0]
+					}
+					else{
+						// this.activeNames[this.activeHC,this.activeZQ]
 						this.formData.Position = [this.items[this.activeHC].value,this.items[this.activeHC].children[this.activeZQ].value]
 					}
-					// if(this.activeHC<0){
-					// 	this.formData.Position = [this.items[this.activeHC].children[this.activeZQ].value.substr(0,2),this.items[this.activeHC].children[this.activeZQ].value]
-					// 	console.log('999',this.items[this.activeHC].children[this.activeZQ].value)
-					// }
-					// else if(this.items[this.activeHC].value||this.items[this.activeHC].children[this.activeZQ].value){
+					// if(this.items[this.activeHC].value||this.items[this.activeHC].children[this.activeZQ].value){
 					// 	this.formData.Position = [this.items[this.activeHC].value,this.items[this.activeHC].children[this.activeZQ].value]
 					// }
+					this.formData.isHot=true,
 					this.formData.SkipCount = 0;
 					this.formData.MaxResultCount = 2;
 					// this.formData.SkipCount += 10
@@ -836,11 +861,16 @@
 						// }
 					})
 				},
-				// 获取展品
+				// 获取好货必逛
 				getGoods(){
 					var _this = this;
 					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
-						params:this.formData,
+						params:{
+							SkipCount:0,
+							MaxResultCount:2,
+							Position:_this.formData.Position,
+							isTop:true
+						},
 						paramsSerializer: function(params) {
 							return qs.stringify(params, {arrayFormat: 'repeat'})
 						}
@@ -857,7 +887,7 @@
 							SkipCount:0,
 							MaxResultCount:3,
 							Position:_this.formData.Position,
-							Ishot:true,
+							isHot:true,
 						},
 						paramsSerializer: function(params) {
 							return qs.stringify(params, {arrayFormat: 'repeat'})

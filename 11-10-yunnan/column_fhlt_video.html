@@ -199,7 +199,7 @@
 				<div class="phtc-return" @click="public_return_page()"></div>
 				<div class="phtc-title"></div>
 				<div class="phtc-fenxiang" @click="fenxiang()"></div>
-				<div class="phtc-mulu" @click="mulu()"></div>
+				<!-- <div class="phtc-mulu" @click="mulu()"></div> -->
 			</div>
 		</div>
 		<div class="zhzj-video">
@@ -309,6 +309,7 @@
 				contentID:0, // 内容id
 				FHLT:'', // 峰会论坛内容
 				listFHLT:[], // 峰会论坛其他视频
+				shareId:'', // 分享id
 			},
 			created: function () {
 				var _this = this;
@@ -332,7 +333,7 @@
 					// _this.playerOptions.sources[0].src = _this.FHLT.shipin;
 					// console.log('123',_this.KMS);
 					// 直播
-					if( _this.FHLT.zT == 'LIVE'){
+					if( _this.videoML[0].zT == 'LIVE' || _this.videoML[0].zt == 'LIVE'){
 						_this.playerOptions.sources[0].type ='application/x-mpegURL';
 						_this.playerOptions.sources[0].src =  _this.FHLT.shipin;
 						console.log('直播')
@@ -342,6 +343,8 @@
 						console.log('回放')
 						_this.playerOptions.sources[0].src =  _this.FHLT.videoUrl
 					}
+					_this.shareId = _this.FHLT.id;
+
 				})
 				.catch(function (error) {
 					console.log(error);

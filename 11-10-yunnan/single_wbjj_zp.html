@@ -90,6 +90,8 @@
 				
 			</div>
 		</div>
+		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+		<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
 		<div class="sczp-body xwxq-body">
 			<img class="zp-search" @click="goPage('single_search_zp.html')" src="images/search-02.png" alt="">
 			<div class="jjwb-fhlt-div">
@@ -108,6 +110,8 @@
 				</div>
 			</div>
 		</div>
+		</van-list>
+		</van-pull-refresh>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
 			<van-collapse v-model="activeNames">
 				<van-collapse-item title="分类" name="1">
@@ -170,14 +174,19 @@
 					SkipCount:0,
 					Position:[],
 					ExhibitType:'',
-					MaxResultCount:100,
+					MaxResultCount:10,
 				},
 				listGoods: [], // 展品列表
 				typeGoods: [], // 展品类型
 				aa :'',
+				loading: false,		// 开启加载
+				finished: false,	// 结束加载
+				refreshing: false,  // 下拉刷新
+				
 			},
 			created: function () {
 				var _this = this;
+				
 				// vant.Toast('提示看看');
 				_this.selectType = parseInt(qs2obj(window.location.href).type) - 1;
 				// 获取所有配置数据
@@ -189,7 +198,7 @@
 					// console.log('1122',aa)
 					console.log('33222222111',_this.formData);
 					// 获取展品
-					_this.getGoods();
+					// _this.getGoods();
 
 				})
 
@@ -206,6 +215,32 @@
 
 			},
 			methods: {
+				// 加载事件
+				onLoad() {
+					var _this = this;
+					setTimeout(() => {
+						if (_this.refreshing) {
+							_this.listGoods = [];
+							_this.refreshing = false;
+							// _this.finished = false;
+							_this.formData.SkipCount = 0;
+						}
+						// // 点击确定
+						// _this.selectQD()
+						// 获取展品
+						_this.getGoods()
+						// _this.onLoad()
+					},10);
+					console.log('下拉')
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
 				// 去展品详情
 				goGoodsDetail(_item){
 					//goPage(goods.liveUrl)
@@ -255,7 +290,13 @@
 				getGoods(_type){
 					var _this = this;
 					_this.formData.ExhibitType = qs2obj(window.location.href).type;
-					_this.formData.Position= [_this.aa[qs2obj(window.location.href).HC].value,_this.aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
+					if(qs2obj(window.location.href).activeAll){
+						this.formData.Position = [];
+					}
+					else{
+						_this.formData.Position= [_this.aa[qs2obj(window.location.href).HC].value,_this.aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
+					}
+					
 					// _this.formData.Position= [_this.aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value[],_this.aa[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].value]
 					console.log('333333',_type)
 					// 全部
@@ -274,7 +315,18 @@
 						}
 					})
 					.then(function (response) {
-						_this.listGoods =  response.data.result.items;
+						// _this.listGoods =  response.data.result.items;
+						response.data.result.items.forEach((element,index) => {
+							_this.listGoods.push(element)
+						});
+						_this.formData.SkipCount = _this.formData.SkipCount + _this.formData.MaxResultCount;
+						_this.listGoods.length == 0?_this.nodata=true:_this.nodata=false;
+						// 加载完成
+						_this.loading = false;
+						// 结束加载
+						if(response.data.result.items.length < _this.formData.MaxResultCount){
+							_this.finished = true;
+						}
 					})
 				},
 				showPopup() {
@@ -307,10 +359,14 @@
 				},
 				selectQD(){
 					this.selectType = this.activeHC;
+					this.listGoods = [];
+					this.formData.SkipCount = 0;
+					this.finished = false;
 					// alert(this.selectType)
 					// vant.Toast(this.selectType)
 					// 获取展品
-					this.getGoods(this.selectType+1);
+					// this.getGoods(this.selectType+1);
+					this.onRefresh()
 					// console.log(this.activeHC,this.activeZQ)
 					this.hidePopup()
 				},

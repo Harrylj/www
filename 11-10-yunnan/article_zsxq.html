@@ -210,7 +210,7 @@
 			<!-- <img :src="shop.logo" alt=""> -->
 			<van-image
 				fit="fill"
-				:src="shop.logo"
+				:src="shop.logo?shop.logo:''"
 			><template v-slot:error>加载失败</template></van-image>
 			<h2>{{shop.name}}</h2>
 			<!-- <p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p> -->
@@ -229,7 +229,7 @@
 						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
 						<van-image
 							fit="contain"
-							:src="item.images[0].url"
+							:src="item.images[0]?item.images[0].url:''"
 						><template v-slot:error>加载失败</template></van-image>
 						<div class="zsxq-bktj-item-content">
 							<h3 class="van-ellipsis">{{item.name}}</h3>
@@ -252,8 +252,9 @@
 						><template v-slot:error>加载失败</template></van-image> -->
 						<van-image
 							fit="contain"
-							:src="item.images[0].url"
+							:src="item.images[0]?item.images[0].url:''"
 						><template v-slot:error>加载失败</template></van-image>
+						<!-- <h3>{{item.images[0]?item.images[0].url:'没有'}}</h3> -->
 						<h3 class="van-ellipsis">{{item.name}}</h3>
 						<p class="van-ellipsis">{{item.appHits}}人正在浏览</p>
 					</div>
@@ -304,6 +305,7 @@
 				goodsObj:{
 					ExhibitorName:'',
 					Position:[],
+					MaxResultCount:200
 					// PositionName:'',
 				},
 				topObj:{
@@ -392,6 +394,7 @@
 				// 获取展商详情
 				getShop(){
 					var _this = this;
+					_this.shopObj.id = qs2obj(window.location.href).id;
 					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList',{
 						params:this.shopObj,
 						paramsSerializer: function(params) {
@@ -399,18 +402,11 @@
 						}
 					})
 					.then(function (response) {
-						_this.shop = response.data.result.items[0];
-						console.log('332221111111',_this.shop)
-						_this.goodsObj.Position = _this.shop.position;
-						_this.topObj.Position = _this.shop.position;
-						// 获取展品列表
-						_this.getGoods();
-						// 获取top展品列表
-						_this.getTop();
+						
 						// _this.shopObj.PositionName = _this.PositionList
 
 					})
-					_this.shopObj.id = qs2obj(window.location.href).id;
+					
 					// 调用展商详情
 					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCache',{
 						params:this.shopObj,
@@ -419,6 +415,14 @@
 						}
 					})
 					.then(function (response) {
+						_this.shop = response.data.result;
+						console.log('332221111111',_this.shop)
+						_this.goodsObj.Position = _this.shop.position;
+						_this.topObj.Position = _this.shop.position;
+						// 获取展品列表
+						_this.getGoods();
+						// 获取top展品列表
+						_this.getTop();
 						// _this.shop = response.data.result.items[0];
 						// console.log('332221111111',_this.shop)
 						// _this.goodsObj.Position = _this.shop.position;
@@ -443,6 +447,7 @@
 					})
 					.then(function (response) {
 						_this.listGoods = response.data.result.items;
+						console.log('9877777',_this.listGoods)
 					})
 				},
 				// 获取top展品列表
