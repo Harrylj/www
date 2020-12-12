@@ -293,16 +293,36 @@
 					_this.playerOptions.poster = _this.KMS.imageUrl;
 					// _this.playerOptions.sources[0].src = _this.KMS.videoUrl;
 					// console.log('123',_this.KMS);
+					// // 直播
+					// if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
+					// 	_this.playerOptions.sources[0].type ='application/x-mpegURL';
+					// 	_this.playerOptions.sources[0].src =  _this.KMS.shipin;
+					// 	console.log('直播')
+					// }
+					// // 回放
+					// else{
+					// 	console.log('回放')
+					// 	_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					// }
+					_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					// m3u8
+					if(_this.KMS.videoUrl.indexOf("m3u8") != -1){
+						console.log('m3u8')
+						_this.playerOptions.sources[0].type='application/x-mpegURL';
+					}
+					// mp4
+					else{
+						_this.playerOptions.sources[0].type= ''
+						console.log('其他')
+					}
+					
 					// 直播
 					if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
-						_this.playerOptions.sources[0].type ='application/x-mpegURL';
-						_this.playerOptions.sources[0].src =  _this.KMS.shipin;
 						console.log('直播')
 					}
 					// 回放
 					else{
 						console.log('回放')
-						_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
 					}
 				})
 				.catch(function (error) {

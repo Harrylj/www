@@ -32,8 +32,8 @@ function public_obj() {
 	_obj.idTSHW = 32, // 特色好物
 	_obj.idFLHD = 31, // 福利活动
 	_obj.idFHLT = 41, // 峰会论坛
-	_obj.idFHLT_list = '115,116,117,118,119', // 峰荟论坛子集数组
-	_obj.idFHLT_listJB = [120,121,122,124,123], // 峰会论坛子集特邀嘉宾列表
+	_obj.idFHLT_list = '116,117,118,119', // 峰荟论坛子集数组
+	_obj.idFHLT_listJB = [121,122,124,123], // 峰会论坛子集特邀嘉宾列表
 	_obj.idLXWM = 40, // 联系我们
 	_obj.idLXWM_CID = 70, // 联系我们-内容id
 	_obj.idHZZX = 91, // 合作咨询

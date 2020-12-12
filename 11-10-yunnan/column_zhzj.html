@@ -101,6 +101,8 @@
 
 		.zhzj-mulu-item-content {
 			width: 3.9rem;
+			flex: 1;
+			margin-left: .3rem;
 		}
 
 		.zhzj-mulu-title h3 {
@@ -173,13 +175,16 @@
 			<div class="zhzj-mulu-list">
 				<div class="zhzj-mulu-item" :class="index==active?'zhzj-mulu-item-hover':''" v-for="(video,index) in videoML"
 					::key="index" @click="selectMulu(index)">
-					<h4>{{index}}</h4>
+					<h4>{{index+1}}</h4>
 					<div class="zhzj-mulu-item-content">
-						<h6>即将开始</h6>
+						<!-- <h6>即将开始</h6> -->
+						<h6>{{video.addDate?video.addDate.split(':')[0]:''}}:{{video.addDate?video.addDate.split(':')[1]:''}}</h6>
 						<p>{{video.title}}</p>
 					</div>
 					<!-- <h5>15:30pm</h5> -->
-					<h5>{{video.createdDate?video.createdDate.split(' ')[1].substring(0,5):''}}</h5>
+					<!-- <h5>{{video.addDate?video.addDate.split(' ')[1].substring(0,5):''}}</h5> -->
+					<!-- <h5>{{video.addDate?video.addDate.split(':')[0]:''}}:{{video.addDate?video.addDate.split(':')[1]:''}}</h5> -->
+
 				</div>
 			</div>
 		</van-popup>
@@ -292,16 +297,25 @@
 					public_imgsrc(_this.videoML)
 					_this.playerOptions.poster = _this.videoML[0].imageUrl;
 					// _this.playerOptions.sources[0].src = _this.videoML[0].shipin;
+					// m3u8
+					if(_this.videoML[0].videoUrl.indexOf("m3u8") != -1){
+						console.log('m3u8')
+						_this.playerOptions.sources[0].type='application/x-mpegURL';
+					}
+					// mp4
+					else{
+						_this.playerOptions.sources[0].type= ''
+						console.log('其他')
+					}
+					_this.playerOptions.sources[0].src =  _this.videoML[0].videoUrl;
 					// 直播
 					if( _this.videoML[0].zT == 'LIVE' || _this.videoML[0].zt == 'LIVE'){
-						_this.playerOptions.sources[0].type ='application/x-mpegURL';
-						_this.playerOptions.sources[0].src =  _this.videoML[0].shipin;
 						console.log('直播')
+						
 					}
 					// 回放
 					else{
 						console.log('回放')
-						_this.playerOptions.sources[0].src =  _this.videoML[0].videoUrl
 					}
 					console.log('123',_this.videoML);
 					_this.shareId = _this.videoML[0].id;
@@ -366,16 +380,24 @@
 					this.active = _index;
 					_this.playerOptions.poster = _this.videoML[_index].imageUrl;
 					// _this.playerOptions.sources[0].src = _this.videoML[_index].shipin;
+					// m3u8
+					if(_this.videoML[_index].videoUrl.indexOf("m3u8") != -1){
+						console.log('m3u8')
+						_this.playerOptions.sources[0].type='application/x-mpegURL';
+					}
+					// mp4
+					else{
+						_this.playerOptions.sources[0].type= ''
+						console.log('其他')
+					}
+					_this.playerOptions.sources[0].src =  _this.videoML[_index].videoUrl;
 					// 直播
 					if( _this.videoML[_index].zT == 'LIVE' || _this.videoML[_index].zt == 'LIVE'){
-						_this.playerOptions.sources[0].type ='application/x-mpegURL';
-						_this.playerOptions.sources[0].src =  _this.videoML[_index].shipin;
 						console.log('直播')
 					}
 					// 回放
 					else{
 						console.log('回放')
-						_this.playerOptions.sources[0].src =  _this.videoML[_index].videoUrl;
 					}
 					_this.shareId = _this.videoML[_index].id;
 					// 调用详情

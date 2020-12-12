@@ -355,17 +355,17 @@
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
 					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
-					// 直播
-					if( _this.KMS.zT == 'LIVE'){
-						_this.playerOptions.sources[0].type ='application/x-mpegURL';
-						_this.playerOptions.sources[0].src =  _this.KMS.shipin;
-						console.log('直播')
-					}
-					// 回放
-					else{
-						console.log('回放')
-						_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
-					}
+					// // 直播
+					// if( _this.KMS.zT == 'LIVE'){
+					// 	_this.playerOptions.sources[0].type ='application/x-mpegURL';
+					// 	_this.playerOptions.sources[0].src =  _this.KMS.shipin;
+					// 	console.log('直播')
+					// }
+					// // 回放
+					// else{
+					// 	console.log('回放')
+					// 	_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					// }
 				})
 				.catch(function (error) {
 					console.log(error);
