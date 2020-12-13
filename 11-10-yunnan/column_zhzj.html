@@ -250,31 +250,6 @@
 				var _this = this;
 				// console.log(1)
 				// vant.Toast('提示看看');
-				//开幕式播放量
-				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
-				// .then(function (response) {
-				// 	console.log(response);
-				// })
-				// .catch(function (error) {
-				// 	console.log(error);
-				// });
-
-				/*
-				// 获取开幕式列表
-				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
-				.then(function (response) {
-					_this.KMS = response.data;
-					public_imgsrc([_this.KMS])
-					_this.playerOptions.poster = _this.KMS.imageUrl;
-					_this.playerOptions.sources[0].src = _this.KMS.shipin;
-					// _this.playerOptions.poster = _this.KMS.imageUrl;
-					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
-					// console.log('123',_this.KMS);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
-				*/
 				// 目录
 				axios.post('api/v1/contents', {
 					"siteId": _obj.idSite,

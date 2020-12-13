@@ -329,48 +329,7 @@
 					console.log(error);
 				});
 				// vant.Toast('提示看看');
-				/*
-				//开幕式播放量
-				axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
-				.then(function (response) {
-					console.log(response);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
-				// 获取开幕式列表
-				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
-				.then(function (response) {
-					_this.KMS = response.data;
-					public_imgsrc([_this.KMS])
-					_this.playerOptions.poster = _this.KMS.imageUrl;
-					_this.playerOptions.sources[0].src = _this.KMS.shipin;
-					// console.log('123',_this.KMS);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
-				// 获取演讲嘉宾嘉宾列表
-				axios.post('api/v1/contents', {
-					"siteId": _obj.idSite,
-					"channelId": _obj.idZBJB,
-					"wheres":[ {
-						"column": "checked",
-						"operator": "=",
-						"value": "1"
-					}],
-					"page": 1,
-					"perPage": 200
-				})
-				.then(function (response) {
-					_this.userList = response.data.contents;
-					public_imgsrc(_this.userList)
-					// console.log('123',_this.userList);
-				})
-				.catch(function (error) {
-					console.log(error);
-				});
-				*/
+				
 			},
 			mounted: function () {
 				// this.mulu()

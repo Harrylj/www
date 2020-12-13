@@ -777,24 +777,25 @@
 					public_imgsrc([_this.KMSTitle])
 				})
 				// 获取开幕式列表
-				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idKMS,
+					"page": 1,
+					"perPage": 1,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					orders:[{
+							column: 'addDate',  // 创建时间
+							desc: false,
+					}],
+				})
 				.then(function (response) {
-					_this.KMS = response.data;
+					_this.KMS = response.data.contents[0];
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
-					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
-					// console.log('123',_this.KMS);
-					// 直播
-					// if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
-					// 	_this.playerOptions.sources[0].type ='application/x-mpegURL';
-					// 	_this.playerOptions.sources[0].src =  _this.KMS.shipin;
-					// 	console.log('直播')
-					// }
-					// // 回放
-					// else{
-					// 	console.log('回放')
-					// 	_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
-					// }
 				})
 				// 云逛展
 				axios.post('api/v1/contents', {
