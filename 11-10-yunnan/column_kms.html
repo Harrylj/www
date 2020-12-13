@@ -188,7 +188,7 @@
 		</div>
 		<div class="zhzj-video">
 			<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
-			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{KMS.hits}}</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{KMS.zhibozt=='LIVE'?KMS.hitsByDay:KMS.hits}}</div>
 			<video-player class="vjs-custom-skin" :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
 			<!-- <video-player
 				  class="video-player vjs-custom-skin"

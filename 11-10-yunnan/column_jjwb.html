@@ -170,7 +170,7 @@
 				<div class="index-h2">{{KMSTitle.channelName}}</div>
 				<div class="index-video-div">
 					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
-					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
+					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.zhibozt=='LIVE'?KMS.hitsByDay:KMS.hits}}</div>
 					<van-image
 							fit="cover"
 							:src="playerOptions.poster"
@@ -185,14 +185,14 @@
 				<div class="jjwb-fhlt-div">
 					<div class="index-ygz-list">
 						<div class="index-ygz-item"  @click="goPage('column_fhlt_video.html',{'id':item.id})" v-for="(item,index) in listFHLT" :key="index">
-							<div class="index-live"><span></span>{{item.zT}}</div>
+							<div class="index-live"><span></span>{{item.zt}}</div>
 							<!-- <img src="images/bg.png" alt=""> -->
 							<van-image
 							fit="fill"
 							:src="item.imageUrl"
 							></van-image>
 							<h3 class="van-ellipsis">{{item.title}}</h3>
-							<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
+							<p class="van-ellipsis">{{item.addDate?item.addDate.split(' ')[0]:''}}</p>
 						</div>
 					</div>
 					<!-- <div class="index-ygz-list">
@@ -354,6 +354,7 @@
 					_this.KMS = response.data;
 					public_imgsrc([_this.KMS])
 					_this.playerOptions.poster = _this.KMS.imageUrl;
+					console.log('9999',_this.KMS)
 					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
 					// // 直播
 					// if( _this.KMS.zT == 'LIVE'){
@@ -404,6 +405,12 @@
 						"operator": "=",
 						"value": "1"
 					}],
+					"orders": [
+								{
+									"column": "AddDate",
+									"desc": true,
+								}
+						],
 					"page": 1,
 					"perPage": 200
 				})

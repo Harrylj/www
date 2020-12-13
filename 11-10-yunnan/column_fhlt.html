@@ -163,14 +163,14 @@
 								<div class="jjwb-fhlt-div">
 									<div class="index-ygz-list">
 										<div class="index-ygz-item"  @click="goPage('column_fhlt_video.html',{'id':item.id})" v-for="(item,index) in listFHLT" :key="index">
-											<div class="index-live"><span></span>{{item.zT}}</div>
+											<div class="index-live"><span></span>{{item.zt}}</div>
 											<!-- <img src="images/bg.png" alt=""> -->
 											<van-image
 											fit="cover"
 											:src="item.imageUrl"
 											></van-image>
 											<h3 class="van-ellipsis">{{item.title}}</h3>
-											<p class="van-ellipsis">{{item.createdDate?item.createdDate.split(' ')[0]:''}}</p>
+											<p class="van-ellipsis">{{item.addDate?item.addDate.split(' ')[0]:''}}</p>
 										</div>
 									</div>
 									<!-- <div class="index-ygz-list">

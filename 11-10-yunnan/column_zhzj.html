@@ -162,7 +162,7 @@
 			<div class="index-video-div">
 				<div class="index-live"><span></span>{{videoML[active].zt?videoML[active].zt:''}}</div>
 				<!-- <div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div> -->
-				<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{videoML[active].hits}}</div>
+				<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{videoML[active].zt=='LIVE'?videoML[active].hitsByDay:videoML[active].hits}}</div>
 				<video-player class="vjs-custom-skin " :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
 			</div>
 		</div>

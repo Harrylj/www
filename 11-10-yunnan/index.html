@@ -408,7 +408,7 @@
 				
 				<div class="index-video-div">
 					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
-					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div>
+					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.zhibozt=='LIVE'?KMS.hitsByDay:KMS.hits}}</div>
 					<van-image
 							fit="cover"
 							:src="playerOptions.poster"
@@ -456,7 +456,7 @@
 						></van-image> -->
 						<div class="index-ygz-item-footer">
 							<h3 class="van-ellipsis">{{item.title}}</h3>
-							<p class="van-ellipsis"><img src="images/index-eye.png" alt=""><span>{{item.hits}}</span></p>
+							<p class="van-ellipsis"><img src="images/index-eye.png" alt=""><span>{{item.zT=='LIVE'?item.hitsByDay:item.hits}}</span></p>
 						</div>
 					</div>
 				</div>

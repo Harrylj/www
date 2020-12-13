@@ -189,6 +189,9 @@
 		.index-ygz-item  .index-video-num{
 			top: .3rem;
 		}
+		.phtc-fenxiang{
+			right: 0;
+		}
 	</style>
 </head>
 
@@ -203,8 +206,8 @@
 			</div>
 		</div>
 		<div class="zhzj-video">
-			<div class="index-live"><span></span>{{FHLT.zhibozt}}</div>
-			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{FHLT.hits}}</div>
+			<div class="index-live"><span></span>{{FHLT.zt}}</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> {{FHLT.zt=='LIVE'?FHLT.hitsByDay:FHLT.hits}}</div>
 			<video-player class="vjs-custom-skin"  :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
 			<!-- <video-player
 				  class="video-player vjs-custom-skin"
