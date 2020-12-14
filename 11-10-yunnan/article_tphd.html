@@ -150,7 +150,7 @@
 					<p>编号</p>
 				</div>
 				<div class="tphd-header-item">
-					<h2>{{data_content.hits}}</h2>
+					<h2>{{data_content.voteCount}}</h2>
 					<p>票数</p>
 				</div>
 				<!-- <div class="tphd-header-item">
@@ -277,6 +277,7 @@
 				},
 				// 投票
 				toupiao(_id){
+					var _this = this;
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
 					"siteId": _obj.idSite_PC,
 					"channelId": _obj.idTPHD_PC,
@@ -285,6 +286,7 @@
 					.then(function (response) {
 						// _this.YGZ = response.data.contents;
 						// public_imgsrc(_this.YGZ)
+						_this.data_content = _this.data_content + 1;
 						vant.Toast('投票成功')
 						console.log(response.data)
 					})
