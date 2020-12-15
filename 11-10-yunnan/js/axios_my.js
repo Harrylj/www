@@ -1,5 +1,6 @@
 // axios.defaults.baseURL="http://192.168.0.250:8032/";
 axios.defaults.baseURL= public_obj().siteUrl;
+axios.defaults.timeout = 30000;
 
 var fwlList = []; // cms访问量列表
 // 添加请求拦截器
