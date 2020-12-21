@@ -62,7 +62,16 @@
 			<!-- <img style="width: 5rem;" src="images/bg.png" alt=""> -->
 			{{ message }}
 		</div>
-
+		<video controls="controls" autoplay="autoplay">
+			<!-- <source src="/i/movie.ogg" type="video/ogg" /> -->
+			<source src="http://admin.ynwbh.com/upload/videos/2020/12/opening.mp4" type="video/mp4" />
+		  Your browser does not support the video tag.
+		</video>
+		<video controls="controls" autoplay="autoplay">
+			<!-- <source src="/i/movie.ogg" type="video/ogg" /> -->
+			<source src="https://xciot.oss-cn-shenzhen.aliyuncs.com/vod/record/ynwbh/live/2020-12-15-14-35-30_2020-12-15-16-52-07.mp4" type="video/mp4" />
+		  Your browser does not support the video tag.
+		</video>
 		<van-popup class="zhzj-mulu" v-model="show" :overlay="false" round position="bottom">
 			<div class="zhzj-mulu-title">
 				<h3>文博会开幕式直播现场</h3>

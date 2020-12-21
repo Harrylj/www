@@ -139,7 +139,7 @@
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
 					<!-- <img v-lazy="image" alt=""> -->
 					<van-image
-							fit="cover"
+							fit="contain"
 							:src="image"
 							><template v-slot:error>加载失败</template></van-image>
 				</van-swipe-item>
