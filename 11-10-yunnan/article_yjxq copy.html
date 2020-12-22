@@ -184,23 +184,6 @@
 					console.log('99214',_this.swipeImages)
 					// console.log('123',_this.KMS);
 				})
-				// 获取相册接口
-				axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos',{
-							params:{
-								"siteId": _obj.idSite,
-								// "channelId": _obj.idTPHD_PC,
-								"channelId": qs2obj(window.location.href).idFather,
-								"contentId": qs2obj(window.location.href).id,
-							},
-
-					})
-					.then(function (response) {
-						var aaa = public_imgsrc(response.data.result);
-						console.log('9999999',aaa)
-						if(aaa.length>0){
-
-						}
-					})
 			},
 			mounted: function () {
 

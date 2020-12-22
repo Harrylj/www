@@ -65,6 +65,12 @@
 		.wzwb-zqsl-div{
 			position: relative;
 		}
+		.wzwb-flhd-div{
+			margin-bottom: .2rem;
+		}
+		.wzwb-flhd-div:last-child{
+			margin-bottom: 0;
+		}
 		.zqsl-item,
 		.wzwb-flhd-div,
 		.mflj-item{
@@ -301,18 +307,21 @@
 				</div>
 			</div>
 			<div class="index-ygz wzwb-flhd">
-				<div class="index-h2">{{FLHD.channelName}}</div>
-				<!-- <a href="column_flhd.html"><div class="index-ygz-more">马上参与<van-icon name="arrow" /></div></a> -->
-				<div @click="goPage('column_tphd.html')" class="index-ygz-more">马上参与<van-icon name="arrow" /></div>
+				<!-- <div class="index-h2">{{FLHD.channelName}}</div> -->
+				<div class="index-h2">投票活动</div>
+				<!-- <div @click="goPage('column_tphd.html')" class="index-ygz-more">马上参与<van-icon name="arrow" /></div> -->
 				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html')">
-					<!-- <img :src="FLHD.imageUrl" alt=""> -->
 					<van-image fit="cover"  :src="FLHD.imageUrl">
 						<template v-slot:error>加载失败</template>
 					</van-image>
-					<h3>{{FLHD.channelName}}</h3>
-					<!-- <p>{{FLHD.description}}</p> -->
+					<h3 class="van-ellipsis">{{FLHD.channelName}}</h3>
 				</div>
-				</a>
+				<div class="wzwb-flhd-div" @click="goPage('column_tphd2.html')">
+					<van-image fit="cover"  :src="TPHD2.imageUrl">
+						<template v-slot:error>加载失败</template>
+					</van-image>
+					<h3 class="van-ellipsis">{{TPHD2.channelName}}</h3>
+				</div>
 			</div>
 			<!-- <div class="index-ygz wzwb-mflj">
 				<div class="index-h2">免费领劵</div>
@@ -343,7 +352,7 @@
 						<van-image fit="cover" :src="item.imageUrl">
 							<template v-slot:error>加载失败</template>
 						</van-image>
-						<h4>{{item.channelName}}</h4>
+						<h4 class="van-ellipsis">{{item.channelName}}</h4>
 					</div>
 				</div>
 			</div>
@@ -447,6 +456,7 @@
 				ZHYJ:[], // 展会影集
 				listZq:[], //展区
 				FLHD:'', // 热门展点-投票活动
+				TPHD2:'', // 投票活动02
 				ZHYJID:'', // 展会影集id
 			},
 			created: function () {
@@ -466,6 +476,16 @@
 					_this.imagesDBLB = response.data.contents;
 					public_imgsrc(_this.imagesDBLB)
 				})
+				// alert(_obj.idRMZD)
+				// // 热门展点
+				// axios.get('api/v1/channels/'+_obj.idSite_PC+'/'+_obj.idTPHD_PC)
+				// .then(function (response) {
+				// 		_this.FLHD = response.data;
+				// 		public_imgsrc_pc([response.data])
+				// 		// public_imgsrc([_this.FLHD])
+				// 		console.log('9999922311',_this.FLHD)
+				// })
+
 				// 热门展点
 				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idTPHD)
 				.then(function (response) {
@@ -473,6 +493,14 @@
 						public_imgsrc([_this.FLHD])
 						console.log('9999922311',_this.FLHD)
 				})
+				// 投票活动02
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idTPHD2)
+				.then(function (response) {
+						_this.TPHD2 = response.data;
+						public_imgsrc([_this.TPHD2])
+						console.log('9922311',_this.TPHD2)
+				})
+
 				// alert(_obj.idZHYJ)
 				// 展会影集
 				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)

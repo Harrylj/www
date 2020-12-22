@@ -103,74 +103,6 @@
 			font-size: .28rem;
 			margin-right: .05rem;
 		}
-		.wzwb-zhyj{
-			padding: .3rem 0 0 0;
-		}
-		.wzwb-zhyj-div{
-			display: flex;
-			justify-content: space-between;
-			flex-wrap: wrap;
-		}
-		.zhyj-item{
-			position: relative;
-			width: 3.3rem;
-		}
-		.zhyj-item::before,
-		.zhyj-item::after{
-			position: absolute;
-			top: .15rem;
-			left: 50%;
-			z-index: 1;
-			content: " ";
-			height: 2.4rem;
-			width: 3rem;
-			opacity: .8;
-			margin-left: -1.5rem;
-			/* background-color: white; */
-			background-color: rgba(243,247,250, .5);
-			color: transparent;
-			border-radius: .2rem;
-		}
-		.zhyj-item::after{
-			opacity: .3;
-			top: .3rem;
-			width: 2.7rem;
-			margin-left: -1.35rem;
-		}
-		.zhyj-item img
-		,.zhyj-item  .van-image{
-			display: block;
-			position: relative;
-			z-index: 2;
-			width: 3.3rem;
-			height: 2.4rem;
-			border-radius: .2rem;
-			margin-bottom: .2rem;
-			overflow: hidden;
-		}
-		.zhyj-item h4{
-			font-size: .31rem;
-			line-height: 1rem;
-		}
-		.wzwb-line{
-			margin-top: .4rem;
-			border-top: 1px solid rgba(255, 255, 255, .1);
-		}
-		.wzwb-mflj{
-			margin-top: 0;
-		}
-		.index-swipe-01-content{
-			position: absolute;
-			left: 0;
-			width: 100%;
-			bottom: 0rem;
-			padding: .2rem .2rem .7rem .2rem;
-			color: white;
-			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
-			border-radius: 0 0 .2rem .2rem;
-			font-size: .32rem;
-			line-height: .4rem;
-		}
 	</style>
 </head>
 
@@ -179,14 +111,15 @@
 		<div class="public-header-title">
 			<div class="public-header-title-content">
 				<div class="phtc-return" @click="public_return_page()"></div>
-				<div class="phtc-title">展会影集</div>
+				<div class="phtc-title">{{qs2obj(window.location.href).name}}</div>
 				
 			</div>
 		</div>
 
 		<div class="zhyj-body zqxq-body">
-			<!-- <div class="zhyj-body-div">
+			<div class="zhyj-body-div">
 					<div class="mflj-item"  @click="goPage('article_yjxq.html',{'id':item.id})" v-for="(item,index) in listYJ" :key="index">
+						<!-- <img :src="item.imageUrl" alt=""> -->
 						<van-image fit="cover" :src="item.imageUrl">
 							<template v-slot:error>加载失败</template>
 						</van-image>
@@ -200,22 +133,10 @@
 							</div>
 						</div>
 					</div>
-			</div> -->
-			<div class="index-ygz wzwb-zhyj">
-				<div class="wzwb-zhyj-div">
-					<div class="zhyj-item" @click="goPage('column_zhyj.html',{'id':item.id,'name':item.channelName})" v-for="(item,index) in ZHYJ" :key="index">
-						<!-- <img :src="item.imageUrl" alt=""> -->
-						<van-image fit="cover" :src="item.imageUrl">
-							<template v-slot:error>加载失败</template>
-						</van-image>
-						<h4 class="van-ellipsis">{{item.channelName}}</h4>
-					</div>
-				</div>
 			</div>
 
 
 		</div>
-
 	</div>
 	<script>
 
@@ -243,18 +164,21 @@
 				active: 3,
 				show: false,
 				listYJ:[], // 影集列表
-				ZHYJ:[], // 展会影集
 			},
 			created: function () {
 				var _this = this;
 				// console.log(1)
 				// vant.Toast('提示看看');
-				// 展会影集
-				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)
+				// 影集列表
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": qs2obj(window.location.href).id,
+					"page": 1,
+					"perPage": 200
+				})
 				.then(function (response) {
-						_this.ZHYJ = response.data.children;
-						public_imgsrc(_this.ZHYJ)
-						// console.log('9999922311',_this.ZHYJ)
+					_this.listYJ = response.data.contents;
+					public_imgsrc(_this.listYJ)
 				})
 			},
 			mounted: function () {

@@ -45,8 +45,10 @@ function public_obj() {
 	_obj.idZQ_02 = 64, // 展区02
 	_obj.idZQ_03 = 65, // 展区03
 	_obj.idZQ_04 = 66, // 展区04
-	_obj.idTPHD = 94, // 投票活动-活动规则存放处
+	_obj.idTPHD = 94, // 热门展点-活动规则存放处(这里只用的名称和栏目图) ， 这里的内容实际上是调用OC的投票活动
 	_obj.idTPHD_PC = 11, // 投票活动-PC端-内容存放处
+	_obj.idTPHD2 = 287, // “云南好物你来造”云南文创产品线上大赛- 投票活动02(这里只用的名称和栏目图)，内容在PC
+	_obj.idTPHD2_PC = 286, // “云南好物你来造”云南文创产品线上大赛-内容存放处
 	_obj.idZHYJ = 95; // 展会影集
 	return _obj;
 }
@@ -59,6 +61,16 @@ function public_imgsrc(_obj){
 		// var image_src = element.imageUrl?element.imageUrl.split('@/')[1]:'';
 		var video_src = element.videoUrl?element.videoUrl.split('@/')[1]:'';
 		_a = 'mobile/';
+		// 相册地址图
+		if(element.largeUrl){
+			element.largeUrl = public_obj().siteUrl + _a + element.largeUrl.split('@/')[1]
+		}
+		if(element.middleUrl){
+			element.middleUrl =  public_obj().siteUrl + _a + element.middleUrl.split('@/')[1]
+		}
+		if(element.smallUrl){
+			element.smallUrl =  public_obj().siteUrl + _a + element.smallUrl.split('@/')[1]
+		}
 		// 附件地址
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
@@ -77,7 +89,6 @@ function public_imgsrc(_obj){
 			return this.replace(reg,e); 
 		}
 		// var newstr=str.myReplace('中国','天朝');
-		var abc = '汪"汪你爱"汪"汪'
 		element.body?element.body = element.body.replace(/@/g,'http://admin.ynwbh.com/mobile'):'';
 		// element.body?element.body = element.body.myReplace('src="/mobile','http://admin.ynwbh.com/mobile'):'';
 		// alert(abc.myReplace('"汪','呃？？'))
@@ -103,10 +114,21 @@ function public_imgsrc_pc(_obj){
 		// var image_src = element.imageUrl?element.imageUrl.split('@/')[1]:'';
 		var video_src = element.videoUrl?element.videoUrl.split('@/')[1]:'';
 		_a = '';
+		// 相册地址图
+		if(element.largeUrl){
+			element.largeUrl = public_obj().siteUrl + _a + element.largeUrl.split('@/')[1]
+		}
+		if(element.middleUrl){
+			element.middleUrl =  public_obj().siteUrl + _a + element.middleUrl.split('@/')[1]
+		}
+		if(element.smallUrl){
+			element.smallUrl =  public_obj().siteUrl + _a + element.smallUrl.split('@/')[1]
+		}
 		// 附件地址
 		_obj[index].fileUrl = public_obj().siteUrl+_a+file_src;
 		// 图片地址
 		// _obj[index].imageUrl= public_obj().siteUrl+_a+image_src;
+
 		// 判断是否在线地址
 		if(element.videoUrl?element.videoUrl.indexOf("@") != -1:false){
 			// 视频地址
@@ -117,6 +139,8 @@ function public_imgsrc_pc(_obj){
 		_obj[index].zT ? _obj[index].zT = _obj[index].zT.toUpperCase() : '';
 		_obj[index].zt ? _obj[index].zt = _obj[index].zt.toUpperCase() : '';
 		
+		// _obj[index].largeUrl ? _obj[index].largeUrl = largeUrl : '';
+
 		element.body?element.body = element.body.replace(/@/g,'http://admin.ynwbh.com'):'';
 		var arr_img = [];
 		// 图片地址数组处理

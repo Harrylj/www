@@ -229,7 +229,7 @@
 				var _this = this;
 				// vant.Toast('提示看看');
 				// 获取投票详情
-				axios.get('api/v1/contents/'+_obj.idSite_PC+'/'+ _obj.idTPHD_PC +'/'+ qs2obj(window.location.href).id)
+				axios.get('api/v1/contents/'+_obj.idSite_PC+'/'+ _obj.idTPHD2_PC +'/'+ qs2obj(window.location.href).id)
 				.then(function (response) {
 					_this.data_content = response.data;
 					public_imgsrc_pc([_this.data_content])
@@ -253,7 +253,7 @@
 				axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos',{
 							params:{
 								"siteId": _obj.idSite_PC,
-								// "channelId": _obj.idTPHD_PC,
+								// "channelId": _obj.idTPHD2_PC,
 								"channelId": 12,
 								"contentId": 1,
 							},
@@ -268,7 +268,7 @@
 
 				// axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos', {
 				// 		"siteId": _obj.idSite_PC,
-				// 		"channelId": _obj.idTPHD_PC,
+				// 		"channelId": _obj.idTPHD2_PC,
 				// 		"contentId": qs2obj(window.location.href).id,
 				// 	})
 				// 	.then(function (response) {
@@ -285,7 +285,7 @@
 					// 统计分享量
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
 						"siteId": _obj.idSite_PC,
-						"channelId": _obj.idTPHD_PC,
+						"channelId": _obj.idTPHD2_PC,
 						"contentId": qs2obj(window.location.href).id,
 					})
 					.then(function (response) {
@@ -309,7 +309,7 @@
 					var _this = this;
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
 					"siteId": _obj.idSite_PC,
-					"channelId": _obj.idTPHD_PC,
+					"channelId": _obj.idTPHD2_PC,
 					"contentId": _id,
 					})
 					.then(function (response) {
