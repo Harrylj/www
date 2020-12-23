@@ -25,7 +25,8 @@
 		#app{
 			padding-top: 1rem;
 			padding-bottom: 1.5rem;
-			background-color: #12206A;
+			/* background-color: #12206A; */
+			background: white;
 		}
 		.public-header-title{
 			background-color: transparent;
@@ -40,7 +41,7 @@
 			border-radius: .67rem .67rem 0 0; */
 		}
 		.tphd *{
-			color: white;
+			color: black;
 		}
 		.tphd-body-title{
 			display: flex;
@@ -65,7 +66,8 @@
 		}
 		.xwxq-content
 		,.xwxq-content p{
-			color: rgba(255, 255, 255, .8);
+			/* color: rgba(255, 255, 255, .8); */
+			color: rgba(0, 0, 0, .8);
 			line-height: .6rem;
 			font-size: .29rem;
 		}
@@ -92,7 +94,8 @@
 			flex: 1;
 			justify-content: space-around;
 			padding: .3rem .6rem;
-			border-bottom: 1px solid rgba(255, 255, 255, .2);
+			/* border-bottom: 1px solid rgba(255, 255, 255, .2); */
+			border-bottom: 1px solid #E5E5E5;
 		}
 		.tphd-header-item{
 			width: 30%;
@@ -113,14 +116,23 @@
 			bottom: 0;
 			width: 100%;
 			padding: .4rem .8rem;
-			background: linear-gradient(90deg, #1116A4, #2480EC);
+			/* background: linear-gradient(90deg, #1116A4, #2480EC); */
+			background: white;
 		}
 		.sczp-btn-tj span{
 			font-size: .31rem;
 			letter-spacing: .1rem;
+			color: white;
 		}
 		.van-button--info{
 			background-color: #009BFE;
+			border: none;
+		}
+		.phtc-return{
+			background-image: url(images/icon-fanhui-black.png);
+		}
+		.phtc-fenxiang {
+			background-image: url(images/icon-fenxiang-black.png);
 		}
 	</style>
 </head>
@@ -150,7 +162,7 @@
 					<p>编号</p>
 				</div>
 				<div class="tphd-header-item">
-					<h2>{{data_content.voteCount}}</h2>
+					<h2>{{data_content.voteCount?data_content.voteCount:0}}</h2>
 					<p>票数</p>
 				</div>
 				<!-- <div class="tphd-header-item">
@@ -315,7 +327,7 @@
 					.then(function (response) {
 						// _this.YGZ = response.data.contents;
 						// public_imgsrc(_this.YGZ)
-						_this.data_content = _this.data_content + 1;
+						_this.data_content.voteCount = _this.data_content.voteCount + 1;
 						vant.Toast('投票成功')
 						console.log(response.data)
 					})

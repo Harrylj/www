@@ -150,7 +150,7 @@
 					<p>编号</p>
 				</div>
 				<div class="tphd-header-item">
-					<h2>{{data_content.voteCount}}</h2>
+					<h2>{{data_content.voteCount?data_content.voteCount:0}}</h2>
 					<p>票数</p>
 				</div>
 				<!-- <div class="tphd-header-item">
@@ -249,31 +249,7 @@
 					// console.log('123',_this.KMS);
 				})
 
-				// 获取相册接口
-				axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos',{
-							params:{
-								"siteId": _obj.idSite_PC,
-								// "channelId": _obj.idTPHD_PC,
-								"channelId": 12,
-								"contentId": 1,
-							},
-							// paramsSerializer: function(params) {
-							// 	return qs.stringify(params, {arrayFormat: 'repeat'})
-							// }
-					})
-					.then(function (response) {
-						var aaa = public_imgsrc_pc(response.data.result);
-						console.log('9999999',aaa)
-					})
-
-				// axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos', {
-				// 		"siteId": _obj.idSite_PC,
-				// 		"channelId": _obj.idTPHD_PC,
-				// 		"contentId": qs2obj(window.location.href).id,
-				// 	})
-				// 	.then(function (response) {
-				// 	})
-
+				
 			},
 			mounted: function () {
 
@@ -315,7 +291,7 @@
 					.then(function (response) {
 						// _this.YGZ = response.data.contents;
 						// public_imgsrc(_this.YGZ)
-						_this.data_content = _this.data_content + 1;
+						_this.data_content.voteCount = _this.data_content.voteCount + 1;
 						vant.Toast('投票成功')
 						console.log(response.data)
 					})

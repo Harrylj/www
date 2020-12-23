@@ -25,15 +25,17 @@
 		#app{
 			padding-top: 1rem;
 			padding-bottom: 0;
-			background-color: #12206A;
+			/* background-color: #12206A; */
+			background: black;
 		}
 		.public-header-title{
-			background-color: transparent;
+			/* background-color: transparent; */
+			background-color: black;
 		}
 		.phtc-fenxiang{
 			right: 0;
 		}
-		.xwxq-body{
+		.yjxq-body{
 			position: relative;
 			padding: .2rem .3rem;
 			/* background-color: rgba(255, 255, 255, .08);
@@ -42,17 +44,17 @@
 		.tphd *{
 			color: white;
 		}
-		.xwxq-body h2
-		,.xwxq-body h5{
+		.yjxq-body h2
+		,.yjxq-body h5{
 			font-size: .33rem;
 			line-height: .8rem;
 		}
-		.xwxq-body h5{
+		.yjxq-body h5{
 			font-size: .25rem;
 			opacity: .6;
 			font-weight: 400;
 		}
-		.xwxq-body h6{
+		.yjxq-body h6{
 			font-size: .25rem;
 			opacity: .6;
 			font-weight: 400;
@@ -100,13 +102,12 @@
 				<div class="phtc-title">影集详情</div>
 			</div>
 		</div>
-		<div class="index-header-swipe">
+		<div class="index-header-swipe" v-if="swipeImagesTwo.length == 0">
 			<div class="custom-indicator">
 				  {{ current + 1 }}/{{swipeImages.length}}
 			</div>
 			<van-swipe class="index-swipe-01" @change="onChange" :autoplay="5000" :show-indicators="false" >
 				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
-					<!-- <img v-lazy="image" alt=""> -->
 					<van-image
 							fit="contain"
 							:src="image"
@@ -114,8 +115,21 @@
 				</van-swipe-item>
 			</van-swipe>
 		</div>
-		<div class="tphd-body xwxq-body">
-			<h2>{{data_content.title}}</h2>
+		<div class="index-header-swipe" v-else>
+			<div class="custom-indicator">
+				  {{ current + 1 }}/{{swipeImagesTwo.length}}
+			</div>
+			<van-swipe class="index-swipe-01" @change="onChange" :autoplay="5000" :show-indicators="false" >
+				<van-swipe-item v-for="(image, index) in swipeImagesTwo" :key="index">
+					<van-image
+							fit="contain"
+							:src="image"
+							><template v-slot:error>加载失败</template></van-image>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="tphd-body yjxq-body">
+			<h2 class="van-ellipsis">{{data_content.title}}</h2>
 			<div class="xwxq-content" v-html="data_content.body"></div>
 			<h6 v-if="data_content.source?data_content.source.length>0:''">来源:{{data_content.source}}</h6>
 		</div>
@@ -156,7 +170,9 @@
 					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
 					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
 				],
+				swipeImagesTwo:[],
 				data_content:'',
+				data_list:'',
 			},
 			created: function () {
 				var _this = this;
@@ -195,10 +211,15 @@
 
 					})
 					.then(function (response) {
-						var aaa = public_imgsrc(response.data.result);
-						console.log('9999999',aaa)
-						if(aaa.length>0){
-
+						_this.data_list = public_imgsrc(response.data.result);
+						console.log('9999999',_this.data_list)
+					
+						if(_this.data_list.length>0){
+							_this.data_content.body = _this.data_list[0].description
+							_this.swipeImagesTwo = [];
+							_this.data_list.forEach((element,index) => {
+								_this.swipeImagesTwo.push(element.largeUrl);
+							});
 						}
 					})
 			},
@@ -208,6 +229,10 @@
 			methods: {
 				onChange(index) {
 					this.current = index;
+					if(this.data_list.length>0){
+						this.data_content.body = this.data_list[index].description
+					}
+					
 				},
 				fenxiang() {
 					vant.Toast('分享')
