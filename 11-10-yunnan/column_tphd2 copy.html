@@ -275,8 +275,6 @@
 				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
 			</div>
 		</van-popup>
-		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
-		<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
 		<div class="zqxq-body">
 			<van-tabs v-model="active"  @click="toggleList">
 				<!-- <van-tab title="人气展品">
@@ -321,8 +319,6 @@
 				</van-tab>
 			</van-tabs>
 		</div>
-		</van-list>
-		</van-pull-refresh>
 		<!-- <a href="single_sczp.html"><div class="tphd-btn-sczp">上传作品</div></a> -->
 	</div>
 	<script>
@@ -361,11 +357,6 @@
 				],
 				FLHD:'', // 福利活动-投票活动
 				list_content:[], // 内容列表
-				index:1,
-				loading: false,		// 开启加载
-				finished: false,	// 结束加载
-				refreshing: false,  // 下拉刷新
-				pageNum: 10,
 			},
 			created: function () {
 				var _this = this;
@@ -377,36 +368,13 @@
 						public_imgsrc([_this.FLHD])
 						console.log('9999922311',_this.FLHD)
 				})
-				// // 获取投票数据
-				// this.getData();
+				// 获取投票数据
+				this.getData();
 			},
 			mounted: function () {
 
 			},
 			methods: {
-				// 加载事件
-				onLoad() {
-					var _this = this;
-					setTimeout(() => {
-						if (_this.refreshing) {
-							_this.list_content = [];
-							_this.refreshing = false;
-							_this.index = 1;
-						}
-						// 获取投票数据
-						_this.getData()
-						// _this.onLoad()
-					},10);
-					console.log('下拉')
-				},
-				onRefresh() {
-					// 清空列表数据
-					this.finished = false;
-					// 重新加载数据
-					// 将 loading 设置为 true，表示处于加载状态
-					this.loading = true;
-					this.onLoad();
-				},
 				// 投票
 				toupiao(_item){
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
@@ -467,21 +435,12 @@
 							column: _name,  // 最新createdDate  热门voteCount
 							desc: _type
 						}],
-						page: _this.index,
-						perPage:_this.pageNum,
+						page:0,
+						perPage:200
 					})
 					.then(function (response) {
-						// _this.list_content = response.data.contents;
-						var aaa  = public_imgsrc_pc(response.data.contents);
-						aaa.forEach((element,index) => {
-							_this.list_content.push(element)
-						});
-						_this.index = _this.index + 1;
-						// 加载完成
-						_this.loading = false;
-						if(response.data.contents.length < _this.pageNum){
-							_this.finished = true;
-						}
+						_this.list_content = response.data.contents;
+						public_imgsrc_pc(_this.list_content)
 						console.log('9999922311',_this.list_content)
 					})
 				},

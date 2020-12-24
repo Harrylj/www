@@ -300,6 +300,21 @@
 		.index-header-swipe .van-swipe-item{
 			height: 100%;
 		}
+		.zqsl-popup-content{
+			height: 88%;
+			overflow-y: scroll;
+		}
+		div.zqsl-popup{
+			padding-bottom: 0;
+		}
+		.zqsl-btn-footer{
+			height: 12%;
+			align-items: center;
+			padding: 0 .3rem;
+		}
+		.zqsl-btn-footer .zqsl-sx-item{
+			margin-bottom: 0;
+		}
 	</style>
 </head>
 
@@ -418,7 +433,7 @@
 			</div>
 		</div>
 		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
-			<van-collapse v-model="activeNames">
+			<van-collapse v-model="activeNames" class="zqsl-popup-content">
 				<van-collapse-item title="展会日程" name="1">
 					<div class="zqsl-sx-list zqsl-sx-hc">
 						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(items,index) in ZGRC" ::key="index">

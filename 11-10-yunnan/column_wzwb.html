@@ -310,18 +310,19 @@
 				<!-- <div class="index-h2">{{FLHD.channelName}}</div> -->
 				<div class="index-h2">投票活动</div>
 				<!-- <div @click="goPage('column_tphd.html')" class="index-ygz-more">马上参与<van-icon name="arrow" /></div> -->
-				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html')">
-					<van-image fit="cover"  :src="FLHD.imageUrl">
-						<template v-slot:error>加载失败</template>
-					</van-image>
-					<h3 class="van-ellipsis">{{FLHD.channelName}}</h3>
-				</div>
 				<div class="wzwb-flhd-div" @click="goPage('column_tphd2.html')">
 					<van-image fit="cover"  :src="TPHD2.imageUrl">
 						<template v-slot:error>加载失败</template>
 					</van-image>
 					<h3 class="van-ellipsis">{{TPHD2.channelName}}</h3>
 				</div>
+				<div class="wzwb-flhd-div" @click="goPage('column_tphd.html')">
+					<van-image fit="cover"  :src="FLHD.imageUrl">
+						<template v-slot:error>加载失败</template>
+					</van-image>
+					<h3 class="van-ellipsis">{{FLHD.channelName}}</h3>
+				</div>
+				
 			</div>
 			<!-- <div class="index-ygz wzwb-mflj">
 				<div class="index-h2">免费领劵</div>
