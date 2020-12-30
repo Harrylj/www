@@ -162,9 +162,10 @@
 					<p>编号</p>
 				</div>
 				<div class="tphd-header-item">
-					<h2>{{data_content.voteCount?data_content.voteCount:0}}</h2>
+					<h2>{{data_content.voteCount}}</h2>
 					<p>票数</p>
 				</div>
+				
 				<!-- <div class="tphd-header-item">
 					<h2>2</h2>
 					<p>排名</p>
@@ -180,10 +181,11 @@
 			<div class="xwxq-content" v-html="data_content.body"></div>
 		</div>
 		<div class="sczp-btn-tj-div">
-			<van-button class="sczp-btn-tj"  @click.stop="toupiao(data_content.id)" round block type="info" native-type="submit">
+			<van-button class="sczp-btn-tj"  @click.stop="toupiao(data_content)" round block type="info" native-type="submit">
 			  投票
 			</van-button>
 		</div>
+		<input type="hidden" :value="flag">
 		<!-- 分享内容start -->
 		<link rel="stylesheet" href="css/share.min.css">
 		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
@@ -226,6 +228,7 @@
 		var app = new Vue({
 			el: '#app',
 			data: {
+				flag:0,
 				showShare:false,  // 分享
 				showShareWX:false,	// 微信浏览器分享
 				value: 2,
@@ -244,6 +247,7 @@
 				axios.get('api/v1/contents/'+_obj.idSite_PC+'/'+ _obj.idTPHD2_PC +'/'+ qs2obj(window.location.href).id)
 				.then(function (response) {
 					_this.data_content = response.data;
+					_this.data_content.voteCount?_this.data_content.voteCount=_this.data_content.voteCount:_this.data_content.voteCount=0;
 					public_imgsrc_pc([_this.data_content])
 					_this.swipeImages = [];
 					for(var i = 0 ; i < _this.data_content.imageUrlCount+1;i++){
@@ -317,17 +321,18 @@
 					socialShare('#share-2', {sites: ['wechat','weibo']});
 				},
 				// 投票
-				toupiao(_id){
+				toupiao(_item){
 					var _this = this;
 					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
 					"siteId": _obj.idSite_PC,
 					"channelId": _obj.idTPHD2_PC,
-					"contentId": _id,
+					"contentId": _item.id,
 					})
 					.then(function (response) {
 						// _this.YGZ = response.data.contents;
 						// public_imgsrc(_this.YGZ)
-						_this.data_content.voteCount = _this.data_content.voteCount + 1;
+						_item.voteCount = _item.voteCount + 1;
+						_this.flag = _this.flag+1;
 						vant.Toast('投票成功')
 						console.log(response.data)
 					})
@@ -337,6 +342,8 @@
 						console.log(error)
 						// vant.Toast(error)
 					});
+					// _item.voteCount = _item.voteCount + 1;
+					_this.flag = _this.flag+1;
 					// .catch(function (response) {
 					// 	console.log(response)
 					// 	vant.Toast(response)

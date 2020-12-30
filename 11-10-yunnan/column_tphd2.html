@@ -309,11 +309,12 @@
 								<div v-show="item.code?true:false" class="flhd-tphd-item-index">{{item.code}}号</div>
 								<div class="flhd-tphd-content">
 									<h3 class="van-ellipsis">{{item.title}}</h3>
-									<p>{{item.voteCount?item.voteCount:0}}票</p>
+									<!-- <p>{{item.voteCount?item.voteCount:0}}票</p> -->
+									<p>{{item.voteCount}}票</p>
 								</div>
 								<div class="flhd-tphd-item-footer">
 									<!-- <div class="tphd-btn-lp">拉票</div> -->
-									<div class="tphd-btn-tp" @click.stop="toupiao(item.id)">投票</div>
+									<div class="tphd-btn-tp" @click.stop="toupiao(item)">投票</div>
 								</div>
 							</div>
 						</div>
@@ -426,6 +427,8 @@
 						vant.Toast('您已投过票了，明天再来吧！')
 						// vant.Toast(error)
 					});
+					// _item.voteCount = _item.voteCount+1;
+					console.log(_item)
 				},
 				showPopup() {
 					this.show = true;
@@ -445,16 +448,16 @@
 				// 获取投票数据
 				getData(_index){
 					var _this = this;
-					var _name = 'createdDate',
-						_type = false;
-					if(_index == 0){ // 最新
-						_name = 'createdDate';
-						_type = false;
-					}
-					else if(_index == 1){ // 热门
-						_name = 'voteCount';
+					var _name = 'hits';
 						_type = true;
-					}
+					// if(_index == 0){ // 最新
+					// 	_name = 'createdDate';
+					// 	_type = false;
+					// }
+					// else if(_index == 1){ // 热门
+					// 	_name = 'voteCount';
+					// 	_type = true;
+					// }
 					axios.post('api/v1/contents', {
 						siteId: _obj.idSite_PC,
 						channelId: _obj.idTPHD2_PC,
@@ -474,7 +477,9 @@
 						// _this.list_content = response.data.contents;
 						var aaa  = public_imgsrc_pc(response.data.contents);
 						aaa.forEach((element,index) => {
+							element.voteCount?element.voteCount=element.voteCount:element.voteCount=0;
 							_this.list_content.push(element)
+							
 						});
 						_this.index = _this.index + 1;
 						// 加载完成
