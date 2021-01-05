@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>新闻动态</title>
+	<style type="text/css">
+		.jbjs {
+			position: relative;
+		}
+
+		#app {
+			padding-top: 1rem;
+			background-color: #1A285C;
+		}
+
+		.public-header-title {
+			background-color: transparent;
+		}
+
+		.index-header-swipe {
+			/* margin: .3rem auto; */
+			padding: .3rem;
+		}
+
+		.index-swipe-01 {
+			position: relative;
+			height: 3.1rem;
+		}
+		.van-swipe-item{
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
+			height: 100%;
+			width: 6.9rem;
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+
+		.index-swipe-01 .van-swipe__indicator {
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+
+		.index-swipe-01 .van-swipe__indicator--active {
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+
+		.jbjs-content {
+			background-color: #273570;
+		}
+
+		.jbjs-body h2,
+		.jbjs-body h4,
+		.jbjs-body h6 {
+			color: white;
+		}
+
+		.jbjs-body {
+			position: relative;
+		}
+
+		.jbjs-body>h2 {
+			font-size: .35rem;
+			line-height: 1rem;
+		}
+		.jbjs-body {
+			padding: 0 .3rem;
+		}
+
+		.van-tabs__nav {
+			background-color: transparent;
+		}
+
+		.van-tabs__line {
+			background-color: #009BFE;
+		}
+
+		.van-tab--active .van-tab__text {
+			font-weight: bold;
+			opacity: 1;
+		}
+
+		.van-tab__text {
+			color: white;
+			font-size: .31rem;
+			opacity: .6;
+			font-weight: 400;
+		}
+		.jbjs-serach{
+			display: block;
+			width: 6.9rem;
+			margin: 0 auto;
+		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0rem;
+			padding: .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .3rem;
+			line-height: .4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="jbjs" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">新闻动态</div>
+			</div>
+		</div>
+		<!-- <a href="single_search.html"><img class="jbjs-serach" src="images/search-01.png" alt=""></a> -->
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="13000">
+				<van-swipe-item  @click="goPage('article_xwxq.html',{'id':image.id})" v-for="(image, index) in listSwipe" :key="index">
+					<!-- <img v-lazy="image.imageUrl" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<!-- <van-tabs @click="onClick">
+			<van-tab v-for="(item,index) in 6" :title="'标签 ' + index" >
+				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+						<div class="jbjs-body">
+							<h2>{{ index }}</h2>
+							<div class="jbjs-body-list">
+								<a href="article_xwxq.html" v-for="index in index+4" :key="index">
+									<div class="jbjs-body-item">
+										<div class="jbjs-body-item-content">
+											<h4>{{index}}中国教师报举办游以致学首 研学中国课程论坛</h4>
+											<h6>10月10日</h6>
+										</div>
+										<van-image v-show="index<3" class="jbjs-body-item-img" fit="fill"
+											src="images/index-user-01.png">
+										</van-image>
+									</div>
+								</a>
+							</div>
+							<van-cell v-for="item in list" :key="item" :title="item" />
+						</div>
+					</van-list>
+				</van-pull-refresh>
+
+			</van-tab>
+		</van-tabs> -->
+		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+			<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
+		<div class="jbjs-body">
+			<div class="jbjs-body-list">
+				<!-- <a href="article_xwxq.html" v-for="(item,index) in listXW" :key="index"> -->
+					<div class="jbjs-body-item"  @click="goPage('article_xwxq.html',{'id':item.id})" v-for="(item,index) in listXW" :key="index">
+						<div class="jbjs-body-item-content">
+							<h4 class="van-multi-ellipsis--l2">{{item.title}}</h4>
+							<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
+						</div>
+						<!-- <h6>{{item.imageUrl.length}}</h6> -->
+						<van-image v-show="item.imageUrl.length>30" class="jbjs-body-item-img" fit="fill"
+							:src="item.imageUrl">
+						</van-image>
+					</div>
+			</div>
+			<van-cell v-for="item in list" :key="item" :title="item" />
+		</div>
+		</van-list>
+		</van-pull-refresh>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		var app = new Vue({
+			el: '#app',
+			data: {
+				value: 2,
+				active: 3,
+				show: false,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
+				listXW:[], // 新闻动态
+				listSwipe:[], // 轮播推广位
+				loading: false,		// 开启加载
+				finished: false,	// 结束加载
+				refreshing: false,  // 下拉刷新
+				pageIndex:1,
+				pageNum:10,
+			},
+			created: function () {
+				var _this = this;
+				
+				// 获取轮播推广位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXWDT,
+					"wheres":[ {
+						"column": "top",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.listSwipe = response.data.contents;
+					public_imgsrc(_this.listSwipe)
+					console.log('321',_this.listSwipe);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				// 获取新闻动态
+				// this.getXWDT()
+				// vant.Toast('提示看看');
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				// 加载事件
+				onLoad() {
+					var _this = this;
+					setTimeout(() => {
+						if (_this.refreshing) {
+							_this.listXW = [];
+							_this.refreshing = false;
+							_this.pageIndex = 1;
+							// _this.formData.SkipCount = 0;
+						}
+						// 获取新闻动态
+						_this.getXWDT()
+						// _this.onLoad()
+					},10);
+					console.log('下拉')
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
+				// 获取新闻动态
+				getXWDT(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idXWDT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
+						"orders": [
+								{
+									"column": "AddDate",
+									"desc": true,
+								}
+						],
+						"page": this.pageIndex,
+						"perPage": this.pageNum,
+					})
+					.then(function (response) {
+						var _abc = response.data.contents;
+						public_imgsrc(_abc)
+						_abc.forEach((element,index) => {
+							_this.listXW.push(element)
+						});
+						// console.log('123',_this.listXW);
+						_this.pageIndex = _this.pageIndex +1;
+						// 加载完成
+						_this.loading = false;
+						// 结束加载
+						if(response.data.contents.length < _this.pageNum){
+							_this.finished = true;
+						}
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				},
+				onClick(name, title) {
+					this.list=[];
+					console.log(title)
+					vant.Toast(title);
+				},
+				
+			},
+
+		})
+	</script>
+</body>
+
+</html>

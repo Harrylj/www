@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展品搜索</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			padding-bottom: 0;
+			background-color: #1A285C;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq-body{
+			position: relative;
+			padding: 0 .3rem 0 .3rem;
+			border-radius: .67rem .67rem 0 0;
+		}
+		.sxzp-body{
+			position: relative;
+		}
+		#app *{
+			color: white;
+		}
+		.zp-search{
+			display: block;
+			width: 100%;
+			margin-bottom: .3rem;
+		}
+		.index-ygz-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-ygz-item img
+		,.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 2.5rem;
+		}
+		.index-ygz-more{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			line-height: 1rem;
+		}
+		.index-ygz-more img{
+			width: .29rem;
+			height: .29rem;
+			margin-left: .1rem;
+		}
+		.index-ygz-item .van-image{
+			height: 2.5rem;
+			overflow: hidden;
+			border-radius: .2rem;
+		}
+		.van-search{
+			background-color: transparent;
+			padding: .3rem 0 .3rem .3rem;
+		}
+		.van-search .van-cell{
+			padding: .15rem .15rem .15rem 0;
+		}
+		.van-search__action{
+			color: white;
+		}
+		.van-search__content{
+			background-color: rgba(255, 255, 255, .2);
+			border-radius: .45rem;
+			padding-left: .2rem;
+		}
+		.van-field__left-icon{
+			margin-right: .1rem;
+		}
+		.van-field__left-icon .van-icon{
+			color: #cccccc;
+			font-size: .4rem;
+		}
+		.van-field__control{
+			color: white;
+			font-size: .3rem;
+		}
+		.van-search__action:hover{
+			background-color: #1A285C;
+		}
+		.nodata_ts{
+			font-size: .32rem;
+			text-align: center;
+			line-height: 1rem;
+			font-weight: 400;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sczp xwxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">展品搜索</div>
+				<!-- <div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div> -->
+				
+			</div>
+		</div>
+		<div class="search-title">
+			<van-search v-model="value" show-action placeholder="请输入搜索关键词"  @search="onSearch" @cancel="public_return_page()" />
+		</div>
+		<div class="sczp-body xwxq-body">
+			<div class="jjwb-fhlt-div">
+				<div class="index-ygz-list">
+					<div class="index-ygz-item" 
+					:class="goods.isLive?'goods-live-hover':''" 
+					@click="goGoodsDetail(goods)" 
+					v-for="(goods,index) in listGoods" :key="index">
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image
+							fit="contain"
+							:src="goods.logo"
+							><template v-slot:error>加载失败</template></van-image>
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
+					</div>
+				</div>
+			</div>
+			<h2 class="nodata_ts" v-show="nodata">没有找到该展品</h2>
+		</div>
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames">
+				<van-collapse-item title="类型" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in typeGoods" :key="index">
+							{{item.label}}
+						</div>
+					</div>
+				</van-collapse-item>
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">取消</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader()
+			$(window).scroll(function () {
+				navHeader()
+			})
+		})
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				activeNames: ['1','2'],
+				value: '',
+				active: 3,
+				show: false,
+				activeHC:0,
+				activeZQ:0,
+				selectType:0, // 选择的类型
+				formData:{ // 展商列表请求数组
+					SkipCount:0,
+					Position:[],
+					ExhibitType:'',
+					MaxResultCount:400,
+					Keyword:'', //关键字
+				},
+				listGoods: [], // 展品列表
+				typeGoods: [], // 展品类型
+				aa :'',
+				nodata:false,
+			},
+			created: function () {
+				var _this = this;
+				// vant.Toast('提示看看');
+				_this.selectType = parseInt(qs2obj(window.location.href).type) - 1;
+				// 获取所有配置数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				.then(function (response) {
+					// _this.items = response.data.result.custom.BCodes.ExhibitionArea;
+					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
+					_this.aa = response.data.result.custom.BCodes.ExhibitionArea;
+					// console.log('1122',aa)
+					console.log('33222222111',_this.formData);
+					// 获取展品
+					// _this.getGoods();
+
+				})
+
+				// // 获取展品
+				// axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList')
+				// .then(function (response) {
+				// 	console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					// 获取展品详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
+				onSearch(val) {
+					// 获取展品
+					this.getGoods(val)
+					// vant.Toast(val);
+				},
+				onCancel() {
+					vant.Toast('取消');
+				},
+				// 获取展品
+				getGoods(_content){
+					var _this = this;
+					this.formData.Keyword = _content;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods =  response.data.result.items;
+						_this.listGoods.length == 0?_this.nodata=true:_this.nodata=false;
+					})
+				},
+				showPopup() {
+					this.activeHC = this.selectType;
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				},
+				selectHC(_index){
+					// this.selectType = _index;
+					this.activeHC = _index;
+					// vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					// vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					this.selectType = this.activeHC;
+					// vant.Toast(this.selectType)
+					// 获取展品
+					this.getGoods(this.selectType);
+					// console.log(this.activeHC,this.activeZQ)
+					this.hidePopup()
+				},
+				reset(){
+					this.hidePopup();
+					// this.activeHC = 1;
+					// this.activeZQ = 1;
+					// console.log('重置')
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

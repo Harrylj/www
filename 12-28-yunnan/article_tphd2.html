@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>作品详情</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			padding-bottom: 1.5rem;
+			/* background-color: #12206A; */
+			background: white;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.tphd-body{
+			position: relative;
+			padding: .3rem;
+			/* background-color: rgba(255, 255, 255, .08);
+			border-radius: .67rem .67rem 0 0; */
+		}
+		.tphd *{
+			color: black;
+		}
+		.tphd-body-title{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.tphd-body h2
+		,.tphd-body h5{
+			font-size: .33rem;
+			line-height: .6rem;
+		}
+		.tphd-body h5{
+			font-size: .25rem;
+			opacity: .6;
+			font-weight: 400;
+		}
+		.tphd-body h6{
+			font-size: .28rem;
+			opacity: .6;
+			font-weight: 400;
+			line-height: .8rem;
+		}
+		.xwxq-content
+		,.xwxq-content p{
+			/* color: rgba(255, 255, 255, .8); */
+			color: rgba(0, 0, 0, .8);
+			line-height: .6rem;
+			font-size: .29rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4.6rem;
+		}
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.tphd-header-list{
+			display: flex;
+			flex: 1;
+			justify-content: space-around;
+			padding: .3rem .6rem;
+			/* border-bottom: 1px solid rgba(255, 255, 255, .2); */
+			border-bottom: 1px solid #E5E5E5;
+		}
+		.tphd-header-item{
+			width: 30%;
+		}
+		.tphd-header-list h2{
+			font-size: .33rem;
+			line-height: .5rem;
+			text-align: center;
+		}
+		.tphd-header-list p{
+			font-size: .28rem;
+			opacity: .6;
+			text-align: center;
+			line-height: .5rem;
+		}
+		.sczp-btn-tj-div{
+			position: fixed;
+			bottom: 0;
+			width: 100%;
+			padding: .4rem .8rem;
+			/* background: linear-gradient(90deg, #1116A4, #2480EC); */
+			background: white;
+		}
+		.sczp-btn-tj span{
+			font-size: .31rem;
+			letter-spacing: .1rem;
+			color: white;
+		}
+		.van-button--info{
+			background-color: #009BFE;
+			border: none;
+		}
+		.phtc-return{
+			background-image: url(images/icon-fanhui-black.png);
+		}
+		.phtc-fenxiang {
+			background-image: url(images/icon-fenxiang-black.png);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="tphd xwxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">作品详情</div>
+				<div class="phtc-fenxiang" @click="fenxiang()"></div>
+			</div>
+		</div>
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="3000" >
+				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+					<!-- <img v-lazy="image" alt=""> -->
+					<van-image
+							fit="contain"
+							:src="image"
+							><template v-slot:error>加载失败</template></van-image>
+				</van-swipe-item>
+			</van-swipe>
+			<div class="tphd-header-list">
+				<div class="tphd-header-item">
+					<h2>{{data_content.code}}</h2>
+					<p>编号</p>
+				</div>
+				<div class="tphd-header-item">
+					<h2>{{data_content.voteCount}}</h2>
+					<p>票数</p>
+				</div>
+				
+				<!-- <div class="tphd-header-item">
+					<h2>2</h2>
+					<p>排名</p>
+				</div> -->
+			</div>
+		</div>
+		<div class="tphd-body tphd-body">
+			<div class="tphd-body-title">
+				<h2>{{data_content.title}}</h2>
+				<h5>{{data_content.createdDate?data_content.createdDate.split(' ')[0]:''}}</h5>
+			</div>
+			<h6>{{data_content.author}}</h6>
+			<div class="xwxq-content" v-html="data_content.body"></div>
+		</div>
+		<div class="sczp-btn-tj-div">
+			<van-button class="sczp-btn-tj"  @click.stop="toupiao(data_content)" round block type="info" native-type="submit">
+			  投票
+			</van-button>
+		</div>
+		<input type="hidden" :value="flag">
+		<!-- 分享内容start -->
+		<link rel="stylesheet" href="css/share.min.css">
+		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
+		<van-popup class="public-fenxiang-popup" v-model="showShare" position="bottom"  >
+			<div class="public-fenxiang-popup-div" >
+				<div id="share-2" v-show="showShare" v-show="showShare"></div>
+				<div class="public-fenxiang-popup-close" @click="showShare=false">取消</div>
+			</div>
+		</van-popup>
+		<script src="js/social-share.js"></script>
+		<script src="js/qrcode.js"></script>
+		<!-- 分享内容over -->
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				flag:0,
+				showShare:false,  // 分享
+				showShareWX:false,	// 微信浏览器分享
+				value: 2,
+				active: 3,
+				show: false,
+				swipeImages: [
+					// 'https://img.yzcdn.cn/vant/apple-1.jpg',
+					// 'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				data_content:'',
+			},
+			created: function () {
+				var _this = this;
+				// vant.Toast('提示看看');
+				// 获取投票详情
+				axios.get('api/v1/contents/'+_obj.idSite_PC+'/'+ _obj.idTPHD2_PC +'/'+ qs2obj(window.location.href).id)
+				.then(function (response) {
+					_this.data_content = response.data;
+					_this.data_content.voteCount?_this.data_content.voteCount=_this.data_content.voteCount:_this.data_content.voteCount=0;
+					public_imgsrc_pc([_this.data_content])
+					_this.swipeImages = [];
+					for(var i = 0 ; i < _this.data_content.imageUrlCount+1;i++){
+						var imgName = 'imageUrl';
+						if(i>0){
+							imgName = imgName+i
+						}
+						console.log(imgName)
+						if(_this.data_content[imgName].length>1){
+							_this.swipeImages.push(_this.data_content[imgName])
+						}
+						
+					}
+					console.log('99214',_this.swipeImages)
+					// console.log('123',_this.KMS);
+				})
+
+				// 获取相册接口
+				axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos',{
+							params:{
+								"siteId": _obj.idSite_PC,
+								// "channelId": _obj.idTPHD2_PC,
+								"channelId": 12,
+								"contentId": 1,
+							},
+							// paramsSerializer: function(params) {
+							// 	return qs.stringify(params, {arrayFormat: 'repeat'})
+							// }
+					})
+					.then(function (response) {
+						var aaa = public_imgsrc_pc(response.data.result);
+						console.log('9999999',aaa)
+					})
+
+				// axios.get(_obj.shopUrl+'api/services/app/SiteServer/GetPhotos', {
+				// 		"siteId": _obj.idSite_PC,
+				// 		"channelId": _obj.idTPHD2_PC,
+				// 		"contentId": qs2obj(window.location.href).id,
+				// 	})
+				// 	.then(function (response) {
+				// 	})
+
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				//分享
+				fenxiang() {
+					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite_PC,
+						"channelId": _obj.idTPHD2_PC,
+						"contentId": qs2obj(window.location.href).id,
+					})
+					.then(function (response) {
+					})
+					if(isWeChatBrowser()){
+						this.showShareWX = true;
+					}
+					else{
+						this.showShare = true;
+						setTimeout(()=>{
+							_this.fenxiangNext();
+						},50)
+					}
+				},
+				// 分享组件
+				fenxiangNext(){
+					socialShare('#share-2', {sites: ['wechat','weibo']});
+				},
+				// 投票
+				toupiao(_item){
+					var _this = this;
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementVote', {
+					"siteId": _obj.idSite_PC,
+					"channelId": _obj.idTPHD2_PC,
+					"contentId": _item.id,
+					})
+					.then(function (response) {
+						// _this.YGZ = response.data.contents;
+						// public_imgsrc(_this.YGZ)
+						_item.voteCount = _item.voteCount + 1;
+						_this.flag = _this.flag+1;
+						vant.Toast('投票成功')
+						console.log(response.data)
+					})
+					.catch(err => {
+							vant.Toast(err.error.message)
+							console.log('请求失败：'+ JSON.stringify(err.error.message))
+                    });
+					// _item.voteCount = _item.voteCount + 1;
+					_this.flag = _this.flag+1;
+					// .catch(function (response) {
+					// 	console.log(response)
+					// 	vant.Toast(response)
+					// });
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

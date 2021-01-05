@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title></title>
+	<style type="text/css">
+		#app {
+			padding-top: 0;
+			padding-bottom: 0;
+			/* padding: 0 0 2rem 0; */
+			background: transparent;
+		}
+		html,body,.index,.index-irame{
+			height: 100%;
+			width: 100%;
+			/* padding-bottom: 1.2rem; */
+			overflow: hidden;
+			/* padding-bottom: 1.5rem; */
+		}
+		.public-footer-nav{
+			background-color: rgb(19, 32, 67);
+			/* background-color: rgb(191, 192, 197); */
+		}
+		.public-footer-nav .van-tabbar-item:nth-child(3){
+			top: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="index" id="app" v-cloak>
+		<!-- <iframe class="index-irame" src="https://webcast.amemv.com/webcast/reflow/6904483807601101576?u_code=iglc202g&app=aweme&utm_campaign=client_share&utm_medium=ios&tt_from=copy&utm_source=copy" frameborder="0"></iframe> -->
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<!-- <div class="phtc-title">峰会论坛</div> -->
+			</div>
+		</div>
+		<iframe class="index-irame" :src="qs2obj(window.location.href).linkUrl" frameborder="0"></iframe>
+		<!-- <van-tabbar class="public-footer-nav" v-model="active">
+			<van-tabbar-item @click="window.location.href='index.html'">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-01-hover.png' : 'images/public-nav-01.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_jjwb.html'">
+				<span>聚焦文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wzwb.html'">
+				<span>玩转文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-04-hover.png' : 'images/public-nav-04.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wbjj.html'">
+				<span>文博经济</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-05-hover.png' : 'images/public-nav-05.png'" />
+				</template>
+			</van-tabbar-item>
+		</van-tabbar> -->
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+
+	<script type="text/javascript">
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			// new Vue({
+			el: '#app',
+			data: {
+				showTitle:false,
+				swipeWidth:2.68,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				active: 0,
+				icon: {
+					active: 'https://img.yzcdn.cn/vant/user-active.png',
+					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+				},
+				value: 2,
+				message: 'Hello Vue!',
+				current: ['mail'],
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					// poster: "images/bg.png", //你的封面地址
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						{
+							withCredentials: false,
+							// type: 'application/x-mpegURL',
+							src:'',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
+				userList:[], // 重磅嘉宾
+				imagesDBLB:[], // 顶部轮播
+				YGZ:[], // 云逛展
+				ZBDW:[], // 主办单位
+				CBDW:[], // 承办单位
+				XBDW:[], // 协办单位
+				KMS:[], // 开幕式
+				YGZPage:1, //云逛展翻页
+				formData:{ // 特色好物列表请求数组
+					SkipCount:0,
+					Position:[],
+					MaxResultCount:4,
+				},
+				listGoods: [], // 特色好物列表
+				HZS:[], // 合作商
+			},
+			created: function () {
+				var _this = this;
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				// vant.Toast('提示看看');
+
+				// if(qs2obj(window.location.href).linkUrl.indexOf(_obj.mobileUrl) != -1){
+				// 	this.showTitle = false;
+				// }
+				// else{
+				// 	this.showTitle = true;
+				// }
+				console.log(qs2obj(window.location.href).linkUrl.indexOf(_obj.mobileUrl)!= -1)
+				console.log(qs2obj(window.location.href).linkUrl)
+				console.log(_obj.mobileUrl)
+				// 获取首页站点下栏目
+				// axios.get('api/v1/channels/23')
+				axios.get('api/v1/channels/'+_obj.idSite)
+				.then(function (response) {
+					console.log(response);
+				})
+				// 顶部轮播
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idSYDBLB,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.imagesDBLB = response.data.contents;
+					public_imgsrc(_this.imagesDBLB)
+				})
+				// 获取重磅嘉宾列表
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBJB,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.userList = response.data.contents;
+					public_imgsrc(_this.userList)
+					// console.log('123',_this.userList);
+				})
+				// 获取开幕式列表
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idKMS +'/'+_obj.idKMS_CID)
+				.then(function (response) {
+					_this.KMS = response.data;
+					public_imgsrc([_this.KMS])
+					_this.playerOptions.poster = _this.KMS.imageUrl;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
+					// console.log('123',_this.KMS);
+					// // 直播
+					// if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
+					// 	_this.playerOptions.sources[0].type ='application/x-mpegURL';
+					// 	_this.playerOptions.sources[0].src =  _this.KMS.shipin;
+					// 	console.log('直播')
+					// }
+					// // 回放
+					// else{
+					// 	console.log('回放')
+					// 	_this.playerOptions.sources[0].src =  _this.KMS.videoUrl
+					// }
+					_this.playerOptions.sources[0].src =  _this.KMS.videoUrl;
+					// m3u8
+					if(_this.KMS.videoUrl.indexOf("m3u8") != -1){
+						console.log('m3u8')
+						_this.playerOptions.sources[0].type='application/x-mpegURL';
+					}
+					// mp4
+					else{
+						_this.playerOptions.sources[0].type= ''
+						console.log('其他')
+					}
+					
+					// 直播
+					if( _this.KMS.zT == 'LIVE' || _this.KMS.zt == 'LIVE'){
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+					}
+				})
+				// 云逛展
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idYGZ,
+					"page": _this.YGZPage,
+					"perPage": 4
+				})
+				.then(function (response) {
+					_this.YGZ = response.data.contents;
+					public_imgsrc(_this.YGZ)
+					if(_this.YGZ.length<4){
+							_this.YGZPage = 1;
+					}else{
+							_this.YGZPage = _this.YGZPage + 1;
+					}
+					// console.log('9999922311',_this.YGZ)
+				})
+				// 合作商
+				axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idHZS,
+						"page": 1,
+						"perPage": 200
+					})
+				.then(function (response) {
+						_this.HZS = response.data.contents;
+						public_imgsrc(_this.HZS)
+						console.log('9999922311',_this.HZS)
+				})
+				// 主办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBDW,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.ZBDW = response.data.contents;
+					public_imgsrc(_this.ZBDW)
+				})
+				// 承办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idCBDW,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.CBDW = response.data.contents;
+					public_imgsrc(_this.CBDW)
+				})
+				// 协办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXBDW,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.XBDW = response.data.contents;
+					public_imgsrc(_this.XBDW)
+				})
+				
+				// 获取特色好物
+				this.getGoods()
+
+				// http://47.98.233.45:8031/swagger/index.html
+				// 获取展品
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				/*
+				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?status=1')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {z
+					console.log(error);
+				});
+*/
+				/*
+				// 获取展商
+				axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				*/
+				
+				
+			},
+			mounted: function () {
+				console.log(')))))obj-',_obj)
+				// http://192.168.0.250:8032/api/v1/channels/{siteId}
+
+				
+			},
+			methods: {
+				// 获取特色好物
+				getGoods(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?Status=1',{
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods =  response.data.result.items;
+					})
+				},
+				// 云逛展
+				ygzNext(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idYGZ,
+						"page": _this.YGZPage,
+						"perPage": 4
+					})
+					.then(function (response) {
+						_this.YGZ = response.data.contents;
+						public_imgsrc(_this.YGZ)
+						if(_this.YGZ.length<4){
+							_this.YGZPage = 1;
+						}else{
+							_this.YGZPage = _this.YGZPage + 1;
+						}
+						// console.log('9999922311',_this.YGZ)
+					})
+				}
+			},
+
+		})
+		console.log('99999', vant.Lazyload)
+		// app.use(vant.Lazyload);
+	</script>
+</body>
+
+</html>

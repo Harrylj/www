@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展区速览</title>
+	<style type="text/css">
+		#app {
+			padding: 0;
+		}
+		.public-header-title{
+			background-color: rgba(0, 0, 0, .1);
+		}
+		.index-body{
+			position: relative;
+			margin-top: -.6rem;
+			z-index: 9;
+			padding-top: .2rem;
+			padding-bottom: 1.1rem;
+			border-radius:  .67rem .67rem 0 0;
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+			/* background-color: #162463; */
+			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
+		}
+		.van-swipe__indicators{
+			bottom: .8rem;
+		}
+		.index-h2
+		,.index-ygz-more{
+			line-height: 1.2rem;
+		}
+		.index-ygz-more{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.index-ygz-more img{
+			width: .29rem;
+			height: .29rem;
+			margin-left: .1rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4rem;
+		}
+		.index-swipe-01 img {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.wzwb-zqsl-div{
+			position: relative;
+		}
+		.zqsl-item,
+		.wzwb-flhd-div,
+		.mflj-item{
+			background-color: rgba(255, 255, 255, .08);
+		}
+		.zqsl-item{
+			position: relative;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+		.zqsl-item>img
+		,.zqsl-item .van-image{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		.zqsl-item-right{
+			position: relative;
+			display: flex;
+			/* align-items: center; */
+			justify-content: center;
+			padding-left: 2.9rem;
+			min-height: 2.5rem;
+			flex-direction: column;
+		}
+		.zqsl-item h3,
+		.zqsl-item p{
+			color: white;
+			line-height: .5rem;
+		}
+		.zqsl-item h3{
+			font-size: .31rem;
+		}
+		.zqsl-item p,
+		.wzwb-flhd-div p{
+			font-size: .28rem;
+			opacity: .7;
+		}
+		.zqsl-popup{
+			padding-top: 1.2rem;
+			background-color: #162463;
+		}
+		.zqsl-popup *{
+			color: white;
+		}
+		/* .van-cell,
+		.van-collapse-item__content,
+		.van-cell--clickable:active{
+			background-color: transparent;
+			padding:  .2rem .3rem;
+		}
+		.van-collapse-item--border::after,
+		.van-hairline--top-bottom::after,
+		.van-hairline-unset--top-bottom::after,
+		.van-cell::after{
+			border: none;
+		}
+		.van-cell__title{
+			padding-left: .1rem;
+		}
+		.van-cell__title span{
+			font-size: .35rem;
+			font-weight: bold;
+		}
+		.zqsl-sx-list{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zqsl-sx-item{
+			font-size: .28rem;
+			line-height: .8rem;
+			border-radius: .4rem;
+			width: 2.8rem;
+			text-align: center;
+			background-color: rgba(255, 255, 255, .08);
+			margin-bottom: .3rem;
+		}
+		.zqsl-sx-item-click{
+			background-color: #2E5ED4;
+		}
+		.zqsl-btn-footer{
+			padding: .3rem;
+		} */
+	</style>
+</head>
+
+<body>
+	<div class="index wzwb" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+			</div>
+		</div>
+		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
+		<!-- <div class="index-header">
+			<div class="index-header-div"></div>
+			<img src="images/bg.png" alt="" />
+			<span>云南文博会</span>
+		</div> -->
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="3000" >
+				<van-swipe-item v-for="(image, index) in swipeImages" :key="index">
+					<img v-lazy="image" alt="">
+					<p>{{index}}</p>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<!-- <van-cell is-link @click="showPopup">展示弹出层</van-cell> -->
+		<div class="index-body">
+			<div class="index-ygz wzwb-zqsl">
+				<div class="index-h2">展区速览</div>
+				<div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div>
+				<div class="wzwb-zqsl-div">
+					<a href="article_zqxq.html">
+					<div class="zqsl-item"  v-for="(item,index) in items[activeHC].children" :key="index">
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image fit="cover" lazy-load :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
+						<div class="zqsl-item-right">
+							<h3>{{item.title}}</h3>
+							<p>主题:非遗文化主题</p>
+							<p>地址:昆明市A会场B展区</p>
+							<p>展商:58家</p>
+						</div>
+					</div>
+					</a>
+				</div>
+			</div>
+
+		</div>
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames">
+				<van-collapse-item title="会场" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(item,index) in items" :key="index">
+							{{item.label}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<!-- <van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="(item,index) in items[activeHC].children" :key="index">
+							{{item.label}}
+						</div>
+					</div>
+				</van-collapse-item> -->
+				<!-- <van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+							展区{{index}}
+						</div>
+					</div>
+				</van-collapse-item> -->
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">重置</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			// new Vue({
+			el: '#app',
+			data: {
+				activeNames: ['1','2'],
+				swipeWidth:2.68,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				active: 3,
+				icon: {
+					active: 'https://img.yzcdn.cn/vant/user-active.png',
+					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+				},
+				value: 3,
+				message: 'Hello Vue!',
+				current: ['mail'],
+				show: false,
+				activeHC:0,
+				activeZQ:0,
+				items: [ // 会场
+					  { text: '全部展区' },{ text: 'a展区' }, { text: 'b展区' }, { text: 'c展区' }
+				],
+				listZq:[], //展区
+				idHC:'', // 会场id
+			},
+			created: function () {
+				var _this = this;
+				// console.log(1,document.documentElement.style.fontSize = '200px')
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				console.log(3,_rem)
+				// alert(document.documentElement.style.fontSize)
+				// vant.Toast('提示看看');
+
+				// 获取所有配置数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				.then(function (response) {
+					_this.items = response.data.result.custom.BCodes.ExhibitionArea;
+					_this.typeGoods = response.data.result.custom.BCodes.ExhibitType;
+					console.log('33222222111',_this.typeGoods);
+				})
+				// // 获取文博会场
+				// axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idZQ)
+				// .then(function (response) {
+				// 	_this.items = response.data.children;
+				// 	// public_imgsrc(_this.items)
+				// 	_this.getZQ(_this.items[0].id)
+				// 	// console.log('1211113',_this.WBHC);
+				// })
+			},
+			mounted: function () {
+				console.log(_obj.appkey)
+			},
+			methods: {
+				// 获取对应展区
+				getZQ(_id){
+					var _this = this;
+					// 主办单位
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _id,
+						"page": 1,
+						"perPage": 200
+					})
+					.then(function (response) {
+						_this.listZq = response.data.contents;
+						public_imgsrc(_this.listZq)
+					})
+				},
+				addreeMenu(value){
+					console.log(value,this.option1[value].text)
+				},
+				onChange(index) {
+					this.current = index;
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				},
+				// 选择会场
+				selectHC(_index){
+					this.activeHC = _index;
+					vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					// vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					console.log(this.items[this.activeHC].label)
+					console.log(this.items[this.activeHC].children[this.activeZQ].label)
+					// 获取展商
+					// this.getShops();
+					// // 获取展品
+					// this.getGoods();
+					// // 获取爆品推荐
+					// this.getHot()
+					this.hidePopup();
+				},
+				// 选择取消
+				reset(){
+					this.hidePopup();
+					// this.activeHC = 0;
+					// this.activeZQ = 0;
+					// console.log('重置')
+				},
+			},
+
+		})
+		console.log('99999', vant.Lazyload)
+		// app.use(vant.Lazyload);
+	</script>
+</body>
+
+</html>

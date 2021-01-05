@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <!-- 使用最新的ie内核渲染 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 移动设备优先, 禁止缩放 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+    <!-- 国产浏览器(360)使用webkit内核 -->
+    <meta name="renderer" content="webkit">
+    <!-- 禁止识别为手机号码 -->
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css"/>
+    <link rel="stylesheet" type="text/css" href="css/public.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
+    <title>名称</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body>
+	<div id="app" v-cloak>
+	  {{ message }}
+		<!-- <video  width="300" height="200" src="https://taobaolive.taobao.com/room/index.htm?spm=a21tn.8216370.2278281.2.6e145722WLKGSj&feedId=b3715fa7-779a-4739-af60-fe85d9b298ef" controls="controls">
+		your browser does not support the video tag
+		</video> -->
+	  <div style="height: 200px;"></div>
+	</div>
+<script>  
+
+</script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vant@2.10/lib/index.css"/> -->
+  <!-- 引入 Vue 和 Vant 的 JS 文件 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vant@2.10/lib/vant.min.js"></script> -->
+<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		var _obj = public_obj();
+		console.log('222',public_obj())
+		var app = new Vue({
+		  el: '#app',
+		  data: {
+		  	value: 2,
+		    message: 'Hello Vue!',
+			current: ['mail'],
+		  },
+		  created:function(){
+		  	console.log(1)
+			vant.Toast('提示看看');
+		  }, 
+		  mounted:function(){
+			/*
+			console.log(_obj.appkey)
+		  	axios.get('http://api.hanyuananiu.com/api/Login/GetPhoneOrEmailCheckCode?contact=18200166593')
+			 .then(function (response) {
+			  console.log(response);
+			 })
+			 .catch(function (error) {
+			  console.log(error);
+			 });	
+			 
+			axios.post('/api/v1/contents', {
+			  "siteId": 1,
+			  "checked": true,
+			  "page": 1,
+			  "perPage": 200
+			})
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+			*/
+		  }
+		  
+		})
+	</script>
+</body>
+</html>

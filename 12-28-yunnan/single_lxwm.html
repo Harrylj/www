@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>联系我们</title>
+	<style type="text/css">
+		#app {
+			padding-top: 0;
+			padding-bottom: 1.8rem;
+			/* padding: 0 0 2rem 0; */
+			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
+			background-color: #12206A;
+		}
+		.index-body{
+			position: relative;
+			z-index: 2;
+			padding-bottom: 2rem;
+			border-radius:  0;
+			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
+		}
+		/* .index-body::before{
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: -2rem;
+			width: 100%;
+			height: 7rem;
+			content: " ";
+			color: transparent;
+			background-image: url(images/index-bg-01.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		} */
+		.xwxq *{
+			color: white;
+		}
+		p {
+			font-size: .3rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4.8rem;
+		}
+		.index-swipe-01 img {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.index-nav,
+		.index-tshw,
+		.index-cbdw,
+		.index-xbdw{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.lxwm-body{
+			background-color: transparent;
+			padding: .3rem;
+		}
+		.lxwm-body *{
+			color: white;
+		}
+		.lxwm-body-div{
+			background-color: rgba(255, 255, 255, .1);
+			border-radius: .2rem;
+			padding: .4rem .5rem;
+		}
+		.lxwm-body-div{
+			position: relative
+		}
+		.lxwm-body-div h3{
+			color: #F3F7FA;
+			font-size: .35rem;
+			line-height: .8rem;
+			text-align: center;
+		}
+		.lxwm-body-div ul{
+			margin-top: .1rem;
+			margin-bottom: .2rem;
+		}
+		.lxwm-body-div li{
+			color: #F3F7FA;
+			font-size: .31rem;
+			line-height: .7rem;
+			text-align: left;
+			padding-left: .4rem;
+			display: flex;
+			align-items: center;
+			opacity: .9;
+			background-repeat: no-repeat;
+			background-position: 0rem center;
+		}
+		.lxwm-body-div li:nth-child(1){
+			background-image: url(images/lxwm-icon-01.png);
+			background-size: .27rem .21rem;
+		}
+		.lxwm-body-div li:nth-child(2){
+			background-image: url(images/lxwm-icon-02.png);
+			background-size: .29rem .28rem;
+		}
+		.lxwm-body-div li:nth-child(3){
+			background-image: url(images/lxwm-icon-03.png);
+			background-size: .28rem .29rem;
+		}
+		.lxwm-body-div li .van-icon{
+			margin-right: .2rem;
+		}
+		.lxwm-body-div p{
+			color: #F3F7FA;
+			opacity: .6;
+			line-height: .5rem;
+			text-align: center;
+		}
+		.sczp-btn-tj-div{
+			padding: .1rem 0;
+			margin-top: .5rem;
+			margin-bottom: .1rem;
+		}
+		.zqxq-header{
+			padding: .3rem;
+		}
+		.zqxq-header img{
+			display: block;
+			width: 6.9rem;
+			height: 3.5rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+		.zqxq-header h2
+		,.zqxq-body h2{
+			font-size: .35rem;
+			line-height: .8rem;
+		}
+		.zqxq-header p{
+			line-height: .56rem;
+			font-size: .28rem;
+			opacity: .8;
+		}
+		.zqxq-body{
+			position: relative;
+			/* border-top: 1px solid rgba(255, 255, 255, .2); */
+		}
+		.zqxq-body h2{
+			margin-bottom: .2rem;
+		}
+		.zqxq-body h3{
+			font-size: .31rem;
+			line-height: .6rem;
+		}
+		.zqxq-list{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zqxq-item{
+			width: 3.3rem;
+			margin-bottom: .2rem;
+		}
+		.zqxq-item img{
+			display: block;
+			height: 2.5rem;
+			width: 100%;
+			margin-bottom: .2rem;
+		}
+		.zqxq-item p{
+			font-size: .28rem;
+			line-height: .6rem;
+			opacity: .6;
+		}
+		.fhlt-nav-more{
+			position: absolute;
+			z-index: 2;
+			right: .3rem;
+			top: 1.08rem;
+			height:.66rem;
+			width: 1rem;
+			/* background-image: url(images/icon-mulu.png);
+			background-size: .2467rem .2067rem; */
+			background-image: url(images/lxwm-icon-04.png);
+			background-size: .37rem .37rem;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-color: transparent;
+		}
+		.van-tabs{
+			background-color: transparent;
+			/* border-radius: .4rem .4rem 0 0; */
+		}
+		.van-tabs__line{
+			display: none;
+			width: .5rem; 
+		}
+		.van-tabs--line .van-tabs__wrap{
+			width: 5.9rem; 
+			height: .66rem;
+			margin-bottom: .5rem;
+		}
+		.gywm-zhrc{
+			position: relative;
+		}
+		.gywm-zgzq{
+			position: relative;
+			padding-left: .3rem;
+			padding-right: .3rem;
+		}
+		/* .gywm-zgzq img{
+			height: 2.8rem;
+			width: 2.95rem;
+			border-radius: .2rem;
+		} */
+		.gywm-zgzq .van-image
+		,.zgzq-swipe-item-div{
+			width: 6.9rem;
+			height: 3.5rem;
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		.van-tabs__nav{
+			background-color: transparent;
+		}
+		.van-cell{
+			background-color: transparent;
+		}
+		.mflj-item img
+		,.mflj-item .van-image{
+			width: 2.3rem;
+			height: 1.95rem;
+		}
+		.mflj-item{
+			min-height: 1.95rem;
+			padding-left: .3rem;
+			padding-right: .3rem;
+			padding-bottom: .2rem;
+		}
+		.gywm-zhrc{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.gywm-zhrc h2{
+			margin: .3rem 0;
+		}
+		.van-tab{
+			border-radius: .2rem;
+			overflow: hidden;
+			background-color: rgba(255, 255, 255, .1);
+			margin-right: .3rem;
+		}
+		.van-tabs__wrap--scrollable .van-tab{
+			padding: 0 .3rem;
+			margin-right: .2rem;
+			border-radius: .2rem;
+			background-color: rgba(255, 255, 255, .1);
+		}
+		.van-tabs .van-tab--active{
+			background-color: #009BFE;
+		}
+		.zgzq-swipe-item-div{
+			position: relative;
+			overflow: hidden;
+		}
+		.zgzq-swipe-item-div p{
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			line-height: 1rem;
+			padding:.2rem .3rem 0 .3rem;
+			width: 100%;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.744), rgba(0, 0, 0, .1));
+		}
+		.van-swipe-item{
+			border-radius: .2rem;
+			overflow: hidden;
+			height: 3.5rem;
+		}
+		.index-header-swipe .van-swipe-item{
+			height: 100%;
+		}
+		.zqsl-popup-content{
+			height: 88%;
+			overflow-y: scroll;
+		}
+		div.zqsl-popup{
+			padding-bottom: 0;
+		}
+		.zqsl-btn-footer{
+			height: 12%;
+			align-items: center;
+			padding: 0 .3rem;
+		}
+		.zqsl-btn-footer .zqsl-sx-item{
+			margin-bottom: 0;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="index lxwm xwxq" id="app" v-cloak>
+		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
+		<!-- <div class="index-header">
+			<div class="index-header-div"></div>
+			<img src="images/bg.png" alt="" />
+			<span>云南文博会</span>
+		</div> -->
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="3000"  >
+				<van-swipe-item v-for="(image, index) in [LXWM.imageUrl]" :key="index">
+					<img v-lazy="image" alt="">
+					<!-- <p>{{index}}</p> -->
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="zqxq-header" v-html="LXWM.body">
+			<!-- <p>
+				上海国际室内空气净化展览会起始于2004年，由上海市室内环境净化行业协会与上海博华国际展览有限公司联合主办，是国内较早的室内环境净化类细分专业展会……
+			</p> -->
+		</div>
+		<div class="index-body lxwm-body">
+			<div class="lxwm-body-div">
+				<h3>参展预定/合作咨询：</h3>
+				<ul>
+					<!-- <li><van-icon name="envelop-o"></van-icon>邮箱：{{HZZX.youxiang}}</li>
+					<li><van-icon name="desktop-o"></van-icon>传真：{{HZZX.chuanzhen}}</li>
+					<li><van-icon name="phone-circle-o" ></van-icon>电话：{{HZZX.dianhua}}</li> -->
+					<li v-show="HZZX.youxiang?HZZX.youxiang.length>1:''">邮箱：{{HZZX.youxiang}}</li>
+					<li v-show="HZZX.chuanzhen?HZZX.chuanzhen.length>1:''">网站：{{HZZX.chuanzhen}}</li>
+					<li>电话：{{HZZX.dianhua}}</li>
+				</ul>
+				<p>参展请与展会主办方联系：</p>
+				<p>{{HZZX.czqyzhzbflx}}</p>
+				<!-- <div class="sczp-btn-tj-div">
+					<a href="column_gywm.html">
+					<van-button class="sczp-btn-tj" round block type="info" native-type="submit">
+					  关于文博
+					</van-button>
+					</a>
+				</div> -->
+			</div>
+		</div>
+		<div class="zqxq-body">
+			<div class="gywm-zgzq">
+				<h2>文博会场</h2>
+				<div class="zgzq-swipe-father">
+					<van-swipe class="zgzq-swipe-02" :loop="false" 
+						:show-indicators="false">
+						<van-swipe-item
+						@click="goPage('column_zqsl.html',{'lxwmHC':item.id,'index':index})"
+						v-for="(item,index) in WBHC" :key="index">
+							<div class="zgzq-swipe-item-div"><van-image 
+								lazy-load
+								fit="fill"
+								:src="item.imageUrl">
+									<template v-slot:error>加载失败</template>
+								</van-image><p>{{item.channelName}}</p>
+							</div>
+						</van-swipe-item>
+					</van-swipe>
+				</div>
+			</div>
+			<!-- <div class="gywm-czs">
+				<h2>展会日程</h2>
+				<div class="wzwb-mflj-div">
+					<div class="mflj-item" v-for="index in 2" :key="index">
+						<img src="images/bg.png" alt="">
+						<div class="mflj-item-right">
+								<h3>C展区</h3>
+								<p>主题:非遗文化主题</p>
+								<p>地址:昆明市A会场B展区</p>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<div class="gywm-zhrc">
+				<h2>展会日程</h2>
+				<div class="fhlt-nav-more" @click="showPopup"></div>
+				<van-tabs @click="onClick"  v-model="activeRC">
+					<van-tab v-for="(items,index) in ZGRC" ::key="index" :title="items.channelName">
+						<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+							<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+								<div class="wzwb-mflj-div">
+									<!-- <div class="mflj-item" v-for="(item,index) in items.ljcontent" :key="index">
+										<van-image
+										lazy-load
+										:src="item.imageUrl"
+										><template v-slot:error>加载失败</template></van-image>
+										<div class="mflj-item-right">
+												<h3>{{item.title}}</h3>
+												<p class="van-ellipsis">{{item.subTitle}}</p>
+												<p class="van-ellipsis" >{{item.summary}}</p>
+										</div>
+									</div> -->
+									<div class="mflj-item" v-for="(item,index) in items.ljcontent" :key="index">
+										<div class="mflj-item-right">
+												<h3>{{item.title}}</h3>
+												<p>{{item.subTitle}}</p>
+												<p >{{item.summary}}</p>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="jbjs-body">
+									{{index}}
+								</div>
+								<van-cell v-for="item in list" :key="item" :title="item" /> -->
+							</van-list>
+						</van-pull-refresh>
+
+					</van-tab>
+				</van-tabs>
+			</div>
+		</div>
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames" class="zqsl-popup-content">
+				<van-collapse-item title="展会日程" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="(items,index) in ZGRC" ::key="index">
+							{{items.channelName}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<!-- <van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+							展区{{index}}
+						</div>
+					</div>
+				</van-collapse-item> -->
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">取消</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
+		<van-tabbar class="public-footer-nav" v-model="active">
+			<!-- <van-tabbar-item badge="3">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? icon.active : icon.inactive" />
+				</template>
+			</van-tabbar-item> -->
+			<van-tabbar-item @click="window.location.href='index.html'">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-01-hover.png' : 'images/public-nav-01.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_jjwb.html'">
+				<span>聚焦文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
+				<!-- <span>自定义</span> -->
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wzwb.html'">
+				<span>玩转文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-04-hover.png' : 'images/public-nav-04.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wbjj.html'">
+				<span>文博经济</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-05-hover.png' : 'images/public-nav-05.png'" />
+				</template>
+			</van-tabbar-item>
+		</van-tabbar>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+
+	<script type="text/javascript">
+	
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			// new Vue({
+			el: '#app',
+			data: {
+				swipeWidth: 3.2,
+				swipeImages: [
+					'images/index-swiper-01.png',
+				],
+				active: 2,
+				icon: {
+					active: 'https://img.yzcdn.cn/vant/user-active.png',
+					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+				},
+				value: 2,
+				message: 'Hello Vue!',
+				show: false,
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
+				LXWM:'', // 联系我们内容
+				HZZX:'', // 合作咨询
+				WBHC:[], // 文博会场
+				ZGRC:[], // 展馆日程
+				activeNames: ['1','2'],
+				show: false,
+				activeHC:2,	//
+				activeZQ:0,
+				activeRC:0, // 确认日程
+			},
+			created: function () {
+				var _this = this;
+				// console.log(1,document.documentElement.style.fontSize = '200px')
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				// console.log(3,_rem)
+				// vant.Toast('提示看看');
+
+				// 获取联系我们内容
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idLXWM +'/'+_obj.idLXWM_CID)
+				.then(function (response) {
+					_this.LXWM = response.data;
+					public_imgsrc([_this.LXWM])
+					// console.log('123',_this.LXWM);
+				})
+				// 获取合作咨询
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idHZZX +'/'+_obj.idHZZX_CID)
+				.then(function (response) {
+					_this.HZZX = response.data;
+					public_imgsrc([_this.HZZX])
+					// console.log('123',_this.HZZX);
+				})
+				// 获取文博会场
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idZQ)
+				.then(function (response) {
+					_this.WBHC = response.data.children;
+					public_imgsrc(_this.WBHC)
+					// console.log('1211113',_this.WBHC);
+				})
+				// 获取展馆日程
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idZGRC)
+				.then(function (response) {
+					_this.ZGRC = response.data.children;
+					// _this.ZGRC.unshift({'channelName':'全部','id':_obj.idZGRC});
+					public_imgsrc(_this.ZGRC)
+					
+					// console.log('1211113',_this.ZGRC);
+					// 获取日程活动
+					_this.ZGRC.forEach((element,index) => {
+						axios.post('api/v1/contents', {
+							"siteId": _obj.idSite,
+							"channelId": _this.ZGRC[index].id,
+							"orders": [
+								{
+									"column": "AddDate",
+									"desc": true,
+								}
+							],
+							"page": 1,
+							"perPage": 200
+						})
+						.then(function (response) {
+							_this.ZGRC[index].ljcontent = response.data.contents;
+							public_imgsrc(_this.ZGRC[index].ljcontent)
+							// 倒序获取日程，他们录得有问题
+							_this.ZGRC[index].ljcontent.reverse()
+							// console.log('999887777',_this.ZGRC[index].ljcontent);
+						})
+					});
+				})
+			},
+			mounted: function () {
+				// console.log(_obj.appkey)
+			},
+			methods: {
+				onClick(name, title) {
+					this.list = [];
+					console.log(title)
+					// vant.Toast(title);
+				},
+				fenxiang() {
+					// vant.Toast('分享')
+				},
+				showPopup() {
+					this.show = true;
+					this.activeHC = this.activeRC;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					// vant.Toast('返回');
+				},
+				onClickRight() {
+					// vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					// vant.Toast(this.active)
+					this.hidePopup()
+				},
+				selectHC(_index){
+					this.activeHC = _index;
+					// vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					// vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					this.activeRC= this.activeHC;
+					// vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					this.hidePopup();
+				},
+				reset(){
+					this.hidePopup();
+				},
+				onLoad() {
+					setTimeout(() => {
+						if (this.refreshing) {
+							this.list = [];
+							this.refreshing = false;
+						}
+
+						for (let i = 0; i < 10; i++) {
+							this.list.push(this.list.length + 1);
+						}
+						this.loading = false;
+
+						if (this.list.length >= 40) {
+							this.finished = true;
+						}
+					}, 1000);
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
+
+			},
+
+		})
+		// console.log('99999', vant.Lazyload)
+		// app.use(vant.Lazyload);
+	</script>
+</body>
+
+</html>

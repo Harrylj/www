@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>峰会论坛</title>
+	<style type="text/css">
+		.jbjs {
+			position: relative;
+		}
+
+		#app {
+			padding-top: 1rem;
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+		}
+
+		.public-header-title {
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+		}
+
+		.index-header-swipe {
+			padding: .3rem;
+		}
+
+		.van-tab {
+			/* border-bottom: 1px solid #344080; */
+		}
+
+		.van-tabs__nav {
+			background-color: transparent;
+		}
+
+
+		.van-tab--active .van-tab__text {
+			font-weight: bold;
+			opacity: 1;
+		}
+
+		.van-tab__text {
+			color: white;
+			font-size: .31rem;
+			opacity: .6;
+			font-weight: 400;
+		}
+
+		.jbjs-serach {
+			display: block;
+			width: 6.9rem;
+			margin: 0 auto;
+		}
+		.index-ygz{
+			padding-top: .3rem;
+		}
+		.fhlt-nav-more{
+			position: absolute;
+			z-index: 2;
+			right: 0;
+			top: 1.18rem;
+			height:.8rem;
+			width: 1rem;
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+			background-image: url(images/icon-mulu.png);
+			background-size: .2467rem .2067rem;
+			background-repeat: no-repeat;
+			background-position: center center;
+			
+		}
+		.van-tabs{
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+			border-radius: .4rem .4rem 0 0;
+			padding-top: .2rem;
+		}
+		.van-tabs__line{
+			width: .5rem; 
+		}
+		.van-tabs--line .van-tabs__wrap{
+			width: 6.5rem; 
+		}
+		.van-tabs__line {
+			background-color: #009BFE;
+		}
+		.van-tabs__wrap--scrollable .van-tab{
+			width: auto;
+		}
+		.fhlt-tab .van-tabs__line{
+			display: none;
+		}
+		.fhlt-tab .van-tab--active::after{
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			height: 3px;
+			content: " ";
+			color: transparent;
+			margin-left: -.25rem;
+			width: .5rem;
+			background-color: #009BFE;
+		}
+		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		, .index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 3.5rem;
+		}
+		.index-ygz-list
+		,.index-tshw-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-swipe-02-father .van-swipe-item-div{
+			padding: 0.3rem 0.1rem 0.2rem 0.1rem;
+		}  
+	</style>
+</head>
+
+<body>
+	<div class="jbjs fhlt" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">峰会论坛</div>
+			</div>
+		</div>
+		<a href="single_fhlt_ltfl.html"><div class="fhlt-nav-more"></div></a>
+		<van-tabs @click="onClick" :class="activeType?'fhlt-tab':''" v-model="active" ellipsis="false" swipe-threshold="3">
+			<van-tab v-for="(item,index) in navFHLT" :key="index"  :title="item.channelName">
+				<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+					<van-list v-model="loading" :finished="finished" finished-text="没有更多了" @load="onLoad">
+						<div class="jbjs-body">
+							<div class="index-swipe-02-father" v-if="listYJJB.length>0">
+								<div class="index-h2">演讲嘉宾</div>
+								<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth"
+									:show-indicators="false">
+									<van-swipe-item @click="goPage('article_jbjs.html',{'id':user.id})" v-for="(user,index) in listYJJB" :key="index" >
+											<div class="van-swipe-item-div">
+												<van-image
+												fit="cover"
+												:src="user.imageUrl"
+												></van-image>
+												<h3 class="van-ellipsis">{{user.title}}</h3>
+												<!-- <p class="van-ellipsis">{{user.job}}</p> -->
+												<p class="van-multi-ellipsis--l2">{{user.zhicheng}}</p>
+											</div>
+		
+									</van-swipe-item>
+								</van-swipe>
+							</div>
+							<div class="jjwb-fhlt index-ygz">
+								<div class="jjwb-fhlt-div">
+									<div class="index-ygz-list">
+										<div class="index-ygz-item"  @click="goPage('column_fhlt_video.html',{'id':item.id})" v-for="(item,index) in listFHLT" :key="index">
+											<div class="index-live"><span></span>{{item.zt}}</div>
+											<!-- <img src="images/bg.png" alt=""> -->
+											<van-image
+											fit="cover"
+											:src="item.imageUrl"
+											></van-image>
+											<h3 class="van-ellipsis">{{item.title}}</h3>
+											<p class="van-ellipsis">{{item.addDate?item.addDate.split(' ')[0]:''}}</p>
+										</div>
+									</div>
+									<!-- <div class="index-ygz-list">
+										<div class="index-ygz-item" v-for="index in 2" :key="index">
+												<a href="column_fhlt_video.html">
+											<div class="index-live"><span></span>回放</div>
+											<img src="images/bg.png" alt="">
+											<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+											<p class="van-ellipsis">2020.12.5</p>
+										</a>
+										</div>
+									</div> -->
+								</div>
+							</div>
+
+							<!-- <van-cell v-for="item in list" :key="item" :title="item" /> -->
+						</div>
+					</van-list>
+				</van-pull-refresh>
+
+			</van-tab>
+		</van-tabs>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		// $(function () {
+		// 	navHeader();
+			// $(window).scroll(function () {
+			// 	navHeader();
+			// })
+		// })
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		var app = new Vue({
+			el: '#app',
+			data: {
+				swipeWidth: 2.68,
+				value: 0,
+				active: 0,
+				activeType:true,
+				show: false,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				list: [],
+				loading: false,
+				finished: false,
+				refreshing: false,
+				listFHLT:[], // 峰会论坛
+				listYJJB:[], // 演讲嘉宾
+				navFHLT:[], // 峰会论坛分类列表
+			},
+			created: function () {
+				var _this = this;
+				console.log('22index',this.active)
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth * _rem;
+				// vant.Toast('提示看看');
+				// 峰会论坛分类列表
+				this.getNavFHLT()
+				// 获取演讲嘉宾
+				_this.postListYJJB()
+				// 获取峰会论坛
+				_this.postListFHLT();
+
+			},
+			mounted: function () {
+
+			},
+			beforeDestroy:function(){
+				console.log(11111111111)
+				// window.localStorage.removeItem('key_fhlt_ltfl')
+			},
+			methods: {
+				setData(index){
+					var abc= window.localStorage.setItem('key_fhlt_ltfl',index)
+					var aaa = window.localStorage.getItem("key_fhlt_ltfl")
+					console.log('3222',index)
+					console.log('aaa',aaa)
+				},
+				onClick(name, title) {
+					this.activeType = false;
+					this.list = [];
+					console.log(name,title)
+					this.setData(name)
+					// vant.Toast(title);
+					// 获取演讲嘉宾
+					this.postListYJJB(name)
+					// 获取峰会论坛
+					this.postListFHLT(name);
+				},
+				// 峰会论坛分类列表
+				getNavFHLT(){
+					var _this = this;
+					axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idFHLT )
+					.then(function (response) {
+						_this.navFHLT = response.data.children;
+						_this.navFHLT.unshift({'channelName':'全部'}); 
+						public_imgsrc(_this.navFHLT)
+						console.log('123456',_this.navFHLT);
+						if ( window.localStorage.getItem("key_fhlt_ltfl") == null ){
+						console.log("没有",window.localStorage.getItem("key_fhlt_ltfl"));
+						} else {
+							console.log("有选",window.localStorage.getItem("key_fhlt_ltfl"));
+							_this.active = parseInt(window.localStorage.getItem("key_fhlt_ltfl"));
+						}
+						if(_this.active>0){
+							// 获取演讲嘉宾
+							_this.postListYJJB(_this.active)
+							// 获取峰会论坛
+							_this.postListFHLT(_this.active);
+						}
+						else{
+							// 获取演讲嘉宾
+							_this.postListYJJB()
+							// 获取峰会论坛
+							_this.postListFHLT();
+						}
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				},
+				// 获取演讲嘉宾
+				postListYJJB(_index){
+					var _this = this;
+					var abc =  {
+						"siteId": _obj.idSite,
+						"groupNames":['tyyjyb'],
+						"channelId": _obj.idFHLT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						},{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
+						
+						orders:[{
+							column: 'addDate',  // 最新createdDate  热门hits
+							desc: false,
+						}],
+						// "page": 1,
+						// "perPage": 200
+					};
+					_index?abc={
+						"siteId": _obj.idSite,
+						"groupNames":['tyyjyb'],
+						"channelId": _obj.idFHLT_listJB[_index-1],
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						},{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
+						orders:[{
+							column: 'addDate',  // 最新createdDate  热门hits
+							desc: false,
+						}],
+						// "wheres":[ {
+						// 	"column": "checked",
+						// 	"operator": "=",
+						// 	"value": "1"
+						// }],
+						// "page": 1,
+						// "perPage": 200
+					}:'';
+					axios.post('api/v1/contents',abc)
+					.then(function (response) {
+						_this.listYJJB = response.data.contents;
+						public_imgsrc(_this.listYJJB)
+						console.log('123',_this.listYJJB);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+					
+				},
+				// 获取峰会论坛
+				postListFHLT(_index){
+					var _this = this;
+					var abc =  {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idFHLT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+							},
+							{
+								"column": "ChannelId",
+								"operator": "In",
+								"value": _obj.idFHLT_list
+							}
+						],
+						"page": 1,
+						"perPage": 200
+					};
+					_index?abc={
+						"siteId": _obj.idSite,
+						"channelId": _obj.idFHLT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+							},
+							{
+								"column": "ChannelId",
+								"operator": "In",
+								"value": _this.navFHLT[_index].id
+							}
+						],
+						"page": 1,
+						"perPage": 200
+					}:'';
+					axios.post('api/v1/contents',abc)
+					.then(function (response) {
+						_this.listFHLT = response.data.contents;
+						public_imgsrc(_this.listFHLT)
+						console.log('123',_this.listFHLT);
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				},
+				onLoad() {
+					setTimeout(() => {
+						if (this.refreshing) {
+							this.list = [];
+							this.refreshing = false;
+						}
+						for (let i = 0; i < 10; i++) {
+							this.list.push(this.list.length + 1);
+						}
+						this.loading = false;
+						if (this.list.length >= 40) {
+							this.finished = true;
+						}
+					}, 1000);
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
+			},
+
+		})
+	</script>
+</body>
+
+</html>

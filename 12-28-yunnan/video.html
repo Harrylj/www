@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>video</title>
+	<style type="text/css">
+		.zhzj {
+			padding: 1rem 0;
+		}
+		
+		.zhzj-mulu {
+			background-color: #162463;
+			height: 5rem;
+			padding: .3rem;
+		}
+		.zhzj-video{
+			position: relative;
+		}
+		.zhzj-mulu h3,
+		.zhzj-mulu-close,
+		.zhzj-mulu-item h4,
+		.zhzj-mulu-item h5,
+		.zhzj-mulu-item h6,
+		.zhzj-mulu-item p {
+			color: white;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="zhzj" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title"></div>
+				<div class="phtc-fenxiang" @click="fenxiang()"></div>
+				<div class="phtc-mulu" @click="mulu()"></div>
+			</div>
+		</div>
+		<div class="zhzj-video">
+			<div class="index-live"><span></span>LIVE</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+			<video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player>
+			<!-- <img style="width: 5rem;" src="images/bg.png" alt=""> -->
+			{{ message }}
+		</div>
+		<video controls="controls" autoplay="autoplay">
+			<!-- <source src="/i/movie.ogg" type="video/ogg" /> -->
+			<!-- <source src="http://admin.ynwbh.com/upload/videos/2020/12/opening.mp4" type="video/mp4" /> -->
+		  Your browser does not support the video tag.
+		</video>
+		<video controls="controls" autoplay="autoplay">
+			<!-- <source src="/i/movie.ogg" type="video/ogg" /> -->
+			<!-- <source src="https://xciot.oss-cn-shenzhen.aliyuncs.com/vod/record/ynwbh/live/2020-12-15-14-35-30_2020-12-15-16-52-07.mp4" type="video/mp4" /> -->
+		  Your browser does not support the video tag.
+		</video>
+		<van-popup class="zhzj-mulu" v-model="show" :overlay="false" round position="bottom">
+			<div class="zhzj-mulu-title">
+				<h3>文博会开幕式直播现场</h3>
+				<div>简介</div>
+				<van-icon class="zhzj-mulu-close" name="cross" @click="hidePopup()" />
+			</div>
+		</van-popup>
+	</div>
+	
+	<script>
+
+	</script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+	<script type="text/javascript">
+		var _obj = public_obj();
+		 
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		
+		new Vue({
+			el: '#app',
+			data: {
+				swipeWidth:2.68,
+				value: 2,
+				active: 3,
+				message: '展会直击',
+				show: false,
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					poster: "images/bg.png", //你的封面地址
+					// poster: "https://img.yzcdn.cn/vant/apple-1.jpg", //你的封面地址
+					// width: document.documentElement.clientWidth, //播放器宽度
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						// {
+						// 	type: "video/mp4",
+						// 	src: "https://cdn.theguardian.tv/webM/2015/07/20/150716YesMen_synd_768k_vp8.webm"
+						// }
+						{
+							withCredentials: false,
+							// type: 'application/x-mpegURL',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							src: 'https://xciot.oss-cn-shenzhen.aliyuncs.com/vod/record/ynwbh/live/opening.mp4',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
+			},
+			created: function () {
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				console.log(3,_rem)
+				console.log(this.swipeWidth)
+			},
+			mounted: function () {
+				// this.mulu()
+				console.log('12334',qs2obj('file:///E:/wamp/www/11-10-yunnan/column_xwdt.html?abc=1&aaa=2'))
+				console.log('3333',obj2qs({'a':1,'b':2}))
+			},
+			methods: {
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				mulu() {
+					vant.Toast('目录')
+					this.showPopup()
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+		
+	</script>
+</body>
+
+</html>

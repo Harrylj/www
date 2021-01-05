@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>玩转文博</title>
+	<style type="text/css">
+		#app {
+			/* padding: 0 0 2rem 0; */
+			padding-top: 0;
+			padding-bottom: 0;
+			background-color: transparent;
+		}
+		.van-swipe__indicators{
+			bottom: .8rem;
+		}
+		.index-body{
+			position: relative;
+			z-index: 2;
+			margin-top: -.6rem;
+			/* padding-top: .2rem; */
+			padding-bottom: 2.1rem;
+			border-radius:  .67rem .67rem 0 0;
+			/* background-color: #162463; */
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+		}
+		.index-h2
+		,.index-ygz-more{
+			line-height: 1.2rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 3.8rem;
+		}
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.wzwb-zqsl-div{
+			position: relative;
+		}
+		.wzwb-flhd-div{
+			margin-bottom: .2rem;
+		}
+		.wzwb-flhd-div:last-child{
+			margin-bottom: 0;
+		}
+		.zqsl-item,
+		.wzwb-flhd-div,
+		.mflj-item{
+			/* background-color: #263377; */
+			background-color: rgba(243,247,250, .09);
+		}
+		.zqsl-item{
+			position: relative;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+		.zqsl-item:last-child{
+			margin-bottom: 0;
+		}
+		.zqsl-item>img
+		,.zqsl-item .van-image{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 2.5rem;
+			height: 2.5rem;
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		.zqsl-item-right{
+			position: relative;
+			padding-top: .3rem;
+			/* display: flex;
+			justify-content: center;
+			flex-direction: column; */
+			padding-left: 2.9rem;
+			min-height: 2.5rem;
+			
+		}
+		.zqsl-item h3,
+		.zqsl-item p{
+			color: white;
+			line-height: .5rem;
+		}
+		.zqsl-item h3{
+			font-size: .31rem;
+		}
+		.zqsl-item p,
+		.wzwb-flhd-div p{
+			font-size: .28rem;
+			opacity: .7;
+		}
+		.wzwb-flhd-div{
+			position: relative;
+			border-radius: .2rem;
+			padding-bottom: .2rem;
+		}
+		.wzwb-flhd-div>img
+		,.wzwb-flhd-div .van-image{
+			display: block;
+			width: 100%;
+			/* height: 3rem; */
+			/* height: 5.175rem; */
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+			overflow: hidden;
+		}
+		.wzwb-flhd-div h3,
+		.wzwb-flhd-div p{
+			padding: 0 .4rem;
+		}
+		.wzwb-flhd-div h3{
+			font-size: .33rem;
+			line-height: .6rem;
+		}
+		.wzwb-flhd-div p{
+			line-height: .5rem;
+		}
+		.index-ygz *{
+			color: white;
+		}
+		.mflj-item{
+			position: relative;
+			padding-left: 2.7rem;
+			min-height: 2.5rem;
+			margin-bottom: .2rem;
+			padding-top: .2rem;
+		}
+		.mflj-item:last-child{
+			margin-bottom: 0;
+		}
+		.wzwb-mflj-div h3{
+			font-size: .31rem;
+			line-height: .6rem;
+		}
+		.wzwb-mflj-div p{
+			opacity: .7;
+			font-size: .28rem
+		}
+		.mflj-item img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			height: 2.5rem;
+			width: 2.3rem;
+			border-radius: .2rem;
+			overflow: hidden;
+		}
+		.mflj-item h3{
+			font-size: .31rem;
+			line-height: .5rem;
+		}
+		.mflj-item p{
+			font-size: .25rem;
+			opacity: .7;
+			line-height: .46rem;
+		}
+		.wzwb-btn-mflq{
+			position: absolute;
+			line-height: .6rem;
+			padding: 0 .3rem;
+			right: .2rem;
+			bottom: .2rem;
+			border-radius: .23rem;
+			border: 1px solid white;
+		}
+		.wzwb-zhyj-div{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zhyj-item{
+			position: relative;
+			width: 3.3rem;
+		}
+		.zhyj-item::before,
+		.zhyj-item::after{
+			position: absolute;
+			top: .15rem;
+			left: 50%;
+			z-index: 1;
+			content: " ";
+			height: 2.4rem;
+			width: 3rem;
+			opacity: .8;
+			margin-left: -1.5rem;
+			/* background-color: white; */
+			background-color: rgba(243,247,250, .5);
+			color: transparent;
+			border-radius: .2rem;
+		}
+		.zhyj-item::after{
+			opacity: .3;
+			top: .3rem;
+			width: 2.7rem;
+			margin-left: -1.35rem;
+		}
+		.zhyj-item img
+		,.zhyj-item  .van-image{
+			display: block;
+			position: relative;
+			z-index: 2;
+			width: 3.3rem;
+			height: 2.4rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+			overflow: hidden;
+		}
+		.zhyj-item h4{
+			font-size: .31rem;
+			line-height: 1rem;
+		}
+		.wzwb-line{
+			margin-top: .4rem;
+			border-top: 1px solid rgba(255, 255, 255, .1);
+		}
+		.wzwb-mflj{
+			margin-top: 0;
+		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0rem;
+			padding: .2rem .2rem .7rem .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .32rem;
+			line-height: .4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="index wzwb" id="app" v-cloak>
+		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
+		<!-- <div class="index-header">
+			<div class="index-header-div"></div>
+			<img src="images/bg.png" alt="" />
+			<span>云南文博会</span>
+		</div> -->
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="10000" >
+				<van-swipe-item 
+				@click="image.linkUrl?goPage(image.linkUrl):goPage('article_xwxq.html',{'id':image.id})"
+				v-for="(image, index) in imagesDBLB" :key="index">
+					<!-- <img  v-lazy="image.imageUrl" alt=""> -->
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="index-body">
+			<!-- <div class="index-ygz wzwb-zqsl">
+				<div class="index-h2">展区速览</div>
+				<a href="column_fhlt.html"><div class="index-ygz-more">更多展区<van-icon name="arrow" /></div></a>
+				<div class="wzwb-zqsl-div"></div>
+			</div> -->
+			<div class="index-ygz wzwb-zqsl">
+				<div class="index-h2">展区速览</div>
+				<a href="column_zqsl.html"><div class="index-ygz-more">更多展区<van-icon name="arrow" /></div></a>
+				<div class="wzwb-zqsl-div">
+					<div class="zqsl-item" @click="goPage('article_zqxq.html',{'id':item.id})"  v-for="(item,index) in listZq" :key="index">
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image fit="cover" lazy-load :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
+						<div class="zqsl-item-right">
+							<h3 class="van-ellipsis">{{item.title}}</h3>
+							<p class="van-multi-ellipsis--l2">主题:{{item.zhuti}}</p>
+							<p class="van-ellipsis">地址:{{item.dizhi}}</p>
+							<!-- <p class="van-ellipsis">展商:{{item.zhanshangshu}}家</p> -->
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="index-ygz wzwb-flhd">
+				<!-- <div class="index-h2">{{FLHD.channelName}}</div> -->
+				<div class="index-h2">投票活动</div>
+				<!-- <div @click="goPage('column_tphd.html')" class="index-ygz-more">马上参与<van-icon name="arrow" /></div> -->
+				<div class="wzwb-flhd-div" @click="goPage('column_tphd2.html')">
+					<van-image fit="cover"  :src="TPHD2.imageUrl">
+						<template v-slot:error>加载失败</template>
+					</van-image>
+					<h3 class="van-ellipsis">{{TPHD2.channelName}}</h3>
+				</div>
+				<!-- <div class="wzwb-flhd-div" @click="goPage('column_tphd.html')">
+					<van-image fit="cover"  :src="FLHD.imageUrl">
+						<template v-slot:error>加载失败</template>
+					</van-image>
+					<h3 class="van-ellipsis">{{FLHD.channelName}}</h3>
+				</div> -->
+				
+			</div>
+			<!-- <div class="index-ygz wzwb-mflj">
+				<div class="index-h2">免费领劵</div>
+				<a href="column_mflq.html"><div class="index-ygz-more">更多福利<van-icon name="arrow" /></div></a>
+				<div class="wzwb-mflj-div">
+					<div class="mflj-item" v-for="index in 2" :key="index">
+						<img src="images/bg.png" alt="">
+						<div class="mflj-item-right">
+								<h3>C展区</h3>
+								<p>主题:非遗文化主题</p>
+								<p>地址:昆明市A会场B展区</p>
+								<a href="single_flhd_xxtx.html">
+								<div class="wzwb-btn-mflq">免费领取</div>
+								</a>
+						</div>
+					</div>
+					
+				</div>
+			</div> -->
+			<div class="wzwb-line"></div>
+			<div class="index-ygz wzwb-zhyj">
+				<div class="index-h2">展会影集</div>
+				<!-- <div class="index-ygz-more" @click="goPage('column_zhyj.html',{'id':ZHYJID})">更多影集<van-icon name="arrow" /></div> -->
+				<div class="index-ygz-more" @click="goPage('column_zhyj_list.html',{'id':ZHYJID})">更多影集<van-icon name="arrow" /></div>
+				<div class="wzwb-zhyj-div">
+					<div class="zhyj-item" @click="goPage('column_zhyj.html',{'id':item.id,'name':item.channelName})" v-for="(item,index) in ZHYJ" :key="index">
+						<!-- <img :src="item.imageUrl" alt=""> -->
+						<van-image fit="cover" :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
+						<h4 class="van-ellipsis">{{item.channelName}}</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<van-tabbar class="public-footer-nav" v-model="active">
+			<!-- <van-tabbar-item badge="3">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? icon.active : icon.inactive" />
+				</template>
+			</van-tabbar-item> -->
+			<van-tabbar-item @click="window.location.href='index.html'">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-01-hover.png' : 'images/public-nav-01.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_jjwb.html'">
+				<span>聚焦文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
+				<!-- <span>自定义</span> -->
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wzwb.html'">
+				<span>玩转文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-04-hover.png' : 'images/public-nav-04.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wbjj.html'">
+				<span>文博经济</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-05-hover.png' : 'images/public-nav-05.png'" />
+				</template>
+			</van-tabbar-item>
+		</van-tabbar>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+
+	<script type="text/javascript">
+	
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			// new Vue({
+			el: '#app',
+			data: {
+				swipeWidth:2.68,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				active: 3,
+				icon: {
+					active: 'https://img.yzcdn.cn/vant/user-active.png',
+					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+				},
+				value: 3,
+				message: 'Hello Vue!',
+				current: ['mail'],
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					poster: "images/bg.png", //你的封面地址
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						{
+							withCredentials: false,
+							type: 'application/x-mpegURL',
+							src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
+				imagesDBLB:[], // 顶部轮播
+				ZHYJ:[], // 展会影集
+				listZq:[], //展区
+				FLHD:'', // 热门展点-投票活动
+				TPHD2:'', // 投票活动02
+				ZHYJID:'', // 展会影集id
+			},
+			created: function () {
+				var _this = this;
+
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				// vant.Toast('提示看看');
+				// 顶部轮播
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idWZWBDBLB,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.imagesDBLB = response.data.contents;
+					public_imgsrc(_this.imagesDBLB)
+				})
+				// alert(_obj.idRMZD)
+				// // 热门展点
+				// axios.get('api/v1/channels/'+_obj.idSite_PC+'/'+_obj.idTPHD_PC)
+				// .then(function (response) {
+				// 		_this.FLHD = response.data;
+				// 		public_imgsrc_pc([response.data])
+				// 		// public_imgsrc([_this.FLHD])
+				// 		console.log('9999922311',_this.FLHD)
+				// })
+
+				// 热门展点
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idTPHD)
+				.then(function (response) {
+						_this.FLHD = response.data;
+						public_imgsrc([_this.FLHD])
+						console.log('9999922311',_this.FLHD)
+				})
+				// 投票活动02
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idTPHD2)
+				.then(function (response) {
+						_this.TPHD2 = response.data;
+						public_imgsrc([_this.TPHD2])
+						console.log('9922311',_this.TPHD2)
+				})
+
+				// alert(_obj.idZHYJ)
+				// 展会影集
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)
+				.then(function (response) {
+						_this.ZHYJ = response.data.children;
+						_this.ZHYJID = response.data.id;
+						public_imgsrc(_this.ZHYJ)
+						// console.log('9999922311',_this.ZHYJ)
+				})
+				// 获取所有展区
+				this.getAllZQ()
+			},
+			mounted: function () {
+				console.log(_obj.appkey)
+			},
+			methods: {
+				// 获取所有展区
+				getAllZQ(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idZQ,
+						"page": 1,
+						"perPage": 2
+					})
+					.then(function (response) {
+						_this.listZq = response.data.contents;
+						public_imgsrc(_this.listZq)
+					})
+				},
+			},
+
+		})
+		console.log('99999', vant.Lazyload)
+		// app.use(vant.Lazyload);
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展商搜索</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			padding-bottom: 0;
+			background-color: #1A285C;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq-body{
+			position: relative;
+			padding: 0 .3rem 0 .3rem;
+			border-radius: .67rem .67rem 0 0;
+		}
+		.sxzp-body{
+			position: relative;
+		}
+		#app *{
+			color: white;
+		}
+		.zp-search{
+			display: block;
+			width: 100%;
+			margin-bottom: .3rem;
+		}
+		.index-ygz-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-ygz-item img
+		,.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img{
+			height: 2.5rem;
+		}
+		.index-ygz-more{
+			line-height: 1.2rem;
+		}
+		.index-ygz-more{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.index-ygz-more img{
+			width: .29rem;
+			height: .29rem;
+			margin-left: .1rem;
+		}
+		.zqsl-popup{
+			padding-top: 1.2rem;
+			background-color: #162463;
+		}
+		.zqsl-popup *{
+			color: white;
+		}
+		.van-cell,
+		.van-collapse-item__content,
+		.van-cell--clickable:active{
+			background-color: transparent;
+			padding:  .2rem .3rem;
+		}
+		.van-collapse-item--border::after,
+		.van-hairline--top-bottom::after,
+		.van-hairline-unset--top-bottom::after,
+		.van-cell::after{
+			border: none;
+		}
+		.van-cell__title{
+			padding-left: .1rem;
+		}
+		.van-cell__title span{
+			font-size: .35rem;
+			font-weight: bold;
+		}
+		.zqsl-sx-list{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zqsl-sx-item{
+			font-size: .28rem;
+			line-height: .8rem;
+			border-radius: .4rem;
+			width: 2.8rem;
+			text-align: center;
+			background-color: rgba(255, 255, 255, .08);
+			margin-bottom: .3rem;
+		}
+		.zqsl-sx-item-click{
+			background-color: #2E5ED4;
+		}
+		.zqsl-btn-footer{
+			padding: .3rem;
+		}
+		.index-ygz-item p{
+			font-size: .28rem;
+		}
+		.van-search{
+			background-color: transparent;
+			padding: .3rem 0 .3rem .3rem;
+		}
+		.van-search .van-cell{
+			padding: .15rem .15rem .15rem 0;
+		}
+		.van-search__action{
+			color: white;
+		}
+		.van-search__content{
+			background-color: rgba(255, 255, 255, .2);
+			border-radius: .45rem;
+			padding-left: .2rem;
+		}
+		.van-field__left-icon{
+			margin-right: .1rem;
+		}
+		.van-field__left-icon .van-icon{
+			color: #cccccc;
+			font-size: .4rem;
+		}
+		.van-field__control{
+			color: white;
+			font-size: .3rem;
+		}
+		.van-search__action:hover{
+			background-color: #1A285C;
+		}
+		.nodata_ts{
+			font-size: .32rem;
+			text-align: center;
+			line-height: 1rem;
+			font-weight: 400;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="sczp xwxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">展商搜索</div>
+				<!-- <div class="index-ygz-more" @click="showPopup">筛选<img src="images/shaixuan.png" alt=""></div> -->
+				
+			</div>
+		</div>
+		<div class="search-title">
+			<van-search v-model="value" show-action placeholder="请输入搜索关键词"  @search="onSearch" @cancel="public_return_page()" />
+		</div>
+		<div class="sczp-body xwxq-body">
+			<div class="jjwb-fhlt-div">
+				<div class="index-ygz-list">
+					<!-- <div class="index-ygz-item"
+					@click="goPage('article_zsxq.html',{'Keyword':shop.name,'PositionName':items[activeHC].children[activeZQ].label,'HC':activeHC,'ZQ':activeZQ})"
+					v-for="(shop,index) in shops" :key="index"> -->
+					<div class="index-ygz-item"
+					@click="goPage('article_zsxq.html',{'id':shop.id,'Keyword':shop.name})"
+					v-for="(shop,index) in shops" :key="index">
+						<img :src="shop.logo" alt="">
+						<h3 class="van-ellipsis">{{shop.name}}</h3>
+						<!-- <p class="van-ellipsis">{{items?items[qs2obj(window.location.href).HC].label:''}}{{items?items[qs2obj(window.location.href).HC].children[qs2obj(window.location.href).ZQ].label:''}}</p> -->
+					</div>
+				</div>
+			</div>
+			<h2 class="nodata_ts" v-show="nodata">没有找到该展商</h2>
+		</div>
+		<van-popup class="zqsl-popup" v-model="show" position="right" :style="{ height: '100%',width:'86.6%' }">
+			<van-collapse v-model="activeNames">
+				<van-collapse-item title="会场" name="1">
+					<div class="zqsl-sx-list zqsl-sx-hc">
+						<div class="zqsl-sx-item" :class="index==activeHC?'zqsl-sx-item-click':''" @click="selectHC(index)" v-for="index in 5" :key="index">
+							会场{{index}}
+						</div>
+					</div>
+				</van-collapse-item>
+				<van-collapse-item title="展区" name="2">
+					<div class="zqsl-sx-list zqsl-sx-zq">
+						<div class="zqsl-sx-item" :class="index==activeZQ?'zqsl-sx-item-click':''" @click="selectZQ(index)" v-for="index in 5" :key="index">
+							展区{{index}}
+						</div>
+					</div>
+				</van-collapse-item>
+			</van-collapse>
+			<div class="zqsl-sx-list zqsl-btn-footer">
+				<div class="zqsl-sx-item" @click="reset()">重置</div>
+				<div class="zqsl-sx-item zqsl-sx-item-click" @click="selectQD()">确定</div>
+			</div>
+		</van-popup>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader()
+			$(window).scroll(function () {
+				navHeader()
+			})
+		})
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				activeNames: ['1','2'],
+				value: '',
+				active: 3,
+				show: false,
+				activeHC:1,
+				activeZQ:1,
+				formData:{ // 展商列表请求数组
+					SkipCount:0,
+					Position:[],
+					MaxResultCount:200,
+					Keyword:'', //关键字
+				},
+				shops:[], // 展商列表
+				items:[], // 展会展区
+				nodata:false,
+			},
+			created: function () {
+				var _this = this;
+				// vant.Toast('提示看看');
+				// 获取展商
+				// this.getShops();
+
+				this.activeHC = qs2obj(window.location.href).HC;
+				this.activeZQ = qs2obj(window.location.href).ZQ;
+
+				// 获取所有数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				.then(function (response) {
+					_this.items = response.data.result.custom.BCodes.ExhibitionArea;
+					console.log('33222222111',_this.items);
+				})
+
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				onSearch(val) {
+					// 获取
+					this.getShops(val)
+					// vant.Toast(val);
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				},
+				selectHC(_index){
+					this.activeHC = _index;
+					vant.Toast('会场'+_index)
+				},
+				selectZQ(_index){
+					this.activeZQ = _index;
+					vant.Toast('展区'+_index)
+				},
+				selectQD(){
+					vant.Toast(this.activeHC,this.activeZQ)
+					console.log(this.activeHC,this.activeZQ)
+					this.hidePopup()
+				},
+				reset(){
+					this.activeHC = 1;
+					this.activeZQ = 1;
+					console.log('重置')
+				},
+				// 获取展商
+				getShops(_content){
+					var _this = this;
+					this.formData.Keyword = _content;
+					// this.formData.Position = [qs2obj(window.location.href).position1,qs2obj(window.location.href).position2];
+					// console.log('111111222222',qs2obj(window.location.href).position1,qs2obj(window.location.href).position2)
+					// console.log('99111118778',this.formData.Position)
+					this.formData.SkipCount = 0;
+					this.formData.MaxResultCount = 50;
+					// this.formData.SkipCount += 10
+					axios.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList', {
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					}).then(response =>{
+						_this.shops = response.data.result.items;
+						_this.shops.length == 0?_this.nodata=true:_this.nodata=false;
+						console.log(response.data.result.items)
+						// res.result.items.forEach(element => {
+						// 	this.list.push(element)
+						// })
+						// this.loading = false
+						// if (!res || !res.result || res.result.items == 0) {
+						// 	this.finished = true
+						// }
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>文博企业详情</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			background-color: #12206A;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq *{
+			color: white;
+		}
+		.zqxq-body{
+			position: relative;
+			padding: 0 .3rem .4rem .3rem;
+			/* background-color: rgba(255, 255, 255, .08);
+			border-radius: .67rem .67rem 0 0; */
+		}
+		.zqxq-header{
+			position: relative;
+			margin:.3rem;
+			background-color: rgba(255, 255, 255, .08);
+			border-radius: .2rem;
+			padding-bottom: .2rem;
+		}
+		.zqxq-header>img
+		,.zqxq-header .van-image{
+			display: block;
+			width: 6.9rem;
+			/* height: 3.2rem; */
+			height: 5.175rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+			overflow: hidden;
+		}
+		.zqxq-header h2
+		,.zqxq-body h2{
+			font-size: .31rem;
+			line-height: .8rem;
+		}
+		.zqxq-header p{
+			line-height: .6rem;
+			font-size: .28rem;
+			opacity: .6;
+		}
+		.zqxq-header h2
+		,.zqxq-header p{
+			padding: 0 .3rem;
+		}
+		.zqxq-body h2{
+			margin-bottom: .2rem;
+		}
+		.zqxq-body h3{
+			font-size: .31rem;
+			line-height: .6rem;
+		}
+		.index-ygz-item img{
+			height: 2.5rem;
+		}
+		.index-ygz-list:nth-child(1) .index-ygz-item:nth-child(2)>img,
+		.index-ygz-list:nth-child(2) .index-ygz-item:nth-child(1)>img,
+		.index-ygz-list .van-image{
+			height: 2.5rem;
+		}
+		.zsxq-btn-jdgg{
+			position: absolute;
+			background-color: #009BFE;
+			border-radius: .3rem;
+			line-height: .4rem;
+			right: .3rem;
+			bottom: .2rem;
+			padding: .1rem .3rem;
+			font-size: .28rem;
+		}
+		.index-ygz-list, .index-tshw-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zsxq-bktj{
+			position: relative;
+			border-radius: .2rem;
+		}
+		.zsxq-bktj h2{
+			display: flex;
+			align-items: center;
+			font-size: .35rem;
+			line-height: 1rem;
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.zsxq-bktj h2 img{
+			margin-left: .1rem;
+			position: relative;
+			top: -.03rem;
+			width: .24rem;
+			height: .34rem;
+		}
+		.zsxq-bktj-list{
+			border-radius: .2rem;
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			background-color: rgba(255, 255, 255, .1);
+		}
+		.zsxq-bktj-item{
+			position: relative;
+			width: 33.333%;
+			text-align: center;
+			
+		}
+		.zsxq-bktj-item::after{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 0.01rem;
+			background-color:  rgba(255, 255, 255, .1);
+			content: " ";
+			color: transparent;
+		}
+		.zsxq-bktj-item:last-child:after{
+			display: none;
+		}
+		.zsxq-bktj-item .van-image{
+			width: 2.05rem;
+			height: 1.5rem;
+			margin: .2rem auto;
+		}
+		.zsxq-bktj-item-content{
+			margin-top: -1rem;
+			padding-top: 1rem;
+			padding-bottom: .2rem;
+			background: linear-gradient(0deg, rgba(255, 135, 17, 0.5), rgba(0, 0, 0, 0));
+		}
+		.zsxq-bktj-item h3{
+			font-size: .31rem;
+		}
+		.zsxq-bktj-item p{
+			font-size: .25rem;
+		}
+		.zsxq-bktj-item h3,
+		.zsxq-bktj-item p{
+			line-height: .5rem;
+			text-align: center;
+		}
+		.zsxq-bktj-item-num{
+			background-color: #FF8711;
+			width: 1.1rem;
+			height: .46rem;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			border-radius: 0 0 .2rem .2rem;
+		}
+		.zsxq-bktj-item-num span{
+			font-size: .31rem;
+		}
+		.zsxq-line{
+			border-top: 1px solid rgba(255, 255, 255, .1);
+			margin: .44rem -.3rem;
+		}
+		.van-tabs__nav {
+			background-color: transparent;
+		}
+		.van-tab--active .van-tab__text {
+			font-weight: bold;
+			opacity: 1;
+		}
+		.van-tab__text {
+			color: white;
+			font-size: .31rem;
+			opacity: .6;
+			font-weight: 400;
+		}
+		.van-tabs{
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+			border-radius: .4rem .4rem 0 0;
+			padding-top: .2rem;
+		}
+		.van-tabs__line{
+			width: .5rem; 
+		}
+		.van-tabs--line .van-tabs__wrap{
+			width: 6.5rem; 
+		}
+		.van-tabs__line {
+			background-color: #009BFE;
+		}
+		.van-tabs__wrap--scrollable .van-tab{
+			width: auto;
+		}
+		.fhlt-tab .van-tabs__line{
+			display: none;
+		}
+		.fhlt-tab .van-tab--active::after{
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			height: 3px;
+			content: " ";
+			color: transparent;
+			margin-left: -.25rem;
+			width: .5rem;
+			background-color: #009BFE;
+		}
+		.van-tabs__content{
+			padding-top: .3rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="xwxq zqxq zsxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">文博企业</div>
+				
+			</div>
+		</div>
+		<!-- <h2>报业集团</h2> -->
+		<div class="zqxq-header">
+			<!-- <img :src="shop.logo" alt=""> -->
+			<van-image
+				fit="cover"
+				:src="WBQY.imageUrl"
+			><template v-slot:error>加载失败</template></van-image>
+			<h2>{{WBQY.channelName}}</h2>
+			<p v-if="WBQY.wangzhan?WBQY.wangzhan.length>0:''">企业网站: {{WBQY.wangzhan}}</p>
+			<p v-if="WBQY.youxiang?WBQY.youxiang.length>0:''">企业邮箱: {{WBQY.youxiang}}</p>
+			<p v-if="WBQY.lianxifangshi?WBQY.lianxifangshi.length>0:''">联系方式: {{WBQY.lianxifangshi}}</p>
+			<!-- <p>企业位置: {{WBQY.zhanquweizhi}}</p> -->
+			<!-- <div class="zsxq-btn-jdgg" v-show="WBQY.wangzhan?WBQY.wangzhan.length>0:''" @click="goPage(WBQY.wangzhan)">去逛逛</div> -->
+		</div>
+		<div class="zqxq-body">
+			<van-tabs class="fhlt-tab" v-model="activeTab" @click="onClick">
+				<van-tab title="集团">
+					<div class="index-ygz-list">
+						<div class="index-ygz-item" @click="item.videoUrl.length>30?goPage('single_wbqy_video.html',{'id':item.id}):goPage('single_wbqy_qyxq.html',{'id':item.id})" v-for="(item,index) in listGoods" :key="index">
+							<van-image
+								fit="cover"
+								:src="item.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+							<h3 class="van-ellipsis">{{item.title}}</h3>
+							<!-- <p class="van-ellipsis">{{item.webHits}}人正在浏览</p> -->
+						</div>
+					</div>
+				</van-tab>
+				<van-tab title="子公司">
+					<div class="index-ygz-list">
+						<div class="index-ygz-item" @click="goPage('article_zsxq.html',{'id':item.id,'Keyword':item.name,'PositionName':shop.name})" v-for="(item,index) in listZS" :key="index">
+							<van-image
+								fit="cover"
+								:src="item.logo"
+							><template v-slot:error>加载失败</template></van-image>
+							<h3 class="van-ellipsis">{{item.name}}</h3>
+							<!-- <p class="van-ellipsis">{{item.webHits}}人正在浏览</p> -->
+						</div>
+					</div>
+				</van-tab>
+			</van-tabs>
+			<!-- <div class="zsxq-bktj">
+				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
+				<div class="zsxq-bktj-list">
+					<div class="zsxq-bktj-item" @click="goPage(item.liveUrl)" v-for="(item,index) in listTop" :key="index">
+						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
+						<van-image
+							fit="cover"
+							:src="item.logo"
+						><template v-slot:error>加载失败</template></van-image>
+						<div class="zsxq-bktj-item-content">
+							<h3 class="van-ellipsis">{{item.name}}</h3>
+							<p class="van-ellipsis">{{item.appHits}}人正在逛</p>
+						</div>
+					</div>
+				</div>id
+			</div>
+			<div class="zsxq-line"></div> -->
+			
+		</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				activeTab:0, // 菜单栏index
+				value: 2,
+				active: 3,
+				show: false,
+				shopObj:{
+					Keyword:'',  // 展商名
+					PositionName:'', // 展区地址
+				},
+				goodsObj:{
+					ExhibitorName:'',
+					Position:[],
+					// PositionName:'',
+				},
+				topObj:{
+					Position:[], // 地址
+					Ishot:true, // 是否热门
+					SkipCount:0,
+					MaxResultCount:3
+					// PositionName:'',
+				},
+				shop:'', // 展商详情
+				listGoods:[], // 展品列表
+				listTop:[], // top展品列表
+				WBQY:'', // 文博企业详情
+				listZS:[], // 展商列表
+				
+			},
+			created: function () {
+				// console.log(1)
+				// vant.Toast('提示看看');
+				// this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
+				// this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
+				// this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
+				// this.goodsObj.PositionName = qs2obj(window.location.href).PositionName;
+				// this.goodsObj.Position = [qs2obj(window.location.href).HC,qs2obj(window.location.href).ZQ]
+				// 获取展商详情
+				// this.getShop();
+				// 获取栏目详情
+				this.getChannel()
+				// 获取展品列表
+				this.getGoods()
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				// 获取栏目详情
+				getChannel(){
+					var _this = this;
+					// 获取首页站点下栏目
+					// axios.get('api/v1/channels/23')
+					axios.get('api/v1/channels/'+_obj.idSite+'/'+ qs2obj(window.location.href).id)
+					.then(function (response) {
+						_this.WBQY = response.data;
+						public_imgsrc([_this.WBQY])
+						console.log(_this.WBQY);
+						// // 获取展商列表
+						axios.get(_obj.shopUrl + 'api/services/app/Exhibitor/GetCachePageList',{
+							params:{
+								PositionName:_this.WBQY.channelName,
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+						})
+						.then(function (response) {
+							_this.listZS = response.data.result.items;
+							// public_imgsrc([_this.data_content])
+							console.log('1211113',_this.listZS );
+						})
+					})
+				},
+				// 获取展商详情
+				getShop(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList',{
+						params:this.shopObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.shop = response.data.result.items[0];
+						console.log('332221111111',_this.shop)
+						_this.goodsObj.Position = _this.shop.position;
+						// 获取展品列表
+						_this.getGoods();
+						// 获取top展品列表
+						_this.getTop()
+					})
+				},
+				// 获取展品列表
+				getGoods(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": qs2obj(window.location.href).id,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
+						"page": 1,
+						"perPage": 200
+					})
+					.then(function (response) {
+						_this.listGoods = response.data.contents;
+						public_imgsrc(_this.listGoods)
+						// console.log('123',_this.userList);
+					})
+					/*
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
+						params:this.goodsObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods = response.data.result.items;
+					})
+					*/
+				},
+				// 获取top展品列表
+				getTop(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
+						params:this.topObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listTop = response.data.result.items;
+						console.log('32223333',_this.listTop)
+					})
+				},
+				onClick(name, title) {
+					console.log(name,title);
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

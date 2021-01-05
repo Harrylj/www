@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展会直击</title>
+	<style type="text/css">
+		html,body,#app.zhzj,.zhzj-video,.index-video-div{
+			height: 100%;
+		}
+		#app.zhzj {
+			padding: 0;
+		}
+		.index-video-div{
+			position: relative;
+		}
+		.zhzj-mulu.van-popup--bottom.van-popup--round {
+			/* background-color: #162463; */
+			background: linear-gradient(90deg, #1116A4, #2480EC);
+			border-radius: .67rem .67rem 0 0;
+			height: 8rem;
+			padding: 0 .3rem .3rem .3rem;
+		}
+		.zhzj-mulu-close{
+			font-size: .3rem;
+			color: white;
+		}
+		div.video-js{
+			height: 8rem;
+		}
+		.zhzj-mulu h3,
+		.zhzj-mulu-close,
+		.zhzj-mulu-item h4,
+		.zhzj-mulu-item h5,
+		.zhzj-mulu-item h6,
+		.zhzj-mulu-item p {
+			color: white;
+		}
+
+		/* .zhzj-mulu-item h4
+		,.zhzj-mulu-item h5{
+			text-align: center;
+		} */
+		.zhzj-mulu-item h4 {
+			background-color: #D3D5E9;
+			color: #222222;
+			width: .55rem;
+			height: .55rem;
+			border-radius: 50%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin-left: .3rem;
+		}
+
+		.zhzj-mulu-item h5 {
+			opacity: .6;
+			font-size: .29rem;
+			margin-right: .3rem;
+		}
+
+		.zhzj-mulu-item h6,
+		.zhzj-mulu-item p {
+			line-height: .5rem;
+		}
+
+		.zhzj-mulu-item h6 {
+			font-size: .31rem;
+			opacity: .6;
+		}
+
+		.zhzj-mulu-item p {
+			font-size: .28rem;
+			font-weight: bold;
+		}
+
+		.zhzj-mulu-title {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			line-height: 1rem;
+			padding: 0 .2rem;
+			margin: .2rem 0;
+		}
+
+		.zhzj-mulu-item-content {
+			width: 3.9rem;
+			flex: 1;
+			margin-left: .3rem;
+		}
+
+		.zhzj-mulu-title h3 {
+			font-size: .35rem;
+		}
+
+		.zhzj-mulu-close {
+			font-size: .4rem;
+			opacity: .8;
+		}
+
+		.zhzj-mulu-item {
+			display: flex;
+			justify-content: space-between;
+			/* flex: 10% 70% 20%; */
+			flex: 1;
+			/* background-color: #28346F; */
+			background-color: rgba(246,246,246, .08);
+			align-items: center;
+			min-height: 1.8rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+		}
+
+		.zhzj-mulu-item-hover {
+			/* background-color: #697199; */
+			background-color: rgba(246,246,246, .28);
+		}
+		.zhzj-video{
+			position: relative;
+		}
+		.public-header-title{
+			background-color: rgba(0, 0, 0, .2);
+		}
+		.index-live
+		,.index-video-num{
+			top: 1.3rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="zhzj" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title"></div>
+				<div class="phtc-fenxiang" @click="fenxiang()"></div>
+				<div class="phtc-mulu" @click="mulu()"></div>
+			</div>
+		</div>
+		<div class="zhzj-video">
+			<!-- <div class="index-live"><span></span>LIVE</div>
+			<div class="index-video-num"> <img src="images/index-eye.png" alt=""> 1.2K</div>
+			<img style="width: 5rem;" src="images/bg.png" alt="">
+			{{ message }} -->
+			<div class="index-video-div">
+				<div class="index-live"><span></span>{{videoML[active].zt?videoML[active].zt:''}}</div>
+				<!-- <div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.hits}}</div> -->
+				<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{videoML[active].zt=='LIVE'?videoML[active].hitsByDay:videoML[active].hits}}</div>
+				<video-player class="vjs-custom-skin " :class="!show?'index-video-middle':''" ref="videoPlayer" :options="playerOptions"></video-player>
+			</div>
+		</div>
+
+		<van-popup class="zhzj-mulu" v-model="show" :overlay="true" round position="bottom">
+			<div class="zhzj-mulu-title">
+				<h3>目录</h3>
+				<van-icon class="zhzj-mulu-close" name="cross" @click="hidePopup()" />
+			</div>
+			<div class="zhzj-mulu-list">
+				<div class="zhzj-mulu-item" :class="index==active?'zhzj-mulu-item-hover':''" v-for="(video,index) in videoML"
+					::key="index" @click="selectMulu(index)">
+					<h4>{{index+1}}</h4>
+					<div class="zhzj-mulu-item-content">
+						<!-- <h6>即将开始</h6> -->
+						<h6>{{video.addDate?video.addDate.split(':')[0]:''}}:{{video.addDate?video.addDate.split(':')[1]:''}}</h6>
+						<p>{{video.title}}</p>
+					</div>
+					<!-- <h5>15:30pm</h5> -->
+					<!-- <h5>{{video.addDate?video.addDate.split(' ')[1].substring(0,5):''}}</h5> -->
+					<!-- <h5>{{video.addDate?video.addDate.split(':')[0]:''}}:{{video.addDate?video.addDate.split(':')[1]:''}}</h5> -->
+
+				</div>
+			</div>
+		</van-popup>
+		<!-- 分享内容start -->
+		<link rel="stylesheet" href="css/share.min.css">
+		<div class="weixin-share" v-if="showShareWX" @click="showShareWX=false"></div>
+		<van-popup class="public-fenxiang-popup" v-model="showShare" position="bottom"  >
+			<div class="public-fenxiang-popup-div" >
+				<div id="share-2" v-show="showShare" v-show="showShare"></div>
+				<div class="public-fenxiang-popup-close" @click="showShare=false">取消</div>
+			</div>
+		</van-popup>
+		<script src="js/social-share.js"></script>
+		<script src="js/qrcode.js"></script>
+		<!-- 分享内容over -->
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+	<script type="text/javascript">
+		var _obj = public_obj();
+		 
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			el: '#app',
+			data: {
+				showShare:false,  // 分享
+				showShareWX:false,	// 微信浏览器分享
+				value: 2,
+				active: 0,
+				message: '展会直击',
+				show: false,
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					poster: "images/bg.png", //你的封面地址
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						{
+							withCredentials: false,
+							// type: 'application/x-mpegURL',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							src:'',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
+				videoML:[],
+				KMS:'', // 播放量,这里统一显示开幕式的
+				shareId:'', // 分享id
+			},
+			created: function () {
+				var _this = this;
+				// console.log(1)
+				// vant.Toast('提示看看');
+				// 目录
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZHZJ,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					},
+					{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
+					"page": 1,
+					"perPage": 130
+				})
+				.then(function (response) {
+					_this.videoML = response.data.contents;
+					public_imgsrc(_this.videoML)
+					_this.playerOptions.poster = _this.videoML[0].imageUrl;
+					// _this.playerOptions.sources[0].src = _this.videoML[0].shipin;
+					// m3u8
+					if(_this.videoML[0].videoUrl.indexOf("m3u8") != -1){
+						console.log('m3u8')
+						_this.playerOptions.sources[0].type='application/x-mpegURL';
+					}
+					// mp4
+					else{
+						_this.playerOptions.sources[0].type= ''
+						console.log('其他')
+					}
+					_this.playerOptions.sources[0].src =  _this.videoML[0].videoUrl;
+					// 直播
+					if( _this.videoML[0].zT == 'LIVE' || _this.videoML[0].zt == 'LIVE'){
+						console.log('直播')
+						
+					}
+					// 回放
+					else{
+						console.log('回放')
+					}
+					console.log('123',_this.videoML);
+					_this.shareId = _this.videoML[0].id;
+					//执行统计量
+					axios.get('api/hits/'+_obj.idSite+'/'+_obj.idZHZJ+'/'+_this.shareId)
+					.then(function (response) {
+						// console.log(response);
+					});
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+			},
+			mounted: function () {
+				// this.mulu()
+			},
+			methods: {
+				//分享
+				fenxiang() {
+					var _this = this;
+					// 统计分享量
+					axios.post(_obj.shopUrl+'api/services/app/SiteServer/IncrementSharding', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idZHZJ,
+						"contentId": _this.shareId,
+					})
+					.then(function (response) {
+					})
+					if(isWeChatBrowser()){
+						this.showShareWX = true;
+					}
+					else{
+						this.showShare = true;
+						setTimeout(()=>{
+							_this.fenxiangNext();
+						},50)
+					}
+				},
+				// 分享组件
+				fenxiangNext(){
+					socialShare('#share-2', {sites: ['wechat','weibo']});
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				mulu() {
+					// vant.Toast('目录')
+					this.show =!this.show;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				// 目录
+				selectMulu(_index) {
+					var _this = this;
+					this.active = _index;
+					_this.playerOptions.poster = _this.videoML[_index].imageUrl;
+					// _this.playerOptions.sources[0].src = _this.videoML[_index].shipin;
+					// m3u8
+					if(_this.videoML[_index].videoUrl.indexOf("m3u8") != -1){
+						console.log('m3u8')
+						_this.playerOptions.sources[0].type='application/x-mpegURL';
+					}
+					// mp4
+					else{
+						_this.playerOptions.sources[0].type= ''
+						console.log('其他')
+					}
+					_this.playerOptions.sources[0].src =  _this.videoML[_index].videoUrl;
+					// 直播
+					if( _this.videoML[_index].zT == 'LIVE' || _this.videoML[_index].zt == 'LIVE'){
+						console.log('直播')
+					}
+					// 回放
+					else{
+						console.log('回放')
+					}
+					_this.shareId = _this.videoML[_index].id;
+					// 调用详情
+					axios.get('api/v1/contents/'+_obj.idSite+'/'+_obj.idZHZJ+'/'+_this.shareId)
+					.then(function (response) {
+					})
+					//执行统计量
+					axios.get('api/hits/'+_obj.idSite+'/'+_obj.idZHZJ+'/'+_this.shareId)
+					.then(function (response) {
+						// console.log(response);
+					});
+					// vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

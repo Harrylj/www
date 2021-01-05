@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展会影集</title>
+	<style type="text/css">
+		.xwxq {
+			position: relative;
+		}
+
+		#app {
+			padding-top: 1rem;
+			background-color: #12206A
+		}
+
+		.public-header-title {
+			background: linear-gradient(90deg, #14189E, #2880E8);
+		}
+
+		.phtc-fenxiang {
+			right: 0;
+		}
+
+		.zqsl-item,
+		.wzwb-flhd-div,
+		.mflj-item {
+			background-color: rgba(255, 255, 255, .1);
+			padding-top: 0;
+		}
+
+		.xwxq * {
+			color: white;
+		}
+
+		.zqxq-body {
+			position: relative;
+			padding: .3rem;
+			/* background-color: rgba(255, 255, 255, .08);
+			border-radius: .67rem .67rem 0 0; */
+		}
+
+		.zqxq-body {
+			position: relative;
+			border-top: 1px solid rgba(255, 255, 255, .2);
+		}
+
+		.mflj-item{
+			width: 3.3rem;
+			padding-left: 0;
+			padding-bottom: .2rem;
+		}
+		.mflj-item:last-child{
+			margin-bottom: .2rem;
+		}
+		.mflj-item>img
+		,.mflj-item .van-image{
+			position: relative;
+			height: 3.2rem;
+			width: 100%;
+			display: block;
+			border-radius: .2rem;
+		}
+		.mflj-item h3{
+			font-size: .31rem;
+			line-height: .6rem;
+			font-weight: 400;
+			padding: .1rem .3rem 0 .3rem;
+		}
+		.zhyj-item-footer{
+			display: flex;
+			justify-content: space-between;
+			padding: 0 .3rem;
+		}
+		.zhyj-item-footer-pic
+		,.zhyj-item-footer-num{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			font-size: .21rem;
+			line-height: .5rem;
+		}
+		.zhyj-body-div{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zhyj-body-div .van-icon{
+			font-size: .28rem;
+			margin-right: .05rem;
+		}
+		.wzwb-zhyj{
+			padding: .3rem 0 0 0;
+		}
+		.wzwb-zhyj-div{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zhyj-item{
+			position: relative;
+			width: 3.3rem;
+		}
+		.zhyj-item::before,
+		.zhyj-item::after{
+			position: absolute;
+			top: .15rem;
+			left: 50%;
+			z-index: 1;
+			content: " ";
+			height: 2.4rem;
+			width: 3rem;
+			opacity: .8;
+			margin-left: -1.5rem;
+			/* background-color: white; */
+			background-color: rgba(243,247,250, .5);
+			color: transparent;
+			border-radius: .2rem;
+		}
+		.zhyj-item::after{
+			opacity: .3;
+			top: .3rem;
+			width: 2.7rem;
+			margin-left: -1.35rem;
+		}
+		.zhyj-item img
+		,.zhyj-item  .van-image{
+			display: block;
+			position: relative;
+			z-index: 2;
+			width: 3.3rem;
+			height: 2.4rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+			overflow: hidden;
+		}
+		.zhyj-item h4{
+			font-size: .31rem;
+			line-height: 1rem;
+		}
+		.wzwb-line{
+			margin-top: .4rem;
+			border-top: 1px solid rgba(255, 255, 255, .1);
+		}
+		.wzwb-mflj{
+			margin-top: 0;
+		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0rem;
+			padding: .2rem .2rem .7rem .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .32rem;
+			line-height: .4rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="zhyj xwxq flhd" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">展会影集</div>
+				
+			</div>
+		</div>
+
+		<div class="zhyj-body zqxq-body">
+			<!-- <div class="zhyj-body-div">
+					<div class="mflj-item"  @click="goPage('article_yjxq.html',{'id':item.id})" v-for="(item,index) in listYJ" :key="index">
+						<van-image fit="cover" :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
+						<h3 class="van-ellipsis">{{item.subTitle}}</h3>
+						<div class="zhyj-item-footer">
+							<div class="zhyj-item-footer-pic">
+								<van-icon name="photo-o"></van-icon>{{item.imageUrlCount+1}}张
+							</div>
+							<div class="zhyj-item-footer-num">
+								<van-icon name="eye-o"></van-icon>{{item.hits}}
+							</div>
+						</div>
+					</div>
+			</div> -->
+			<div class="index-ygz wzwb-zhyj">
+				<div class="wzwb-zhyj-div">
+					<div class="zhyj-item" @click="goPage('column_zhyj.html',{'id':item.id,'name':item.channelName})" v-for="(item,index) in ZHYJ" :key="index">
+						<!-- <img :src="item.imageUrl" alt=""> -->
+						<van-image fit="cover" :src="item.imageUrl">
+							<template v-slot:error>加载失败</template>
+						</van-image>
+						<h4 class="van-ellipsis">{{item.channelName}}</h4>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
+
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function () {
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				value: 2,
+				active: 3,
+				show: false,
+				listYJ:[], // 影集列表
+				ZHYJ:[], // 展会影集
+			},
+			created: function () {
+				var _this = this;
+				// console.log(1)
+				// vant.Toast('提示看看');
+				// 展会影集
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idZHYJ)
+				.then(function (response) {
+						_this.ZHYJ = response.data.children;
+						public_imgsrc(_this.ZHYJ)
+						// console.log('9999922311',_this.ZHYJ)
+				})
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

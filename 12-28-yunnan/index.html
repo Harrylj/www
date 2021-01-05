@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="css/video-js.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/custom-theme.css" />
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>创意云南2020云上文化产业博览会</title>
+	<style type="text/css">
+		#app {
+			padding-top: 0;
+			padding-bottom: 0;
+			/* padding: 0 0 2rem 0; */
+		}
+		.index-body{
+			position: relative;
+			z-index: 1;
+			padding-bottom: .3rem;
+			border-radius:  .3rem .3rem 0 0;
+			
+			/* background: linear-gradient(180deg, #0036B9, #153790, #1A3883); */
+		}
+		.index-header-swipe{
+			position: relative;
+			z-index: 2;
+		}
+		.index-body::before{
+			position: absolute;
+			z-index: -1;
+			left: 0;
+			top: -3.5rem;
+			width: 100%;
+			height: 7rem;
+			content: " ";
+			color: transparent;
+			/* background-image: url(images/index-bg-01.png); */
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		}
+		p {
+			font-size: .3rem;
+		}
+		.index-swipe-01{
+			position: relative;
+			height: 4.24rem;
+		}
+		.index-swipe-01>img,
+		.index-swipe-01 .van-image {
+			height: 100%;
+			width: 100%;
+		}
+		.index-swipe-01 .van-swipe__indicator{
+			display: none;
+			width: .08rem;
+			height: .06rem;
+			background-color: #91ACE1;
+		}
+		.index-swipe-01 .van-swipe__indicator--active{
+			width: .12rem;
+			background-color: #FFFFFF;
+		}
+		.index-nav-01,
+		.index-nav,
+		.index-video,
+		.index-ygz,
+		.index-tshw,
+		.index-zbdw,
+		.index-cbdw,
+		.index-xbdw{
+			position: relative;
+			padding: 0 .3rem;
+		}
+		.index-nav-01{
+			padding-top: .1rem;
+		}
+		.index-nav-01-div{
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-nav-01-div a{
+			display: inline-block;
+			margin-top: .2rem;
+			width: 48%;
+		}
+		.index-nav-01-div img{
+			/* width: 3.35rem; */
+			width: 100%;
+			height: 2.12rem;
+		}
+		.index-nav {
+			margin-top: .2rem;
+			display: flex;
+			justify-content: space-around;
+			flex: 1;
+		}
+		.index-nav-div {
+			text-align: center;
+		}
+
+		.index-nav-div h2 {
+			font-size: .24rem;
+			line-height: .6rem;
+		}
+		
+		.index-nav-div img {
+			width: 1rem;
+		}
+
+		.index-video {
+			position: relative;
+		}
+
+		.index-video-div{
+			position: relative;
+		}
+		
+		.index-video-bgimg{
+			display: block;
+			width: 100%;
+			height: 3.9rem;
+		}
+		.index-video video {
+			width: 100%;
+			height: 4rem;
+		}
+		/* .index-video-div::before{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			content: " ";
+			color: transparent;
+			width: 1.12rem;
+			height: 1.12rem;
+			z-index: 2;
+			margin-left: -.56rem;
+			margin-top: -.56rem;
+			background-image: url(./images/index-bofang.png);
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+		} */
+		.index-ygz{
+			position: relative;
+		}
+		.index-ygz-more{
+			position: absolute;
+			right: 0;
+			top: 0;
+			z-index: 2;
+			color: white;
+			font-size: .31rem;
+			line-height: 1rem;
+			opacity: .67;
+			padding: 0 .3rem;
+		}
+		.index-ygz-list
+		,.index-tshw-list{
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.index-ygz-list{
+			padding-bottom: .3rem;
+		}
+		.index-ygz-item{
+			position: relative;
+			width: 3.32rem;
+			height: 4.8rem;
+			margin-bottom: .26rem;
+		}
+		.index-ygz-item>img,
+		.index-ygz-item .van-image,
+		.index-ygz-item .van-image img{
+			width: 100%;
+			height: 100%;
+			border-radius: .2rem;
+		}
+		/* .index-ygz-item-footer{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0;
+			padding: .2rem 0;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0));
+			background-size: 100% 100%;
+			border-radius: 0 0 .2rem .2rem;
+		} */
+		.index-ygz-item-footer{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0;
+			padding: 4rem 0 .2rem 0;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.62), rgba(0, 0, 0, 0));
+			background-size: 100% 100%;
+			border-radius: 0 0 .2rem .2rem;
+		}
+		.index-ygz-item h3,
+		.index-ygz-item p{
+			padding: 0 .2rem;
+			line-height: .5rem;
+			color: white;
+		}
+		.index-ygz-item h3{
+			font-size: .31rem;
+		}
+		.index-ygz-item p{
+			font-size: .25rem;
+			opacity: .75;
+		}
+		.index-tshw-item{
+			position: relative;
+			padding-bottom: .1rem;
+			width: 3.35rem;
+		}
+		.index-tshw-item:nth-child(1),
+		.index-tshw-item:nth-child(2){
+			margin-bottom: .1rem;
+		}
+		/* .index-tshw-item img{ */
+		.index-tshw-item .van-image{
+			width: 3.35rem;
+			height: 2.5rem;
+			border-radius: .2rem;
+			margin-bottom: .1rem;
+			overflow: hidden;
+		}
+		.index-tshw-item h3,
+		.index-tshw-item p{
+			position: relative;
+			width: 100%;
+			line-height: .5rem;
+		}
+		.index-tshw-item h3{
+			font-size: .31rem;
+			font-weight: 400;
+			color: white;
+		}
+		.index-tshw-item p{
+			font-size: .25rem;
+			color: white;
+			opacity: .6;
+		}
+		
+		.index-logo-nav-list{
+			display: flex;
+			justify-content: space-between;
+		}
+		.index-logo-nav-item img{
+			width: 2.15rem;
+			height: 1.3rem;
+			border-radius: .2rem;
+		}
+		.index-logo-nav-item p{
+			text-align: center;
+			color: #FFFFFF;
+			text-align: center;
+			font-size: .27rem;
+			opacity: .58;
+			line-height: .8rem;
+		}
+		.index-ygz-list, .index-tshw-list{
+			width: 100%;
+		}
+		.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) img
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) img
+		,.index-ygz-list:nth-child(odd) .index-ygz-item:nth-child(even) .van-image
+		,.index-ygz-list:nth-child(even) .index-ygz-item:nth-child(odd) .van-image{
+			height: 4.8rem;
+		}
+		.index-header-img{
+			position: relative;
+			padding-top: .6rem;
+    		margin-bottom: -2.8rem;
+		}
+		.index-header-img img{
+			display: block;
+			width: 100%;
+		}
+		.index-dw-div{
+			position: relative;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.index-dw-item{
+			border-radius: .2rem;
+			line-height: 1.1rem;
+			width: 3.35rem;
+			background-color: rgba(255, 255, 255, 0.1);
+			font-size: .29rem;
+			padding: 0 .15rem;
+			text-align: center;
+			color: white;
+		}
+		.index-xbdw .index-dw-item{
+			margin-bottom: .2rem;
+		}
+		.index-hzs{
+			padding-top: .5rem;
+			padding-bottom: .25rem;
+		}
+		.index-swipe-02-father .van-swipe-item-div{
+			padding: 0.3rem 0.1rem 0.2rem 0.1rem;
+		}
+		.index-swipe-01-content{
+			position: absolute;
+			left: 0;
+			width: 100%;
+			bottom: 0;
+			padding: .2rem;
+			color: white;
+			background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2));
+			border-radius: 0 0 .2rem .2rem;
+			font-size: .32rem;
+			line-height: .4rem;
+		}
+		.index-ygz-item p{
+			display: flex;
+			align-items: center;
+		}
+		.index-ygz-item p img{
+			width: 0.23rem!important;
+			height: 0.15rem!important;
+			margin-bottom: 0!important;
+			margin-right: .1rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="index" id="app" v-cloak>
+		<!-- <van-nav-bar fixed title="云南文博会"></van-nav-bar> -->
+		<!-- <div class="index-header">
+			<div class="index-header-div"></div>
+			<img src="images/bg.png" alt="" />
+			<span>云南文博会</span>
+		</div> -->
+		<transition name="van-slide-down">
+			<!-- <div v-show="countdownShow">Slide Up</div> -->
+		
+		<div class="public-countdown-father"  v-if="countdownShow" @click="countdownHide()">
+			<div class="public-countdown-div">
+				<div class="public-countdown-h1">展会倒计时</div>
+				<img class="public-countdown-close" src="images/icon-quxiao.png" alt="">
+				<div class="public-countdown-right">测试版</div>
+				<div class="public-countdown-num" :class="'public-countdown-num-'+countdownDay"></div>
+				<div class="public-countdown-content">
+					<!-- <h5>展会时间</h5>
+					<p>2020.12.12-12.31</p>
+					<h5>展会地点</h5>
+					<p>主会场：昆明</p>
+					<p>昆明融创文旅城•滇池后海，昆明同德广场，</p>
+					<p>公园1903，南亚风情第壹城，七彩云南第壹城，</p>
+					<p>云南大剧院，云南广播电视台</p>
+					<p>分会场：玉溪  丽江  保山</p> -->
+					<img style="width: 96%;display: block; margin: 0 auto;" src="images/countdown-content.png" alt="">
+				</div>
+											
+			</div>
+			
+		</div>
+		</transition>
+		<div class="index-header-swipe">
+			<van-swipe class="index-swipe-01" :autoplay="10000" >
+				<!-- <van-swipe-item
+				@click="image.linkUrl?goPage('single_link_footer.html',{'linkUrl':image.linkUrl}):goPage('article_xwxq.html',{'id':image.id})"
+				v-for="(image, index) in imagesDBLB" :key="index"> -->
+				<van-swipe-item
+				@click="goSwipePage(image)"
+				v-for="(image, index) in imagesDBLB" :key="index">
+					<van-image
+							fit="cover"
+							:src="image.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+					<div v-if="image.id==541||image.title=='创意云南2020云上文化产业博览会'||image.title.length<1?false:true" class="index-swipe-01-content van-multi-ellipsis--l2">{{image.title}}</div>
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="index-body">
+			<div class="index-nav-01">
+				<div class="index-nav-01-div">
+					<a href="column_zhzj.html"><img src="images/index-nav-01-01.png" alt=""></a>
+					<a href="column_xwdt.html"><img src="images/index-nav-01-02.png" alt=""></a>
+					<!-- <a href="column_flhd.html"><img src="images/index-nav-01-03.png" alt=""></a> -->
+					<a href="column_tphd2.html"><img src="images/index-nav-01-03.png" alt=""></a>
+					<a href="column_wbjj.html"><img src="images/index-nav-01-04.png" alt=""></a>
+				</div>
+			</div>
+			<a href="column_kms.html">
+			<div class="index-video">
+				
+				<div class="index-h2">{{KMSTitle.channelName}}</div>
+				
+				<div class="index-video-div">
+					<div class="index-live"><span></span>{{KMS.zhibozt}}</div>
+					<div class="index-video-num"> <img src="images/index-eye.png" alt="">{{KMS.zhibozt=='LIVE'?KMS.hitsByDay:KMS.hits}}</div>
+					<van-image
+							fit="cover"
+							:src="playerOptions.poster"
+					><template v-slot:error>加载失败</template></van-image>
+					<!-- <video-player class="vjs-custom-skin" ref="videoPlayer" :options="playerOptions"></video-player> -->
+				</div>
+			</div>
+			</a>
+			<!-- 
+			<h2 style="color: white;">{{userList.length}}</h2>
+			<h2 style="color: white;">{{userList}}</h2> -->
+			<div class="index-swipe-02-father">
+				<div class="index-h2">重磅嘉宾</div>
+				<!-- <img src="http://192.168.0.250:8032/mobile/upload/files/2020/11/3c74dca23e58e25f.jpg" alt=""> -->
+				<van-swipe class="index-swipe-02" :loop="false" :width="swipeWidth" :show-indicators="false" >
+					<van-swipe-item v-for="(user,index) in userList" :key="index">
+						<div class="van-swipe-item-div"  @click="goPage('article_jbjs.html',{'id':user.id})">
+							<!-- <img src="images/index-user-01.png" alt=""> -->
+							<van-image
+							fit="cover"
+							:src="user.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+							<h3 class="van-ellipsis">{{user.title}}</h3>
+							<!-- <p class="van-ellipsis">{{user.job}}</p> -->
+							<p class="van-multi-ellipsis--l2">{{user.zhicheng}}</p>
+						</div>
+					</van-swipe-item>
+				</van-swipe>
+			</div>
+			<div class="index-ygz">
+				<div class="index-h2">云逛展</div>
+				<div class="index-ygz-more" @click="ygzNext">换一换</div>
+				<div class="index-ygz-list">
+					<!-- <div class="index-ygz-item" @click="item.linkUrl?goPage(item.linkUrl):goPage('single_ygz_video.html',{'id':item.id})" v-for="(item,index) in YGZ" :key="index"> -->
+					<div class="index-ygz-item" @click="goYGZ(item)" v-for="(item,index) in YGZ" :key="index">
+						<div class="index-live"><span></span>{{item.zT}}</div>
+						<!-- <img :src="item.imageUrl" alt=""> -->
+						<van-image
+							fit="cover"
+							:src="item.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+						<!-- <van-image
+							fit="cover"
+							:src="item.imageUrl"
+						></van-image> -->
+						<div class="index-ygz-item-footer">
+							<h3 class="van-ellipsis">{{item.title}}</h3>
+							<p class="van-ellipsis"><img src="images/index-eye.png" alt=""><span>{{item.zT=='LIVE'?item.hitsByDay:item.hits}}</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="index-line"></div>
+			<div class="index-tshw" v-if="listGoods.length>0">
+				<div class="index-h2">特色好物</div>
+				<div class="index-tshw-list">
+					<!-- <div class="index-tshw-item"
+						:class="goods.isLive?'goods-live-hover':''" 
+						@click="goGoodsDetail(goods)"
+						v-for="(goods,index) in listGoods" :key="index">
+						<van-image
+							fit="cover"
+							lazy-load
+							:src="goods.images[0].url"
+							><template v-slot:error>加载失败</template></van-image>
+						
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
+					</div> -->
+					<div class="index-tshw-item"
+						@click="goPage('article_zsxq.html',{'Keyword':goods.name,'id':goods.id})"
+						v-for="(goods,index) in listGoods" :key="index"
+						>
+						<van-image
+							fit="cover"
+							lazy-load
+							:src="goods.logo"
+							><template v-slot:error>加载失败</template></van-image>
+						<h3 class="van-ellipsis">{{goods.name}}</h3>
+						<p v-if="goods.appHits?goods.appHits.length>0?true:false:''" class="van-ellipsis">{{goods.appHits}}人正在浏览</p>
+					</div>
+				</div>
+			</div>
+			<div class="index-line"></div>
+			<!-- 合作商 -->
+			<div class="index-tshw index-hzs">
+				<div class="index-tshw-list">
+					<!-- <div class="index-tshw-item" @click="goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index"> -->
+					<!-- <div class="index-tshw-item" @click="goods.channelName=='云南报业传媒集团'?goPage('single_wbqy_one.html',{'id':goods.id}):goPage('single_wbqy.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index"> -->
+					<div class="index-tshw-item" @click="goPage('single_wbqy_one.html',{'id':goods.id})" v-for="(goods,index) in HZS" :key="index">
+						<!-- <img src="images/bg.png" alt=""> -->
+						<van-image
+							fit="cover"
+							:src="goods.imageUrl"
+							><template v-slot:error>加载失败</template></van-image>
+						<h3 class="van-ellipsis">{{goods.channelName}}</h3>
+					</div>
+				</div>
+			</div>
+			<div class="index-zbdw">
+				<div class="index-h2">主办单位</div>
+				<div class="index-dw-div">
+					<div class="index-dw-item van-ellipsis" v-for="(item,index) in ZBDW" :key="index">{{item.title}}</div>
+				</div>
+				<!-- <div class="index-logo-nav-list">
+					<div class="index-logo-nav-item"v-for="index in 3" :key="index" >
+						<img src="images/bg.png" alt="">
+						<p>云南电视台</p>
+					</div>
+				</div> -->
+			</div>
+			<div class="index-cbdw">
+				<div class="index-h2">承办单位</div>
+				<div class="index-dw-div">
+					<div class="index-dw-item van-ellipsis" v-for="(item,index) in CBDW" :key="index">{{item.title}}</div>
+				</div>
+			</div>
+			<div class="index-xbdw">
+				<div class="index-h2">协办单位</div>
+				<div class="index-dw-div">
+					<div class="index-dw-item van-ellipsis" v-for="(item,index) in XBDW" :key="index">{{item.title}}</div>
+				</div>
+			</div>
+		</div>
+		
+		<van-tabbar class="public-footer-nav" v-model="active">
+			<!-- <van-tabbar-item badge="3">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? icon.active : icon.inactive" />
+				</template>
+			</van-tabbar-item> -->
+			<van-tabbar-item @click="window.location.href='index.html'">
+				<span>首页</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-01-hover.png' : 'images/public-nav-01.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_jjwb.html'">
+				<span>聚焦文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-02-hover.png' : 'images/public-nav-02.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='single_lxwm.html'">
+				<!-- <span>自定义</span> -->
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-03.png': 'images/public-nav-03.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wzwb.html'">
+				<span>玩转文博</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-04-hover.png' : 'images/public-nav-04.png'" />
+				</template>
+			</van-tabbar-item>
+			<van-tabbar-item  @click="window.location.href='column_wbjj.html'">
+				<span>文博经济</span>
+				<template #icon="props">
+					<img :src="props.active ? 'images/public-nav-05-hover.png' : 'images/public-nav-05.png'" />
+				</template>
+			</van-tabbar-item>
+		</van-tabbar>
+		<div class="public-footer-bah">创意云南2020云上文化产业博览会<br/>滇ICP备2020009195号-1 <br/>Copyright © 2020</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+	<script src="js/vue-video-player.min.js"></script>
+	<script src="js/videojs-contrib-hls.min.js"></script>
+
+
+	<script type="text/javascript">
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		// 自动注册 Lazyload 组件,可以配置额外的选项
+		Vue.use(vant.Lazyload, {
+			lazyComponent: true
+		});
+		// 挂载VueVideoPlayer插件
+		Vue.use(VueVideoPlayer)
+		var app = new Vue({
+			// new Vue({
+			el: '#app',
+			data: {
+				swipeWidth:2.68,
+				swipeImages: [
+					'https://img.yzcdn.cn/vant/apple-1.jpg',
+					'https://img.yzcdn.cn/vant/apple-2.jpg',
+				],
+				active: 0,
+				icon: {
+					active: 'https://img.yzcdn.cn/vant/user-active.png',
+					inactive: 'https://img.yzcdn.cn/vant/user-inactive.png',
+				},
+				value: 2,
+				message: 'Hello Vue!',
+				current: ['mail'],
+				playerOptions: {
+					autoplay: false,
+					controls: true,
+					// poster: "images/bg.png", //你的封面地址
+					notSupportedMessage: '此视频暂无法播放，请稍后再试', //允许覆盖Video.js无法播放媒体源时显示的默认信息。
+					sources: [
+						{
+							withCredentials: false,
+							type: 'application/x-mpegURL',
+							// src: 'https://api.dc.sdtzcd.com/video/1/playlist.m3u8',
+							muted: false,
+							nativeAudioTracks:false,
+						}
+					]
+				},
+				userList:[], // 重磅嘉宾
+				imagesDBLB:[], // 顶部轮播
+				YGZ:[], // 云逛展
+				ZBDW:[], // 主办单位
+				CBDW:[], // 承办单位
+				XBDW:[], // 协办单位
+				KMSTitle:[], // 开幕式栏目
+				KMS:[], // 开幕式内容
+				YGZPage:1, //云逛展翻页
+				formData:{ // 特色好物列表请求数组
+					isHot: true,
+					// Keyword:'云南陶韵文化传播有限公司',
+					SkipCount:0,
+					Position:[],
+					MaxResultCount:4,
+				},
+				listGoods: [], // 特色好物列表
+				HZS:[], // 合作商
+				countdownDay:'', // 倒计时天数
+				countdownShow:false, // 是否显示倒计时 
+			},
+			created: function () {
+				var _this = this;
+				
+				// 距离指定日期还有多少天
+				this.countdownDay = getDistanceSpecifiedTime('2020/12/13 00:00:00')
+				// this.countdownDay = getDistanceSpecifiedTime('2020/12/12 18:12:00')
+				// setTimeout(()=>{
+				// 	_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
+				// 	// 是否显示倒计时
+				// 	if ( window.localStorage.getItem("key_index_djs") == null ){
+				// 			console.log("没有",window.localStorage.getItem("key_index_djs"));
+				// 	} else {
+				// 			console.log("有选",window.localStorage.getItem("key_index_djs"));
+				// 			_this.countdownShow = false;
+				// 			console.log(_this.countdownShow)
+				// 	}
+				
+				// },500)
+				// setTimeout(()=>{
+				// 	_this.countdownShow = false;
+				// 	window.localStorage.setItem('key_index_djs',true)
+				// },5000)
+
+				// 每次浏览器打开都提示倒计时
+				setTimeout(()=>{
+					_this.countdownDay>0?_this.countdownShow=true:_this.countdownShow=false;
+					// 是否显示倒计时
+					if ( window.sessionStorage.getItem("key_index_djs") == null ){
+							console.log("没有",window.sessionStorage.getItem("key_index_djs"));
+					} else {
+							console.log("有选",window.sessionStorage.getItem("key_index_djs"));
+							_this.countdownShow = false;
+							console.log(_this.countdownShow)
+					}
+				
+				},500)
+				setTimeout(()=>{
+					_this.countdownShow = false;
+					window.sessionStorage.setItem('key_index_djs',true)
+				},5000)
+
+				// var countdown_h = window.screen.height;
+				// var countdown_w = window.screen.width;
+				// var countdown_h = document.body.clientHeight || document.documentElement.clientHeight;
+				// var countdown_w = document.body.clientWidth || document.documentElement.clientWidth;
+				// document.getElementsByClassName('public-countdown-father')[0].style.width=countdown_w + 'px';
+				// document.getElementsByClassName('public-countdown-father')[0].style.height=countdown_h + 'px';
+
+				
+				var _rem = 100 * (document.documentElement.clientWidth / 750)
+				this.swipeWidth = this.swipeWidth*_rem ; 
+				// vant.Toast('提示看看');
+
+				//开幕式播放量
+				// axios.get('api/hits/'+_obj.idSite+'/'+ _obj.idKMS +'/'+ _obj.idKMS_CID)
+				// .then(function (response) {
+				// 	// console.log(response);
+				// })
+				// .catch(function (error) {
+				// 	console.log(error);
+				// });
+
+				// axios.delete('api/v1/contents/23/38/334').then(function (response) {
+				// 		alert('删除了')
+				// })
+
+				// 获取所有配置数据
+				axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				.then(function (response) {
+					// sessionStorage.setItem('ExhibitionArea', response.data.result.custom.BCodes.ExhibitionArea);
+					// console.log('9',getCodeText())
+					// console.log('8',getCodeText())
+					// var  aaaa =  JSON.stringify(sessionStorage.getItem('ExhibitionArea'));
+					// console.log('4',aaaa)
+					// console.log('6',sessionStorage.getItem('ExhibitionArea'))
+					// console.log('7',JSON.parse('<%- JSON.stringify(sessionStorage.getItem("ExhibitionArea")) %>'))
+				})
+
+				// 获取首页站点下栏目
+				// axios.get('api/v1/channels/23')
+				axios.get('api/v1/channels/'+_obj.idSite)
+				.then(function (response) {
+					// console.log(response);
+				})
+				// 顶部轮播
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idSYDBLB,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.imagesDBLB = response.data.contents;
+					public_imgsrc(_this.imagesDBLB)
+				})
+				// 获取重磅嘉宾列表
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"groupNames":["重磅嘉宾"],
+					"channelId": _obj.idZBJB,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					},{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
+					orders:[{
+							column: 'addDate',  // 创建时间
+							desc: false,
+					}],
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.userList = response.data.contents;
+					public_imgsrc(_this.userList)
+					// console.log('123',_this.userList);
+				})
+				// 获取开幕式栏目
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+ _obj.idKMS)
+				.then(function (response) {
+					_this.KMSTitle = response.data;
+					public_imgsrc([_this.KMSTitle])
+				})
+				// 获取开幕式列表
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idKMS,
+					"page": 1,
+					"perPage": 1,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					}],
+					orders:[{
+							column: 'addDate',  // 创建时间
+							desc: false,
+					}],
+				})
+				.then(function (response) {
+					_this.KMS = response.data.contents[0];
+					public_imgsrc([_this.KMS])
+					_this.playerOptions.poster = _this.KMS.imageUrl;
+				})
+				// 云逛展
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idYGZ,
+					"wheres":[ {
+						"column": "checked",
+						"operator": "=",
+						"value": "1"
+					},
+					{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
+					"page": _this.YGZPage,
+					"perPage": 4
+				})
+				.then(function (response) {
+					_this.YGZ = response.data.contents;
+					public_imgsrc(_this.YGZ)
+					if(_this.YGZ.length<4){
+							_this.YGZPage = 1;
+					}else{
+							_this.YGZPage = _this.YGZPage + 1;
+					}
+					// console.log('9999922311',_this.YGZ)
+				})
+				/*
+				// 合作商
+				axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idHZS,
+						"page": 1,
+						"perPage": 200
+					})
+				.then(function (response) {
+						_this.HZS = response.data.contents;
+						public_imgsrc(_this.HZS)
+						console.log('9999922311',_this.HZS)
+				})
+				*/
+				// 合作商
+				axios.get('api/v1/channels/'+_obj.idSite+'/'+_obj.idHZS)
+				.then(function (response) {
+						_this.HZS = response.data.children;
+						public_imgsrc(_this.HZS)
+						console.log('9999922311',_this.HZS)
+				})
+				// 主办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idZBDW,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.ZBDW = response.data.contents;
+					public_imgsrc(_this.ZBDW)
+				})
+				// 承办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idCBDW,
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.CBDW = response.data.contents;
+					public_imgsrc(_this.CBDW)
+				})
+				// 协办单位
+				axios.post('api/v1/contents', {
+					"siteId": _obj.idSite,
+					"channelId": _obj.idXBDW,
+					"wheres":[ {
+						"column": "sourceId",
+						"operator": ">",
+						"value": "-1"
+					}],
+					"page": 1,
+					"perPage": 200
+				})
+				.then(function (response) {
+					_this.XBDW = response.data.contents;
+					public_imgsrc(_this.XBDW)
+				})
+				
+				// 获取特色好物
+				this.getGoods()
+
+				// http://47.98.233.45:8031/swagger/index.html
+				// 获取展品
+				// axios.get('http://47.98.233.45:8031/api/services/app/Exhibitor/GetCachePageList')
+				/*
+				axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList?status=1')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+*/
+				/*
+				// 获取展商
+				axios.get('http://47.98.233.45:8031/api/services/app/Exhibit/GetCache')
+				.then(function (response) {
+					console.log(response);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+				*/
+				
+				
+			},
+			mounted: function () {
+				// console.log(')))))obj-',_obj)
+				// http://192.168.0.250:8032/api/v1/channels/{siteId}
+
+				
+			},
+			methods: {
+				// 轮播导航页
+				goSwipePage(_item){
+					if(_item.linkUrl){
+						if(_item.linkUrl.indexOf(_obj.mobileUrl) != -1){
+							goPage(_item.linkUrl)
+						}
+						else{
+							goPage('single_link_footer.html',{'linkUrl':_item.linkUrl})
+						}
+					}
+					else{
+						goPage('article_xwxq.html',{'id':_item.id})
+					}
+				},
+				// 去云逛展
+				goYGZ(_item){
+					// item.linkUrl?goPage(item.linkUrl):goPage('single_ygz_video.html',{'id':item.id})
+					// _item.linkUrl?goPage(_item.linkUrl):goPage('single_ygz_video.html',{'id':_item.id})
+					if(_item.linkUrl){
+						//执行统计量
+						axios.get('api/hits/'+_obj.idSite+'/'+_obj.idYGZ+'/'+_item.id)
+						.then(function (response) {
+						});
+						goPage(_item.linkUrl)
+					}
+					else{
+						goPage('single_ygz_video.html',{'id':_item.id})
+					}
+				},
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					// 获取展品详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+							
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+							// window.location.href=_item.webSiteUrl;
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
+				// 点击隐藏倒计时
+				countdownHide(){
+					this.countdownShow = false;
+					// window.localStorage.setItem('key_index_djs',true)
+					window.sessionStorage.setItem('key_index_djs',true)
+				},
+				// 获取特色好物
+				getGoods(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList',{
+						params:this.formData,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods =  response.data.result.items;
+					})
+				},
+				// 云逛展
+				ygzNext(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idYGZ,
+						"wheres":[{
+							"column": "sourceId",
+							"operator": ">",
+							"value": "-1"
+						}],
+						"page": _this.YGZPage,
+						"perPage": 4
+					})
+					.then(function (response) {
+						_this.YGZ = response.data.contents;
+						public_imgsrc(_this.YGZ)
+						if(_this.YGZ.length<4){
+							_this.YGZPage = 1;
+						}else{
+							_this.YGZPage = _this.YGZPage + 1;
+						}
+						// console.log('9999922311',_this.YGZ)
+					})
+				}
+			},
+
+		})
+		// app.use(vant.Lazyload);
+	</script>
+</body>
+
+</html>

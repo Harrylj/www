@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>展商详情</title>
+	<style type="text/css">
+		.xwxq{
+			position: relative;
+		}
+		#app{
+			padding-top: 1rem;
+			background-color: #12206A;
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.phtc-fenxiang{
+			right: 0;
+		}
+		.xwxq *{
+			color: white;
+		}
+		.zqxq-body{
+			position: relative;
+			padding: 0 .3rem .4rem .3rem;
+			/* background-color: rgba(255, 255, 255, .08);
+			border-radius: .67rem .67rem 0 0; */
+		}
+		.zqxq-header{
+			position: relative;
+			margin:.3rem;
+			background-color: rgba(255, 255, 255, .08);
+			border-radius: .2rem;
+			padding-bottom: .2rem;
+		}
+		.zqxq-header>img
+		,.zqxq-header .van-image{
+			display: block;
+			width: 6.9rem;
+			/* height: 3.2rem; */
+			height: 5.175rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+			overflow: hidden;
+		}
+		.zqxq-header h2
+		,.zqxq-body h2{
+			font-size: .31rem;
+			line-height: .8rem;
+		}
+		.zqxq-header p{
+			line-height: .6rem;
+			font-size: .28rem;
+			opacity: .6;
+		}
+		.zqxq-header h2
+		,.zqxq-header p{
+			padding: 0 .3rem;
+		}
+		.zqxq-body h2{
+			margin-bottom: .2rem;
+		}
+		.zqxq-body h3{
+			font-size: .31rem;
+			line-height: .6rem;
+		}
+		.index-ygz-item img{
+			height: 2.5rem;
+		}
+		.index-ygz-list:nth-child(1) .index-ygz-item:nth-child(2)>img,
+		.index-ygz-list:nth-child(2) .index-ygz-item:nth-child(1)>img,
+		.index-ygz-list .van-image{
+			height: 2.5rem;
+		}
+		.zsxq-btn-jdgg{
+			position: absolute;
+			background-color:#009BFE;
+			border-radius: .3rem;
+			line-height: .4rem;
+			right: .3rem;
+			bottom: .3rem;
+			padding: .1rem .3rem;
+			font-size: .28rem;
+		}
+		.index-ygz-list, .index-tshw-list{
+			width: 100%;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+		}
+		.zsxq-bktj{
+			position: relative;
+			border-radius: .2rem;
+		}
+		.zsxq-bktj h2{
+			display: flex;
+			align-items: center;
+			font-size: .35rem;
+			line-height: 1rem;
+			padding: 0;
+			margin-bottom: 0;
+		}
+		.zsxq-bktj h2 img{
+			margin-left: .1rem;
+			position: relative;
+			top: -.03rem;
+			width: .24rem;
+			height: .34rem;
+		}
+		.zsxq-bktj-list{
+			border-radius: .2rem;
+			overflow: hidden;
+			display: flex;
+			justify-content: space-between;
+			background-color: rgba(255, 255, 255, .1);
+			background-image: url(images/top-footer-bg.png);
+			background-size: 100% 2rem;
+			background-repeat: no-repeat;
+			background-position: 0 100%;
+		}
+		div.zsxq-bktj-list-center{
+			justify-content:space-around;
+		}
+		.zsxq-bktj-item{
+			position: relative;
+			width: 33.333%;
+			text-align: center;
+		}
+		.zsxq-bktj-item::after{
+			position: absolute;
+			right: 0;
+			top: 0;
+			height: 100%;
+			width: 0.01rem;
+			/* background-color:  rgba(255, 255, 255, .1); */
+			content: " ";
+			color: transparent;
+		}
+		.zsxq-bktj-item:last-child:after{
+			display: none;
+		}
+		.zsxq-bktj-item .van-image{
+			width: 2.05rem;
+			height: 1.5rem;
+			margin: .2rem auto;
+		}
+		.zsxq-bktj-item-content{
+			margin-top: -1rem;
+			padding-top: 1rem;
+			padding-bottom: .2rem;
+			/* background: linear-gradient(0deg, rgba(255, 135, 17, 0.5), rgba(0, 0, 0, 0)); */
+			
+		}
+		.zsxq-bktj-item h3{
+			font-size: .31rem;
+		}
+		.zsxq-bktj-item p{
+			font-size: .25rem;
+		}
+		.zsxq-bktj-item h3,
+		.zsxq-bktj-item p{
+			line-height: .5rem;
+			text-align: center;
+		}
+		.zsxq-bktj-item-num{
+			background-color: #FF8711;
+			width: 1.1rem;
+			height: .46rem;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			justify-content: center;
+			border-radius: 0 0 .2rem .2rem;
+		}
+		.zsxq-bktj-item-num span{
+			font-size: .31rem;
+		}
+		.zsxq-line{
+			border-top: 1px solid rgba(255, 255, 255, .1);
+			margin: .44rem -.3rem;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="xwxq zqxq zsxq" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title">展商详情</div>
+			</div>
+		</div>
+		<div class="zqxq-header">
+			<!-- <img :src="shop.logo" alt=""> -->
+			<van-image
+				fit="fill"
+				:src="shop.logo?shop.logo:''"
+			><template v-slot:error>加载失败</template></van-image>
+			<h2>{{shop.name}}</h2>
+			<!-- <p v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''">展商网站: {{shop.webSiteUrl}}</p> -->
+			<p v-show="shop.emailAddress?shop.emailAddress.length>0:''">展商邮箱: {{shop.emailAddress}}</p>
+			<p>联系方式: {{shop.contectPhone}}</p>
+			<p v-show="shopObj.PositionName?shopObj.PositionName=='undefined'?false:true:''">展区位置: {{shopObj.PositionName}}</p>
+			<div class="zsxq-btn-jdgg" v-show="shop.webSiteUrl?shop.webSiteUrl.length>0:''" @click="goPage(shop.webSiteUrl)">进店逛逛</div>
+		</div>
+		<div class="zqxq-body">
+			<div class="zsxq-bktj" v-if="listTop.length>0">
+				<h2>爆款推荐<img src="images/huo.png" alt=""></h2>
+				<div class="zsxq-bktj-list" :class="listTop.length<3?'zsxq-bktj-list-center':''">
+					<div class="zsxq-bktj-item"
+					:class="item.isLive?'goods-live-hover':''" 
+					@click="goGoodsDetail(item)" v-for="(item,index) in listTop" :key="index">
+						<div class="zsxq-bktj-item-num"><span>T</span>op<span>{{index+1}}</span></div>
+						<van-image
+							fit="contain"
+							:src="item.images[0]?item.images[0].url:''"
+						><template v-slot:error>加载失败</template></van-image>
+						<div class="zsxq-bktj-item-content">
+							<h3 class="van-ellipsis">{{item.name}}</h3>
+							<p class="van-ellipsis">{{item.appHits}}人正在逛</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="zsxq-line"></div>
+			<div class="jjwb-fhlt-div">
+				<div class="index-ygz-list">
+					<div class="index-ygz-item"
+					:class="item.isLive?'goods-live-hover':''" 
+					@click="goGoodsDetail(item)"
+					v-for="(item,index) in listGoods" :key="index">
+						<!-- <img :src="item.qrCode" alt=""> -->
+						<!-- <van-image
+							fit="cover"
+							:src="item.qrCode"
+						><template v-slot:error>加载失败</template></van-image> -->
+						<van-image
+							fit="contain"
+							:src="item.images[0]?item.images[0].url:''"
+						><template v-slot:error>加载失败</template></van-image>
+						<!-- <h3>{{item.images[0]?item.images[0].url:'没有'}}</h3> -->
+						<h3 class="van-ellipsis">{{item.name}}</h3>
+						<p class="van-ellipsis">{{item.appHits}}人正在浏览</p>
+					</div>
+				</div>
+				<!-- <div class="index-ygz-list">
+					<div class="index-ygz-item" v-for="index in 2" :key="index">
+						<img src="images/bg.png" alt="">
+						<h3 class="van-ellipsis">{{index}}中国视听健康创听健康创听健康创</h3>
+						<p class="van-ellipsis">36人正在浏览</p>
+					</div>
+				</div> -->
+			</div>
+		</div>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/qs.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		// 引入qs
+		var qs = Qs;
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				value: 2,
+				active: 3,
+				show: false,
+				shopObj:{
+					Keyword:'',  // 展商名
+					PositionName:'', // 展区地址
+					id:'', //展商id
+				},
+				goodsObj:{
+					ExhibitorName:'',
+					Position:[],
+					MaxResultCount:200
+					// PositionName:'',
+				},
+				topObj:{
+					ExhibitorName:'',
+					Position:[], // 地址
+					Ishot:true, // 是否热门
+					SkipCount:0,
+					MaxResultCount:3
+					// PositionName:'',
+				},
+				shop:'', // 展商详情
+				listGoods:[], // 展品列表
+				listTop:[], // top展品列表
+				PositionList:[]//
+				
+			},
+			created: function () {
+				var _this = this
+				// console.log(1)
+				// vant.Toast('提示看看');
+				this.shopObj.Keyword = qs2obj(window.location.href).Keyword;
+				this.shopObj.PositionName = qs2obj(window.location.href).PositionName;
+				this.goodsObj.ExhibitorName = qs2obj(window.location.href).Keyword;
+				this.topObj.ExhibitorName = qs2obj(window.location.href).Keyword;
+				// this.goodsObj.PositionName = qs2obj(window.location.href).PositionName;
+				// this.goodsObj.Position = [qs2obj(window.location.href).HC,qs2obj(window.location.href).ZQ]
+				// 获取所有配置数据
+				// axios.get(_obj.shopUrl+'AbpUserConfiguration/GetAll?Position=01')
+				// .then(function (response) {
+				// 	_this.PositionList = response.data.result.custom.BCodes.ExhibitionArea;
+					
+				// })
+				// 获取展商详情
+				_this.getShop();
+				
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				// 去展品详情
+				goGoodsDetail(_item){
+					//goPage(goods.liveUrl)
+					// 统计访问展品量
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCache?Status=1',{
+							params:{
+								id: _item.id
+							},
+							paramsSerializer: function(params) {
+								return qs.stringify(params, {arrayFormat: 'repeat'})
+							}
+					})
+					.then(function (response) {
+					})
+					//在直播
+					if(_item.isLive){
+						// 在直播 有直播地址  跳直播
+						if(_item.liveUrl?_item.liveUrl.length>1:false){
+							goPage(_item.liveUrl)
+						}
+						// 在直播 无直播地址 有淘宝 跳淘宝
+						else if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							goPage(_item.webSiteUrl)
+						}
+						// 在直播 无直播地址 无淘宝 跳详情
+						else{
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+					// 无直播
+					else{
+						// 无直播 有淘宝地址  跳淘宝
+						if(_item.webSiteUrl?_item.webSiteUrl.length>1:false){
+							// alert(_item.webSiteUrl?_item.webSiteUrl.length>1:'false')
+							// alert(_item.webSiteUrl.length)
+							console.log('去淘宝,',_item.webSiteUrl?_item.webSiteUrl.length>1:false)
+							goPage(_item.webSiteUrl)
+						}
+						// 无直播无淘宝地址 跳详情
+						else{
+							console.log('去详情')
+							goPage('single_wbjj_zp_detail.html',{'id':_item.id})
+						}
+					}
+				},
+				// 获取展商详情
+				getShop(){
+					var _this = this;
+					_this.shopObj.id = qs2obj(window.location.href).id;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCachePageList',{
+						params:this.shopObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						
+						// _this.shopObj.PositionName = _this.PositionList
+
+					})
+					
+					// 调用展商详情
+					axios.get(_obj.shopUrl+'api/services/app/Exhibitor/GetCache',{
+						params:this.shopObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.shop = response.data.result;
+						console.log('332221111111',_this.shop)
+						_this.goodsObj.Position = _this.shop.position;
+						_this.topObj.Position = _this.shop.position;
+						// 获取展品列表
+						_this.getGoods();
+						// 获取top展品列表
+						_this.getTop();
+						// _this.shop = response.data.result.items[0];
+						// console.log('332221111111',_this.shop)
+						// _this.goodsObj.Position = _this.shop.position;
+						// _this.topObj.Position = _this.shop.position;
+						// // 获取展品列表
+						// _this.getGoods();
+						// // 获取top展品列表
+						// _this.getTop();
+						// // _this.shopObj.PositionName = _this.PositionList
+
+					})
+
+				},
+				// 获取展品列表
+				getGoods(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
+						params:this.goodsObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listGoods = response.data.result.items;
+						console.log('9877777',_this.listGoods)
+					})
+				},
+				// 获取top展品列表
+				getTop(){
+					var _this = this;
+					axios.get(_obj.shopUrl+'api/services/app/Exhibit/GetCachePageList',{
+						params:this.topObj,
+						paramsSerializer: function(params) {
+							return qs.stringify(params, {arrayFormat: 'repeat'})
+						}
+					})
+					.then(function (response) {
+						_this.listTop = response.data.result.items;
+						console.log('32223333',_this.listTop)
+					})
+				},
+				fenxiang() {
+					vant.Toast('分享')
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="en">
+	<meta charset="UTF-8">
+	<!-- 使用最新的ie内核渲染 -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<!-- 移动设备优先, 禁止缩放 -->
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1,minimum-scale=1,maximum-scale=1, user-scalable=no">
+	<!-- 国产浏览器(360)使用webkit内核 -->
+	<meta name="renderer" content="webkit">
+	<!-- 禁止识别为手机号码 -->
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="css/vant.css" />
+	<link rel="stylesheet" type="text/css" href="css/public.css" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+	<title>嘉宾介绍</title>
+	<style type="text/css">
+		.jbjs{
+			position: relative;
+		}
+		#app{
+			padding-top: 0;
+			/* background-color: #1A285C; */
+			/* background: linear-gradient(90deg, rgba(0,0,0,.5), rgba(255,255,255,.5)); */
+		}
+		.public-header-title{
+			background-color: transparent;
+		}
+		.jbjs-header{
+			position: relative;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			padding: 1rem .5rem .5rem .5rem;
+		}
+		.jbjs-header
+		,.jbjs-content{
+			/* background-color: #273570; */
+			background-color: rgba(255,255, 255, 0.08);
+		}
+		.jbjs-header-img{
+			margin-right: .3rem;
+		}
+		.jbjs-header-right h3
+		,.jbjs-header-right p
+		,.jbjs-content h5
+		,.jbjs-body h2
+		,.jbjs-body h4
+		,.jbjs-body h6
+		,.jbjs-content p{
+			color: white;
+		}
+		.jbjs-header-right h3{
+			font-size: .33rem;
+			line-height: .5rem;
+			max-width: 5rem;
+		}
+		.jbjs-header-right p{
+			font-size: .27rem;
+			line-height: .5rem;
+			max-width: 5rem;
+		}
+		.jbjs-content h5
+		,.jbjs-content p{
+			font-weight: 400;
+			font-size: .31rem;
+			line-height: .5rem;
+			/* padding: .1rem .3rem .1rem .3rem; */
+		}
+		.jbjs-content{
+			padding: .3rem;
+		}
+		.jbjs-body{
+			position: relative;
+		}
+		.jbjs-body>h2{
+			font-size: .35rem;
+			line-height: 1rem;
+		}
+		.jbjs-body-item{
+			background-color: rgba(255, 255, 255, .08);
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: .3rem .3rem;
+			border-radius: .2rem;
+			margin-bottom: .2rem;
+			
+		}
+		.jbjs-body{
+			padding: 0 .3rem;
+		}
+		.jbjs-body-item-img{
+			margin-left: .3rem;
+			width: 1.86rem;
+			height: 1.4rem;
+			/* width: 1rem;
+			height: 1rem; */
+			border-radius: .1rem;
+			overflow: hidden;
+			flex-shrink:0;
+		}
+		.jbjs-body-item h4{
+			font-size: .32rem;
+			font-weight: 400;
+			line-height: .5rem;
+		}
+		.jbjs-body-item h6{
+			font-size: .27rem;
+			font-weight: 400;
+			opacity: .6;
+			line-height: .5rem;
+		}
+
+		div.light{
+			background: rgba(197, 66, 66, 0.98);
+		}
+		
+	</style>
+</head>
+
+<body>
+	<div class="jbjs" id="app" v-cloak>
+		<div class="public-header-title">
+			<div class="public-header-title-content">
+				<div class="phtc-return" @click="public_return_page()"></div>
+				<div class="phtc-title"></div>
+			</div>
+		</div>
+		<div class="jbjs-header">
+			<van-image
+			class="jbjs-header-img"
+			round
+			fit="cover"
+			width="1.25rem"
+			height="1.25rem"
+			:src="data_content.imageUrl"
+			>
+			</van-image>
+			<div class="jbjs-header-right">
+				<h3>{{data_content.title}}</h3>
+				<!-- <p>{{data_content.job}}</p> -->
+				<p>{{data_content.zhicheng}}</p>
+			</div>
+		</div>
+		<div class="jbjs-content" v-html="data_content.body">
+			<h5>云南是一个多民族文化省份，有众多特色的文化产品，尤其是云南的民族、民俗风情。</h5>
+		</div>
+		<van-pull-refresh v-model="refreshing" @refresh="onRefresh">
+			<van-list v-model="loading" finished-text="没有更多了" :finished="finished" @load="onLoad">
+		<div class="jbjs-body">
+			<h2>最新动态</h2>
+			<div class="jbjs-body-list">
+				<div class="jbjs-body-item" @click="goPage('article_xwxq.html',{'id':item.id})" v-for="(item,index) in listXW" :key="index">
+					<div class="jbjs-body-item-content">
+						<h4 class="van-multi-ellipsis--l2">{{item.title}}</h4>
+						<h6>{{item.createdDate?item.createdDate.split(' ')[0]:''}}</h6>
+					</div>
+					<van-image
+					v-show="item.imageUrl.length>30"
+					class="jbjs-body-item-img"
+					fit="fill"
+					:src="item.imageUrl"
+					>
+					</van-image>
+				</div>
+			</div>
+		</div>
+		</van-list>
+		</van-pull-refresh>
+	</div>
+	<script>
+
+	</script>
+	<script src="js/jquery-2.1.3.min.js"></script>
+	<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/axios.min.js"></script>
+	<script src="js/axios_my.js" type="text/javascript" charset="utf-8"></script>
+	<script src="js/vant.min.js"></script>
+
+	<script type="text/javascript">
+		$(function(){
+			navHeader();
+			$(window).scroll(function () {
+				navHeader();
+			})
+		})
+		var _obj = public_obj();
+		 
+		var app = new Vue({
+			el: '#app',
+			data: {
+				value: 2,
+				active: 3,
+				show: false,
+				data_content: '',
+				listXW:[], // 新闻动态
+				loading: false,		// 开启加载
+				finished: false,	// 结束加载
+				refreshing: false,  // 下拉刷新
+				pageIndex:1,
+				pageNum:10,
+			},
+			created: function () {
+				var _this = this;
+				// vant.Toast('提示看看');
+				// 获取嘉宾详情
+				axios.get('api/v1/contents/'+_obj.idSite+'/'+ _obj.idYJJB +'/'+ qs2obj(window.location.href).id)
+				.then(function (response) {
+					_this.data_content = response.data;
+					public_imgsrc([_this.data_content])
+					// _this.playerOptions.poster = _this.KMS.imageUrl;
+					// _this.playerOptions.sources[0].src = _this.KMS.shipin;
+					console.log('123',_this.data_content);
+				})
+				.catch(function (error) {
+					console.log(error);
+				});
+
+				
+			},
+			mounted: function () {
+
+			},
+			methods: {
+				// 加载事件
+				onLoad() {
+					var _this = this;
+					setTimeout(() => {
+						if (_this.refreshing) {
+							_this.listXW = [];
+							_this.refreshing = false;
+							_this.pageIndex = 1;
+							// _this.formData.SkipCount = 0;
+						}
+						// 获取新闻动态
+						_this.getXWDT()
+						// _this.onLoad()
+					},10);
+					console.log('下拉')
+				},
+				onRefresh() {
+					// 清空列表数据
+					this.finished = false;
+					// 重新加载数据
+					// 将 loading 设置为 true，表示处于加载状态
+					this.loading = true;
+					this.onLoad();
+				},
+				// 获取新闻动态
+				getXWDT(){
+					var _this = this;
+					axios.post('api/v1/contents', {
+						"siteId": _obj.idSite,
+						"channelId": _obj.idXWDT,
+						"wheres":[ {
+							"column": "checked",
+							"operator": "=",
+							"value": "1"
+						}],
+						"orders": [
+								{
+									"column": "AddDate",
+									"desc": true,
+								}
+						],
+						"page": this.pageIndex,
+						"perPage": this.pageNum,
+					})
+					.then(function (response) {
+						var _abc = response.data.contents;
+						public_imgsrc(_abc)
+						_abc.forEach((element,index) => {
+							_this.listXW.push(element)
+						});
+						// console.log('123',_this.listXW);
+						_this.pageIndex = _this.pageIndex +1;
+						// 加载完成
+						_this.loading = false;
+						// 结束加载
+						if(response.data.contents.length < _this.pageNum){
+							_this.finished = true;
+						}
+					})
+					.catch(function (error) {
+						console.log(error);
+					});
+				},
+				showPopup() {
+					this.show = true;
+				},
+				hidePopup() {
+					this.show = false;
+				},
+				onClickLeft() {
+					vant.Toast('返回');
+				},
+				onClickRight() {
+					vant.Toast('按钮');
+				},
+				selectMulu(_index) {
+					this.active = _index;
+					vant.Toast(this.active)
+					this.hidePopup()
+				}
+			},
+
+		})
+	</script>
+</body>
+
+</html>
