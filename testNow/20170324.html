@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYP;
+E html>
 <html>
 
 	<head lang="en">
@@ -16,39 +17,24 @@
 		<link href="css/bootstrap.min.css" type="text/css" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/public.css" />
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<title>名称</title>
+		<title></title>
 		<style type="text/css">
 
 		</style>
 	</head>
 
 	<body>
-		<button οnclick="test()">video</button>
-		<ul th:each="videoUrl:${videoList}" id="ulVideo" style="display:none">
-			<li th:text=${videoUrl}></li>
-		</ul>
-		<video style="display:none" controls="controls" name="media" id="divVideo">
-			<source type="video/mp4">
-		</video>
+
 	</body>
 	<script src="js/jquery-2.1.3.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script src="module/baz.js" type="text/javascript" charset="utf-8"></script>-->
 	<script>
-		function unique(arr) {
-			var aa = [];
-				for(var i = 0; i < arr.length; i++) {
-					for(var j = i + 1; j < arr.length; j++) {
-						if(arr[i] == arr[j]) { //第一个等同于第二个，splice方法删除第二个
-							aa.push(j+i)
-							arr.splice(j, 1);
-							j--;
-						}
-					}
-				}
-				console.log('111',aa)
-			return arr;
-		}
-		var arr = [1, 1, 'true', 'true', true, true, 15, 15, false, false, undefined, undefined, null, null, NaN, NaN, 'NaN', 0, 0, 'a', 'a', {}, {}];
-		console.log(unique(arr))
+		function foo(p1, p2) {
+			this.val = p1 + p2;
+		} // 之所以使用 null 是因为在本例中我们并不关心硬绑定的 this 是什么 // 反正使用 new 时 this 会被修改
+		var bar = foo.bind(null, "p1");
+		var baz = new bar("p2");
+		baz.val; // p1p2
 	</script>
 
 </html>
